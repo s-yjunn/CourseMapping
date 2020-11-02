@@ -1,0 +1,50 @@
+Final Project Title: (Sew it Seams or Knitty Gritty) or Intarsia, if we decide to go fancy
+Team members: Isabel, Bethany, Alexis
+Date of the current pre-proposal: 10/29/2020
+
+Preliminary description:
+  This is an interactive site for knitters. Visitors can view patterns and forum posts and possibly vote for the “best of the week”. Registered users can additionally submit patterns to the “best of the week” competition, make and save grid visualizations of patterns, customize a public profile, and post in the forum.
+
+Technical aspects to be incorporated:
+  See #2 in items below. We will use all of the required languages!
+
+SUB-PROJECTS (1. Description 2. Technical challenges 3. Who's responsible, tentatively):
+  - Admin
+    1. Admin is a special user that can see a list of users, possibly moderate the weekly pattern competition (by eliminating really bad entries or something), possibly moderate forums
+    2. Php to load user info/list of admin tasks, AJAX to update without reloading
+    3. Isabel
+
+  - User login/registration
+    1. Same as in the midterm.
+    2. Ideally validation would be done with AJAX so people get feedback on the same page.
+    3. Alexis
+
+  - Pattern submission/competition
+    1. Users can upload patterns + images of the projects they’ve made. Then other users can vote for the “best of the week”. Winners are added to a slideshow on the main page.
+    2. Using php to present new submissions in a poll which is then processed with AJAX, possibly have admin pre-approve submissions. Then automatically moving the winners to a folder from which the slideshow is generated.
+    3. Bethany
+
+  - User profiles
+    1. Users have their own individual profiles that publicly (or privately) display grid creations that they've made.
+    2. Have a user page that changes based on the user to show only that user's own patterns; appears to be unique pages but will be one page with PHP calls. 
+    3. Alexis frontend/backend, Isabel backend
+
+  - Forum
+    1. Users can publicly post/respond to other users’ questions/comments, and upvote/downvote others’ answers
+    2. Forum backend will probably be somewhat similar to the reviews feature Isabel did for the midterm, with the added functionality of upvoting/downvoting. That will require php and/or ajax to make answers display in order of popularity.
+    3. Isabel will do forum basics & Bethany will handle the up/downvote functionality
+
+  - Pattern maker (grid!)
+    1. User enters a few parameters (working in round vs. flat, number of rows/columns). Then they are shown a grid to their specifications, where they can color boxes to indicate their pattern. The result can then be saved.
+    2. Need to figure out how to generate the grid with php or javascript, as it will be different every time. Then the obvious technicalities of making the graphics work, and also the ability to save one’s work.
+    3. We will all work on this as it will require many new technical features
+
+Tentative "assignment" of roles:
+  - Bethany: pattern competition, forum voting
+  - Alexis: login, visual interface, especially of user pages
+  - Isabel: admin tasks/admin-user communication, bones of forum
+  - Everyone: pattern creator
+
+Other aspects:
+  We know that this is a somewhat ambitious list of features, but we are excited to challenge ourselves!
+

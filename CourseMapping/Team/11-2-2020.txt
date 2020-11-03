@@ -5,6 +5,9 @@ End Goal:
 An visual and interactive overview of the connections between different courses in terms of requirements and building a major.
 A user can easily figure out how they are tracking for major requirements, and compare multiple majors. A user can also look at what other options their course preparation opens up for them. 
 
-
 Current State: 
-Preliminary file organization established. This txt file describes the project. We also are in the process of using when2meet.com to figure out a regular meeting time.
+Preliminary file organization established. This txt file describes the project. 
+
+Regular Meeting Times:
+Wednesday at 5:30 pm (short meeting)
+Saturday at 2:00 pm (long meeting)

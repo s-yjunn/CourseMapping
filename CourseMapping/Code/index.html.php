@@ -4,6 +4,7 @@
 <title>Course Mapping</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel ="stylesheet" type ="text/css" href="css/homepageCSS.css"> 
+<link rel ="stylesheet" type ="text/css" href="css/tab.css"> 
 </head>
 <body>
 <header>
@@ -22,7 +23,7 @@
         <p>Directions to use this website</p>
         <p>Links to Course Catalog</p>
         <p>Directions to use this website</p>
-        
+        <!-- <//?php include "php/tab.html.php";?> -->
     </div>
     <div id = 'Saved' class = 'tabcontent' style = 'display: none;'>
         <h3>Saved</h3>

@@ -1,0 +1,10 @@
+.main{
+    float: left;
+    width: 80%;
+}
+
+.side{
+    float: right;
+    width: 20%;
+    padding-right: 20px;
+}

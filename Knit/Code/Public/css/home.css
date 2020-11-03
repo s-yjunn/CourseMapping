@@ -1,22 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Roboto:wght@400;500&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Poppins:wght@700&display=swap');
 
+* {
+	font-family: 'Roboto', sans-serif;
+}
+ 
+/* header div */
 .header {
 	text-align: center;
 }
-
 .title {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Poppin', sans-serif;
+	font-size: 70px;
+	margin: 50px 0 -5px 0;
 }
-
 .slogan {
-
+	font-size: 15px;
 }
 
+/* tab div */
 .tab {
 	width: 100%;
 	text-align: center;
+	margin: 50px 0 0 0;
 }
-
 .tab button {
 	border: none;
 	outline: none;
@@ -26,20 +33,65 @@
 	/* colors */
 	background-color: #fff;
 	/* font */
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Poppin', sans-serif;
 	font-weight: bold;
-	font-size: 20px;
+	font-size: 18px;
 	text-transform: uppercase;
 }
-
+.tab button:hover {
+	color: rgb(228,86,53);
+}
 .tabcontent:not(#Welcome) {
 	display: none;
 }
 
+/* card div */
 .card {
-	padding: 50px;
+	margin: 50px 100px;
+	padding: 40px;
+}
+.card h3 {
+	font-family: 'Poppin', sans-serif;
+	font-size: 40px;
+}
+.card p {
+	line-height: 1.5;
+}
+.card button {
+	border: none;
+	outline: none;
+	cursor: pointer;
+	/* spacing */
+	margin: 10px 0;
+	padding: 10px 30px;
+	/* font */
+	font-size: 14px;
+	font-weight: bold;
+	/* colors */
+	color: rgb(228,86,53);
+	background-color: white;
+	/* border */
+	border-radius: 8px;
+	border: 2px solid rgb(228,86,53);
+}
+.card button:hover {
+	color: black;
+	border-color: black;
 }
 
+/* form */
+input[type=text], input[type=password] {
+	padding: 5px;
+	margin: 5px;
+	width: 200px;
+}
+
+/* footer */
 .footer {
 	text-align: center;
+	font-size: 12px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
 }

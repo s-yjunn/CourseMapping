@@ -4,13 +4,10 @@
 
 <div id="Login" class="tabcontent">
 	<div class="card">
-	  <h3>Log In</h3>
+	  <h3>Log in</h3>
 	  <div>
-	      <label for="uname"><b>Username</b></label> <br>
-	      <input type="text" placeholder="Enter Username" name="uname" required><br>
-
-	      <label for="psw"><b>Password</b></label><br>
-	      <input type="password" placeholder="Enter Password" name="psw" required>
+	      <input type="text" placeholder="Username" name="uname" required><br>
+	      <input type="password" placeholder="Password" name="psw" required>
         
 	      <button type="submit">Login</button>
 	    </div>

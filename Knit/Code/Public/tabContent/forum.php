@@ -1,6 +1,6 @@
 <div id="Forum" class="tabcontent">
 	<div class="card">
-	  <h3>Forum</h3>
+	  <h3>Have a question? Ask it!</h3>
 	  <p>___________________________</p> 
 	  <p>___________________________</p> 
 	  <p>___________________________</p> 

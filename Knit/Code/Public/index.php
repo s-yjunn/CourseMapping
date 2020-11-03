@@ -6,7 +6,7 @@
 
 <div class="header">
 	<h2 class="title">Knitty Gritty</h2>
-	<p class="slogan">Sew it seems you've gotten to the Knitty Gritty</p>
+	<p class="slogan">Sew it seams you've gotten to the Knitty Gritty</p>
 </div>
 
 <div class="tab">
@@ -39,6 +39,6 @@
 	<p>© 2020, Intarsia Inc.</p>
 </div>
 
-<script src = "js/tabs.js"></script>
+<script src="js/tabs.js"></script>
 </body>
 </html>

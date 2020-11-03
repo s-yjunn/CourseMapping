@@ -74,39 +74,3 @@ h3 {
   }
 }
 
-.recipe {
-  display: none;
-  -webkit-animation: fadeIn 0.7s;
-  animation: fadeIn 0.7s;
-}
-
-#userTable {
-  border-collapse: collapse;
-  margin: auto;
-  width: 60%;
-}
-
-#userTable td,
-th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-#userTable tr:nth-child(odd) {
-  background-color: #d5f0c6;
-}
-
-/* Pictures in Welcome page */
-.column {
-  float: left;
-  width: 32%;
-  padding: 5px;
-}
-
-/* Clearfix (clear floats) */
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}

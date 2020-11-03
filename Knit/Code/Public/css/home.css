@@ -1,1 +1,45 @@
-/* CSS for the home page. I had to make a dummy file to create this folder, obviously feel free to rename*/
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Roboto:wght@400;500&display=swap'); 
+
+.header {
+	text-align: center;
+}
+
+.title {
+	font-family: 'Roboto', sans-serif;
+}
+
+.slogan {
+
+}
+
+.tab {
+	width: 100%;
+	text-align: center;
+}
+
+.tab button {
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 10px 20px;
+	margin: 0;
+	/* colors */
+	background-color: #fff;
+	/* font */
+	font-family: 'Roboto', sans-serif;
+	font-weight: bold;
+	font-size: 20px;
+	text-transform: uppercase;
+}
+
+.tabcontent:not(#Welcome) {
+	display: none;
+}
+
+.card {
+	padding: 50px;
+}
+
+.footer {
+	text-align: center;
+}

@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mukta&family=Righteous&display=swap");
+
+/* Full-width input fields */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  background-color: #f1f1f1;
+  border: 1px solid rgb(221, 221, 221);
+  box-sizing: border-box;
+}
+
+label {
+  color: rgb(154, 172, 143);
+}
+
+/* Set a style for all buttons */
+.loginbtn {
+  background-color: #bed668;
+  color: rgb(255, 255, 255);
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  background-color: rgb(148, 212, 188);
+}
+
+/* Style for submit button */
+#submitbtn {
+  animation-name: btnColor;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  font-family: "Bebas Neue", cursive;
+  font-size: 20px;
+}
+
+@keyframes btnColor {
+  0% {
+    background-color: #bed668;
+  }
+  30% {
+    background-color: rgb(105, 212, 167);
+  }
+  60% {
+    background-color: rgb(46, 179, 202);
+  }
+  100% {
+    background-color: #bed668;
+  }
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #aface2;
+  border: none;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 15px 0 12px 0;
+  position: relative;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(226, 226, 226); /* Fallback color */
+  background-color: rgba(201, 201, 201, 0.3); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fcfcfc;
+  margin: 10% auto 30% auto; /* 25% from the top, 30% from the bottom and centered */
+  border: 1px solid rgb(238, 238, 238);
+  width: 40%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 20px;
+  top: 0;
+  color: rgb(98, 131, 194);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: rgb(125, 178, 221);
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s;
+}
+
+@-webkit-keyframes animatezoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes animatezoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+}

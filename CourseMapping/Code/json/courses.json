@@ -1,0 +1,44 @@
+{
+    "meta" : {"updated":"11-5-2020", "courses":["EGR 100", "EGR 110", "EGR 220", "EGR 270", "EGR 290"]},
+    "EGR" : {
+        "EGR 100" : {
+            "prereqs":[], 
+            "coreqs":[], 
+            "requiredFor":[],
+            "suggestedFor":[],
+            "info": {"credits": 4, "title":"Engineering for Everyone"}
+        }, 
+
+        "EGR 110" : {
+            "prereqs":[], 
+            "coreqs":["MTH 112"], 
+            "requiredFor":["EGR 290"],
+            "suggestedFor":[],
+            "info": {"credits": 4, "title":"Fundamental Engineering Principles"}
+        },
+
+        "EGR 220" : {
+            "prereqs":["MTH 212"], 
+            "coreqs":[], 
+            "requiredFor":[],
+            "suggestedFor":[],
+            "info": {"credits": 5, "title":"Engineering Circuit Theory"}
+        },
+
+        "EGR 270" : {
+            "prereqs":["PHY 117", "MTH 112"], 
+            "coreqs":[], 
+            "requiredFor":[],
+            "suggestedFor":[],
+            "info": {"credits": 5, "title":"Engineering Mechanics"}
+        },
+
+        "EGR 290" : {
+            "prereqs":["EGR 110", "CHM 111"], 
+            "coreqs":["MTH 212"], 
+            "requiredFor":[],
+            "suggestedFor":[],
+            "info": {"credits": 4, "title":"Engineering Thermodynamics"}
+        }
+    } 
+}

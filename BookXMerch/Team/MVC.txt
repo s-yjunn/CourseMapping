@@ -1,0 +1,15 @@
+MODEL’s Data Structures (JSON files)
+- Books: genre, title, short summary, rating, and reviews
+- User: username, password, avatar, books uploaded, purchases, reviews, comments on forum 
+- Merch: type, size, availability 
+- Forum: topic, comments [user, avatar, text]
+
+View and Control logic 
+- Pre-login: 
+Invitation to Sign up/Login 
+Embedded on page: help on page navigation (search bar)
+- Post-login user page: 
+Access to Book collection 
+Access to Merch 
+Access to Personal Profile (books uploaded, previous comments, reviews.. | ability to modify current password | ability to add/modify avatar) 
+Forum topics and comments 

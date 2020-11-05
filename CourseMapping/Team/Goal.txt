@@ -1,9 +1,3 @@
-Allison is working on the JSON data for courses
-Hyana is working on the HTML and CSS for the site
-Olivia is working on the login ability
-Yujun is working on how to drag obect with the mouse.
-
-About:
 
 Abilities: 
 Saves the user’s tabs automatically, with JSON on the server
@@ -35,7 +29,3 @@ Saved user course pathways, and the versions of pathways that are auto-saved as 
 
 Client:
 Course pathways being worked on. 
-
-
-
-

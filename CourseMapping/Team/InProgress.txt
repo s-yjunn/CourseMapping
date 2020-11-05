@@ -1,0 +1,9 @@
+Allison is working on the JSON data for courses
+Hyana is working on the HTML and CSS for the site
+Olivia is working on the login ability
+Yujun is working on how to drag obect with the mouse.
+
+
+
+
+

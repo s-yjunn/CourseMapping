@@ -1,6 +1,9 @@
 <html>
 <head>
-  <link rel="stylesheet" href="css/home.css">
+	<!-- stylesheets -->
+	<link rel="stylesheet" href="css/home.css">
+	<!-- ajax jquery script-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -10,20 +13,20 @@
 </div>
 
 <div class="tab">
-  <button class="tablinks" onclick="openTab(event, 'Welcome')" id="defaultOpen">Home</button>
-  <button class="tablinks" onclick="openTab(event, 'Winners')">This Week's Winners</button>
-  <button class="tablinks" onclick="openTab(event, 'Vote')">Vote</button>
-  <button class="tablinks" onclick="openTab(event, 'Pattern')">Pattern Maker</button>
-  <button class="tablinks" onclick="openTab(event, 'Forum')">Forum</button>
-  <button class="tablinks" onclick="openTab(event, 'Login')">Log In</button>
-  <button class="tablinks" onclick="openTab(event, 'Register')">Sign Up</button>
+	<button class="tablinks" onclick="openTab(event, 'Welcome')" id="defaultOpen">Home</button>
+	<button class="tablinks" onclick="openTab(event, 'Winners')">This Week's Winners</button>
+	<button class="tablinks" onclick="openTab(event, 'Vote')">Vote</button>
+	<button class="tablinks" onclick="openTab(event, 'Pattern')">Pattern Maker</button>
+	<button class="tablinks" onclick="openTab(event, 'Forum')">Forum</button>
+	<button class="tablinks" onclick="openTab(event, 'Login')">Log In</button>
+	<button class="tablinks" onclick="openTab(event, 'Register')">Sign Up</button>
 </div>
 
 <!-- "Home" tab's content below / I feel like it's ok for this to stay in the main file since it's descriptive and not going to get complex but feel free to move-->
 <div id="Welcome" class="tabcontent">
 	<div class="card">
-	  <h3>Welcome to Knitty Gritty!</h3>
-	  <p>This is an interactive site for knitters. Visitors can view patterns and forum posts and possibly vote for the “best of the week”. Registered users can additionally submit patterns to the “best of the week” competition, make and save grid visualizations of patterns, customize a public profile, and post in the forum.</p>
+		<h3>Welcome to Knitty Gritty!</h3>
+		<p>This is an interactive site for knitters. Visitors can view patterns and forum posts and possibly vote for the “best of the week”. Registered users can additionally submit patterns to the “best of the week” competition, make and save grid visualizations of patterns, customize a public profile, and post in the forum.</p>
 	</div>
 </div>
 

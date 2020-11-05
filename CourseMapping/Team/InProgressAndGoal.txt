@@ -1,0 +1,41 @@
+Allison is working on the JSON data for courses
+Hyana is working on the HTML and CSS for the site
+Olivia is working on the login ability
+Yujun is working on how to drag obect with the mouse.
+
+About:
+
+Abilities: 
+Saves the user’s tabs automatically, with JSON on the server
+The is always a button to make a new tab in the upper right corner 
+When a new tab is made, it is called “Untitled”
+Overall data on when a course is usually taken, and what most users take after a given course, etc.
+
+Homepage
+Directions to use, explanation of the site
+Links to Course Catalog and Course Search
+Button to create a tab and start building a pathway
+Login Tab
+Tab
+
+Admin vs User:
+Admin:
+Add and remove majors and courses
+Change requirements / prerequisites
+
+User:
+Make Course Pathways
+Access Course Pathways 
+
+Server vs Client:
+Server:
+Data on courses and majors
+Gathered data on how people usually structure their schedules
+Saved user course pathways, and the versions of pathways that are auto-saved as the user works on them
+
+Client:
+Course pathways being worked on. 
+
+
+
+

@@ -61,4 +61,3 @@
 </div>
 
 <script src="js/forum.js"></script>
-<script src="js/showHide.js"></script>

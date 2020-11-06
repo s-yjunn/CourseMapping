@@ -1,0 +1,33 @@
+Meeting on Nov 5 
+
+The functions we're prioritizing:
+    - User sign up (Jess)
+    - User log in (Jess) 
+    - Primitive search function 
+    - Shop for items and cart 
+    - Checkout (take item off sale)
+    - Administrator (control users and taking items off from sale) 
+
+Data organization systems:
+
+Users
+    - one JSON file with an array per user containing:
+        - Username
+        - password
+        - items this user is selling
+
+Items
+    - one JSON file with an array per item being sold containing:
+        - Title
+        - Image
+        - Tags
+        - Description
+        - Price 
+        - Seller
+        - ID number 
+
+Tasks to complete by Monday:
+    - Demo of login and sign up
+    - User page 
+    - Items being displayed for sale 
+    - Data file prototypes for users and items

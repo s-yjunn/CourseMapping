@@ -1,0 +1,35 @@
+Final Project Title: 2Twenty
+Team members: Sasha, Jessica, Max
+Date of the current pre-proposal: 11/05/2020
+
+Preliminary description:
+  This is an online store modeled after ebay. Users can buy various items and also post things for sale. 
+
+
+SUB-PROJECTS (1. Description 2. Technical challenges 3. Who's responsible, tentatively):
+
+ - Setting up the "storefront" front end programming
+    1. Front end development, make sure the website looks appealing and easy to navigate
+    2. php and css used for the design  
+    3. Jessica
+
+ - Displaying items for sale
+    1. A table that lists the contents of the 'items' data file
+    2. JSON file will store the individual items, php will be used to get the contents and format them into the table 
+    3. Max
+
+ - User posts items for sale 
+    1. Users will upload data about their item and it will be added to the 'items' data file
+    2. A php form that adds an array about the item to the items JSON file, info includes picture, price, tags, description 
+    3. Sasha
+
+ - User sign up function 
+    1. Users create an account that allows them to add items to their cart and post items for sale 
+    2. A php form that adds the users data to the 'users' JSON file
+    3. Jessica
+
+ - Site administrator
+    1. An administrator that can delete contents from the 'users' and 'items' JSON files
+    2. technical aspects TBD
+    3. TBD
+    

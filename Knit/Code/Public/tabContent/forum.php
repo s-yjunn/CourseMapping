@@ -93,14 +93,18 @@
                 }
               echo "</table>";
 
-              //Response submission
-              echo "<div class='composeResponse'>
+              //Response submission (if user is logged in)
+              if (isset($_SESSION["username"])) {
+                echo "<div class='composeResponse'>
                 <h5>Your response</h5>
                 <textarea id = 'responseContent$postIndex' placeholder='Write your response here.'></textarea><br>
                 <button type='button' onclick='postResponse(" . $postIndex . ")'>Post</button>
                 <span id = 'responseStatus$postIndex'></span>
               </div>";
-            
+              //Otherwise, encourage them to log in
+              } else {
+                echo "<p>Log in or sign up and refresh the page to respond to this post!</p>";
+              }
             echo "</div>";
           echo "</div>";
         }

@@ -1,6 +1,6 @@
 <?php
 //This script adds a new forum post to the forum.json file
-$path = "../data/forum.json";
+$path = "../../data/forum.json";
 
 //get details for new post
 $postTitle = $_GET['postTitle'];
@@ -20,7 +20,4 @@ array_unshift($posts, $post);
 
 //And put the array back into the json file
 file_put_contents($path, json_encode($posts));
-
-//This doesn't get used anywhere yet but it will later
-echo "<p>\"$postTitle\" was added to the forum.</p>";
 ?>

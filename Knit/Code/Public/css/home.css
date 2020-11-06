@@ -79,7 +79,6 @@
 	line-height: 1.5;
 }
 .card button {
-	border: none;
 	outline: none;
 	cursor: pointer;
 	/* spacing */
@@ -159,4 +158,22 @@ input[type=text], input[type=password] {
     margin: auto;
     padding: 10px;
     background-color: white;
+}
+
+/*styling for forum up/downvoting buttons -- obviously feel free to change or scrap, they just looked hilariously bad with the normal button styling*/
+#Forum .vote button {
+	display: inline-block;
+	height: 2.5em;
+	width: 2.5em;
+	border-radius: 50%;
+	padding: 5px;
+}
+
+#Forum .vote { /* So the vote # and buttons line up */
+	text-align: center;
+}
+
+/*Attribution on posts and comments*/
+#Forum .author {
+	font-style: italic;
 }

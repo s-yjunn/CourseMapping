@@ -15,7 +15,7 @@
 <body>
     <!-- Navigation bar-->
     <div class="w3-top">
-        <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+        <div class="w3-bar w3-white w3-wide w3-padding">
             <a href="../General/index.php" class="w3-bar-item w3-button"><b>Bookstore</b>x<b>Merch</b></a>
             <!-- Float links to the right. Hide them on small screens -->
 

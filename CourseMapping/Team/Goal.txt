@@ -1,31 +1,81 @@
+Overview: ----------------------------------------------
+An visual and interactive overview of the connections between different courses in terms of requirements and building a major.
+A user can easily figure out how they are tracking for major requirements, and compare multiple majors. A user can also look at what other options their course preparation opens up for them. 
 
-Abilities: 
-Saves the user’s tabs automatically, with JSON on the server
+----------------------------------------------
+                  USER'S VIEW
+----------------------------------------------
+
+Details: ----------------------------------------------
+There would be a 4 column schedule for all 4 years and a checklist for each of the majors. When a major is checked off, a tree of all the major requirements appears. The user can drag one of the nodes from the tree to a column in the schedule. Clicking on a node will show possible courses that meet the requirement and allow the user to select one. There will be arrows between the nodes to represent prerequisites. A user cannot place the nodes so that a prerequisite comes after the class that needs it. 
+Double clicking on a specific course would allow the user to see all the other courses that have it as a prerequisite, and all the courses that it has as prerequisite.
+Can highlight the semester the user is registering for / lock semesters that are in the past. 
 The is always a button to make a new tab in the upper right corner 
-When a new tab is made, it is called “Untitled”
-Overall data on when a course is usually taken, and what most users take after a given course, etc.
+When a new tab is made, it is called “Untitled”. A tab has a pathway table to work with.
+
+Core Abilities: ----------------------------------------------
+   Saves the user’s tabs (probably automatically) with JSON on the server
+   Click and drag, but limited by placement of courses so that a prerequisite always comes before the course that requires it. 
+
+Potential Abilities: ----------------------------------------------
+   The specific placement in terms of what year is only strict for the current semester (so it can overlap between two years if placed that way). It does show the order they need to come in by restricting placement in that way.
+   Can highlight the courses the user is planning to register for, maybe have a Plan A and back-ups
+   Can click something to fade everything that is not relevant to a selected major
+   Provides overall data on when a course is usually taken, and what most users take after a given course, etc.
+
+
+----------------------------------------------
+                  SPECIFICS
+----------------------------------------------
 
 Homepage
-Directions to use, explanation of the site
-Links to Course Catalog and Course Search
-Button to create a tab and start building a pathway
-Login Tab
-Tab
+ Directions to use, explanation of the site
+ Links to Course Catalog and Course Search
+ Button to create a tab and start building a pathway
+ Login Tab
+ Tab
 
 Admin vs User:
-Admin:
-Add and remove majors and courses
-Change requirements / prerequisites
+    Admin:
+      Add and remove majors and courses
+     Change requirements / prerequisites
 
-User:
-Make Course Pathways
-Access Course Pathways 
+    User:
+     Make Course Pathways
+     Access Course Pathways 
 
 Server vs Client:
-Server:
-Data on courses and majors
-Gathered data on how people usually structure their schedules
-Saved user course pathways, and the versions of pathways that are auto-saved as the user works on them
+    Server:
+      Data on courses and majors
+      Gathered data on how people usually structure their schedules
+      Saved user course pathways, and the versions of pathways that are auto-saved as the user works on them
 
-Client:
-Course pathways being worked on. 
+    Client:
+      Course pathways being worked on. 
+
+
+----------------------------------------------
+           IMPLEMENTATION OVERVIEW
+----------------------------------------------
+
+Model:  ----------------------------------------------
+  The general information on courses and major requirements are stored in two JSON files. They are organized   as described in the following section. [Prototype Version Completed]
+
+  User created pathways are stored in JSON files on the server. 
+
+
+View:  ----------------------------------------------
+
+Controller:  ----------------------------------------------
+
+
+----------------------------------------------
+           IMPLEMENTATION SPECIFICS
+----------------------------------------------
+
+Data:
+        courses.json
+	  Main Object properties include a "meta" property with the date when it was last updated, and info on parsing the course information. Other properties are objects representing departments. The properties of the department objects are the courses in that department. Each course is an object with the following properties: "prereqs", "coreqs", "requiredFor", "suggestedFor", and "info". The first 4 are arrays of course ID strings. (Evey course object still has all the proprties even if they are empty.) The last one is an object with the credits of a course and it's title. 
+
+	majors.json
+	  Main Object properties include a "meta" property with the date when it was last updated, and info on parsing the major requirements information.  Other properties represent majors. Most majors are represented as arrays of requirments. Special cases like engineering are objects where one property is the main requirements, and the other property is a side requiremnet that is more complicated. Requirements are either course ID strings, or objects that describe ways to satissy the requirement. The "options" property describes the courses that can fill the requirement, it is an array of options or a string that describes options  in a computer parseable way. The options of the "options" property can also be objects or strings. The 'take' property describes how many courses to take to fill the requirement.

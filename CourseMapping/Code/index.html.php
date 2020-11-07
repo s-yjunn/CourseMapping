@@ -1,7 +1,14 @@
+<?php
+session_start();
+$_SESSION["username"] = "test";
+$_SESSION["loggedin"] = false;
+?>
+
 <!DOCTYPE html>
 <html lang>
 <head>
 <title>Course Mapping</title>
+<p>User: <?php echo $_SESSION["username"] ?></p>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel ="stylesheet" type ="text/css" href="css/homepageCSS.css"> 
 <link rel ="stylesheet" type ="text/css" href="css/tab.css"> 
@@ -35,6 +42,14 @@
     </div>
     <div id = 'Login' class = 'tabcontent' style = 'display: none;'>
         <h3>Login</h3>
+        <form action="php/login.php" method="post">
+            <label for="username"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="username" required>
+
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+        <button type="submit">Login</button>
+    </div>
     </div>
 </article>
 <script type = "text/javascript" src = "js/script.js"></script>

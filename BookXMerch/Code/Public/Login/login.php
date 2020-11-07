@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&family=Playfair+Display&display=swap">
     <link
         href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Assistant:wght@300&family=Indie+Flower&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="CSS/styles.css" id="styles">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Login</title>
 </head>
 
 <body>
@@ -44,17 +44,23 @@
             </div>
         </div>
     </div>
+    <!-- End Nav bar -->
 
-    <header class="w3-display-container w3-content w3-wide" style="max-width:1500px; background-color: white;"
-        id="home">
-        <img class="w3-image" src="styles/background.jpg" alt="smith" width="1500" height="800">
-        <div class="w3-display-middle w3-margin-top w3-center">
-            <h1 class="w3-xxlarge w3-text-white"><span class="w3-black w3-opacity-min" style="overflow:hidden"><b>Welcome to BookstorexMerch!
-                    </b></span>
-            </h1>
-        </div>
-    </header>
+    <div class="w3-center">
+        <h1>LOGIN PAGE</h1>
+    </div>
+
+
+   <form action="submit">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username"/>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password"/>
+
+        <input type="submit"/>
+   
+   </form>
 
 </body>
-
 </html>

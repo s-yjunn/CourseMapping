@@ -1,0 +1,35 @@
+{
+    "meta" : {"updated":"11-6-2020", "parsing":"When 'take' is a number, there should be the option to pick courses. When 'take' is a string, all the courses must be taken to satisfy the requirement. When 'options' is an array, it represents all the courses that can satisfy the requiremnt. When 'options' is a string it can be used to generate that list of courses from the data in courses.json. Here a preceeding + sign means any course with this number or higher. Most majors will be arrays. Special cases like EGR are objects."},
+
+    "EGR" : {
+        "major":[
+            {"options":["MTH 111", "MTH 112", "MTH 211", "MTH 264"], "take":2},
+            "MTH 212", 
+            "SDS 220",
+            "PHY 210",
+            "SDS 220",
+            {"options":["PHY 117", "PHY 119"], "take":1}, 
+            "CHM 111",
+            {"options":["PHY 118", "PHY 119", "CHM 118", "CHM 222", {"options":["BIO 130", "BIO 131"], "take":"all"}, {"options":["BIO 132", "BIO 133"], "take":"all"}], "take":1}, 
+            "CSC 111",
+            "EGR 100",
+            "EGR 110",
+            "EGR 220",
+            "EGR 270",
+            "EGR 290",
+            "EGR 374",
+            "EGR 410D",
+            {"options":["EGR 421D", "EGR 422D", "EGR 431D"], "take":1},
+            {"options":"+ EGR 300", "take":4},
+            {"options":"+ EGR 000", "take":1},
+        ],
+
+        "breadth":"(This part is not finished.) Latin Honors, OR Major/Minor in Division I or Division II, OR Submit Proposal"
+    },    
+    
+    "XXX" : [
+        "SDS 220",
+        "EGR 110",
+        "EGR 290"
+    ]
+}

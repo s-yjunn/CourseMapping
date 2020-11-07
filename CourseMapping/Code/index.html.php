@@ -21,10 +21,10 @@ $_SESSION["loggedin"] = false;
 <div class = 'tab'>
     <button class = "tablinks" onclick= "openTab(event, 'Main')">Main Page</button>
     <button class = "tablinks" onclick= "openTab(event, 'Saved')">Saved</button>
-    <button class = "tablinks" onclick= "openTab(event, '+')">+</button>
+    <button class = "tablinks" onclick= "newTab()">+</button>
     <button class = "tablinks" style = "float:right;" onclick= "openTab(event, 'Login')">Login</button>
 </div>
-<article>
+<article id = 'content'>
     <div id = 'Main' class = 'tabcontent' style = 'display: block;'>
         <h3>Home Page</h3>
         <p>Directions to use this website</p>
@@ -35,10 +35,6 @@ $_SESSION["loggedin"] = false;
     <div id = 'Saved' class = 'tabcontent' style = 'display: none;'>
         <h3>Saved</h3>
         <p>Users' input will be automatically imported and able to be open</p>
-    </div>
-    <div id = '+' class = 'tabcontent' style = 'display: none;'>
-        <h3>Untitled</h3>
-        <p>User can add a new tab and name the title</p>
     </div>
     <div id = 'Login' class = 'tabcontent' style = 'display: none;'>
         <h3>Login</h3>

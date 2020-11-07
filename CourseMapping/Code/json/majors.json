@@ -21,7 +21,7 @@
             "EGR 410D",
             {"options":["EGR 421D", "EGR 422D", "EGR 431D"], "take":1},
             {"options":"+ EGR 300", "take":4},
-            {"options":"+ EGR 000", "take":1},
+            {"options":"+ EGR 000", "take":1}
         ],
 
         "breadth":"(This part is not finished.) Latin Honors, OR Major/Minor in Division I or Division II, OR Submit Proposal"

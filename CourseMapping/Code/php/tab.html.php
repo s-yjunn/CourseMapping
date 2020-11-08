@@ -1,3 +1,10 @@
+<?php
+// The below should be in index.php
+    // session_start(); // Must come before any HTML tags.
+    // $_SESSION["tabsCreated"] = 0;
+// The above should be in index.php
+
+?>
 <!DOCTYPE html>
 <html>
 <body>

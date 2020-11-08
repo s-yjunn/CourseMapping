@@ -18,7 +18,7 @@ $_SESSION["loggedin"] = false;
     <h2>Course Mapping</h2>
 </header>
 
-<div class = 'tab'>
+<div class = 'tab' id="tab">
     <button class = "tablinks" onclick= "openTab(event, 'Main')">Main Page</button>
     <button class = "tablinks" onclick= "openTab(event, 'Saved')">Saved</button>
     <button class = "tablinks" onclick= "newTab()">+</button>

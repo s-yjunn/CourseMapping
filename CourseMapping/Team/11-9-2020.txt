@@ -1,1 +1,5 @@
 Finished majors.json for prototyping. Added a lot to courses.json.
+
+Added significant content to Goal.txt
+
+Added the ability to create new tabs.

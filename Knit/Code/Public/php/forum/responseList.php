@@ -20,7 +20,7 @@
     uasort($responses, function($a, $b) {
       $diff = $b["score"] - $a["score"];
       if ($diff) return $diff;
-      return $a["active"] - $b["active"];
+      return $a["posted"] - $b["posted"];
     });
   } else {
     echo "Something's wrong.";

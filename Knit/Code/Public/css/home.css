@@ -125,7 +125,7 @@ input[type=text], input[type=password] {
 }
 
 /*Forum stuff*/
-.forumPost {
+#forumPost {
     display: none;
 }
 
@@ -161,7 +161,7 @@ input[type=text], input[type=password] {
 }
 
 /*styling for forum up/downvoting buttons -- obviously feel free to change or scrap, they just looked hilariously bad with the normal button styling*/
-#Forum .vote button {
+#forumPost .vote button {
 	display: inline-block;
 	height: 2.5em;
 	width: 2.5em;
@@ -169,11 +169,12 @@ input[type=text], input[type=password] {
 	padding: 5px;
 }
 
-#Forum .vote { /* So the vote # and buttons line up */
+#forumPost .vote { /* So the vote # and buttons line up */
 	text-align: center;
+	vertical-align: top;
 }
 
 /*Attribution on posts and comments*/
-#Forum .author {
+#forumPost .author {
 	font-style: italic;
 }

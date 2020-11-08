@@ -1,28 +1,23 @@
 <?php
-  //Getting all the existing posts from our json file
-  $posts = json_decode(file_get_contents("data/forum.json"), true);
+  if (isset($_SESSION['username'])){
+    $showCompose = "\"show('composePost')\"";
+  } else {
+    $showCompose = "\"show('loginPlease')\"";
+  }
+
 ?>
 <div id="Forum" class="tabcontent">
 	<div class="card">
     <h3>Forum</h3>
     <!--This div is what the user sees when they first open the forum-->
     <div id="forumHome">
-      <button type="button" onclick="updateForum()">Refresh</button>
-      <?php
-        // if the user's logged in, show the compose button (this needs work -- rn you have to reload the page)
-        session_start();
-        if (isset($_SESSION["username"])) {
-          echo "<button type=\"button\" onclick=\"show('composePost')\">Write a post</button>";
-        //Otherwise, encourage them to log in
-        } else {
-          echo "<p>Log in or sign up and refresh the page to post in the forum!</p>";
-        }
-      ?>
+      <!--Button to write a post. Should open a composition div if the user is logged in, otherwise tell them to login.-->
+      <button type="button" onclick=<?=$showCompose; ?>>Write a post</button>
       
       <!--Status updates go here-->
       <span id = "forumStatus"></span>
 
-      <!--This div contains a form to compose a post. It should be hidden ordinarily and shown when the user hits the "make a new post" button-->
+      <!--This div contains a form to compose a post. It should be hidden ordinarily and shown when the user hits the "make a new post" button, unless they're not logged in-->
       <div class="dark" id="composePost">
         <div class="float">
           <h4>Compose post</h4>
@@ -34,81 +29,34 @@
         </div>
       </div>
 
-      <!--This is the forum "menu": a table of links to existing forum posts-->
-      <div id = "forumMenu">
+      <!--This is the forum "index": a table of links to existing forum posts-->
+      <div id = "forumIndex">
         <h4>All posts</h4>
-        <table>
-        <tr>
-          <!--We can get rid of these titles later, just for clarity now-->
-          <th>Post score </th>
-          <th>Responses</th>
-          <th>Title</th>
-          <th>Posted by</th>
-        </tr>
-          <?php
-            //Loop through the posts and get overview information and a "link" to each post
-            foreach ($posts as $key => $value) {
-              echo "<tr>
-                <td>" . $value["score"] . "</td>
-                <td>" . count($value["responses"]) .  "</td>
-                <td><a onclick=\"hide('forumHome'); show('post$key');\">" . $value["title"] . "</a></td>
-                <td>" . $value["author"] . "</td>
-              </tr>";
-            }
-          ?>
-        </table>
+        <!--Selector for how to sort posts-->
+        <form>
+          <label for="indexView">Sort by:</label>
+          <select id="indexView" onchange="sortForumIndex(this.value)">>
+            <option value="time">Newest first</option>
+            <option value="score">Highest ranked first</option>
+          </select>
+        </form>
+
+        <!--table of post stats and links to open them-->
+        <div id = "postList">
+          <?php include "php/forum/postList.php";?>
+        </div>
       </div>
     </div>      
 
-    <!--The following div contains the posts themselves, which should be hidden ordinarily and shown when a user clicks on the title of a post -->
-    <div id = "forumPosts">
-      <?php
-        //Loop through the posts and make a div for each of them
-        foreach ($posts as $key => $value) {
-          //The post itself
-          $postIndex = $key;
-          echo "<div id='post$postIndex' class='forumPost'>
-            <div class = 'mainPost'>
-              <p><a onclick=\"hide('post$key'); show('forumHome')\">Return to forum menu</a></p>
-              <h4>" . $value["title"] . "</h4>
-              <table>
-                <tr>
-                  <td class='vote'><button type='button' onclick=\"postVote('up', $postIndex)\">&#708;</button><br>" . $value["score"] . "<br><button type='button' onclick=\"postVote('down', $postIndex)\">&#709;</button></td>
-                  <td><p class = 'author'>" . $value["author"] . " said:</p>
-                    <p> " . $value["content"] . "</p></td>
-                </tr>
-              </table>
-            </div>";
+    <!--The following div will be filled by whatever forum post is called on-->
+    <div id = "forumPost"></div>
 
-            // Loop through any responses to the post and make a table entry for each one
-            echo "<div class='forumResponses'>
-              <h5>". count($value["responses"])." responses</h5>
-              <table>";
-                foreach($value["responses"] as $key => $value) {
-                  echo "<tr>
-                      <td class = 'vote'><button type='button' onclick=\"responseVote('up', $postIndex, $key)\">&#708;</button><br>" . $value["score"] . "<br><button type='button' onclick=\"responseVote('down', $postIndex, $key)\">&#709;</button></td>
-                      <td><p class = 'author'>" . $value["author"] . " said:</p>
-                        <p> " . $value["content"] . "</p></td>
-                    </tr>";
-                }
-              echo "</table>";
-
-              //Response submission (if user is logged in)
-              if (isset($_SESSION["username"])) {
-                echo "<div class='composeResponse'>
-                <h5>Your response</h5>
-                <textarea id = 'responseContent$postIndex' placeholder='Write your response here.'></textarea><br>
-                <button type='button' onclick='postResponse(" . $postIndex . ")'>Post</button>
-                <span id = 'responseStatus$postIndex'></span>
-              </div>";
-              //Otherwise, encourage them to log in
-              } else {
-                echo "<p>Log in or sign up and refresh the page to respond to this post!</p>";
-              }
-            echo "</div>";
-          echo "</div>";
-        }
-      ?>
+    <!--this div shows up when visitors try to post, respond, or vote without being logged in-->
+    <div class="dark" id="loginPlease">
+      <div class="float">
+        <p>Only registered users can post and vote in the forum. Sign up or log in to access these features!</p>
+        <button id="exit" onclick="hide('loginPlease')">Got it</button>
+      </div>
     </div>
 	</div>
 </div>

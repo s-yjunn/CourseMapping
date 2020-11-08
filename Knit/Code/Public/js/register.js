@@ -9,7 +9,10 @@ $(document).ready(function(){
 			url: "php/register.php",
 			data: dataString,
 	        success: function(result) {
-	            $('#regDiv').html(result);
+				$('#regDiv').html(result);
+				if (result = "<p>Registration successful.</p>") {
+					$("#Forum").load(location.href+" #Forum>*","");
+				}
 			}
 		});
 	});

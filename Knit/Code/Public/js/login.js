@@ -8,7 +8,10 @@ $(document).ready(function(){
 			url: "php/login.php",
 			data: dataString,
 	        success: function(result) {
-	            $('#loginDiv').html(result);					
+				$('#loginDiv').html(result);
+				if (result = "<p>Login successful.</p>") {
+					$("#Forum").load(location.href+" #Forum>*","");
+				}				
 			}
 		});
 	});

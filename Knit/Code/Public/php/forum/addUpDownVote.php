@@ -3,16 +3,12 @@
 $path = "../../data/forum.json";
 
 //get details for new vote
-$vote = $_GET['vote'];
-$type = $_GET['type'];
-$index = $_GET['index'];
+$vote = $_POST['vote'];
+$type = $_POST['type'];
+$index = $_POST['index'];
 
 // Get the collection of existing posts as an array 
 $posts = json_decode(file_get_contents($path), true);
-
-function compare($a, $b) {
-    return $b["score"] - $a["score"];
-}
 
 //Array path is slightly different for posts
 if ($type == "post") {
@@ -23,8 +19,6 @@ if ($type == "post") {
     } else {
         $posts[$index]["score"] -= 1;
     }
-    //Then sort all posts by score
-    uasort($posts, "compare");
 //Than for comments
 } else {
     $indexes = json_decode($index, true);
@@ -37,8 +31,6 @@ if ($type == "post") {
     } else {
         $posts[$postIndex]["responses"][$responseIndex]["score"] -= 1;
     }
-    //Then sort this post's comments by score
-    uasort($posts[$postIndex]["responses"], "compare");
 }
 
 //And put the larger array back into the json file

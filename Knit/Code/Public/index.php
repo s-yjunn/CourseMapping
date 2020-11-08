@@ -1,3 +1,8 @@
+<?php
+	//Start the session (so all pages can access session variables)
+	session_start();
+?>
+
 <html>
 <head>
 	<!-- stylesheets -->

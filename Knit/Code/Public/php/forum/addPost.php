@@ -15,7 +15,7 @@ $postTime = time();
 $posts = json_decode(file_get_contents($path), true);
 
 //Format the new post in the same way
-$post = ["title"=>$postTitle, "author"=>$postAuthor, "content"=>$postContent, "score"=>0, "time"=>$postTime, "responses"=>[]];
+$post = ["title"=>$postTitle, "author"=>$postAuthor, "content"=>$postContent, "score"=>0, "posted"=>$postTime, "active"=>$postTime, "responses"=>[]];
 
 //Add it to the end of the array
 array_push($posts, $post);

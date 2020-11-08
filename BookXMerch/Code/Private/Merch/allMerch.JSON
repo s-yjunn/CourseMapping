@@ -1,0 +1,58 @@
+[
+  {
+    "merchId": "0001",
+    "item": "shirt",
+    "inventory": 200,
+    "points": 25,
+    "pictureLink": "http://clipart-library.com/clipart/109933.htm"
+  },
+  {
+    "merchId": "0002",
+    "item": "hat",
+    "inventory": 200,
+    "points": 15,
+    "pictureLink": "http://clipart-library.com/clip-art/hat-clipart-transparent-1.htm"
+  },
+  {
+    "merchId": "0003",
+    "item": "scarf",
+    "inventory": 250,
+    "points": 15,
+    "pictureLink": "http://clipart-library.com/clipart/red-scarf-cliparts_17.htm"
+  },
+  {
+    "merchId": "0004",
+    "item": "socks",
+    "inventory": 150,
+    "points": 20,
+    "pictureLink": "http://clipart-library.com/clipart/872532.htm"
+  }
+  {
+    "merchId": "0005",
+    "item": "shirt",
+    "inventory": 200,
+    "points": 25,
+    "pictureLink": "http://clipart-library.com/clipart/109933.htm"
+  },
+  {
+    "merchId": "0006",
+    "item": "hat",
+    "inventory": 230,
+    "points": 15,
+    "pictureLink": "http://clipart-library.com/clip-art/hat-clipart-transparent-1.htm"
+  },
+  {
+    "merchId": "0007",
+    "item": "scarf",
+    "inventory": 250,
+    "points": 15,
+    "pictureLink": "http://clipart-library.com/clipart/red-scarf-cliparts_17.htm"
+  },
+  {
+    "merchId": "0008",
+    "item": "socks",
+    "inventory": 250,
+    "points": 20,
+    "pictureLink": "http://clipart-library.com/clipart/872532.htm"
+  }
+]

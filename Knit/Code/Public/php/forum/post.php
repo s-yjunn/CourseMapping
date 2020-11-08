@@ -10,7 +10,7 @@
   $responses = $post['responses'];
 
   //And save useful information about it
-  $posted = date('M j, Y \a\t h:i a', $post["posted"]);
+  $posted = date('M j, Y \a\t h:i a \(\U\T\C\)', $post["posted"]);
 
   //Set what do do when vote and postResponse buttons are clicked
   session_start();

@@ -41,7 +41,7 @@
       echo "<p>Nobody's responded to this post yet. Be the first!</p>";
     } else {
       foreach($responses as $key => $value) {
-        $posted = date('M j, Y \a\t h:i a', $value["posted"]);
+        $posted = date('M j, Y \a\t h:i a \(\U\T\C\)', $value["posted"]);
           echo "<tr>
               <td class = 'vote'><button type='button' onclick=\"responseVote('$logged', 'up', $postIndex, $key)\">&#708;</button><br>"
               . $value["score"] . "<br>

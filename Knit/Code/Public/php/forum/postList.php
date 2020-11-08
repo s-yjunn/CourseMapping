@@ -3,6 +3,7 @@
 
   //If this is being called from forum.js
   if (isset($_GET["sortBy"])) {
+    include "timeAgo.php";
     $sortMethod = $_GET["sortBy"];
     $posts = json_decode(file_get_contents("../../data/forum.json"), true);
   } else {
@@ -42,12 +43,12 @@
     <th>Responses</th>
     <th>Title</th>
     <th>Posted by</th>
-    <th>Last activity (UTC)</th>
+    <th>Last activity</th>
   </tr>
     <?php
     //Output the overview info for each post
     foreach ($postsUse as $key => $value) {
-      $postActive = date('M j, Y \a\t h:i a', $value["active"]);
+      $postActive = timeAgo($value["active"]);
       echo "<tr>
         <td>" . $value["score"] . "</td>
         <td>" . count($value["responses"]) .  "</td>

@@ -5,7 +5,7 @@
   } else {
     $showCompose = "\"show('loginPlease')\"";
   }
-
+  include "php/forum/timeAgo.php";
 ?>
 <div id="Forum" class="tabcontent">
 	<div class="card">

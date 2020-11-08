@@ -33,6 +33,13 @@ body {
     font-family: Poppins;
 }
 
+.imgButton:hover {
+    box-shadow: black 3px;
+    border-width: 3.5px;
+    border-radius: 1em;
+    border-color: black;
+  
+}
 
 /* W3 CSS - modified*/
 /* W3.CSS 4.13 June 2019 by Jan Egil and Borge Refsnes */

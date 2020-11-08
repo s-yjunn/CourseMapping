@@ -5,7 +5,7 @@
     $posts = json_decode(file_get_contents("../../data/forum.json"), true);
   } else {
     $posts = json_decode(file_get_contents("data/forum.json"), true);
-    $sortMethod = "time";
+    $sortMethod = "time"; // default
   }
 
   if ($sortMethod == "time") {
@@ -15,9 +15,11 @@
     uasort($postsUse, function($a, $b) {
         return $b["score"] - $a["score"];
     });
-  } else {
-    echo "Something's wrong.";
-    exit;
+  } else if ($sortMethod == "responses") {
+    $postsUse = $posts;
+    uasort($postsUse, function($a, $b) {
+      return count($a["responses"]) - count($b["responses"]);
+  });
   }
 ?>
 

@@ -33,7 +33,7 @@
 <table>
   <?php
     foreach($responses as $key => $value) {
-    $postDateTime = date('M j, Y \a\t h:i', $value["time"]);
+    $postDateTime = date('M j, Y \a\t h:i a', $value["time"]);
       echo "<tr>
           <td class = 'vote'><button type='button' onclick=\"responseVote('$logged', 'up', $postIndex, $key)\">&#708;</button><br>"
           . $value["score"] . "<br>

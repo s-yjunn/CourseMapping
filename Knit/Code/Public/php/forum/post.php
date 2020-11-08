@@ -40,7 +40,7 @@
 </div>
 
 <div id="postResponses">
-  <h5><?=count($responses); ?> response(s)</h5>
+  <h5>Responses</h5>
   <!--Selector for how to sort responses-->
   <form>
     <label for="responsesView">Sort by:</label>

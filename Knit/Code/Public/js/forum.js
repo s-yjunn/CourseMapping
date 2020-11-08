@@ -28,8 +28,7 @@ function postPost() {
         posting.done(
             function() {
                 //Update the forum index
-                sortIndexBy = document.getElementById('indexView').value;
-                sortForumIndex(sortIndexBy);
+                refreshForumIndex();
                 //Close the box
                 hide('composePost');
                 //Clear the composition area
@@ -58,12 +57,10 @@ function postResponse(loggedIn, postIndex) {
             posting.done(
                 function(){
                     //Update the response list
-                    sortResponsesBy = document.getElementById('responsesView').value;
-                    sortPostResponses(postIndex, sortResponsesBy);
+                    refreshResponses(postIndex);
 
                     //Update main page stats
-                    sortIndexBy = document.getElementById('indexView').value;
-                    sortForumIndex(sortIndexBy);
+                    refreshForumIndex();
                     //Clear the composition area
                     document.getElementById("responseContent").value = "";
                     document.getElementById("responseStatus").innerHTML = "";
@@ -86,8 +83,7 @@ function postVote(loggedIn, upOrDown, postIndex) {
             function(){
                 // Update the container post & the menu
                 $("#forumPost").load("php/forum/post.php?index=" + postIndex);
-                sortIndexBy = document.getElementById('indexView').value;
-                sortForumIndex(sortIndexBy);
+                refreshForumIndex();
             }
         )
     } else {
@@ -106,8 +102,7 @@ function responseVote(loggedIn, upOrDown, postIndex, responseIndex) {
         posting.done(
             function(){
                 //Update the response list
-                sortResponsesBy = document.getElementById('responsesView').value;
-                sortPostResponses(postIndex, sortResponsesBy);
+                refreshResponses(postIndex);
             }
         )
     } else {
@@ -120,7 +115,19 @@ function sortForumIndex(param) {
     $("#postList").load("php/forum/postList.php?sortBy=" + param);
 }
 
-//Same as above but with list of responses in a post
+//Similar to the above, but doesn't has to search for a parameter
+function refreshForumIndex(){
+    sortIndexBy = document.getElementById('indexView').value;
+    sortForumIndex(sortIndexBy);
+}
+
+//Sorts a post's responses by a parameter
 function sortPostResponses(postIndex, param) {
     $("#responseList").load("php/forum/responseList.php?index="+postIndex+"&sortBy=" + param);
+}
+
+//Similar to the above, but has to search for a parameter
+function refreshResponses(postIndex){
+    sortResponsesBy = document.getElementById('responsesView').value;
+    sortPostResponses(postIndex, sortResponsesBy);
 }

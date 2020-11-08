@@ -11,6 +11,7 @@
     <h3>Forum</h3>
     <!--This div is what the user sees when they first open the forum-->
     <div id="forumHome">
+      <button type="button" onclick="refreshForumIndex()">Refresh</button>
       <!--Button to write a post. Should open a composition div if the user is logged in, otherwise tell them to login.-->
       <button type="button" onclick=<?=$showCompose; ?>>Write a post</button>
       
@@ -38,6 +39,7 @@
           <select id="indexView" onchange="sortForumIndex(this.value)">>
             <option value="time">Newest first</option>
             <option value="score">Highest ranked first</option>
+            <option value="responses">Unanswered first</option>
           </select>
         </form>
 

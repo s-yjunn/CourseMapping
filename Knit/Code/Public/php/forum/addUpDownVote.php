@@ -1,5 +1,5 @@
 <?php
-//This script adds a new forum post to the forum.json file
+//This script adds a new vote to the post or response at the given index
 $path = "../../data/forum.json";
 
 //get details for new vote
@@ -19,7 +19,7 @@ if ($type == "post") {
     } else {
         $posts[$index]["score"] -= 1;
     }
-//Than for comments
+//than for comments
 } else {
     $indexes = json_decode($index, true);
     $postIndex = $indexes[0];
@@ -33,6 +33,6 @@ if ($type == "post") {
     }
 }
 
-//And put the larger array back into the json file
+//Put the larger array back into the json file
 file_put_contents($path, json_encode($posts));
 ?>

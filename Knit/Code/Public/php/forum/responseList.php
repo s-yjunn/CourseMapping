@@ -1,4 +1,5 @@
 <?php
+  //This file generates the list of responses to a given page. Requires a post index. Optionally takes a sorting parameter, otherwise sorts chronologically (newest first)
   //Default sort order is by score
   $sortMethod = "score";
 

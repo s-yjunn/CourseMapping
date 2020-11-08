@@ -115,7 +115,7 @@ function sortForumIndex(param) {
     $("#postList").load("php/forum/postList.php?sortBy=" + param);
 }
 
-//Similar to the above, but doesn't has to search for a parameter
+//Similar to the above, but has to search for a parameter
 function refreshForumIndex(){
     sortIndexBy = document.getElementById('indexView').value;
     sortForumIndex(sortIndexBy);

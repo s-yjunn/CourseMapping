@@ -19,9 +19,9 @@
   } else {
     $logged = "false";
   }
-
 ?>
 
+<!--The post itself-->
 <div id="mainPost">
   <p><a onclick="hide('forumPost'); show('forumHome')">Return to forum menu</a></p>
   <h4><?=$post["title"]; ?></h4>
@@ -39,6 +39,7 @@
   </table>
 </div>
 
+<!-- all stuff related to post responses-->
 <div id="postResponses">
   <h5>Responses</h5>
   <!--Selector for how to sort responses-->
@@ -50,17 +51,18 @@
     </select>
   </form>
 
-<!--existing responses go here-->
-<div id="responseList">
-  <?php
-    include "responseList.php";
-  ?>  
-</div>
+  <!--Existing responses-->
+  <div id="responseList">
+    <?php
+      include "responseList.php";
+    ?>  
+  </div>
 
-  <!--Form to write a response-->
-<div id="composeResponse">
-  <h5>Your response</h5>
-  <textarea id = 'responseContent' placeholder='Write your response here.'></textarea><br>
-  <button type='button' onclick="postResponse('<?=$logged; ?>', <?=$postIndex; ?>)">Post</button>
-  <span id = 'responseStatus'></span>
+  <!--Form to write a new response-->
+  <div id="composeResponse">
+    <h5>Your response</h5>
+    <textarea id = 'responseContent' placeholder='Write your response here.'></textarea><br>
+    <button type='button' onclick="postResponse('<?=$logged; ?>', <?=$postIndex; ?>)">Post</button>
+    <span id = 'responseStatus'></span>
+  </div>
 </div>

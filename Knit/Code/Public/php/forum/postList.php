@@ -1,4 +1,6 @@
 <?php
+  //This file generates the "index" of posts on the main forum page. Optionally takes a sorting parameter, otherwise sorts chronologically (newest first)
+
   //If this is being called from forum.js
   if (isset($_GET["sortBy"])) {
     $sortMethod = $_GET["sortBy"];

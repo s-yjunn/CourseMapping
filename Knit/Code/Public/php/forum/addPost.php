@@ -2,16 +2,13 @@
 //This script adds a new forum post to the forum.json file
 $path = "../../data/forum.json";
 
-//Setting timezone for timestamping
-date_default_timezone_set("America/Los_Angeles");
-
 //get details for new post
 $postTitle = $_POST['postTitle'];
 $postContent = $_POST['postContent'];
 //Including currently logged in user (has to be done in this file since ppl can change accounts after the main page loads)
 session_start();
 $postAuthor = $_SESSION["username"];
-//And current timestamp
+//And current timestamp (UTC)
 $postTime = time();
 
 // Get the collection of existing posts as an array 

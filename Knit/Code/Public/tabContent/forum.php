@@ -1,4 +1,5 @@
 <?php
+  //Establish which div to show when visitor clicks the "write a post" button
   if (isset($_SESSION['username'])){
     $showCompose = "\"show('composePost')\"";
   } else {
@@ -11,14 +12,12 @@
     <h3>Forum</h3>
     <!--This div is what the user sees when they first open the forum-->
     <div id="forumHome">
+      <!--reload button. Forum is also reloaded anytime the user adds a post or changes the sorting method-->
       <button type="button" onclick="refreshForumIndex()">Refresh</button>
-      <!--Button to write a post. Should open a composition div if the user is logged in, otherwise tell them to login.-->
+      <!--Button to write a post. Opens a composition div if the user is logged in, otherwise one that tells them to login.-->
       <button type="button" onclick=<?=$showCompose; ?>>Write a post</button>
       
-      <!--Status updates go here-->
-      <span id = "forumStatus"></span>
-
-      <!--This div contains a form to compose a post. It should be hidden ordinarily and shown when the user hits the "make a new post" button, unless they're not logged in-->
+      <!--This is the form to compose a post-->
       <div class="dark" id="composePost">
         <div class="float">
           <h4>Compose post</h4>
@@ -50,7 +49,7 @@
       </div>
     </div>      
 
-    <!--The following div will be filled by whatever forum post is called on-->
+    <!--This div is filled by "php/forum/post.php" whenever a post is called on-->
     <div id = "forumPost"></div>
 
     <!--this div shows up when visitors try to post, respond, or vote without being logged in-->

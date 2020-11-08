@@ -1,5 +1,5 @@
 <?php
-//This script adds a new forum post to the forum.json file
+//This script adds a new response to the post at the given index
 $path = "../../data/forum.json";
 
 //get details for new response
@@ -8,7 +8,7 @@ $responseContent = $_POST['responseContent'];
 //Including currently logged in user (has to be done in this file since ppl can change accounts after the main page loads)
 session_start();
 $responseAuthor = $_SESSION["username"];
-//And current timestamp
+//And current timestamp (UTC)
 $responseTime = time();
 
 // Get the collection of existing posts as an array 

@@ -15,10 +15,13 @@ $responseTime = time();
 $posts = json_decode(file_get_contents($path), true);
 
 //Format the new response to be pushed
-$response = ["author"=>$responseAuthor, "content"=>$responseContent, "score"=>0, "time"=>$responseTime];
+$response = ["author"=>$responseAuthor, "content"=>$responseContent, "score"=>0, "posted"=>$responseTime];
 
 //Add it to the response array of its parent post
 array_push($posts[$parentPostIndex]['responses'], $response);
+
+//Update the active time for its parent post
+$posts[$parentPostIndex]["active"] = $responseTime;
 
 //And put the larger array back into the json file
 file_put_contents($path, json_encode($posts));

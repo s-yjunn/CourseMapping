@@ -10,7 +10,7 @@
   $responses = $post['responses'];
 
   //And save useful information about it
-  $postDateTime = date('M j, Y \a\t h:i a', $post["time"]);
+  $posted = date('M j, Y \a\t h:i a', $post["posted"]);
 
   //Set what do do when vote and postResponse buttons are clicked
   session_start();
@@ -31,7 +31,7 @@
       <?=$post["score"]; ?><br>
       <button type='button' onclick="postVote('<?=$logged; ?>', 'down', <?=$postIndex; ?>)">&#709;</button></td>
       <td>
-        <p><?=$postDateTime; ?><br>
+        <p><?=$posted; ?><br>
         <span class = "author"><?=$post["author"]; ?> said:</span></p>
         <p><?=$post["content"]; ?></p>
       </td>
@@ -47,7 +47,7 @@
     <label for="responsesView">Sort by:</label>
     <select id="responsesView" onchange="sortPostResponses(<?=$postIndex; ?>, this.value)">>
       <option value="score">Highest ranked first</option>
-      <option value="time">Oldest first</option>
+      <option value="posted">Oldest first</option>
     </select>
   </form>
 

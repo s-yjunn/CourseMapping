@@ -7,21 +7,31 @@
     $posts = json_decode(file_get_contents("../../data/forum.json"), true);
   } else {
     $posts = json_decode(file_get_contents("data/forum.json"), true);
-    $sortMethod = "time"; // default
+    $sortMethod = "active"; // default
   }
 
-  if ($sortMethod == "time") {
-    $postsUse = array_reverse($posts, true); 
+  //Sotring by active time (most recently active on top)
+  if ($sortMethod == "active") {
+    $postsUse = $posts;
+    uasort($postsUse, function($a, $b) {
+      return $b["active"] - $a["active"];
+    });
+    //Sorting by score -- if posts have same score most recently active goes on top
   } else if ($sortMethod == "score") {
     $postsUse = $posts;
     uasort($postsUse, function($a, $b) {
-        return $b["score"] - $a["score"];
+      $diff = $b["score"] - $a["score"];
+      if ($diff) return $diff;
+      return $b["active"] - $a["active"];
     });
+    //Sorting by # of responses -- if posts have same most recently active goes on bottom
   } else if ($sortMethod == "responses") {
     $postsUse = $posts;
     uasort($postsUse, function($a, $b) {
-      return count($a["responses"]) - count($b["responses"]);
-  });
+      $diff = count($a["responses"]) - count($b["responses"]);
+      if ($diff) return $diff;
+      return $a["active"] - $b["active"];
+    });
   }
 ?>
 
@@ -32,18 +42,18 @@
     <th>Responses</th>
     <th>Title</th>
     <th>Posted by</th>
-    <th>Time (UTC)</th>
+    <th>Last activity (UTC)</th>
   </tr>
     <?php
     //Output the overview info for each post
     foreach ($postsUse as $key => $value) {
-      $postDateTime = date('M j, Y \a\t h:i a', $value["time"]);
+      $postActive = date('M j, Y \a\t h:i a', $value["active"]);
       echo "<tr>
         <td>" . $value["score"] . "</td>
         <td>" . count($value["responses"]) .  "</td>
         <td><a onclick=\"openPost($key)\">" . $value["title"] . "</a></td>
         <td>" . $value["author"] . "</td>
-        <td>$postDateTime</td>
+        <td>$postActive</td>
       </tr>";
     }
     ?>

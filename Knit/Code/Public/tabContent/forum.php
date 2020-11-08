@@ -36,7 +36,7 @@
         <form>
           <label for="indexView">Sort by:</label>
           <select id="indexView" onchange="sortForumIndex(this.value)">>
-            <option value="time">Newest first</option>
+            <option value="active">Recently active first</option>
             <option value="score">Highest ranked first</option>
             <option value="responses">Unanswered first</option>
           </select>

@@ -11,12 +11,16 @@
     $posts = json_decode(file_get_contents("../../data/forum.json"), true);
   }
 
-  if ($sortMethod == "time") {
+  //Simple chronological order
+  if ($sortMethod == "posted") {
     $responses = $posts[$postIndex]["responses"];
+  //Sort by score -- if posts have same score oldest goes on top
   } else if ($sortMethod == "score") {
     $responses = $posts[$postIndex]["responses"];
     uasort($responses, function($a, $b) {
-      return $b["score"] - $a["score"];
+      $diff = $b["score"] - $a["score"];
+      if ($diff) return $diff;
+      return $a["active"] - $b["active"];
     });
   } else {
     echo "Something's wrong.";
@@ -33,16 +37,20 @@
 
 <table>
   <?php
-    foreach($responses as $key => $value) {
-    $postDateTime = date('M j, Y \a\t h:i a', $value["time"]);
-      echo "<tr>
-          <td class = 'vote'><button type='button' onclick=\"responseVote('$logged', 'up', $postIndex, $key)\">&#708;</button><br>"
-          . $value["score"] . "<br>
-          <button type='button' onclick=\"responseVote('$logged', 'down', $postIndex, $key)\">&#709;</button></td>
-          <td><p>$postDateTime<br>
-            <span class = 'author'>" . $value["author"] . " said:</span>
-            <p> " . $value["content"] . "</p></td>
-        </tr>";
+    if (count($responses) == 0) {
+      echo "<p>Nobody's responded to this post yet. Be the first!</p>";
+    } else {
+      foreach($responses as $key => $value) {
+        $posted = date('M j, Y \a\t h:i a', $value["posted"]);
+          echo "<tr>
+              <td class = 'vote'><button type='button' onclick=\"responseVote('$logged', 'up', $postIndex, $key)\">&#708;</button><br>"
+              . $value["score"] . "<br>
+              <button type='button' onclick=\"responseVote('$logged', 'down', $postIndex, $key)\">&#709;</button></td>
+              <td><p>$posted<br>
+                <span class = 'author'>" . $value["author"] . " said:</span>
+                <p> " . $value["content"] . "</p></td>
+            </tr>";
+      }
     }
   ?>
 </table>

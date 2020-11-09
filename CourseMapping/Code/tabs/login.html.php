@@ -6,9 +6,6 @@
 
     <label for="password"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="password" required>
-
-    <label for="password"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" required>
     <button type="submit" class = "register">Register</button>
 </form>
 </div>

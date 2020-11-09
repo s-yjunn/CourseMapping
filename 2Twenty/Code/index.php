@@ -1,70 +1,28 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Test</title>
-        <link rel="stylesheet" href="css/bulma.css">
-        <link rel="stylesheet" href="css/twenty.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-        <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $(".navbar-burger").click(function() {
-                    $(".navbar-burger").toggleClass("is-active");
-                    $(".navbar-menu").toggleClass("is-active");
-                });
+    <?php 
+        include("vars/header.php");
+        include("vars/navbar.php");
+        include("src/featured.php");
 
-                $("#more").click(function() {
-                    $("body,html").animate({
-                        scrollTop: $("#body").offset().top
-                    }, 300);
-                });
-            });
-        </script>
-    </head>
+        $featured = (show_featured());
+    ?>
 
     <body>
 
-        <nav class="navbar is-white" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a class="navbar-item">
-                    <span class='twenty-title'>2Twenty</span>
-                </a>
-                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
-            </div>
-
-            <div class="navbar-menu">
-                <div class="navbar-end">
-                    <a class="navbar-item">Home</a>
-                    <a class="navbar-item">About</a>
-                    <div class="navbar-item">
-                        <div class="buttons">
-                            <a class="button is-primary is-rounded is-outlined"><b>Sign up</b></a>
-                            <a class="button is-danger is-rounded is-outlined">Log in</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-
-        <section class="hero is-primary is-fullheight is-bold">
+        <section class="hero is-fullheight" style="background:url(https://images.unsplash.com/photo-1558882423-eb0b4c979889?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80); background-size:cover; ">
             <div class="hero-body">
                 <div class="container">
-                    <h1 class="title">
-                        Welcome to <span class='twenty-title'>2Twenty</span> Marketplace!
-                    </h1>
-                    <h2 class="subtitle">
-                        Find things you love. Become an independent seller. All right here.
-                    </h2>
-                    <form class="field">
+                        <h1 class="title has-text-light">
+                            Welcome to <span class='twenty-title twenty-white'>2Twenty</span> Marketplace!
+                        </h1>
+                        <h2 class="subtitle has-text-light">
+                            Find things you love. Become an independent seller. All right here.
+                        </h2>
+                    <form class="field" action="search.php" method="GET" autocomplete="off">
                         <div class="control">
-                            <input class="input is-rounded" type="text" placeholder="Search for sellers and items">
+                            <input class="input is-rounded" type="text" name="desc" placeholder="Search for sellers and items">
                         </div>
                     </form>
                     <button class="button mt-4 is-rounded is-primary is-outlined is-inverted" id="more">
@@ -82,65 +40,38 @@
                 <h1 class="title">Featured Items</h1>
                 <h2 class="subtitle">Our top items, from our top sellers!</h2>
                 <div class="columns">
-                    <div class="column">
-                        <div class="card">
-                            <div class="card-image">
-                                <figure class="image"><img src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-product-2_large.png?format=jpg&quality=90&v=1530129318"></figure>
-                            </div>
-                            <div class="card-content">
-                                <div class="media">
-                                    <div class="media-content">
-                                        <p class="title is-4">Sample Shoes</p>
-                                        <p class="subtitle is-6">by @sampleshop</p>
+                    <?php 
+                        foreach($featured as &$item) {
+                            $title = $item[0][1];
+                            $image_url = $item[0][2];
+                            $seller = $item[0][5];
+
+                            echo('
+                            <div class="column is-4">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <figure class="image is-256x256"><img src="'.$image_url.'"></figure>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="media">
+                                            <div class="media-content">
+                                                <p class="title is-4">'.$title.'</p>
+                                                <p class="subtitle is-6">by @'.$seller.'</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="card">
-                            <div class="card-image">
-                                <figure class="image"><img src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-product-5_large.png?format=jpg&quality=90&v=1530129458"></figure>
-                            </div>
-                            <div class="card-content">
-                                <div class="media">
-                                    <div class="media-content">
-                                        <p class="title is-4">Sample Wrist Watch</p>
-                                        <p class="subtitle is-6">by @sampleshop</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="card">
-                            <div class="card-image">
-                                <figure class="image"><img src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-product-4_large.png?format=jpg&quality=90&v=1530129360"></figure>
-                            </div>
-                            <div class="card-content">
-                                <div class="media">
-                                    <div class="media-content">
-                                        <p class="title is-4">Sample Hat</p>
-                                        <p class="subtitle is-6">by @sampleshop</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                            ');
+                        }
+                    ?>
                 </div>
             </div>
         </section>
 
-        <footer class="footer">
-            <div class="content has-text-centered">
-                <p>
-                    <br/>
-                    <span class='twenty-title'>2Twenty Marketplace</span><br/>
-                    Powered by <a href="https://bulma.io"><img src="https://bulma.io/images/bulma-logo.png" width="56"></a> and a lot of ☕.<br/>
-                    The source code is licensed <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
-                </p>   
-            </div>
-        </footer>
+        <?php
+            include("vars/footer.php");
+        ?>
 
     </body>
 

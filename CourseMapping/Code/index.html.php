@@ -25,29 +25,13 @@ $_SESSION["loggedin"] = false;
 
 <article id = 'content'>
     <div id = 'Main' class = 'tabcontent' style = 'display: block;'>
-        <h2>Home Page</h2>
-        <p>Directions to use this website</p>
-        <p>Links to Course Catalog</p>
-        <p>Directions to use this website</p>
-        <!-- <//?php include "php/tab.html.php";?> -->
+        <?php include "tabs/main.html.php"?>
     </div>
     <div id = 'Saved' class = 'tabcontent' style = 'display: none;'>
-        <h2>Saved</h2>
-        <p>User: <?php echo $_SESSION["username"] ?></p>
-        <p>Users' input will be automatically imported and able to be open</p>
+        <?php include "tabs/saved.html.php"?>
     </div>
     <div id = 'Login' class = 'tabcontent' style = 'display: none;'>
-        <h2>Login</h2>
-        <div class="signin">
-        <form class = "signin-content" action="php/login.php" method="post">
-            <label for="username"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="username" required>
-
-            <label for="password"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="password" required>
-            <button type="submit" class = "login">Login</button>
-        </div>
-        </form>
+        <?php include "tabs/login.html.php"?>
     </div>
 </article>
 <script type = "text/javascript" src = "js/script.js"></script>

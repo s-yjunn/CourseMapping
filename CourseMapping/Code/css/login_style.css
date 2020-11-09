@@ -1,0 +1,49 @@
+input[type=text], input[type=password], input[type=email], input[type=number]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  }
+  
+#Register button{
+  background-color: greenyellow;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  }
+
+  
+#Register button:hover {
+opacity: 0.8;
+}
+
+.login{
+background-color: limegreen;
+padding: 14px 20px;
+margin: 8px 0;
+border: none;
+cursor: pointer;
+width: 100%;
+}
+
+.login:hover {
+opacity: 0.8;
+}
+
+.signin-content {
+width: 30%; /* Could be more or less, depending on screen size */
+}
+
+.signin {
+position: relative; 
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+}
+
+.container {
+padding: 16px;
+}

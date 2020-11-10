@@ -1,0 +1,28 @@
+{
+    "users": [
+        {
+            "name": "Nukhbah Majid",
+            "email": "nmajid@smith.edu",
+            "type": "admin",
+            "password": "adminuser"
+        },
+        {
+            "name": "Imane Berrada",
+            "email": "iberrada@smith.edu",
+            "type": "admin",
+            "password": "adminuser"
+        },
+        {
+            "name": "Mariem Snoussi",
+            "email": "msnoussi@smith.edu",
+            "type": "admin",
+            "password": "adminuser"
+        },
+        {
+            "name": "User 1",
+            "email": "user1@gmail.com",
+            "type": "user", 
+            "password": "user1"
+        }
+    ]
+}

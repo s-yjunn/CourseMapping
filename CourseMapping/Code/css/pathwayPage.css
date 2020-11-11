@@ -1,0 +1,47 @@
+/* Style the pathway table */
+.pathTable {
+  border-collapse: collapse;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+}
+
+.pathTable td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  width: 25%;
+}
+
+.pathTable tr:nth-child(odd) {
+  background-color: #3148ad;
+  color: #ebebeb;
+}
+
+.pathTable tr:nth-child(even) {
+  height: 300px;
+}
+
+/* Style movable course element */
+.courseBlock {
+  position: absolute;
+  cursor: move;
+  z-index: 100;
+  background-color: #cbcffa;
+  text-align: center;
+  border: 1px solid #868686;
+  width: 100px;
+  height: 70px;
+  top: 100px;
+  left: 100px;
+}
+
+svg {
+  width: 1000;
+  height: 1000;
+}
+
+line {
+  stroke: rgb(51, 50, 116);
+}

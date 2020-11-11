@@ -8,13 +8,12 @@
         href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Assistant:wght@300&family=Indie+Flower&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="styles/styles.css">
-    <title>Login</title>
+    <link rel="stylesheet" href="../General/styles/styles.css">
+    <title>Sign Up</title>
 </head>
-
 <body>
-    <!-- Navigation bar-->
-    <div class="w3-top">
+     <!-- Navigation bar-->
+     <div class="w3-top">
         <div class="w3-bar w3-white w3-wide w3-padding w3-card">
             <a href="../index.php" class="w3-bar-item w3-button"><b>Bookstore</b>x<b>Merch</b></a>
             <!-- Float links to the right. Hide them on small screens -->
@@ -47,20 +46,26 @@
     <!-- End Nav bar -->
 
     <div class="w3-center">
-        <h1>LOGIN PAGE</h1>
+        <h1>SIGN UP PAGE</h1>
+    </div>
+
+    <div class="signup-form-form">
+        <form action="php/signup.inc.php" id="signupForm" method="post">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="text" name="email" placeholder="Email" required>
+            <input type="password" name="pwd" placeholder="Password" required>
+            <input type="password" name="pwdrepeat" placeholder="Re-type Password" required>
+            <button type="submit" name="submit" id="signupSubmit">Sign Up</button>
+        </form>
     </div>
 
 
-   <form action="php/login.inc.php" id="loginForm" method="post">
-        <input type="text" name="email" placeholder="Email" required>
-        <input type="password" name="pwd" placeholder="Password" required>
-        <button type="submit" name="submit" id="loginSubmit">Log In</button>
-   </form>
+    <div class="signupAck">
+    
+    
+    </div>
 
-   <div class="loginAck">
-   
-   </div>
-
-   <script src="js/source.js"></script>
+    <script src="js/source.js"></script>
+    
 </body>
 </html>

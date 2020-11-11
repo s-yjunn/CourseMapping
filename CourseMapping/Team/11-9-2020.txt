@@ -3,3 +3,7 @@ Finished majors.json for prototyping. Added a lot to courses.json.
 Added significant content to Goal.txt
 
 Added the ability to create new tabs.
+
+Added the register/login feature(users' info will be saved in users.json)
+	:Now users cannot access to some features if they are not logged in
+	

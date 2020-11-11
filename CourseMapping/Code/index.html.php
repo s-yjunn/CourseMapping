@@ -1,9 +1,3 @@
-<?php
-session_start();
-$_SESSION["username"] = "test";
-$_SESSION["loggedin"] = false;
-?>
-
 <!DOCTYPE html>
 <html lang>
 <head>
@@ -14,14 +8,21 @@ $_SESSION["loggedin"] = false;
 <link rel ="stylesheet" type ="text/css" href="css/login_style.css"> 
 </head>
 <body>
+<?php
+   session_start();
+?>
+
+<h4>
+<?php include 'php/userinfo.php';?>
+</h4>
+
 <div class = 'tab' id="tab">
     <button id = "logo">Course Mapping</button>
-    <button class = "tablinks" onclick= "openTab(event, 'Main')">MAIN PAGE</button>
-    <button class = "tablinks" onclick= "openTab(event, 'Saved')">SAVED</button>
-    <button class = "tablinks" onclick= "newTab()">+</button>
-    <button class = "tablinks" style = "float:right;" onclick= "openTab(event, 'Login')">LOGIN</button>
+    <button class = "tablinks active" onclick= "openTab(event, 'Main')">MAIN PAGE</button>
+    <button class = "tablinks" onclick= "openTab(event, 'Saved')" <?php include 'php/logintabs.php';?>>SAVED</button>
+    <button class = "tablinks" onclick= "newTab()" <?php include 'php/logintabs.php';?>>+</button>
+    <button class = "tablinks" <?php include 'php/logouttabs.php';?>onclick= "openTab(event, 'Login')">LOGIN</button>
 </div>
-
 
 <article id = 'content'>
     <div id = 'Main' class = 'tabcontent' style = 'display: block;'>

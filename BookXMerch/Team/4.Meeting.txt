@@ -1,0 +1,29 @@
+CSC 220: Meeting for Next Deliverables
+11/07/2020
+
+
+Next Steps:
+By the end of Monday/Tuesday morning:
+Mariem
+Nukhbah
+Imane
+Make some files (have the original JSON files and their structure): 
+for Users (Nukhbah), Books (Imane), Merch (Mariem) 
+Mariem : Merch, Community forum posts data sets.  11/07/2020
+Nukhbah: Implement Log in / Sign up for User and Admin (inside User json, have a user status for user and admin): TODO Nukhbah  - 11/07/2020
+Nukhbah: Direct to corresponding collections page : 
+Imane: Initial Book Collection, post-login page with Book collection
+Imane: Design Genre Icons 
+
+By Thursday: 
+Merch can be bought by points: 
+User initially gets 20 points. 
+Additional 10 points for each book uploaded
+Additional 5 points for each review written
+
+
+Merch - JSON file including name, type, size, image, availability, price (points)
+About Us (Info on How to navigate the website)
+Post-login page: 
+User JSON:  username, password, avatar, address, books uploaded, purchases, reviews, comments on forum
+Skeleton for User page

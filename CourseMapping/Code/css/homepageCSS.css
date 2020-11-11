@@ -9,7 +9,7 @@ body {
   font-family: "Playfair Display", serif;
   background-size: cover;
   width: 330px;
-  background-color: rgb(9, 22, 53);
+  background-color: rgb(26, 44, 87);
   font-style: italic;
   font-size: xx-large;
   color:white;
@@ -25,7 +25,7 @@ h2 {
 .tab {
   overflow: hidden;
   border: 1px solid #ccc;
-  background-color: rgb(42, 68, 131);
+  background-color: rgb(32, 124, 177);
 }
 
 /* Style the buttons inside the tab */

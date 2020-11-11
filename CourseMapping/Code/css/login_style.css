@@ -7,22 +7,18 @@ input[type=text], input[type=password], input[type=email], input[type=number]{
   box-sizing: border-box;
   }
   
-#Register button{
-  background-color: greenyellow;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  }
-
-  
-#Register button:hover {
-opacity: 0.8;
+#register{
+  float: left;
+  width: 50%;
 }
 
-.login{
-background-color: limegreen;
+#signin{
+  float: right;
+  width: 50%;
+}
+
+.register, .login{
+background-color: rgb(13, 130,102);
 padding: 14px 20px;
 margin: 8px 0;
 border: none;
@@ -30,20 +26,16 @@ cursor: pointer;
 width: 100%;
 }
 
-.login:hover {
+.register:hover, .login:hover {
 opacity: 0.8;
 }
 
-.signin-content {
-width: 30%; /* Could be more or less, depending on screen size */
+.register-content, .signin-content {
+width: 80%; /* Could be more or less, depending on screen size */
 }
 
-.signin {
+.register, .signin {
 position: relative; 
 width: 100%; /* Full width */
 height: 100%; /* Full height */
-}
-
-.container {
-padding: 16px;
 }

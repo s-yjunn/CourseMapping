@@ -1,0 +1,7 @@
+Title: The Knitty Gritty
+Team: Alexis, Bethany, Isabel
+Date: 11/2/2020
+
+This week we: wrote our project proposal, figured out a preliminary folder organization, got our first files on git, and created a prototype of our project's front page, including dynamic tabbing, stubs of each tab, and functional css.
+
+Problems we encountered were primarily with git -- pushing and handling merging on pull.

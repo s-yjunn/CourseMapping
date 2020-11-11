@@ -1,12 +1,12 @@
 Title: The Knitty Gritty
 Team: Alexis, Bethany, Isabel
-Date: 11/2/2020
-
-This week we: wrote our project proposal, figured out a preliminary folder organization, got our first files on git, and created a prototype of our project's front page, including dynamic tabbing, stubs of each tab, and functional css.
-
-Problems we encountered were primarily with git -- pushing and handling merging on pull.
-
 Date: 11/5/20
 
-This week we: created a functional forum, login page, and registration page, began the pattern maker page, and almost finished the code for the slideshow on the "winners" and "vote" pages.
+DONE
+    - Alexis: login and registration, early styling
+    - Isabel: preliminary forum functionality (posting, post index)
+    - Bethany: started slideshows on the "winners" and "vote" pages.
 
+TO DO
+    - Establish what our main data will be
+    - Debug competition pages

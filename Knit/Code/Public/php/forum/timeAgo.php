@@ -38,7 +38,7 @@ function timeAgo($time) {
     // Check for days 
     else if($days < 7) { 
         if($days == 1) { 
-            return "Yesterday"; 
+            return "A day ago"; 
         } 
         else { 
             return "$days days ago"; 

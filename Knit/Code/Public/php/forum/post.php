@@ -7,7 +7,6 @@
   //Get the proper post
   $postIndex = $_GET['index'];
   $post = $posts[$postIndex];
-  $responses = $post['responses'];
 
   //And save useful information about it
   $posted = date('M j, Y \a\t h:iA', $post["posted"]);

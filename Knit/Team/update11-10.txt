@@ -1,0 +1,13 @@
+Title: The Knitty Gritty
+Team: Alexis, Bethany, Isabel
+Date: 11/10/20
+
+DONE
+    - Team: discussed data structures for competition and pattern creator
+    - Alexis: styling and reconfiguring of forum
+    - Isabel: bulk of forum functionality (comments, post and comment sorting, restricted to logged in users)
+    - Bethany: competition submission, json for competition
+
+TO DO for next time
+    - Debug competition submission
+    - Debug login/registration (no longer working after last update)

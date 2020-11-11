@@ -1,36 +1,43 @@
 <div id="Vote" class="tabcontent">
-<div class="slideshow-container">
-	<div class="card">
+<div class="card">
 	  <h3>Vote for your favorite design, or submit your own!</h3>
-	  <?php
- $contestants = glob('images/contestants/*'); 
-$numPics = count($contestants);
+    <?php
+ $contest = glob('images/contest/*'); 
+$numPics = count($contest);
 if($numPics == 0){
-    echo '<p>There are currently no submissions! Come back later, or submit a design of your own!</p>';    
+    echo '<p>There are currently no submissions! Please come back later for updates.</p>';    
     }
     else{
-        for ($i = 0; $i < $numPics; $i++){
-    echo '<div class="mySlides fade">',
-    '<div class="numbertext">'.($i + 1 ). ' / ' . $numPics .'</div>',
-    '<img src="'.$contestants[$i].'" style="width:100%">';
-        }
-    }
-?> 
-</div>
-</div>
-<?php
-$contestants = glob('images/contestants/*');
-$numPics = count($contestants);
-if($numPics > 0){
-echo '<a class="prev" onclick="plusSlides(-1)">&#10094;</a>',
-'<a class="next" onclick="plusSlides(1)">&#10095;</a>',
-'<div style="text-align:center">';
+      echo '<br>',
+      '<table style="width:100%">',
+        '<tr>',
+          '<th>Pattern</th> ',
+          '<th>Description</th>',
+        '</tr>';
 
-for ($i = 1; $i <= $numPics; $i++){
-echo '<span class="dot" onclick="currentSlide('.$i.')"></span> ';
+        $subs = file_get_contents("../json/contestSubs/submissions.json");
+        $currentData = json_decode($subs, true);
+
+        for($i = 0; $i < $numPics; $i++){
+
+          $image = $currentData[$i][1];
+          $description = $currentData[$i][2];
+      
+          echo'<tr>',
+          '<td>'.$image.'</td>',
+          '<td>'.$description.'</td>',
+          '</tr>';
   }
+  
+  echo '</table>';
+
 }
 ?>
-  </div>
-
-<script src="js/slides.js"></script>
+<br><br><br><br>
+<form action="php/upload.php" method="post" enctype="multipart/form-data">
+  Select your files. Please upload one text file and one image: <br>
+  <input  type="file" name="fileToUpload[]" id="fileToUpload" multiple="multiple" />
+  <input type="submit" value="Upload File" name="submit">
+</form>
+</div>
+</div>

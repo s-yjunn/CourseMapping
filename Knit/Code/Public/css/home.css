@@ -70,6 +70,7 @@
 .card {
 	margin: 50px 100px;
 	padding: 40px;
+	border-radius: 0.4rem;
 }
 .card h3 {
 	font-family: 'Poppin', sans-serif;
@@ -93,10 +94,12 @@
 	/* border */
 	border-radius: 8px;
 	border: 2px solid rgb(228,86,53);
+	/* transition */
+	transition: color 0.2s, background-color 0.2s;
 }
 .card button:hover {
-	color: black;
-	border-color: black;
+	color: white;
+	background-color: rgb(228,86,53);
 }
 
 /* form */
@@ -122,59 +125,4 @@ input[type=text], input[type=password] {
 		padding: 0;
 		margin: 50px 50px;
 	}
-}
-
-/*Forum stuff*/
-#forumPost {
-    display: none;
-}
-
-#Forum a {
-    text-decoration: underline;
-}
-
-#Forum td, #Forum th {
-    text-align: left;
-    padding: 5px 10px;
-}
-
-/*background to make modal divs "float"*/
-.dark {
-    display: none; /* Hidden by default */
-    position: fixed;
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-color: hsla(0, 0%, 23%, 0.8);
-    padding-top: 30px;
-}
-
-/*modals to float over some 'dark' div*/
-.float {
-    width: 50%;
-    margin: auto;
-    padding: 10px;
-    background-color: white;
-}
-
-/*styling for forum up/downvoting buttons -- obviously feel free to change or scrap, they just looked hilariously bad with the normal button styling*/
-#forumPost .vote button {
-	display: inline-block;
-	height: 2.5em;
-	width: 2.5em;
-	border-radius: 50%;
-	padding: 5px;
-}
-
-#forumPost .vote { /* So the vote # and buttons line up */
-	text-align: center;
-	vertical-align: top;
-}
-
-/*Attribution on posts and comments*/
-#forumPost .author {
-	font-style: italic;
 }

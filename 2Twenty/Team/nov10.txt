@@ -1,0 +1,13 @@
+UPDATE: Nov. 10, 2020
+
+What we have accomplished:
+    - Search function works: items displayed based on tags, title, description and seller, sorts by relevance regarding keyword searched for. Next possible steps: sort by price.
+        This code was uploaded to bitbucket on Nov. 10
+    - Created an Excel Sheet with sample items
+    - Data file
+
+Next steps:
+    - Sign up and login functions
+    - Personal user page: where a user could perhaps sell items, view past orders, etc.
+    - "Add to cart" function
+    - Administrative site: Administrator will be able to delete users/items

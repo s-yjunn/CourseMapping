@@ -36,7 +36,7 @@
   }
 ?>
 
-<table>
+<table class="table">
   <tr>
     <!--We can get rid of these titles later, just for clarity now-->
     <th>Post score </th>

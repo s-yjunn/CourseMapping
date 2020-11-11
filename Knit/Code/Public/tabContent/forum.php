@@ -13,9 +13,9 @@
     <!--This div is what the user sees when they first open the forum-->
     <div id="forumHome">
       <!--reload button. Forum is also reloaded anytime the user adds a post or changes the sorting method-->
-      <button type="button" onclick="refreshForumIndex()">Refresh</button>
+      <button type="button" onclick="refreshForumIndex()"><i class="fas fa-redo-alt"></i> Refresh</button>
       <!--Button to write a post. Opens a composition div if the user is logged in, otherwise one that tells them to login.-->
-      <button type="button" onclick=<?=$showCompose; ?>>Write a post</button>
+      <button type="button" onclick=<?=$showCompose; ?>><i class="fas fa-user-edit"></i> Write a post</button>
       
       <!--This is the form to compose a post-->
       <div class="dark" id="composePost">
@@ -30,20 +30,20 @@
       </div>
 
       <!--This is the forum "index": a table of links to existing forum posts-->
-      <div id = "forumIndex">
+      <div id="forumIndex">
         <h4>All posts</h4>
         <!--Selector for how to sort posts-->
         <form>
           <label for="indexView">Sort by:</label>
           <select id="indexView" onchange="sortForumIndex(this.value)">>
-            <option value="active">Recently active first</option>
-            <option value="score">Highest ranked first</option>
-            <option value="responses">Unanswered first</option>
+            <option value="active">Activity</option>
+            <option value="score">Score</option>
+            <option value="responses">Responses</option>
           </select>
         </form>
 
         <!--table of post stats and links to open them-->
-        <div id = "postList">
+        <div id="postList">
           <?php include "php/forum/postList.php";?>
         </div>
       </div>
@@ -54,12 +54,15 @@
 
     <!--this div shows up when visitors try to post, respond, or vote without being logged in-->
     <div class="dark" id="loginPlease">
-      <div class="float">
-        <p>Only registered users can post and vote in the forum. Sign up or log in to access these features!</p>
-        <button id="exit" onclick="hide('loginPlease')">Got it</button>
+	    <div class="float">
+	        <p>Only registered users can post and vote in the forum. Sign up or log in to access these features!</p>
+		<div class="text-center">
+	        <button id="exit" onclick="hide('loginPlease')">Got it</button>
+		</div>
       </div>
     </div>
-	</div>
+	
+</div>
 </div>
 
 <script src="js/forum.js"></script>

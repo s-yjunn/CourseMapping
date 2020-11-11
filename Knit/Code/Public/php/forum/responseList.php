@@ -38,18 +38,25 @@
 <table>
   <?php
     if (count($responses) == 0) {
-      echo "<p>Nobody's responded to this post yet. Be the first!</p>";
+      echo "<p class='alert alert-light' role='alert'>Nobody's responded to this post yet. Be the first!</p>";
     } else {
+		echo "<form>
+    <label for='responsesView'>Sort by: </label>
+    <select id='responsesView' onchange='sortPostResponses(<?=$postIndex; ?>, this.value)'>>
+      <option value='score'>Highest ranked first</option>
+      <option value='posted'>Oldest first</option>
+    </select>
+  </form>";
       foreach($responses as $key => $value) {
-        $posted = date('M j, Y \a\t h:i a \(\U\T\C\)', $value["posted"]);
-          echo "<tr>
-              <td class = 'vote'><button type='button' onclick=\"responseVote('$logged', 'up', $postIndex, $key)\">&#708;</button><br>"
-              . $value["score"] . "<br>
-              <button type='button' onclick=\"responseVote('$logged', 'down', $postIndex, $key)\">&#709;</button></td>
-              <td><p>$posted<br>
-                <span class = 'author'>" . $value["author"] . " said:</span>
-                <p> " . $value["content"] . "</p></td>
-            </tr>";
+        $posted = date('M j, Y \a\t h:iA', $value["posted"]);
+        echo "<tr class='response'>
+			<td class='vote'><button type='button' onclick=\"responseVote('$logged', 'up', $postIndex, $key)\"><i class='fas fa-plus fa-xs'></i></button><br>"
+			. $value["score"] . "<br>
+			<button type='button' onclick=\"responseVote('$logged', 'down', $postIndex, $key)\"><i class='fas fa-minus fa-xs'></i></button></td>
+			<td><p><span class='author'>" . $value["author"] . "</span><br>
+			<span class='timestamp'>$posted</span></p>
+			<p class='postContent'> " . $value["content"] . "</p></td>
+        </tr>";
       }
     }
   ?>

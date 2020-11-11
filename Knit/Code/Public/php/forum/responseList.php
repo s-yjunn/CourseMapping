@@ -40,13 +40,6 @@
     if (count($responses) == 0) {
       echo "<p class='alert alert-light' role='alert'>Nobody's responded to this post yet. Be the first!</p>";
     } else {
-		echo "<form>
-    <label for='responsesView'>Sort by: </label>
-    <select id='responsesView' onchange='sortPostResponses(<?=$postIndex; ?>, this.value)'>>
-      <option value='score'>Highest ranked first</option>
-      <option value='posted'>Oldest first</option>
-    </select>
-  </form>";
       foreach($responses as $key => $value) {
         $posted = date('M j, Y \a\t h:iA', $value["posted"]);
         echo "<tr class='response'>

@@ -44,8 +44,15 @@
 <!-- all stuff related to post responses-->
 <div id="postResponses">
   <h5>Responses</h5>
-  <!-- Selector for sorting responses has been moved to responseList.php to appear only when there are responses -->
-
+  <!-- selector for how to sort responses -->
+	<form>
+	    <label for='responsesView'>Sort by: </label>
+	    <select id='responsesView' onchange='sortPostResponses(<?=$postIndex; ?>, this.value)'>>
+	      <option value='score'>Highest ranked first</option>
+	      <option value='posted'>Oldest first</option>
+	    </select>
+	  </form>
+  
   <!--Existing responses-->
   <div id="responseList">
     <?php

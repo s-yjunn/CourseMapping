@@ -4,9 +4,6 @@ var tabpath = "php/tab.html.php";
 sessionStorage["tabsCreated"] = "0"; // sessionStorage always stored data as text, even if given an int
 
 function openTab(evt, tabName) {
-  // Declare all variables
-  var i, tabcontent, tablinks;
-
   unselectTabs(); // Reverts the appearence of the current tab, and hides it's content.
 
   // Show the current tab, and add an "active" class to the button that opened the tab
@@ -31,6 +28,9 @@ function newTab() {
 
 // Hides the content of all the tabs to hide the one that is currently showing, and removes the class active from all the tabs for styling purposes. 
 function unselectTabs() {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
   // Get all elements with class="tabcontent" and hide them
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
@@ -49,9 +49,11 @@ function unselectTabs() {
 function newTabLink(tabID) {
   var tabLink = document.createElement("button");
   tabLink.className = "tablinks active";
-  tabLink.onclick = "openTab(event, " + tabID + ")";
-  tabLink.innerHTML = "Untitled";
-  document.getElementById("tab").appendChild(tabLink);
+  tabLink.onclick = function(){openTab(event, tabID)};
+  tabLink.innerHTML = "Untitled_" + tabID;
+  var tabBar = document.getElementById("tab");
+  var plusTabIndex = tabBar.children.length - 2; // The Login and + come last
+  tabBar.insertBefore(tabLink, tabBar.children[plusTabIndex]); // Insert the new tab before the plus tab.
 }
 
 // Creates a new tabcontent div containing the interactive pathway orgainzer

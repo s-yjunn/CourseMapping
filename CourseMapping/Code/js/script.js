@@ -12,6 +12,10 @@ function openTab(evt, tabName) {
 }
 
 function newTab() {
+  if(sessionStorage["tabsCreated"] == 5) { 
+    alert("You have reached the maximum number of pathway tabs (5).")
+    return
+  }
   // sessionStorage always stored data as text, even if given an int
   sessionStorage["tabsCreated"] = parseInt(sessionStorage["tabsCreated"]) + 1; 
 

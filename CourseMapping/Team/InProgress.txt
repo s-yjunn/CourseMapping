@@ -1,8 +1,7 @@
-Allison is working on the JSON data for courses
-Hyana is working on the HTML and CSS for the site
-Olivia is working on the login ability
-Yujun is working on how to drag obect with the mouse.
-
+Allison - Work on saving pathway data and tabs for refreshing, and what to send to the server when the user saves
+Hyana - Admin page(double-checking)
+Yujun - Continue working on implementing dragging
+Olivia - CSS for register and Login
 
 
 

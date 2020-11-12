@@ -45,10 +45,27 @@
     </div>
     <!-- End Nav bar -->
 
+<br>
+
+<br>
+
+<br>
     <div class="w3-center">
         <h1>SIGN UP PAGE</h1>
     </div>
 
+    <header class="w3-display-container w3-content w3-wide" style="max-width:1500px; background-color: white;"
+        id="home">
+        <img class="w3-image" src="../General/styles/login.png" alt="signup" width="1500" height="800">
+        <div class="w3-display-middle w3-margin-top w3-center">
+            <h1 class="w3-xxlarge w3-text-white"><span class="w3-black w3-opacity-min" style="overflow:hidden"><b>
+                    </b></span>
+            </h1>
+        </div>
+    </header>
+
+<br>
+<div class="w3-center">
     <div class="signup-form-form">
         <form action="php/signup.inc.php" id="signupForm" method="post">
             <input type="text" name="name" placeholder="Full Name" required>
@@ -58,6 +75,8 @@
             <button type="submit" name="submit" id="signupSubmit">Sign Up</button>
         </form>
     </div>
+</div>
+
 
 
     <div class="signupAck">

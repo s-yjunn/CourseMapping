@@ -2,26 +2,28 @@
 <div class="card">
 	  <h3>Vote for your favorite design, or submit your own!</h3>
     <?php
- $contest = glob('images/contest/*'); 
-$numPics = count($contest);
-if($numPics == 0){
-    echo '<p>There are currently no submissions! Please come back later for updates.</p>';    
+
+//moved & modified by Isabel -- array of entries accepted for voting is now the value of "contestants" in the json contest file
+$comp = file_get_contents("data/contest.json");
+$compData = json_decode($comp, true);
+$currentData = $compData["contestants"];
+$numCont = count($currentData);
+
+if($numCont == 0){
+    echo '<p>There are currently no contest entries! Please come back later for updates.</p>';    
     }
     else{
       echo '<br>',
       '<table style="width:100%">',
         '<tr>',
-          '<th>Pattern</th> ',
-          '<th>Description</th>',
+          '<th>Image</th> ',
+          '<th>Instructions</th>',
         '</tr>';
 
-        $subs = file_get_contents("../json/contestSubs/submissions.json");
-        $currentData = json_decode($subs, true);
-
-        for($i = 0; $i < $numPics; $i++){
-
-          $image = $currentData[$i][1];
-          $description = $currentData[$i][2];
+        for($i = 0; $i < count($currentData); $i++){
+          // I think this is what you were going for? ~Isabel
+          $image = "<img width=50% src=contest/" . $currentData[$i]["image"] . ">";
+          $description = file_get_contents("contest/" . $currentData[$i]["text"]); // Tried to adjust from json changes ~Isabel
       
           echo'<tr>',
           '<td>'.$image.'</td>',

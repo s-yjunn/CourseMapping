@@ -7,7 +7,7 @@ function fOpenRequest($url) {
   return $data;
 }
 
-$target_dir = "../images/contest/";
+$target_dir = "../contest/"; //modified by Isabel
 if(!is_dir($target_dir)){
   mkdir($target_dir);
 }
@@ -34,11 +34,11 @@ $fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
 if($fileType == 'txt') {
   $file = "../temp/" . basename($filename);
-  if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"][$i], $file)) {
+  if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"][$i], $target_file)) { //$file => $target_file ~Isabel
 
-    $desc = file_get_contents("../temp/" . basename($filename));
+    $desc = $target_file; // Modified by Isabel to match json structure
 
-    unlink($file);
+    unlink($file); // Getting a "no file exists" error from this line ~Isabel
 
     $txtPresent = true;
 
@@ -73,21 +73,23 @@ else{
 if($txtPresent && $imgPresent){
 
 $newData = array();
+    //Modified by Isabel to match json structure
     $newSub = array(
-      "username"   => "Anonymous",
-      "image" => $image,
-      "description" => $desc
+      "author"   => "Anonymous", // We have a session variable now so you can get the name of whoever's logged in
+      "image" => basename($image), // Modified bc should be just the filename (no path) here
+      "text" => basename($desc) // Same ^^ here
     );
     
-    $subs = file_get_contents("../json/contestSubs/submissions.json");
+    //modified by Isabel -- array of submissions to be reviewed by admin is now the value of "submissions" in the json comp file
+    //What you had as $currentData is now $compData["submissions"]
+    $comp = file_get_contents("../data/contest.json");
+    $compData = json_decode($comp, true);
 
-    $currentData = json_decode($subs, true);
+    array_push($compData["submissions"],$newSub);
 
-    array_push($currentData,$newSub);
+    $jsondata = json_encode($compData, true);
 
-    $jsondata = json_encode($currentData, true);
-
-    file_put_contents("../json/contestSubs/submissions.json", $jsondata);
+    file_put_contents("../data/contest.json", $jsondata);
 
     echo '<script language="javascript">',
      'alert("Your submission has been uploaded.");',

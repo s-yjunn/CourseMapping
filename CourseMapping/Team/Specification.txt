@@ -1,0 +1,20 @@
+VIEW: ---------------------------------------------
+
+
+CONTROLLER: ---------------------------------------------
+
+
+MODEL: ---------------------------------------------
+
+     The general information on courses and major requirements are stored in two JSON files. They are organized as described below:
+
+     courses.json
+          Main Object properties include a "meta" property with the date when it was last updated, and info on parsing the course information. Other properties are objects representing departments. The properties of the department objects are the courses in that department. Each course is an object with the following properties: "prereqs", "coreqs", "requiredFor", "suggestedFor", and "info". The first 4 are arrays of course ID strings. (Every course object still has all the properties even if they are empty.) The last one is an object with the credits of a course and its title. 
+
+     majors.json
+          Main Object properties include a "meta" property with the date when it was last updated, and info on parsing the major requirements information.  Other properties represent majors. Most majors are represented as arrays of requirements. Special cases like engineering are objects where one property is the main requirements, and the other property is a side requirement that is more complicated. Requirements are either course ID strings, or objects that describe ways to satisfy the requirement. The "options" property describes the courses that can fill the requirement, it is an array of options or a string that describes options  in a computer parse-able way. The options of the "options" property can also be objects or strings. The 'take' property describes how many courses to take to fill the requirement.
+
+     users.json
+
+User created pathways are stored in JSON files on the server.
+

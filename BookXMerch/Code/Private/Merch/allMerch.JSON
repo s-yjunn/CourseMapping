@@ -1,58 +1,82 @@
 [
   {
     "merchId": "0001",
-    "item": "shirt",
+    "category": "Clothing",
+	"item": "Disney Shirt",
     "inventory": 200,
     "points": 25,
     "pictureLink": "http://clipart-library.com/clipart/109933.htm"
   },
   {
     "merchId": "0002",
-    "item": "hat",
+	"category": "Clothing"
+    "item": "BxM hat",
     "inventory": 200,
     "points": 15,
     "pictureLink": "http://clipart-library.com/clip-art/hat-clipart-transparent-1.htm"
   },
   {
     "merchId": "0003",
-    "item": "scarf",
+	"category": "Clothing"
+    "item": "BxM Scarf",
     "inventory": 250,
     "points": 15,
     "pictureLink": "http://clipart-library.com/clipart/red-scarf-cliparts_17.htm"
   },
   {
     "merchId": "0004",
-    "item": "socks",
+	"category": "Clothing"
+    "item": "BxM Socks",
     "inventory": 150,
     "points": 20,
     "pictureLink": "http://clipart-library.com/clipart/872532.htm"
   }
   {
     "merchId": "0005",
-    "item": "shirt",
+	"category": "Clothing"
+    "item": "BxM Shirt",
     "inventory": 200,
     "points": 25,
     "pictureLink": "http://clipart-library.com/clipart/109933.htm"
   },
   {
     "merchId": "0006",
-    "item": "hat",
+	"category": "Clothing"
+    "item": "HP Hat",
     "inventory": 230,
     "points": 15,
     "pictureLink": "http://clipart-library.com/clip-art/hat-clipart-transparent-1.htm"
   },
   {
     "merchId": "0007",
-    "item": "scarf",
+	"category": "Clothing"
+    "item": "HP Scarf",
     "inventory": 250,
     "points": 15,
     "pictureLink": "http://clipart-library.com/clipart/red-scarf-cliparts_17.htm"
   },
   {
     "merchId": "0008",
-    "item": "socks",
+	"category": "Clothing"
+    "item": "HP Socks",
     "inventory": 250,
     "points": 20,
     "pictureLink": "http://clipart-library.com/clipart/872532.htm"
+  },
+  {
+    "merchId": "0009",
+	"category": "Collectibles"
+    "item": "BxM Coffee Mug",
+    "inventory": 250,
+    "points": 20,
+    "pictureLink": "http://clipart-library.com/clipart/872533.htm"
+  },
+  {
+    "merchId": "0010",
+	"category": "Collectibles"
+    "item": "HP Coffee Mug",
+    "inventory": 200,
+    "points": 20,
+    "pictureLink": "http://clipart-library.com/clipart/872534.htm"
   }
 ]

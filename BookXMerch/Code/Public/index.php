@@ -14,7 +14,7 @@
         href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Assistant:wght@300&family=Indie+Flower&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="CSS/styles.css" id="styles">
+    <!---- <link rel="stylesheet" href="CSS/styles.css" id="styles" ---->
 </head>
 
 <body>
@@ -29,7 +29,7 @@
             </div>
 
             <div class="w3-right w3-hide-small">
-                <a href="#" class="w3-bar-item w3-button">Merch</a>
+                <a href="Merch/collection.php" class="w3-bar-item w3-button">Merch</a>
             </div>
 
             <div class="w3-right w3-hide-small">

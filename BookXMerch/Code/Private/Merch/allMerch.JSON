@@ -9,7 +9,7 @@
   },
   {
     "merchId": "0002",
-	"category": "Clothing"
+	"category": "Clothing",
     "item": "BxM hat",
     "inventory": 200,
     "points": 15,
@@ -17,7 +17,7 @@
   },
   {
     "merchId": "0003",
-	"category": "Clothing"
+	"category": "Clothing",
     "item": "BxM Scarf",
     "inventory": 250,
     "points": 15,
@@ -25,7 +25,7 @@
   },
   {
     "merchId": "0004",
-	"category": "Clothing"
+	"category": "Clothing",
     "item": "BxM Socks",
     "inventory": 150,
     "points": 20,
@@ -33,7 +33,7 @@
   }
   {
     "merchId": "0005",
-	"category": "Clothing"
+	"category": "Clothing",
     "item": "BxM Shirt",
     "inventory": 200,
     "points": 25,
@@ -41,7 +41,7 @@
   },
   {
     "merchId": "0006",
-	"category": "Clothing"
+	"category": "Clothing",
     "item": "HP Hat",
     "inventory": 230,
     "points": 15,
@@ -49,7 +49,7 @@
   },
   {
     "merchId": "0007",
-	"category": "Clothing"
+	"category": "Clothing",
     "item": "HP Scarf",
     "inventory": 250,
     "points": 15,
@@ -57,7 +57,7 @@
   },
   {
     "merchId": "0008",
-	"category": "Clothing"
+	"category": "Clothing",
     "item": "HP Socks",
     "inventory": 250,
     "points": 20,
@@ -65,7 +65,7 @@
   },
   {
     "merchId": "0009",
-	"category": "Collectibles"
+	"category": "Collectibles",
     "item": "BxM Coffee Mug",
     "inventory": 250,
     "points": 20,
@@ -73,7 +73,7 @@
   },
   {
     "merchId": "0010",
-	"category": "Collectibles"
+	"category": "Collectibles",
     "item": "HP Coffee Mug",
     "inventory": 200,
     "points": 20,

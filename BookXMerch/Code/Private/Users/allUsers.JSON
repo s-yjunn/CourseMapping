@@ -21,8 +21,14 @@
         {
             "name": "User 1",
             "email": "user1@gmail.com",
-            "type": "user", 
+            "type": "user",
             "password": "user1"
+        },
+        {
+            "name": "Imane",
+            "email": "blabla@gmail.com",
+            "type": "user",
+            "password": "cs220"
         }
     ]
 }

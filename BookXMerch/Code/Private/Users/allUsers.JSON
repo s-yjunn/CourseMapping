@@ -29,6 +29,12 @@
             "email": "blabla@gmail.com",
             "type": "user",
             "password": "cs220"
+        },
+        {
+            "name": "New User",
+            "email": "imaaneberrada@gmail.com",
+            "type": "user",
+            "password": "books"
         }
     ]
 }

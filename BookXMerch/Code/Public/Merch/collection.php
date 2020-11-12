@@ -39,9 +39,9 @@
   <div id="original"> 
     <div class="wrapper">
 
-      <div id="Colthing"> <button class="imgButton" onclick="getMerchByCategory('Clothing')"><img class="imageClass"  src="Images/clothing.jpeg" alt="bm"></button></div>
-      <div id="Collectibles"> <button class="imgButton" onclick="getMerchByCategory('Collectibles')"> <img class="imageClass" src="Images/collectibles.jpeg" alt="bm"></button></div>
-      <div id="Other"> <button class="imgButton" onclick="getMerchByCategory('Other'))"><img class="imageClass" src="Images/other.jpeg" alt="bm"></button></div>
+      <div id="Colthing"> <button class="imgButton" onclick="getMerchByCategory('Clothing')"><img class="imageClass"  src="Images/shirt.png" alt="bm"></button></div>
+      <div id="Collectibles"> <button class="imgButton" onclick="getMerchByCategory('Collectibles')"> <img class="imageClass" src="Images/mug.png" alt="bm"></button></div>
+      <div id="Other"> <button class="imgButton" onclick="getMerchByCategory('Other'))"><img class="imageClass" src="Images/notebook.png" alt="bm"></button></div>
     </div>
   </div>
 

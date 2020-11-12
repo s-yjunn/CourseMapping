@@ -25,6 +25,8 @@ function newTab() {
   newTabLink(sessionStorage["tabsCreated"]);
   // Creates a new tabcontent div containing the interactive pathway orgainzer
   newPathway(sessionStorage["tabsCreated"]);
+  // // Update the max-width based on the number of tab
+  // updateCSS()
 }
 
 

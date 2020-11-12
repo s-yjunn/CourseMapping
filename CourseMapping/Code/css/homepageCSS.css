@@ -26,16 +26,17 @@ h2 {
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: rgb(32, 124, 177);
+  height: 80px;
 }
 
 /* Style the buttons inside the tab */
 .tab button {
+  overflow: hidden;
   background-color: inherit;
   float: left;
   border: none;
   outline: none;
-  height: 80px;
-  /* max-width: 20%; */
+  height: inherit;
   cursor: pointer;
   padding: 16px 20px;
   transition: 0.3s;

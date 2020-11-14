@@ -1,9 +1,13 @@
 <?php
-if(isset($_SESSION['username'])){
+if(isset($_SESSION['username']) && ($_SESSION['username']!= 'admin')){
     echo $_SESSION['username']. " is a current user!";
     echo "<form action = 'php/logout.php'>
     <button>LOG OUT</button></form>";
-    } else {
+} else if($_SESSION['username']== 'admin'){
+    echo "You are an admin!";
+    echo "<form action = 'php/logout.php'>
+    <button>LOG OUT</button></form>";
+} else {
     echo "You are a guest! If you want to see more features, please login!";
-    }
+}
 ?>

@@ -1,9 +1,3 @@
-<html>
-<body>
-
-Username: <?php echo $_POST['username'];?>  <br> 
-Password: <?php echo $_POST['password'];?><br>
-
 <?php
 
 $id = $_POST['username'];
@@ -24,6 +18,12 @@ for($i=0; $i<count($temp_json['users']); $i++) {
     }
 }
 
+if($id == 'admin'){
+    echo '<script type = "text/javascript">
+    alert("You cannot register with this username! Please try other usernames");
+    window.location.href="../index.html.php";
+    </script>';
+}
 
 if($available == 1){
     $new_data = array('id'=>$id, 'pw'=>$pw);
@@ -41,6 +41,3 @@ if($available == 1){
 
 file_put_contents($file, json_encode($temp_json));
 ?>
-
-</body>
-</html>

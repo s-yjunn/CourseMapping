@@ -23,7 +23,7 @@
     <img class="imageClass" src="Images/b&m.png" alt="bm">
 
     <div class="newFont">
-      <button class="barCol buttonClass" onclick="showCollection()" style="width: 200px; font-family"><b>Bookstore</b>x<b>Merch</b></button>
+      <button class="barCol buttonClass" onclick="showCollection()" style="width: 200px; font-family"><b>Full B</b>x<b>M Collection</b></button>
       <button class="barCol buttonClass" onclick="getBookByGenre('comics')">Comic Books</button>
       <button class="barCol buttonClass" onclick="getBookByGenre('children')">Children's Books</button>
       <button class="barCol buttonClass" onclick="getBookByGenre('sci-fi')">Science Fiction</button>
@@ -32,9 +32,9 @@
       <button class="barCol buttonClass" onclick="getBookByGenre('debut-novel')">Debut Novel</button>
       <button class="barCol buttonClass" onclick="getBookByGenre('horror')">Horror</button>
       <button class="barCol buttonClass" onclick="getBookByGenre('romance')">Romance</button>
+  
     </div>
   </div>
-
 
   <div id="books" class="center">
     <div id="wrapper" class="wrapper">
@@ -52,8 +52,10 @@
       <div id="debut-novel"> <button class="imgButton" onclick="getBookByGenre('debut-novel')"><img class="imageClass" src="Images/debutnovel.png" alt="bm"></button></div>
       <div id="horror"> <button class="imgButton" onclick="getBookByGenre('horror')"><img class="imageClass" src="Images/horror.png" alt="bm"></button></div>
       <div id="romance"> <button class="imgButton" onclick="getBookByGenre('romance')"><img class="imageClass" src="Images/romance.png" alt="bm"></button></div>
+      
     </div>
   </div>
+
 
 </body>
 

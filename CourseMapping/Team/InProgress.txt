@@ -1,5 +1,7 @@
 Allison - Work on saving pathway data and tabs for refreshing, and what to send to the server when the user saves
-Hyana - Admin page(double-checking)
+Hyana - Admin page
+		Added admin feature(using same login page with users; special id and password to access admin page)
+		Trying to visualize JSON file into HTML Table/dropdown using XML but having troubles. will try it again in the future using ajax/jquery
 Yujun - Continue working on implementing dragging
 Olivia - CSS for register and Login
 

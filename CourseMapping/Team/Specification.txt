@@ -25,6 +25,9 @@ MODEL: ---------------------------------------------
 
      users.json
 
+Each user has data for each of their saved pathways,
+And maybe a list of the majors they are already looking at so that major requirements data can be sent from the server as one instead of having to send an individual request everytime it realizes a major's info is needed?
+
 ----- User created pathways are stored in JSON files on the server, and also as stringified Javascript objects on the client (in sessionStorage).
 
      The string stored in sessionStorage is very similar to the what is in the JSON file on the server. The below description covers what is the same for both. Making it more similar makes saving the data and showing it once sent from the server more efficient / easier.

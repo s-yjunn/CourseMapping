@@ -6,7 +6,7 @@ CONTROLLER: ---------------------------------------------
 
 MODEL: ---------------------------------------------
 
-     The general information on courses and major requirements are stored in two JSON files. They are organized as described below:
+----- The general information on courses and major requirements are stored in two JSON files. They are organized as described below:
 
      courses.json
           Main Object properties include a "meta" property with the date when it was last updated, and info on parsing the course information. Other properties are objects representing departments. The properties of the department objects are the courses in that department. Each course is an object with the following properties: "prereqs", "coreqs", "requiredFor", "suggestedFor", and "info". The first 4 are arrays of course ID strings. (Every course object still has all the properties even if they are empty.) The last one is an object with the credits of a course and its title. 
@@ -21,8 +21,20 @@ MODEL: ---------------------------------------------
               The "options" property describes the courses that can fill the requirement, it is an array of options or a string that describes options in a computer parse-able way. The options of the "options" property can also be objects or strings. 
               The 'take' property describes how many courses to take to fill the requirement. When the "take" property contains a number, the user-side visualization should contain that many separate nodes for this requirement. In this case, the requirement object will also have a "name" property. Each of the nodes specified by this requirement can use that name until the user chooses a specific course from the "options" property. If "take" is a string, that string will be "all", and the requirement is filled by taking both at the same time.
 
+----- User data is stored in this JSON file:  
 
      users.json
 
-User created pathways are stored in JSON files on the server.
+----- User created pathways are stored in JSON files on the server, and also as stringified Javascript objects on the client (in sessionStorage).
+
+     The string stored in sessionStorage is very similar to the what is in the JSON file on the server. The below description covers what is the same for both. Making it more similar makes saving the data and showing it once sent from the server more efficient / easier.
+
+     pathway.json 
+          currently contains only what is described in the below description.
+
+          The Main object contains a property for each of the 8 semesters. These semester objects each have a "locked" property and a "nodes" property.
+            "locked" can be true or false, and indicates whether the semester is in the past, and the courses it contains are locked, or whether registration is still in the future and the courses it contains can be moved around. If "locked" is true, the x-position of it's courses are automatically what centers the course in the column. The x-position is therefore uncessary, so locking a course should remove it. Also, locking a semester should add all of the courses it contains into some container that keeps track of all the courses the user has taken to help with reccomendations.
+            "nodes" is object with properties that represent requirements/courses. Each property key is the selected course to fill the requirement, or some id for the case when the user hasn't chosen a course yet. (For the 2 course requirements, it can look like "BIO 130 + BIO 131") This makes it easy for the code to check if a course is already on the pathway when the user wants to choose another. The value an object with a "location" property, and a "type" property. 
+               "location" can be a string representing the y position as a percent of the column's extent, or an array with the x, then y positions as strings with the percent. A percent is better than a value in px, because that compensates for window resizing, and is a more general thing to save on the server. Although the upcoming semester is not locked, it should still only have a string for the y-postion, because a course can either be taken that semester or not. It can't be overlaping like the plan for the far off future.
+               "type" is a string. It can either be "singular", or an id for one of the "multi" option requirements. This references majors.json. If the course is in a locked column, the type is still important in case the user wants to undo the lock. It would be hard to recover.
 

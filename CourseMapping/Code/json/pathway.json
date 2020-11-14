@@ -1,0 +1,48 @@
+{
+    "sem_1" : {
+        "locked" : true,
+        "nodes" : {}
+    },
+    
+    "sem_2" : {
+        "locked" : true,
+        "nodes" : {
+            "CSC 111" : {"location":"0%", "type":"singular"},
+            "EGR 110" : {"location":"25%", "type":"singular"}
+        }
+    },
+    
+    "sem_3" : {
+        "locked" : true,
+        "nodes" : {}
+    },
+    
+    "sem_4" : {
+        "locked" : false,
+        "nodes" : {
+            "SDS 220" : {"location":"50%", "type":"singular"}
+        }
+    },
+    
+    "sem_5" : {
+        "locked" : false,
+        "nodes" : {
+            "EGR 290" : {"location":["20%", "75%"], "type":"singular"}
+        }
+    },
+    
+    "sem_6" : {
+        "locked" : false,
+        "nodes" : {}
+    },
+    
+    "sem_7" : {
+        "locked" : false,
+        "nodes" : {}
+    },
+    
+    "sem_8" : {
+        "locked" : false,
+        "nodes" : {}
+    }
+}

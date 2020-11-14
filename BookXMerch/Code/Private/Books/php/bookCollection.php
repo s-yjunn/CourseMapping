@@ -18,10 +18,11 @@ foreach ($booksArray as $key => $jsons) {
 $i = 0;
 foreach ($byGenre as $newArray) {
   $i ++;
-  echo "<ul> ";
-  echo "<h1>". "Book " . $i . "</h1> <p>" . $newArray[0] ."</p>";
+  echo "<ul>";
+  echo "<h1> <button onclick='displayContent(".$i.")' id='book".$i."'> Book " . $i . "</button></h1><p>" . $newArray[0] ."</p>";
 
   //AUTHORS
+  echo "<div id='".$i."' style='display:none'>";
   echo "<p>". "AUTHOR(S): ";
   for($j=0; $j<sizeof($newArray[1]); $j++) {
       if($j != (sizeof($newArray[1]) - 1)) {
@@ -75,5 +76,8 @@ foreach ($byGenre as $newArray) {
   echo "</ul>";
   echo "<br>";
 }
+echo "</div>";
 
 ?>
+
+

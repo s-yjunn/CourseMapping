@@ -13,17 +13,19 @@
 
 
   <link rel="stylesheet" href="CSS/styles.css">
+  <link rel="stylesheet" href="CSS/bookshelf.css"> 
 </head>
 
 <body>
 
-  <script src="JS/script.js"> </script>
+  <script src="JS/script2.js"> </script>
 
   <div class="sidebar viewBar white viewCard" style="width: 200px">
     <img class="imageClass" src="Images/b&m.png" alt="bm">
 
     <div class="newFont">
       <button class="barCol buttonClass" onclick="showCollection()" style="width: 200px; font-family"><b>Full B</b>x<b>M Collection</b></button>
+      <button class="barCol buttonClass" onclick="booksOfMonth()" style="width: 200px; font-family">Book of the Month</button>
       <button class="barCol buttonClass" onclick="getBookByGenre('comics')">Comic Books</button>
       <button class="barCol buttonClass" onclick="getBookByGenre('children')">Children's Books</button>
       <button class="barCol buttonClass" onclick="getBookByGenre('sci-fi')">Science Fiction</button>
@@ -36,8 +38,8 @@
     </div>
   </div>
 
-  <div id="books" class="center">
-    <div id="wrapper" class="wrapper">
+  <div id="books" class="margin-left: 240px">
+    <div id="wrapper">
     </div>
   </div>
 
@@ -55,6 +57,23 @@
       
     </div>
   </div>
+
+
+  <div id="booksOfMonth" style="display:none"> 
+  <br>
+  <br>
+    <dl class="bookshelf wrapper">
+
+        <dt class="dontmakemethink"><span> The Space Between Worlds</span></dt>
+        <dd class="dontmakemethink"><a class="amazonLink" href=""><img src="CSS/img/book-front.jpg" alt="alt"></a><br>
+        <strong>The Space Between Worlds</strong> by Micaiah Johnson.<br>
+        <br><br><br><br><br>
+
+        <a class="publisherLink" href="https://www.goodreads.com/book/show/48848254-the-space-between-worlds">Read me!</a></dd>
+      </dl>
+  </div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="JS/bookshelf.js"></script>
 
 
 </body>

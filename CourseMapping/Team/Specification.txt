@@ -12,7 +12,15 @@ MODEL: ---------------------------------------------
           Main Object properties include a "meta" property with the date when it was last updated, and info on parsing the course information. Other properties are objects representing departments. The properties of the department objects are the courses in that department. Each course is an object with the following properties: "prereqs", "coreqs", "requiredFor", "suggestedFor", and "info". The first 4 are arrays of course ID strings. (Every course object still has all the properties even if they are empty.) The last one is an object with the credits of a course and its title. 
 
      majors.json
-          Main Object properties include a "meta" property with the date when it was last updated, and info on parsing the major requirements information.  Other properties represent majors. Most majors are represented as arrays of requirements. Special cases like engineering are objects where one property is the main requirements, and the other property is a side requirement that is more complicated. Requirements are either course ID strings, or objects that describe ways to satisfy the requirement. The "options" property describes the courses that can fill the requirement, it is an array of options or a string that describes options  in a computer parse-able way. The options of the "options" property can also be objects or strings. The 'take' property describes how many courses to take to fill the requirement.
+          Main Object properties include a "meta" property with the date when it was last updated, and info on parsing the major requirements information.  Other properties represent majors. 
+           Majors are objects with the "major" property, and an optional "breadth property".
+            The "breadth" property is complicated and unfinished. It should be visualized differently than the main requirements.
+            The "major" property is an object containing the "singular" requirements property, and an optional "multi" requirements property. 
+             The "singular" property is an array of requiremnets represented as course ID strings.
+             The "multi" property is a object whose properties represent requirements. Each property key is a made up id, and the value is an object that describes ways to satisfy the requirement. These objects each have an "options" property and a "take" property.
+              The "options" property describes the courses that can fill the requirement, it is an array of options or a string that describes options in a computer parse-able way. The options of the "options" property can also be objects or strings. 
+              The 'take' property describes how many courses to take to fill the requirement. When the "take" property contains a number, the user-side visualization should contain that many separate nodes for this requirement. In this case, the requirement object will also have a "name" property. Each of the nodes specified by this requirement can use that name until the user chooses a specific course from the "options" property. If "take" is a string, that string will be "all", and the requirement is filled by taking both at the same time.
+
 
      users.json
 

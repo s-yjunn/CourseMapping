@@ -1,11 +1,3 @@
-<?php
-// The below should be in index.php
-// session_start(); // Must come before any HTML tags.
-// $_SESSION["tabsCreated"] = 0;
-// The above should be in index.php
-
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -18,6 +10,7 @@
 
 <body>
     <h1>Untitled Pathway</h1>
+    <button class = "active" onclick="save()">Save</button>
     <div class="main" ondragover="drag_over(event)" ondrop="drop(event)">
 
         <div id="CSC111" onclick="lineChange()" class="courseBlock ui-widget-content">
@@ -46,10 +39,6 @@
     <div class="side">
 
     </div>
-
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="../js/pathway.js"></script>
 
 </body>
 

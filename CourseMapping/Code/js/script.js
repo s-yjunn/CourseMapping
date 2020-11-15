@@ -29,7 +29,6 @@ function newTab() {
   // updateCSS()
 }
 
-
 //    -----------------      HELPER FUNCTIONS:      -------------------
 
 // Hides the content of all the tabs to hide the one that is currently showing, and removes the class active from all the tabs for styling purposes. 
@@ -58,7 +57,7 @@ function newTabLink(tabID) {
   tabLink.onclick = function(){openTab(event, tabID)};
   tabLink.innerHTML = "Untitled_" + tabID;
   var tabBar = document.getElementById("tab");
-  var plusTabIndex = tabBar.children.length - 2; // The Login and + come last
+  var plusTabIndex = tabBar.children.length - 3; // The Admin, Login, and + come last
   tabBar.insertBefore(tabLink, tabBar.children[plusTabIndex]); // Insert the new tab before the plus tab.
 }
 
@@ -74,11 +73,11 @@ function newPathway(tabID) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-         // Typical action to be performed when the document is ready:
+         // put the pathway organizer HTML into the new tabcontent
          pathwayOrganizer.innerHTML = xhttp.responseText;
       }
   };
-  xhttp.open("POST", tabpath, true);
+  xhttp.open("GET", tabpath, true);
   xhttp.send(); 
 
   document.getElementById("content").appendChild(pathwayOrganizer);

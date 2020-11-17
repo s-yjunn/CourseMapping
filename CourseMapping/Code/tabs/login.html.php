@@ -1,3 +1,6 @@
+<div id="modal" class="modal">
+<!-- <span onclick="document.getElementById('modal').style.display='none'"
+class="close" title="Close Modal">&times;</span> -->
 <div id="register">
 <h2>Register</h2>
 <form class = "register-content" action="php/register.php" method="post">
@@ -20,4 +23,5 @@
     <input type="password" placeholder="Enter Password" name="password" required>
     <button type="submit" class = "login">Login</button>
 </form>
+</div>
 </div>

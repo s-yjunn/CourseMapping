@@ -64,13 +64,6 @@ button:hover {
   border: none;
 }
 
-/* Center the image and position the close button */
-.imgcontainer {
-  text-align: center;
-  margin: 15px 0 12px 0;
-  position: relative;
-}
-
 .container {
   padding: 16px;
 }
@@ -95,7 +88,7 @@ span.psw {
 }
 
 /* Modal Content/Box */
-.modal-content {
+.signin-content {
   background-color: #fcfcfc;
   margin: 10% auto 30% auto; /* 25% from the top, 30% from the bottom and centered */
   border: 1px solid rgb(238, 238, 238);

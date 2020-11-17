@@ -163,8 +163,8 @@ $genre = $newArray[8];
             echo $illustrator[$j];
             }
         }
-        echo "</div>"; } ?>
-        <hr>
+        echo "</div> <hr>"; } ?>
+        
         <div class="barCol"> <b> SUMMARY: </b> 
         <br>
         <br>

@@ -1,10 +1,9 @@
 <?php 
-$logFile = "../allBooks.json";
-$fh = fopen($logFile, 'r+') or die("can't open file");
+$logFile = "../allBooks.JSON";
 
 $genre = $_REQUEST['genre'];
 
-$arrayOfBooks = file_get_contents($logFile);
+$arrayOfBooks = file_get_contents("../allBooks.JSON");
 $booksArray = json_decode($arrayOfBooks, true);
 $byGenre = array();
 

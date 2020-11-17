@@ -1,6 +1,6 @@
 <?php
   //Establish which div to show when visitor clicks the "write a post" button
-  if (isset($_SESSION['username'])){
+  if ($loggedIn){
     $showCompose = "\"show('composePost')\"";
   } else {
     $showCompose = "\"show('loginPlease')\"";
@@ -18,7 +18,7 @@
       <button type="button" onclick=<?=$showCompose; ?>><i class="fas fa-user-edit"></i> Write a post</button>
       
       <!--This is the form to compose a post-->
-      <div class="dark" id="composePost">
+      <div class="dark hide" id="composePost">
         <div class="float">
           <h4>Compose post</h4>
           <input type="text" id="postTitle" placeholder="Your post's title"><br>
@@ -53,7 +53,7 @@
     <div id = "forumPost"></div>
 
     <!--this div shows up when visitors try to post, respond, or vote without being logged in-->
-    <div class="dark" id="loginPlease">
+    <div class="dark hide" id="loginPlease">
 	    <div class="float">
 	        <p>Only registered users can post and vote in the forum. Sign up or log in to access these features!</p>
 		<div class="text-center">

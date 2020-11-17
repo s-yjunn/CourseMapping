@@ -14,6 +14,8 @@ $confPsw = $_GET['confPsw'];
 
 if (trim($newUser) == "") { // check for empty user
 	echo "<p>Please enter a username.</p>";
+} else if ($newUser == "admin") { // check for admin
+	echo "<p>Username reserved for site administrators.</p>";
 } else if (trim($newPsw) == "") { // check for empty psw
 	echo "<p>Please enter a password.</p>";
 } else if (array_key_exists($newUser, $phpArray)) { // check if username is in use
@@ -32,6 +34,6 @@ if (trim($newUser) == "") { // check for empty user
 	session_start();
 	$_SESSION["username"] = $newUser;
 
-	echo "<p>Registration successful.</p>";
+	echo "Success";
 }
 ?>

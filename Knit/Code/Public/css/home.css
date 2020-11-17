@@ -18,12 +18,12 @@
 }
 
 /* tab div */
-.tab {
+#tab {
 	width: 100%;
 	text-align: center;
 	margin: 50px 0 0 0;
 }
-.tab button {
+#tab button {
 	border: none;
 	outline: none;
 	cursor: pointer;
@@ -37,7 +37,7 @@
 	font-size: 18px;
 	text-transform: uppercase;
 }
-.tab button:hover {
+#tab button:hover {
 	color: rgb(228,86,53);
 }
 .tabcontent:not(#Welcome) {
@@ -125,4 +125,18 @@ input[type=text], input[type=password] {
 		padding: 0;
 		margin: 50px 50px;
 	}
+}
+
+/* divs marked for hiding */
+.hide {
+	display: none;
+}
+
+/* Up top logout link (matches forum links)*/
+#loggedIn a {
+	color: rgb(228,86,53);
+}
+#loggedIn a:hover {
+  cursor: pointer;
+  border-bottom: 1px solid rgb(228,86,53);
 }

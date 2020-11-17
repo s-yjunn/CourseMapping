@@ -23,6 +23,6 @@ if (trim($attemptUser) == "") { // check for empty user
 	// save username to the session
 	session_start();
 	$_SESSION["username"] = $attemptUser;
-	echo "<p>Login successful.</p>";
+	echo "Success";
 }
 ?>

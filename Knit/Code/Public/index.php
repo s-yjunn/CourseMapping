@@ -4,7 +4,8 @@
 	// save loggedIn boolean and username to globals (accessible to all tabs)
 	if (isset($_SESSION["username"])) {
 		$loggedIn = true;
-		$username = $_SESSION["username"];
+        $username = $_SESSION["username"];
+        $isAdmin = $_SESSION["admin"];
 	} else {
 		$loggedIn = false;
 	}
@@ -39,6 +40,7 @@
 </div>
 
 <div id="tab">
+	<!--Normal tabs (always shown)-->
 	<button class="tablinks" onclick="openTab(event, 'Welcome')">Home</button>
 	<button class="tablinks" onclick="openTab(event, 'Winners')">This Week's Winners</button>
 	<button class="tablinks" onclick="openTab(event, 'Vote')">Vote</button>
@@ -47,25 +49,25 @@
 	<button class="tablinks" onclick="openTab(event, 'Login')">Log In</button>
 	<button class="tablinks" onclick="openTab(event, 'Register')">Sign Up</button>
 
-	<?php
-	// deciding whether to show the account tabs
-	$adminTab = $userTab = "hide"; // hidden by default
-	// if logged in
-	if ($loggedIn) {
-		// if logged in as admin
-		if ($username === "admin") {
-			// show admin tab button
-			$adminTab = "";
-		// if logged in as normal user
-		} else {
-			// show user tab button
+	<!--Account tabs (only shown on login--normal user account and admin pages)-->
+	<div id = "accountTabs">
+		<?php
+		// deciding whether to show the account tabs
+		$adminTab = $userTab = "hide"; // hidden by default
+		// if logged in
+		if ($loggedIn) {
+			// show user tab
 			$userTab = "";
+			// additionally, if admin
+			if ($isAdmin) {
+				//show admin tab
+				$adminTab = "";
+			}
 		}
-	}
-	?>
-
-	<button class="tablinks account <?=$adminTab; ?>" id = "adminTab" onclick="openTab(event, 'Admin')">Manage site</button>
-	<button class="tablinks account <?=$userTab; ?>" id = "userTab" onclick="openTab(event, 'User')">My account</button>
+		?>
+		<button class="tablinks <?=$userTab; ?>" id = "userTab" onclick="openTab(event, 'User')">My account</button>
+		<button class="tablinks <?=$adminTab; ?>" id = "adminTab" onclick="openTab(event, 'Admin')">Manage site</button>
+	</div>
 </div>
 
 <!-- "Home" tab's content below-->
@@ -85,20 +87,20 @@
 <?php include "tabContent/register.php"; ?>
 
 <!--Account tabs: "Manage site" => Admin and "My account" => (normal) User-->
-<div id = "Admin" class = "tabcontent card">
-	<?php
-		// Only include this page if visitor is logged in as admin
-		if ($loggedIn && $username === "admin") {
-			include "tabContent/adminPage.php"; 
+<div id = "User" class = "tabcontent card">
+	<?php 
+		// Only include this page if visitor is logged in
+		if ($loggedIn) {
+			include "tabContent/userPage.php"; 
 		}
 	?>
 </div>
 
-<div id = "User" class = "tabcontent card">
-	<?php 
-		// Only include this page if user is logged in as a normal user
-		if ($loggedIn && $username != "admin") {
-			include "tabContent/userPage.php"; 
+<div id = "Admin" class = "tabcontent card">
+	<?php
+		// Only include this page if visitor is logged in as admin
+		if ($loggedIn && $isAdmin) {
+			include "tabContent/adminPage.php"; 
 		}
 	?>
 </div>

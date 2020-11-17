@@ -20,9 +20,15 @@ if (trim($attemptUser) == "") { // check for empty user
 	echo "<p>Incorrect password.</p>";
 // If all is well,	
 } else {
-	// save username to the session
+	// save username and admin boolean to the session
 	session_start();
 	$_SESSION["username"] = $attemptUser;
-	echo "Success";
+	if ($phpArray[$attemptUser]["admin"] == true) {
+		$_SESSION["admin"] = true; // is admin
+		echo "Success-admin";
+	} else {
+		$_SESSION["admin"] = false; // is not admin
+		echo "Success";
+	}
 }
 ?>

@@ -1,5 +1,5 @@
 // Making the home page's nav tabs dynamic
-
+var currentTab = "Welcome";
 //This function displays the tab with the id tabName and hides all others in the "tabcontent" class.
 function openTab(evt, tabName) {
   var i, tabcontent, tablinks;
@@ -13,4 +13,5 @@ function openTab(evt, tabName) {
   }
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
+  currentTab = tabName;
 }

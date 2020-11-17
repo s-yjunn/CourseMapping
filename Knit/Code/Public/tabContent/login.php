@@ -5,7 +5,7 @@
 			<input id="loginUname" type="text" placeholder="Username" name="loginUnname" required><br>
 			<input id="loginPsw" type="password" placeholder="Password" name="loginPsw" required><br>
 		</form>
-		<p>Admin uname = "admin"; psw = "admin!"</p>
+		<p>user1 (pass: psw1) is an admin.</p>
 
 		<button id="loginSubmit" type="submit">Log In</button>
 

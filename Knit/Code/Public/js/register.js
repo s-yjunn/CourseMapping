@@ -15,10 +15,10 @@ $(document).ready(function(){
 					$("#regDiv").html("<p>Registration successful.</p>");
 					// add a message about their login status to the top of the page
 					$("#loggedIn").html("You are logged in as " + regUname + ". <a onclick = 'logOut()'>Log out</a>");
-					// show account tab
-					$("#userTab").show();
 					// load user page
 					$("#User").load(location.href+" #User>*","");
+					// show the proper tablinks
+					$("#accountTabs").load(location.href+" #accountTabs>*","");
 					// reload the forum tab (so they can post under this username)
 					$("#Forum").load(location.href+" #Forum>*","");
 				} else {

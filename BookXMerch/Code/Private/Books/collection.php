@@ -18,7 +18,7 @@
 
 <body>
 
-  <script src="JS/script2.js"> </script>
+  <script src="JS/script5.js"> </script>
 
   <div class="sidebar viewBar white viewCard" style="width: 200px">
     <img class="imageClass" src="Images/b&m.png" alt="bm">
@@ -65,7 +65,7 @@
     <dl class="bookshelf wrapper">
 
         <dt class="dontmakemethink"><span> The Space Between Worlds</span></dt>
-        <dd class="dontmakemethink"><a class="amazonLink" href=""><img src="CSS/img/book-front.jpg" alt="alt"></a><br>
+        <dd class="dontmakemethink"><a class="amazonLink" href=""><img src="Images/book-front.jpg" alt="alt"></a><br>
         <strong>The Space Between Worlds</strong> by Micaiah Johnson.<br>
         <br><br><br><br><br>
 

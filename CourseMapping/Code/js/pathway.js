@@ -3,7 +3,7 @@ var savepath = "users/save.php";
 
 // Stores enough infrmation on each pathway to bring it back after a refresh.
 // Is also usable for keeping track of the nodes' positions while the user is interacting with the pathway.
-var pathway;
+var pathway = {};
 
 
 $(function () {
@@ -129,7 +129,7 @@ function save() {
   xhttp.open("POST", savepath, true);
   xhttp.setRequestHeader("Content-type", "application/json");
   pathway["sampleContent"] = "something";
-  xhttp.send(pathway.stringify());
+  xhttp.send(JSON.stringify(pathway));
   return success;
 }
 

@@ -47,27 +47,15 @@
 	<button class="tablinks" onclick="openTab(event, 'Pattern')">Pattern Maker</button>
 	<button class="tablinks" onclick="openTab(event, 'Forum')">Forum</button>
 
-	<!--Log in and reg tabs (only shown when visitor is not logged in)-->
+	<!--Login-dependent tabs-->
 	<span id = "loginTabs">
 		<?php
-		// deciding whether to show the login tabs
-		$loginTabs = ""; // shown by default
+		$lRTabs = ""; // login and reg tabs shown by default
+		$adminTab = $userTab = "hide"; // account tabs hidden by default
 		// if logged in
 		if ($loggedIn) {
-			$loginTabs = "hide";
-		}
-		?>
-		<button class="tablinks <?=$loginTabs; ?>" onclick="openTab(event, 'Login')">Log In</button>
-		<button class="tablinks <?=$loginTabs; ?>" onclick="openTab(event, 'Register')">Sign Up</button>
-	</span>
-
-	<!--Account tabs (only shown on login--normal user account and admin pages)-->
-	<span id = "accountTabs">
-		<?php
-		// deciding whether to show the account tabs
-		$adminTab = $userTab = "hide"; // hidden by default
-		// if logged in
-		if ($loggedIn) {
+			// hide login and reg tabs
+			$lRTabs = "hide";
 			// show user tab
 			$userTab = "";
 			// additionally, if admin
@@ -77,6 +65,8 @@
 			}
 		}
 		?>
+		<button class="tablinks <?=$lRTabs; ?>" onclick="openTab(event, 'Login')">Log In</button>
+		<button class="tablinks <?=$lRTabs; ?>" onclick="openTab(event, 'Register')">Sign Up</button>
 		<button class="tablinks <?=$userTab; ?>" id = "userTab" onclick="openTab(event, 'User')">My account</button>
 		<button class="tablinks <?=$adminTab; ?>" id = "adminTab" onclick="openTab(event, 'Admin')">Manage site</button>
 	</span>

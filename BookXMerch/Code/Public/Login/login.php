@@ -24,7 +24,7 @@
             </div>
 
             <div class="w3-right w3-hide-small">
-                <a href="#" class="w3-bar-item w3-button">Merch</a>
+                <a href="../Merch/collection.php" class="w3-bar-item w3-button">Merch</a>
             </div>
 
             <div class="w3-right w3-hide-small">

@@ -21,8 +21,8 @@ foreach ($byCategory as $newArray) {
   echo "<ul> ";
   echo "<h1>". "Item " . $i . "</h1> <p>" . $newArray[0] ."</p>";
 
-  /*//AUTHORS
-  echo "<p>". "AUTHOR(S): ";
+  //Items
+  echo "<p>". "item: ";
   for($j=0; $j<sizeof($newArray[1]); $j++) {
       if($j != (sizeof($newArray[1]) - 1)) {
         echo $newArray[1][$j] . " | ";
@@ -32,7 +32,7 @@ foreach ($byCategory as $newArray) {
   }
   echo "</p>";
 
-  //ILLUSTRATORS
+  /*//ILLUSTRATORS
   if(sizeof($newArray[2])>0) {
     echo "<p>". "ILLUSTRATOR(S): ";
     for($j=0; $j<sizeof($newArray[2]); $j++) {
@@ -73,7 +73,8 @@ foreach ($byCategory as $newArray) {
   echo "</p>";
 
   echo "</ul>";
-  echo "<br>";*/
+  echo "<br>";
+  */
 }
 
 ?>

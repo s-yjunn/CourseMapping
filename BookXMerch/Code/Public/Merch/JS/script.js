@@ -1,5 +1,5 @@
 
-function getMerchByCategory(genre) {
+function getMerchByCategory(category) {
     
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -9,7 +9,7 @@ function getMerchByCategory(genre) {
             document.getElementById("wrapper").style= "margin-left: 240px";
         }
     }
-    xmlhttp.open("GET", "php/bookCollection.php?genre=" + genre, true);
+    xmlhttp.open("GET", "../php/merchCollection.php?category=" + category, true);
     xmlhttp.send();
 }
 

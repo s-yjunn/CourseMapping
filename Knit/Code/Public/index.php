@@ -50,7 +50,7 @@
 	<button class="tablinks" onclick="openTab(event, 'Register')">Sign Up</button>
 
 	<!--Account tabs (only shown on login--normal user account and admin pages)-->
-	<div id = "accountTabs">
+	<span id = "accountTabs">
 		<?php
 		// deciding whether to show the account tabs
 		$adminTab = $userTab = "hide"; // hidden by default
@@ -67,7 +67,7 @@
 		?>
 		<button class="tablinks <?=$userTab; ?>" id = "userTab" onclick="openTab(event, 'User')">My account</button>
 		<button class="tablinks <?=$adminTab; ?>" id = "adminTab" onclick="openTab(event, 'Admin')">Manage site</button>
-	</div>
+	</span>
 </div>
 
 <!-- "Home" tab's content below-->

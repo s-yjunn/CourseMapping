@@ -5,6 +5,7 @@ var savepath = "users/save.php";
 // Is also usable for keeping track of the nodes' positions while the user is interacting with the pathway.
 var pathway;
 
+
 $(function () {
   $(".courseBlock").draggable();
 });
@@ -117,17 +118,18 @@ function lineChange() {
 
 // Returns the server's response as to whether the save was successful.
 function save() {
-  alert("save")
   var success;
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         success = xhttp.responseText;
+        alert(success);
       }
   };
   xhttp.open("POST", savepath, true);
   xhttp.setRequestHeader("Content-type", "application/json");
-  // xhttp.send(pathway.stringify());
-  xhttp.send("something");
+  pathway["sampleContent"] = "something";
+  xhttp.send(pathway.stringify());
   return success;
 }
+

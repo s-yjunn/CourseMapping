@@ -46,8 +46,20 @@
 	<button class="tablinks" onclick="openTab(event, 'Vote')">Vote</button>
 	<button class="tablinks" onclick="openTab(event, 'Pattern')">Pattern Maker</button>
 	<button class="tablinks" onclick="openTab(event, 'Forum')">Forum</button>
-	<button class="tablinks" onclick="openTab(event, 'Login')">Log In</button>
-	<button class="tablinks" onclick="openTab(event, 'Register')">Sign Up</button>
+
+	<!--Log in and reg tabs (only shown when visitor is not logged in)-->
+	<span id = "loginTabs">
+		<?php
+		// deciding whether to show the login tabs
+		$loginTabs = ""; // shown by default
+		// if logged in
+		if ($loggedIn) {
+			$loginTabs = "hide";
+		}
+		?>
+		<button class="tablinks <?=$loginTabs; ?>" onclick="openTab(event, 'Login')">Log In</button>
+		<button class="tablinks <?=$loginTabs; ?>" onclick="openTab(event, 'Register')">Sign Up</button>
+	</span>
 
 	<!--Account tabs (only shown on login--normal user account and admin pages)-->
 	<span id = "accountTabs">

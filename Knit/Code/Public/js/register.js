@@ -17,10 +17,13 @@ $(document).ready(function(){
 					$("#loggedIn").html("You are logged in as " + regUname + ". <a onclick = 'logOut()'>Log out</a>");
 					// load user page
 					$("#User").load(location.href+" #User>*","");
-					// show the proper tablinks
+					// show and hide the proper tablinks
 					$("#accountTabs").load(location.href+" #accountTabs>*","");
+					$("#loginTabs").load(location.href+" #loginTabs>*","");
 					// reload the forum tab (so they can post under this username)
 					$("#Forum").load(location.href+" #Forum>*","");
+					// go to user page
+					openTab(event, "User");
 				} else {
 					// if unsuccessful, output the failure message
 					$("#regDiv").html(result);

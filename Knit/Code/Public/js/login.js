@@ -21,10 +21,13 @@ $(document).ready(function(){
 						// additionally load admin page
 						$("#Admin").load(location.href+" #Admin>*","");
 					}
-					// show the proper tablinks
+					// show and hide the proper tablinks
 					$("#accountTabs").load(location.href+" #accountTabs>*","");
+					$("#loginTabs").load(location.href+" #loginTabs>*","");
 					// reload the forum tab (so they can post under this username)
 					$("#Forum").load(location.href+" #Forum>*","");
+					// go to user page
+					openTab(event, "User");
 				} else {
 					// if unsuccessful, output the failure message
 					$("#loginDiv").html(result);

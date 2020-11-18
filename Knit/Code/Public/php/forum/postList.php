@@ -45,17 +45,17 @@
     <th>Posted by</th>
     <th>Last activity</th>
   </tr>
-    <?php
-    //Output the overview info for each post
-    foreach ($postsUse as $key => $value) {
-      $postActive = timeAgo($value["active"]);
-      echo "<tr>
-        <td>" . $value["score"] . "</td>
-        <td>" . count($value["responses"]) .  "</td>
-        <td><a onclick=\"openPost($key)\">" . $value["title"] . "</a></td>
-        <td>" . $value["author"] . "</td>
-        <td>$postActive</td>
-      </tr>";
-    }
-    ?>
+  <?php
+  //Output the overview info for each post
+  foreach ($postsUse as $key => $value):
+    $postActive = timeAgo($value["active"]);
+  ?>
+    <tr>
+      <td><?= $value["score"]; ?></td>
+      <td><?= count($value["responses"]); ?></td>
+      <td><a onclick="openPost(<?= $key; ?>)"> <?= $value["title"]; ?> </a></td>
+      <td><?= $value["author"]; ?></td>
+      <td><?= $postActive ?></td>
+    </tr>
+  <?php endforeach; ?>
 </table>

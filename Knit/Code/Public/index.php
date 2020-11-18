@@ -29,11 +29,9 @@
 <div class="header">
 	<!-- This element contains alerts about login status -- if logged in, lets a visitor know what they're logged in as and lets them log out. Displays a confirmation message when they log out.-->
 	<span id = "loggedIn">
-		<?php
-			if ($loggedIn) {
-				echo "You are logged in as $username. <a onclick = 'logOut()'>Log out</a>";
-			}
-		?>
+		<?php if ($loggedIn): ?>
+			You are logged in as <?= $username; ?>. <a onclick = "logOut()">Log out</a>
+		<?php endif; ?>
 	</span>
 	<h2 class="title">Knitty Gritty</h2>
 	<p class="slogan">Sew it seams you've gotten to the Knitty Gritty.</p>

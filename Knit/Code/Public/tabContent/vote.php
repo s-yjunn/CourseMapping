@@ -1,45 +1,84 @@
+<?php
+
+// function getVotes($contestantData){
+// 	// STUB
+// 	$votes = array(2,3);
+// 	return $votes;
+// }
+
+	//moved & modified by Isabel -- array of entries accepted for voting is now the value of "contestants" 	in the json contest file
+	$comp = file_get_contents("data/contest.json");
+	// echo "$comp";
+	$compData = json_decode($comp, true);
+	// echo "$compData<br>";
+	$contestantData = $compData["contestants"];
+	// echo "$contestantData[0]<br>";
+	$numCont = count($contestantData);
+	// echo "$numCont<br>";
+	// $votes = getVotes($contestantData);
+?>
+
 <div id="Vote" class="tabcontent">
-<div class="card">
-	  <h3>Vote for your favorite design, or submit your own!</h3>
-    <?php
+	<h3 class="underline">Contest Voting</h3>
+	
+	<div class="submit">
+		<h4>Submit</h4>
+		<p>Submit your unique knitting patterns to enter our weekly contest! Winners are determined by user voting and have a chance to be featured on our weekly slideshow. To submit, please upload <b>one text file</b> of pattern-making instructions and <b>one image</b> of a knit creation made via your instructions.</p>
+		<form action="php/upload.php" method="post" enctype="multipart/form-data" id="submit">
+		  <input type="file" name="fileToUpload[]" id="fileToUpload" multiple="multiple">
+		  <input type="submit" value="Upload File" name="submit">
+		</form>
+	</div>
+	
+	<?php if($numCont == 0): ?>
+	  <p>There are currently no contest entries! Please come back later for updates.</p>    
+	<?php  else: ?>
+	  <div class="container">
+	  	<div class="row">
+		  <?php for($i = 0; $i < $numCont; $i++):
+			  // echo "i=".$i."<br>";
+			  $user = $contestantData[$i]["author"];
+			  $image = "contest/" . $contestantData[$i]["image"];
+			  $description = $contestantData[$i]["text"];
+			  $numVotes = $contestantData[$i]["votes"];
+			  $GLOBALS['user'] = $user;
+			  ?>
+			<div class="col-xl-3 col-md-6 col-xs-12">
+				<div class="card">
+					<div class='card-body'>
+						<img class='card-img-top' src='<?= $image ?>' alt='Knit submission by <?= $user ?>'>
+						<h6 class='card-title'><?= $user ?></h6>
+						<p class='card-text'><?= $description ?></p>
+						<form>
+						  <input id="hide" class="btn" type="button" value="Vote" onclick='updateVote(<?= $i ?>, <?= $numVotes ?>)'>
+					  </form>
+					  <p id="demo"></p>
+					</div>
+				</div>
+			</div>
+		  <?php endfor; ?>  
+		</div>
+	</div>
+	<?php endif;// if(!isset($_SESSION)) {}?>
 
-//moved & modified by Isabel -- array of entries accepted for voting is now the value of "contestants" in the json contest file
-$comp = file_get_contents("data/contest.json");
-$compData = json_decode($comp, true);
-$currentData = $compData["contestants"];
-$numCont = count($currentData);
+</div>
 
-if($numCont == 0){
-    echo '<p>There are currently no contest entries! Please come back later for updates.</p>';    
-    }
-    else{
-      echo '<br>',
-      '<table style="width:100%">',
-        '<tr>',
-          '<th>Image</th> ',
-          '<th>Instructions</th>',
-        '</tr>';
+<script type="text/javascript">
 
-        for($i = 0; $i < count($currentData); $i++){
-          // I think this is what you were going for? ~Isabel
-          $image = "<img width=50% src=contest/" . $currentData[$i]["image"] . ">";
-          $description = file_get_contents("contest/" . $currentData[$i]["text"]); // Tried to adjust from json changes ~Isabel
-      
-          echo'<tr>',
-          '<td>'.$image.'</td>',
-          '<td>'.$description.'</td>',
-          '</tr>';
-  }
-  
-  echo '</table>';
+function updateVote(i, vote){
+	alert(i);
+	alert(vote);
+	
+	document.getElementById("numVotes").innerHTML = vote + 1;
+
+	// contestantData[i]= vote + 1;
+
+	$("#hide").click(function(){
+		$("#hide").hide();
+	});
+
+      document.getElementById("demo").innerHTML = "Thanks for voting!";
 
 }
-?>
-<br><br><br><br>
-<form action="php/upload.php" method="post" enctype="multipart/form-data">
-  Select your files. Please upload one text file and one image: <br>
-  <input  type="file" name="fileToUpload[]" id="fileToUpload" multiple="multiple" />
-  <input type="submit" value="Upload File" name="submit">
-</form>
-</div>
-</div>
+
+</script>

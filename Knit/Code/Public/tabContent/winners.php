@@ -1,7 +1,7 @@
 <div id="Winners" class="tabcontent">
-<div class="card">
+
 <div class="slideshow-container">
-    <h3>This Week's Winners!</h3>
+    <h3 class="underline">Contest Winners</h3>
     <?php
  $winners = glob('images/winners/*');
 $numPics = count($winners);
@@ -37,5 +37,5 @@ echo '</div>';
 }
 ?>
 </div>
-</div>
+
 <script src="js/showSlides.js"></script>

@@ -43,10 +43,16 @@ canvas.addEventListener( 'mouseup', function( event ) {
     mousedown = false;
 }, false );
 
-// giving download button its functionality
-var btn = document.getElementById('btn');
+// download button its functionality
+var btnDownload = document.getElementById('btnDownload');
 // listen for click...
-btn.addEventListener('click', function(ev) {
-    btn.href = canvas.toDataURL(); // set href to our canvas for download
-    btn.download = "MyPattern.png"; // set download filename
+btnDownload.addEventListener('click', function(ev) {
+    btnDownload.href = canvas.toDataURL(); // set href to our canvas for download
+    btnDownload.download = "MyPattern.png"; // set download filename
+}, false);
+
+var btnClear = document.getElementById('btnClear');
+btnClear.addEventListener('click', function(ev) {
+	c.clearRect(0, 0, canvas.width, canvas.height);
+	update();
 }, false);

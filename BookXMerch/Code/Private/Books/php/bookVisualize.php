@@ -1,9 +1,9 @@
 <?php 
 $content = $_REQUEST['content'];
-$logFile = "../allBooks.json";
-$fh = fopen($logFile, 'r+') or die("can't open file");
+$logFile = "../allBooks.JSON";
 
-$arrayOfBooks = file_get_contents($logFile);
+
+$arrayOfBooks = file_get_contents("../allBooks.JSON");
 $booksArray = json_decode($arrayOfBooks, true);
 $newArray = array();
 
@@ -24,69 +24,7 @@ $url = $newArray[4];
 $rating = $newArray[5];
 $reviews = $newArray[6];
 $genre = $newArray[8];
-// echo "<br>";
-// echo "<div style='margin-left:220px'>";
-// echo "<ul>";
-// echo "<b> <p id='book".$bookid."'> " . $title  . "</p></b>";
 
-// //AUTHORS
- 
-// echo "<div id='".$bookid."'>";
-// echo "<p>". "AUTHOR(S): ";
-// for($j=0; $j<sizeof($author); $j++) {
-//     if($j != (sizeof($author) - 1)) {
-//         echo $author[$j] . " | ";
-//     } else {
-//         echo $author[$j];
-//     }
-//   }
-// echo "</p>";
-
-// //ILLUSTRATORS
-// if(sizeof($illustrator)>0) {
-//     echo "<p>". "ILLUSTRATOR(S): ";
-//     for($j=0; $j<sizeof($illustrator); $j++) {
-//         if($j != (sizeof($illustrator) - 1)) {
-//           echo $illustrator[$j] . " | ";
-//         } else {
-//           echo $illustrator[$j];
-//         }
-//     }
-//     echo "</p>";
-// }
-  
-// //SUMMARY
-// echo "<p>". "SUMMARY: ";
-
-// echo "<div>" . $description . "</div>";
-
-// echo "</p>";
-
-
-// //url
-// echo "<a href=".$url."> Read me! </a>";
-   
-
-// //Rating
-// echo "<p>". "RATING: " . $rating . "/5";
-// echo "</p>";
-
-
-// //REVIEWS
-// echo "<p>". "Reviews: ";
-//     for($j=0; $j<sizeof($reviews); $j++) {
-//         echo $reviews[$j];
-//     }
-// echo "<br>";
-// echo "<br>";
-// echo "<a href='#'> Write a review</a>";
-// echo "</p>";
-
-// echo "</ul>";
-// echo "<br>";
-
-// echo "</div>";
-// echo "</div>"; 
 ?>
 
 <html>
@@ -112,7 +50,7 @@ $genre = $newArray[8];
 
 
 <div class="sidebar viewBar white viewCard" style="width: 200px">
-    <img class="imageClass" src="../Images/b&m.png" alt="bm">
+    <img class="imageClass" src="../Images/B&M.png" alt="bm">
 
     <div class="newFont">
         <button class="barCol buttonClass" onclick="window.location.href='../collection.php'" style="width: 200px; font-family"><b>Full B</b>x<b>M Collection</b></button>

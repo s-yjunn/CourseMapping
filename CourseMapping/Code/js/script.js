@@ -1,6 +1,9 @@
 //file paths:
 var tabpath = "php/tab.html.php";
 
+// contains all the user pathways:
+var allPathways = {};
+
 sessionStorage["tabsCreated"] = "0"; // sessionStorage always stored data as text, even if given an int
 
 function openTab(evt, tabName) {

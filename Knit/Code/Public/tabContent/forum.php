@@ -8,8 +8,8 @@
   include "php/forum/timeAgo.php";
 ?>
 <div id="Forum" class="tabcontent">
-	<div class="card">
-    <h3>Forum</h3>
+
+    <h3 class="underline">Forum</h3>
     <!--This div is what the user sees when they first open the forum-->
     <div id="forumHome">
       <!--reload button. Forum is also reloaded anytime the user adds a post or changes the sorting method-->
@@ -27,42 +27,41 @@
           <button id="cancel" onclick="hide('composePost')">Cancel</button>
           <span id = "postStatus"></span> <!-- for validation of a post-->
         </div>
-      </div>
+    </div>
 
-      <!--This is the forum "index": a table of links to existing forum posts-->
-      <div id="forumIndex">
-        <h4>All posts</h4>
-        <!--Selector for how to sort posts-->
-        <form>
-          <label for="indexView">Sort by:</label>
-          <select id="indexView" onchange="sortForumIndex(this.value)">>
-            <option value="active">Activity</option>
-            <option value="score">Score</option>
-            <option value="responses">Responses</option>
-          </select>
-        </form>
+    <!--This is the forum "index": a table of links to existing forum posts-->
+    <div id="forumIndex">
+      <h4>All Posts</h4>
+      <!--Selector for how to sort posts-->
+      <form>
+        <label for="indexView">Sort by:</label>
+        <select id="indexView" onchange="sortForumIndex(this.value)">>
+          <option value="active">Activity</option>
+          <option value="score">Score</option>
+          <option value="responses">Responses</option>
+        </select>
+      </form>
 
-        <!--table of post stats and links to open them-->
-        <div id="postList">
-          <?php include "php/forum/postList.php";?>
-        </div>
-      </div>
-    </div>      
-
-    <!--This div is filled by "php/forum/post.php" whenever a post is called on-->
-    <div id = "forumPost"></div>
-
-    <!--this div shows up when visitors try to post, respond, or vote without being logged in-->
-    <div class="dark hide" id="loginPlease">
-	    <div class="float">
-	        <p>Only registered users can post and vote in the forum. Sign up or log in to access these features!</p>
-		<div class="text-center">
-	        <button id="exit" onclick="hide('loginPlease')">Got it</button>
-		</div>
+      <!--table of post stats and links to open them-->
+      <div id="postList">
+        <?php include "php/forum/postList.php";?>
       </div>
     </div>
-	
-</div>
+  </div>      
+
+  <!--This div is filled by "php/forum/post.php" whenever a post is called on-->
+  <div id = "forumPost"></div>
+
+  <!--this div shows up when visitors try to post, respond, or vote without being logged in-->
+  <div class="dark hide" id="loginPlease">
+    <div class="float">
+        <p>Only registered users can post and vote in the forum. Sign up or log in to access these features!</p>
+      <div class="text-center">
+        <button id="exit" onclick="hide('loginPlease')">Got it</button>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <script src="js/forum.js"></script>

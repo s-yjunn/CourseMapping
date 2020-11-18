@@ -1,1 +1,46 @@
-{"submissions":[],"contestants":[{"author":"Sample","image":"sample.jpg","text":"sample.txt"}],"winners":[]}
+{
+	"submissions": [
+
+	],
+	"contestants": [
+		{
+			"author": "User One",
+			"image": "sample.jpg",
+			"text": "Materials: yarn, love. Directions: Knit a sweater!",
+			"votes": 0
+		},
+		{
+			"author": "Sample User",
+			"image": "fb1aa2066293cd5882e03e333095c3de.jpg",
+			"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+			"votes": 0
+		},
+		{
+			"author": "Sample User",
+			"image": "fb1aa2066293cd5882e03e333095c3de.jpg",
+			"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+			"votes": 0
+		},
+		{
+			"author": "Sample User",
+			"image": "fb1aa2066293cd5882e03e333095c3de.jpg",
+			"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+			"votes": 0
+		},
+		{
+			"author": "Sample User",
+			"image": "fb1aa2066293cd5882e03e333095c3de.jpg",
+			"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+			"votes": 0
+		},
+		{
+			"author": "Sample User",
+			"image": "fb1aa2066293cd5882e03e333095c3de.jpg",
+			"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+			"votes": 0
+		}
+	],
+	"winners": [
+
+	]
+}

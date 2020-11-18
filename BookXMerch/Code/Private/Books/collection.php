@@ -21,7 +21,7 @@
   <script src="JS/script5.js"> </script>
 
   <div class="sidebar viewBar white viewCard" style="width: 200px">
-    <img class="imageClass" src="Images/b&m.png" alt="bm">
+    <img class="imageClass" src="Images/B&M.png" alt="bm">
 
     <div class="newFont">
       <button class="barCol buttonClass" onclick="showCollection()" style="width: 200px; font-family"><b>Full B</b>x<b>M Collection</b></button>

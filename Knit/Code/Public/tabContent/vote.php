@@ -19,54 +19,47 @@
 ?>
 
 <div id="Vote" class="tabcontent">
-	  <h3 class="underline">Contest Vote</h3>
-	  <?php if($numCont == 0): ?>
-		  <p>There are currently no contest entries! Please come back later for updates.</p>    
-	  <?php  else: ?>
-		  <br>
-		  <table style="width:100%">
-			  <tr>
-				  <th>User</th> 
-				  <th>Design</th>
-				  <th>Instructions</th>
-				  <th>Votes</th>
-				  <th>Vote Here!</th>
-			  </tr>
-	  
-			  <?php for($i = 0; $i < $numCont; $i++):
-				  // echo "i=".$i."<br>";
-				  $user = $contestantData[$i]["author"];
-				  $image = "<img width=50% src=contest/" . $contestantData[$i]["image"] . ">";
-				  $description = $contestantData[$i]["text"];
-				  $numVotes = $contestantData[$i]["votes"];
-				  $GLOBALS['user'] = $user;
-				  ?>
-				  <tr>
-					  <td><?= $user ?></td>
-					  <td><?= $image ?></td>
-					  <td><?= $description ?></td>
-					  <td id="numVotes"><?= $numVotes ?></td>
-					  <td>
-						  <form>
-							  <input id="hide" type="button" value="Vote" onclick='updateVote(<?= $i ?>, <?= $numVotes ?>)'>
-						  </form>
-						  <p id="demo"></p>
-					  </td>
-				  </tr>
-			  <?php endfor; ?>
-  
-		  </table>
-
-	  <?php endif;// if(!isset($_SESSION)) {}?>
-
-	  <br><br><br><br>
-
-	  <form action="php/upload.php" method="post" enctype="multipart/form-data" id="submit">
-		  Select your files. Please upload one text file and one image: 
-		  <br>
-		  <input  type="file" name="fileToUpload[]" id="fileToUpload" multiple="multiple" />
+	<h3 class="underline">Contest Voting</h3>
+	
+	<div class="submit">
+		<h4>Submit</h4>
+		<p>Submit your unique knitting patterns to enter our weekly contest! Winners are determined by user voting and have a chance to be featured on our weekly slideshow. To submit, please upload <b>one text file</b> of pattern-making instructions and <b>one image</b> of a knit creation made via your instructions.</p>
+		<form action="php/upload.php" method="post" enctype="multipart/form-data" id="submit">
+		  <input type="file" name="fileToUpload[]" id="fileToUpload" multiple="multiple">
 		  <input type="submit" value="Upload File" name="submit">
-	  </form>
+		</form>
+	</div>
+	
+	<?php if($numCont == 0): ?>
+	  <p>There are currently no contest entries! Please come back later for updates.</p>    
+	<?php  else: ?>
+	  <div class="container">
+	  	<div class="row">
+		  <?php for($i = 0; $i < $numCont; $i++):
+			  // echo "i=".$i."<br>";
+			  $user = $contestantData[$i]["author"];
+			  $image = "contest/" . $contestantData[$i]["image"];
+			  $description = $contestantData[$i]["text"];
+			  $numVotes = $contestantData[$i]["votes"];
+			  $GLOBALS['user'] = $user;
+			  ?>
+			<div class="col-xl-3 col-md-6 col-xs-12">
+				<div class="card">
+					<div class='card-body'>
+						<img class='card-img-top' src='<?= $image ?>' alt='Knit submission by <?= $user ?>'>
+						<h6 class='card-title'><?= $user ?></h6>
+						<p class='card-text'><?= $description ?></p>
+						<form>
+						  <input id="hide" class="btn" type="button" value="Vote" onclick='updateVote(<?= $i ?>, <?= $numVotes ?>)'>
+					  </form>
+					  <p id="demo"></p>
+					</div>
+				</div>
+			</div>
+		  <?php endfor; ?>  
+		</div>
+	</div>
+	<?php endif;// if(!isset($_SESSION)) {}?>
 
 </div>
 

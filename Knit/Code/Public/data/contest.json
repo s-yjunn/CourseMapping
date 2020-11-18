@@ -4,15 +4,39 @@
 	],
 	"contestants": [
 		{
-			"author": "Sample",
+			"author": "User One",
 			"image": "sample.jpg",
-			"text": "SAMPLE PATTERN SUBMISSION\r\n\r\nYou will need:\r\n- Yarn\r\n- Love\r\n\r\nDirections:\r\n- Knit a big sweater. All done!",
+			"text": "Materials: yarn, love. Directions: Knit a sweater!",
 			"votes": 0
 		},
 		{
-			"author": "Anonymous",
+			"author": "Sample User",
 			"image": "fb1aa2066293cd5882e03e333095c3de.jpg",
-			"text": "temp",
+			"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+			"votes": 0
+		},
+		{
+			"author": "Sample User",
+			"image": "fb1aa2066293cd5882e03e333095c3de.jpg",
+			"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+			"votes": 0
+		},
+		{
+			"author": "Sample User",
+			"image": "fb1aa2066293cd5882e03e333095c3de.jpg",
+			"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+			"votes": 0
+		},
+		{
+			"author": "Sample User",
+			"image": "fb1aa2066293cd5882e03e333095c3de.jpg",
+			"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+			"votes": 0
+		},
+		{
+			"author": "Sample User",
+			"image": "fb1aa2066293cd5882e03e333095c3de.jpg",
+			"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 			"votes": 0
 		}
 	],

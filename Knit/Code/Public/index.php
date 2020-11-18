@@ -50,13 +50,14 @@
 	</button>
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    <div class="navbar-nav mr-auto">
-			<button class="nav-item nav-link tablinks active" onclick="openTab(event, 'Welcome')">Home</button>
-			<button class="nav-item nav-link tablinks" onclick="openTab(event, 'Winners')">Contest</button>
-			<button class="nav-item nav-link tablinks" onclick="openTab(event, 'Vote')">Vote</button>
-			<button class="nav-item nav-link tablinks" onclick="openTab(event, 'Pattern')">Pattern Maker</button>
-			<button class="nav-item nav-link tablinks" onclick="openTab(event, 'Forum')">Forum</button>
+			<button class="tablinks active" onclick="openTab(event, 'Welcome')">Home</button>
+			<button class="tablinks" onclick="openTab(event, 'Winners')">Contest</button>
+			<button class="tablinks" onclick="openTab(event, 'Vote')">Vote</button>
+			<button class="tablinks" onclick="openTab(event, 'Pattern')">Pattern Maker</button>
+			<button class="tablinks" onclick="openTab(event, 'Forum')">Forum</button>
 	    </div>
-	    <div class="navbar-nav ml-auto" id="loginTabs">
+		<div class="navbar-nav ml-auto">
+			<span id="loginTabs">
 				<?php
 				$lRTabs = ""; // login and reg tabs shown by default
 				$adminTab = $userTab = "hide"; // account tabs hidden by default
@@ -73,10 +74,11 @@
 					}
 				}
 				?>
-				<button class="nav-item nav-link tablinks <?=$lRTabs; ?>" onclick="openTab(event, 'Login')">Log In</button>
-				<button class="nav-item nav-link tablinks <?=$lRTabs; ?>" onclick="openTab(event, 'Register')">Sign Up</button>
-				<button class="nav-item nav-link tablinks <?=$userTab; ?>" id = "userTab" onclick="openTab(event, 'User')">My Account</button>
-				<button class="nav-item nav-link tablinks <?=$adminTab; ?>" id = "adminTab" onclick="openTab(event, 'Admin')">Manage Site</button>
+				<button class="tablinks <?=$lRTabs; ?>" onclick="openTab(event, 'Login')">Log In</button>
+				<button class="tablinks <?=$lRTabs; ?>" onclick="openTab(event, 'Register')">Sign Up</button>
+				<button class="tablinks <?=$userTab; ?>" id = "userTab" onclick="openTab(event, 'User')">My Account</button>
+				<button class="tablinks <?=$adminTab; ?>" id = "adminTab" onclick="openTab(event, 'Admin')">Manage Site</button>
+			</span>
 		</div>
   </div>
 </nav>

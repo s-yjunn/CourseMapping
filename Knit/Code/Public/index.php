@@ -18,7 +18,7 @@
 	<!-- stylesheets -->
 	<link rel="stylesheet" href="css/index.css">
 	<link rel="stylesheet" href="css/forum.css">
-	<link rel="stylesheet" href="css/slideshow.css">
+	<!--<link rel="stylesheet" href="css/slideshow.css">-->
 	<link rel="stylesheet" href="css/pattern.css">
 	
 	<!-- bootstrap stylesheets -->

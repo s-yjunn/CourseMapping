@@ -1,1 +1,22 @@
-{"submissions":[],"contestants":[{"author":"Sample","image":"sample.jpg","text":"SAMPLE PATTERN SUBMISSION\r\n\r\nYou will need:\r\n- Yarn\r\n- Love\r\n\r\nDirections:\r\n- Knit a big sweater. All done!","votes":0}, {"author":"Anonymous","image":"fb1aa2066293cd5882e03e333095c3de.jpg","text":"temp","votes":0}],"winners":[]}
+{
+	"submissions": [
+
+	],
+	"contestants": [
+		{
+			"author": "Sample",
+			"image": "sample.jpg",
+			"text": "SAMPLE PATTERN SUBMISSION\r\n\r\nYou will need:\r\n- Yarn\r\n- Love\r\n\r\nDirections:\r\n- Knit a big sweater. All done!",
+			"votes": 0
+		},
+		{
+			"author": "Anonymous",
+			"image": "fb1aa2066293cd5882e03e333095c3de.jpg",
+			"text": "temp",
+			"votes": 0
+		}
+	],
+	"winners": [
+
+	]
+}

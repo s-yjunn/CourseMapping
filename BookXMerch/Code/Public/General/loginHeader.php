@@ -1,6 +1,10 @@
 <?php
   session_start();
-  unset($_SESSION["name"]); 
+  if(isset($_SESSION["name"])) {
+      $loggedUser = $_SESSION["name"]; 
+  } else {
+      header("location: ../Login/login.php");
+  }
 
 ?>
 
@@ -24,12 +28,16 @@
             <a href="../Public/index.php" class="w3-bar-item w3-button"><b>Bookstore</b>x<b>Merch</b></a>
             <!-- Float links to the right. Hide them on small screens -->
 
+            <div class="w3-hide-small">
+                <a href="#" class="w3-bar-item">Welcome, <?php echo $loggedUser?></a>
+            </div>
+
             <div class="w3-right w3-hide-small">
                 <a href="#" class="w3-bar-item w3-button">About us</a>
             </div>
 
             <div class="w3-right w3-hide-small">
-                <a href="Merch/collection.php" class="w3-bar-item w3-button">Merch</a>
+                <a href="../Merch/collection.php" class="w3-bar-item w3-button">Merch</a>
             </div>
 
             <div class="w3-right w3-hide-small">
@@ -37,30 +45,10 @@
             </div>
 
             <div class="w3-right w3-hide-small">
-                <a href="#" class="w3-bar-item w3-button">Profile</a>
-            </div>
-
-            <div class="w3-right w3-hide-small">
-                <a href="SignUp/signup.php" class="w3-bar-item w3-button">Sign up</a>
-            </div>
-
-            <div class="w3-right w3-hide-small">
-                <a href="Login/login.php" class="w3-bar-item w3-button">Login</a>
+                <a href="../Profile/profile.php" class="w3-bar-item w3-button">Profile</a>
             </div>
         </div>
     </div>
-
-    <header class="w3-display-container w3-content w3-wide" style="max-width:1500px; background-color: white;"
-        id="home">
-        <img class="w3-image" src="../Public/General/styles/background.jpg" alt="smith" width="1500" height="800">
-        <div class="w3-display-middle w3-margin-top w3-center">
-            <h1 class="w3-xxlarge w3-text-white"><span class="w3-black w3-opacity-min" style="overflow:hidden"><b>Welcome to BookstorexMerch!
-                    </b></span>
-            </h1>
-        </div>
-    </header>
-
-    <script src="../Public/General/js/source.js"></script>
 
 </body>
 

@@ -69,7 +69,8 @@
     <div class="signup-form-form">
         <form action="php/signup.inc.php" id="signupForm" method="post">
             <input type="text" name="name" placeholder="Full Name" required>
-            <input type="text" name="email" placeholder="Email" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="uname" placeholder="Username" required>
             <input type="password" name="pwd" placeholder="Password" required>
             <input type="password" name="pwdrepeat" placeholder="Re-type Password" required>
             <button type="submit" name="submit" id="signupSubmit">Sign Up</button>

@@ -6,7 +6,8 @@
 				<canvas></canvas> 
 			</div>
 			<div class="row justify-content-center">		
-				<a id="btn" href=""><button>Save Pattern</button></a>
+				<a id="btnClear" href=""><button>Clear Canvas</button></a>
+				<a id="btnDownload" href=""><button>Save Pattern</button></a>
 			</div>
 		</div>
 </div>

@@ -3,3 +3,7 @@ canvas {
 	border: 1px solid #ccc;
 	margin: 1rem 0;
 }
+
+#Pattern button {
+	margin: 0 1rem;
+}

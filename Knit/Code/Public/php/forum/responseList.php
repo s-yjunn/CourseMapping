@@ -36,7 +36,7 @@
 ?>
 
 <?php if (count($responses) == 0) : ?>
-      <p class='alert alert-light' role='alert'>Nobody's responded to this post yet. Be the first!</p>
+      <p class='alert alert-info' role='alert'>Nobody's responded to this post yet. Be the first!</p>
 <?php else: ?>
   <table>
   <?php foreach($responses as $key => $value):

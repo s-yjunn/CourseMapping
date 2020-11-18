@@ -57,5 +57,4 @@
       <td><?= $value["author"]; ?></td>
       <td><?= $postActive ?></td>
     </tr>
-  <?php endforeach; ?>
-</table>
+  <?php endforeach; ?></table>

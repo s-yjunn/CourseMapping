@@ -7,30 +7,31 @@
   }
   include "php/forum/timeAgo.php";
 ?>
-<div id="Forum" class="tabcontent card">
-  <h3>Forum</h3>
-  <!--This div is what the user sees when they first open the forum-->
-  <div id="forumHome">
-    <!--reload button. Forum is also reloaded anytime the user adds a post or changes the sorting method-->
-    <button type="button" onclick="refreshForumIndex()"><i class="fas fa-redo-alt"></i> Refresh</button>
-    <!--Button to write a post. Opens a composition div if the user is logged in, otherwise one that tells them to login.-->
-    <button type="button" onclick=<?=$showCompose; ?>><i class="fas fa-user-edit"></i> Write a post</button>
-    
-    <!--This is the form to compose a post-->
-    <div class="dark hide" id="composePost">
-      <div class="float">
-        <h4>Compose post</h4>
-        <input type="text" id="postTitle" placeholder="Your post's title"><br>
-        <textarea id = "postContent" placeholder="Your post's content"></textarea><br>
-        <button type="button" onclick="postPost()">Post</button>           
-        <button id="cancel" onclick="hide('composePost')">Cancel</button>
-        <span id = "postStatus"></span> <!-- for validation of a post-->
-      </div>
+<div id="Forum" class="tabcontent">
+
+    <h3 class="underline">Forum</h3>
+    <!--This div is what the user sees when they first open the forum-->
+    <div id="forumHome">
+      <!--reload button. Forum is also reloaded anytime the user adds a post or changes the sorting method-->
+      <button type="button" onclick="refreshForumIndex()"><i class="fas fa-redo-alt"></i> Refresh</button>
+      <!--Button to write a post. Opens a composition div if the user is logged in, otherwise one that tells them to login.-->
+      <button type="button" onclick=<?=$showCompose; ?>><i class="fas fa-user-edit"></i> Write a post</button>
+      
+      <!--This is the form to compose a post-->
+      <div class="dark hide" id="composePost">
+        <div class="float">
+          <h4>Compose post</h4>
+          <input type="text" id="postTitle" placeholder="Your post's title"><br>
+          <textarea id = "postContent" placeholder="Your post's content"></textarea><br>
+          <button type="button" onclick="postPost()">Post</button>           
+          <button id="cancel" onclick="hide('composePost')">Cancel</button>
+          <span id = "postStatus"></span> <!-- for validation of a post-->
+        </div>
     </div>
 
     <!--This is the forum "index": a table of links to existing forum posts-->
     <div id="forumIndex">
-      <h4>All posts</h4>
+      <h4>All Posts</h4>
       <!--Selector for how to sort posts-->
       <form>
         <label for="indexView">Sort by:</label>
@@ -60,6 +61,7 @@
       </div>
     </div>
   </div>
+
 </div>
 
 <script src="js/forum.js"></script>

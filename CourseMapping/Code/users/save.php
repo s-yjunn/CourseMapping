@@ -1,11 +1,15 @@
 <?php 
+    session_start();
+    
     // file paths:
     $userpath = "../json/users.json";
 
     // $users = json_decode(file_get_contents($userpath), FALSE);
     // If the user does not have a folder of stored pathways, make one.
     if(!file_exists($_SESSION['username'])) {
-        mkdir($_SESSION['username']);
+        if(!mkdir($_SESSION['username'])) {
+            echo "Couldn't create user file. ";
+        }
     }
     
     $pathway = json_decode(file_get_contents('php://input'), FALSE);
@@ -17,11 +21,15 @@
     }
     // Save or make then save the file
     $file = fopen($_SESSION['username'] . "/" . $pathway->id, "w");
-    if($file) {
-        $success = fwrite($file, json_encode($pathway));
-        fclose($file);  
+    if(!$file) {
+        $success = "Couldn't open file to save in";
     } else {
-        $success = FALSE;
+        if(!fwrite($file, json_encode($pathway))){
+            $success = "Could Not Save Pathway";
+        }
+        fclose($file); 
+        $success = "Pathway Saved";
     }
-    echo $success ? "Pathway Saved" : "Could Not Save Pathway";
+
+    echo $success;
  ?>

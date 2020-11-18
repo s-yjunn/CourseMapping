@@ -19,8 +19,7 @@
 ?>
 
 <div id="Vote" class="tabcontent">
-<div class="card">
-	  <h3>Vote for your favorite design, <a href="#submit">or submit your own</a>!</h3>
+	  <h3 class="underline">Contest Vote</h3>
 	  <?php if($numCont == 0): ?>
 		  <p>There are currently no contest entries! Please come back later for updates.</p>    
 	  <?php  else: ?>
@@ -69,8 +68,6 @@
 		  <input type="submit" value="Upload File" name="submit">
 	  </form>
 
-
-</div>
 </div>
 
 <script type="text/javascript">

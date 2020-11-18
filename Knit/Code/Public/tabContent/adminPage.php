@@ -1,4 +1,4 @@
-<h3>Manage site</h3>
+<h3 class="underline">Manage Site</h3>
 <p>This is the admin page. Not much to see yet. Anticipated functions:</p>
 <ul>
     <li>Approve submissions for the "best of the week" competition</li>

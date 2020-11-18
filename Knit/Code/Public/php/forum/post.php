@@ -62,7 +62,7 @@
 
 <!--Form to write a new response-->
 <div id="composeResponse">
-	<h5>Your response</h5>
+	<h5>Your Response</h5>
 	<textarea id='responseContent' placeholder='Write your response here.'></textarea><br>
 	<button type='button' onclick="postResponse('<?=$logged; ?>', <?=$postIndex; ?>)">Post</button>
 	<span id = 'responseStatus'></span>

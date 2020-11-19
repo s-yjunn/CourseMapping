@@ -4,13 +4,15 @@ session_start();
 $name = $_POST["name"];
 $email = $_POST["email"];
 $password = $_POST["pwd"];
+$username = $_POST['uname'];
 
 $passwordRepeat = $_POST["pwdrepeat"];
 $type = "user"; 
 
 $arr_row = array(
     'name' => $name, 
-    'email' => $email, 
+    'email' => $email,
+    'username' => $username, 
     'type' => $type,
     'password' => $password
 );

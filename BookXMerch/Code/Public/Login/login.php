@@ -66,7 +66,7 @@
 
     <div class="w3-center">
         <form action="php/login.inc.php" id="loginForm" method="post">
-            <input type="text" name="email" placeholder="Email" required>
+            <input type="email" name="email" placeholder="Email" required>
             <input type="password" name="pwd" placeholder="Password" required>
             <button type="submit" name="submit" id="loginSubmit">Log In</button>
         </form>

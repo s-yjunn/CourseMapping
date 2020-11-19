@@ -1,6 +1,6 @@
 <?php
   session_start();
-  $_SESSION["name"] = "Anon"; 
+  unset($_SESSION["name"]); 
 
 ?>
 

@@ -37,7 +37,7 @@ if($login == 1){
 } else if($admin_login == 1){
     echo '<script type = "text/javascript">
     alert("Successfully Login as Admin!");
-    window.location.href="../index.html.php";
+    window.location.href="../admin.html.php";
     </script>';
     $_SESSION['username'] = $id;
     session_write_close();

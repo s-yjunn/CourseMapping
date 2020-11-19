@@ -20,7 +20,7 @@
   }
 ?>
 
-<button type="button" onclick="hide('forumPost'); show('forumHome')"><i class="fas fa-arrow-left"></i> Return to forum menu</button>
+<button type="button" onclick="hide('forumPost'); show('forumHome')"><i class="fas fa-arrow-left"></i> Go back</button>
 
 
 <!--The post itself-->

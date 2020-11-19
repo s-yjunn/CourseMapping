@@ -1,16 +1,12 @@
 <?php
 
-function fOpenRequest($url) {
-  $file = fopen($url, 'r');
-  $data = stream_get_contents($file);
-  fclose($file);
-  return $data;
-}
-
-$target_dir = "../contest/";
+$target_dir = "../imgs/contest/";
 if(!is_dir($target_dir)){
   mkdir($target_dir);
 }
+
+$title = $_POST["title"];
+$author = $_POST["author"];
 $uploadOk = 1;
 $countfiles = count($_FILES['fileToUpload']['name']);
 $fileType;
@@ -22,7 +18,7 @@ if($countfiles != 2){
 
   echo '<script language="javascript">',
   'alert("Error! Please upload two files.");',
-  'window.location.href = "../index.php";',
+  'window.location.href = "../";',
   '</script>';
 
 }
@@ -63,7 +59,7 @@ else{
 
   echo '<script language="javascript">',
   'alert("Sorry, your files were not uploaded. Please only upload one txt file and one image (jpg, png, gif)";',
-  'window.location.href = "../index.php";',
+  'window.location.href = "../";',
   '</script>';
 
 }
@@ -74,7 +70,8 @@ if($txtPresent && $imgPresent){
 
 $newData = array();
     $newSub = array(
-      "author"   => "Anonymous",
+      "title" => $title,
+      "author"  => $author,
       "image" => basename($image),
       "text" => $desc,
       "votes" => 0
@@ -91,7 +88,7 @@ $newData = array();
 
     echo '<script language="javascript">',
      'alert("Your submission has been uploaded.");',
-     'window.location.href = "../index.php";',
+     'window.location.href = "../";',
      '</script>';
 
   }
@@ -100,7 +97,7 @@ $newData = array();
 
     echo '<script language="javascript">',
      'alert("Error! Text file or image not present.");',
-     'window.location.href = "../index.php";',
+     'window.location.href = "../";',
      '</script>';
 
   }

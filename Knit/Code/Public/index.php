@@ -18,7 +18,7 @@
 	<!-- stylesheets -->
 	<link rel="stylesheet" href="css/index.css">
 	<link rel="stylesheet" href="css/forum.css">
-	<!--<link rel="stylesheet" href="css/slideshow.css">-->
+	<link rel="stylesheet" href="css/slideshow.css">
 	<link rel="stylesheet" href="css/pattern.css">
 	
 	<!-- bootstrap stylesheets -->
@@ -50,11 +50,11 @@
 	</button>
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    <div class="navbar-nav mr-auto">
-			<button class="tablinks active" onclick="openTab(event, 'Welcome')">Home</button>
-			<button class="tablinks" onclick="openTab(event, 'Winners')">Contest</button>
-			<button class="tablinks" onclick="openTab(event, 'Vote')">Vote</button>
-			<button class="tablinks" onclick="openTab(event, 'Pattern')">Pattern Maker</button>
-			<button class="tablinks" onclick="openTab(event, 'Forum')">Forum</button>
+			<button class="tablinks active" onclick="openTab(this, 'Welcome')">Home</button>
+			<button class="tablinks" onclick="openTab(this, 'Winners')">Featured</button>
+			<button class="tablinks" onclick="openTab(this, 'Vote')">Contest</button>
+			<button class="tablinks" onclick="openTab(this, 'Pattern')">Pattern Maker</button>
+			<button class="tablinks" onclick="openTab(this, 'Forum')">Forum</button>
 	    </div>
 		<div class="navbar-nav ml-auto">
 			<span id="loginTabs">
@@ -74,10 +74,10 @@
 					}
 				}
 				?>
-				<button class="tablinks <?=$lRTabs; ?>" onclick="openTab(event, 'Login')">Log In</button>
-				<button class="tablinks <?=$lRTabs; ?>" onclick="openTab(event, 'Register')">Sign Up</button>
-				<button class="tablinks <?=$userTab; ?>" id = "userTab" onclick="openTab(event, 'User')">My Account</button>
-				<button class="tablinks <?=$adminTab; ?>" id = "adminTab" onclick="openTab(event, 'Admin')">Manage Site</button>
+				<button class="tablinks <?=$lRTabs; ?>" onclick="openTab(this, 'Login')">Log In</button>
+				<button class="tablinks <?=$lRTabs; ?>" onclick="openTab(this, 'Register')">Sign Up</button>
+				<button class="tablinks <?=$userTab; ?>" onclick="openTab(this, 'User')">My Account</button>
+				<button class="tablinks <?=$adminTab; ?>" onclick="openTab(this, 'Admin')">Manage Site</button>
 			</span>
 		</div>
   </div>

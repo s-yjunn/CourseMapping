@@ -1,6 +1,8 @@
 //file paths:
 var tabpath = "php/tab.html.php";
 
+document.getElementById("test2").innerHTML = "test";
+
 sessionStorage["tabsCreated"] = "0"; // sessionStorage always stored data as text, even if given an int
 
 function openTab(evt, tabName) {
@@ -12,12 +14,12 @@ function openTab(evt, tabName) {
 }
 
 function newTab() {
-  if(sessionStorage["tabsCreated"] == 5) { 
-    alert("You have reached the maximum number of pathway tabs (5).")
-    return
+  if (sessionStorage["tabsCreated"] == 5) {
+    alert("You have reached the maximum number of pathway tabs (5).");
+    return;
   }
   // sessionStorage always stored data as text, even if given an int
-  sessionStorage["tabsCreated"] = parseInt(sessionStorage["tabsCreated"]) + 1; 
+  sessionStorage["tabsCreated"] = parseInt(sessionStorage["tabsCreated"]) + 1;
 
   unselectTabs(); // Hides the other tab content
 
@@ -31,7 +33,7 @@ function newTab() {
 
 //    -----------------      HELPER FUNCTIONS:      -------------------
 
-// Hides the content of all the tabs to hide the one that is currently showing, and removes the class active from all the tabs for styling purposes. 
+// Hides the content of all the tabs to hide the one that is currently showing, and removes the class active from all the tabs for styling purposes.
 function unselectTabs() {
   // Declare all variables
   var i, tabcontent, tablinks;
@@ -54,7 +56,9 @@ function unselectTabs() {
 function newTabLink(tabID) {
   var tabLink = document.createElement("button");
   tabLink.className = "tablinks active";
-  tabLink.onclick = function(){openTab(event, tabID)};
+  tabLink.onclick = function () {
+    openTab(event, tabID);
+  };
   tabLink.innerHTML = "Untitled_" + tabID;
   var tabBar = document.getElementById("tab");
   var plusTabIndex = tabBar.children.length - 3; // The Admin, Login, and + come last
@@ -71,14 +75,14 @@ function newPathway(tabID) {
   // Gets the content of tab.php from the server to load it into the innerHTML of the new tab div
   // Is there a better way? Is it better to read the tab.php file with a FileReader and put that text into the div?
   var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-         // put the pathway organizer HTML into the new tabcontent
-         pathwayOrganizer.innerHTML = xhttp.responseText;
-      }
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      // put the pathway organizer HTML into the new tabcontent
+      pathwayOrganizer.innerHTML = xhttp.responseText;
+    }
   };
   xhttp.open("GET", tabpath, true);
-  xhttp.send(); 
+  xhttp.send();
 
   document.getElementById("content").appendChild(pathwayOrganizer);
   pathwayOrganizer.style.display = "block";

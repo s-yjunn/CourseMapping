@@ -25,7 +25,7 @@
     <!-- Navigation bar-->
     <div class="w3-top">
         <div class="w3-bar w3-white w3-wide w3-padding 3w-card">
-            <a href="../Public/index.php" class="w3-bar-item w3-button"><b>Bookstore</b>x<b>Merch</b></a>
+            <a href="../../Private/Books/collection.php" class="w3-bar-item w3-button"><b>Bookstore</b>x<b>Merch</b></a>
             <!-- Float links to the right. Hide them on small screens -->
 
             <div class="w3-hide-small">
@@ -37,7 +37,7 @@
             </div>
 
             <div class="w3-right w3-hide-small">
-                <a href="../Merch/collection.php" class="w3-bar-item w3-button">Merch</a>
+                <a href="../../Public/Merch/collection.php" class="w3-bar-item w3-button">Merch</a>
             </div>
 
             <div class="w3-right w3-hide-small">
@@ -45,7 +45,7 @@
             </div>
 
             <div class="w3-right w3-hide-small">
-                <a href="../Profile/profile.php" class="w3-bar-item w3-button">Profile</a>
+                <a href="../../Public/Profile/profile.php" class="w3-bar-item w3-button">Profile</a>
             </div>
         </div>
     </div>

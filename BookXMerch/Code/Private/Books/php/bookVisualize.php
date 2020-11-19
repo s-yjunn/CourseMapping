@@ -25,6 +25,10 @@ $rating = $newArray[5];
 $reviews = $newArray[6];
 $genre = $newArray[8];
 
+
+// SESSION NAME PLEASE WORK!!!
+$loggedUser = $_REQUEST['sessionName'];
+
 ?>
 
 <html>
@@ -41,12 +45,47 @@ $genre = $newArray[8];
 
 
   <link rel="stylesheet" href="../CSS/styles.css">
-  <link rel="stylesheet" href="../CSS/bookshelf.css"> 
+  <link rel="stylesheet" href="../CSS/bookshelf.css">
+  
+  <!-- Stylesheets for the login navbar -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
 
 <script src="../JS/script5.js"> </script>
+
+
+
+<div class="login-navbar" style="margin-bottom: 54.4px;">
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-wide w3-padding 3w-card">
+            <a href="../../../Private/Books/collection.php" class="w3-bar-item w3-button"><b>Bookstore</b>x<b>Merch</b></a>
+            <!-- Float links to the right. Hide them on small screens -->
+
+            <!-- Doesn't register the user's name as session name for visualize -->
+            <div class="w3-hide-small">
+                <a href="#" class="w3-bar-item" style="display:none;">Welcome, <?php echo $loggedUser;?></a>
+            </div>
+
+            <div class="w3-right w3-hide-small">
+                <a href="#" class="w3-bar-item w3-button">About us</a>
+            </div>
+
+            <div class="w3-right w3-hide-small">
+                <a href="../../../Public/Merch/collection.php" class="w3-bar-item w3-button">Merch</a>
+            </div>
+
+            <div class="w3-right w3-hide-small">
+                <a href="#" class="w3-bar-item w3-button">Community</a>
+            </div>
+
+            <div class="w3-right w3-hide-small">
+                <a href="../../../Public/Profile/profile.php" class="w3-bar-item w3-button">Profile</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <div class="sidebar viewBar white viewCard" style="width: 200px">

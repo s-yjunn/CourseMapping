@@ -3,10 +3,16 @@
 body {
     background-color: rgb(119,89,112);
 }
+.login-navbar {
+    margin-bottom: 54.4px;
+}
+
 .imageClass {
 
     width: 120%;
-    height: 120%
+    height: 120%;
+    animation-name: animateLogo;
+    animation-duration: 3s;
 }
 
 .black,.hover-black:hover{
@@ -30,7 +36,7 @@ body {
 }
 
 .newFont {
-    font-family: Poppins;
+    font-family: 'Poppins';
 }
 
 .imgButton:hover {
@@ -40,6 +46,113 @@ body {
     border-color: black;
   
 }
+
+.fixedButton{
+    
+    width: 300px;
+    height: 100px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 1em;
+    border-style: ridge;
+    
+}
+
+.fixedButton:hover{
+
+
+    text-align: center;
+    border-width: 0.3em;
+    animation-name: animateButton;
+    animation-duration: 1s;
+    color: white;
+    background-color: rgb(119,89,112);
+}
+
+.info {
+    color: rgb(119,89,112);
+    font-weight: bolder;
+}
+.collection {
+    animation-name: animateButton;
+    animation-duration: 3s;
+    background-color:  rgb(119,89,112);
+    color: white;
+}
+  
+.caption {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+.titleDisplay {
+    font-family: 'Poppins';
+    margin-left: 240px;
+    text-align: center;
+    
+}
+
+/* book border */
+.bookBorder{
+    border: 1px solid #ccc;
+    background-color: white;
+	padding: 1.2em;
+	margin-right: 2.5em;
+    border-radius: 0.8rem;
+    border-color: black;
+}
+
+/* CARD */
+.card {
+    margin-left: 240px;
+	padding: 50px;
+    border-color: white;
+    border-radius: 1em;
+}
+
+.horLine {
+    border: 1px solid black;
+
+}
+.card h3 {
+    font-family: 'Poppins';
+    text-align: left;
+	font-size: 40px;
+}
+.card p {
+	line-height: 1.5;
+}
+
+/* fade animation */ 
+.tabcontent {
+	animation: fade 1s;
+}
+
+
+@keyframes fade {
+	from {opacity: 0;}
+	to {opacity: 1;}
+} 
+
+  @keyframes animateButton {
+    0% {
+      background-color:rgb(255,255,255,0.8);
+      color: black;
+    }
+
+    100% {
+      background-color:  rgb(119,89,112);
+      color: white;
+    }
+
+  }
+
 
 /* W3 CSS - modified*/
 /* W3.CSS 4.13 June 2019 by Jan Egil and Borge Refsnes */

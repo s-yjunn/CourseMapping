@@ -1,9 +1,15 @@
 //file paths:
 var tabpath = "php/tab.html.php";
 
-document.getElementById("test2").innerHTML = "test";
-
 sessionStorage["tabsCreated"] = "0"; // sessionStorage always stored data as text, even if given an int
+// }
+
+// contains all the user pathways
+// The keys are the same as the id's of the tabs that contain them
+if (!sessionStorage["allPathways"]) {
+  // Only set it if it hasn't been set yet.
+  sessionStorage["allPathways"] = {};
+}
 
 function openTab(evt, tabName) {
   unselectTabs(); // Reverts the appearence of the current tab, and hides it's content.
@@ -11,6 +17,7 @@ function openTab(evt, tabName) {
   // Show the current tab, and add an "active" class to the button that opened the tab
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
+  currentTab = tabName; // Store the current tab id
 }
 
 function newTab() {
@@ -23,10 +30,12 @@ function newTab() {
 
   unselectTabs(); // Hides the other tab content
 
+  var tabID = sessionStorage["tabsCreated"];
+  var title = "Untitled_" + tabID; // Intitial title for the pathway
   // Adds the tab's icon to the navigation bar
-  newTabLink(sessionStorage["tabsCreated"]);
+  newTabLink(tabID, title);
   // Creates a new tabcontent div containing the interactive pathway orgainzer
-  newPathway(sessionStorage["tabsCreated"]);
+  newPathway(tabID, title);
   // // Update the max-width based on the number of tab
   // updateCSS()
 }
@@ -53,7 +62,7 @@ function unselectTabs() {
 
 // Creates a new tablink in the navigation bar
 //  the tabID parameter is a unique id for every tab, using sessionStorage["tabsCreated"]. It is a parameter so that this function can be explicitly correlated with newPathway()
-function newTabLink(tabID) {
+function newTabLink(tabID, title) {
   var tabLink = document.createElement("button");
   tabLink.className = "tablinks active";
   tabLink.onclick = function () {
@@ -67,7 +76,7 @@ function newTabLink(tabID) {
 
 // Creates a new tabcontent div containing the interactive pathway orgainzer
 //  the tabID parameter is a unique id for every tab, using sessionStorage["tabsCreated"]. It is a parameter so that this function can be explicitly correlated with newTabLink()
-function newPathway(tabID) {
+function newPathway(tabID, title) {
   var pathwayOrganizer = document.createElement("div");
   pathwayOrganizer.id = tabID; // unique ID for every tab
   pathwayOrganizer.className = "tabcontent";
@@ -86,4 +95,11 @@ function newPathway(tabID) {
 
   document.getElementById("content").appendChild(pathwayOrganizer);
   pathwayOrganizer.style.display = "block";
+
+  // Add pathway to allPathways
+  var newPathway = { title: title };
+  for (var i = 1; i <= 8; i++) {
+    newPathway["sem_" + i] = { locked: true, nodes: {} };
+  }
+  sessionStorage.allPathways[tabID] = newPathway;
 }

@@ -24,7 +24,7 @@
             </div>
 
             <div class="w3-right w3-hide-small">
-                <a href="#" class="w3-bar-item w3-button">Merch</a>
+                <a href="../Merch/collection.php" class="w3-bar-item w3-button">Merch</a>
             </div>
 
             <div class="w3-right w3-hide-small">
@@ -32,7 +32,7 @@
             </div>
 
             <div class="w3-right w3-hide-small">
-                <a href="#" class="w3-bar-item w3-button">Profile</a>
+                <a href="Community/posts.php" class="w3-bar-item w3-button">Profile</a>
             </div>
 
             <div class="w3-right w3-hide-small">
@@ -66,7 +66,7 @@
 
     <div class="w3-center">
         <form action="php/login.inc.php" id="loginForm" method="post">
-            <input type="text" name="email" placeholder="Email" required>
+            <input type="email" name="email" placeholder="Email" required>
             <input type="password" name="pwd" placeholder="Password" required>
             <button type="submit" name="submit" id="loginSubmit">Log In</button>
         </form>

@@ -3,8 +3,8 @@ function openPost(postIndex) {
     //Loads the content into the post div, then
     $("#forumPost").load("php/forum/post.php?index=" + postIndex, function(){
         //Show the post
-        show('forumPost');
         hide('forumHome');
+        show('forumPost');
     });
 }
 
@@ -15,9 +15,9 @@ function postPost() {
     var postTitle = document.getElementById("postTitle").value.trim();
     var postContent = document.getElementById("postContent").value.trim();
     if (postTitle == "") { // make sure they've entered a title
-        document.getElementById("postStatus").innerHTML = "<p>Please enter a post title.</p>";
+        document.getElementById("postStatus").innerHTML = "<p class='alert alert-danger' role='alert'>Please enter a post title.</p>";
     } else if (postContent == "") { // make sure they've written a post
-        document.getElementById("postStatus").innerHTML = "<p>Please enter some post content.</p>"
+        document.getElementById("postStatus").innerHTML = "<p class='alert alert-danger' role='alert'>Please enter some post content.</p>";
     // If all is well, send the post to the php processing page
     } else {
         //Get the post ready for html outputting (replace newlines with <br>)
@@ -46,8 +46,8 @@ function postResponse(loggedIn, postIndex) {
     if (loggedIn == "true") {
         //Get response elements
         var responseContent = document.getElementById("responseContent").value.trim();
-        if (responseContent == "") { // make sure they've actuall written something
-            document.getElementById("responseStatus").innerHTML = "<p>Please enter a response.</p>"
+        if (responseContent == "") { // make sure they've actually written something
+            document.getElementById("responseStatus").innerHTML = "<p class='alert alert-danger' role='alert'>Please enter a response.</p>";
         // If all is well, send it to the php processing page
         } else {
             responseContent = responseContent.replace(/(?:\r\n|\r|\n)/g, '<br>'); // replace newlines with <br>

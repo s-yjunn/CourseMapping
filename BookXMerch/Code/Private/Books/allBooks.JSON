@@ -13,7 +13,18 @@
         "url": "https://www.goodreads.com/book/show/707611.Superman_Archives_Vol_2",
         "image_url": "https://images.gr-assets.com/books/1307838888m/707611.jpg",
         "rating": "5",
-        "reviews": []
+        "reviews": 
+        [ 
+            {   
+                "user": "", 
+                "text":"This is the best Superman book i've ever read"
+            }
+            , 
+            { 
+                "user": "",
+                "text": "Superman always fought the good fight and brought justice to the wicked." 
+            }
+        ]
     },
     {
         "bookid": "1112",

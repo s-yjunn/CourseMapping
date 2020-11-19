@@ -1,6 +1,6 @@
 <?php
   session_start();
-  $_SESSION["name"] = "Anon"; 
+  unset($_SESSION["name"]); 
 
 ?>
 
@@ -33,7 +33,7 @@
             </div>
 
             <div class="w3-right w3-hide-small">
-                <a href="#" class="w3-bar-item w3-button">Community</a>
+                <a href="Community/posts.php" class="w3-bar-item w3-button">Community</a>
             </div>
 
             <div class="w3-right w3-hide-small">

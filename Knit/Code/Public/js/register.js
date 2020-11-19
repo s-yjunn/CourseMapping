@@ -11,16 +11,8 @@ $(document).ready(function(){
 	        success: function(result) {
 				// if register.php returns a success message,
 				if (result === "Success") {
-					// let the user know the registration worked
-					$("#regDiv").html("<p>Registration successful.</p>");
-					// add a message about their login status to the top of the page
-					$("#loggedIn").html("You are logged in as " + regUname + ". <a onclick = 'logOut()'>Log out</a>");
-					// show account tab
-					$("#userTab").show();
-					// load user page
-					$("#User").load(location.href+" #User>*","");
-					// reload the forum tab (so they can post under this username)
-					$("#Forum").load(location.href+" #Forum>*","");
+					// reload the page!
+					window.location.reload(true);
 				} else {
 					// if unsuccessful, output the failure message
 					$("#regDiv").html(result);

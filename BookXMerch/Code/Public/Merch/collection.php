@@ -23,7 +23,7 @@
     <img class="imageClass" src="Images/b&m.png" alt="bm">
 
     <div class="newFont">
-      <button class="barCol buttonClass" onclick="showCollection()" style="width: 200px; font-family"><b>Bookstore</b>x<b>Merch</b></button>
+      <a class="barCol buttonClass" href="../index.php" style="width: 200px; font-family"><b>Bookstore</b>x<b>Merch</b></a>
       <button class="barCol buttonClass" onclick="getMerchByCategory('Clothing')">Clothing</button>
       <button class="barCol buttonClass" onclick="getMerchByCategory('Collectibles')">Collectibles</button>
       <button class="barCol buttonClass" onclick="getMerchByCategory('Other')">Other</button>
@@ -41,7 +41,7 @@
 
       <div id="Colthing"> <button class="imgButton" onclick="getMerchByCategory('Clothing')"><img class="imageClass"  src="Images/shirt.png" alt="bm"></button></div>
       <div id="Collectibles"> <button class="imgButton" onclick="getMerchByCategory('Collectibles')"> <img class="imageClass" src="Images/mug.png" alt="bm"></button></div>
-      <div id="Other"> <button class="imgButton" onclick="getMerchByCategory('Other'))"><img class="imageClass" src="Images/notebook.png" alt="bm"></button></div>
+      <div id="Other"> <button class="imgButton" onclick="getMerchByCategory('Other')"><img class="imageClass" src="Images/notebook.png" alt="bm"></button></div>
     </div>
   </div>
 

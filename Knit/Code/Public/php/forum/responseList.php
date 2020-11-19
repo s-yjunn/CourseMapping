@@ -35,22 +35,21 @@
   }
 ?>
 
-<table>
-  <?php
-    if (count($responses) == 0) {
-      echo "<p class='alert alert-light' role='alert'>Nobody's responded to this post yet. Be the first!</p>";
-    } else {
-      foreach($responses as $key => $value) {
-        $posted = date('M j, Y \a\t h:iA', $value["posted"]);
-        echo "<tr class='response'>
-			<td class='vote'><button type='button' onclick=\"responseVote('$logged', 'up', $postIndex, $key)\"><i class='fas fa-plus fa-xs'></i></button><br>"
-			. $value["score"] . "<br>
-			<button type='button' onclick=\"responseVote('$logged', 'down', $postIndex, $key)\"><i class='fas fa-minus fa-xs'></i></button></td>
-			<td><p><span class='author'>" . $value["author"] . "</span><br>
-			<span class='timestamp'>$posted</span></p>
-			<p class='postContent'> " . $value["content"] . "</p></td>
-        </tr>";
-      }
-    }
+<?php if (count($responses) == 0) : ?>
+      <p class='alert alert-info' role='alert'>Nobody's responded to this post yet. Be the first!</p>
+<?php else: ?>
+  <table>
+  <?php foreach($responses as $key => $value):
+    $posted = date('M j, Y \a\t h:iA', $value["posted"]);
   ?>
-</table>
+    <tr class='response'>
+      <td class='vote'><button class="btn1" type='button' onclick = "responseVote('<?= $logged; ?>', 'up', <?= $postIndex; ?>, <?= $key; ?>)"><i class='fas fa-plus fa-xs'></i></button><br>
+        <?= $value["score"]; ?><br>
+        <button class="btn1" type='button' onclick="responseVote('<?= $logged; ?>', 'down', <?= $postIndex; ?>, <?= $key; ?>)"><i class='fas fa-minus fa-xs'></i></button></td>
+      <td><p><span class='author'><?= $value["author"]; ?></span><br>
+      <span class='timestamp'><?= $posted; ?></span></p>
+      <p class='postContent'><?= $value["content"]; ?></p></td>
+    </tr>
+  <?php endforeach; ?>
+  </table>
+<?php endif; ?>

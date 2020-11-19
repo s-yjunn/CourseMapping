@@ -1,0 +1,52 @@
+Specifications:
+
+
+Models: The data that is necessary for the site to function and its structure details.
+
+Users: 
+Path to allUsers.json: common/BookXMerch/Code/Private/Users/allUsers.json
+The users.json file contains a log of all the registered users for the BookXMerch site. These users are defined by certain characteristics, as listed below. 
+Name: Each user when signing up through the signup page will specify their name and this shall be used to address them in the index and profile pages. {required}
+Email: Each user must also specify a valid email address while signing up. This email address will be checked for existing entries to see if the user exists already or not. Successful registration is contingent upon a unique email address not already present in allUsers.json. The email address and the password are both required for authentication at the time of the login. 
+Password: Each user must also specify a password while signing up. As of now, there are no requirements for the validation of a possible password as long as one is provided. The password is required along with the corresponding email address for successful login. {required}
+Type: Either “user” or “admin”. Each user will be assigned a type. This type attribute is used to distinguish between admin users with certain edit authority to the site and normal users of the site. Every user that signs up through the signup page will be assigned the “user” type as there’s no specific signup page for admins. All admins to the site are currently hardcoded in allUsers.json
+Username: Each user must also provide the username they’d like to have which will be checked for uniqueness. This attribute will be used for community posts and book reviews. 
+
+Community Posts:
+JSON file is located at common/BookXMerch/Code/Private/CommunityPosts/allPosts..json
+The main object has the following characteristics : 
+The Author of the post (the username/compatible with the allUsers.json file, 
+the title of the post: a short summary for clarity and better experience for users to browse it.
+The Date of Publication : when the post was made
+The post text: the input of the user (no word limit set yet)
+Comments: a JSON object itself, containing each comment appended to the post with attributes: Author, date it was posted and the text of the comment
+
+
+
+Books:
+Path: common/BookXMerch/Code/Private/Books/allBooks.JSON
+The allBooks.JSON file contains the initial book collection. Each JSON Object represents a single book, defined by:
+ an ID: book’s ID to be used as a reference in reviews and ratings
+a main genre: including comic books, romance, horror, children’s books, science fiction, etc. 
+ a title: book’s title
+a list of authors and illustrators: book’s author(s) and illustrator(s)
+a short summary that serves as a description for the book
+a url to the book’s page or download link (if a copy of the book is available) 
+image_url: book’s cover (if available)
+Rating: each book’s rating is initialized at 5 stars. Users will be able to rate the book, and an average will be computed accordingly
+Reviews: A list of all reviews associated with the book. Users’ most recent 5 to 10 reviews will be displayed
+As BxM’s main goal is for users to be able to upload their own books and lend each other books, we will be appending to this initial collection new user-uploaded books, which will be structured as explained above. The upload feature will be available to users under their Profile webpage post-login. The form will require them to specify details above. After checking that the book doesn’t exist in the collection already, it will be added to the allBooks.JSON file and will become publicly visible. 
+For now, the book collection is only visible post-login to encourage users to sign up and log in in order to access the main website’s features. 
+
+
+
+
+Merch:
+JSON file is located at common/BookXMerch/Code/Private/Merch/allMerch..json
+The main object has the following characteristics : 
+itemID : each item has a unique ID (created manually for now but will be incremented once it’s implemented in the back-end)
+Category : specifies whether the item falls into either of these categories : clothing, collectibles or others.
+Item : item name/designation : ex :Harry Potter shirt
+inventory : quantity of merch available. Entered manually but decrements each time a user buys it
+Points: points are sort of the currency used to value the item. To purchase an item, the user needs to spend points: ex: 20 points for a scarf
+Picture-link: link to an image of the item/ might make it a local image and then it will become a relative path to that image

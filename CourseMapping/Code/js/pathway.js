@@ -1,9 +1,6 @@
-//file paths:
-var savepath = "users/save.php";
-
-// Stores enough infrmation on each pathway to bring it back after a refresh.
+// Stores enough information on each pathway to bring it back after a refresh.
 // Is also usable for keeping track of the nodes' positions while the user is interacting with the pathway.
-var pathway;
+var pathway = {};
 
 // Major chosen by the user
 var chosenMajor = "XXX";

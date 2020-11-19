@@ -13,8 +13,6 @@ for($i=0; $i<count($temp_json['users']); $i++) {
     $user = $temp_json['users'][$i]['id'];
     if($id == $user){
         $available = 0;
-    }else if ($id == "220"){
-        $available = 0;
     }
 }
 
@@ -26,10 +24,14 @@ if($id == 'admin'){
 }
 
 if($available == 1){
+    ob_start();
+    session_start();
     $new_data = array('id'=>$id, 'pw'=>$pw);
     array_push($temp_json['users'], $new_data);
+    $_SESSION['username'] = $id;
+    session_write_close();
     echo '<script type = "text/javascript">
-    alert("Successfully Register! Please login on the main webpage.");
+    alert("Successfully Registered!");
     window.location.href="../index.html.php";
     </script>';
 } else {

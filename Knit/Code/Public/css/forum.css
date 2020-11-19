@@ -4,11 +4,12 @@
 
 /* GENERAL FORUM */
 #Forum a {
-	color: rgb(228,86,53);
+	color: rgb(239, 35, 60);
+	transition: color 0.4s;
 }
 #Forum a:hover {
   cursor: pointer;
-  border-bottom: 1px solid rgb(228,86,53);
+  color: rgb(239, 35, 60, 0.6);
 }
 
 /* TABLE */
@@ -39,6 +40,8 @@
 	width: 2.5em;
 	border-radius: 50%;
 	padding: 5px;
+	font-size: 0.8rem;
+	margin: 0.5rem;
 }
 #forumPost .vote { /* So the vote # and buttons line up */
 	padding: 0.8rem;
@@ -48,7 +51,7 @@
 }
 #forumPost .timestamp {
 	font-size: 0.8rem;
-	font-style: italic;
+	color: #777;
 }
 #forumPost .author {
 	padding: 1.5rem 0rem;
@@ -57,10 +60,6 @@
 }
 #forumPost .postContent {
 	margin: 2rem 0;
-}
-#forumPost .alert {
-	margin: 2rem 0;
-	padding: 0 0.5rem;
 }
 
 /* SELECT DROP DOWNS */
@@ -76,6 +75,16 @@ label[for="indexView"], label[for="responsesView"], #indexView, #responsesView {
 	padding: 1.2rem;
 	width: 100%;
 	margin: 1rem 0;
+}
+
+#composePost input[type=text], #composePost textarea {
+	width: 100%;
+	border: 1px solid #ccc;
+	padding: 0.5rem 1rem;
+}
+
+#composePost textarea {
+	margin: 0 0 2rem 0;
 }
 
 /* MODAL */

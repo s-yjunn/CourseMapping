@@ -59,7 +59,7 @@
                     if($name == $value['name']) {
                         $username = $value['username'];
                         $email = $value['email']; 
-                        $type = $value['type'];
+                        // $type = $value['type'];
 
                     }
                 }
@@ -82,10 +82,6 @@
                 <div class="barCol"> <b> Email: </b> 
                 <?php echo $email; ?> 
                 </div> 
-                <hr>
-                <div class="barCol"> <b> Type: </b> 
-                <?php echo $type; ?> 
-                </div>
                 <hr>
                 <div class="barCol"> <b> Other details: </b> 
                 <?php echo "~"; ?> 

@@ -6,7 +6,7 @@
 			<input id="confPsw" type="password" placeholder="Confirm Password" name="confPsw" required><br>
 		</form>
 		
-		<button id="regSubmit" type="submit">Sign Up</button>
+		<button id="regSubmit" class="btn1" type="submit">Sign Up</button>
 
 		<div id="regDiv"></div>
 </div>

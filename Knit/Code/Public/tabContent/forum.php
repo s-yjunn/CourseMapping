@@ -12,9 +12,9 @@
     <!--This div is what the user sees when they first open the forum-->
     <div id="forumHome">
       <!--reload button. Forum is also reloaded anytime the user adds a post or changes the sorting method-->
-      <button type="button" onclick="refreshForumIndex()"><i class="fas fa-redo-alt"></i> Refresh</button>
+      <button class="btn1" type="button" onclick="refreshForumIndex()"><i class="fas fa-redo-alt"></i> Refresh</button>
       <!--Button to write a post. Opens a composition div if the user is logged in, otherwise one that tells them to login.-->
-      <button type="button" onclick=<?=$showCompose; ?>><i class="fas fa-user-edit"></i> Write a post</button>
+      <button class="btn1" type="button" onclick=<?=$showCompose; ?>><i class="fas fa-user-edit"></i> Write a post</button>
       
       <!--This is the form to compose a post-->
       <div class="dark hide" id="composePost">
@@ -22,8 +22,8 @@
           <h4>Compose post</h4>
           <input type="text" id="postTitle" placeholder="Your post's title"><br>
           <textarea id = "postContent" placeholder="Your post's content"></textarea><br>
-          <button type="button" onclick="postPost()">Post</button>           
-          <button id="cancel" onclick="hide('composePost')">Cancel</button>
+          <button class="btn1" type="button" onclick="postPost()">Post</button>           
+          <button class="btn1" id="cancel" onclick="hide('composePost')">Cancel</button>
           <span id = "postStatus"></span> <!-- for validation of a post-->
         </div>
       </div>
@@ -56,7 +56,7 @@
     <div class="float">
         <p>Only registered users can post and vote in the forum. Sign up or log in to access these features!</p>
       <div class="text-center">
-        <button id="exit" onclick="hide('loginPlease')">Got it</button>
+        <button class="btn1" id="exit" onclick="hide('loginPlease')">Got it</button>
       </div>
     </div>
   </div>

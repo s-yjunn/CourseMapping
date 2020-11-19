@@ -1,18 +1,23 @@
-<form action="#" method="post">
-<table>
-<tr>
-    <td>Select a major: </td>
-    <td>
-        <select id="myselect" onchange="change_myselect(this.value)">
-            <option value="1">Select Majors</option>
-            <option value="EGR">EGR</option>
-            <option value="PHY">PHY</option>
-        </select>
-    </td>               
-</tr>
-</table>
+<form action="php/jsonToTable.php" method="post">
+<select name = "major">
+    <option value="None">Select Majors</option>
+    <option value="EGR">EGR</option>
+    <option value="PHY">PHY</option>
+</select>
+<input type="submit" value="Submit the form"/>
 </form>
 
-<p id="demo"></p>
+<!--?php
+// $content = file_get_contents("json/courses.json");
+// $content_json = json_decode($content, true);
+// echo "<form action=\"php/jsonToTable.php\" method=\"post\">";
+// echo "<select name = \"major\">";
+// echo $content_json[1];
+// for($i = 1; $i < count(array_keys($content_json)); $i++){
+//         echo "<option value=" . $content_json[$i]. ">". $content_json[$i]. "</option>";
+//     };
 
-<script type = "text/javascript" src = "js/jsonConvert.js"></script>
+//     // Close the table
+// echo "</select>";
+// echo "<input type=\"submit\" value=\"Select\"/>";
+// ?> -->

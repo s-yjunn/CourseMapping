@@ -16,7 +16,6 @@ foreach ($booksArray as $key => $jsons) {
 
 echo "<div>";
 foreach ($byGenre as $newArray) {
-
   echo "<ul>";
   echo "<b> <button class='fixedButton' onclick='displayContent(".$newArray[7].")' id='".$newArray[7]."'> " . $newArray[0] . "</button></b> ";
   echo "</ul>";

@@ -102,8 +102,8 @@ body {
 .bookBorder{
     border: 1px solid #ccc;
     background-color: white;
-	padding: 1.2em;
-	margin-right: 2.5em;
+    padding: 1.2em;
+    margin-right: 2.5em;
     border-radius: 0.8rem;
     border-color: black;
 }
@@ -111,7 +111,7 @@ body {
 /* CARD */
 .card {
     margin-left: 240px;
-	padding: 50px;
+    padding: 50px;
     border-color: white;
     border-radius: 1em;
 }
@@ -123,21 +123,21 @@ body {
 .card h3 {
     font-family: 'Poppins';
     text-align: left;
-	font-size: 40px;
+    font-size: 40px;
 }
 .card p {
-	line-height: 1.5;
+    line-height: 1.5;
 }
 
 /* fade animation */ 
 .tabcontent {
-	animation: fade 1s;
+    animation: fade 1s;
 }
 
 
 @keyframes fade {
-	from {opacity: 0;}
-	to {opacity: 1;}
+    from {opacity: 0;}
+    to {opacity: 1;}
 } 
 
   @keyframes animateButton {

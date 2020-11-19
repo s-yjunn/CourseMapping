@@ -4,37 +4,29 @@
             "name": "Nukhbah Majid",
             "email": "nmajid@smith.edu",
             "type": "admin",
+            "username": "nmajid",
             "password": "adminuser"
         },
         {
             "name": "Imane Berrada",
             "email": "iberrada@smith.edu",
+            "username": "iberrada",
             "type": "admin",
             "password": "adminuser"
         },
         {
             "name": "Mariem Snoussi",
             "email": "msnoussi@smith.edu",
+            "username": "msnoussi",
             "type": "admin",
             "password": "adminuser"
         },
         {
             "name": "User 1",
             "email": "user1@gmail.com",
+            "username": "user1",
             "type": "user",
             "password": "user1"
-        },
-        {
-            "name": "Imane",
-            "email": "blabla@gmail.com",
-            "type": "user",
-            "password": "cs220"
-        },
-        {
-            "name": "New User",
-            "email": "imaaneberrada@gmail.com",
-            "type": "user",
-            "password": "books"
         }
     ]
 }

@@ -13,8 +13,6 @@ for($i=0; $i<count($temp_json['users']); $i++) {
     $user = $temp_json['users'][$i]['id'];
     if($id == $user){
         $available = 0;
-    }else if ($id == "220"){
-        $available = 0;
     }
 }
 

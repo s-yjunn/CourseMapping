@@ -25,10 +25,9 @@ if (trim($attemptUser) == "") { // check for empty user
 	$_SESSION["username"] = $attemptUser;
 	if ($phpArray[$attemptUser]["admin"] == true) {
 		$_SESSION["admin"] = true; // is admin
-		echo "Success-admin";
 	} else {
 		$_SESSION["admin"] = false; // is not admin
-		echo "Success";
 	}
+	echo "Success";
 }
 ?>

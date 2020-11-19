@@ -4,36 +4,42 @@
 	],
 	"contestants": [
 		{
+			"title": "Sample",
 			"author": "User One",
 			"image": "sample.jpg",
 			"text": "Materials: yarn, love. Directions: Knit a sweater!",
 			"votes": 0
 		},
 		{
+			"title": "Sample 2",
 			"author": "Sample User",
 			"image": "fb1aa2066293cd5882e03e333095c3de.jpg",
 			"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 			"votes": 0
 		},
 		{
+			"title": "Sample 3",
 			"author": "Sample User",
 			"image": "fb1aa2066293cd5882e03e333095c3de.jpg",
 			"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 			"votes": 0
 		},
 		{
+			"title": "Sample 4",
 			"author": "Sample User",
 			"image": "fb1aa2066293cd5882e03e333095c3de.jpg",
 			"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 			"votes": 0
 		},
 		{
+			"title": "Sample 5",
 			"author": "Sample User",
 			"image": "fb1aa2066293cd5882e03e333095c3de.jpg",
 			"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 			"votes": 0
 		},
 		{
+			"title": "Sample 6",
 			"author": "Sample User",
 			"image": "fb1aa2066293cd5882e03e333095c3de.jpg",
 			"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",

@@ -19,11 +19,11 @@
 ?>
 
 <div id="Vote" class="tabcontent">
-	<h3 class="underline">Contest Voting</h3>
+	<h3 class="underline">Contest</h3>
 	
 	<div class="submit">
 		<h4>Submit</h4>
-		<p>Submit your unique knitting patterns to enter our weekly contest! Winners are determined by user voting and have a chance to be featured on our weekly slideshow. To submit, please upload <b>one text file</b> of pattern-making instructions and <b>one image</b> of a knit creation made via your instructions.</p>
+		<p>Submit your unique knitting patterns to enter our weekly contest! Winners are determined by user voting and have a chance to be featured on our weekly slideshow. To submit, please upload <b>one text file</b> of pattern-making instructions, <b>one image</b> of a knit creation made via your instructions, and a <b>title</b> for your creation.</p>
 		<form action="php/upload.php" method="post" enctype="multipart/form-data" id="submit">
 		  <input type="file" name="fileToUpload[]" id="fileToUpload" multiple="multiple">
 		  <input type="submit" value="Upload File" name="submit">
@@ -47,8 +47,11 @@
 				<div class="card">
 					<div class='card-body'>
 						<img class='card-img-top' src='<?= $image ?>' alt='Knit submission by <?= $user ?>'>
-						<h6 class='card-title'><?= $user ?></h6>
-						<p class='card-text'><?= $description ?></p>
+						<div class='card-title'>
+							<h5>Title</h5>
+							<h6><?= $user ?></h6>
+						</div>
+						<!--<p class='card-text'><?= $description ?></p>-->
 						<form>
 						  <input id="hide" class="btn" type="button" value="Vote" onclick='updateVote(<?= $i ?>, <?= $numVotes ?>)'>
 					  </form>

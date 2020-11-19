@@ -51,8 +51,8 @@
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    <div class="navbar-nav mr-auto">
 			<button class="tablinks active" onclick="openTab(this, 'Welcome')">Home</button>
-			<button class="tablinks" onclick="openTab(this, 'Winners')">Contest</button>
-			<button class="tablinks" onclick="openTab(this, 'Vote')">Vote</button>
+			<button class="tablinks" onclick="openTab(this, 'Winners')">Featured</button>
+			<button class="tablinks" onclick="openTab(this, 'Vote')">Contest</button>
 			<button class="tablinks" onclick="openTab(this, 'Pattern')">Pattern Maker</button>
 			<button class="tablinks" onclick="openTab(this, 'Forum')">Forum</button>
 	    </div>

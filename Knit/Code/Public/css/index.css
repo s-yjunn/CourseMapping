@@ -158,6 +158,8 @@ input[type=text], input[type=password] {
 }
 #Vote .card-title {
 	font-weight: bold;
+	text-align: center;
+	margin: 0 0 1rem 0;
 }
 #Vote form {
 	display: block;

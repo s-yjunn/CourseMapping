@@ -21,6 +21,7 @@
     <button class = "tablinks active" onclick= "openTab(event, 'Main')" <?php include 'php/logouttabs.php';?>>MAIN PAGE</button>
     <button class = "tablinks" onclick= "openTab(event, 'Saved')" <?php include 'php/logintabs.php';?>>SAVED</button>
     <button class = "tablinks" onclick= "newTab()" <?php include 'php/logintabs.php';?>>+</button>
+    <button class = "tablinks" <?php include 'php/logouttabs.php';?>onclick= "openTab(event, 'Register')">REGISTER</button>
     <button class = "tablinks" <?php include 'php/logouttabs.php';?>onclick= "openTab(event, 'Login')">LOGIN</button>
     <button class = "tablinks" <?php include 'php/admintab.php';?> onclick= "openTab(event, 'Admin')">ADMIN</button>
 </div>
@@ -34,6 +35,9 @@
     </div>
     <div id = 'Login' class = 'tabcontent' style = 'display: none;'>
         <?php include "tabs/login.html.php"?>
+    </div>
+    <div id = 'Register' class = 'tabcontent' style = 'display: none;'>
+        <?php include "tabs/register.html.php"?>
     </div>
     <div id = 'Admin' class = 'tabcontent' style = 'display: none;'>
         <?php include "tabs/admin.html.php"?>

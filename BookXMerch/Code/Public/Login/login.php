@@ -32,7 +32,7 @@
             </div>
 
             <div class="w3-right w3-hide-small">
-                <a href="#" class="w3-bar-item w3-button">Profile</a>
+                <a href="Community/posts.php" class="w3-bar-item w3-button">Profile</a>
             </div>
 
             <div class="w3-right w3-hide-small">

@@ -14,14 +14,14 @@ function updateVote(i, vote){
 
 }
 
-// This function "opens" a pattern in either the "featured" or "contest" tab
-function openPattern(patternIndex, from) {
+// This function "opens" a pattern in the "to" div and hides the "from" div
+function openPattern(patternIndex, to, from) {
     console.log("Pattern " + patternIndex + " opened from " + from);
     //Loads the content into the pattern div, then
-    $("#pattern").load("php/pattern.php?index=" + patternIndex + "&from=" + from, function(){
-        //Show the pattern
-        show('pattern');
+    $("#"+to).load("php/pattern.php?index=" + patternIndex + "&to=" + to + "&from=" + from, function(){
         // hide the menu
         hide(from);
+        //Show the pattern
+        show(to);
     });
 }

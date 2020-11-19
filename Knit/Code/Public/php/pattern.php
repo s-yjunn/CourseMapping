@@ -7,12 +7,14 @@
   //Get the proper submission
   $patternIndex = $_GET['index'];
   $pattern = $compData["contestants"][$patternIndex];
+  //Where is this being loaded?
+  $to = $_GET["to"];
   //Which tab is this being requested from?
   $from = $_GET['from'];
 
 ?>
 
-<a href = "#<?= $patternIndex; ?>" onclick="hide('pattern'); show('<?= $from; ?>')"><i class="fas fa-arrow-left"></i> Go back</a>
+<button onclick="hide('<?= $to; ?>'); show('<?= $from; ?>')"><i class="fas fa-arrow-left"></i> Go back</button><br><br>
 
 <div id="mainPattern">
   <img src='contest/<?= $pattern["image"]; ?>' alt='Knit submission by <?= $pattern["author"]; ?>'>

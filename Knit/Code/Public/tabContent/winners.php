@@ -1,41 +1,39 @@
-<div id="Winners" class="tabcontent">
-
-<div class="slideshow-container">
-    <h3 class="underline">Featured</h3>
-    <?php
- $winners = glob('images/winners/*');
-$numPics = count($winners);
-if($numPics == 0){
-    echo '<p>There are currently no winners! Please come back later for updates.</p>';    
-    }
-    else{
-      for ($i = 1; $i < $numPics; $i++){
-  echo '<div class="mySlides fade">',
-  '<div class="numbertext">'.($i + 1 ). ' / ' . $numPics .'</div>',
-  '<img src="'.$winners[$i].'" style="width:500" class="center">',
-  '</div>';
-      }
-
-      echo '<a class="prev" onclick="plusSlides(-1)">&#10094;</a>',
-      '<a class="next" onclick="plusSlides(1)">&#10095;</a>';
-  }
-?> 
-
-</div>
-
 <?php
-$winners = glob('images/winners/*');
-$numPics = count($winners);
-if($numPics != 0){
-echo '<div style="text-align:center">';
-
-for ($i = 1; $i <= $numPics; $i++){
-echo '<span class="dot" onclick="currentSlide('.$i.')"></span> ';
-}
-
-echo '</div>';
-}
+    $comp = file_get_contents("data/contest.json");
+    $compData = json_decode($comp, true);
+    $winnerData = $compData["winners"];
+    $numWin = count($winnerData);
 ?>
+
+<div id="Winners" class="tabcontent">
+    <h3 class="underline">Featured</h3>
+    <div class="slideshow-container" id = "featuredHome">
+        <?php if ($numWin == 0): ?>
+            <p>There are currently no winners! Please come back later for updates.</p>
+        <?php else:
+            for($i = 0; $i < $numWin; $i++): 
+                $image = "imgs/contest/" . $winnerData[$i]["image"];
+            ?>
+                <div class="mySlides fade">
+                    <div class="numbertext"> <?= $i + 1; ?> / <?= $numWin; ?> </div>
+                    <a onclick="openPattern(<?= $i; ?>, 'featuredPattern', 'featuredHome')"><img src="<?= $image; ?>" style="width:500" class="center" alt='Knit submission by <?= $winnerData[$i]["image"]; ?>'></a>
+                </div>
+            <?php endfor; ?>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <?php endif; ?>
+
+        <?php if($numWin != 0): ?>
+            <div style="text-align:center">
+            <?php for ($i = 1; $i <= $numWin; $i++): ?>
+                <span class="dot" onclick="currentSlide('<?= $i; ?>')"></span>
+            <?php endfor; ?>
+            </div>
+        <?php endif; ?>
+    </div>
+
+    <!-- This div will be filled by php/pattern.php when any pattern is called on -->
+    <div id = "featuredPattern"></div>
 </div>
 
-<script src="js/showSlides.js"></script>
+<script src="js/slides.js"></script>

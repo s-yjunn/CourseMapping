@@ -1,0 +1,22 @@
+Title: Knitty Gritty
+Team: Alexis, Bethany, Isabel
+Date: 11/18/20
+
+DONE this time
+    - Team: met to discuss competition structure, decided to have admin/user 
+      pages as tabs on the main page
+    - Alexis: started on the pattern maker (canvas with drawing and 
+      save-to-image ability), restyled entire site & contest voting page in 
+      particular
+    - Isabel: added admin users, implemented login-contingent tab and div showing
+      and hiding, basics of contest submission pre(viewing)
+    - Bethany: partially debugged contest submission display, preliminary admin
+      functionality in relation to contest
+
+TO DO for next time
+    - Debug contest voting
+    - Debug contest winner display
+    - Reconfigure contest submission so page doesn't reload
+    - Begin serious work on user/admin page functionality
+    - Continue work on pattern maker, including figuring out how to clear the 
+      canvas without reloading the page

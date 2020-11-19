@@ -24,10 +24,11 @@
 			<h4>Enter the contest</h4>
 			<p>Submit your unique knitting patterns to our weekly contest! Winners are determined by user voting and have a chance to be included in our "featured" slideshow.</p>
 			<?php if ($loggedIn): ?>
-				</p>Please submit <b>one text file</b> of pattern-making instructions, <b>one image</b> of a knit creation made via your instructions, and a <b>title</b> for your creation. You will be alerted if your pattern is accepted for inclusion in the contest!</p>
+				<p>Please submit <b>one text file</b> of pattern-making instructions, <b>one image</b> of a knit creation made via your instructions, and a <b>title</b> for your creation. You will be alerted if your pattern is accepted for inclusion in the contest!</p>
 				<form action="php/upload.php" method="post" enctype="multipart/form-data" id="submit">
 					<input type="text" name="title" id="title" placeholder="Your submission's title"><br>
 					<input type="file" name="fileToUpload[]" id="fileToUpload" multiple="multiple">
+					<input type="hidden" name="author" value="<?=$username; ?>">
 					<input type="submit" value="Submit" name="submit">
 				</form>
 			<?php else: ?>
@@ -38,14 +39,14 @@
 		<h4>Vote on this week's entries</h4>
 		<?php if($numCont == 0): ?>
 		<p>There are currently no contest entries! Please come back later for updates.</p>    
-		<?php  else: ?>
+		<?php else: ?>
 		<div class="container">
 			<div class="row">
 			<?php for($i = 0; $i < $numCont; $i++):
 				// echo "i=".$i."<br>";
 				$title = $contestantData[$i]["title"];
 				$user = $contestantData[$i]["author"];
-				$image = "contest/" . $contestantData[$i]["image"];
+				$image = "imgs/contest/" . $contestantData[$i]["image"];
 				$description = $contestantData[$i]["text"];
 				$numVotes = $contestantData[$i]["votes"];
 				$GLOBALS['user'] = $user;
@@ -59,7 +60,7 @@
 								<h6><?= $user ?></h6>
 							</div>
 							<!--<p class='card-text'></?= $description ?></p>-->
-							<button type="button" onclick="openPattern(<?= $i; ?>, 'contestHome')">View</button>
+							<button type="button" onclick="openPattern(<?= $i; ?>, 'contestPattern', 'contestHome')">View</button>
 							<form>
 							<input id="hide" class="btn" type="button" value="Vote" onclick='updateVote(<?= $i ?>, <?= $numVotes ?>)'>
 						</form>
@@ -74,7 +75,7 @@
 	</div>
 
 	<!-- This div will be filled by php/pattern.php when any pattern is called on -->
-	<div id = "pattern"></div>
+	<div id = "contestPattern"></div>
 </div>
 
 <script src="js/contest.js"></script>

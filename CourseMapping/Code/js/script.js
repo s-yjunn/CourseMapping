@@ -4,9 +4,9 @@ var tabpath = "php/tab.html.php";
 // current tab element's id
 var currentTab;
 
-if(!sessionStorage["tabsCreated"]) { // Only set it to zero if it hasn't been set yet.
+// if(!sessionStorage["tabsCreated"]) { // Only set it to zero if it hasn't been set yet.
   sessionStorage["tabsCreated"] = "0"; // sessionStorage always stored data as text, even if given an int
-}
+// }
 
  // contains all the user pathways
  // The keys are the same as the id's of the tabs that contain them

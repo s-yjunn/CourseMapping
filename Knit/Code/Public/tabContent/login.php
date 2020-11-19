@@ -6,7 +6,7 @@
 			<input id="loginPsw" type="password" placeholder="Password" name="loginPsw" required><br>
 		</form>
 		
-		<button id="loginSubmit" type="submit">Log In</button>
+		<button id="loginSubmit" class="btn1" type="submit">Log In</button>
 
 		<div id="loginDiv"></div>
 	    </div>

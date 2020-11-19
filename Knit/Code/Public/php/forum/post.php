@@ -20,7 +20,7 @@
   }
 ?>
 
-<button type="button" onclick="hide('forumPost'); show('forumHome')"><i class="fas fa-arrow-left"></i> Go back</button>
+<button class="btn1" type="button" onclick="hide('forumPost'); show('forumHome')"><i class="fas fa-arrow-left"></i> Go back</button>
 
 
 <!--The post itself-->
@@ -28,9 +28,9 @@
   <h4><?=$post["title"]; ?></h4>
   <table>
     <tr class="response">
-      <td class="vote"><button type='button' onclick="postVote('<?=$logged; ?>', 'up', <?=$postIndex; ?>)"><i class="fas fa-plus fa-xs"></i></button><br>
+      <td class="vote"><button class="btn1" type='button' onclick="postVote('<?=$logged; ?>', 'up', <?=$postIndex; ?>)"><i class="fas fa-plus fa-xs"></i></button><br>
       <?=$post["score"]; ?><br>
-      <button type='button' onclick="postVote('<?=$logged; ?>', 'down', <?=$postIndex; ?>)"><i class="fas fa-minus fa-xs"></i></button></td>
+      <button class="btn1" type='button' onclick="postVote('<?=$logged; ?>', 'down', <?=$postIndex; ?>)"><i class="fas fa-minus fa-xs"></i></button></td>
       <td>
         <p><span class="author"><?=$post["author"]; ?></span><br>
         <span class="timestamp"><?=$posted; ?></span></p>
@@ -64,6 +64,6 @@
 <div id="composeResponse">
 	<h5>Your Response</h5>
 	<textarea id='responseContent' placeholder='Write your response here.'></textarea><br>
-	<button type='button' onclick="postResponse('<?=$logged; ?>', <?=$postIndex; ?>)">Post</button>
+	<button class="btn1" type='button' onclick="postResponse('<?=$logged; ?>', <?=$postIndex; ?>)">Post</button>
 	<span id = 'responseStatus'></span>
 </div>

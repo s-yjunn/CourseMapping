@@ -14,11 +14,11 @@
 
 ?>
 
-<button onclick="hide('<?= $to; ?>'); show('<?= $from; ?>')"><i class="fas fa-arrow-left"></i> Go back</button><br><br>
+<button class="btn1" onclick="hide('<?= $to; ?>'); show('<?= $from; ?>')"><i class="fas fa-arrow-left"></i> Go back</button><br><br>
 
 <div id="mainPattern">
-  <img src='contest/<?= $pattern["image"]; ?>' alt='Knit submission by <?= $pattern["author"]; ?>'>
+  <img class="fullImg" src='imgs/contest/<?= $pattern["image"]; ?>' alt='Knit submission by <?= $pattern["author"]; ?>'>
   <h4><?=$pattern["title"]; ?></h4>
-  <p class="author"><?=$pattern["author"]; ?></p>
+  <h5 class="author"><?=$pattern["author"]; ?></h5>
   <p class="postContent"><?=$pattern["text"]; ?></p>
 </div>

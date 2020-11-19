@@ -12,9 +12,9 @@
     <!--This div is what the user sees when they first open the forum-->
     <div id="forumHome">
       <!--reload button. Forum is also reloaded anytime the user adds a post or changes the sorting method-->
-      <button type="button" onclick="refreshForumIndex()"><i class="fas fa-redo-alt"></i> Refresh</button>
+      <button class="btn1" type="button" onclick="refreshForumIndex()"><i class="fas fa-redo-alt"></i> Refresh</button>
       <!--Button to write a post. Opens a composition div if the user is logged in, otherwise one that tells them to login.-->
-      <button type="button" onclick=<?=$showCompose; ?>><i class="fas fa-user-edit"></i> Write a post</button>
+      <button class="btn1" type="button" onclick=<?=$showCompose; ?>><i class="fas fa-user-edit"></i> Write a post</button>
       
       <!--This is the form to compose a post-->
       <div class="dark hide" id="composePost">

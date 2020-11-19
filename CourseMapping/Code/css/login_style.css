@@ -34,3 +34,13 @@ position: relative;
 width: 100%; /* Full width */
 height: 100%; /* Full height */
 }
+
+
+.logout-btn {
+  background-color: rgb(13, 130,102);
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 15%;
+}

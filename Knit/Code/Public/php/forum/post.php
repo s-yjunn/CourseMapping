@@ -64,6 +64,6 @@
 <div id="composeResponse">
 	<h5>Your Response</h5>
 	<textarea id='responseContent' placeholder='Write your response here.'></textarea><br>
-	<button class="btn1" type='button' onclick="postResponse('<?=$logged; ?>', <?=$postIndex; ?>)">Post</button>
+	<button class="btn1" type='button' onclick="postResponse('<?=$logged; ?>', <?=$postIndex; ?>)">Post</button><br>
 	<span id = 'responseStatus'></span>
 </div>

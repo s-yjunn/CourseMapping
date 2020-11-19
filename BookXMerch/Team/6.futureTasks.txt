@@ -1,0 +1,11 @@
+Implemented: 
+- Profile: User details 
+- Book collection: book details (by id), navigation bar (Profile, Community, Merch...) 
+
+Future tasks:  
+- Reading list for each user: additional “Add to my list” feature under each book where users can set up a reading list 
+- Reviews: create a reviews.JSON file -> Each review added to a book will be displayed both under the reviewed book, and under the user’s “my reviews”
+- reviews.JSON structure: user to review mappings, specifying date of the review, rating (number of stars), and the actual review (text).
+- Reading list and My reviews, My ratings will be visible under the Profile page. 
+
+- Login and Sign up: work on “forgot my password” feature and display errors when password is incorrect 

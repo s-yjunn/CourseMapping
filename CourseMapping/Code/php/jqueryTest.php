@@ -11,16 +11,26 @@
 
 <body>
     <p id="info"></p>
+    <!-- <p id="jsonInfo"></p> -->
+    <button onclick="getCourses()">Get Courses</button>
+    <button onclick="getPaths()">Get Paths</button>
 
-    <div id="CSC111" onclick="lineChange()" class="courseBlock ui-widget-content">
+    <div id="CSC111" onclick="lineChange()" class="courseBlock ui-widget-content" style="left:300px">
         CSC111
     </div>
-    <div id="MTH153" onclick="lineChange()" class="courseBlock ui-widget-content" style="top: 200px">
+    <div id="MTH153" onclick="lineChange()" class="courseBlock ui-widget-content" style="top: 200px;left:300px">
         MTH153
     </div>
 
-    <svg>
-        <line id="line1" /></svg>
+    <svg id="map" height="300" width="500" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <marker id="markerArrow" markerWidth="13" markerHeight="13" refX="2" refY="6" orient="auto">
+                <path d="M2,2 L2,11 L10,6 L2,2" style="fill: rgb(69, 74, 145);" />
+            </marker>
+        </defs>
+
+        <line id="line1" class="arrowLine" />
+    </svg>
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

@@ -4,13 +4,19 @@
   //Get all posts (since this is called from outside contest proper)
   $compData = json_decode(file_get_contents("../data/contest.json"), true);
   
-  //Get the proper submission
-  $patternIndex = $_GET['index'];
-  $pattern = $compData["contestants"][$patternIndex];
   //Where is this being loaded?
   $to = $_GET["to"];
   //Which tab is this being requested from?
   $from = $_GET['from'];
+
+  //Get the proper submission
+  $patternIndex = $_GET['index'];
+
+  if ($from === "featuredHome") {
+    $pattern = $compData["winners"][$patternIndex];
+  } else {
+    $pattern = $compData["contestants"][$patternIndex];
+  }
 
 ?>
 

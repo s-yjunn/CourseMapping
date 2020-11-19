@@ -5,7 +5,7 @@ var tabpath = "php/tab.html.php";
 var currentTab;
 
 // if(!sessionStorage["tabsCreated"]) { // Only set it to zero if it hasn't been set yet.
-  sessionStorage["tabsCreated"] = "0"; // sessionStorage always stored data as text, even if given an int
+sessionStorage["tabsCreated"] = "0"; // sessionStorage always stored data as text, even if given an int
 // }
 
  // contains all the user pathways
@@ -33,11 +33,12 @@ function newTab() {
 
   unselectTabs(); // Hides the other tab content
 
+  var tabID = sessionStorage["tabsCreated"];
   var title = "Untitled_" + tabID; // Intitial title for the pathway
   // Adds the tab's icon to the navigation bar
-  newTabLink(sessionStorage["tabsCreated"], title);
+  newTabLink(tabID, title);
   // Creates a new tabcontent div containing the interactive pathway orgainzer
-  newPathway(sessionStorage["tabsCreated"], title);
+  newPathway(tabID, title);
   // // Update the max-width based on the number of tab
   // updateCSS()
 }

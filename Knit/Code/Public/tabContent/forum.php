@@ -22,8 +22,8 @@
           <h4>Compose post</h4>
           <input type="text" id="postTitle" placeholder="Your post's title"><br>
           <textarea id = "postContent" placeholder="Your post's content"></textarea><br>
-          <button type="button" onclick="postPost()">Post</button>           
-          <button id="cancel" onclick="hide('composePost')">Cancel</button>
+          <button class="btn1" type="button" onclick="postPost()">Post</button>           
+          <button class="btn1" id="cancel" onclick="hide('composePost')">Cancel</button>
           <span id = "postStatus"></span> <!-- for validation of a post-->
         </div>
       </div>
@@ -56,7 +56,7 @@
     <div class="float">
         <p>Only registered users can post and vote in the forum. Sign up or log in to access these features!</p>
       <div class="text-center">
-        <button id="exit" onclick="hide('loginPlease')">Got it</button>
+        <button class="btn1" id="exit" onclick="hide('loginPlease')">Got it</button>
       </div>
     </div>
   </div>

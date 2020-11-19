@@ -8,7 +8,6 @@
   include "php/forum/timeAgo.php";
 ?>
 <div id="Forum" class="tabcontent">
-
     <h3 class="underline">Forum</h3>
     <!--This div is what the user sees when they first open the forum-->
     <div id="forumHome">
@@ -27,27 +26,27 @@
           <button id="cancel" onclick="hide('composePost')">Cancel</button>
           <span id = "postStatus"></span> <!-- for validation of a post-->
         </div>
-    </div>
-
-    <!--This is the forum "index": a table of links to existing forum posts-->
-    <div id="forumIndex">
-      <h4>All Posts</h4>
-      <!--Selector for how to sort posts-->
-      <form>
-        <label for="indexView">Sort by:</label>
-        <select id="indexView" onchange="sortForumIndex(this.value)">>
-          <option value="active">Activity</option>
-          <option value="score">Score</option>
-          <option value="responses">Responses</option>
-        </select>
-      </form>
-
-      <!--table of post stats and links to open them-->
-      <div id="postList">
-        <?php include "php/forum/postList.php";?>
       </div>
-    </div>
-  </div>      
+
+      <!--This is the forum "index": a table of links to existing forum posts-->
+      <div id="forumIndex">
+        <h4>All Posts</h4>
+        <!--Selector for how to sort posts-->
+        <form>
+          <label for="indexView">Sort by:</label>
+          <select id="indexView" onchange="sortForumIndex(this.value)">>
+            <option value="active">Activity</option>
+            <option value="score">Score</option>
+            <option value="responses">Responses</option>
+          </select>
+        </form>
+
+        <!--table of post stats and links to open them-->
+        <div id="postList">
+          <?php include "php/forum/postList.php";?>
+        </div>
+      </div>
+    </div>      
 
   <!--This div is filled by "php/forum/post.php" whenever a post is called on-->
   <div id = "forumPost"></div>

@@ -16,7 +16,7 @@ function updateVote(i, vote){
 
 // This function "opens" a pattern in the "to" div and hides the "from" div
 function openPattern(patternIndex, to, from) {
-    console.log("Pattern " + patternIndex + " opened from " + from);
+    //console.log("Pattern " + patternIndex + " opened from " + from);
     //Loads the content into the pattern div, then
     $("#"+to).load("php/pattern.php?index=" + patternIndex + "&to=" + to + "&from=" + from, function(){
         // hide the menu

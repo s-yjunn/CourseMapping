@@ -25,7 +25,7 @@
 
 ?>
 
-<button class="btn1" onclick="hide('<?= $to; ?>'); show('<?= $from; ?>')"><i class="fas fa-arrow-left"></i> Go back</button><br><br>
+<button class="btn1" onclick="hide('<?= $to; ?>'); show('<?= $from; ?>')"><i class="fas fa-arrow-left"></i> Back</button><br><br>
 
 <div id="mainProfile">
   <img class="pfp" src= '<?= $pfp; ?>' alt='<?= $username; ?>-s profile picture'>

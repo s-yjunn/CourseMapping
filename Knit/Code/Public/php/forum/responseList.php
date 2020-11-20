@@ -46,7 +46,7 @@
       <td class='vote'><button class="btn1" type='button' onclick = "responseVote('<?= $logged; ?>', 'up', <?= $postIndex; ?>, <?= $key; ?>)"><i class='fas fa-plus fa-xs'></i></button><br>
         <?= $value["score"]; ?><br>
         <button class="btn1" type='button' onclick="responseVote('<?= $logged; ?>', 'down', <?= $postIndex; ?>, <?= $key; ?>)"><i class='fas fa-minus fa-xs'></i></button></td>
-      <td><p><span class='author'><?= $value["author"]; ?></span><br>
+      <td><p><span class="author"><a onclick="openProfile('<?= $value["author"]; ?>', 'forumProfile', 'forumPost')"><?=$value["author"]; ?></a></span><br>
       <span class='timestamp'><?= $posted; ?></span></p>
       <p class='postContent'><?= $value["content"]; ?></p></td>
     </tr>

@@ -28,7 +28,7 @@ foreach ($rows as $key => $jsons) {
 
 if($user_auth) {
     echo "Welcome " . $name ."!" . "<br/>" . "You have successfully logged in!";
-    if(!isset($_SESSION["name"])) { 
+    if(isset($_SESSION["name"])) { 
         $_SESSION["name"] = $name;
         echo "<br>" . "You are logged in as: " . $_SESSION["name"] . ". Hi!";
         // echo "<style type='text/css'> 

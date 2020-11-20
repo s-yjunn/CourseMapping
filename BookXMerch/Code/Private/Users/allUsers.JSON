@@ -27,6 +27,13 @@
             "username": "user1",
             "type": "user",
             "password": "user1"
+        },
+        {
+            "name": "user2",
+            "email": "user2@gmail.com",
+            "username": "User 2",
+            "type": "user",
+            "password": "user2"
         }
     ]
 }

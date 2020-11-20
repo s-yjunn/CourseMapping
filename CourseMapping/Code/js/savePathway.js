@@ -13,6 +13,7 @@ function save() {
     };
     xhttp.open("POST", savepath, true);
     xhttp.setRequestHeader("Content-type", "application/json");
+    var pathway = sessionStorage[currentTab];
     pathway["sampleContent"] = "something";
     xhttp.send(JSON.stringify(pathway));
     return success;

@@ -4,43 +4,61 @@ var tabpath = "php/tab.html.php";
 // current tab element's id
 var currentTab;
 
-// if(!sessionStorage["tabsCreated"]) { // Only set it to zero if it hasn't been set yet.
-sessionStorage["tabsCreated"] = "0"; // sessionStorage always stored data as text, even if given an int
-// }
+// sessionStorage stores enough information on each pathway to bring it back after a refresh.
+// Each pathway is referenced by a numerical id that matches that of the tab that stores it.
+// the stored pathway also usable for keeping track of the nodes' positions while the user is interacting with the pathway.
+// Just need to convert from string with JSON.parse() first, because sessionStorage can only store strings.
+if(!sessionStorage["tabsCreated"]) { // Only set it to zero if it hasn't been set yet.
+  sessionStorage["tabsCreated"] = "0"; // sessionStorage always stored data as text, even if given an int
+} else {  // ______________________________________________________________________ <-- This should run when it refreshes
+  for(var key in sessionStorage) { //                 If there are pathway tabs, put them up!
+    if(parseInt(key).toString() != "NaN") {// If it is a number, it must be a key for pathway
+      // The pathway keys are the same as the id's of the tabs that hold them
+      var pathway = JSON.parse(sessionStorage[key]);
+      var title = pathway.title;
+      // Adds a tab's icon to the navigation bar
+      createTabLink(key, title);
+      // Creates the tabcontent div containing the interactive pathway orgainzer
+      createPathwayDiv(key, title);
+    }
+  }
+} // _____________________________________________________________________________
 
- // contains all the user pathways
- // The keys are the same as the id's of the tabs that contain them
-if(!sessionStorage["allPathways"]) { // Only set it if it hasn't been set yet.
-  sessionStorage["allPathways"] = {};
-}
-
-function openTab(evt, tabName) {
+function openTab(evt, tabID) {
   unselectTabs(); // Reverts the appearence of the current tab, and hides it's content.
-
   // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active";
-  currentTab = tabName; // Store the current tab id
+  selectTab(evt.currentTarget, document.getElementById(tabID));
+  currentTab = tabID; // Update the current tab id
 }
 
 function newTab() {
-  if(sessionStorage["tabsCreated"] == 5) { 
-    alert("You have reached the maximum number of pathway tabs (5).")
-    return
-  }
+  // if(sessionStorage["tabsCreated"] == 5) { 
+  //   alert("You have reached the maximum number of pathway tabs (5).")
+  //   return
+  // }
+
   // sessionStorage always stored data as text, even if given an int
   sessionStorage["tabsCreated"] = parseInt(sessionStorage["tabsCreated"]) + 1; 
-
   unselectTabs(); // Hides the other tab content
-
   var tabID = sessionStorage["tabsCreated"];
   var title = "Untitled_" + tabID; // Intitial title for the pathway
   // Adds the tab's icon to the navigation bar
-  newTabLink(tabID, title);
+  var tabLink = createTabLink(tabID, title);
   // Creates a new tabcontent div containing the interactive pathway orgainzer
-  newPathway(tabID, title);
+  var tabcontent = createPathwayDiv(tabID);
+  // Activates the tablink and displays the tab content
+  selectTab(tabLink, tabcontent);
+
+  // Add new pathway to sessionStorage
+  var pathway = {title: title};
+  for(var i = 1; i <= 8; i++) {
+    pathway["sem_" + i] = { locked:true, nodes:{} };
+  }
+  sessionStorage[tabID] = JSON.stringify(pathway);
+ 
+  currentTab = tabID; // Update the current tab id
   // // Update the max-width based on the number of tab
-  // updateCSS()
+  // updsateCSS()
 }
 
 //    -----------------      HELPER FUNCTIONS:      -------------------
@@ -63,21 +81,35 @@ function unselectTabs() {
   }
 }
 
+// Takes a reference to the tablink and tabcontent,
+// Activates the tablink and displays the tab content
+function selectTab(tabLink, tabcontent) {
+  tabLink.className += " active";
+  tabcontent.style.display = "block";
+}
+
 // Creates a new tablink in the navigation bar
-//  the tabID parameter is a unique id for every tab, using sessionStorage["tabsCreated"]. It is a parameter so that this function can be explicitly correlated with newPathway()
-function newTabLink(tabID, title) {
+// The tabID parameter is a unique id for every tab, 
+//        using sessionStorage["tabsCreated"]. 
+//        It is a parameter so that this function can be explicitly correlated with createPathwayDiv()
+// Returns a reference to the new tablink, a button element
+function createTabLink(tabID, title) {
   var tabLink = document.createElement("button");
-  tabLink.className = "tablinks active";
+  tabLink.className = "tablinks";
   tabLink.onclick = function(){openTab(event, tabID)};
   tabLink.innerHTML = title;
   var tabBar = document.getElementById("tab");
   var plusTabIndex = tabBar.children.length - 3; // The Admin, Login, and + come last
   tabBar.insertBefore(tabLink, tabBar.children[plusTabIndex]); // Insert the new tab before the plus tab.
+  return tabLink;
 }
 
 // Creates a new tabcontent div containing the interactive pathway orgainzer
-//  the tabID parameter is a unique id for every tab, using sessionStorage["tabsCreated"]. It is a parameter so that this function can be explicitly correlated with newTabLink()
-function newPathway(tabID, title) {
+// The tabID parameter is a unique id for every tab,
+//        using sessionStorage["tabsCreated"]. 
+//        It is a parameter so that this function can be explicitly correlated with createTabLink()
+// Returns a reference to the new tabcontent, a div element
+function createPathwayDiv(tabID) {
   var pathwayOrganizer = document.createElement("div");
   pathwayOrganizer.id = tabID; // unique ID for every tab
   pathwayOrganizer.className = "tabcontent";
@@ -95,14 +127,7 @@ function newPathway(tabID, title) {
   xhttp.send(); 
 
   document.getElementById("content").appendChild(pathwayOrganizer);
-  pathwayOrganizer.style.display = "block";
-
-  // Add pathway to allPathways
-  var newPathway = {title: title};
-  for(var i = 1; i <= 8; i++) {
-    newPathway["sem_" + i] = { locked:true, nodes:{} };
-  }
-  sessionStorage.allPathways[tabID] = newPathway;
+  return pathwayOrganizer;
 }
 
 

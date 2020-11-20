@@ -1,7 +1,3 @@
-// Stores enough information on each pathway to bring it back after a refresh.
-// Is also usable for keeping track of the nodes' positions while the user is interacting with the pathway.
-var pathway = {};
-
 
 $(function () {
   $(".courseBlock").draggable();

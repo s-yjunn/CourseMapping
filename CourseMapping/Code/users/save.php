@@ -15,12 +15,12 @@
     $pathway = json_decode(file_get_contents('php://input'), FALSE);
     // If this pathway has an id, it must already exist in the user's folder.
     // If not, give it an id that is different from the pathways already stored.
-    if(!isset($pathway->serverID)) {
+    if(!isset($pathway->serverFile)) {
         $id = "p_" . count(scandir($_SESSION['username']));
-        $pathway->serverID = $id;
+        $pathway->serverFile = $id;
     }
     // Save or make then save the file
-    $file = fopen($_SESSION['username'] . "/" . $pathway->serverID, "w");
+    $file = fopen($_SESSION['username'] . "/" . $pathway->serverFile, "w");
     if(!$file) {
         $success = "Couldn't open file to save in";
     } else {

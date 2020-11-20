@@ -1,7 +1,6 @@
 <?php
 
 	// insert include("src/login.php"); when it's made
-	include("src/verify_install.php");
 
 	// *************************************************************************** //
 	// Skeleton for logging in/out:

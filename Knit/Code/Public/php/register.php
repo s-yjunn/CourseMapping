@@ -25,6 +25,8 @@ if (trim($newUser) == "") { // check for empty user
 	// add user credentials to php array
 	$phpArray[$newUser]["psw"] = $newPsw;
 	$phpArray[$newUser]["admin"] = false; // can't be admin to begin with
+	$phpArray[$newUser]["pfp"] = null; // no profile pic to begin with
+	$phpArray[$newUser]["about"] = null; // no bio to begin with
 	// overwrite json file with new array
 	$updatedArray = json_encode($phpArray);
 	file_put_contents($path, $updatedArray);

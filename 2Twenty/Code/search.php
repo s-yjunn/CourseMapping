@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
-
-    <?php 
+<?php 
         include("vars/header.php");
         include("vars/navbar.php");
         include("src/search.php");
@@ -13,20 +12,17 @@
         }
     ?>
 
-    <body>
-
-        <section class="section" id="body">
-            <div class="container">
-                <h1 class="title">Searching for "<?php echo $_GET['desc']; ?>"...</h1>
-                <form class="field" action="search.php" method="GET">
-                    <div class="control">
-                        <input class="input is-rounded" type="text" name="desc" value="<?php echo $_GET['desc']; ?>">
-                    </div>
-                </form>
-                <br/>
-                <div class="columns is-multiline">
-                    
-                        <?php 
+	<body>
+		<section class="section" id="body">
+			<div class="container">
+				<h1 class="title">Searching for "<?php echo $_GET['desc']; ?>"...</h1>
+				<form class="field" action="search.php" method="GET">
+					<div class="control">
+						<input class="input is-rounded" type="text" name="desc" value="<?php echo $_GET['desc']; ?>"> </div>
+				</form>
+				<br/>
+				<div class="columns is-multiline">
+					<?php 
                             if($results) {
                                 foreach($results as &$item) {
                                     $title = $item[1];
@@ -71,16 +67,12 @@
                                 echo('<h2 class=subtitle>No results. Please try again.</h1>');
                             }
 
-                        ?>
-                    
-                </div>
-            </div>
-        </section>
-
-        <?php
+                        ?> </div>
+			</div>
+		</section>
+		<?php
             include("vars/footer.php");
         ?>
-
-    </body>
+	</body>
 
 </html>

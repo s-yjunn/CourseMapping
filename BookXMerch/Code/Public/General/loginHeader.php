@@ -23,32 +23,34 @@
 
 <body>
     <!-- Navigation bar-->
-    <div class="w3-top">
+
+    <nav class="w3-top" id="head-navbar" >
         <div class="w3-bar w3-white w3-wide w3-padding 3w-card">
             <a href="../../Private/Books/collection.php" class="w3-bar-item w3-button"><b>Bookstore</b>x<b>Merch</b></a>
             <!-- Float links to the right. Hide them on small screens -->
 
+
+
             <div class="w3-hide-small">
                 <a href="#" class="w3-bar-item">Welcome, <?php echo $loggedUser?></a>
             </div>
-
-            <div class="w3-right w3-hide-small">
-                <a href="#" class="w3-bar-item w3-button">About us</a>
+            
+            <div class="w3-hide-medium w3-hide-small">
+                <a href="../../Public/Profile/profile.php" class="w3-bar-item w3-button">Profile</a>
             </div>
 
-            <div class="w3-right w3-hide-small">
+            <div class="w3-hide-medium w3-hide-small">
                 <a href="../../Public/Merch/collection.php" class="w3-bar-item w3-button">Merch</a>
             </div>
 
-            <div class="w3-right w3-hide-small">
+            <div class="w3-hide-medium w3-hide-small">
                 <a href="#" class="w3-bar-item w3-button">Community</a>
             </div>
-
-            <div class="w3-right w3-hide-small">
-                <a href="../../Public/Profile/profile.php" class="w3-bar-item w3-button">Profile</a>
+            <div class="w3-hide-medium w3-hide-small">
+                <a href="#" class="w3-bar-item w3-button">About us</a>
             </div>
         </div>
-    </div>
+    </nav>
 
 </body>
 

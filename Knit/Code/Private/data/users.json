@@ -1,1 +1,1 @@
-{"user1":{"psw":"psw1","admin":true},"user2":{"psw":"psw2","admin":false},"user3":{"psw":"psw3","admin":false}}
+{"user1":{"psw":"psw1","admin":true,"pfp":null, "about":"I love to swim and fish!"},"user2":{"psw":"psw2","admin":false,"pfp":null, "about":"Bleep bloop I <3 knitting"},"user3":{"psw":"psw3","admin":false, "pfp":null, "about":null}}

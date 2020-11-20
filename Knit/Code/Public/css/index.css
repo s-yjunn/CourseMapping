@@ -209,3 +209,22 @@ input[type=text], input[type=password] {
     margin-bottom: 1rem;
 	border-radius: 0.4rem;
 }
+
+/*USER STUFF*/
+#mainProfile .pfp {
+	object-fit: cover;
+	object-position: center; /* Center the image within the element */
+	float: left;
+	margin: 0px 30px 30px 0px;
+    width: 200px;
+    max-height: 200px;
+}
+
+#User a { /*Copied from forum*/
+	color: rgb(239, 35, 60);
+	transition: color 0.4s;
+}
+#User a:hover {
+  cursor: pointer;
+  color: rgb(239, 35, 60, 0.6);
+}

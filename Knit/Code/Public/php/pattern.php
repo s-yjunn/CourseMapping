@@ -14,8 +14,10 @@
 
   if ($from === "featuredHome") {
     $pattern = $compData["winners"][$patternIndex];
-  } else {
+  } else if ($from === "contestHome") {
     $pattern = $compData["contestants"][$patternIndex];
+  } else {
+    echo "Something's wrong!";
   }
 
 ?>
@@ -26,5 +28,5 @@
   <img class="fullImg" src='imgs/contest/<?= $pattern["image"]; ?>' alt='Knit submission by <?= $pattern["author"]; ?>'>
   <h4><?=$pattern["title"]; ?></h4>
   <h5 class="author"><?=$pattern["author"]; ?></h5>
-  <p class="postContent"><?=$pattern["text"]; ?></p>
+  <p class="instructions"><?=$pattern["text"]; ?></p>
 </div>

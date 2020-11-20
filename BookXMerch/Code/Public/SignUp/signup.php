@@ -67,7 +67,7 @@
 
         <div class="container">
             <form action="php/signup.inc.php" method="post">
-                <label class="label" for="name"><b>Username</b></label>
+                <label class="label" for="name"><b>Full Name</b></label>
                 <input type="text" name="name" placeholder="Full Name" required>
 
                 <label class="label" for="email"><b>Email</b></label>

@@ -15,11 +15,7 @@ if(!sessionStorage["tabsCreated"]) { // Only set it to zero if it hasn't been se
     if(parseInt(key).toString() != "NaN") {// If it is a number, it must be a key for pathway
       // The pathway keys are the same as the id's of the tabs that hold them
       var pathway = JSON.parse(sessionStorage[key]);
-      var title = pathway.title;
-      // Adds a tab's icon to the navigation bar
-      createTabLink(key, title);
-      // Creates the tabcontent div containing the interactive pathway orgainzer
-      createPathwayDiv(key, title);
+      restoreTab(pathway.title, key);
     }
   }
 } // _____________________________________________________________________________
@@ -62,6 +58,15 @@ function newTab() {
 }
 
 //    -----------------      HELPER FUNCTIONS:      -------------------
+
+// Takes two strings
+// One is the tabID (a number)
+function restoreTab(pathwayTitle, tabID) {
+  // Adds a tab's icon to the navigation bar
+  createTabLink(tabID, pathwayTitle);
+  // Creates the tabcontent div containing the interactive pathway orgainzer
+  createPathwayDiv(tabID, pathwayTitle);
+}
 
 // Hides the content of all the tabs to hide the one that is currently showing, and removes the class active from all the tabs for styling purposes.
 function unselectTabs() {

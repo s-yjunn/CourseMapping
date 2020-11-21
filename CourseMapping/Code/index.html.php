@@ -26,6 +26,7 @@
         <button class="tablinks active" onclick="openTab(event, 'Main')" <?php include 'php/logouttabs.php'; ?>>MAIN PAGE</button>
         <button class="tablinks" onclick="openTab(event, 'Saved')" <?php include 'php/logintabs.php'; ?>>SAVED</button>
         <button class="tablinks" onclick="newTab()" <?php include 'php/logintabs.php'; ?>>+</button>
+        <button class = "tablinks" <?php include 'php/logouttabs.php';?>onclick= "openTab(event, 'Register')">REGISTER</button>
         <button class="tablinks" <?php include 'php/logouttabs.php'; ?>onclick="openTab(event, 'Login')">LOGIN</button>
         <button class="tablinks" <?php include 'php/admintab.php'; ?> onclick="openTab(event, 'Admin')">ADMIN</button>
     </div>
@@ -46,8 +47,11 @@
     </article>
 
 
-
-    <script type="text/javascript" src="js/script.js"></script>
+    <script type = "text/javascript" src = "js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/pathway.js"></script>
+    <script src="js/savePathway.js"></script>
 </body>
 
 </html>

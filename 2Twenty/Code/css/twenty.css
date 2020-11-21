@@ -1,13 +1,25 @@
 .twenty-title {
-    text-shadow: 1px 1px 0px #eb452b, 
-    2px 2px 0px #efa032, 
-    3px 3px 0px #46b59b, 
-    4px 4px 0px #017e7f, 
-    5px 5px 0px #052939, 
-    6px 6px 0px #c11a2b;
-    font-weight:bold;
-    color:#333;
+	text-shadow: 1px 1px 0px #eb452b, 2px 2px 0px #efa032, 3px 3px 0px #46b59b, 4px 4px 0px #017e7f, 5px 5px 0px #052939, 6px 6px 0px #c11a2b;
+	font-weight: bold;
+	color: #333;
 }
+
 .twenty-white {
-    color:#F5F5F5;
+	color: #F5F5F5;
+}
+
+.floating {
+	position: absolute;
+	top: 10vh;
+	left: 5vw;
+}
+
+#good-login,
+#bad-login {
+	z-index: 999;
+}
+
+#good-login:hover,
+#bad-login:hover {
+	cursor: move;
 }

@@ -17,9 +17,19 @@
 		$("#login").click(function() {
 			$("#login-modal").toggleClass("is-active");
 		});
-		$(".modal-close").click(function() {
-			$("#login-modal").toggleClass("is-active");
+
+		$("#register").click(function() {
+			$("#register-modal").toggleClass("is-active");
 		});
+
+		// CHANGED TO SET BOTH LOGIN AND REGISTER TO MODAL
+		$(".modal-close").click(function() {
+			document.getElementById("login-modal").className = "modal";
+			document.getElementById("register-modal").className = "modal";
+			//$("#login-modal").toggleClass("is-active");
+		});
+
+
 		$("#good-login > .delete").click(function() {
 			$("#good-login").remove();
 		});

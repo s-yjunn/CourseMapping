@@ -4,6 +4,9 @@
 
 	// *************************************************************************** //
 	// Skeleton for logging in/out:
+	
+	//SASHAS ATTEMPT BELOW
+	//include("src/register.php");
 
 	session_start(); // php SESSION to keep user logged in (expires after certain amount of time)
     
@@ -79,6 +82,25 @@
 			</div>
 		</div>
 	</nav>
+
+	<div class="modal" id="register-modal">
+		<div class="modal-background"></div>
+		<div class="modal-content">
+			<header class="modal-card-head">
+				<p class="modal-card-title">Register</p>
+			</header>
+			<section class="modal-card-body">
+				<form class="field" method="POST" autocomplete="off" action="src/register.php"> <span id="register-error" class="has-text-danger"></span>
+					<input class="input is-rounded mb-4 mt-4" type="text" name="uname" placeholder="Username">
+					<input class="input is-rounded mb-4 mt-4" type="password" name="upass" placeholder="Password">
+					<input class="button is-success mt-4" type="submit" value="Register" id="register-submit"> </form>
+			</section>
+		</div>
+		<button class="modal-close is-large" aria-label="close"></button>
+	</div>
+
+
+
 	<div class="modal" id="login-modal">
 		<div class="modal-background"></div>
 		<div class="modal-content">
@@ -94,3 +116,5 @@
 		</div>
 		<button class="modal-close is-large" aria-label="close"></button>
 	</div>
+
+

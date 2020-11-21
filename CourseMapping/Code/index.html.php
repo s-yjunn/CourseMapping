@@ -15,10 +15,16 @@
 <body>
     <?php
     session_start();
+    if ($_SESSION['username'] == 'admin'){ 
+        echo '<script type = "text/javascript">
+         window.location.href="admin.html.php";
+         </script>';
+         }
     ?>
 
     <h4>
         <?php include 'php/userinfo.php'; ?>
+        
     </h4>
 
     <div class='tab' id="tab">
@@ -28,7 +34,6 @@
         <button class="tablinks" onclick="newTab()" <?php include 'php/logintabs.php'; ?>>+</button>
         <button class = "tablinks" <?php include 'php/logouttabs.php';?>onclick= "openTab(event, 'Register')">REGISTER</button>
         <button class="tablinks" <?php include 'php/logouttabs.php'; ?>onclick="openTab(event, 'Login')">LOGIN</button>
-        <button class="tablinks" <?php include 'php/admintab.php'; ?> onclick="openTab(event, 'Admin')">ADMIN</button>
     </div>
 
     <article id='content'>
@@ -41,8 +46,8 @@
         <div id='Login' class='tabcontent' style='display: none;'>
             <?php include "tabs/login.html.php" ?>
         </div>
-        <div id='Admin' class='tabcontent' style='display: none;'>
-            <?php include "tabs/admin.html.php" ?>
+        <div id='Register' class='tabcontent' style='display: none;'>
+            <?php include "tabs/register.html.php" ?>
         </div>
     </article>
 

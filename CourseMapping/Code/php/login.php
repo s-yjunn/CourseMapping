@@ -19,12 +19,10 @@ if ($id == $admin_id && $pw == $admin_pw){
     $admin_login = 1;
 }
 
-for($i=0; $i<count($temp_json['users']); $i++) {    
-    $user_id = $temp_json['users'][$i]['id'];
-    $user_pw = $temp_json['users'][$i]['pw'];
-    if($id == $user_id && $pw == $user_pw){
-        $login = 1;
-    } 
+if($temp_json[$id]){
+    if($pw == $temp_json[$id]["pw"]){
+    $login = 1;
+    }
 }
 
 if($login == 1){

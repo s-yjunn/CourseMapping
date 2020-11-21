@@ -9,9 +9,8 @@ $temp_json = json_decode(file_get_contents($file), true);
 
 $available = 1;
 
-for($i=0; $i<count($temp_json['users']); $i++) {    
-    $user = $temp_json['users'][$i]['id'];
-    if($id == $user){
+for($i=0; $i<count($temp_json); $i++) {    
+    if($temp_json[$id]){
         $available = 0;
     }
 }
@@ -26,8 +25,8 @@ if($id == 'admin'){
 if($available == 1){
     ob_start();
     session_start();
-    $new_data = array('id'=>$id, 'pw'=>$pw);
-    array_push($temp_json['users'], $new_data);
+    $new_data = array('id'=>count($temp_json), 'pw'=>$pw);
+    $temp_json[$id] = $new_data;
     $_SESSION['username'] = $id;
     session_write_close();
     echo '<script type = "text/javascript">

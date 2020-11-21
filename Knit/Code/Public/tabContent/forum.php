@@ -61,6 +61,7 @@
     </div>
   </div>
 
+  <div id = "forumProfile"></div>
 </div>
 
 <script src="js/forum.js"></script>

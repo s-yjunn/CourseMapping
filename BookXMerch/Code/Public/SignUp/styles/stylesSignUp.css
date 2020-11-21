@@ -1,0 +1,127 @@
+body {
+    background-color:#7E4D72;
+}
+
+.loginButton{
+
+    cursor: pointer;
+    position: relative;
+    margin: auto;
+    opacity: 1;
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 10px 10px 10px black;
+    
+}
+  
+.loginButton:hover {
+
+    box-shadow: 10px 10px 10px rgb(255,255,255,0.4);
+    animation: fade 1s;
+}
+
+.caption{
+    color: white;
+    font-family: "Poppins";
+    font-size: 35px;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+.container {
+    padding: 16px;
+}
+  
+/* Modal Content/Box */
+
+  .modal-content {
+    /* background-color:rgb(175,148,124); */
+    background-color: rgb(255,255,255,1);
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; 
+    
+  }
+  
+  .avatar {
+    width: 40%;
+    border-radius: 50%;
+  }
+  /* The Close Button (x) */
+  .close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #7E4D72;
+    cursor: pointer;
+  }
+  
+  /* Add Zoom Animation */
+  .animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+  }
+    
+  .label{
+      color: #7E4D72;
+      letter-spacing: 3px;
+      font-family: "Poppins";
+      font-size: 30px;
+  }
+  /* Full-width input fields */
+  input[type=text], input[type=password],input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    color: white;
+    display: inline-block;
+    border: 1px solid rgb(45,18,11);
+    box-sizing: border-box;
+    background-color: #7E4D72;
+    border-radius: 10px;
+    text-align: center;
+  }
+  ::placeholder {
+    color: rgb(255,255,255,0.4);
+  }
+  .register{ 
+    color:  #7E4D72;
+    background-color: white;
+    padding: 12px 20px;
+    font-weight: bold;
+    border: 1px solid #7E4D72;
+    border-radius: 20px;
+    letter-spacing: 3px;
+  }
+  .register:hover{
+    cursor: pointer;
+    color:  white;
+    background-color: #7E4D72;
+    animation: fade 1s;
+  }
+  
+  .cancel{ 
+    padding: 12px 20px;
+    float: right;
+    background-color:  black;
+    font-weight: bold;
+    color:white;
+  }
+
+@keyframes fade {
+	from {opacity: 0.5;}
+	to {opacity: 1;}
+} 

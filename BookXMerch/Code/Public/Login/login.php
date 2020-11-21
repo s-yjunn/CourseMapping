@@ -8,31 +8,24 @@
         href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Assistant:wght@300&family=Indie+Flower&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/stylesLogin.css">
     <title>Login</title>
 </head>
 
 <body>
     <!-- Navigation bar-->
-    <div class="w3-top">
-        <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <nav class="w3-top" id="head-navbar" >
+        <div class="w3-bar w3-white w3-wide w3-padding 3w-card">
             <a href="../index.php" class="w3-bar-item w3-button"><b>Bookstore</b>x<b>Merch</b></a>
             <!-- Float links to the right. Hide them on small screens -->
 
-            <div class="w3-right w3-hide-small">
+            
+            <div class="w3-right w3-hide-medium w3-hide-small">
                 <a href="#" class="w3-bar-item w3-button">About us</a>
             </div>
 
-            <div class="w3-right w3-hide-small">
+            <div class="w3-right w3-hide-medium w3-hide-small">
                 <a href="../Merch/collection.php" class="w3-bar-item w3-button">Merch</a>
-            </div>
-
-            <div class="w3-right w3-hide-small">
-                <a href="#" class="w3-bar-item w3-button">Community</a>
-            </div>
-
-            <div class="w3-right w3-hide-small">
-                <a href="#" class="w3-bar-item w3-button">Profile</a>
             </div>
 
             <div class="w3-right w3-hide-small">
@@ -43,41 +36,49 @@
                 <a href="../Login/login.php" class="w3-bar-item w3-button">Login</a>
             </div>
         </div>
-    </div>
+    </nav>
     <!-- End Nav bar -->
-
-<br>
-
-<br>
-<br>
-<div class="w3-center">
-        <h1>LOG IN PAGE</h1>
-    </div>
-
-<header class="w3-display-container w3-content w3-wide" style="max-width:1500px; background-color: white;"
-        id="home">
-        <img class="w3-image" src="../General/styles/signup.png" alt="signup" width="1500" height="800">
-        <div class="w3-display-middle w3-margin-top w3-center">
-            <h1 class="w3-xxlarge w3-text-white"><span class="w3-black w3-opacity-min" style="overflow:hidden"><b>
-                    </b></span>
+    <br>
+    <br>
+    <br>    
+    <header>
+        <div id="loginButton"class="w3-center w3-display-middle w3-margin-top">
+            <h1 class="w3-xxxlarge w3-text-white"><span  style="overflow:hidden">
+                <img class="loginButton" src="../General/styles/logoLogin.png" onclick="showLogin()">  </span>
             </h1>
+            <h1 onclick="showLogin()" class="caption"> Log in</h1>  
         </div>
-</header>
+    </header>
 
-    <div class="w3-center">
-        <form action="php/login.inc.php" id="loginForm" method="post">
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="pwd" placeholder="Password" required>
-            <button type="submit" name="submit" id="loginSubmit">Log In</button>
-        </form>
+    <br>
+
+    <div id="loginForm" class="w3-center modal-content animate" style="display:none">
+        <div class="imgcontainer">
+                <span onclick="closeLogin()" class="close"
+                    title="Close Modal">&times;</span>
+                <img src="../General/styles/logoLogin.png" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container">
+            <form action="php/login.inc.php" method="post">
+                <label class="label" for="email"><b>Email</b></label>
+                <input type="email" name="email" placeholder="Email" required>
+                <label class="label" for="psw"><b>Password</b></label>
+                <input type="password" name="pwd" placeholder="Password" required>
+                <br><br>
+                <button type="submit" name="submit" id="loginSubmit" class="register">Log In</button>
+            </form>
+        </div>
+        
 
     </div>
-
 
    <div class="loginAck">
    
    </div>
+   
 
    <script src="js/source.js"></script>
+   <script src="js/scriptLogin.js"></script>
 </body>
 </html>

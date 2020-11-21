@@ -14,7 +14,7 @@
             for($i = 0; $i < $numWin; $i++): 
                 $image = "imgs/contest/" . $winnerData[$i]["image"];
             ?>
-                <div class="mySlides fade">
+                <div class="mySlides">
                     <div class="numbertext"> <?= $i + 1; ?> / <?= $numWin; ?> </div>
                     <a onclick="openPattern(<?= $i; ?>, 'featuredPattern', 'featuredHome')"><img src="<?= $image; ?>" style="width:500" class="center" alt='Knit submission by <?= $winnerData[$i]["author"]; ?>'></a>
                 </div>

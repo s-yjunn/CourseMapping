@@ -80,7 +80,9 @@ $(document).ready(function () {
     $.getJSON("json/courses.json", function (data) { 
         var major = ''; 
         $.each(data, function (key, value) { 
-            major += '<option value =' + key + '>' + key + '</option>'; 
+            if (key != "meta"){
+                major += '<option value =' + key + '>' + key + '</option>'; 
+            }
         }); 
         $('#major').append(major); 
     }); 
@@ -91,21 +93,36 @@ $(document).ready(function () {
 <table id='table'> 
 <tr> 
     <th>Courses</th> 
+    <th>Title</th> 
+    <th>Credit</th> 
     <th>Prerequisites</th> 
+    <th>Corequisites</th> 
+    <th>Required For</th> 
+    <th>Suggested For</th> 
+    <th>Overlap</th> 
 </tr> 
 
 <script> 
 $('#major').change(function () { 
+    var items = $("#table td"); 
+    for (let i = 0; i < items.length; i++) { 
+        items[i].remove(); 
+    } 
+
     var major = $('#major option:checked').val();
     $.getJSON("json/courses.json", function (data) { 
-        var course = ''; 
-        $.each(data.major, function (key) { 
-            $.each(key, function (k, v) { 
-                course += '<tr>'; 
-                course += '<td>' +  
-                k + '</td>';  
-                course += '</tr>'; 
-            }); 
+        var course = '';
+        $.each(data[major], function (key, value) { 
+            course += '<tr>'; 
+            course += '<td>' + key + '</td>'; 
+            course += '<td>' + value.info.title + '</td>'; 
+            course += '<td>' + value.info.credits + '</td>';
+            course += '<td>' + value.prereqs + '</td>'; 
+            course += '<td>' + value.coreqs + '</td>'; 
+            course += '<td>' + value.requiredFor + '</td>'; 
+            course += '<td>' + value.suggestedFor + '</td>'; 
+            course += '<td>' + value.overlap + '</td>'; 
+            course += '</tr>'; 
         }); 
         $('#table').append(course); 
     }); 

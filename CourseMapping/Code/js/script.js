@@ -63,7 +63,7 @@ function newTab() {
 
 //    -----------------      HELPER FUNCTIONS:      -------------------
 
-// Hides the content of all the tabs to hide the one that is currently showing, and removes the class active from all the tabs for styling purposes. 
+// Hides the content of all the tabs to hide the one that is currently showing, and removes the class active from all the tabs for styling purposes.
 function unselectTabs() {
   // Declare all variables
   var i, tabcontent, tablinks;
@@ -117,17 +117,15 @@ function createPathwayDiv(tabID) {
   // Gets the content of tab.php from the server to load it into the innerHTML of the new tab div
   // Is there a better way? Is it better to read the tab.php file with a FileReader and put that text into the div?
   var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-         // put the pathway organizer HTML into the new tabcontent
-         pathwayOrganizer.innerHTML = xhttp.responseText;
-      }
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      // put the pathway organizer HTML into the new tabcontent
+      pathwayOrganizer.innerHTML = xhttp.responseText;
+    }
   };
   xhttp.open("GET", tabpath, true);
-  xhttp.send(); 
+  xhttp.send();
 
   document.getElementById("content").appendChild(pathwayOrganizer);
   return pathwayOrganizer;
 }
-
-

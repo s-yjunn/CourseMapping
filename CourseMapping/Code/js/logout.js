@@ -1,3 +1,5 @@
+// Uses a function from script.js
+
 function clearUser() {
     // sessionStorage stores enough information on each pathway to bring it back after a refresh.
     // Each pathway is referenced by a numerical id that matches that of the tab that stores it.
@@ -8,11 +10,8 @@ function clearUser() {
         // NEED TO ADD: Ask user whether they want to save
         var saveWanted = true;
         if(saveWanted) {
-            for(var key in sessionStorage) {
-                if(parseInt(key).toString() != "NaN") {// If it is a number, it must be a key for pathway
-                    save(key);
-                }
-            }
+            // In sessionStorage, each pathway is referenced by a numerical id that matches that of the tab that stores it.
+            forEveryTab(save(key));
         }
     }
     sessionStorage.clear(); 

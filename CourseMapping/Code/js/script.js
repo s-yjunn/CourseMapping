@@ -5,7 +5,6 @@ var tabpath = "php/tab.html.php";
 var currentTab;
 
 sessionStorage.clear(); // Temp, remove later.
-sessionStorage["tabsOpen"] = "0"; // Temp, remove later.
 
 
 // sessionStorage stores enough information on each pathway to bring it back after a refresh.
@@ -15,19 +14,25 @@ sessionStorage["tabsOpen"] = "0"; // Temp, remove later.
 if(!sessionStorage["tabsOpen"]) { // Only set it to zero if it hasn't been set yet.
   sessionStorage["tabsOpen"] = "0"; // sessionStorage always stored data as text, even if given an int
 } else {  // ______________________________________________________________________ <-- This should run when it refreshes
-  for(var key in sessionStorage) { //                 If there are pathway tabs, put them up!
-    if(parseInt(key).toString() != "NaN") {// If it is a number, it must be a key for pathway
-      // The pathway keys are the same as the id's of the tabs that hold them
-      var pathway = JSON.parse(sessionStorage[key]);
-      restoreTab(pathway.title, key);
-    }
-  }
+  //                 If there are pathway tabs, put them up!
+  forEveryTab(function(tabID) {
+    // The pathway keys are the same as the id's of the tabs that hold them
+    var pathway = JSON.parse(sessionStorage[tabID]);
+    restoreTab(pathway.title, tabID);
+  });
 } // _____________________________________________________________________________
 
-// // Takes a function and passes the tabID, and  
-// function forEveryTab() {
-
-// }
+// Loops through all the tabs, 
+// Takes a function and passes each tabID (a string) to it  
+function forEveryTab(tabFunction) {
+  // In sessionStorage, each pathway is referenced by a numerical id that matches that of the tab that stores it.
+  // the stored pathway needs to be converted from string with JSON.parse() first, because sessionStorage can only store strings.
+  for(var key in sessionStorage) { 
+    if(parseInt(key).toString() != "NaN") {// If it is a number, it must be a key for pathway
+      tabFunction(key);
+    }
+  }
+}
 
 function openTab(evt, tabID) {
   unselectTabs(); // Reverts the appearence of the current tab, and hides it's content.

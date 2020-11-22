@@ -1,0 +1,14 @@
+.column {
+    float: left;
+    padding: 10px;
+  }
+  
+  /* Left and right column */
+  .column.side {
+    width: 33%;
+  }
+  
+  /* Middle column */
+  .column.middle {
+    width: 34%;
+  }

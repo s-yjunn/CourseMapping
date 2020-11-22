@@ -4,12 +4,16 @@ var tabpath = "php/tab.html.php";
 // current tab element's id
 var currentTab;
 
+sessionStorage.clear(); // Temp, remove later.
+sessionStorage["tabsOpen"] = "0"; // Temp, remove later.
+
+
 // sessionStorage stores enough information on each pathway to bring it back after a refresh.
 // Each pathway is referenced by a numerical id that matches that of the tab that stores it.
 // the stored pathway also usable for keeping track of the nodes' positions while the user is interacting with the pathway.
 // Just need to convert from string with JSON.parse() first, because sessionStorage can only store strings.
-if(!sessionStorage["tabsCreated"]) { // Only set it to zero if it hasn't been set yet.
-  sessionStorage["tabsCreated"] = "0"; // sessionStorage always stored data as text, even if given an int
+if(!sessionStorage["tabsOpen"]) { // Only set it to zero if it hasn't been set yet.
+  sessionStorage["tabsOpen"] = "0"; // sessionStorage always stored data as text, even if given an int
 } else {  // ______________________________________________________________________ <-- This should run when it refreshes
   for(var key in sessionStorage) { //                 If there are pathway tabs, put them up!
     if(parseInt(key).toString() != "NaN") {// If it is a number, it must be a key for pathway
@@ -20,6 +24,11 @@ if(!sessionStorage["tabsCreated"]) { // Only set it to zero if it hasn't been se
   }
 } // _____________________________________________________________________________
 
+// // Takes a function and passes the tabID, and  
+// function forEveryTab() {
+
+// }
+
 function openTab(evt, tabID) {
   unselectTabs(); // Reverts the appearence of the current tab, and hides it's content.
   // Show the current tab, and add an "active" class to the button that opened the tab
@@ -28,15 +37,15 @@ function openTab(evt, tabID) {
 }
 
 function newTab() {
-  // if(sessionStorage["tabsCreated"] == 5) { 
+  // if(sessionStorage["tabsOpen"] == 5) { 
   //   alert("You have reached the maximum number of pathway tabs (5).")
   //   return
   // }
 
   // sessionStorage always stored data as text, even if given an int
-  sessionStorage["tabsCreated"] = parseInt(sessionStorage["tabsCreated"]) + 1; 
+  sessionStorage["tabsOpen"] = parseInt(sessionStorage["tabsOpen"]) + 1; 
   unselectTabs(); // Hides the other tab content
-  var tabID = sessionStorage["tabsCreated"];
+  var tabID = sessionStorage["tabsOpen"];
   var title = "Untitled_" + tabID; // Intitial title for the pathway
   // Adds the tab's icon to the navigation bar
   var tabLink = createTabLink(tabID, title);
@@ -95,7 +104,7 @@ function selectTab(tabLink, tabcontent) {
 
 // Creates a new tablink in the navigation bar
 // The tabID parameter is a unique id for every tab, 
-//        using sessionStorage["tabsCreated"]. 
+//        using sessionStorage["tabsOpen"]. 
 //        It is a parameter so that this function can be explicitly correlated with createPathwayDiv()
 // Returns a reference to the new tablink, a button element
 function createTabLink(tabID, title) {
@@ -111,7 +120,7 @@ function createTabLink(tabID, title) {
 
 // Creates a new tabcontent div containing the interactive pathway orgainzer
 // The tabID parameter is a unique id for every tab,
-//        using sessionStorage["tabsCreated"]. 
+//        using sessionStorage["tabsOpen"]. 
 //        It is a parameter so that this function can be explicitly correlated with createTabLink()
 // Returns a reference to the new tabcontent, a div element
 function createPathwayDiv(tabID) {

@@ -5,7 +5,7 @@
 	// *************************************************************************** //
 	// Skeleton for logging in/out:
 	
-	//SASHAS ATTEMPT BELOW
+	//SASHAS ATTEMPT FOR REGISTER CODE BELOW
 	//include("src/register.php");
 
 	session_start(); // php SESSION to keep user logged in (expires after certain amount of time)

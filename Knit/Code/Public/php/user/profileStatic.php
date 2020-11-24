@@ -2,12 +2,14 @@
   //This file formats a user's profile given their username
 
   //Get all user data
-  $usersData = json_decode(file_get_contents("../../Private/data/users.json"), true);
+  $usersData = json_decode(file_get_contents("../../../Private/data/users.json"), true);
   
   //Where is this being loaded?
   $to = $_GET["to"];
   //Where is this being requested from?
   $from = $_GET['from'];
+  //What div should we go to when we close?
+  $fromLink = $_GET['fromLink'];
 
   //Get the proper user's info
   $username = $_GET['uname'];
@@ -25,7 +27,7 @@
 
 ?>
 
-<button class="btn1" onclick="hide('<?= $to; ?>'); show('<?= $from; ?>')"><i class="fas fa-arrow-left"></i> Back</button><br><br>
+<a class="btn1" href ="#<?= $fromLink; ?>" onclick="hide('<?= $to; ?>'); show('<?= $from; ?>')"><i class="fas fa-arrow-left"></i> Back</a><br><br>
 
 <div id="mainProfile">
   <img class="pfp" src= '<?= $pfp; ?>' alt='<?= $username; ?>-s profile picture'>

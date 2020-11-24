@@ -14,11 +14,11 @@ function updateVote(i, vote){
 
 }
 
-// This function "opens" a pattern in the "to" div and hides the "from" div
-function openPattern(patternIndex, to, from) {
+// This function "opens" a pattern in the "to" div and hides the "from" div. "fromLink" is the subDiv we want to return to when the pattern closes
+function openPattern(patternIndex, to, from, fromLink) {
     //console.log("Pattern " + patternIndex + " opened from " + from);
     //Loads the content into the pattern div, then
-    $("#"+to).load("php/pattern.php?index=" + patternIndex + "&to=" + to + "&from=" + from, function(){
+    $("#"+to).load("php/pattern.php?index=" + patternIndex + "&to=" + to + "&from=" + from + "&fromLink=" + fromLink, function(){
         // hide the menu
         hide(from);
         //Show the pattern

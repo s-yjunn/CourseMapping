@@ -210,7 +210,7 @@ input[type=text], input[type=password] {
 	border-radius: 0.4rem;
 }
 
-/*USER STUFF*/
+/*USER PROFILES*/
 #mainProfile .pfp {
 	object-fit: cover;
 	object-position: center; /* Center the image within the element */
@@ -220,6 +220,7 @@ input[type=text], input[type=password] {
     max-height: 200px;
 }
 
+/*USER PAGE*/
 #User a { /*Copied from forum*/
 	color: rgb(239, 35, 60);
 	transition: color 0.4s;
@@ -227,4 +228,8 @@ input[type=text], input[type=password] {
 #User a:hover {
   cursor: pointer;
   color: rgb(239, 35, 60, 0.6);
+}
+
+#profileEdit {
+	display:none;
 }

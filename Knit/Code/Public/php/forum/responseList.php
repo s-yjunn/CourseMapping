@@ -14,13 +14,13 @@
   //Simple chronological order
   if ($sortMethod == "posted") {
     $responses = $posts[$postIndex]["responses"];
-  //Sort by score -- if posts have same score oldest goes on top
+  //Sort by score -- if posts have same score newest goes on top
   } else if ($sortMethod == "score") {
     $responses = $posts[$postIndex]["responses"];
     uasort($responses, function($a, $b) {
       $diff = $b["score"] - $a["score"];
       if ($diff) return $diff;
-      return $a["posted"] - $b["posted"];
+      return $b["posted"] - $a["posted"];
     });
   } else {
     echo "Something's wrong.";
@@ -42,11 +42,11 @@
   <?php foreach($responses as $key => $value):
     $posted = date('M j, Y \a\t h:iA', $value["posted"]);
   ?>
-    <tr class='response'>
+    <tr id='response<?= $key; ?>'>
       <td class='vote'><button class="btn1" type='button' onclick = "responseVote('<?= $logged; ?>', 'up', <?= $postIndex; ?>, <?= $key; ?>)"><i class='fas fa-plus fa-xs'></i></button><br>
         <?= $value["score"]; ?><br>
         <button class="btn1" type='button' onclick="responseVote('<?= $logged; ?>', 'down', <?= $postIndex; ?>, <?= $key; ?>)"><i class='fas fa-minus fa-xs'></i></button></td>
-      <td><p><span class="author"><a onclick="openProfile('<?= $value["author"]; ?>', 'forumProfile', 'forumPost')"><?=$value["author"]; ?></a></span><br>
+      <td><p><span class="author"><a onclick="openProfile('<?= $value["author"]; ?>', 'forumProfile', 'forumPost', 'response<?= $key; ?>')"><?=$value["author"]; ?></a></span><br>
       <span class='timestamp'><?= $posted; ?></span></p>
       <p class='postContent'><?= $value["content"]; ?></p></td>
     </tr>

@@ -8,6 +8,8 @@
   $to = $_GET["to"];
   //Which tab is this being requested from?
   $from = $_GET['from'];
+  //Which div do we want to link to on "back"?
+  $fromLink = $_GET['fromLink'];
 
   //Get the proper submission
   $patternIndex = $_GET['index'];
@@ -22,7 +24,7 @@
 
 ?>
 
-<button class="btn1" onclick="hide('<?= $to; ?>'); show('<?= $from; ?>')"><i class="fas fa-arrow-left"></i> Back</button><br><br>
+<a class="btn1" href= "#<?= $fromLink; ?>" onclick="hide('<?= $to; ?>'); show('<?= $from; ?>')"><i class="fas fa-arrow-left"></i> Back</a><br><br>
 
 <div id="mainPattern">
   <img class="fullImg" src='imgs/contest/<?= $pattern["image"]; ?>' alt='Knit submission by <?= $pattern["author"]; ?>'>

@@ -68,11 +68,11 @@ $loggedUser = $_REQUEST['sessionName'];
                 <a href="#" class="w3-bar-item" style="display:none;">Welcome, <?php echo $loggedUser;?></a>
             </div>
 
-            <div class="w3-right w3-hide-small">
+            <div class="w3-right w3-hide-medium w3-hide-small">
                 <a href="#" class="w3-bar-item w3-button">About us</a>
             </div>
 
-            <div class="w3-right w3-hide-small">
+            <div class="w3-right w3-hide-medium w3-hide-small">
                 <a href="../../../Public/Merch/collection.php" class="w3-bar-item w3-button">Merch</a>
             </div>
 

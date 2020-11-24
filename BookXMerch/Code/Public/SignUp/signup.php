@@ -18,20 +18,12 @@
             <a href="../index.php" class="w3-bar-item w3-button"><b>Bookstore</b>x<b>Merch</b></a>
             <!-- Float links to the right. Hide them on small screens -->
 
-            <div class="w3-right w3-hide-small">
+            <div class="w3-right w3-hide-medium w3-hide-small">
                 <a href="#" class="w3-bar-item w3-button">About us</a>
             </div>
 
-            <div class="w3-right w3-hide-small">
+            <div class="w3-right w3-hide-medium w3-hide-small">
                 <a href="../Merch/collection.php" class="w3-bar-item w3-button">Merch</a>
-            </div>
-
-            <div class="w3-right w3-hide-small">
-                <a href="Community/posts.php" class="w3-bar-item w3-button">Community</a>
-            </div>
-
-            <div class="w3-right w3-hide-small">
-                <a href="#" class="w3-bar-item w3-button">Profile</a>
             </div>
 
             <div class="w3-right w3-hide-small">

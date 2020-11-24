@@ -29,7 +29,7 @@
     <div class="page-content-collections">
         <!-- Page Content -->
         <div class="sidebar viewBar white viewCard" style="width: 200px">
-            <a href="../../Public/General/index.php"> <img class="imageClass" src="Images/B&M.png" alt="bm"> </a>
+            <a href="../../Public/index.php"> <img class="imageClass" src="Images/B&M.png" alt="bm"> </a>
 
             <div class="newFont">
                 <button class="barCol buttonClass" onclick="showCollection()" style="width: 200px; font-family"><b>Full

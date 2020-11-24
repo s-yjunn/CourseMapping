@@ -1,0 +1,133 @@
+body {
+    background-color: rgb(119,80,112);
+}
+
+.colortheme{
+    color:rgb(119,80,112);
+}
+
+/*  border */
+.border{
+    border: 1px solid black;
+	padding: 1.2em;
+	/* margin-right: 2.5em; */
+    /* border-radius: 0.8rem; */
+    border-color: black;
+}
+
+/* CARD */
+.card {
+    /* margin-left: 2.5em; */
+    background-color: white;
+	/* padding: 0px; */
+    border-color: white;
+    /* border-radius: 1em; */
+}
+
+.horLine {
+    border: 1px solid black;
+
+}
+.card h3 {
+    font-family: 'Poppins';
+    text-align: left;
+	font-size: 40px;
+}
+.card p {
+	line-height: 1.5;
+}
+
+/* fade animation */ 
+.tabcontent {
+	animation: fade 1s;
+}
+
+/* Collection css*/
+.imageClass {
+    width: 100%;
+    height: 100%;
+
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 240px);
+}
+
+.newFont {
+    font-family: 'Poppins';
+}
+
+.imgButton {
+    background-color: rgb(119,80,112);
+    border-radius: 1em;
+    margin: 10px;
+}
+
+.imgButton:hover {
+    box-shadow: black 3px;
+    border-radius: 1em;
+    border-color: black;
+    filter: grayscale(0%);
+}
+
+#pleaseLogin{
+    position: absolute;
+    top: 90%;
+    width: 90%;
+    text-align: center;
+    padding: 5px;
+    z-index:1;
+    background-color: rgb(119,80,112);
+    border-radius: 2em;
+}
+
+/* Login Modal Content/Box */
+
+.modal-content {
+    /* background-color:rgb(175,148,124); */
+    background-color: rgb(255,255,255,1);
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; 
+    
+  }
+  
+  .avatar {
+    width: 40%;
+    border-radius: 50%;
+  }
+  /* The Close Button (x) */
+  .close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: white;
+    cursor: pointer;
+  }
+
+@keyframes fade {
+	from {opacity: 0;}
+	to {opacity: 1;}
+} 
+
+  @keyframes animateButton {
+    0% {
+      background-color:rgb(255,255,255,0.8);
+      color: black;
+    }
+
+    100% {
+      background-color:  rgb(119,89,112);
+      color: white;
+    }
+
+  }
+

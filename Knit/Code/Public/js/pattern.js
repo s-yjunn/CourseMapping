@@ -14,10 +14,13 @@ canvas.width = width;
 canvas.height = height;
 
 // change pen color
-function selectColor(userColor) {
+function selectColor(userColor) { // default color
 	color = userColor;
-	//console.log(color);
 }
+var userColor = document.getElementById('userColor'); // input color
+userColor.addEventListener('input', function(ev) {
+    color = document.getElementById("userColor").value;
+}, false);
 
 // draw on canvas when there is a click
 function draw() {

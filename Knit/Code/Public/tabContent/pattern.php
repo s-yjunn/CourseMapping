@@ -7,9 +7,11 @@
 					<div class="palette" id="orange" onclick="selectColor('orange')"></div>
 					<div class="palette" id="yellow" onclick="selectColor('yellow')"></div>
 					<div class="palette" id="green" onclick="selectColor('green')"></div>
+					<div class="palette" id="cyan" onclick="selectColor('cyan')"></div>
 					<div class="palette" id="blue" onclick="selectColor('blue')"></div>
 					<div class="palette" id="purple" onclick="selectColor('purple')"></div>
 					<div class="palette" id="pink" onclick="selectColor('pink')"></div>
+					<input class="palette" id="userColor" type="color" value="#FF00FF">
 				</div>
 				<div class="col-xs-11">
 					<canvas></canvas> 

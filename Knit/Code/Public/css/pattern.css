@@ -13,7 +13,7 @@ canvas {
 }
 
 .palette {
-	width: 25px;
+	width: 35px;
 	height: 25px;
 	margin: 0.25rem 0;
 }
@@ -32,6 +32,9 @@ canvas {
 #green {
 	background-color: green;
 }
+#cyan {
+	background-color: cyan;
+}
 #blue {
 	background-color: blue;
 }
@@ -40,4 +43,19 @@ canvas {
 }
 #pink {
 	background-color: pink;
+}
+
+input[type="color"] {
+	border: none;
+	width: 35px;
+	height: 25px;
+	padding: 0;
+	margin: 1rem 0;
+}
+/*input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+}*/
+input[type="color"]::-webkit-color-swatch {
+	border: none;
+
 }

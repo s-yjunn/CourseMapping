@@ -1,37 +1,36 @@
-// grab the canvas element, get the context for API access and 
-// preset some variables
-var canvas = document.querySelector('canvas'),
+// set some variables
+var canvas = document.getElementById('canvas'),
     c = canvas.getContext('2d'),
     mouseX = 0,
     mouseY = 0,
     width = 500,
     height = 500,
-    color,
+    color = "black",
     mousedown = false;
-
-// resize canvas
+// size canvas
 canvas.width = width;
 canvas.height = height;
 
-// change pen color
+/* COLOR SELECT */
+// default colors
 function selectColor(userColor) { // default color
 	color = userColor;
 }
-var userColor = document.getElementById('userColor'); // input color
+// color picker
+var userColor = document.getElementById('userColor');
 userColor.addEventListener('input', function(ev) {
     color = document.getElementById("userColor").value;
 }, false);
 
-// draw on canvas when there is a click
+/* DRAWING */
 function draw() {
   if (mousedown) {
-    // set the color
-    c.fillStyle = color; 
-	// fill 3x3 square at clicked coordinate (mouseX, mouseY)
-	c.fillRect(mouseX, mouseY, 3, 3); 
+	  c.fillStyle = color; // set the color
+	  c.fillRect(mouseX, mouseY, 3, 3); // fill 3x3 square at clicked coordinate
   }
 }
 
+/* GETTING COORDINATES */
 // get mouse coordinates on the canvas
 canvas.addEventListener( 'mousemove', function( event ) {
   if (event.offsetX) {
@@ -43,7 +42,6 @@ canvas.addEventListener( 'mousemove', function( event ) {
   }
   draw();   // call draw function
 }, false );
-
 // check for click
 canvas.addEventListener( 'mousedown', function( event ) {
     mousedown = true;
@@ -52,16 +50,15 @@ canvas.addEventListener( 'mouseup', function( event ) {
     mousedown = false;
 }, false );
 
-// download button its functionality
-var btnDownload = document.getElementById('btnDownload');
-// listen for click...
-btnDownload.addEventListener('click', function(ev) {
-    btnDownload.href = canvas.toDataURL(); // set href to our canvas for download
-    btnDownload.download = "MyPattern.png"; // set download filename
-}, false);
 
-var btnClear = document.getElementById('btnClear');
-btnClear.addEventListener('click', function(ev) {
-	c.clearRect(0, 0, canvas.width, canvas.height);
-	update();
-}, false);
+/* BUTTONS */
+// clear canvas
+$("#btnClear").click(function(){
+	c.clearRect(0, 0,  canvas.width, canvas.height);
+});
+// save pattern
+$("#btnDownload").click(function(){
+	btn = $('#btnDownload');
+    btn.href = canvas.toDataURL(); // set href to our canvas for download
+   	btn.download = "MyPattern.png"; // set download filename
+});

@@ -4,8 +4,9 @@ canvas {
 	margin: 1rem 1rem;
 }
 
-#Pattern button {
+#Pattern .btn1 {
 	margin: 0 0.5rem;
+	width: auto;
 }
 
 #colorPalette {
@@ -51,11 +52,4 @@ input[type="color"] {
 	height: 25px;
 	padding: 0;
 	margin: 1rem 0;
-}
-/*input[type="color"]::-webkit-color-swatch-wrapper {
-	padding: 0;
-}*/
-input[type="color"]::-webkit-color-swatch {
-	border: none;
-
 }

@@ -18,7 +18,7 @@
         href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Assistant:wght@300&family=Indie+Flower&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <!-- <link rel="stylesheet" href="../../Private/Books/CSS/styles.css" id="styles"> -->
+    <link rel="stylesheet" href="styles/welcomeStyles.css" id="styles">
 </head>
 
 <body>
@@ -36,18 +36,18 @@
             </div>
             
             <div class="w3-hide-medium w3-hide-small">
-                <a href="../../Public/Profile/profile.php" class="w3-bar-item w3-button">Profile</a>
+                <a href="../../Public/Profile/profile.php" class="w3-bar-item buttonNavBar">Profile</a>
             </div>
 
             <div class="w3-hide-medium w3-hide-small">
-                <a href="../../Public/Merch/collection.php" class="w3-bar-item w3-button">Merch</a>
+                <a href="../../Public/Merch/collection.php" class="w3-bar-item buttonNavBar">Merch</a>
             </div>
 
             <div class="w3-hide-medium w3-hide-small">
-                <a href="#" class="w3-bar-item w3-button">Community</a>
+                <a href="#" class="w3-bar-item buttonNavBar">Community</a>
             </div>
             <div class="w3-hide-medium w3-hide-small">
-                <a href="#" class="w3-bar-item w3-button">About us</a>
+                <a href="#" class="w3-bar-item buttonNavBar">About us</a>
             </div>
         </div>
     </nav>

@@ -14,6 +14,7 @@
 
     <link rel="stylesheet" href="CSS/styles.css">
     <link rel="stylesheet" href="CSS/bookshelfStyles.css">
+    <link rel="stylesheet" href="CSS/welcomeStyles.css">
 </head>
 
 <body>

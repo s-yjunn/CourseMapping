@@ -29,12 +29,12 @@
 
 <a class="btn1" href ="#<?= $fromLink; ?>" onclick="hide('<?= $to; ?>'); show('<?= $from; ?>')"><i class="fas fa-arrow-left"></i> Back</a><br><br>
 
-<div id="mainProfile">
+<div class="profile">
   <img class="pfp" src= '<?= $pfp; ?>' alt='<?= $username; ?>-s profile picture'>
   <h4><?=$username; ?></h4>
   <?php if ($userData["admin"]): ?>
     <p><i class="far fa-star"></i></i> ADMIN <i class="far fa-star"></i></p>
   <?php endif; ?>
   <h5>About me</h5>
-  <p class="about"><?= $about; ?></p>
+  <p class="about"><?= nl2br($about); ?></p>
 </div>

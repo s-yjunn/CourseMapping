@@ -10,14 +10,13 @@
     <h4><?= $username; ?></h4>
     <p>This is the normal user page. Anticipated functions:</p>
     <ul>
-        <li><a onclick="hide('userHome'); show('profileEdit')">View and customize my public profile</a></li>
-        <li>Customize my public profile</li>
+        <li><a onclick="hide('userHome'); show('userProfile')">View and customize my public profile</a></li>
         <li>View and download my saved patterns</li>
     </ul>
 </div>
 
 <!-- this div will be filled by various user 'pages' -->
-<div id = "profileEdit">
+<div id = "userProfile">
     <?php include "php/user/profileEdit.php"; ?>
 </div>
 

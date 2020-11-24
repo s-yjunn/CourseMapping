@@ -32,7 +32,7 @@
       <?=$post["score"]; ?><br>
       <button class="btn1" type='button' onclick="postVote('<?=$logged; ?>', 'down', <?=$postIndex; ?>)"><i class="fas fa-minus fa-xs"></i></button></td>
       <td>
-        <p><span class="author"><a onclick="openProfile('<?= $post["author"]; ?>', 'forumProfile', 'forumPost', 'mainPost')"><?=$post["author"]; ?></a></span><br>
+        <p><span class="author"><a onclick="openProfile('<?= $post["author"]; ?>', 'forumProfile', 'forumPost', '')"><?=$post["author"]; ?></a></span><br>
         <span class="timestamp"><?=$posted; ?></span></p>
         <p class="postContent"><?=$post["content"]; ?></p>
       </td>

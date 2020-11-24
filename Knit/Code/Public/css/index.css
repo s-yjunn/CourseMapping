@@ -211,7 +211,7 @@ input[type=text], input[type=password] {
 }
 
 /*USER PROFILES*/
-#mainProfile .pfp {
+.profile .pfp {
 	object-fit: cover;
 	object-position: center; /* Center the image within the element */
 	float: left;
@@ -230,6 +230,6 @@ input[type=text], input[type=password] {
   color: rgb(239, 35, 60, 0.6);
 }
 
-#profileEdit {
-	display:none;
+#userProfile, #editProfile {
+	display: none;
 }

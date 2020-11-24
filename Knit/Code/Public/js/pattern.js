@@ -57,8 +57,8 @@ $("#btnClear").click(function(){
 	c.clearRect(0, 0,  canvas.width, canvas.height);
 });
 // save pattern
-$("#btnDownload").click(function(){
-	btn = $('#btnDownload');
+var btn = document.getElementById('btnDownload');
+btn.addEventListener('click', function(ev) {
     btn.href = canvas.toDataURL(); // set href to our canvas for download
-   	btn.download = "MyPattern.png"; // set download filename
-});
+    btn.download = "MyPattern.png"; // set download filename
+}, false);

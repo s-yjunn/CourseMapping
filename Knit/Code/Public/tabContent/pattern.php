@@ -11,15 +11,15 @@
 				<div class="palette" id="blue" onclick="selectColor('blue')"></div>
 				<div class="palette" id="purple" onclick="selectColor('purple')"></div>
 				<div class="palette" id="pink" onclick="selectColor('pink')"></div>
-				<input class="palette" id="userColor" type="color" value="#FF00FF">
+				<input id="colorPicker" type="color" value="#FF00FF">
 			</div>
 			<div class="col-xs-11">
 				<canvas id="canvas"></canvas> 
 			</div>
 		</div>
 		<div class="row justify-content-center">		
-			<input type="button" class="btn1" id="btnClear" value="Clear Canvas">
-			<a id="btnDownload" href=""><button class="btn1">Save Pattern</button></a>
+			<input id="btnClear" class="btn1" type="button" value="Clear Canvas">
+			<a id="btnSave" href=""><button class="btn1">Save Pattern</button></a>
 		</div>
 	</div>
 </div>

@@ -6,9 +6,20 @@
 	// Skeleton for logging in/out:
 	
 	//SASHAS ATTEMPT FOR REGISTER CODE BELOW
-	//include("src/register.php");
-
+	include("src/register.php");
 	session_start(); // php SESSION to keep user logged in (expires after certain amount of time)
+
+	// if registering:
+	if(isset($_POST["uname_r"]) && isset($_POST["upass_r"])) {
+		if(register($_POST["uname_r"], $_POST["upass_r"])) {
+			echo('
+				<div class="notification is-success floating" id="good-login">
+					<button class="delete"></button>
+					Successful registration!
+				</div>
+        	');	
+		}
+	}
     
     // if logging in:
     if(isset($_POST["uname"]) && isset($_POST["upass"])) { // POST from self, form at bottom of page
@@ -90,9 +101,9 @@
 				<p class="modal-card-title">Register</p>
 			</header>
 			<section class="modal-card-body">
-				<form class="field" method="POST" autocomplete="off" action="src/register.php"> <span id="register-error" class="has-text-danger"></span>
-					<input class="input is-rounded mb-4 mt-4" type="text" name="uname" placeholder="Username">
-					<input class="input is-rounded mb-4 mt-4" type="password" name="upass" placeholder="Password">
+				<form class="field" method="POST" autocomplete="off"> <span id="register-error" class="has-text-danger"></span>
+					<input class="input is-rounded mb-4 mt-4" type="text" name="uname_r" placeholder="Username">
+					<input class="input is-rounded mb-4 mt-4" type="password" name="upass_r" placeholder="Password">
 					<input class="button is-success mt-4" type="submit" value="Register" id="register-submit"> </form>
 			</section>
 		</div>

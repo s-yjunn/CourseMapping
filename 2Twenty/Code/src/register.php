@@ -1,8 +1,5 @@
 <?php
 
-$uname = $_POST['uname'];
-$upass = $_POST['upass'];
-
 function register($uname,$upass)
 {
     include ("db_connect.php");
@@ -12,17 +9,17 @@ function register($uname,$upass)
 
     //add user to database
     //idk what bind_param() is 
-    $sql = "INSERT INTO `user` VALUES($uname, md5($upass),0,0);";
+    $sql = "INSERT INTO `user`(user,pass,mod_priv,admin_priv) VALUES(?, ?, 0, 0);";
     $query = $conn->prepare($sql);
+    $query->bind_param('ss', $u, $p);
+
+    $u = $uname;
+    $p = md5($upass);
 
     $query->execute();
 
-
+    return 1;
 }
 
-
-
-
-register($uname,$upass);
 ?>
 

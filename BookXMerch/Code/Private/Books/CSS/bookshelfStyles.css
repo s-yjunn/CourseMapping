@@ -1,19 +1,17 @@
 /* CSS Bookshelf */
+/* MODIFIED by Imane for the BxM project*/
 /* By Steve Workman - www.steveworkman.com */
-/* Full support in Safari 4 on OS X Snow Leopard and Opera 10.5 */
-/* Partial support in Firefox 3.6, full support in 3.7+ */
-/* Very little support in IE 8 and below, some support in IE 9 */
-/* For more details, see the blog post */
+
 
 dl.bookshelf {
 	display: block;
 	height:450px; /* height includes room for the description */
 	position: relative;
-	background: transparent url(bookshelf/shelf.png) 0 290px no-repeat; /* 300px is height of tallest book */
+	background: transparent url(../Images/shelf2.png) 0 200px no-repeat; 
 }
 
 dl.bookshelf dt {
-	height:300px; /* Default height of books */
+	height:300px; /* Default height*/
 	display: block;
 	float: left;
 	border:1px solid black;
@@ -50,6 +48,7 @@ dl.bookshelf dt {
 	-ms-transform:rotate(-4deg) translateY(10px);
 	-ms-perspective:100;
 	
+	
 	/* prefix-less properties */
 	transition-property: left, transform;
 	transition-duration: 0.5s;
@@ -65,112 +64,25 @@ dl.bookshelf dt span {
 	-o-transform: rotate(90deg);
 	-ms-transform: rotate(90deg);
 	transform: rotate(90deg);
-	
+	color:white;
 	display: block;
 	position: relative;
 	width: 300px; /* width is height of book */
 	top:150px;
 	right: 130px;
-	font-size:0.75em;
+	font-size:0.8em;
 }
 
 /* Each book is specified by class */
 /* Could be done with nth class, but not really necessary */
 
-dl.bookshelf dt.cssmastery {
-	background: url(bookshelf/cssmast-spine-full.png) 0 0 no-repeat,
-	url(bookshelf/cssmast-front.png) 40px 0 no-repeat; /* multiple backgrounds, one for spine, one for front cover */
-	left:10px;
-	width:260px; /* Actual full width of the book */
-	z-index:1; /* z index is the order of the book from left to right */
-}
-
-dl.bookshelf dt.beautwebdes {
-	background: url(bookshelf/beautdesign-spine.png) 0 0 no-repeat,
-	url(bookshelf/beautdesign-front.png) 40px 0 no-repeat;
-	left:52px;
-	width:280px;
-	z-index:2;
-}
-
-dl.bookshelf dt.dontmakemethink {
-	background: url(bookshelf/dontmakemethink-spine.png) 0 0 no-repeat,
-	url(bookshelf/dontmakemethink-front.png) 40px 0 no-repeat;
+dl.bookshelf dt.bookOfMonth1 {
+	background: url(../Images/book-side.png) 0 0 no-repeat,
+	url(../Images/book-front.jpg) 40px 0 no-repeat;
 	left:94px;
 	width:270px;
 	z-index:3;
 }
-
-
-dl.bookshelf dt.psforphotographers {
-	background:url(bookshelf/photoshop-spine.png) 0 0 no-repeat,
-	url(bookshelf/photoshop-front.png) 40px 0 no-repeat;
-	left:136px;
-	width:270px;
-	z-index:4;
-}
-
-dl.bookshelf dt.psforphotographers span {
-	color:#fff;
-}
-
-dl.bookshelf dt.webstandardsdesign {
-	background:url(bookshelf/webstandcreativity-spine.png) 0 0 no-repeat,
-	url(bookshelf/webstandcreativity-front.png) 40px 0 no-repeat;
-	left:220px;
-	width:305px;
-	z-index:6;
-	color: #fff;
-}
-
-/* Use of web fonts if you want to on the book titles */
-dl.bookshelf dt.webstandardsdesign span {
-	font-family: Helvetica;
-}
-
-dl.bookshelf dt.rightsideofbrain {
-	background:url(bookshelf/drawing-spine.png) 0 0 no-repeat,
-	url(bookshelf/drawing-front.png) 40px 0 no-repeat;
-	left:265px;
-	width:290px;
-	z-index:7;
-}
-
-dl.bookshelf dt.rightsideofbrain span {
-	font-family: "Times";
-}
-
-dl.bookshelf dt.learnedinarchitecture {
-	background:url(bookshelf/architecture-spine.png) 0 0 no-repeat,
-	url(bookshelf/architecture-front.png) 40px 0 no-repeat;
-	left:325px;
-	width:245px;
-	height: 150px; /* Smaller book */
-	top:150px;
-	z-index:8;
-	color: #fff;
-}
-
-dl.bookshelf dt.learnedinarchitecture span {
-	font-size:0.5em;
-	width: 130px;
-	right:50px;
-	top:60px;
-}
-
-dl.bookshelf dt.beginningphp {
-	background:url(bookshelf/php-spine.png) 0 0 no-repeat,
-	url(bookshelf/php-front.png) 40px 0 no-repeat;
-	left:178px;
-	width:270px;
-	z-index:4;
-}
-
-dl.bookshelf dt.beginningphp span {
-	top:140px;
-	color:#000;
-}
-
 
 dl.bookshelf dd {
 	position: absolute;

@@ -2,6 +2,18 @@ body {
     background-color: rgb(119,80,112);
 }
 
+.buttonNavBar{
+    border-radius: 2em;
+    background-color: rgb(119,80,112);
+    color: white;
+    text-decoration: none;
+    margin: 2px;
+}
+
+.buttonNavBar:hover{
+    background-color: black;
+    color: white;
+}
 .colortheme{
     color:rgb(119,80,112);
 }
@@ -51,7 +63,7 @@ body {
 
 .wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 240px);
+    grid-template-columns: repeat(auto-fill, 290px);
 }
 
 .newFont {
@@ -61,7 +73,7 @@ body {
 .imgButton {
     background-color: rgb(119,80,112);
     border-radius: 1em;
-    margin: 10px;
+    margin: 25px;
 }
 
 .imgButton:hover {
@@ -74,7 +86,7 @@ body {
 #pleaseLogin{
     position: absolute;
     top: 90%;
-    width: 90%;
+    width: 100%;
     text-align: center;
     padding: 5px;
     z-index:1;

@@ -28,19 +28,19 @@
 
 
             <div class="w3-right w3-hide-medium w3-hide-small">
-                <a href="#" class="w3-bar-item w3-button">About us</a>
+                <a href="#" class="w3-bar-item buttonNavBar">About us</a>
             </div>
 
             <div class="w3-right w3-hide-medium w3-hide-small">
-                <a href="Merch/collection.php" class="w3-bar-item w3-button">Merch</a>
+                <a href="Merch/collection.php" class="w3-bar-item buttonNavBar">Merch</a>
             </div>
 
             <div class="w3-right w3-hide-small">
-                <a href="SignUp/signup.php" class="w3-bar-item w3-button">Sign up</a>
+                <a href="SignUp/signup.php" class="w3-bar-item buttonNavBar">Sign up</a>
             </div>
 
             <div class="w3-right w3-hide-small">
-                <a href="Login/login.php" class="w3-bar-item w3-button">Login</a>
+                <a href="Login/login.php" class="w3-bar-item buttonNavBar">Login</a>
             </div>
         </div>
     </nav>

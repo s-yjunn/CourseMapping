@@ -8,7 +8,7 @@
         href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Assistant:wght@300&family=Indie+Flower&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="styles/stylesSignUp.css">
+    <link rel="stylesheet" href="styles/stylesSignUp2.css">
     <title>Sign Up</title>
 </head>
 <body>
@@ -19,19 +19,19 @@
             <!-- Float links to the right. Hide them on small screens -->
 
             <div class="w3-right w3-hide-medium w3-hide-small">
-                <a href="#" class="w3-bar-item w3-button">About us</a>
+                <a href="#" class="w3-bar-item buttonNavBar">About us</a>
             </div>
 
             <div class="w3-right w3-hide-medium w3-hide-small">
-                <a href="../Merch/collection.php" class="w3-bar-item w3-button">Merch</a>
+                <a href="../Merch/collection.php" class="w3-bar-item buttonNavBar">Merch</a>
             </div>
 
             <div class="w3-right w3-hide-small">
-                <a href="../SignUp/signup.php" class="w3-bar-item w3-button">Sign up</a>
+                <a href="../SignUp/signup.php" class="w3-bar-item buttonNavBar">Sign up</a>
             </div>
 
             <div class="w3-right w3-hide-small">
-                <a href="../Login/login.php" class="w3-bar-item w3-button">Login</a>
+                <a href="../Login/login.php" class="w3-bar-item buttonNavBar">Login</a>
             </div>
         </div>
     </div>

@@ -1,6 +1,18 @@
 body {
     background-color:#7E4D72;
 }
+.buttonNavBar{
+  border-radius: 2em;
+  background-color: rgb(119,80,112);
+  color: white;
+  text-decoration: none;
+  margin: 2px;
+}
+
+.buttonNavBar:hover{
+  background-color: black;
+  color: white;
+}
 
 .loginButton{
 

@@ -3,9 +3,39 @@
 <?php 
         include("vars/header.php");
         include("src/featured.php");
+        include("src/search.php");
 
         $featured = (show_featured());
-    ?>
+
+
+        // function search_selling(){
+        //     include ("db_connect.php");
+
+        //     echo "hello";
+
+        //     $seller = "shoePainter";
+
+        //     // search for all items for sale by seller
+        //     $sql = "SELECT * FROM `items_for_sale` WHERE seller = ? ;";
+            
+        //     $query = $conn->prepare($sql);
+        //     $query->bind_param('s', $s);
+
+        //     $s = $seller;
+        //     $query->execute();
+            
+
+        //     //$res = $query->get_result();
+
+        //     //while ($row = $res->fetch_all())
+        //     //{
+        //       //  return $row;
+        //     //}
+        // }
+
+        $selling = (search_store("shoePainter"));
+
+?>
 
 
 <nav class="navbar is-white" role="navigation" aria-label="main navigation">
@@ -26,7 +56,7 @@
                         ');
                     } else {
                         echo('
-                        <div class="navbar-item">Welcome back, Sasha <strong class="ml-1">'.$_SESSION["username"].'</strong>!</div>
+                        <div class="navbar-item">Welcome back, shoePainter <strong class="ml-1">'.$_SESSION["username"].'</strong>!</div>
                         <div class="buttons">
                             <form class="field" method="POST" action="index.php">
                                 <input type="submit" name="logout" class="button is-danger is-rounded is-outlined" value="Logout">
@@ -77,7 +107,7 @@
 				<h2 class="subtitle">Items you are selling</h2>
 				<div class="columns">
 					<?php 
-                        foreach($featured as &$item) {
+                        foreach($selling as &$item) {
                             $title = $item[1];
                             $image_url = $item[2];
                             $seller = $item[5];

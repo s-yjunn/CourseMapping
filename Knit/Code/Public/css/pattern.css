@@ -1,9 +1,43 @@
 /* PATTERN MAKER */
 canvas {
 	border: 1px solid #ccc;
-	margin: 1rem 0;
+	margin: 1rem 1rem;
 }
 
 #Pattern button {
 	margin: 0 0.5rem;
+}
+
+#colorPalette {
+	margin: 1rem 1rem;
+}
+
+.palette {
+	width: 25px;
+	height: 25px;
+	margin: 0.25rem 0;
+}
+.palette:hover {
+	cursor: pointer;
+}
+#red {
+	background-color: red;
+}
+#orange {
+	background-color: orange;
+}
+#yellow {
+	background-color: yellow;
+}
+#green {
+	background-color: green;
+}
+#blue {
+	background-color: blue;
+}
+#purple {
+	background-color: purple;
+}
+#pink {
+	background-color: pink;
 }

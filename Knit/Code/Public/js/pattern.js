@@ -6,12 +6,18 @@ var canvas = document.querySelector('canvas'),
     mouseY = 0,
     width = 500,
     height = 500,
-    color = 'black',
+    color,
     mousedown = false;
 
 // resize canvas
 canvas.width = width;
 canvas.height = height;
+
+// change pen color
+function selectColor(userColor) {
+	color = userColor;
+	//console.log(color);
+}
 
 // draw on canvas when there is a click
 function draw() {

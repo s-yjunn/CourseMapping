@@ -69,7 +69,7 @@ $numCont = count($currentConts);
 
 if($numCont == 0){
 
-    echo "There are currently no contestants.";
+    echo "There are currently no approved contestants.";
 
 }
 else{
@@ -85,7 +85,7 @@ else{
      echo '<form action="php/moveWin.php" method="post">',
      '<input type="number" id="numWinners" name="numWinners" min="1" max="'.$numCont.'">',
      '<br><br>',
-    '<input type="submit" value="Submit Winners">',
+    '<input type="submit" value="Preview Winners">',
      '</form>';
      
 }
@@ -94,7 +94,4 @@ else{
 </div>
 
 <br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br>
-<form action="php/reset.php" method="post">
-     <input type="submit" value="Reset Competition">
-     </form>
+

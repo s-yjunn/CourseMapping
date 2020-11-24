@@ -1,18 +1,17 @@
-function updateVote(i, vote){
-    alert(i);
-    alert(vote);
+function updateVote(i){
+    const fs = require('fs')
 
-    document.getElementById("numVotes").innerHTML = vote + 1;
+    var compData = JSON.parse("../data/fake.json");
+  
+    var currentData = compData.contestants;
+  
+    currentData[i].votes += 1;
 
-    // contestantData[i]= vote + 1;
+    const jsonString = JSON.stringify(compData)
 
-    $("#hide").click(function(){
-        $("#hide").hide();
-    });
-
-    document.getElementById("demo").innerHTML = "Thanks for voting!";
-
-}
+    fs.writeFile("../data/fake.json", jsonString);
+  
+  }
 
 // This function "opens" a pattern in the "to" div and hides the "from" div. "fromLink" is the subDiv we want to return to when the pattern closes
 function openPattern(patternIndex, to, from, fromLink) {

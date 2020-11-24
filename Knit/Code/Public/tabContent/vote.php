@@ -63,7 +63,7 @@
 								</div>
 								<button class="btn2" type="button" onclick="openPattern(<?= $i; ?>, 'contestPattern', 'contestHome', 'contestant<?= $i; ?>')">View</button>
 								<form>
-									<input id="hide" class="btn1" type="button" value="Vote" onclick='updateVote(<?= $i ?>, <?= $numVotes ?>)'>
+									<input id="hide" class="btn1" type="button" value="Vote" onclick='updateVote(<?= $i ?>)'>
 								</form>
 							<p id="demo"></p>
 							</div>

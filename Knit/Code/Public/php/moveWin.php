@@ -2,7 +2,8 @@
 
 $comp = file_get_contents("../data/contest.json");
 $compData = json_decode($comp, true);
-$currentConts = $compData["contestants"];
+$compData["pending"] = $compData["contestants"];
+$currentConts = $compData["pending"];
 $numCont = count($currentConts);
 
 $votes = [];
@@ -41,10 +42,17 @@ $numWinners = $_POST['numWinners'];
 
 $winners = [];
 
+$j = 0;
+
 for($i = 0; $i < $numWinners; $i++){
 
-    $winners[$i] = $ordered[$i];
+    if($ordered[$i]["votes"] > 0){
 
+    $winners[$j] = $ordered[$i];    
+
+    $j++;
+    
+    }
 }
 
 $compData["winners"] = $winners;
@@ -54,6 +62,6 @@ $jsondata = json_encode($compData, true);
 
 file_put_contents("../data/contest.json", $jsondata);
 
-header("Location: ../index.php");
+header("Location: preview.php");
 
 ?>

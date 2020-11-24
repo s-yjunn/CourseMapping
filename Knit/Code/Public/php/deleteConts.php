@@ -4,7 +4,7 @@ $comp = file_get_contents("../data/contest.json");
 $compData = json_decode($comp, true);
 $currentSubs = $compData["submissions"];
 $numCur = count($currentSubs);
-
+$delDir = '../imgs/contest/';
 $deleteSubs = $_POST['deleteSubs'];
 
 $numPtn = count($deleteSubs);
@@ -30,7 +30,11 @@ $numCur = count($currentSubs);
 
 $submissions = [];
 
+$delete = [];
+
 $h = 0;
+
+$k = 0;
 
 for($i = 0; $i < $numCur; $i++){
 
@@ -41,6 +45,17 @@ for($i = 0; $i < $numCur; $i++){
         $h++;
 
     }
+    else{
+
+        $delete[$k] = $currentSubs[$i]["image"];
+
+    }
+
+}
+
+for($i = 0; $i < count($delete); $i++){
+
+    unlink($delDir.$delete[$i]);
 
 }
 

@@ -45,6 +45,20 @@ canvas {
 #pink {
 	background-color: pink;
 }
+#brown {
+	background-color: brown;
+}
+#black {
+	background-color: black;
+}
+#white {
+	background-color: white;
+	border: 1px solid #ccc;
+}
+#gray {
+	background-color: gray;
+}
+
 
 input[type="color"] {
 	border: none;
@@ -52,5 +66,8 @@ input[type="color"] {
 	height: 25px;
 	padding: 0;
 	margin: 1rem 0;
-	border-radius: 0.2rem;
+	border-radius: 0.2rem;	
+}
+input[type="color"]:hover {
+	cursor: pointer;
 }

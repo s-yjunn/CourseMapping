@@ -3,8 +3,7 @@
     This code was copy pasted from w3schools, then edited to be a message bar from the top half of the screen
 */
 
-/* The snackbar - position it at the bottom and in the middle of the screen */
-#snackbar {
+#messsageBar {
     visibility: hidden; /* Hidden by default. Visible on click */
     width: 100%; /* Set width to the full width of the document */
     background-color: rgb(255, 238, 0); /* Yellow-Gold background color, because Smith's colors are blue, white, gold */
@@ -17,7 +16,7 @@
   }
   
   /* Show the snackbar when clicking on a button (class added with JavaScript) */
-  #snackbar.show {
+  #messsageBar.show {
     visibility: visible; /* Show the snackbar */
     /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
     However, delay the fade out process for 2.5 seconds */

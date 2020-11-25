@@ -15,7 +15,7 @@ function save(tabID) {
           messageBar.innerHTML = success;
           messageBar.className += "show";
           // After ~3 seconds, remove the show class from messageBar
-          setTimeout(function(){ messageBar.className = messageBar.className.replace("show", ""); }, 3500);
+          setTimeout(function(){alert("This function ran!"); messageBar.className = messageBar.className.replace("show", ""); }, 3500);
         }
     };
     xhttp.open("POST", savepath, true);

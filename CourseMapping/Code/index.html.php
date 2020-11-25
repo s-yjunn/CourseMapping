@@ -45,7 +45,7 @@
 
     <article id='content'>
         <div id='Main' class='tabcontent' style='display: block;'>
-            <?php include "php/tab.html.php" ?>
+            <?php include "tabs/main.html.php" ?>
         </div>
         <div id='Saved' class='tabcontent' style='display: none;'>
             <?php include "tabs/saved.html.php" ?>

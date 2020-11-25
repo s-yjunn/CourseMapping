@@ -94,10 +94,15 @@
         </div>
 
     </div>
-    <div id="pleaseLogin" class="w3-center modal-content animate" style="display:none">
+    <div id="pleaseLogin" class="w3-center modal-content animate buttonNavBar" style="display:none">
         <div class="imgcontainer">
                 <span class="close" id="closeModal" title="Close Modal">&times;</span>
-                <a href="Login/login.php"> <h2> Please log in first <h2> </a>
+                <?php if($loggedIn == true) {
+                    echo "<a href='../Private/Books/collection.php'> <h2> Access our collection here <h2> </a>";
+                } else {
+                    echo "<a href='Login/login.php'> <h2> Please log in first <h2> </a>";
+                }?>
+                
         </div>
 
     </div>

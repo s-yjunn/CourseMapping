@@ -30,6 +30,7 @@ if($user_auth) {
     echo "Welcome " . $name ."!" . "<br/>" . "You have successfully logged in!";
     if(!isset($_SESSION["name"])) { 
         $_SESSION["name"] = $name;
+        $_SESSION["psw"] = $password;
         echo "<br>" . "You are logged in as: " . $_SESSION["name"] . ". Hi!";
         // echo "<style type='text/css'> 
         // #Heading-User {

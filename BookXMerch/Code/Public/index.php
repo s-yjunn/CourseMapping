@@ -1,6 +1,11 @@
 <?php
   session_start();
-  unset($_SESSION["name"]); 
+  if(isset($_SESSION["name"])) {
+    $loggedIn = true;
+    $loggedUser = $_SESSION["name"]; 
+  }
+//   unset($_SESSION["name"]); 
+//   unset($_SESSION["psw"]); 
 
 ?>
 
@@ -26,22 +31,30 @@
             <a href="../Public/index.php" class="w3-bar-item w3-button"><b>Bookstore</b>x<b>Merch</b></a>
             <!-- Float links to the right. Hide them on small screens -->
 
-
-            <div class="w3-right w3-hide-medium w3-hide-small">
-                <a href="#" class="w3-bar-item buttonNavBar">About us</a>
+            <div class='w3-right w3-hide-medium w3-hide-small'>
+                <a href='#' class='w3-bar-item buttonNavBar'>About us</a>
+            </div>
+            
+            
+            <div class='w3-right w3-hide-medium w3-hide-small'>
+                <a href='Merch/collection.php' class='w3-bar-item buttonNavBar'>Merch</a>
             </div>
 
-            <div class="w3-right w3-hide-medium w3-hide-small">
-                <a href="Merch/collection.php" class="w3-bar-item buttonNavBar">Merch</a>
-            </div>
+            <?php if( $loggedIn == false) {
+                echo "<div class='w3-right w3-hide-small'>
+                        <a href='SignUp/signup.php' class='w3-bar-item buttonNavBar'>Sign up</a>
+                     </div>
 
-            <div class="w3-right w3-hide-small">
-                <a href="SignUp/signup.php" class="w3-bar-item buttonNavBar">Sign up</a>
-            </div>
-
-            <div class="w3-right w3-hide-small">
-                <a href="Login/login.php" class="w3-bar-item buttonNavBar">Login</a>
-            </div>
+                    <div class='w3-right w3-hide-small'>
+                        <a href='Login/login.php' class='w3-bar-item buttonNavBar'>Login</a>
+                    </div>";
+            } else {
+                echo "<div class='w3-hide-small'>
+                        <a id='logoutButton2' class='w3-bar-item buttonNavBar' style='cursor:pointer'> ". $_SESSION["name"].": Log Out</a>
+                    </div>";
+            }
+            
+            ?>
         </div>
     </nav>
 
@@ -59,21 +72,21 @@
             <div id="collectionId">
                 <div class="wrapper">
 
-                    <div id="comics"> <button class="imgButton" onclick="loginDirect('comics')"><img class="imageClass"
+                    <div id="comics"> <button class="imgButton"><img class="imageClass"
                                 src="../Private/Books/Images/comics.png" alt="bm"></button></div>
-                    <div id="children"> <button class="imgButton" onclick="loginDirect('children')"> <img
+                    <div id="children"> <button class="imgButton"> <img
                                 class="imageClass" src="../Private/Books/Images/children.png" alt="bm"></button></div>
-                    <div id="sci-fi"> <button class="imgButton" onclick="loginDirect('sci-fi')"><img class="imageClass"
+                    <div id="sci-fi"> <button class="imgButton"><img class="imageClass"
                                 src="../Private/Books/Images/scifi.png" alt="bm"></button></div>
-                    <div id="fiction"> <button class="imgButton" onclick="loginDirect('fiction')"><img
+                    <div id="fiction"> <button class="imgButton"><img
                                 class="imageClass" src="../Private/Books/Images/fiction.png" alt="bm"></button></div>
-                    <div id="nonfiction"> <button class="imgButton" onclick="loginDirect('nonfiction')"><img
+                    <div id="nonfiction"> <button class="imgButton"><img
                                 class="imageClass" src="../Private/Books/Images/nonfiction.png" alt="bm"></button></div>
-                    <div id="debut-novel"> <button class="imgButton" onclick="loginDirect('debut-novel')"><img
+                    <div id="debut-novel"> <button class="imgButton"><img
                                 class="imageClass" src="../Private/Books/Images/debutnovel.png" alt="bm"></button></div>
-                    <div id="horror"> <button class="imgButton" onclick="loginDirect('horror')"><img class="imageClass"
+                    <div id="horror"> <button class="imgButton"><img class="imageClass"
                                 src="../Private/Books/Images/horror.png" alt="bm"></button></div>
-                    <div id="romance"> <button class="imgButton" onclick="loginDirect('romance')"><img
+                    <div id="romance"> <button class="imgButton"><img
                                 class="imageClass" src="../Private/Books/Images/romance.png" alt="bm"></button></div>
 
                 </div>
@@ -103,10 +116,10 @@
             </dl>
     </div> -->
 
-    <script src="../Public/General/js/source.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="../Public/General/js/loginDirect.js"></script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="General/js/loginDirect.js"></script>     
+    <script src="General/js/logOut-main.js"></script>  
 </body>
 
 </html>

@@ -10,9 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
 
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/profileStyles.css">
     <link rel="stylesheet" href="styles/bookshelf.css"> 
-    <link rel="stylesheet" href="styles/welcomeStyles.css"> 
+   
     <title>Profile</title>
 </head>
 <body>
@@ -31,7 +31,7 @@
           <img class="imageClass" src="../../Private/Books/Images/B&M.png" alt="bm">
 
           <div class="newFont">
-            <b style="margin-left: 10px;"><?php echo "Hello, " . $_SESSION["name"] ."!";?></b>
+            <b class="barCol"><?php echo "Hello, " . $_SESSION["name"] ."!";?></b>
             <button class="barCol buttonClass" onclick="booksOfMonth()" style="width: 200px; font-family">User Details</button>
             <button class="barCol buttonClass" onclick="getBookByGenre('comics')">My Books</button>
             <button class="barCol buttonClass" onclick="getBookByGenre('children')">My Posts</button>

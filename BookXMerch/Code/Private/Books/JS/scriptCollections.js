@@ -36,3 +36,13 @@ function displayContent(i) {
     // document.getElementById(i).style.display="block";
     window.location.href="php/bookVisualize.php?content=" + i;
 }
+
+// function logOut() {
+//     $.ajax({
+//         type: "PUT",
+//         url: "../php/logout.php",
+//         success: function(){
+//             window.location.reload(true);
+//         }
+//     })
+// }

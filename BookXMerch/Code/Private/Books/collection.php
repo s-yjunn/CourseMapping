@@ -14,12 +14,13 @@
 
     <link rel="stylesheet" href="CSS/styles.css">
     <link rel="stylesheet" href="CSS/bookshelfStyles.css">
-    <link rel="stylesheet" href="CSS/welcomeStyles.css">
+
 </head>
 
 <body>
 
-    <script src="JS/script5.js"> </script>
+    <script src="JS/scriptCollections.js"> </script>
+
 
     <div class="login-navbar">
         <?php 
@@ -30,7 +31,7 @@
     <div class="page-content-collections">
         <!-- Page Content -->
         <div class="sidebar viewBar white viewCard" style="width: 200px">
-            <a href="../../Public/index.php"> <img class="imageClass" src="Images/B&M.png" alt="bm"> </a>
+            <a href="../../Public/index.php"><img class="imageClass" src="Images/B&M.png" alt="bm"></a>
 
             <div class="newFont">
                 <button class="barCol buttonClass" onclick="showCollection()" style="width: 200px; font-family"><b>Full
@@ -97,7 +98,10 @@
         <!-- Page Content End (below) -->
     </div>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="JS/logOut-fromCollections.js"> </script>
     <script type="text/javascript" src="JS/bookshelf.js"></script>
+    
 
 
 </body>

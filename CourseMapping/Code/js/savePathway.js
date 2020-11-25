@@ -10,7 +10,12 @@ function save(tabID) {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
           success = xhttp.responseText;
-          alert(success);
+          // Add message to message bar, and show it for ~3 seconds:
+          var messageBar = document.getElementById("messagebar");
+          messageBar.innerHTML = success;
+          messageBar.className += "show";
+          // After ~3 seconds, remove the show class from messageBar
+          setTimeout(function(){ messageBar.className = messageBar.className.replace("show", ""); }, 3500);
         }
     };
     xhttp.open("POST", savepath, true);
@@ -20,8 +25,7 @@ function save(tabID) {
     } else {
         var pathway = sessionStorage[currentTab];
     }
-    pathway["sampleContent"] = "something";
-    xhttp.send(JSON.stringify(pathway));
+    xhttp.send(pathway);
     return success;
   }
 

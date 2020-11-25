@@ -1,0 +1,47 @@
+/*
+    Author: Allison,      https://www.w3schools.com/howto/howto_js_snackbar.asp
+    This code was copy pasted from w3schools, then edited to be a message bar from the top half of the screen
+*/
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    width: 100%; /* Set width to the full width of the document */
+    background-color: rgb(255, 238, 0); /* Yellow-Gold background color, because Smith's colors are blue, white, gold */
+    color:black; /* Black text color */
+    text-align: center; /* Centered text */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index so that it is on top of everything else */
+    top: 0px; /* Comes from the top of the page*/
+  }
+  
+  /* Show the snackbar when clicking on a button (class added with JavaScript) */
+  #snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  /* Animations to fade the snackbar in and out */
+  @-webkit-keyframes fadein {
+    from {top: -2em; opacity: 0;}
+    to {top: 2em; opacity: 1;}
+  } 
+  
+  @keyframes fadein {
+    from {top: -2em; opacity: 0;}
+    to {top: 2em; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {top: 2em; opacity: 1;}
+    to {top: -2em; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {top: 2em; opacity: 1;}
+    to {top: -2em; opacity: 0;}
+  }

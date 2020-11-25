@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/homepageCSS.css">
     <link rel="stylesheet" type="text/css" href="css/tab.css">
     <link rel="stylesheet" type="text/css" href="css/login_style.css">
+    <link rel="stylesheet" type="text/css" href="css/messageBar.css">
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -21,6 +22,12 @@
          </script>';
          }
     ?>
+
+    <!--
+        This message bar shows for a moment when "show" is added to the class name, and the innerHTML is changed by javascript code.
+        It's like an alert box, but not annoying.
+    -->
+    <div id="messagebar" class=""></div>
 
     <h4>
         <?php include 'php/userinfo.php'; ?>

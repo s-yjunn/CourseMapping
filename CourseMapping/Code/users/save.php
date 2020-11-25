@@ -13,23 +13,21 @@
             echo "Couldn't create user file. ";
         }
     }
-    
      
-    $pathway = json_decode(file_get_contents('php://input'), TRUE);
-    echo json_decode(file_get_contents('php://input'), TRUE);
+    $pathway = json_decode(file_get_contents('php://input'), FALSE);
     // If this pathway has an id, it must already exist in the user's folder.
     // If not, give it an id that is different from the pathways already stored.
     if(!isset($pathway->serverFile)) {
         $id = "p_" . count(scandir($userFile));
         $pathway->serverFile = $id;
-        echo "Set serverID to " . $id . ". ";
+        // echo "Set serverID to " . $id . ". "; (Debugging)
 
-    }
+    }   
     // Save or make then save the file
     $file = fopen($userFile . "/" . $pathway->serverFile, "w");
     if(!$file) {
-        echo "Couldn't open file to save in: " . $userFile . "/" . $pathway->serverFile;
-        echo var_dump($pathway->serverFile);
+        echo "Couldn't open file to save in"; //: " . $userFile . "/" . $pathway->serverFile;  (Debugging)
+        // echo var_dump($pathway->serverFile);  (Debugging)
 
     } else {
         if(!fwrite($file, json_encode($pathway))){

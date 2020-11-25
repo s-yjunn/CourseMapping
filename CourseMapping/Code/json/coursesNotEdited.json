@@ -1,0 +1,138 @@
+{
+  "meta": {
+    "updated": "11-5-2020",
+    "parsing": "The 'overlap' property is a list of courses for which students can only receive credit for one."
+  },
+  "EGR": {
+    "EGR 100": {
+      "prereqs": [],
+      "coreqs": [],
+      "requiredFor": [],
+      "suggestedFor": [],
+      "info": { "credits": 4, "title": "Engineering for Everyone" },
+      "overlap": []
+    },
+
+    "EGR 110": {
+      "prereqs": [],
+      "coreqs": ["MTH 112"],
+      "requiredFor": ["EGR 290", "EGR 312"],
+      "suggestedFor": [],
+      "info": { "credits": 4, "title": "Fundamental Engineering Principles" },
+      "overlap": []
+    },
+
+    "EGR 220": {
+      "prereqs": ["MTH 212"],
+      "coreqs": [],
+      "requiredFor": ["EGR 320", "EGR 322"],
+      "suggestedFor": [],
+      "info": { "credits": 5, "title": "Engineering Circuit Theory" },
+      "overlap": []
+    },
+
+    "EGR 270": {
+      "prereqs": ["PHY 117", "MTH 112"],
+      "coreqs": [],
+      "requiredFor": ["EGR 374"],
+      "suggestedFor": [],
+      "info": { "credits": 5, "title": "Engineering Mechanics" },
+      "overlap": []
+    },
+
+    "EGR 290": {
+      "prereqs": ["EGR 110", "CHM 111"],
+      "coreqs": ["MTH 212"],
+      "requiredFor": [],
+      "suggestedFor": [],
+      "info": { "credits": 4, "title": "Engineering Thermodynamics" },
+      "overlap": []
+    },
+
+    "EGR 374": {
+      "prereqs": ["EGR 270", "MTH 212"],
+      "coreqs": [],
+      "requiredFor": ["EGR 312", "EGR 314"],
+      "suggestedFor": [],
+      "info": { "credits": 5, "title": "Fluid Mechanics" },
+      "overlap": []
+    },
+
+    "EGR 312": {
+      "prereqs": ["CHM 111", "EGR 110"],
+      "coreqs": ["EGR 374"],
+      "requiredFor": [],
+      "suggestedFor": [],
+      "info": { "credits": 4, "title": "Seminar: Atmospheric Processes" },
+      "overlap": []
+    },
+
+    "EGR 314": {
+      "prereqs": ["CHM 111", "EGR 374"],
+      "coreqs": [],
+      "requiredFor": [],
+      "suggestedFor": [],
+      "info": {
+        "credits": 4,
+        "title": "Seminar: Contaminants in Aquatic Systems"
+      },
+      "overlap": []
+    },
+
+    "EGR 315": {
+      "prereqs": ["MTH 112", "SDS 220"],
+      "coreqs": [],
+      "requiredFor": [],
+      "suggestedFor": [],
+      "info": { "credits": 4, "title": "Seminar: Ecohydrology" },
+      "overlap": []
+    },
+
+    "EGR 320": {
+      "prereqs": ["EGR 220", "PHY 210"],
+      "coreqs": [],
+      "requiredFor": [],
+      "suggestedFor": [],
+      "info": { "credits": 4, "title": "Signals and Systems" },
+      "overlap": []
+    },
+
+    "EGR 322": {
+      "prereqs": ["EGR 220"],
+      "coreqs": [],
+      "requiredFor": [],
+      "suggestedFor": [],
+      "info": { "credits": 4, "title": "Seminar: Acoustics" },
+      "overlap": []
+    }
+  },
+
+  "PHY": {
+    "PHY 119": {
+      "prereqs": [],
+      "coreqs": [],
+      "requiredFor": [],
+      "suggestedFor": [],
+      "info": { "credits": 5, "title": "Advanced Introductory Physics" },
+      "overlap": ["PHY 117", "PHY 118"]
+    }
+  },
+
+  "MTH": {},
+
+  "SDS": {
+    "SDS 220": {
+      "prereqs": [],
+      "coreqs": [],
+      "requiredFor": [],
+      "suggestedFor": [],
+      "info": {
+        "credits": 5,
+        "title": "Introduction to Probability and Statistics"
+      },
+      "overlap": ["SDS 201", "PSY 201", "GOV 190", "ECO 220", "SOC 201"]
+    }
+  },
+
+  "CSC": {}
+}

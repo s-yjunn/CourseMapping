@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/homepageCSS.css">
     <link rel="stylesheet" type="text/css" href="css/tab.css">
-    <link rel="stylesheet" type="text/css" href="css/login_style.css">
+    <link rel="stylesheet" type="text/css" href="css/loginStyle.css">
     <link rel="stylesheet" type="text/css" href="css/messageBar.css">
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -45,13 +45,13 @@
 
     <article id='content'>
         <div id='Main' class='tabcontent' style='display: block;'>
-            <?php include "tabs/main.html.php" ?>
+            <?php include "html/main.html" ?>
         </div>
         <div id='Saved' class='tabcontent' style='display: none;'>
-            <?php include "tabs/saved.html.php" ?>
+            <?php include "php/saved.html.php" ?>
         </div>
-        <?php include "tabs/register.html.php" ?>
-        <?php include "tabs/login.html.php" ?>
+        <?php include "html/register.html" ?>
+        <?php include "html/login.html" ?>
     </article>
 
 

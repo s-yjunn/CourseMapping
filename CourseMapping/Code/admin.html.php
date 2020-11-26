@@ -28,10 +28,10 @@
 
 <article id = 'content'>
     <div id = 'Add' class = 'tabcontent' style = 'display: none;'>
-        <?php include "tabs/add.html.php"?>
+        <?php include "html/add.html"?>
     </div>
     <div id = 'View' class = 'tabcontent' style = 'display: block;'>
-        <?php include "tabs/view.html.php"?>
+        <?php include "html/view.html"?>
     </div>
 </article>
 

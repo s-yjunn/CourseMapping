@@ -5,13 +5,13 @@ if(isset($_SESSION['username']) && ($_SESSION['username']!= 'admin')){
     <button class='logout-btn' onclick='clearUser()'>LOG OUT</button></form>";
     echo "</div></div>";
 } else if($_SESSION['username']== 'admin'){
-    echo "<div class = 'loginBar'>";
+    echo "<div style = 'width:100%'> <div class = 'loginBar'>";
     echo "You are an admin!<form action = 'php/logout.php'>
     <button class='logout-btn'>LOG OUT</button></form>";
-    echo "</div>";
+    echo "</div></div>";
 } else {
-    echo "<div class = 'loginBar'>";
+    echo "<div style = 'width:100%'> <div class = 'loginBar'>";
     echo "You are a guest! If you want to see more features, please login!";
-    echo "</div>";
+    echo "</div></div>";
 }
 ?>

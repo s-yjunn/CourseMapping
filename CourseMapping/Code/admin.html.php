@@ -16,9 +16,7 @@
     }
 ?>
 
-<h4>
 <?php include 'php/userinfo.php';?>
-</h4>
 
 <div class = 'tab' id="tab">
     <button id = "logo">Course Mapping</button>

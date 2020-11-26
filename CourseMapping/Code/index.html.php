@@ -65,6 +65,7 @@
     <script src="js/pathway.js"></script>
     <script src="js/savePathway.js"></script>
     <script src="js/logout.js"></script>
+    <script src="js/openSaved.js"></script>
 </body>
 
 </html>

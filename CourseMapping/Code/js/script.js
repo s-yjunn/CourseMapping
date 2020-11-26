@@ -46,11 +46,9 @@ function newTab() {
   //   alert("You have reached the maximum number of pathway tabs (5).")
   //   return
   // }
-
-  // sessionStorage always stored data as text, even if given an int
-  sessionStorage["tabsOpen"] = parseInt(sessionStorage["tabsOpen"]) + 1; 
+ 
   unselectTabs(); // Hides the other tab content
-  var tabID = sessionStorage["tabsOpen"];
+  var tabID = newTabID();
   var title = "Untitled_" + tabID; // Intitial title for the pathway
   // Adds the tab's icon to the navigation bar
   var tabLink = createTabLink(tabID, title);
@@ -72,6 +70,15 @@ function newTab() {
 }
 
 //    -----------------      HELPER FUNCTIONS:      -------------------
+
+// Updates sessionStorage["tabsOpen"], and uses that to generate the new tab ID
+function newTabID() {
+  // Update "tabsOpen"
+  // sessionStorage always stored data as text, even if given an int
+  sessionStorage["tabsOpen"] = parseInt(sessionStorage["tabsOpen"]) + 1; 
+  // Use "tabsOpen" for tabID
+  return sessionStorage["tabsOpen"];
+}
 
 // Takes two strings
 // One is the tabID (a number)

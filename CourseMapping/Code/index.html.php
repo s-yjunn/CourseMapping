@@ -29,10 +29,7 @@
     -->
     <div id="messagebar" class=""></div>
 
-    <h4>
-        <?php include 'php/userinfo.php'; ?>
-        
-    </h4>
+    <?php include 'php/userinfo.php'; ?>
 
     <div class='tab' id="tab">
         <button id="logo">Course Mapping</button>

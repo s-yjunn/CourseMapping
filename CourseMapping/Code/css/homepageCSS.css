@@ -24,7 +24,6 @@ h2 {
 /* Style the tab */
 .tab {
   overflow: hidden;
-  border: 1px solid #ccc;
   background-color: rgb(32, 124, 177);
   height: 80px;
 }

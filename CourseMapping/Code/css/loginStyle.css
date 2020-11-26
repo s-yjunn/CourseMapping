@@ -42,8 +42,7 @@ span.psw {
   left: 25%;
   top: 20%;
   width: 50%; /* Full width */
-  height: 50%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  height: 50%; /* Full height */ 
   padding-top: 60px;
 }
 
@@ -102,19 +101,17 @@ img.avatar {
 
 form > .logout-btn {
   background-color: rgb(38, 13, 130);
-  padding: 12px 15px;
+  padding: 11px 15px;
   border: none;
   color:white;
   cursor: pointer;
-  width: 10%;
   position: absolute;
-  right: 0;
-  top:0;
+  right: 8px;
+  top:8px;
 }
 
 .loginBar {
-  margin: 0;
-  width: 100%; /* Set width to the full width of the document */
+  font-weight: bold;
   background-color: rgb(56, 83, 238);
   color:black; /* Black text color */
   text-align: left;

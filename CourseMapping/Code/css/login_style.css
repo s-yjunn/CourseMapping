@@ -100,12 +100,24 @@ img.avatar {
   to {transform: scale(1)}
 }
 
-
-.logout-btn {
-  background-color: rgb(13, 130,102);
-  padding: 14px 20px;
-  margin: 8px 0;
+form > .logout-btn {
+  background-color: rgb(38, 13, 130);
+  padding: 12px 15px;
   border: none;
+  color:white;
   cursor: pointer;
-  width: 15%;
+  width: 10%;
+  position: absolute;
+  right: 0;
+  top:0;
+}
+
+.loginBar {
+  margin: 0;
+  width: 100%; /* Set width to the full width of the document */
+  background-color: rgb(56, 83, 238);
+  color:black; /* Black text color */
+  text-align: left;
+  padding: 10px; /* Padding */
+  top: 0px; /* Comes from the top of the page*/
 }

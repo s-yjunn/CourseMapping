@@ -39,8 +39,8 @@
         <button class="tablinks active" onclick="openTab(event, 'Main')" <?php include 'php/logouttabs.php'; ?>>MAIN PAGE</button>
         <button class="tablinks" onclick="openTab(event, 'Saved')" <?php include 'php/logintabs.php'; ?>>SAVED</button>
         <button class="tablinks" onclick="newTab()" <?php include 'php/logintabs.php'; ?>>+</button>
-        <button class = "tablinks" <?php include 'php/logouttabs.php';?>onclick= "openTab(event, 'Register')">REGISTER</button>
-        <button class="tablinks" <?php include 'php/logouttabs.php'; ?>onclick="openTab(event, 'Login')">LOGIN</button>
+        <button class = "tablinks" <?php include 'php/logouttabs.php';?>onclick="document.getElementById('register').style.display='block'">REGISTER</button>
+        <button class="tablinks" <?php include 'php/logouttabs.php'; ?>onclick="document.getElementById('login').style.display='block'">LOGIN</button>
     </div>
 
     <article id='content'>
@@ -50,12 +50,8 @@
         <div id='Saved' class='tabcontent' style='display: none;'>
             <?php include "tabs/saved.html.php" ?>
         </div>
-        <div id='Login' class='tabcontent' style='display: none;'>
-            <?php include "tabs/login.html.php" ?>
-        </div>
-        <div id='Register' class='tabcontent' style='display: none;'>
-            <?php include "tabs/register.html.php" ?>
-        </div>
+        <?php include "tabs/register.html.php" ?>
+        <?php include "tabs/login.html.php" ?>
     </article>
 
 

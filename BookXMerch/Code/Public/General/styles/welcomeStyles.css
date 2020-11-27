@@ -29,13 +29,15 @@ body {
 
 /* CARD */
 .card {
-    /* margin-left: 2.5em; */
     background-color: white;
-	/* padding: 0px; */
     border-color: white;
-    /* border-radius: 1em; */
 }
 
+.card2 {
+    background-color: rgb(119,80,112);
+    border-color: rgb(119,80,112);
+    color: white;
+}
 .horLine {
     border: 1px solid black;
 
@@ -84,26 +86,35 @@ body {
 }
 
 #pleaseLogin{
-    position: absolute;
-    top: 90%;
-    width: 100%;
-    text-align: center;
-    padding: 5px;
-    z-index:1;
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    top: 20em;
+    width: 75%; 
+    margin: 4em 4em 4em 4em;
+    overflow: auto; /* Enable scroll if needed */
     background-color: rgb(119,80,112);
-    border-radius: 2em;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 3em;
+}
+
+#pleaseLogin:hover{
+    text-decoration: underline;
 }
 
 /* Login Modal Content/Box */
 
 .modal-content {
-    /* background-color:rgb(175,148,124); */
-    background-color: rgb(255,255,255,1);
-    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-    border: 1px solid #888;
-    width: 80%; 
-    
-  }
+    position: relative;
+    background-color: rgb(119,80,112);
+    margin: 5% auto 15% auto; 
+    border: 1px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    text-decoration: none;
+    cursor: pointer;
+}
   
   .avatar {
     width: 40%;

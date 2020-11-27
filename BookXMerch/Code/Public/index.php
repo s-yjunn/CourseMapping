@@ -32,7 +32,7 @@
             <!-- Float links to the right. Hide them on small screens -->
 
             <div class='w3-right w3-hide-medium w3-hide-small'>
-                <a href='#' class='w3-bar-item buttonNavBar'>About us</a>
+                <a href='#aboutUs' class='w3-bar-item buttonNavBar'>About us</a>
             </div>
             
             
@@ -94,17 +94,34 @@
         </div>
 
     </div>
-    <div id="pleaseLogin" class="w3-center modal-content animate buttonNavBar" style="display:none">
+    <div id="pleaseLogin" class="w3-center modal-content animate " style="display:none">
         <div class="imgcontainer">
                 <span class="close" id="closeModal" title="Close Modal">&times;</span>
                 <?php if($loggedIn == true) {
-                    echo "<a href='../Private/Books/collection.php'> <h2> Access our collection here <h2> </a>";
+                    echo "<a style='text-decoration:none' href='../Private/Books/collection.php'> <h2> Access our collection here <h2> </a>";
                 } else {
-                    echo "<a href='Login/login.php'> <h2> Please log in first <h2> </a>";
+                    echo "<a style='text-decoration:none' href='Login/login.php'> <h2> Please log in first <h2> </a>";
                 }?>
                 
         </div>
 
+    </div>
+    <div class="tabcontent">
+        <div class="card2 border">
+            <h2 class="colortheme" style="color:white">Our Merch</h2>
+            <div class="wrapper">
+
+                <div id="Colthing"> <a class="imageClass" href="Merch/collection.php"><img class="imageClass"  src="Merch/Images/clothing.png" alt="bm"></button></a></div>
+                <div id="Other"> <a class="imageClass" href="Merch/collection.php"><img class="imageClass" src="Merch/Images/collectibles.png" alt="bm"></a></div>
+                <div id="Collectibles"> <a class="imageClass" href="Merch/collection.php"> <img class="imageClass" src="Merch/Images/other.png" alt="bm"></a></div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="tabcontent">
+        <div class="card border">
+            <h2 id="aboutUs" class="colortheme">About Us</h2>
+        </div>
     </div>
     <!-- <div class="w3-center" id="pleaseLogin" style="display:none"> 
         <a href="Login/login.php">
@@ -121,7 +138,7 @@
             </dl>
     </div> -->
 
-
+        
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="General/js/loginDirect.js"></script>     
     <script src="General/js/logOut-main.js"></script>  

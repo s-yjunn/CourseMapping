@@ -27,8 +27,9 @@ $genre = $newArray[8];
 
 
 // SESSION NAME PLEASE WORK!!!
-$loggedUser = $_REQUEST['sessionName'];
-
+session_start();
+// $loggedUser = $_REQUEST['sessionName'];
+$loggedUser = $_SESSION["name"]; 
 ?>
 
 <html>
@@ -45,17 +46,13 @@ $loggedUser = $_REQUEST['sessionName'];
 
 
   <link rel="stylesheet" href="../CSS/styles.css">
-  <link rel="stylesheet" href="../CSS/bookshelf.css">
+
   
   <!-- Stylesheets for the login navbar -->
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
-
-<script src="../JS/script5.js"> </script>
-
-
 
 <div class="login-navbar" style="margin-bottom: 54.4px;">
     <div class="w3-top">
@@ -65,23 +62,20 @@ $loggedUser = $_REQUEST['sessionName'];
 
             <!-- Doesn't register the user's name as session name for visualize -->
             <div class="w3-hide-small">
-                <a href="#" class="w3-bar-item" style="display:none;">Welcome, <?php echo $loggedUser;?></a>
+                <a href="#" class="w3-bar-item" style="display:block;">Welcome, <?php echo $loggedUser;?></a>
             </div>
 
-            <div class="w3-right w3-hide-medium w3-hide-small">
-                <a href="#" class="w3-bar-item w3-button">About us</a>
+            <div class="w3-hide-medium w3-hide-small">
+                <button id="logoutButton" class="w3-bar-item w3-right buttonNavBar" style="cursor:pointer">Log Out</button>
             </div>
-
-            <div class="w3-right w3-hide-medium w3-hide-small">
-                <a href="../../../Public/Merch/collection.php" class="w3-bar-item w3-button">Merch</a>
+            <div class="w3-hide-medium w3-hide-small">
+                <a href="../../../Public/index.php" class="w3-bar-item buttonNavBar">Home</a>
             </div>
-
-            <div class="w3-right w3-hide-small">
-                <a href="#" class="w3-bar-item w3-button">Community</a>
+            <div class="w3-hide-medium w3-hide-small">
+                <a href="../../../Public/Profile/profile.php" class="w3-bar-item buttonNavBar">Profile</a>
             </div>
-
-            <div class="w3-right w3-hide-small">
-                <a href="../../../Public/Profile/profile.php" class="w3-bar-item w3-button">Profile</a>
+            <div class="w3-hide-medium w3-hide-small">
+                <a href="#" class="w3-bar-item buttonNavBar">Community</a>
             </div>
         </div>
     </div>
@@ -177,6 +171,10 @@ $loggedUser = $_REQUEST['sessionName'];
 
     <br>
     <br>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../JS/logOut-fromBookVisualize.js"> </script>
+    <script src="../JS/scriptCollections.js"> </script>
   </body>
 
 </html>

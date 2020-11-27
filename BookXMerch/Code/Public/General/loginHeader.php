@@ -42,11 +42,10 @@
                 <button id="logoutButton" class="w3-bar-item w3-right buttonNavBar" style="cursor:pointer">Log Out</button>
             </div>
             <div class="w3-hide-medium w3-hide-small">
-                <a href="../../Public/Profile/profile.php" class="w3-bar-item buttonNavBar">Profile</a>
+                <a href="../../Public/index.php" class="w3-bar-item buttonNavBar">Home</a>
             </div>
-
             <div class="w3-hide-medium w3-hide-small">
-                <a href="../../Public/Merch/collection.php" class="w3-bar-item buttonNavBar">Merch</a>
+                <a href="../../Public/Profile/profile.php" class="w3-bar-item buttonNavBar">Profile</a>
             </div>
 
             <div class="w3-hide-medium w3-hide-small">

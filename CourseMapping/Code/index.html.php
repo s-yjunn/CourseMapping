@@ -33,7 +33,7 @@
 
     <div class='tab' id="tab">
         <button id="logo">Course Mapping</button>
-        <button class="tablinks" onclick="openTab(event, 'Main')" <?php include 'php/logouttabs.php'; ?>>MAIN PAGE</button>
+        <button class="tablinks active" onclick="openTab(event, 'Main')" <?php include 'php/logouttabs.php'; ?>>MAIN PAGE</button>
         <button class="tablinks" onclick="openTab(event, 'Saved')" <?php include 'php/logintabs.php'; ?>>SAVED</button>
         <button class="tablinks" onclick="newTab()" <?php include 'php/logintabs.php'; ?>>+</button>
         <button class = "tablinks" <?php include 'php/logouttabs.php';?>onclick="document.getElementById('register').style.display='block'">REGISTER</button>

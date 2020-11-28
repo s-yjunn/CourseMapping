@@ -13,7 +13,7 @@
         <!-- I use a class instead of an id for the pathway title because multiple pathway tabs will be made, and that would be more than one element with the same id. -->
         <h1 class="pathwayTitle" onclick="titleChange(this)">Untitled Pathway</h1>
         <!--  This form allows asks the user to change the title of a pathway.  It uses pathwayMeta.js -->
-        <div style="display: none;" class="titleChanger">
+        <div style="display: none;" class="titleChanger ">
             <form onsubmit="changeTitle(this); return false;" >
                 <input type="text" name="newTitle" placeholder="New Pathway Title">
             </form>

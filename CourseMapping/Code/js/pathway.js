@@ -1,3 +1,5 @@
+var currentPathway; //Global, stores the javascript object to manipulate, whose string representation is in sessionStorage
+
 // Major chosen by the user
 var chosenMajor = "XXX";
 

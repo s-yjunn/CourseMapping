@@ -33,8 +33,7 @@ function forEveryTab(tabFunction) {
 function openTab(evt, tabID) {
   unselectTabs(); // Reverts the appearence of the current tab, and hides it's content.
   // Show the current tab, and add an "active" class to the button that opened the tab
-  selectTab(evt.currentTarget, document.getElementById(tabID));
-  currentTab = tabID; // Update the current tab id
+  selectTab(evt.currentTarget, document.getElementById(tabID), tabID);
 }
 
 function newTab() {
@@ -51,7 +50,7 @@ function newTab() {
   // Creates a new tabcontent div containing the interactive pathway orgainzer
   var tabcontent = createPathwayDiv(tabID);
   // Activates the tablink and displays the tab content
-  selectTab(tabLink, tabcontent);
+  selectTab(tabLink, tabcontent, tabID);
 
   // Add new pathway to sessionStorage
   var pathway = {title: title};
@@ -59,10 +58,6 @@ function newTab() {
     pathway["sem_" + i] = { locked:true, nodes:{} };
   }
   sessionStorage[tabID] = JSON.stringify(pathway);
- 
-  currentTab = tabID; // Update the current tab id
-  // // Update the max-width based on the number of tab
-  // updsateCSS()
 }
 
 //    -----------------      HELPER FUNCTIONS:      -------------------
@@ -104,10 +99,19 @@ function unselectTabs() {
 }
 
 // Takes a reference to the tablink and tabcontent,
-// Activates the tablink and displays the tab content
-function selectTab(tabLink, tabcontent) {
+// Activates the tablink and displays the tab content and sets currentTab
+// Also parses the JSON pathway for this tab to work with, and stores one if it was alread open
+function selectTab(tabLink, tabcontent, tabID) {
   tabLink.className += " active";
   tabcontent.style.display = "block";
+
+  if(currentPathway) { // If currentPathway was already set, save it in sessionStorage
+    sessionStorage[currentTab] = JSON.stringify(currentPathway);
+  }
+
+  currentTab = tabID; // Now update the current tab id
+
+  currentPathway = JSON.parse(sessionStorage[currentTab]);
 }
 
 // Creates a new tablink in the navigation bar

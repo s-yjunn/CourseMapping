@@ -10,11 +10,11 @@
 
 <body>
     <h1>Untitled Pathway</h1>
-    <button class="active" onclick="save()">Save</button>
     <div class="main" ondragover="drag_over(event)" ondrop="drop(event)">
 
-        <button onclick="getCourses()">Get Courses</button>
-        <button onclick="getPaths()">Get Paths</button>
+        <button class = "get" onclick="getCourses()">Get Courses</button>
+        <button class = "get" onclick="getPaths()">Get Paths</button>
+        <button class="active" onclick="save()">Save</button>
 
         <p id="jsonInfo"></p>
 

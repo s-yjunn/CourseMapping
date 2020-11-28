@@ -47,3 +47,33 @@ svg {
   stroke-width: 2;
   marker-end: url(#markerArrow);
 }
+
+.active{
+  background-color: rgb(34, 179, 46);
+  transition-duration: 0.4s;
+  margin:0 auto;
+  padding: 15px 20px;
+  border: none;
+  color: white;
+  font-weight:bold;
+  float: right;
+}
+
+.active:hover{
+  background-color: rgb(57, 214, 175);
+  color:black;
+}
+
+.get{
+  background-color:rgb(235, 181, 20);
+  transition-duration: 0.4s;
+  margin: 0 auto;
+  padding: 15px 20px;
+  border: none;
+  color: black;
+}
+
+.get:hover{
+background-color: rgb(47, 184, 99);
+color:white;
+}

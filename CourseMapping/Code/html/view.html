@@ -9,7 +9,8 @@
 
 <body> 
 <section> 
-<h1>View</h1> 
+<h1>Courses</h1> 
+<div class ="dropdown">
 <select id = "major">
 <option value="None">Select Majors</option>
 <script> 
@@ -26,6 +27,7 @@ $(document).ready(function () {
 }); 
 </script> 
 </select>
+</div>
 
 <form action="php/rmCourse.php" method = "POST">
 <table id='table'> 

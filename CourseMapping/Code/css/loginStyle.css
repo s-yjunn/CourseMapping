@@ -100,21 +100,22 @@ img.avatar {
 }
 
 form > .logout-btn {
-  background-color: rgb(38, 13, 130);
+  background-color: rgb(250, 190, 13);
   padding: 11px 15px;
   border: none;
-  color:white;
+  color: #0D1D42;
   cursor: pointer;
   position: absolute;
   right: 8px;
-  top:8px;
+  top:9px;
 }
 
 .loginBar {
   font-weight: bold;
-  background-color: rgb(56, 83, 238);
-  color:black; /* Black text color */
+  background-color:rgba(32,124,177);
+  background-image: linear-gradient(207deg, rgba(2,0,36,1) 0%, rgba(32,124,177,1) 53%, rgba(0,212,255,1) 78%, rgb(62, 223, 255) 100%);   color:black; /* Black text color */
   text-align: left;
   padding: 10px; /* Padding */
   top: 0px; /* Comes from the top of the page*/
+  /* margin-bottom: 5px; */
 }

@@ -101,13 +101,13 @@ img.avatar {
 
 form > .logout-btn {
   background-color: rgb(250, 190, 13);
-  padding: 11px 15px;
+  padding: 11.6px 15px;
   border: none;
   color: #0D1D42;
   cursor: pointer;
   position: absolute;
   right: 8px;
-  top:9px;
+  top:8px;
 }
 
 .loginBar {

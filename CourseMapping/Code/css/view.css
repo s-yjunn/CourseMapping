@@ -4,15 +4,6 @@ table {
     border: 1px solid black; 
 } 
 
-h1 { 
-    text-align: center; 
-    color: #006600; 
-    font-size: xx-large; 
-    font-family: 'Gill Sans',  
-        'Gill Sans MT', ' Calibri',  
-        'Trebuchet MS', 'sans-serif'; 
-} 
-
 td { 
     background-color: #E4F5D4; 
     border: 1px solid black; 
@@ -28,3 +19,25 @@ th, td {
 td { 
     font-weight: lighter; 
 } 
+
+h1 { 
+    text-align: center; 
+    color: black; 
+    font-size: xx-large; 
+} 
+
+.dropdown{
+    text-align: center
+}
+
+#major{
+    background-color: rgb(235, 221, 34);
+    padding: 8px 16px;
+    margin: 0 auto;
+    display: block;
+    border: 2px solid transparent;
+}
+  
+select > option {
+    padding: inherit;
+}

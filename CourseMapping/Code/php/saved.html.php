@@ -12,7 +12,7 @@
 ?>
 
 <h2>Saved</h2>
-<p>Users' input will be automatically imported and able to be open</p>
+<!-- <p>Users' input will be automatically imported and able to be open</p> -->
 
 <div>
 <?php
@@ -29,6 +29,7 @@
             // I know the global event is deprecated, but otherwise I can't add this in PHP where I know the pathway info
             // w3schools also uses the deprecated event.
             $tabOpener->setAttribute("onclick", "openSaved(event, '" . $pathway['title'] . "', '" . $pathwayJSON . "')");
+            $tabOpener->setAttribute("class", "savedBtn");
             $dom->appendChild($tabOpener);
         }  
     }

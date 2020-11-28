@@ -121,11 +121,30 @@ function createTabLink(tabID, title) {
   tabLink.id = "link_" + tabID;
   tabLink.onclick = function(){openTab(event, tabID)};
   tabLink.innerHTML = title;
+
+  var tabX = document.createElement("span", "&times");
+  tabX.onclick = function(){removeTab(tabID)};
+
   var tabBar = document.getElementById("tab");
   var plusTabIndex = tabBar.children.length - 3; // The Admin, Login, and + come last
   tabBar.insertBefore(tabLink, tabBar.children[plusTabIndex]); // Insert the new tab before the plus tab.
   return tabLink;
 }
+
+// function removeTab() {
+//   var tablinks = document.getElementsByClassName("tablinks");
+//   sessionStorage.removeItem(currentTab);
+//   openTab(event, "Saved");
+//   var tabBar = document.getElementById("tab");
+// }
+
+function removeTab(tabID) {
+  var tabBar = document.getElementById("tab");
+  var tabLink = document.getElementById("link_" + tabID);
+  tabBar.removeChild(tabLink);
+  sessionStorage.removeItem(tabID);
+}
+
 
 // Creates a new tabcontent div containing the interactive pathway orgainzer
 // The tabID parameter is a unique id for every tab,

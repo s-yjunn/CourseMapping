@@ -13,6 +13,20 @@
 
 <h2>Saved</h2>
 <!-- <p>Users' input will be automatically imported and able to be open</p> -->
+<!-- <button onclick="document.getElementById('confirm').style.display='block'">Open Modal</button>
+
+<div id="confirm" class="modal">
+  <span onclick="document.getElementById('confirm').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content">
+    <div class="container">
+      <h1>Delete Tabs</h1>
+      <p>Are you sure you want to delete your tabs?</p>
+
+    <button type="button" class="savedbtn" onclick = "saveUser()">Save</button>
+    <button type="button" class="cancelbtn" onclick = "clearUser()">Delete</button>
+    </div>
+  </form>
+</div> -->
 
 <div>
 <?php

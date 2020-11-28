@@ -178,6 +178,7 @@ function createPathwayDiv(tabID) {
 
 var modal_register = document.getElementById('register');
 var modal_login = document.getElementById('login');
+var modal_confirm = document.getElementById('confirm');
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -185,5 +186,7 @@ if (event.target == modal_login) {
   modal_login.style.display = "none";
 } if (event.target == modal_register){
   modal_register.style.display = "none";
+} if (event.target == modal_confirm){
+  modal_confirm.style.display = "none";
 }
 }

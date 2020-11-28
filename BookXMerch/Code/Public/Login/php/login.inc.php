@@ -18,6 +18,7 @@ foreach ($rows as $key => $jsons) {
     foreach($jsons as $key => $value) { 
         if($email == $value['email'] && $password == $value['password']) {
             $name = $value['name']; 
+            $username = $value['username'];
             $user_auth = true;
         } elseif ($email == $value['email'] && $password != $value['password']) {
             $user_auth = false;
@@ -31,6 +32,7 @@ if($user_auth) {
     if(!isset($_SESSION["name"])) { 
         $_SESSION["name"] = $name;
         $_SESSION["psw"] = $password;
+        $_SESSION["username"] = $username;
         echo "<br>" . "You are logged in as: " . $_SESSION["name"] . ". Hi!";
         // echo "<style type='text/css'> 
         // #Heading-User {

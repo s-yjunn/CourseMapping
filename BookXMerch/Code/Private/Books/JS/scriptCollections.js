@@ -37,12 +37,23 @@ function displayContent(i) {
     window.location.href="php/bookVisualize.php?content=" + i;
 }
 
-// function logOut() {
-//     $.ajax({
-//         type: "PUT",
-//         url: "../php/logout.php",
-//         success: function(){
-//             window.location.reload(true);
-//         }
-//     })
-// }
+function addToList(bookId,username){
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) { 
+            document.getElementById("alert").innerHTML = "";
+            document.getElementById("alert").innerHTML = this.responseText;
+            document.getElementById("overlay").style.display="block";
+        }
+    }
+    xmlhttp.open("GET", "addToList.php?id=" + bookId, true);
+    xmlhttp.send();
+}
+
+function on() {
+    document.getElementById("overlay").style.display = "block";
+  }
+  
+  function off() {
+    document.getElementById("overlay").style.display = "none";
+  }

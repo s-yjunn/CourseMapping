@@ -111,13 +111,17 @@ $loggedUser = $_SESSION["name"];
   <br>
   <div class="tabcontent">
     <div class="card bookBorder">
-        <div class="addToList">
+        <div class="addToList" onclick="addToList(<?php echo $bookid?>)">
             <div class="borderCaption">Add to Reading List</div> 
             <a> <img class="borderImage" src="../Images/addToList.png" alt="Add to list"> </a>
         </div>
+        <div id="overlay" onclick="off()" style="display: none">
+            <div id="alert"> </div>
+        </div>
+        
         <h3><?php echo $title ?> </h3>
         <hr class="horLine"> 
-        <div> 
+        <div id="titleOfBook"> 
             <b> TITLE: </b> <?php echo $title ?>
         </div> 
         <hr> 

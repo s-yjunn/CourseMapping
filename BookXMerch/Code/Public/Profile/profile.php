@@ -11,7 +11,7 @@
 
 
     <link rel="stylesheet" href="styles/profileStyles.css">
-    <link rel="stylesheet" href="styles/bookshelf.css"> 
+    <!-- <link rel="stylesheet" href="styles/bookshelf.css">  -->
    
     <title>Profile</title>
 </head>
@@ -19,7 +19,7 @@
 
     <div class="login-navbar">
         <?php 
-        include("../General/loginHeader.php");
+        include("php/loginHeader.php");
         ?>
     </div>
     
@@ -33,6 +33,7 @@
           <div class="newFont">
             <b class="barCol"><?php echo "Hello, " . $_SESSION["name"] ."!";?></b>
             <button class="barCol buttonClass" onclick="booksOfMonth()" style="width: 200px; font-family">User Details</button>
+            <button class="barCol buttonClass" onclick="getList()">My Reading List</button>
             <button class="barCol buttonClass" onclick="getBookByGenre('comics')">My Books</button>
             <button class="barCol buttonClass" onclick="getBookByGenre('children')">My Posts</button>
             <button class="barCol buttonClass" onclick="getBookByGenre('sci-fi')">My Reviews</button>
@@ -70,7 +71,7 @@
         ?>
 
 
-        <div class="tabcontent">
+        <div class="tabcontent" id="userDetails">
             <div class="card bookBorder">
                 <h3><?php echo $_SESSION['name']; ?> </h3>
                 <hr class="horLine"> 
@@ -89,14 +90,22 @@
                 </div>
                 <hr>
                 
-                
+            </div>   
         </div>
-
+            
+        <div id="rList" class="card bookBorder" style="display:none">
+            <b> IN PROGRESS </b>
+            <div id="readingListWrapper" class="tabcontent" >
+                
+            </div>
+        </div>
         
       <!-- Page Content End (below) -->
     </div>
 
-    
-
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/logOut-profile.js"> </script>
+    <script src="js/scriptProfile.js"> </script>
 </body>
 </html>

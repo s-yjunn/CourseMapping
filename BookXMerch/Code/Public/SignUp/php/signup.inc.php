@@ -14,7 +14,8 @@ $arr_row = array(
     'email' => $email,
     'username' => $username, 
     'type' => $type,
-    'password' => $password
+    'password' => $password,
+    'readingList' => []
 );
 
 
@@ -42,6 +43,7 @@ if($user_exists) {
     if(file_put_contents("../../../Private/Users/allUsers.JSON", $resJSON)) {
         echo "Registration Successful!" . "<br/>" . "<br/>". " Welcome, " . $name . "! <br>";
         $_SESSION['name'] = $name;
+        $_SESSION['username'] = $username;
         // echo "<style>#Heading-User {
         //     display = 'block';
         // }</style>";

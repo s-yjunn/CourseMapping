@@ -5,42 +5,115 @@
             "email": "nmajid@smith.edu",
             "type": "admin",
             "username": "nmajid",
-            "password": "adminuser"
+            "password": "adminuser",
+            "readingList": []
         },
         {
             "name": "Imane Berrada",
             "email": "iberrada@smith.edu",
             "username": "iberrada",
             "type": "admin",
-            "password": "adminuser"
+            "password": "adminuser",
+            "readingList": []
         },
         {
             "name": "Mariem Snoussi",
             "email": "msnoussi@smith.edu",
             "username": "msnoussi",
             "type": "admin",
-            "password": "adminuser"
+            "password": "adminuser",
+            "readingList": []
         },
         {
             "name": "User 1",
             "email": "user1@gmail.com",
             "username": "user1",
             "type": "user",
-            "password": "user1"
+            "password": "user1",
+            "readingList": []
         },
         {
             "name": "user2",
             "email": "user2@gmail.com",
             "username": "User 2",
             "type": "user",
-            "password": "user2"
+            "password": "user2",
+            "readingList": []
         },
         {
             "name": "Imane ",
             "email": "testEmail@gmail.com",
             "username": "Imane",
             "type": "user",
-            "password": "imane"
+            "password": "imane",
+            "readingList": [
+                [
+                    "1113",
+                    "Daredevil (1964-1998) #1",
+                    [
+                        "Stan Lee"
+                    ],
+                    "comics"
+                ],
+                [
+                    "1116",
+                    "Anne Frank",
+                    [
+                        "Laura Hamilton Waxman"
+                    ],
+                    "children"
+                ]
+            ]
+        },
+        {
+            "name": "User3",
+            "email": "user3@gmail.com",
+            "username": "Lily",
+            "type": "user",
+            "password": "pass",
+            "readingList": []
+        },
+        {
+            "name": "new",
+            "email": "newUser2@gmail.com",
+            "username": "de",
+            "type": "user",
+            "password": "de",
+            "readingList": [
+                [
+                    "1114",
+                    "Batman Eternal #3",
+                    [
+                        "Scott Snyder",
+                        "James Tynion IV"
+                    ],
+                    "comics"
+                ],
+                [
+                    "1118",
+                    "The Glass Hotel",
+                    [
+                        "Emily St. John Mandel"
+                    ],
+                    "fiction"
+                ],
+                [
+                    "1120",
+                    "The Space Between Worlds",
+                    [
+                        "Micaiah Johnson"
+                    ],
+                    "sci-fi"
+                ],
+                [
+                    "1119",
+                    "The Jane Austen Society",
+                    [
+                        "Natalie Jenner"
+                    ],
+                    "debut-novel"
+                ]
+            ]
         }
     ]
 }

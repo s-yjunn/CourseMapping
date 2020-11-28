@@ -41,5 +41,19 @@
                 "EGR 290"
             ]
         }
+    },
+
+    "YYY" : {
+        "major" : {
+            "singular" : [
+                "SDS 220",
+                "EGR 110",
+                "EGR 290"
+            ],
+
+            "multi" : {
+                "1":{"name":"Math Core", "options":["MTH 111", "MTH 112", "MTH 211", "MTH 264"], "take":2}
+            }
+        }
     }
 }

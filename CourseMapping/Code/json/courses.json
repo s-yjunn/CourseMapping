@@ -1,7 +1,7 @@
 {
     "meta": {
       "updated": "11-5-2020",
-      "parsing": "The 'overlap' property is a list of courses for which students can only receive credit for one."
+      "parsing": "The 'overlap' property is a list of courses for which students can only receive credit for one. If a course has an 's' after it, it is suggested. If it as an 'r', it is reccomended. If 'prereqs' is an arrayof strings, all of them are required. If it is an array of arrays, only the contents of one of the arrays needs to be taken"
     },
     "EGR": {
       "EGR 100": {
@@ -115,10 +115,55 @@
         "suggestedFor": [],
         "info": { "credits": 5, "title": "Advanced Introductory Physics" },
         "overlap": ["PHY 117", "PHY 118"]
+      },
+
+      "PHY 210": {
+        "prereqs": [["MTH 212", "PHY 117"], "PHY 119"],
+        "coreqs": [],
+        "requiredFor": [],
+        "suggestedFor": [],
+        "info": { "credits": 4, "title": "Mathematical Methods of Physical Sciences and Engineering" },
+        "overlap": []
       }
     },
   
-    "MTH": {},
+    "MTH": {
+      "MTH 111": {
+        "prereqs": [],
+        "coreqs": [],
+        "requiredFor": [],
+        "suggestedFor": [],
+        "info": { "credits": 4, "title": "Calculus I" },
+        "overlap": []
+      },
+
+      "MTH 112": {
+        "prereqs": ["MTH 111"],
+        "coreqs": [],
+        "requiredFor": ["EGR 110", "EGR 270", "EGR 315"],
+        "suggestedFor": [],
+        "info": { "credits": 4, "title": "Calculus II" },
+        "overlap": []
+      },
+
+      "MTH 211": {
+        "prereqs": [["MTH 112"], ["MTH 111", "MTH 153 s"]],
+        "coreqs": [],
+        "requiredFor": [],
+        "suggestedFor": [],
+        "info": { "credits": 4, "title": "Linear Algebra" },
+        "overlap": ["MTH 210"]
+      },
+
+      "MTH 264": {
+        "prereqs": [["MTH 112"], ["MTH 212", "MTH 211"], ["PHY 210"]],
+        "coreqs": [],
+        "requiredFor": [],
+        "suggestedFor": [],
+        "info": { "credits": 4, "title": "Differential Equations" },
+        "overlap": []
+      }
+    },
   
     "SDS": {
       "SDS 220": {

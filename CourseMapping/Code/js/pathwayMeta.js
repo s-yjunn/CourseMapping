@@ -29,4 +29,18 @@ function save(tabID) {
     return success;
   }
 
-  
+// Hides the title header and puts up a text input in it's place.
+function titleChange(titleElement) {
+    var currentTabDiv = document.getElementById(currentTab);
+    var formElement = currentTabDiv.getElementsByClassName("titleChanger")[0]; // There will only be one in a tab div, so the first one is it.
+    titleElement.style.display = "none";
+    formElement.style.display = "block";
+}
+
+// Takes the user input, makes that the new title
+// Updates the stored pathway to match.
+function changeTitle(formElement, titleElement) {
+    titleElement.innerHTML = formElement["newTitle"].value;
+    titleElement.style.display = "block";
+    formElement.style.display = "none";
+}  

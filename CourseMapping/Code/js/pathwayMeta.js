@@ -63,7 +63,6 @@ function changeTitle(formElement) {
     titleElement.style.display = "block";
     formElement.style.display = "none";
     // Controller: Update the stored title
-    var pathway = JSON.parse(sessionStorage[currentTab]);
-    pathway.title = formElement["newTitle"].value;
-    sessionStorage[currentTab] = JSON.stringify(pathway);
+    currentPathway.title = formElement["newTitle"].value;
+    sessionStorage[currentTab] = JSON.stringify(currentPathway);
 }  

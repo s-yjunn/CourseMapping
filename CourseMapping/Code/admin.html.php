@@ -23,8 +23,7 @@
 
 <div class = 'tab' id="tab">
     <button id = "logo">Course Mapping</button>
-    <button class = "tablinks active" <?php include 'php/admintab.php';?> onclick= "openTab(event, 'Courses')">COURSES</button>
-    <button class = "tablinks" <?php include 'php/admintab.php';?> onclick= "openTab(event, 'Users')">USERS</button>
+    <button class = "tablinks active" onclick= "openTab(event, 'Courses')">COURSES</button>
 </div>
 
 <article id = 'content'>
@@ -32,11 +31,7 @@
         <?php include "html/viewCourses.html"?>
         <?php include "html/add.html"?>
     </div>
-    <div id = 'Users' class = 'tabcontent' style = 'display: none;'>
-        <?php include "html/viewUsers.html"?>
-    </div>
 </article>
 <script src= "https://code.jquery.com/jquery-3.5.1.js"></script> 
 <script type = "text/javascript" src = "js/script.js"></script>
 <script type = "text/javascript" src= "js/viewCourses.js"></script>
-<script type = "text/javascript" src= "js/viewUsers.js"></script>

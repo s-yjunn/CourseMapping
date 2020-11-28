@@ -16,40 +16,38 @@
         <button onclick="getCourses()">Get Courses</button>
         <button onclick="getPaths()">Get Paths</button>
 
-        <p id="jsonInfo"></p>
+        <p id="info"></p>
 
-        <table class="pathTable">
-            <tr>
-                <th>First Year</th>
-                <th>Sophomore</th>
-                <th>Junior</th>
-                <th>Senior</th>
-            </tr>
-            <tr>
-                <td>
-                    <p id='test1'></p>
-                    <div id="CSC111" class="courseBlock ui-widget-content">
-                        CSC111
-                    </div>
-                    <div id="MTH153" onclick="lineChange()" class="courseBlock ui-widget-content" style="top: 400px">
-                        MTH153
-                    </div>
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
+        <div id="pathwayContent">
+            <!-- <div class="canvasTable"> -->
+            <!-- <table class="pathTable">
+                <tr>
+                    <th>First Year</th>
+                    <th>Sophomore</th>
+                    <th>Junior</th>
+                    <th>Senior</th>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table> -->
+            <!-- </div> -->
 
-        <svg id="map" height="300" width="500" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-                <marker id="markerArrow" markerWidth="13" markerHeight="13" refX="2" refY="6" orient="auto">
-                    <path d="M2,2 L2,11 L10,6 L2,2" style="fill: rgb(69, 74, 145);" />
-                </marker>
-            </defs>
-
-            <line id="line1" class="arrowLine" />
-        </svg>
+            <!-- <div class="canvasTable"> -->
+            <svg id="map" height="300" width="500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs>
+                    <marker id="markerArrow" markerWidth="13" markerHeight="13" refX="2" refY="6" orient="auto">
+                        <path d="M2,2 L2,11 L10,6 L2,2" style="fill: rgb(69, 74, 145);" />
+                    </marker>
+                </defs>
+                <circle cx="100" cy="100" r="50" style="stroke: black; fill: red;" />
+            </svg>
+            <!-- </div> -->
+        </div>
 
     </div>
     <div class="side">

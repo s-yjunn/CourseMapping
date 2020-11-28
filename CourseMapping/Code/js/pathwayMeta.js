@@ -38,7 +38,14 @@ function titleChange(titleElement) {
 
     // When the user clicks anywhere outside of the title changer input, close it
     window.onclick = function(event) {
-        if (event.target == formDiv) {
+        // If it is not formDiv or one of formDiv's children / grandchildren (it doesn't go further),
+        // And it is not the titleElement that was used to open formDiv,
+        // Then close formDiv 
+        if (event.target != formDiv && 
+         event.target.parentNode != formDiv && 
+         event.target.parentNode.parentNode != formDiv &&
+         event.target != titleElement) {
+            titleElement.style.display = "block";
             formDiv.style.display = "none";
         }
     }

@@ -4,9 +4,6 @@ var tabpath = "php/tab.html.php";
 // current tab element's id
 var currentTab;
 
-sessionStorage.clear(); // Temp, remove later.
-
-
 // sessionStorage stores enough information on each pathway to bring it back after a refresh.
 // Each pathway is referenced by a numerical id that matches that of the tab that stores it.
 // the stored pathway also usable for keeping track of the nodes' positions while the user is interacting with the pathway.

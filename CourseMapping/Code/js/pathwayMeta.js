@@ -30,11 +30,14 @@ function save(tabID) {
   }
 
 // Hides the title header and puts up a text input in it's place.
+// Updates the window onclick event listener to close the current tab's title input, and update the title if needed. 
 function titleChange(titleElement) {
     var currentTabDiv = document.getElementById(currentTab);
     var formDiv = currentTabDiv.getElementsByClassName("titleChanger")[0]; // There will only be one in a tab div, so the first one is it.
     titleElement.style.display = "none";
     formDiv.style.display = "block";
+    console.log(formDiv);
+    console.log( formDiv.style.display);
 
     // When the user clicks anywhere outside of the title changer input, close it
     window.onclick = function(event) {
@@ -45,8 +48,7 @@ function titleChange(titleElement) {
          event.target.parentNode != formDiv && 
          event.target.parentNode.parentNode != formDiv &&
          event.target != titleElement) {
-            titleElement.style.display = "block";
-            formDiv.style.display = "none";
+            changeTitleHelper(titleElement, formDiv.children[0]); // The only child in formDiv is the form
         }
     }
 }
@@ -56,13 +58,25 @@ function titleChange(titleElement) {
 function changeTitle(formElement) {
     var currentTabDiv = document.getElementById(currentTab);
     var titleElement = currentTabDiv.getElementsByClassName("pathwayTitle")[0]; // There will only be one in a tab div, so the first one is it.
-    var tablink = document.getElementById("link_" + currentTab);
-    // User end: update visual title
-    titleElement.innerHTML = formElement["newTitle"].value;
-    tablink.innerHTML = formElement["newTitle"].value;
+    changeTitleHelper(titleElement, formElement);
+}  
+
+// Takes both the form element and the title element,
+// And the caller can pass what is already available, and search for the one that isn't available
+function changeTitleHelper(titleElement, formElement) {
+    var newTitle = formElement["newTitle"].value;
+    if(newTitle) { // If it is defined, change the title
+        console.log("\"" +  newTitle);
+        // User end: update visual title
+        var tablink = document.getElementById("link_" + currentTab);
+        titleElement.innerHTML = newTitle;
+        tablink.innerHTML = newTitle;
+        // Controller: Update the stored title
+        currentPathway.title = newTitle;
+        sessionStorage[currentTab] = JSON.stringify(currentPathway);
+    }
+    // Either way, switch back to the tile element
     titleElement.style.display = "block";
     formElement.style.display = "none";
-    // Controller: Update the stored title
-    currentPathway.title = formElement["newTitle"].value;
-    sessionStorage[currentTab] = JSON.stringify(currentPathway);
-}  
+} 
+

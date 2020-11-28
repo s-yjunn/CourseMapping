@@ -49,8 +49,6 @@ function newTab() {
   var tabLink = createTabLink(tabID, title);
   // Creates a new tabcontent div containing the interactive pathway orgainzer
   var tabcontent = createPathwayDiv(tabID);
-  // Activates the tablink and displays the tab content
-  selectTab(tabLink, tabcontent, tabID);
 
   // Add new pathway to sessionStorage
   var pathway = {title: title};
@@ -58,6 +56,10 @@ function newTab() {
     pathway["sem_" + i] = { locked:true, nodes:{} };
   }
   sessionStorage[tabID] = JSON.stringify(pathway);
+
+   // Activates the tablink and displays the tab content
+   // Also parses the JSON pathway into currentPathway, and stores the original currentPathway if it was already defined
+   selectTab(tabLink, tabcontent, tabID);
 }
 
 //    -----------------      HELPER FUNCTIONS:      -------------------
@@ -100,19 +102,19 @@ function unselectTabs() {
 
 // Takes a reference to the tablink and tabcontent,
 // Activates the tablink and displays the tab content and sets currentTab
-// Also parses the JSON pathway for this tab to work with, and stores one if it was alread open
+// Also parses the JSON pathway into currentPathway, and stores the original currentPathway if it was already defined
 function selectTab(tabLink, tabcontent, tabID) {
   tabLink.className += " active";
   tabcontent.style.display = "block";
-
-  if(currentPathway) { // If currentPathway was already set, save it in sessionStorage
-    sessionStorage[currentTab] = JSON.stringify(currentPathway);
-  }
+  
+  // If currentPathway was already set, save it in sessionStorage[currentTab]
+  storeCurrentPathway()
 
   currentTab = tabID; // Now update the current tab id
 
   currentPathway = JSON.parse(sessionStorage[currentTab]);
 }
+
 
 // Creates a new tablink in the navigation bar
 // The tabID parameter is a unique id for every tab, 
@@ -126,8 +128,10 @@ function createTabLink(tabID, title) {
   tabLink.onclick = function(){openTab(event, tabID)};
   tabLink.innerHTML = title;
 
-  var tabX = document.createElement("span", "&times");
+  var tabX = document.createElement("span");
+  tabX.innerHTML = "&times";
   tabX.onclick = function(){removeTab(tabID)};
+  tabLink.appendChild(tabX);
 
   var tabBar = document.getElementById("tab");
   var plusTabIndex = tabBar.children.length - 3; // The Admin, Login, and + come last
@@ -135,20 +139,41 @@ function createTabLink(tabID, title) {
   return tabLink;
 }
 
-// function removeTab() {
-//   var tablinks = document.getElementsByClassName("tablinks");
-//   sessionStorage.removeItem(currentTab);
-//   openTab(event, "Saved");
-//   var tabBar = document.getElementById("tab");
-// }
-
 function removeTab(tabID) {
+  // Remove the tablink:
   var tabBar = document.getElementById("tab");
   var tabLink = document.getElementById("link_" + tabID);
   tabBar.removeChild(tabLink);
+
+  // Remove the tab content
+  var tabContent = document.getElementById(tabID);
+  tabContent.parentNode.removeChild(tabContent);
+
+  // NEED TO ADD !!!!!!!!!!!   Ask if the user wants to save.
+  var saveWanted = false;
+
+  if(saveWanted) {
+    if(tabID == currentTab) { // currentPathway might hold something new
+      // If currentPathway was already set, save it in sessionStorage[currentTab]
+      storeCurrentPathway();
+    }
+    save(tabID);
+  }
+
+  // Remove stored pathway from session storage
   sessionStorage.removeItem(tabID);
 }
 
+// Stores currentPathway in sessionStorage
+// uses the global variable currentTab 
+// Returns true if currentPathway was defined and therefore saved, false if not.
+function storeCurrentPathway() {
+  if(currentPathway) { // If currentPathway was already set, save it in sessionStorage
+    sessionStorage[currentTab] = JSON.stringify(currentPathway);
+    return true;
+  }
+  return false;
+}
 
 // Creates a new tabcontent div containing the interactive pathway orgainzer
 // The tabID parameter is a unique id for every tab,

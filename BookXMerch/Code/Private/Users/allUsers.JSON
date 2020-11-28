@@ -34,6 +34,13 @@
             "username": "User 2",
             "type": "user",
             "password": "user2"
+        },
+        {
+            "name": "Imane ",
+            "email": "testEmail@gmail.com",
+            "username": "Imane",
+            "type": "user",
+            "password": "imane"
         }
     ]
 }

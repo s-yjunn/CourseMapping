@@ -165,7 +165,58 @@ body {
 
   }
 
+/* Scroll edit*/
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px  grey;
+    border-radius: 10px;
+}
+   
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.6);
+    border-radius: 10px;
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(119,80,112);
+    
+}
 
+/*Add to list*/
+.borderImage{
+    width:100px;
+    height:100px;
+    top: 80px;
+    right: 100px;
+    position: absolute;
+
+}
+.borderCaption {
+    opacity: 0;
+    position: absolute;
+    height:30px;
+    width: 200px;
+    right: 60px;
+    top: 10em;
+    border-radius: 2em;
+    padding: 3px 10px;
+    color: white;
+    background: rgb(119,80,112);
+    text-align: center;
+    font-weight:bold;
+    z-index: 1;
+}
+
+.addToList:hover .borderCaption {
+    opacity: 0.8;
+}
 /* W3 CSS - modified*/
 /* W3.CSS 4.13 June 2019 by Jan Egil and Borge Refsnes */
 html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}

@@ -111,9 +111,15 @@ $loggedUser = $_SESSION["name"];
   <br>
   <div class="tabcontent">
     <div class="card bookBorder">
+        <div class="addToList">
+            <div class="borderCaption">Add to Reading List</div> 
+            <a> <img class="borderImage" src="../Images/addToList.png" alt="Add to list"> </a>
+        </div>
         <h3><?php echo $title ?> </h3>
         <hr class="horLine"> 
-        <div> <b> TITLE: </b> <?php echo $title ?></div> 
+        <div> 
+            <b> TITLE: </b> <?php echo $title ?>
+        </div> 
         <hr> 
         <div class="barCol"> <b> AUTHORS(s): </b> 
         <?php for($j=0; $j<sizeof($author); $j++) {

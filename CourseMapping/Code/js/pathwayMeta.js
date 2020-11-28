@@ -32,9 +32,16 @@ function save(tabID) {
 // Hides the title header and puts up a text input in it's place.
 function titleChange(titleElement) {
     var currentTabDiv = document.getElementById(currentTab);
-    var formElement = currentTabDiv.getElementsByClassName("titleChanger")[0]; // There will only be one in a tab div, so the first one is it.
+    var formDiv = currentTabDiv.getElementsByClassName("titleChanger")[0]; // There will only be one in a tab div, so the first one is it.
     titleElement.style.display = "none";
-    formElement.style.display = "block";
+    formDiv.style.display = "block";
+
+    // When the user clicks anywhere outside of the title changer input, close it
+    window.onclick = function(event) {
+        if (event.target == formDiv) {
+            formDiv.style.display = "none";
+        }
+    }
 }
 
 // Takes the user input, makes that the new title

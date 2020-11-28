@@ -36,3 +36,12 @@ $('#major').change(function () {
         $('#table').append(course); 
     }); 
 }); 
+
+var modal_add = document.getElementById('add');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+if (event.target == modal_add) {
+    modal_add.style.display = "none";
+}
+}

@@ -1,4 +1,11 @@
-<form class = "addCourse" action="php/addCourse.php" method="post">
+<div id = "add" class = "modal">
+<form class = "modal-content animate" action="php/addCourse.php" method="post">
+    <div class = "imgcontainer">
+        <span onclick="document.getElementById('add').style.display='none'"
+        class="close" title="Close Modal">&times;</span>
+        <h2 style = "float:center"> Add Course</h2>
+    </div>
+    <div class="container">
     <label for="major"><b>Major</b></label>
     <input type="text" placeholder="Enter Major" name="major" required>
 
@@ -27,5 +34,7 @@
     <input type="text" placeholder="Enter Overlapped Courses" name="overlap">
 
     <button type="submit" class = "addCourse">Add Course</button>
+</div>
 </form>
+</div>
  

@@ -1,18 +1,11 @@
-<html lang="en"> 
-<head> 
-<meta charset="UTF-8"> 
-<title>Course List</title> 
-<link rel="stylesheet" type="text/css" href="css/loginStyle.css">
-<link rel="stylesheet" type="text/css" href="css/view.css">
-</head> 
-
-<body> 
 <section> 
 <h1>Courses</h1> 
 <div class ="dropdown">
 <select id = "major">
 <option value="None">Select Majors</option>
 </select>
+<button id = "addBtn" onclick="document.getElementById('add').style.display='block'">Add Course</button>
+
 </div>
 
 <form action="php/rmCourse.php" method = "POST">
@@ -26,11 +19,7 @@
     <th>Required For</th> 
     <th>Suggested For</th> 
     <th>Overlap</th> 
-    <th><input type="submit" value="REMOVE"></th> 
+    <th><input type="submit" id = "removeBtn" value="REMOVE"></th> 
 </tr> 
 </form>
 </section>
-<script src= "https://code.jquery.com/jquery-3.5.1.js"></script> 
-<script type = "text/javascript" src= "js/view.js"></script>
-</body> 
-</html>

@@ -1,4 +1,4 @@
-input[type=text], input[type=password], input[type=number]{
+input[type=text], input[type=password]{
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -19,6 +19,7 @@ width: 100%;
 .loginBtn:hover {
 opacity: 0.8;
 }
+
 
 .container {
   padding: 16px;
@@ -100,25 +101,4 @@ img.avatar {
 @keyframes animatezoom {
   from {transform: scale(0)}
   to {transform: scale(1)}
-}
-
-form > .logout-btn {
-  background-color: rgb(250, 190, 13);
-  padding: 11.6px 15px;
-  border: none;
-  color: #0D1D42;
-  cursor: pointer;
-  position: absolute;
-  right: 8px;
-  top:8px;
-}
-
-.loginBar {
-  font-weight: bold;
-  background-color:rgba(32,124,177);
-  background-image: linear-gradient(207deg, rgba(2,0,36,1) 0%, rgba(32,124,177,1) 53%, rgba(0,212,255,1) 78%, rgb(62, 223, 255) 100%);   color:black; /* Black text color */
-  text-align: left;
-  padding: 10px; /* Padding */
-  top: 0px; /* Comes from the top of the page*/
-  /* margin-bottom: 5px; */
 }

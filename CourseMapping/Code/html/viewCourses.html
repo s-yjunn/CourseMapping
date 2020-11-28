@@ -1,15 +1,11 @@
-<section> 
 <h1>Courses</h1> 
-<div class ="dropdown">
 <select id = "major">
 <option value="None">Select Majors</option>
 </select>
 <button id = "addBtn" onclick="document.getElementById('add').style.display='block'">Add Course</button>
 
-</div>
-
-<form action="php/rmCourse.php" method = "POST">
-<table id='table'> 
+<form action="../php/rmCourse.php" method = "POST">
+<table id='courseTable'> 
 <tr> 
     <th>Courses</th> 
     <th>Title</th> 
@@ -22,4 +18,3 @@
     <th><input type="submit" id = "removeBtn" value="REMOVE"></th> 
 </tr> 
 </form>
-</section>

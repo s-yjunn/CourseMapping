@@ -11,7 +11,7 @@ $(document).ready(function () {
 }); 
 
 $('#major').change(function () { 
-    var items = $("#table tr"); 
+    var items = $("#courseTable tr"); 
     for (let i = 1; i < items.length; i++) { 
         items[i].remove(); 
     } 
@@ -33,7 +33,7 @@ $('#major').change(function () {
             course += 'id= \"course\" value =\"' + key + '\"></td>'; 
             course += '</tr>'; 
         }); 
-        $('#table').append(course); 
+        $('#courseTable').append(course); 
     }); 
 }); 
 

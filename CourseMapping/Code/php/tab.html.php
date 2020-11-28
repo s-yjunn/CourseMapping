@@ -14,13 +14,12 @@
         <h1 class="pathwayTitle" onclick="titleChange(this)">Untitled Pathway</h1>
         <!--  This form allows asks the user to change the title of a pathway.  It uses pathwayMeta.js -->
         <div style="display: none;" class="titleChanger">
-            <form onsubmit="changeTitle(this)">
+            <form onsubmit="changeTitle(this); return false;" >
                 <input type="text" name="newTitle" placeholder="New Pathway Title">
             </form>
         </div>
     </div>
 
-    <button class="active" onclick="save()">Save</button>
     <div class="main" ondragover="drag_over(event)" ondrop="drop(event)">
 
         <button class = "get" onclick="getCourses()">Get Courses</button>

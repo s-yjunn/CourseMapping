@@ -39,8 +39,17 @@ function titleChange(titleElement) {
 
 // Takes the user input, makes that the new title
 // Updates the stored pathway to match.
-function changeTitle(formElement, titleElement) {
+function changeTitle(formElement) {
+    var currentTabDiv = document.getElementById(currentTab);
+    var titleElement = currentTabDiv.getElementsByClassName("pathwayTitle")[0]; // There will only be one in a tab div, so the first one is it.
+    var tablink = document.getElementById("link_" + currentTab);
+    // User end: update visual title
     titleElement.innerHTML = formElement["newTitle"].value;
+    tablink.innerHTML = formElement["newTitle"].value;
     titleElement.style.display = "block";
     formElement.style.display = "none";
+    // Controller: Update the stored title
+    var pathway = JSON.parse(sessionStorage[currentTab]);
+    pathway.title = formElement["newTitle"].value;
+    sessionStorage[currentTab] = JSON.stringify(pathway);
 }  

@@ -4,6 +4,7 @@ var tabpath = "php/tab.html.php";
 // current tab element's id
 var currentTab;
 
+alert("restart!");
 // sessionStorage stores enough information on each pathway to bring it back after a refresh.
 // Each pathway is referenced by a numerical id that matches that of the tab that stores it.
 // the stored pathway also usable for keeping track of the nodes' positions while the user is interacting with the pathway.
@@ -119,6 +120,7 @@ function selectTab(tabLink, tabcontent) {
 function createTabLink(tabID, title) {
   var tabLink = document.createElement("button");
   tabLink.className = "tablinks";
+  tabLink.id = "link_" + tabID;
   tabLink.onclick = function(){openTab(event, tabID)};
   tabLink.innerHTML = title;
   var tabBar = document.getElementById("tab");

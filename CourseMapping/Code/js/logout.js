@@ -11,7 +11,7 @@ function clearUser() {
         var saveWanted = true;
         if(saveWanted) {
             // In sessionStorage, each pathway is referenced by a numerical id that matches that of the tab that stores it.
-            forEveryTab(save(key));
+            forEveryTab(save);
         }
     }
     sessionStorage.clear(); 

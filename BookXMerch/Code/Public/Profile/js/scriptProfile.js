@@ -1,19 +1,18 @@
 function getList() {
-    document.getElementById("userDetails").style.display="none";
-    document.getElementById("rList").style.display="block";
-    // var xmlhttp = new XMLHttpRequest();
-    // xmlhttp.onreadystatechange = function () {
-    //     if (this.readyState == 4 && this.status == 200) { 
-    //         document.getElementById("rList").style.display="block";
-    //         // document.getElementById("readingListWrapper").innerHTML = "";
-    //         document.getElementById("userDetails").style.display="none";
-    //         document.getElementById("readingListWrapper").innerHTML += this.responseText;
-    //         // document.getElementById("readingListWrapper").style= "margin-left: 240px; max-width: 30em";
+    // document.getElementById("userDetails").style.display="none";
+    // document.getElementById("rList").style.display="block";
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) { 
+            document.getElementById("rList").style.display="block";
+            document.getElementById("userDetails").style.display="none";
+            // document.getElementById("rList").innerHTML += this.responseText;
+    
             
-    //     }
-    // }
-    // xmlhttp.open("GET", "php/readingList.php", true);
-    // xmlhttp.send();
+        }
+    }
+    xmlhttp.open("GET", "php/readingList.php", true);
+    xmlhttp.send();
 }
 
 //Modified by BxM

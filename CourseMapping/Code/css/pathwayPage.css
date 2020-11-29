@@ -1,15 +1,27 @@
+/* Style the message */
+#info {
+  background-color: rgb(241, 233, 158);
+  font-size: 0.2vw;
+  color: #91712b;
+  border: 1px solid #c9a559;
+  border-radius: 2%;
+  margin: 10px 0px;
+  padding: 5px 10px;
+  display: none;
+}
+
 /* Style the pathway table */
-.pathTable {
+#pathTable {
   position: absolute;
-  top: 300px;
+  top: 280px;
   left: 50px;
   border-collapse: collapse;
   margin: auto;
-  width: 100%;
+  width: 90%;
   text-align: center;
 }
 
-.pathTable td,
+#pathTable td,
 th {
   border: 1px solid #dddddd;
   text-align: left;
@@ -17,12 +29,20 @@ th {
   width: 25%;
 }
 
-.pathTable tr:nth-child(odd) {
+#pathTable tr:nth-child(odd) {
   background-color: #3148ad;
   color: #ebebeb;
 }
 
-.pathTable tr:nth-child(even) {
+#pathTable tr:nth-child(even) {
+  height: 500px;
+}
+
+/* Position the div where courseBlock will be in */
+#pathwayContent {
+  top: 315px;
+  left: 50px;
+  width: 90%;
   height: 500px;
 }
 
@@ -40,52 +60,19 @@ th {
   left: 100px;
 }
 
+/* Position the svg */
 svg {
   position: absolute;
-  top: 300px;
+  top: 315px;
   left: 50px;
   width: 100%;
   height: 100%;
 }
 
+/* Style the line */
 .arrowLine {
   stroke: rgb(69, 74, 145);
   stroke-width: 2;
   marker-end: url(#markerArrow);
   position: absolute;
-}
-
-/* .canvasTable {
-  position: absolute;
-  top: 300px;
-  left: 50px;
-} */
-.active {
-  background-color: rgb(34, 179, 46);
-  transition-duration: 0.4s;
-  margin: 0 auto;
-  padding: 15px 20px;
-  border: none;
-  color: white;
-  font-weight: bold;
-  float: right;
-}
-
-.active:hover {
-  background-color: rgb(57, 214, 175);
-  color: black;
-}
-
-.get {
-  background-color: rgb(235, 181, 20);
-  transition-duration: 0.4s;
-  margin: 0 auto;
-  padding: 15px 20px;
-  border: none;
-  color: black;
-}
-
-.get:hover {
-  background-color: rgb(47, 184, 99);
-  color: white;
 }

@@ -102,7 +102,7 @@
             <div id="main" class="container">
                 <h3 style="text-align:center"> <?php echo $_SESSION["name"]?>'s Reading List </h3>
                 <div class="add-bar">
-                    <img src="../../Private/Books/Images/B&M.png" style="width:8%"> </img>
+                    <img src="../../Private/Books/Images/B&M.png" style="width:2.5em"> </img>
                     <input type="text" id="new-task" placeholder="Add books...">
                     <ion-icon id="add-button" name="add-circle-outline" class="mg-10 fs-large"></ion-icon>
                 </div>

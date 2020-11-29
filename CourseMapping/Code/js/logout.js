@@ -7,7 +7,8 @@ function clearUser() {
 
     // Check if there are tabs open:
     if(sessionStorage["tabsOpen"] && sessionStorage["tabsOpen"] != "0") { // If so, ask the user if they want to save pathways.
-        var saveWanted = window.confirm("Do you want to save all open tabs?");
+        var saveWanted = 
+        window.confirm("You want to save all open tabs? If you click cancel, all works you've done will be permanently deleted.");
         if(saveWanted) {
             // In sessionStorage, each pathway is referenced by a numerical id that matches that of the tab that stores it.
             forEveryTab(save);

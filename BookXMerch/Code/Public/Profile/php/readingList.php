@@ -1,5 +1,6 @@
 <?php 
 
+    echo "<script type='text/javascript' src='../js/scriptProfile.js'> </script>";
     session_start();
 
     if(isset($_SESSION["name"])) {
@@ -42,4 +43,5 @@
             echo "<br>";
         }
     }
+
 ?>

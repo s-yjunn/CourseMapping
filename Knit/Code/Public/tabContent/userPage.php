@@ -19,5 +19,3 @@
 <div id = "userProfile">
     <?php include "php/user/profileEdit.php"; ?>
 </div>
-
-<script src="js/user.js"></script>

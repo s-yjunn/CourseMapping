@@ -2,20 +2,20 @@
 $(document).ready(function () {
     
     $(".imgButton").click(function () {
-        
-        if ($("#pleaseLogin").is(':hidden')) {
-            $("#pleaseLogin").show();
+
+        if ($("#overlayLogin").is(':hidden')) {
+            $("#overlayLogin").show();
             $(".imgButton").css({ "filter": "grayscale(100%)" });
  
         } else {
-            $("#pleaseLogin").hide();
+            $("#overlayLogin").hide();
             $(".imgButton").css({ "filter": "grayscale(0%)" });
         };
         
     });
-    
-    $("#closeModal").click(function () {
-        $("#pleaseLogin").hide();
-        $(".imgButton").css({ "filter": "grayscale(0%)" });
-    });
 });
+
+function off() {
+    document.getElementById("overlayLogin").style.display = "none";
+    $(".imgButton").css({ "filter": "grayscale(0%)" });
+}

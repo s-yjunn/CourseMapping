@@ -105,8 +105,9 @@ function unselectTabs() {
 // Also parses the JSON pathway into currentPathway, and stores the original currentPathway if it was already defined
 function selectTab(tabLink, tabcontent, tabID) {
   tabLink.className += " active";
+  if(tabcontent != null){
   tabcontent.style.display = "block";
-  
+  }
   // If currentPathway was already set, save it in sessionStorage[currentTab]
   storeCurrentPathway()
 
@@ -150,18 +151,42 @@ function removeTab(tabID) {
   tabContent.parentNode.removeChild(tabContent);
 
   // NEED TO ADD !!!!!!!!!!!   Ask if the user wants to save.
-  var saveWanted = false;
+  // var saveWanted = window.confirm("Do you want to save this tab?");
 
-  if(saveWanted) {
-    if(tabID == currentTab) { // currentPathway might hold something new
-      // If currentPathway was already set, save it in sessionStorage[currentTab]
-      storeCurrentPathway();
-    }
-    save(tabID);
-  }
+  $( function() {
+    $("#dialog-confirm").dialog({
+      resizable: false,
+      height: "auto",
+      width: 400,
+      modal: true,
+      buttons: {
+        "Save the tab": function() {
+          if(tabID == currentTab) { // currentPathway might hold something new
+            // If currentPathway was already set, save it in sessionStorage[currentTab]
+            storeCurrentPathway();
+          }
+          save(tabID);   
+          sessionStorage.removeItem(tabID);     
+          $(this).dialog("close");
+        },
+          "Don't save the tab": function() {
+            sessionStorage.removeItem(tabID);     
+          $(this).dialog("close");
+        }
+      }
+    });
+  } );
+
+  // if(saveWanted) {
+  //   if(tabID == currentTab) { // currentPathway might hold something new
+  //     // If currentPathway was already set, save it in sessionStorage[currentTab]
+  //     storeCurrentPathway();
+  //   }
+  //   save(tabID);
+  // }
 
   // Remove stored pathway from session storage
-  sessionStorage.removeItem(tabID);
+  // sessionStorage.removeItem(tabID);
 }
 
 // Stores currentPathway in sessionStorage
@@ -203,7 +228,6 @@ function createPathwayDiv(tabID) {
 
 var modal_register = document.getElementById('register');
 var modal_login = document.getElementById('login');
-var modal_confirm = document.getElementById('confirm');
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -211,7 +235,5 @@ if (event.target == modal_login) {
   modal_login.style.display = "none";
 } if (event.target == modal_register){
   modal_register.style.display = "none";
-} if (event.target == modal_confirm){
-  modal_confirm.style.display = "none";
 }
 }

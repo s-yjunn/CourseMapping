@@ -18,7 +18,6 @@
                 <input type="text" name="newTitle" placeholder="New Pathway Title">
             </form>
         </div>
-        <button class = "rmButton" onclick="removeTab(currentTab)">Remove</button>
     </div>
 
     <div class="main" ondragover="drag_over(event)" ondrop="drop(event)">

@@ -94,18 +94,18 @@
         </div>
 
     </div>
-    <div id="pleaseLogin" class="w3-center modal-content animate " style="display:none">
-        <div class="imgcontainer">
-                <span class="close" id="closeModal" title="Close Modal">&times;</span>
-                <?php if($loggedIn == true) {
-                    echo "<a style='text-decoration:none' href='../Private/Books/collection.php'> <h2> Access our collection here <h2> </a>";
-                } else {
-                    echo "<a style='text-decoration:none' href='Login/login.php'> <h2> Please log in first <h2> </a>";
-                }?>
-                
-        </div>
 
-    </div>
+    <div id="overlayLogin" onclick="off()" style="display: none">
+               
+        <?php 
+            if($loggedIn == true) {
+                echo "<div class='alert'> <a style='text-decoration:none' href='../Private/Books/collection.php'> <h2> Access our collection here <h2> </a> </div>";
+            } else {          
+                echo "<div class='alert'> <a style='text-decoration:none' href='Login/login.php'> <h2> Please log in first <h2> </div>";
+            }
+        ?>
+    </div> 
+
     <div class="tabcontent">
         <div class="card2 border">
             <h2 class="colortheme" style="color:white">Our Merch</h2>
@@ -123,11 +123,6 @@
             <h2 id="aboutUs" class="colortheme">About Us</h2>
         </div>
     </div>
-    <!-- <div class="w3-center" id="pleaseLogin" style="display:none"> 
-        <a href="Login/login.php">
-            <h2> Please log in first</h2>
-        </a>
-    </div> -->
 
 
     <!-- <div id="booksOfMonth">
@@ -138,7 +133,7 @@
             </dl>
     </div> -->
 
-        
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="General/js/loginDirect.js"></script>     
     <script src="General/js/logOut-main.js"></script>  

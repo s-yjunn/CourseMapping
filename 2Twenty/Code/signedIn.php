@@ -4,36 +4,14 @@
         include("vars/header.php");
         include("src/featured.php");
         include("src/search.php");
+        include("src/itemsSelling.php");
 
         $featured = (show_featured());
 
+        
+        $uname = 'shoePainter';
 
-        // function search_selling(){
-        //     include ("db_connect.php");
-
-        //     echo "hello";
-
-        //     $seller = "shoePainter";
-
-        //     // search for all items for sale by seller
-        //     $sql = "SELECT * FROM `items_for_sale` WHERE seller = ? ;";
-            
-        //     $query = $conn->prepare($sql);
-        //     $query->bind_param('s', $s);
-
-        //     $s = $seller;
-        //     $query->execute();
-            
-
-        //     //$res = $query->get_result();
-
-        //     //while ($row = $res->fetch_all())
-        //     //{
-        //       //  return $row;
-        //     //}
-        // }
-
-        $selling = (search_store("shoePainter"));
+        $selling = (search_selling($uname));
 
 ?>
 

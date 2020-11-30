@@ -18,6 +18,13 @@
 					Successful registration!
 				</div>
         	');	
+		} else {
+			echo('
+				<div class="notification is-danger floating" id="bad-login">
+					<button class="delete"></button>
+					Invalid username!
+				</div>
+        	');	
 		}
 	}
     

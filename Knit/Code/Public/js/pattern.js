@@ -87,7 +87,11 @@ canvas.addEventListener('mousemove', function(event) {
     mouseY = event.offsetY; // y position relative to canvas
 	bgColor = context.getImageData(mouseX, mouseY, 1, 1).data; // get color at (x,y)
 	context.fillStyle = fillColor; // set the fill color
-    floodFill(mouseX, mouseY, bgColor); // call fill function
+    if ((mouseX%gridDiv < 1)||(mouseY%gridDiv < 1)) { 
+		return; // don't fill if clicked position lies along grid lines
+	} else {
+	    floodFill(mouseX, mouseY, bgColor); // call fill function
+	}
 }, false );
 // check for clicks
 canvas.addEventListener('mousedown', function(event) {

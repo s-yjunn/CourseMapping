@@ -33,7 +33,7 @@
 <button class="btn1" onclick="hide('userProfile'); show('userHome')"><i class="fas fa-arrow-left"></i> Back</button><br><br>
 
 <div class = "profile" id="viewProfile">
-  <p id = 'upDiv'>This is what other users see when they click on your username in the forum and/or contest pages.</p>
+  <p id = 'uPrDiv'>This is what other users see when they click on your username in the forum and/or contest pages.</p>
   <button class="btn1" onclick="hide('viewProfile'); show('editProfile')">Edit</button><br><br>
 
   <img class="pfp" src= '<?= $pfp; ?>' alt='<?= $username; ?>-s profile picture'>

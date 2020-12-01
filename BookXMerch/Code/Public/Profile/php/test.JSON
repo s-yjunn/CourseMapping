@@ -1,0 +1,31 @@
+{
+    "users": [
+        {
+            "name": "user2",
+            "email": "user2@gmail.com",
+            "username": "User 2",
+            "type": "user",
+            "password": "user2",
+            "readingList": []
+        },
+        {
+            "name": "Imane ",
+            "email": "testEmail@gmail.com",
+            "username": "Imane",
+            "type": "user",
+            "password": "imane",
+            "readingList": [
+                [
+                    "1113",
+                    "Daredevil (1964-1998) #1",
+                    "Not-Started"
+                ],
+                [
+                    "1111",
+                    "Superman Archives, Vol. 2",
+                    "Not-Started"
+                ]
+            ]
+        }
+    ]
+}

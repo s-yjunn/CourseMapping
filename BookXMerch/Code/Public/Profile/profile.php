@@ -73,9 +73,9 @@
         ?>
 
 
-        <div class="tabcontent" id="userDetails">
-            <div class="card bookBorder">
-                <h3><?php echo $_SESSION['name']; ?> </h3>
+        <div class="card" id="userDetails">
+            <div class="tabcontent bookBorder">
+                <h3 class="w3-center"><?php  echo "Hello, " .$_SESSION['name']."!"; ?> </h3>
                 <hr class="horLine"> 
                 <div> <b> Name: </b> <?php echo $name; ?></div> 
                 <hr> 
@@ -94,76 +94,43 @@
                 
             </div>   
         </div>
-            
+        
     <div id="rList" class="card" style="display:none">
     
         <div id="readingListWrapper" class="tabcontent">
-        Status: IN PROGRESS
+
+        
             <div id="main" class="container">
                 <h3 style="text-align:center"> <?php echo $_SESSION["name"]?>'s Reading List </h3>
-                <div class="add-bar">
-                    <img src="../../Private/Books/Images/B&M.png" style="width:2.5em"> </img>
-                    <input type="text" id="new-task" placeholder="Add books...">
-                    <ion-icon id="add-button" name="add-circle-outline" class="mg-10 fs-large"></ion-icon>
-                </div>
-                <div class="menu-bar">
-                    <div id="check-all-button">
-                        <ion-icon name="checkmark-done-outline"></ion-icon>
-                        <p id="completeAll" class="fs-med">Complete All Books</p>
-                    </div>
-                    <p id="clearComplete" class="fs-med">Clear Completed Books</p>
-                </div>
-                <hr>
-                <div id="show-all" class="tasks-container">
-                    <div class="task-card not-started" id="t1">
-                        <div class="status-icon"></div>
-                        <p class="task-text">BOOK1</p>
-                        <p class="task-status color-red">Not-Started</p>
-                        <ion-icon class="delete fs-large mg-10" name="close-circle-outline"></ion-icon>
-                    </div>
-                    <div class="task-card not-started" id="t2">
-                        <div class="status-icon"></div>
-                        <p class="task-text">BOOK2</p>
-                        <p class="task-status color-red">Not-Started</p>
-                        <ion-icon class="delete fs-large mg-10" name="close-circle-outline"></ion-icon>
-                    </div>
-                    <div class="task-card Completed" id="t3">
-                        <div class="status-icon"></div>
-                        <p class="task-text">BOOK3</p>
-                        <p class="task-status color-green">Completed</p>
-                        <ion-icon class="delete fs-large mg-10" name="close-circle-outline"></ion-icon>
-                    </div>
-                    <div class="task-card In-progress" id="t4">
-                        <div class="status-icon"></div>
-                        <p class="task-text">BOOK4</p>
-                        <p class="task-status color-blue">In-progress</p>
-                        <ion-icon class="delete fs-large mg-10" name="close-circle-outline"></ion-icon>
-                    </div>
-                    <div class="task-card In-progress" id="t5">
-                        <div class="status-icon"></div>
-                        <p class="task-text">BOOK5</p>
-                        <p class="task-status color-blue">In-progress</p>
-                        <ion-icon class="delete fs-large mg-10" name="close-circle-outline"></ion-icon>
-                    </div>
-                </div>
+                <button id="saveReadingList" class="saveReadingList" onclick="passVal()"> Save list</button>
 
+                <div class="menu-bar">
+                    <p id="clearComplete" class="fs-med2">Clear Completed Books</p>
+                </div>
                 <hr>
-                <div class="footer">
-                    <div class="task-count">
-                        <p id="task-left-count" class="fs-med bold">3 </p>&nbsp
-                        <p class="fs-med">books on the Reading List</p>
+                <div id="showAll" class="tasks-container">
+                </div>
+                
+                <hr>
+                <div class='footer'>
+                    <div class='task-count'>
+                        <p id='taskLeftCount' class='fs-med bold'>3</p>&nbsp
+                        <p class='fs-med'>book(s) on the Reading List</p>
                     </div>
-                    <div class="filter">
-                        <p id='showAll' class="filter-button">All</p>
-                        <p id='showComplete' class="filter-button">Completed</p>
-                        <p id='showInprogress' class="filter-button">In-progress</p>
-                        <p id='showNotStarted' class="filter-button">Not-started</p>
-                    </div>
+                </div>
+                <div class='filter'>
+                    <p id='show-all' class='filter-button'>All</p>
+                    <p id='showComplete' class='filter-button'>Completed</p>
+                    <p id='showInprogress' class='filter-button'>In-progress</p>
+                    <p id='showNotStarted' class='filter-button'>Not-Started</p>
                 </div>
             </div>
         </div>
+
+
     </div>
         
+
       <!-- Page Content End (below) -->
     </div>
 
@@ -172,6 +139,6 @@
     <script src="js/logOut-profile.js"> </script>
     <script src="js/scriptProfile.js"> </script>
     <!-- ICONS -->
-    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
 </body>
 </html>

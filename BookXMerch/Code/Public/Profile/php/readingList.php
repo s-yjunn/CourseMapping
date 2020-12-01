@@ -24,24 +24,29 @@
     if(sizeof($readingList)==0) {
         echo "Your reading list is currently empty.";
     } else{
+        $i=0;
         foreach ($readingList as $element) { 
+            $i++;
 
-            echo "Title: ". $element[1];
-            echo "<br>";
-            echo "Author(s): ";
-            $i=0;
-            foreach($element[2] as $author) {
-                $i++;
-                echo $author;
-                if(sizeof($element[2]) > $i) {
-                    echo " | ";
-                }
+            if($element[2]=="Not-Started"){
+                $color="color-red";
+            } else if ($element[2]=="Completed"){
+                $color="color-green";
+            } else{
+                $color="color-blue";
             }
-            echo "<br>";
-            echo "Genre: ". $element[3];
-            echo "<br>";
-            echo "<br>";
+                
+            echo "<div class='task-card ".$element[2]."' id='t".$i."'>
+                <div class='status-icon'></div>
+                    <p class='task-text'>".$element[1]."</p>
+                    <p class='task-status ".$color."'>".$element[2]."</p>
+                    <ion-icon class='delete fs-large mg-10' name='close-circle-outline'></ion-icon>
+                    <p class='task-id' style='display:none'>".$element[0]."</p>
+                </div>";
+ 
         }
+        echo "<div id='readingSize' style='display:none'>".sizeof($readingList)."</div>";
+        
     }
 
 ?>

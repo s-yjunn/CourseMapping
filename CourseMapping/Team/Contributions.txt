@@ -1,0 +1,58 @@
+Allison:
+    Data: 
+    1. courses.json
+    2. majors.json
+
+    Saving:
+        1. File organization
+        2. Structure of pathway JSON
+        3. Methods for saving: pathwayMeta.js 
+        4. openSaved.js, 
+        5. script.js, all except the part that asks the user whether they want to save
+    That includes making tab, tab content, lots of breaking things up into methods.
+        6. logout.js, which saves the user’s open tabs if they click yes. Again, querying the user was Hyana’s
+    Pop-up:
+        1. Added message bar and css
+    Site
+        1. Created the buttons that allow the user to open saved pathways
+        2. Added the ability to change the pathway title: tab.php, pathwayMeta.php
+
+Hyana:
+    Data: 
+    1. Users.json
+
+    Design:
+    1. Website design (tab, admin page) in general based on our mid-term 
+    2. ask if user will save the tab or not before logout/remove the tab using jquery-ui
+    3. View.css, add.css, tab.css(not related to tab.html.php)
+
+    Admin/server side:
+    1. addCourse.php: can add a course to courses.json and majors.json
+    2. rmCourse.php: Can remove course(s) from courses.json
+    3. userinfo.php: indicates which user is logged in(guest, admin, user)
+    4. viewCourses.js/viewMajors.js: admin can look at the data from courses.json and majors.json easily.
+
+    Register/login:
+    1. Register.php/login.php: Implemented register & login feature
+    2. logouttabs.php/logintabs.php: Different tabs will be shown depends on the login status(admin, user, guest)
+    3. loginStyle.css: Implemented pop-up modal to register and login features
+
+
+Yujun:
+    1. Create elements based on user selected data
+    2. Dragging elements 
+    3. Linking courses according to data
+    4. Css of tab page
+
+    files:
+    1. Tab.html.php
+    2. Pathway.js
+    3. pathwayPage.css
+    
+
+Olivia:
+    1. Worked on register and login ability
+    2. Edited register and login tabs to be separate
+    3. Updated CSS of index page, pathway page, fixed resizing bug
+    4. Worked on pop-up modal for login and register tabs
+

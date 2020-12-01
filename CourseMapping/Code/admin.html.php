@@ -12,7 +12,8 @@
 <body>
 <?php
    session_start();
-   if ($_SESSION['username'] != 'admin'){ 
+       //if the admin is not logged-in, it'll be redirected to index.html.php automatically
+   if ($_SESSION['username'] != '220'){ 
    echo '<script type = "text/javascript">
     window.location.href="index.html.php";
     </script>';
@@ -35,3 +36,4 @@
 <script src= "https://code.jquery.com/jquery-3.5.1.js"></script> 
 <script type = "text/javascript" src = "js/script.js"></script>
 <script type = "text/javascript" src= "js/viewCourses.js"></script>
+<script type = "text/javascript" src= "js/viewMajors.js"></script>

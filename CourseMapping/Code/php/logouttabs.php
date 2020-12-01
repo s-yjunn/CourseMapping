@@ -1,9 +1,11 @@
 <?php 
+//displays the tabs when the user is logged-out
 if (!isset($_SESSION['username'])){ 
         echo "style = 'display:block;'";} else {
         echo "style = 'display:none;'";
 } 
-if ($_SESSION['username']=='admin'){ 
+//displays the tabs when the admin is logged-in
+if ($_SESSION['username']=='220'){ 
     echo "style = 'display:block;'";} else {
     echo "style = 'display:none;'";
 }

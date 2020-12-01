@@ -6,7 +6,17 @@
             "type": "admin",
             "username": "nmajid",
             "password": "adminuser",
-            "readingList": []
+            "readingList": [
+                [
+                    "1114",
+                    "Batman Eternal #3",
+                    [
+                        "Scott Snyder",
+                        "James Tynion IV"
+                    ],
+                    "comics"
+                ]
+            ]
         },
         {
             "name": "Imane Berrada",

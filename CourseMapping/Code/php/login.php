@@ -5,10 +5,11 @@
 
 <?php
 
+// admin id = 220, admin password = advanced.
 $id = $_POST['username'];
 $pw = $_POST['password'];
-$admin_id = "admin";
-$admin_pw = "1234";
+$admin_id = "220";
+$admin_pw = "advanced";
 
 $login = 0;
 

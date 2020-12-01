@@ -1,5 +1,5 @@
 <?php
-
+//gets the input data from register.html and adds it to users.json
 $id = $_POST['username'];
 $pw = $_POST['password'];
 
@@ -9,19 +9,22 @@ $temp_json = json_decode(file_get_contents($file), true);
 
 $available = 1;
 
+// if the id is already taken, say it's not available
 for($i=0; $i<count($temp_json); $i++) {    
     if($temp_json[$id]){
         $available = 0;
     }
 }
 
-if($id == 'admin'){
+// cannot register with admin's id
+if($id == '220'){
     echo '<script type = "text/javascript">
     alert("You cannot register with this username! Please try other usernames");
     window.location.href="../index.html.php";
     </script>';
 }
 
+//add new user data to users.json
 if($available == 1){
     ob_start();
     session_start();

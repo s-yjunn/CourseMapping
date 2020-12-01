@@ -1,3 +1,4 @@
+// collects the departments from courses.json using jquery and adds them to the #major dropdown in viewCourses.html
 $(document).ready(function () { 
     $.getJSON("json/courses.json", function (data) { 
         var major = ''; 
@@ -10,13 +11,16 @@ $(document).ready(function () {
     }); 
 }); 
 
+// if dropdown menu is changed, it will empty the table displaying the previous corresponding courses
 $('#major').change(function () { 
     var items = $("#courseTable tr"); 
     for (let i = 1; i < items.length; i++) { 
         items[i].remove(); 
     } 
 
-    var major = $('#major option:checked').val();
+    /* it will collects the course information of selected major from courses.json 
+    and adds it to the table in viewCourses.html with a checkbox*/
+    var major = $('#major option:selected').val();
     $.getJSON("json/courses.json", function (data) { 
         var course = '';
         $.each(data[major], function (key, value) { 
@@ -37,6 +41,7 @@ $('#major').change(function () {
     }); 
 }); 
 
+// modal for add the course
 var modal_add = document.getElementById('add');
 
 // When the user clicks anywhere outside of the modal, close it

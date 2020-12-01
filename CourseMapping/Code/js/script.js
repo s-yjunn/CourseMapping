@@ -150,9 +150,6 @@ function removeTab(tabID) {
   var tabContent = document.getElementById(tabID);
   tabContent.parentNode.removeChild(tabContent);
 
-  // NEED TO ADD !!!!!!!!!!!   Ask if the user wants to save.
-  // var saveWanted = window.confirm("Do you want to save this tab?");
-
   $( function() {
     $("#dialog-confirm").dialog({
       resizable: false,
@@ -193,7 +190,7 @@ function removeTab(tabID) {
 // uses the global variable currentTab 
 // Returns true if currentPathway was defined and therefore saved, false if not.
 function storeCurrentPathway() {
-  if(currentPathway) { // If currentPathway was already set, save it in sessionStorage
+  if(typeof currentPathway !== 'undefined') { // If currentPathway was already set, save it in sessionStorage
     sessionStorage[currentTab] = JSON.stringify(currentPathway);
     return true;
   }

@@ -27,9 +27,13 @@ if (trim($newUser) == "") { // check for empty user
 	$phpArray[$newUser]["admin"] = false; // can't be admin to begin with
 	$phpArray[$newUser]["pfp"] = null; // no profile pic to begin with
 	$phpArray[$newUser]["about"] = null; // no bio to begin with
+	$phpArray[$newUser]["private"] = []; // no private patterns to begin with
+	$phpArray[$newUser]["public"] = []; // no public patterns to begin with
 	// overwrite json file with new array
 	$updatedArray = json_encode($phpArray);
 	file_put_contents($path, $updatedArray);
+	// make a new private folder for their patterns
+	mkdir("../../Private/imgs/" . $newUser);
 
 	// start session
 	session_start();

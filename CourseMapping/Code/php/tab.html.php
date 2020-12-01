@@ -9,11 +9,9 @@
 </head>
 
 <body>
-    <h1>Untitled Pathway</h1>
-    <button class="active" onclick="save()">Save</button>
     <div>
         <!-- I use a class instead of an id for the pathway title because multiple pathway tabs will be made, and that would be more than one element with the same id. -->
-        <h1 class="pathwayTitle" onclick="titleChange(this)">Untitled Pathway</h1>
+        <h1 class="pathwayTitle" onclick="titleChange(this)">Untitled Pathway &#9998</h1>
         <!--  This form allows asks the user to change the title of a pathway.  It uses pathwayMeta.js -->
         <div style="display: none;" class="titleChanger ">
             <form onsubmit="changeTitle(this); return false;">
@@ -21,13 +19,15 @@
             </form>
         </div>
     </div>
+    
 
     <div class="main" ondragover="drag_over(event)" ondrop="drop(event)">
 
         <select id="menu" onclick="getMajors()">
             <option value="None">Select a Major</option>
         </select>
-        <button onclick="selectMajor()">Get Courses</button>
+        <button class="courseBtn" onclick="selectMajor()">Get Courses</button>
+        <button class="active" onclick="save()">Save</button>
 
         <div id="info">
         </div>

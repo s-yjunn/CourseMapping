@@ -48,7 +48,13 @@
             "username": "User 2",
             "type": "user",
             "password": "user2",
-            "readingList": []
+            "readingList": [
+                [
+                    "1120",
+                    "The Space Between Worlds",
+                    "In-progress"
+                ]
+            ]
         },
         {
             "name": "Imane ",
@@ -58,52 +64,14 @@
             "password": "imane",
             "readingList": [
                 [
-                    "1113",
-                    "Daredevil (1964-1998) #1",
-                    [
-                        "Stan Lee"
-                    ],
-                    "comics"
+                    "1112",
+                    "Star Trek: Waypoint #2",
+                    "In-progress"
                 ],
                 [
                     "1116",
                     "Anne Frank",
-                    [
-                        "Laura Hamilton Waxman"
-                    ],
-                    "children"
-                ],
-                [
-                    "1115",
-                    "Alice's Adventures in Wonderland",
-                    [
-                        "Lewis Carroll"
-                    ],
-                    "children"
-                ],
-                [
-                    "1111",
-                    "Superman Archives, Vol. 2",
-                    [
-                        "Jerry Siegel"
-                    ],
-                    "comics"
-                ],
-                [
-                    "1117",
-                    "The Little Prince",
-                    [
-                        "Antoine de Saint-Exup\u00e9ry"
-                    ],
-                    "children"
-                ],
-                [
-                    "1120",
-                    "The Space Between Worlds",
-                    [
-                        "Micaiah Johnson"
-                    ],
-                    "sci-fi"
+                    "Not-Started"
                 ]
             ]
         },
@@ -121,41 +89,7 @@
             "username": "de",
             "type": "user",
             "password": "de",
-            "readingList": [
-                [
-                    "1114",
-                    "Batman Eternal #3",
-                    [
-                        "Scott Snyder",
-                        "James Tynion IV"
-                    ],
-                    "comics"
-                ],
-                [
-                    "1118",
-                    "The Glass Hotel",
-                    [
-                        "Emily St. John Mandel"
-                    ],
-                    "fiction"
-                ],
-                [
-                    "1120",
-                    "The Space Between Worlds",
-                    [
-                        "Micaiah Johnson"
-                    ],
-                    "sci-fi"
-                ],
-                [
-                    "1119",
-                    "The Jane Austen Society",
-                    [
-                        "Natalie Jenner"
-                    ],
-                    "debut-novel"
-                ]
-            ]
+            "readingList": []
         }
     ]
 }

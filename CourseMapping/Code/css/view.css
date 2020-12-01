@@ -1,24 +1,24 @@
+/* css for viewCourse.html*/
 table { 
     margin: 0 auto; 
     font-size: large; 
-    border: 1px solid black; 
 } 
 
-td { 
-    background-color: #E4F5D4; 
-    border: 1px solid black; 
-} 
 
-th, td { 
+th { 
     font-weight: bold; 
-    border: 1px solid black; 
     padding: 10px; 
     text-align: center; 
+    background-color: #d4d23098; 
 } 
 
-td { 
-    font-weight: lighter; 
-} 
+td{
+    background-color: #37aee698; 
+    font-weight: bold; 
+    padding: 10px; 
+    text-align: center; 
+    font-weight:lighter; 
+}
 
 h1 { 
     text-align: center; 
@@ -26,11 +26,8 @@ h1 {
     font-size: xx-large; 
 } 
 
-.dropdown{
-    text-align: center
-}
-
-#major{
+#major, #majorCourse{
+    z-index: 1;
     background-color: rgb(235, 221, 34);
     padding: 8px 16px;
     margin-bottom: 6px;

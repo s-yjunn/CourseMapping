@@ -18,6 +18,7 @@ body {
 .buttonNavBar:hover{
     background-color: black;
     color: white;
+    cursor: pointer;
 }
 
 .imageClass {
@@ -117,7 +118,8 @@ body {
     background-color: white;
     padding: 1.2em;
     margin-right: 2.5em;
-    border-radius: 0.8rem;
+    border-radius: 2em;
+    width:60vw;
     border-color: black;
 }
 
@@ -168,16 +170,33 @@ body {
 
 /* Reading List*/
 
+.saveReadingList{
+    border-radius: 2em;
+    background-color: rgb(119,80,112);
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.saveReadingList:hover{
+    background-color:#6ec77a;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+}
+
 #main{
-    background-color: white;
+    background-color: rgba(0,0,0,0.7);
     width:60vw;
+    color: white;
     /* margin:30px auto; */
     padding:20px;
     display:flex;
     flex-direction:column;
     justify-content: space-between;
-    font-family: sans-serif;
-    border-radius:10px;
+    font-family: 'Poppins';
+    border-radius:2em;
+    border: 10em white;
     box-shadow: 0px 0px 4px 4px rgba(119,89,112,0.4);
 }
 
@@ -204,13 +223,6 @@ input:focus, textarea:focus, select:focus{
     outline:none;
 }
 
-.menu-bar{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    color: gray;
-    padding:5px 0;
-}
 #check-all-button{
     display:flex;
     align-items: center;
@@ -231,9 +243,12 @@ input:focus, textarea:focus, select:focus{
     align-items: center;
     transition: transform 0.5s ease-out;
 }
+
+
 .delete{
     align-self:end;
     visibility: hidden;
+    cursor: pointer;
 }
 
 
@@ -241,14 +256,15 @@ input:focus, textarea:focus, select:focus{
     transform:translateX(100%);
 }
 .status-icon{
-    border:1px solid black;
+    border:1px solid white;
     width:15px;
     height:15px;
     border-radius:50%;
     margin:5px;
+    cursor: pointer;
 }
 
-.not-started div{
+.Not-Started div{
     background-color:#fc5753;
 }
 .Completed div{
@@ -259,13 +275,13 @@ input:focus, textarea:focus, select:focus{
 }
 
 .task-text{
-    /* flex-grow:2; */
+
     width: 50%;
 }
 .task-status{
     margin:auto;
-    font-size:0.7rem;
-    /* color:#fc5753; */
+    font-size:0.8rem;
+
     font-family: monospace;
 }
 .footer{
@@ -282,7 +298,7 @@ input:focus, textarea:focus, select:focus{
     display: flex;
     justify-content: space-between;
     font-size:0.8rem;
-    color:gray;
+    color:rgb(175, 167, 167);
 
 }
 .filter-button{
@@ -300,10 +316,17 @@ input:focus, textarea:focus, select:focus{
     font-size:1.2rem;
 }
 .fs-med{
-font-size: 0.7rem;
-
+font-size: 0.8rem;
+color: white;
 }
+.fs-med2{
+    font-size: 0.8rem;
+    color: white;
+    }
 
+.fs-med2:hover{
+    font-weight: bolder;
+}
 .bold{
     font-weight: 600;
 }

@@ -19,7 +19,7 @@ function saveProfile(username) {
         data:{uname: username, about: abt},
         success: function(result) {
             $('#userProfile').html(result);
-            $('#upDiv').html("Your changes have been saved.");
+            $('#uPrDiv').html("Your changes have been saved.");
             hide('editProfile');
             show('viewProfile');
         }
@@ -28,7 +28,7 @@ function saveProfile(username) {
 
 // Cancels the current profile edit by hiding the edit div and restoring the default 'view' message
 function cancelUPEdit() {
-    $('#upDiv').html("This is what other users see when they click on your username in the forum and/or contest pages.");
+    $('#uPrDiv').html("This is what other users see when they click on your username in the forum and/or contest pages.");
     hide('editProfile');
     show('viewProfile');
 }

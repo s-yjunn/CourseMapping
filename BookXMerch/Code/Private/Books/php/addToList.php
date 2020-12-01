@@ -19,7 +19,7 @@ $newArray = array();
 //create new array with book's title, author and genre
 foreach ($booksArray as $key => $jsons) { 
     if($jsons["bookid"]==$bookId) {
-        array_push($newArray,$jsons["bookid"],$jsons["title"],$jsons["author"],$jsons["genre"]);
+        array_push($newArray,$jsons["bookid"],$jsons["title"],"Not-Started");
 
     break;
     }

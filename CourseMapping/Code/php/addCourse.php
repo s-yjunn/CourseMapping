@@ -10,9 +10,11 @@
     $overlap = $_POST['overlap'];
 
     
-    $file = "../json/courses.json";
-    $temp_json = json_decode(file_get_contents($file), true);
-    
+    $file_course = "../json/courses.json";
+    $file_major = "../json/majors.json";
+    $temp_json_major = json_decode(file_get_contents($file_major), true);
+    $temp_json_course = json_decode(file_get_contents($file_course), true);
+
     $string = $major . " " . strval($num);
     
     // for($i=0; $i<count($temp_json[$major]); $i++) {    
@@ -33,9 +35,13 @@
     'overlap'=>explode(", ", $overlap)
     );
     
-    $temp_json[$major][$string] = $new_data;
+    $temp_json_course[$major][$string] = $new_data;
 
-    file_put_contents($file, json_encode($temp_json));
+    $new_index = count($temp_json_major[$major]["major"]["singular"]);
+    $temp_json_major[$major]["major"]["singular"][$new_index] = $string;
+
+    file_put_contents($file_course, json_encode($temp_json_course));
+    file_put_contents($file_major, json_encode($temp_json_major));
 
     echo '<script type = "text/javascript">
         window.location.href="../admin.html.php";

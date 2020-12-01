@@ -43,12 +43,10 @@ function titleChange(titleElement) {
     titleElement.style.display = "none";
     formDiv.style.display = "block";
 
-    console.log("set to true");
     titleInputOpen = true; 
 
     // When the user clicks anywhere outside of the title changer input, close it
     window.onclick = function(event) {
-        console.log(titleInputOpen);
         // If it is not formDiv or one of formDiv's children / grandchildren (it doesn't go further),
         // And it is not the titleElement that was used to open formDiv,
         // Then close formDiv 
@@ -87,7 +85,7 @@ function changeTitleHelper(titleElement, formElement) {
     // Either way, switch back to the tile element
     titleElement.style.display = "block";
     formElement.style.display = "none";
-    console.log("set to false");
+
     titleInputOpen = false;
 } 
 

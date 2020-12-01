@@ -37,7 +37,7 @@
                                         <div class="box">
                                             <article class="media">
                                                 <div class="media-left">
-                                                    <figure class="image is-64x64">
+                                                    <figure class="image is-128x128">
                                                         <img src="'.$image_url.'" alt="'.$title.'">
                                                     </figure>
                                                 </div>
@@ -47,6 +47,7 @@
                                                             <strong>@'.$seller.'</strong> is selling <strong>'.$title.'</strong> for <span class="tag is-success">$'.$price.'</span>
                                                             <br/>
                                                             <div class="notification is-light">'.$desc.'</div>
+                                                            <p class="subtitle is-7">image from '.$image_url.'</p>
                                                             
                                     ');
                 

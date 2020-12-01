@@ -7,6 +7,7 @@
 	
 	//SASHAS ATTEMPT FOR REGISTER CODE BELOW
 	include("src/register.php");
+	include("src/login.php");
 	session_start(); // php SESSION to keep user logged in (expires after certain amount of time)
 
 	// if registering:
@@ -87,14 +88,19 @@
                         </div>
                         ');
                     } else {
-                        echo('
-                        <div class="navbar-item">Welcome back, <strong class="ml-1">'.$_SESSION["username"].'</strong>!</div>
+						echo('
+						
+						<div class="navbar-end"> <a class="navbar-item" href="signedIn.php">Your Page</a> </div>
+						
+						<div class="navbar-item">Welcome back, <strong class="ml-1">'.$_SESSION["username"].'</strong>!</div>
+						
                         <div class="buttons">
                             <form class="field" method="POST" action="index.php">
                                 <input type="submit" name="logout" class="button is-danger is-rounded is-outlined" value="Logout">
                             </form>
                         </div>
-                        ');
+						');
+						
                     }
                 ?> </div>
 			</div>

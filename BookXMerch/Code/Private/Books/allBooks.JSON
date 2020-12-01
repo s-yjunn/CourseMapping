@@ -16,13 +16,13 @@
         "reviews": 
         [ 
             {   
-                "user": "", 
-                "text":"This is the best Superman book i've ever read"
+                "user": "nmajid", 
+                "comment":"This is the best Superman book i've ever read"
             }
             , 
             { 
-                "user": "",
-                "text": "Superman always fought the good fight and brought justice to the wicked." 
+                "user": "iberrada",
+                "comment": "Superman always fought the good fight and brought justice to the wicked." 
             }
         ]
     },
@@ -44,7 +44,12 @@
         "url": "https://www.goodreads.com/book/show/32995494-star-trek",
         "image_url": "",
         "rating": "5",
-        "reviews": []
+        "reviews": [
+            {
+                "user": "nmajid",
+                "comment": "I would recommend this to everyone!!"
+            }
+        ]
     },
     {
         "bookid": "1113",
@@ -138,7 +143,12 @@
         "url": "https://www.goodreads.com/book/show/45754981-the-glass-hotel",
         "image_url": "",
         "rating": "5",
-        "reviews": []
+        "reviews": [
+            {   
+                "user": "nmajid", 
+                "comment":"Such a gripping read!!"
+            }
+        ]
     },
     {
         "bookid": "1119",

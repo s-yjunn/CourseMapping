@@ -35,11 +35,11 @@
           <div class="newFont">
             <b class="barCol"><?php echo "Hello, " . $_SESSION["name"] ."!";?></b>
             <a class="barCol buttonClass" href="../../Public/Profile/profile.php" style="width: 200px; font-family">User Details</a>
-            <button class="barCol buttonClass" onclick="getList()">My Reading List</button>
-            <button class="barCol buttonClass" onclick="getBookByGenre('comics')">My Books</button>
-            <button class="barCol buttonClass" onclick="getBookByGenre('children')">My Posts</button>
-            <button class="barCol buttonClass" onclick="getBookByGenre('sci-fi')">My Reviews</button>
-            <button class="barCol buttonClass" onclick="getBookByGenre('fiction')">My Ratings</button>
+            <button class="barCol buttonClass" id="reading-list-button" onclick="getList()">My Reading List</button>
+            <button class="barCol buttonClass" onclick="#">My Books</button>
+            <button class="barCol buttonClass" onclick="#">My Posts</button>
+            <button class="barCol buttonClass" onclick="getReviews()">My Reviews</button>
+            <button class="barCol buttonClass" onclick="getRatings()">My Ratings</button>
     
           </div>
         </div>
@@ -163,14 +163,50 @@
             </div>
         </div>
     </div>
+    <!-- Div for the reviews -->
+    <div id="reviewsList" class="card" style="display:none">
+    
+        <div id="reviewsListWrapper" class="tabcontent">
+            <div id="main" class="container">
+                <h3 style="text-align:center"> <?php echo $_SESSION["name"]?>'s Reviews </h3>
+                <hr>
+                <div id="show-all" class="reviews-container">
+                    <!-- show all the reviews as a list here -->
+                    <div class="task-card In-progress" id="t5">
+                        <div class="status-icon"></div>
+                        <p class="task-text">Sample Book Review</p>
+                        <p class="task-status color-blue">This was an amazing book! I still can't get over that one jump scare part. A truly otherworldly experience!</p>
+                    </div>
+                </div>
+
+                <hr>
+                <!-- <div class="footer">
+                    <div class="task-count">
+                        <p id="task-left-count" class="fs-med bold">3 </p>&nbsp
+                        <p class="fs-med">books on the Reading List</p>
+                    </div>
+                    <div class="filter">
+                        <p id='showAll' class="filter-button">All</p>
+                        <p id='showComplete' class="filter-button">Completed</p>
+                        <p id='showInprogress' class="filter-button">In-progress</p>
+                        <p id='showNotStarted' class="filter-button">Not-started</p>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    
+
+
         
-      <!-- Page Content End (below) -->
+    <!-- Page Content End (below) -->
     </div>
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/logOut-profile.js"> </script>
     <script src="js/scriptProfile.js"> </script>
+    <!-- <script src="js/scriptProfile2.js"></script> -->
     <!-- ICONS -->
     <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
 </body>

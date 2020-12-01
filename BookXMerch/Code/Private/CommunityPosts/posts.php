@@ -59,13 +59,15 @@
         </div>
     </div>
 </div>
-        <div id="posts" class="margin-left: 240px">
-            <div id="wrapper">
+        <div id="posts" style = "margin-left:240px">
+            <div id="wrapper" style = "margin-left:240px">
+				<h1>Community Posts </h1>
             </div>
+			
         </div>
         <div id="original">
-            <div class="wrapper">
-				<h1>Community Posts</h1>
+			<div>
+				
 
 
   <?php 
@@ -81,9 +83,9 @@ echo "<div>";
   foreach ($postsArray as $key => $jsons) { 
       $newArray = array($jsons["postTitle"],$jsons["Author"],$jsons["datePublication"],$jsons["Text"],$jsons["comments"]);
       array_push($byTitle, $newArray);
-      echo "<ul>";
-      echo '<div class="card bookBorder"><h3>'.$newArray[0].'</h3><hr class="horLine"><div><b> AuthorName: </b>'.$newArray[1].'</div><hr><div class="barCol"> <b> Post: </b>'.$newArray[3];
-	 echo "<b> <button class='fixedButton' onclick='displayContent(".$newArray[7].")' id='".$newArray[7]."'> Show thread for" . $newArray[0] . "</button></b> ".'</div>';
+      echo "<ul><div class='card bookBorder'>";
+      echo '<div><h3>'.$newArray[0].'</h3><hr class="horLine"><div><b> AuthorName: </b>'.$newArray[1].'</div><hr><div class="barCol"> <b> Post: </b>'.$newArray[3];
+	 echo "<br><br><b> <button class='fixedButton' onclick='displayContent(".$newArray[7].")' id='".$newArray[7]."'> Show thread for  :  " . $newArray[0] . "</button></b> ".'</div></div></div></ul><br>';
 		 }
 
   ?>

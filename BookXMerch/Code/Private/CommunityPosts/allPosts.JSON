@@ -1,0 +1,30 @@
+[
+  {
+    "postTitle": "Fiction Recommendations",
+    "Author": "User3",
+    "datePublication": "10/10/2020",
+    "Text": "Hello everyone! I have been mostly reading non-fiction the past years and I would like to read more fiction. I Would appreciate any help on where to start from",
+	"comments": [{"Author": "User10", "Reply": "Cool topic", "Date": "10/10/2020"}]
+  },
+  {
+    "postTitle": "Romance or Horror ?",
+    "Author": "User15",
+    "datePublication": "12/10/2020",
+    "Text": "Do you read more romance or horror novels? and what do you like about each  of these genres ?",
+	"comments": [{"Author": "User09", "Reply": "Cool topic", "Date": "10/10/2020"}]
+  },
+  {
+    "postTitle": "Mystery Recommendations",
+    "Author": "User7",
+    "datePublication": "17/10/2020",
+    "Text": "Hello everyone! I have been mostly reading non-fiction the past years and I would like to read more horror. I Would appreciate any help on where to start from",
+	"comments": [{"Author": "User11", "Reply": "Cool topic", "Date": "10/10/2020"}]
+  },
+  {
+    "postTitle": "Jane Austen Recommendations",
+    "Author": "User18",
+    "datePublication": "08/10/2020",
+    "Text": "Hello everyone! I have read Rpide and Prejudice by Jane Austen and I loved it. What should my next book by Jane Austen be ? let me know in the comments :)",
+	"comments": [{"Author": "User12", "Reply": "Cool topic", "Date": "10/10/2020"}]
+  }
+]

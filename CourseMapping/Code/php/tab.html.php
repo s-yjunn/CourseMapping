@@ -9,8 +9,6 @@
 </head>
 
 <body>
-    <h1>Untitled Pathway</h1>
-    <button class="active" onclick="save()">Save</button>
     <div>
         <!-- I use a class instead of an id for the pathway title because multiple pathway tabs will be made, and that would be more than one element with the same id. -->
         <h1 class="pathwayTitle" onclick="titleChange(this)">Untitled Pathway</h1>
@@ -21,6 +19,7 @@
             </form>
         </div>
     </div>
+    <button class="active" onclick="save()">Save</button>
 
     <div class="main" ondragover="drag_over(event)" ondrop="drop(event)">
 

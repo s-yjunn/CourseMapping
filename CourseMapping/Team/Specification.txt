@@ -24,6 +24,8 @@ MODEL: ---------------------------------------------
 ----- User data is stored in this JSON file:  
 
      users.json
+          user's input id would be the key, and the value contains the password and the server id.
+          server id will be used for naming the user saving folder.
 
 Each user has data for each of their saved pathways,
 And maybe a list of the majors they are already looking at so that major requirements data can be sent from the server as one instead of having to send an individual request everytime it realizes a major's info is needed?

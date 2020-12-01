@@ -12,7 +12,8 @@
 <body>
 <?php
    session_start();
-   if ($_SESSION['username'] != 'admin'){ 
+       //if the admin is not logged-in, it'll be redirected to index.html.php automatically
+   if ($_SESSION['username'] != '220'){ 
    echo '<script type = "text/javascript">
     window.location.href="index.html.php";
     </script>';

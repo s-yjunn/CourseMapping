@@ -64,7 +64,7 @@
             </div>
         </div>
         <div id="original">
-            <div class="wrapper">
+			<div style = "margin-left:240px">
 				<h1>Community Posts</h1>
 
 
@@ -82,8 +82,8 @@ echo "<div>";
       $newArray = array($jsons["postTitle"],$jsons["Author"],$jsons["datePublication"],$jsons["Text"],$jsons["comments"]);
       array_push($byTitle, $newArray);
       echo "<ul>";
-      echo '<div class="card bookBorder"><h3>'.$newArray[0].'</h3><hr class="horLine"><div><b> AuthorName: </b>'.$newArray[1].'</div><hr><div class="barCol"> <b> Post: </b>'.$newArray[3];
-	 echo "<b> <button class='fixedButton' onclick='displayContent(".$newArray[7].")' id='".$newArray[7]."'> Show thread for" . $newArray[0] . "</button></b> ".'</div>';
+      echo '<div><h3>'.$newArray[0].'</h3><hr class="horLine"><div><b> AuthorName: </b>'.$newArray[1].'</div><hr><div class="barCol"> <b> Post: </b>'.$newArray[3];
+	 echo "<br><b> <button class='fixedButton' onclick='displayContent(".$newArray[7].")' id='".$newArray[7]."'> Show thread for" . $newArray[0] . "</button></b> ".'</div></div></ul><br>';
 		 }
 
   ?>

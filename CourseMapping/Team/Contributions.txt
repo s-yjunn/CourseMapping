@@ -24,7 +24,7 @@ Hyana:
     Design:
     1. Website design (tab, admin page) in general based on our mid-term 
     2. ask if user will save the tab or not before logout/remove the tab using jquery-ui
-    3. View.css, add.css, tab.css(not related to tab.html.php)
+    3. View.css, add.css, tab.css(not related to tab.html)
 
     Admin/server side:
     1. addCourse.php: can add a course to courses.json and majors.json
@@ -45,8 +45,8 @@ Yujun:
     4. Css of tab page
 
     files:
-    1. Tab.html.php
-    2. Pathway.js
+    1. tab.html
+    2. pathway.js
     3. pathwayPage.css
     
 

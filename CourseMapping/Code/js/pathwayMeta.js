@@ -1,5 +1,9 @@
+/**
+ * 
+ */
+
 //file paths:
-var savepath = "users/save.php";
+var savepath = "php/save.php";
 
 // Returns the server's response as to whether the save was successful.
 // If tabID is given, save the pathway with that as it's key in sessionStorage

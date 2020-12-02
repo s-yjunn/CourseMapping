@@ -7,7 +7,7 @@
     $users = json_decode(file_get_contents($userpath), TRUE);
 
     // If the user does not have a folder of stored pathways, make one.
-    $userFile = "u_" . $users[$_SESSION['username']]["id"];
+    $userFile = "../users/u_" . $users[$_SESSION['username']]["id"];
     if(!file_exists($userFile)) {
         if(!mkdir($userFile)) {
             echo "Couldn't create user file. ";

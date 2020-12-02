@@ -20,7 +20,7 @@
     }
 ?>
 
-<?php include 'php/userinfo.php';?>
+<?php include 'php/login/userinfo.php';?>
 
 <div class = 'tab' id="tab">
     <button id = "logo">Course Mapping</button>

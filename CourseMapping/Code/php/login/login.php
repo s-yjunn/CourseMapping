@@ -13,7 +13,7 @@ $admin_pw = "advanced";
 
 $login = 0;
 
-$file = "../json/users.json";
+$file = "../../json/users.json";
 $temp_json = json_decode(file_get_contents($file), true);
 
 if ($id == $admin_id && $pw == $admin_pw){
@@ -29,21 +29,21 @@ if($temp_json[$id]){
 if($login == 1){
     echo '<script type = "text/javascript">
     alert("Successfully Login!");
-    window.location.href="../index.html.php";
+    window.location.href="../../index.html.php";
     </script>';
     $_SESSION['username'] = $id;
     session_write_close();
 } else if($admin_login == 1){
     echo '<script type = "text/javascript">
     alert("Successfully Login as Admin!");
-    window.location.href="../admin.html.php";
+    window.location.href="../../admin.html.php";
     </script>';
     $_SESSION['username'] = $id;
     session_write_close();
 } else {
     echo '<script type = "text/javascript">
     alert("Wrong admin ID or password! Please try again!");
-    window.location.href="../index.html.php";
+    window.location.href="../../index.html.php";
     </script>';
 }
 ?>

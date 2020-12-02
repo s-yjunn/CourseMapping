@@ -30,16 +30,16 @@
     -->
     <div id="messagebar" class=""></div>
 
-    <?php include 'php/userinfo.php'; ?>
+    <?php include 'php/login/userinfo.php'; ?>
 
     <div class='tab' id="tab">
         <button id="logo">Course Mapping</button>
-        <button class="tablinks active" onclick="openTab(event, 'Main')" <?php include 'php/logouttabs.php'; ?>>MAIN PAGE</button>
-        <button class="tablinks" onclick="openTab(event, 'Instruction')" <?php include 'php/logintabs.php'; ?>>INSTRUCTION</button>
-        <button class="tablinks" onclick="openTab(event, 'Saved')" <?php include 'php/logintabs.php'; ?>>SAVED</button>
-        <button class="tablinks" onclick="newTab()" <?php include 'php/logintabs.php'; ?>>+</button>
-        <button class = "tablinks" <?php include 'php/logouttabs.php';?>onclick="document.getElementById('register').style.display='block'">REGISTER</button>
-        <button class="tablinks" <?php include 'php/logouttabs.php'; ?>onclick="document.getElementById('login').style.display='block'">LOGIN</button>
+        <button class="tablinks active" onclick="openTab(event, 'Main')" <?php include 'php/login/logouttabs.php'; ?>>MAIN PAGE</button>
+        <button class="tablinks" onclick="openTab(event, 'Instruction')" <?php include 'php/login/logintabs.php'; ?>>INSTRUCTION</button>
+        <button class="tablinks" onclick="openTab(event, 'Saved')" <?php include 'php/login/logintabs.php'; ?>>SAVED</button>
+        <button class="tablinks" onclick="newTab()" <?php include 'php/login/logintabs.php'; ?>>+</button>
+        <button class = "tablinks" <?php include 'php/login/logouttabs.php';?>onclick="document.getElementById('register').style.display='block'">REGISTER</button>
+        <button class="tablinks" <?php include 'php/login/logouttabs.php'; ?>onclick="document.getElementById('login').style.display='block'">LOGIN</button>
     </div>
 
     <article id='content'>

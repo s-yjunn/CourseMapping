@@ -1,5 +1,5 @@
 //file paths:
-var tabpath = "php/tab.html.php";
+var tabpath = "html/tab.html";
 
 // current tab element's id
 var currentTab;

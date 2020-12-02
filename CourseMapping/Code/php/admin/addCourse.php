@@ -11,8 +11,8 @@
     $overlap = $_POST['overlap'];
 
     
-    $file_course = "../json/courses.json";
-    $file_major = "../json/majors.json";
+    $file_course = "../../json/courses.json";
+    $file_major = "../../json/majors.json";
     // $temp_json_major = json_decode(file_get_contents($file_major), true);
     $temp_json_course = json_decode(file_get_contents($file_course), true);
 
@@ -37,6 +37,6 @@
     // file_put_contents($file_major, json_encode($temp_json_major));
 
     echo '<script type = "text/javascript">
-        window.location.href="../admin.html.php";
+        window.location.href="../../admin.html.php";
     </script>';
 ?>

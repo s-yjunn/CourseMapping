@@ -116,7 +116,7 @@
         "info": { "credits": 5, "title": "Advanced Introductory Physics" },
         "overlap": ["PHY 117", "PHY 118"]
       },
-
+  
       "PHY 210": {
         "prereqs": [["MTH 212", "PHY 117"], "PHY 119"],
         "coreqs": [],
@@ -136,7 +136,7 @@
         "info": { "credits": 4, "title": "Calculus I" },
         "overlap": []
       },
-
+  
       "MTH 112": {
         "prereqs": ["MTH 111"],
         "coreqs": [],
@@ -145,7 +145,7 @@
         "info": { "credits": 4, "title": "Calculus II" },
         "overlap": []
       },
-
+  
       "MTH 211": {
         "prereqs": [["MTH 112"], ["MTH 111", "MTH 153 s"]],
         "coreqs": [],
@@ -154,7 +154,7 @@
         "info": { "credits": 4, "title": "Linear Algebra" },
         "overlap": ["MTH 210"]
       },
-
+  
       "MTH 264": {
         "prereqs": [["MTH 112"], ["MTH 212", "MTH 211"], ["PHY 210"]],
         "coreqs": [],

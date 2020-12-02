@@ -6,7 +6,8 @@
         include("src/search.php");
         include("src/itemsSelling.php");
 
-        $featured = (show_featured());
+        $cart;
+        //$cart = (show_cart());
 
         
         $uname = 'shoePainter';
@@ -34,7 +35,7 @@
                         ');
                     } else {
                         echo('
-                        <div class="navbar-item">Welcome back, shoePainter <strong class="ml-1">'.$_SESSION["username"].'</strong>!</div>
+                        <div class="navbar-item">Welcome back, '.$uname. ' <strong class="ml-1">'.$_SESSION["username"].'</strong>!</div>
                         <div class="buttons">
                             <form class="field" method="POST" action="index.php">
                                 <input type="submit" name="logout" class="button is-danger is-rounded is-outlined" value="Logout">
@@ -58,7 +59,7 @@
                 <h2 class="subtitle">Your cart</h2>
 				<div class="columns">
 					<?php 
-                        foreach($featured as &$item) {
+                        foreach($cart as &$item) {
                             $title = $item[1];
                             $image_url = $item[2];
                             $seller = $item[5];

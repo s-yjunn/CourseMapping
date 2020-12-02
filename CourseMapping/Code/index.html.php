@@ -16,7 +16,8 @@
 <body>
     <?php
     session_start();
-    if ($_SESSION['username'] == 'admin'){ 
+    //if the admin is logged-in, it'll be redirected to admin.html.php automatically
+    if ($_SESSION['username'] == '220'){ 
         echo '<script type = "text/javascript">
          window.location.href="admin.html.php";
          </script>';
@@ -34,6 +35,7 @@
     <div class='tab' id="tab">
         <button id="logo">Course Mapping</button>
         <button class="tablinks active" onclick="openTab(event, 'Main')" <?php include 'php/logouttabs.php'; ?>>MAIN PAGE</button>
+        <button class="tablinks" onclick="openTab(event, 'Instruction')" <?php include 'php/logintabs.php'; ?>>INSTRUCTION</button>
         <button class="tablinks" onclick="openTab(event, 'Saved')" <?php include 'php/logintabs.php'; ?>>SAVED</button>
         <button class="tablinks" onclick="newTab()" <?php include 'php/logintabs.php'; ?>>+</button>
         <button class = "tablinks" <?php include 'php/logouttabs.php';?>onclick="document.getElementById('register').style.display='block'">REGISTER</button>
@@ -42,10 +44,13 @@
 
     <article id='content'>
         <div id='Main' class='tabcontent' style='display: block;'>
-            <?php include "html/main.html" ?>
+            <?php include "html/instruction.html" ?>
         </div>
         <div id='Saved' class='tabcontent' style='display: none;'>
             <?php include "php/saved.html.php" ?>
+        </div>
+        <div id='Instruction' class='tabcontent' style='display: none;'>
+            <?php include "html/instruction.html" ?>
         </div>
         <?php include "html/register.html" ?>
         <?php include "html/login.html" ?>

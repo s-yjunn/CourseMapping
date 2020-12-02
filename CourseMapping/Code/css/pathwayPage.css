@@ -1,7 +1,7 @@
 /* Style the message */
 #info {
   background-color: rgb(241, 233, 158);
-  font-size: 0.2vw;
+  font-size: 1vw;
   color: #91712b;
   border: 1px solid #c9a559;
   border-radius: 2%;
@@ -13,7 +13,7 @@
 /* Style the pathway table */
 #pathTable {
   position: absolute;
-  top: 280px;
+  top: 310px;
   left: 50px;
   border-collapse: collapse;
   margin: auto;
@@ -75,4 +75,26 @@ svg {
   stroke-width: 2;
   marker-end: url(#markerArrow);
   position: absolute;
+}
+
+select {
+  width: 30%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
+.courseBtn, .active{
+  background-color: rgb(11, 104, 158);
+  transition-duration: 0.4s;
+  margin: 4px 8px;
+  padding: 15px 20px;
+  border: none;
+  color: white;
+}
+
+.courseBtn:hover, .active:hover{
+  background-color: darkcyan;
+  color:white;
 }

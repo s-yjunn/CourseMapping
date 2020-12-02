@@ -1,4 +1,22 @@
-
+// function getList() {
+//    last working version for nukhbah
+//
+//     // document.getElementById("userDetails").style.display="none";
+//     // document.getElementById("rList").style.display="block";
+//     var xmlhttp = new XMLHttpRequest();
+//     xmlhttp.onreadystatechange = function () {
+//         if (this.readyState == 4 && this.status == 200) { 
+//             document.getElementById("rList").style.display="block";
+//             document.getElementById("userDetails").style.display="none";
+//             document.getElementById("reviewsList").style.display = "none";
+//             // document.getElementById("rList").innerHTML += this.responseText;
+    
+            
+//         }
+//     }
+//     xmlhttp.open("GET", "php/readingList.php", true);
+//     xmlhttp.send();    
+// }
 
 function getList() {
     // document.getElementById("userDetails").style.display="none";
@@ -8,13 +26,14 @@ function getList() {
         if (this.readyState == 4 && this.status == 200) { 
             document.getElementById("rList").style.display="block";
             document.getElementById("userDetails").style.display="none";
+            document.getElementById("reviewsList").style.display = "none";
             document.getElementById("showAll").innerHTML = this.responseText;
             var task_count = document.getElementById("readingSize").innerHTML;
-
-            
+    
+                
             //Modified by BxM
             //From Akash Pal's blog https://blog.usejournal.com/create-a-to-do-list-application-with-html-css-and-pure-js-533e1b07c20e
-
+    
             var del_buttons = document.getElementsByClassName('delete'); 
             var task_container = document.querySelector('.tasks-container');
             var task_input = document.getElementById('new-task')
@@ -26,17 +45,17 @@ function getList() {
             var showNotStarted = document.getElementById('showNotStarted');
             var showState = 'show-all';
             showAll.style.color="white";
-
-            
+    
+                
             var task_card_string = "<div class=\"status-icon\"></div><p class=\"task-text\"><p class=\"task-status color-red\">Not-Started</p><ion-icon class=\"delete fs-large mg-10\" name=\"close-circle-outline\"></ion-icon>"
-
+    
             updateTaskCount();
             eventSetter();
-
+    
             function updateTaskCount(){
                 document.getElementById("taskLeftCount").innerHTML=task_count;
             }
-
+    
             function eventSetter(){
                 var del_buttons = document.getElementsByClassName('delete'); 
                 for(del of del_buttons){
@@ -59,9 +78,9 @@ function getList() {
                         cards[i].children[3].style.visibility="hidden";
                     })
                 }
-                
+                    
             }
-
+    
             function reassignIDs(){
                 var cards = document.getElementsByClassName('task-card');
                 var count=1;
@@ -70,40 +89,40 @@ function getList() {
                     card.eve
                 }
             }
-
+    
             function resetColor(){
                 var allButtons = document.getElementsByClassName('filter-button');
                 for(button of allButtons)
                     button.style.color = "gray";
             }
-
+    
             function removeCard(){
                 var parent = this.parentElement;
                 parent.classList.add('delete-card');
                 setTimeout(function(){
-
+    
                     parent.parentNode.removeChild(parent);
                     updateTaskCount();
                     reassignIDs(); 
                     eventSetter();
                 }, 550)
                 task_count --;
-
+    
             }
-
+    
             function changeProgress(){
-
+    
                 var parentCard = this.parentElement;
                 var status = parentCard.classList[1];
                 parentCard.classList.remove(status);
                 var statusElem = parentCard.children[2];
-            
+                
                 if(status == 'Not-Started'){
                     parentCard.classList.add('In-progress');
                     statusElem.innerHTML="In-progress";
                     statusElem.classList.remove(statusElem.classList[1]);
                     statusElem.classList.add('color-blue');
-
+    
                 }
                 else if(status =='Completed'){
                     parentCard.classList.add('In-progress');
@@ -118,8 +137,8 @@ function getList() {
                     statusElem.classList.add('color-green');
                 }
             }
-
-
+    
+    
             clearComplete.addEventListener('click', function(){
                 let cards = document.getElementsByClassName('Completed');
                 let parent = cards[0].parentElement;
@@ -137,11 +156,11 @@ function getList() {
                         clearInterval(intervalID);
                     }
                 }, 500);
-                
-
+                    
+    
             });
             showAll.addEventListener('click',function(){
-                
+                    
                 if(showState !='show-all'){
                     resetColor();
                     this.style.color="white";
@@ -152,11 +171,11 @@ function getList() {
                     showState ='show-all';
                 }
             });
-
-
-
+    
+    
+    
             showComplete.addEventListener('click',function(){
-                
+                    
                 if(showState !='showComplete'){
                     resetColor();
                     this.style.color="white";
@@ -171,9 +190,9 @@ function getList() {
                     showState = 'showComplete';
                 }
             });
-
+    
             showInprogress.addEventListener('click',function(){
-
+    
                 if(showState !='showInprogress'){
                     resetColor();
                     this.style.color="white";
@@ -189,7 +208,7 @@ function getList() {
                 }
             });
             showNotStarted.addEventListener('click',function(){
-
+    
                 if(showState !='showNotStarted'){
                     resetColor();
                     this.style.color="white";
@@ -206,24 +225,90 @@ function getList() {
             });
             }
         }
-                xmlhttp.open("GET", "php/readingList.php", true);
-                xmlhttp.send();
+        xmlhttp.open("GET", "php/readingList.php", true);
+        xmlhttp.send();
     }
-
-    //BxM: passing card details (title and status) to php
-           
-    function passVal(){
-        var allCards = document.getElementsByClassName('task-card');
-        var allElements=[];
-
-        for(card of allCards){
-            allElements.push([card.childNodes[9].innerHTML,card.childNodes[3].innerHTML,card.classList[1]])
-        }
-        var data = {
-            
-                fn: allElements,
-                str: "this_is_a_dummy_test_string2"
-        };
     
-            $.post("php/updateList.php", data);
+
+
+// buttonReadingList = document.getElementById("reading-list-button"); 
+// buttonReadingList.addEventListener('click', getList());
+
+function getReviews() {
+    var xmlhttp = new XMLHttpRequest();
+    //var params = 'username=' + username + '&name' + name; 
+    xmlhttp.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200) {
+            // something changes here when we get the reviews processed.
+            document.getElementById("userDetails").style.display = "none";
+            document.getElementById("rList").style.display="none";
+            document.getElementById("reviewsList").style.display = "block";
+            reviewsByUser = this.responseText;
+            console.log("this: ", JSON.parse(reviewsByUser)); 
+            addReviews(JSON.parse(reviewsByUser)); 
+            // show the tab with all the details of the reviews by the user.
+            
+
+        }
     }
+
+    xmlhttp.open("POST", "php/reviews.php", true);
+    xmlhttp.send();
+}
+
+var reviews_container = document.querySelector('.reviews-container');
+console.log("reviews container: ", reviews_container); 
+
+
+function addReviews(reviewsByUser) {
+    // add style --> come back later.
+
+    
+
+
+    // clear out all reviews every time and then fill them. 
+    reviews_container.innerHTML = "";
+
+    // array of users reviews in the form {id, rating, comment}. create divs and populate the reviews container 
+    //task_container.appendChild(task_card);
+    var review_main= document.createElement('div');
+    for(i=0; i<reviewsByUser.length; i++) {
+
+        // console.log("times run: ", i);
+
+        var review_card = document.createElement('div');
+        var styleContentDiv = "<div class=\"status-icon\"></div><p class=\"task-text color-blue\">"+reviewsByUser[i].title+"</p><br><p class=\"task-text\">"+reviewsByUser[i].comment+"</p><br><a class=\"task-status color-blue\" href=\"../../../../../../common/BookXMerch/Code/Private/Books/php/bookVisualize.php?content="+reviewsByUser[i].id+"\">Book Details</a>";
+        review_card.innerHTML = styleContentDiv; 
+        review_card.setAttribute("class", "task-card In-progress"); 
+        review_card.setAttribute("id", "r"+i);
+        
+        
+
+        
+        review_main.appendChild(review_card);
+        
+        //let card_text = document.querySelector('#r' + i + " p");
+        //card_text.innerHTML = "Book ID: "+ reviewsByUser[i].id + ", Rating: " + reviewsByUser[i].rating + ", Comment: " + reviewsByUser[i].comment;
+    }
+    console.log("review main", review_main);
+    reviews_container.appendChild(review_main);
+}
+
+
+//BxM: passing card details (title and status) to php
+        
+function passVal(){
+    var allCards = document.getElementsByClassName('task-card');
+    var allElements=[];
+
+    for(card of allCards){
+        allElements.push([card.childNodes[9].innerHTML,card.childNodes[3].innerHTML,card.classList[1]])
+    }
+    var data = {
+        
+            fn: allElements,
+            str: "this_is_a_dummy_test_string2"
+    };
+
+        $.post("php/updateList.php", data);
+}

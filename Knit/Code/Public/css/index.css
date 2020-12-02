@@ -230,6 +230,40 @@ input[type=text], input[type=password] {
   color: rgb(239, 35, 60, 0.6);
 }
 
-#userProfile, #editProfile {
+#userProfile, #editProfile, #userPatterns {
 	display: none;
+}
+
+/* Pattern previews on user page */
+.uPa {
+	margin: 15px;
+	max-width: 20%;
+}
+
+/* 'manage pattern' divs on user page */
+.uPaM {
+	max-width: 100%;
+}
+
+/* MODAL */
+/* background to make modal divs "float" */
+.dark {
+	display: none; /* Hidden by default */
+	position: fixed;
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background-color: hsla(0, 0%, 23%, 0.8);
+	padding-top: 30px;
+}
+/* modals to float over some 'dark' div */
+.float {
+	width: 30%;
+	margin: auto;
+	padding: 2rem;
+	background-color: white;
+border-radius: 0.4rem;
 }

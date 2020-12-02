@@ -164,8 +164,8 @@ $loggedUser = $_SESSION["name"];
             echo "<div class='barCol'> <b> Current reviews </b>";
             echo "<ul>";
             for($j=0; $j<sizeof($reviews); $j++) {
-                echo "<li style='color:rgb(119,89,112)'> User: " . $reviews[$j]["user"];
-                echo "<div style='color:black'>" . $reviews[$j]["text"] . "</div> </li>";
+                echo "<li style='color:rgb(119,89,112)'>" . $reviews[$j]["user"] . ": ";
+                echo "<div style='color:black'>" . $reviews[$j]["comment"] . "</div> </li>";
                 if ($j != sizeof($reviews) - 1 ) {
                     echo "<hr>";
                 };

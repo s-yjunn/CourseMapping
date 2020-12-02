@@ -49,7 +49,7 @@
             </div>
 
             <div class="w3-hide-medium w3-hide-small">
-                <a href="#" class="w3-bar-item buttonNavBar">Community</a>
+                <a href="../../Private/CommunityPosts/posts.php" class="w3-bar-item buttonNavBar">Community</a>
             </div>
         </div>
     </nav>

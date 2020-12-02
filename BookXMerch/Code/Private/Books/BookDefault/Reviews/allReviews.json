@@ -1,0 +1,34 @@
+{
+    "nmajid": [
+        {
+            "id": "1111", 
+            "title": "Superman Archives, Vol. 2",
+            "rating": 5,
+            "comment": "This is the best Superman book i've ever read"
+        }, 
+
+        {
+            "id": "1118",
+            "title": "The Glass Hotel",  
+            "rating": 4,
+            "comment": "Such a gripping read!!"
+        },
+
+        {
+            "id": "1112", 
+            "title": "Star Trek: Waypoint #2",
+            "rating": 5,
+            "comment": "I would recommend this to everyone!!"
+        }
+    ],
+
+    "iberrada": [
+        {
+            "id": "1111", 
+            "title": "Superman Archives, Vol. 2",
+            "rating": 5,
+            "comment": "Superman always fought the good fight and brought justice to the wicked."
+        }
+    ]
+
+}

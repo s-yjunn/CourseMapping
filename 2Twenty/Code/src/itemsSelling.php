@@ -4,7 +4,7 @@ function search_selling($uname)
     include ("db_connect.php");
 
     // search by seller
-    $sql = "SELECT * FROM `items_for_sale` WHERE seller LIKE CONCAT('%',?,'%'); ";
+    $sql = "SELECT * FROM `items_for_sale` WHERE seller LIKE CONCAT(?); ";
 
     $query = $conn->prepare($sql);
     $query->bind_param('s', $u);

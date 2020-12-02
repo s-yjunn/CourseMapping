@@ -50,6 +50,7 @@
                                             <div class="media-content">
                                                 <p class="title is-4">'.$title.'</p>
                                                 <p class="subtitle is-6">by @'.$seller.'</p>
+                                                <p class="subtitle is-7">image from '.$image_url.'</p>
                                             </div>
                                         </div>
                                     </div>

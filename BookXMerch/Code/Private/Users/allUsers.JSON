@@ -6,7 +6,13 @@
             "type": "admin",
             "username": "nmajid",
             "password": "adminuser",
-            "readingList": []
+            "readingList": [
+                [
+                    "1111",
+                    "Superman Archives, Vol. 2",
+                    "Not-Started"
+                ]
+            ]
         },
         {
             "name": "Imane Berrada",
@@ -56,6 +62,11 @@
                 [
                     "1112",
                     "Star Trek: Waypoint #2",
+                    "In-progress"
+                ],
+                [
+                    "1116",
+                    "Anne Frank",
                     "Not-Started"
                 ]
             ]

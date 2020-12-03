@@ -46,7 +46,7 @@
                 <button class="barCol buttonClass" onclick="getBookByGenre('debut-novel')">Debut Novel</button>
                 <button class="barCol buttonClass" onclick="getBookByGenre('horror')">Horror</button>
                 <button class="barCol buttonClass" onclick="getBookByGenre('romance')">Romance</button>
-
+                <button class="barCol buttonClass" onclick="getBookByGenre('other')">Other</button>
             </div>
         </div>
 

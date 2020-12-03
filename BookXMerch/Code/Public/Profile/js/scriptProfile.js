@@ -1,22 +1,18 @@
-// function getList() {
-//    last working version for nukhbah
-//
-//     // document.getElementById("userDetails").style.display="none";
-//     // document.getElementById("rList").style.display="block";
-//     var xmlhttp = new XMLHttpRequest();
-//     xmlhttp.onreadystatechange = function () {
-//         if (this.readyState == 4 && this.status == 200) { 
-//             document.getElementById("rList").style.display="block";
-//             document.getElementById("userDetails").style.display="none";
-//             document.getElementById("reviewsList").style.display = "none";
-//             // document.getElementById("rList").innerHTML += this.responseText;
-    
-            
-//         }
-//     }
-//     xmlhttp.open("GET", "php/readingList.php", true);
-//     xmlhttp.send();    
-// }
+function getUpload() {
+    document.getElementById("rList").style.display="none";
+    document.getElementById("userDetails").style.display="none";
+    document.getElementById("reviewsList").style.display = "none";
+    document.getElementById("uploadButton").style.display = "block";
+}
+function showUploadModal(){
+    document.getElementById("uploadButton").style.display="none";
+    document.getElementById("uploadForm").style.display="block";
+}
+
+function closeUploadModal(){
+    document.getElementById("uploadButton").style.display="block";
+    document.getElementById("uploadForm").style.display="none";
+}
 
 function getList() {
     // document.getElementById("userDetails").style.display="none";
@@ -27,6 +23,7 @@ function getList() {
             document.getElementById("rList").style.display="block";
             document.getElementById("userDetails").style.display="none";
             document.getElementById("reviewsList").style.display = "none";
+            document.getElementById("uploadButton").style.display = "none";
             document.getElementById("showAll").innerHTML = this.responseText;
             var task_count = document.getElementById("readingSize").innerHTML;
     
@@ -242,6 +239,7 @@ function getReviews() {
             // something changes here when we get the reviews processed.
             document.getElementById("userDetails").style.display = "none";
             document.getElementById("rList").style.display="none";
+            document.getElementById("uploadButton").style.display = "none";
             document.getElementById("reviewsList").style.display = "block";
             reviewsByUser = this.responseText;
             console.log("this: ", JSON.parse(reviewsByUser)); 

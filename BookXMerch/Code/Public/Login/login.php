@@ -51,7 +51,7 @@
     </header>
 
     <br>
-
+    <!-- LOGIN FORM-->
     <div id="loginForm" class="w3-center modal-content animate" style="display:none">
         <div class="imgcontainer">
                 <span onclick="closeLogin()" class="close"

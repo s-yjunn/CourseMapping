@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/profileStyles2.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!-- <link rel="stylesheet" href="styles/bookshelf.css">  -->
    
     <title>Profile</title>
@@ -32,13 +32,14 @@
 
           <div class="newFont">
             <b class="barCol"><?php echo "Hello, " . $_SESSION["name"] ."!";?></b>
-            <a class="barCol buttonClass" href="../../Public/Profile/profile.php" style="width: 200px; font-family">User Details</a>
+            <a class="barCol buttonClass" href="../../Public/Profile/profile.php" style="width: 200px; font-family">My Details</a>
             <button class="barCol buttonClass" id="reading-list-button" onclick="getList()">My Reading List</button>
+            <button class="barCol buttonClass" onclick="getUpload()">Upload a Book</button>
             <button class="barCol buttonClass" onclick="#">My Books</button>
             <button class="barCol buttonClass" onclick="#">My Posts</button>
             <button class="barCol buttonClass" onclick="getReviews()">My Reviews</button>
             <button class="barCol buttonClass" onclick="getRatings()">My Ratings</button>
-    
+
           </div>
         </div>
 
@@ -70,7 +71,7 @@
         
         ?>
 
-
+    <!-- Div for the user details -->
         <div class="card" id="userDetails">
             <div class="tabcontent bookBorder">
                 <h3 class="w3-center"><?php  echo "Hello, " .$_SESSION['name']."!"; ?> </h3>
@@ -92,7 +93,7 @@
                 
             </div>   
         </div>
-        
+    <!-- Div for the reading list -->
     <div id="rList" class="card" style="display:none">
     
         <div id="readingListWrapper" class="tabcontent">
@@ -144,24 +145,70 @@
                 </div>
 
                 <hr>
-                <!-- <div class="footer">
-                    <div class="task-count">
-                        <p id="task-left-count" class="fs-med bold">3 </p>&nbsp
-                        <p class="fs-med">books on the Reading List</p>
-                    </div>
-                    <div class="filter">
-                        <p id='showAll' class="filter-button">All</p>
-                        <p id='showComplete' class="filter-button">Completed</p>
-                        <p id='showInprogress' class="filter-button">In-progress</p>
-                        <p id='showNotStarted' class="filter-button">Not-started</p>
-                    </div>
-                </div> -->
             </div>
         </div>
     </div>
     
+    <!-- Div for the book upload -->
 
+    <div>
+        <div id="uploadButton" class="w3-center w3-display-middle w3-margin-top" style="display:none">
+            <h1 class="w3-xxxlarge w3-text-white"><span  style="overflow:hidden">
+                <img class="uploadButton" src="../General/styles/uploadLogo.png" onclick="showUploadModal()">  </span>
+            </h1>
+             
+        </div>
+    </div>
 
+    <br>
+    <!-- Upload FORM-->
+    <div id="uploadForm" class="w3-center modal-content animate" style="display:none">
+        <div class="imgcontainer-upload">
+                <span onclick="closeUploadModal()" class="closeModal"
+                    title="Close Modal">&times;</span>
+                <img src="../General/styles/uploadLogo.png" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container-upload">
+            
+            <form action="php/bookUpload.php" method="post">
+                <label class="label" for="genre"><b>Genre</b></label>
+   
+                <select id="genre" name="genre">
+                    <option value="comics">Comic Books</option>
+                    <option value="children">Children's Books</option>
+                    <option value="sci-fi">Science Fiction</option>
+                    <option value="fiction">Fiction</option>
+                    <option value="nonfiction">Nonfiction</option>
+                    <option value="debut-novel">Debut Novel</option>
+                    <option value="horror">Horror</option>
+                    <option value="romance">Romance</option>
+                    <option value="other">Other</option>
+                </select>
+                <br>
+                <br>
+                <label class="label" for="text"><b>Title</b></label>
+                <input type="title" name="title" placeholder="Title" required>
+                <br>
+                <label class="label" for="text"><b>Author</b></label>
+                <input type="author" name="author" placeholder="Author" required>
+                <br>
+                <label class="label" for="text"><b>Illustrator</b></label>
+                <input type="text" name="illustrator" placeholder="Illustrator">
+                <br>
+                <label class="label" for="summary"><b>Short Summary</b></label>
+                <textarea name="summary" name="summary" wrap="soft" placeholder="Summary" required> </textarea>
+                <br>
+                <label class="label" for="url"><b>Book URL</b></label>
+                <input type="url" name="url" placeholder="url">
+                <br>
+                <br>
+                <button type="submit" name="submit" id="uploadSubmit" class="upload">Upload</button>
+            </form>
+        </div>
+        
+
+    </div>
         
     <!-- Page Content End (below) -->
     </div>

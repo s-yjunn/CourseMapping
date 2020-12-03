@@ -3,6 +3,7 @@
   if(isset($_SESSION["name"])) {
     $loggedIn = true;
     $loggedUser = $_SESSION["name"]; 
+    $type = $_SESSION["type"]; 
   } else {
     $loggedIn = false;
     header("location: ../../Public/Login/login.php");
@@ -41,6 +42,12 @@
             <div class="w3-hide-medium w3-hide-small">
                 <button id="logoutButton3" class="w3-bar-item w3-right buttonNavBar" style="cursor:pointer">Log Out</button>
             </div>
+            <?php if($type=="admin") {
+
+            echo "<div class='w3-hide-medium w3-hide-small'>
+                        <a href='../../Private/Admin/admin.php' class='w3-bar-item buttonNavBar'>Admin page</a>
+                </div>";
+            }?>
             <div class="w3-hide-medium w3-hide-small">
                 <a href="../../Public/index.php" class="w3-bar-item buttonNavBar">Home</a>
             </div>

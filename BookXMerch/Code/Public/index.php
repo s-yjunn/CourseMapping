@@ -3,6 +3,7 @@
   if(isset($_SESSION["name"])) {
     $loggedIn = true;
     $loggedUser = $_SESSION["name"]; 
+    $type = $_SESSION["type"]; 
   }
 //   unset($_SESSION["name"]); 
 //   unset($_SESSION["psw"]); 
@@ -31,15 +32,12 @@
             <a href="../Public/index.php" class="w3-bar-item w3-button"><b>Bookstore</b>x<b>Merch</b></a>
             <!-- Float links to the right. Hide them on small screens -->
 
-            <div class='w3-right w3-hide-medium w3-hide-small'>
-                <a href='#aboutUs' class='w3-bar-item buttonNavBar'>About us</a>
-            </div>
-            
-            
-            <div class='w3-right w3-hide-medium w3-hide-small'>
-                <a href='Merch/collection.php' class='w3-bar-item buttonNavBar'>Merch</a>
-            </div>
+            <?php if($type=="admin") {
 
+            echo "<div class='w3-hide-medium w3-hide-small'>
+                        <a href='../Private/Admin/admin.php' class='w3-bar-item buttonNavBar'>Admin page</a>
+                </div>";
+            }?>
             <?php if( $loggedIn == false) {
                 echo "<div class='w3-right w3-hide-small'>
                         <a href='SignUp/signup.php' class='w3-bar-item buttonNavBar'>Sign up</a>
@@ -49,12 +47,31 @@
                         <a href='Login/login.php' class='w3-bar-item buttonNavBar'>Login</a>
                     </div>";
             } else {
-                echo "<div class='w3-hide-small'>
+                echo "<div class='w3-hide-medium w3-hide-small'>
+                        <a href='Profile/profile.php' class='w3-bar-item buttonNavBar'>Profile</a>
+                    </div>";
+
+                if($type=="admin") {
+                    echo "<div class='w3-right w3-hide-medium w3-hide-small'>
+                            <a id='logoutButton2' class='w3-bar-item buttonNavBar' style='cursor:pointer'> Log Out</a>
+                        </div>";
+                } else {
+                    echo "<div class='w3-right w3-hide-medium w3-hide-small'>
                         <a id='logoutButton2' class='w3-bar-item buttonNavBar' style='cursor:pointer'> ". $_SESSION["name"].": Log Out</a>
                     </div>";
+                }
+                
             }
             
             ?>
+            <div class='w3-hide-medium w3-hide-small'>
+                <a href='#aboutUs' class='w3-bar-item buttonNavBar'>About us</a>
+            </div>
+            
+            
+            <div class='w3-hide-medium w3-hide-small'>
+                <a href='Merch/collection.php' class='w3-bar-item buttonNavBar'>Merch</a>
+            </div>
         </div>
     </nav>
 

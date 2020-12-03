@@ -70,7 +70,7 @@ session_start();
             <button class="barCol buttonClass">Pending Requests</button>
             <button class="barCol buttonClass" onclick="getUsers()">All Users</button>
             <button class="barCol buttonClass" onclick="getBooks()">All Books</button>
-            <button class="barCol buttonClass" onclick="#">All Reviews</button>
+            <button class="barCol buttonClass" onclick="getReviews()">All Reviews</button>
     
           </div>
         </div>
@@ -139,6 +139,41 @@ session_start();
 
             } 
             
+        ?>
+        </div>
+
+        <h3 id="headerReviews" class="w3-center allUsers" style="display:none">All BxM Reviews </h3>
+
+        <div id="reviewsGrid" class="gridContainer" style="display:none">
+        <!-- Get all the book info from the allBooks.JSON to display. -->
+        <?php 
+            $arrayOfBooks = file_get_contents("../Books/allBooks.JSON");
+            $booksArray = json_decode($arrayOfBooks, true);
+            $byGenre = array();
+            
+            foreach ($booksArray as $key => $jsons) { 
+
+            $newArray = array($jsons["title"],$jsons["author"],$jsons["illustrator"],$jsons["description"],$jsons["url"],$jsons["rating"],$jsons["reviews"],$jsons["bookid"]);
+            echo "<div class='userCard'>";
+            echo "<h1>".$newArray[0]."</h1>";
+            
+            $i=0;
+            foreach ($jsons["reviews"] as $review) {
+                $i++;
+                echo "<p onclick='displayReview(".$review.")' class='userTitle'> Review ".$i."</p>";
+                $j=0;
+                // foreach ($review as $rev) { 
+                //     $j++;
+                //     if($j==0) {
+                //         echo "<p style='font-weight:bold'> User: " . $rev;
+                //     } else {
+                //         echo $rev . " </p>";
+                //     }
+                    
+                // } 
+            }
+            echo "</div>";
+            }          
         ?>
         </div>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>

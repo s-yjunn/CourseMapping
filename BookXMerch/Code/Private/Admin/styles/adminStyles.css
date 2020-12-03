@@ -16,15 +16,15 @@ body {
     color:white;
 }
 
-/*Book Cards*/
-/* .bookCard {
+/*Review Cards*/
+.reviewCard {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     width: 20em;
     margin: auto;
     text-align: center;
     font-family: 'Poppins';
-    height: 15em;
-} */
+    background-color: white;
+}
 /*Users cards*/
 
 .userCard {

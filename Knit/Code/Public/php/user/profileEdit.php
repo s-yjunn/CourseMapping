@@ -1,5 +1,7 @@
 <?php
   //This file allows a user to view and edit their profile
+  // @author Isabel
+  // Last modified 11/2/2020
 
   //if this is being requested from the 'saveProfile' js function
   if (isset($_GET["uname"])) {
@@ -22,12 +24,8 @@
   } else {
       $pfp = "imgs/defaultPfp.png";
   }
-  if($userData["about"]) {
-      $about = $userData["about"];
-  } else {
-      $about = "This user hasn't added a bio yet.";
-  }
-
+  $about = $userData["about"];
+  $patterns = $userData["patterns"];
 ?>
 
 <button class="btn1" onclick="hide('userProfile'); show('userHome')"><i class="fas fa-arrow-left"></i> Back</button><br><br>
@@ -43,6 +41,16 @@
   <?php endif; ?>
   <h5>About me</h5>
   <p class="about"><?= nl2br($about); ?></p>
+  <br>
+  <h5>My patterns</h5>
+  <p>(Created in the "Pattern Maker" tab!)</p>
+  <?php foreach($patterns as $pattern): ?>
+    <?php if ($pattern["public"]):
+      $imgPath = "../Private/imgs/" . $username . "/" . $pattern["image"];
+    ?>
+      <img class='uPa' src='<?= $imgPath; ?>'>
+    <?php endif; ?>
+  <?php endforeach; ?>
 </div>
 
 <div class = "profile" id="editProfile">
@@ -55,4 +63,14 @@
   <?php endif; ?>
   <h5>About me</h5>
   <textarea class="about" id = "editAbout"><?= $about; ?></textarea>
+  <br>
+  <h5>My patterns</h5>
+  <p>(Created in the "Pattern Maker" tab!)</p>
+  <?php foreach($patterns as $pattern): ?>
+    <?php if ($pattern["public"]):
+      $imgPath = "../Private/imgs/" . $username . "/" . $pattern["image"];
+    ?>
+      <img class='uPa' src='<?= $imgPath; ?>'>
+    <?php endif; ?>
+  <?php endforeach; ?>
 </div>

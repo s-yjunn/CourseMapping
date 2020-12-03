@@ -26,9 +26,8 @@ if (trim($newUser) == "") { // check for empty user
 	$phpArray[$newUser]["psw"] = $newPsw;
 	$phpArray[$newUser]["admin"] = false; // can't be admin to begin with
 	$phpArray[$newUser]["pfp"] = null; // no profile pic to begin with
-	$phpArray[$newUser]["about"] = null; // no bio to begin with
-	$phpArray[$newUser]["private"] = []; // no private patterns to begin with
-	$phpArray[$newUser]["public"] = []; // no public patterns to begin with
+	$phpArray[$newUser]["about"] = "This user hasn't added a bio yet."; // no bio to begin with
+	$phpArray[$newUser]["patterns"] = []; // no patterns to begin with
 	// overwrite json file with new array
 	$updatedArray = json_encode($phpArray);
 	file_put_contents($path, $updatedArray);

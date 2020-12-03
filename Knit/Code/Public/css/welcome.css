@@ -1,0 +1,21 @@
+/* WELCOME */ 
+#Welcome {
+	color: white;
+}
+#Welcome h1 {
+	margin: 0;
+	font-size: 6rem;
+	font-weight: bold;
+}
+.slogan {
+	font-weight: bold;
+	font-style: italic;
+	font-size: 1.5rem;
+}
+.col {
+	margin: 5rem 0;
+	text-align: center;
+}
+.col h3, .col p {
+	padding: 0.5rem 10rem 0rem 10rem;
+}

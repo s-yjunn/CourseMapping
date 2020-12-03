@@ -17,9 +17,17 @@
 	<link rel="icon" href="imgs/icon.png" type="image/icon type">
 	<!-- stylesheets -->
 	<link rel="stylesheet" href="css/index.css">
-	<link rel="stylesheet" href="css/forum.css">
-	<link rel="stylesheet" href="css/slideshow.css">
+	<link rel="stylesheet" href="css/loginBar.css">
+	<link rel="stylesheet" href="css/tabBar.css">
+	<link rel="stylesheet" href="css/tabContent.css">
+	<link rel="stylesheet" href="css/welcome.css">
+	<link rel="stylesheet" href="css/winners.css">
+	<link rel="stylesheet" href="css/vote.css">
 	<link rel="stylesheet" href="css/pattern.css">
+	<link rel="stylesheet" href="css/forum.css">
+	<link rel="stylesheet" href="css/loginRegister.css">
+	<link rel="stylesheet" href="css/user.css">
+	<link rel="stylesheet" href="css/adminPage.css">
 	
 	<!-- bootstrap stylesheets -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">

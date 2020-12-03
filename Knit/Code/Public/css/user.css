@@ -1,0 +1,41 @@
+@keyframes fadeEffect {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+#userHome, #userProfile, #userPattern {
+	animation: fadeEffect;
+}
+#userProfile, #editProfile, #userPatterns {
+	display: none;
+}
+
+/*USER PROFILES*/
+.profile .pfp {
+	object-fit: cover;
+	object-position: center; /* Center the image within the element */
+	float: left;
+	margin: 0px 30px 30px 0px;
+    width: 200px;
+    max-height: 200px;
+}
+
+/*USER PAGE*/
+#User a { /*Copied from forum*/
+	color: rgb(239, 35, 60);
+	transition: color 0.4s;
+}
+#User a:hover {
+  cursor: pointer;
+  color: rgb(239, 35, 60, 0.6);
+}
+
+/* Pattern previews on user page */
+.uPa {
+	margin: 15px;
+	max-width: 20%;
+}
+
+/* 'manage pattern' divs on user page */
+.uPaM {
+	max-width: 100%;
+}

@@ -1,0 +1,16 @@
+/* LOGIN BAR */
+#LoginBar {
+	background-color: rgb(217, 4, 41);
+	color: white;
+	text-align: center;
+	padding: 0.5rem;
+	font-size: 0.9rem;
+}
+#LoginBar a {
+	color: rgb(255,255,255,0.7);
+	transition: color 0.7s;
+}
+#LoginBar a:hover {
+	color: rgb(255,255,255,1);
+	cursor: pointer;
+}

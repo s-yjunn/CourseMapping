@@ -1,0 +1,26 @@
+/* TAB CONTENT */
+.tabcontent {
+	padding: 2rem;
+	border: ;
+}
+.tabcontent h3 {
+	font-size: 4rem;
+	font-weight: bold;
+	margin: 0 0 2rem 0;
+	padding: 0 0 0.5rem 0;
+}
+.tabcontent h4 {
+	font-size: 2.5rem;
+	font-weight: bold;
+}
+.tabcontent h5 {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+.underline {
+	border-bottom: 4px dashed rgb(239, 35, 60);
+}
+.tab img {
+	width: 50px;
+	height: auto;
+}

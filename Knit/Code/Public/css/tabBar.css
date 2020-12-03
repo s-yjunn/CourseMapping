@@ -1,0 +1,30 @@
+/* TAB BAR */
+.tab, .tablinks {
+	background-color: rgb(239, 35, 60);
+}
+.navbar-brand {
+	color: rgb(255,255,255,1);
+}
+.tablinks {
+	color: rgb(255,255,255,0.7);
+	transition: color 0.4s;
+	border: none;
+	padding: 1rem;
+}
+.navbar-brand {
+	font-weight: bold;
+}
+.tablinks.active {
+	background-color: rgb(239, 35, 60);
+	color: white;
+}
+.navbar-brand:hover, .tablinks:hover {
+	color: rgb(255,255,255,1);
+}
+.custom-toggler .navbar-toggler-icon {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.custom-toggler.navbar-toggler {
+	background-color: rgb(0,0,0,0);
+	border-color: rgb(255,255,255,1);
+} 

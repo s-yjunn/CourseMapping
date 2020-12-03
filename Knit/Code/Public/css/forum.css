@@ -1,5 +1,12 @@
+@keyframes fadeEffect {
+	from {opacity: 0;}
+	to {opacity: 1;}
+} 
 #forumPost {
     display: none;
+}
+#forumHome, #forumPost, #responseList {
+	animation: fadeEffect 1s;
 }
 
 /* GENERAL FORUM */

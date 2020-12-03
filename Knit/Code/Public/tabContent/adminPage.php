@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="css/contest.css">
-
 <h3 class="underline">Manage Site</h3>
 
 <div class="column side">

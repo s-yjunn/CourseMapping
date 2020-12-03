@@ -1,3 +1,9 @@
+/**
+ * @author Allison Brand, Hyana
+ * 
+ * Allison made the overall function, Hyana made the part that asks the user for input.
+ */
+
 // Uses a function from script.js
 
 function clearUser() {
@@ -6,9 +12,10 @@ function clearUser() {
     // Just need to convert from string with JSON.parse() first, because sessionStorage can only store strings.
 
     // Check if there are tabs open:
-    if(sessionStorage["tabsOpen"] && sessionStorage["tabsOpen"] != "0") { // If so, ask the user if they want to save pathways.
+    if(typeof sessionStorage["tabsCreated"] !== 'undefined' && sessionStorage["tabsCreated"] != "0") { 
+        // If so, ask the user if they want to save pathways.
         var saveWanted = 
-        window.confirm("You want to save all open tabs? If you click cancel, all works you've done will be permanently deleted.");
+        window.confirm("You want to save all open tabs? If you click cancel, all works you've done will be permanently deleted."); // This line is Hyana's.
         if(saveWanted) {
             // In sessionStorage, each pathway is referenced by a numerical id that matches that of the tab that stores it.
             forEveryTab(save);

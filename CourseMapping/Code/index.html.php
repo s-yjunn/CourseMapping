@@ -62,6 +62,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/pathway.js"></script>
     <script src="js/pathwayMeta.js"></script>
+    <script src="js/save.js"></script>
     <script src="js/logout.js"></script>
     <script src="js/openSaved.js"></script>
 </body>

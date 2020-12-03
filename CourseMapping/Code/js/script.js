@@ -1,25 +1,56 @@
+/**
+ * @author Allison Brand,  Hyana contributed a function
+ * 
+ * This script is responsible for tab related workings.
+ * It generates, coordinates, and works with tab links, tab content divs, and their associated pathway data.
+ *    Brings back tabs after refresh (beginning of the document)
+ *    Creates new tabs, restores old ones, changed which tab is selected and opens/closes tabs, 
+ *      updating the data at 
+ *      provides a method to access all tabs
+ * 
+ * Every tab has a tab link, a tab conent div, and a string version of the pathway data in sessionStorage.
+ * 
+ * Some global variables that help to coordinate them are:
+ *    currentTab: a string holding the currently selected tab's numerical id
+ *    
+ *    Session Storage keys:
+ *      tabsCreated: a string containing a number that is incremented everytime a tab is created, and it used to generate new tab id's.
+ *         This is only reset on logout.
+ *      #: Every tab that is shown has a corresponding key in sessionStorage that contains it's associated pathway data.
+ *    
+ *    Located in pathway.js, but still important here:
+ *      currentPathway: a javascript object holding the current tab's pathway data in a way the is easy to manipulate
+ * 
+ *  The major methods use and share many helper methods.
+ * 
+ * 
+ *  Hyana contributed a function that asks the user whether to save a tab they are closing in a visually appealing way.
+ */
+
 //file paths:
 var tabpath = "html/tab.html";
 
 // current tab element's id
 var currentTab;
+
 // sessionStorage stores enough information on each pathway to bring it back after a refresh.
 // Each pathway is referenced by a numerical id that matches that of the tab that stores it.
 // the stored pathway also usable for keeping track of the nodes' positions while the user is interacting with the pathway.
 // Just need to convert from string with JSON.parse() first, because sessionStorage can only store strings.
-if(!sessionStorage["tabsOpen"]) { // Only set it to zero if it hasn't been set yet.
-  sessionStorage["tabsOpen"] = "0"; // sessionStorage always stored data as text, even if given an int
+if(!sessionStorage["tabsCreated"]) { // Only set it to zero if it hasn't been set yet.
+  sessionStorage["tabsCreated"] = "0"; // sessionStorage always stored data as text, even if given an int
 } else {  // ______________________________________________________________________ <-- This should run when it refreshes
   //                 If there are pathway tabs, put them up!
   forEveryTab(function(tabID) {
     // The pathway keys are the same as the id's of the tabs that hold them
     var pathway = JSON.parse(sessionStorage[tabID]);
+    // NEED TO ADD: Also use pathway to visually put up the course map that the user has made.
     restoreTab(pathway.title, tabID);
   });
 } // _____________________________________________________________________________
 
 // Loops through all the tabs, 
-// Takes a function and passes each tabID (a string) to it  
+// Takes a function and passes each tabID (a numerical string) to it  
 function forEveryTab(tabFunction) {
   // In sessionStorage, each pathway is referenced by a numerical id that matches that of the tab that stores it.
   // the stored pathway needs to be converted from string with JSON.parse() first, because sessionStorage can only store strings.
@@ -37,7 +68,7 @@ function openTab(evt, tabID) {
 }
 
 function newTab() {
-  // if(sessionStorage["tabsOpen"] == 5) { 
+  // if(sessionStorage["tabsCreated"] == 5) { 
   //   alert("You have reached the maximum number of pathway tabs (5).")
   //   return
   // }
@@ -64,13 +95,13 @@ function newTab() {
 
 //    -----------------      HELPER FUNCTIONS:      -------------------
 
-// Updates sessionStorage["tabsOpen"], and uses that to generate the new tab ID
+// Updates sessionStorage["tabsCreated"], and uses that to generate the new tab ID
 function newTabID() {
-  // Update "tabsOpen"
+  // Update "tabsCreated"
   // sessionStorage always stored data as text, even if given an int
-  sessionStorage["tabsOpen"] = parseInt(sessionStorage["tabsOpen"]) + 1; 
-  // Use "tabsOpen" for tabID
-  return sessionStorage["tabsOpen"];
+  sessionStorage["tabsCreated"] = parseInt(sessionStorage["tabsCreated"]) + 1; 
+  // Use "tabsCreated" for tabID
+  return sessionStorage["tabsCreated"];
 }
 
 // Takes two strings
@@ -110,16 +141,16 @@ function selectTab(tabLink, tabcontent, tabID) {
   }
   // If currentPathway was already set, save it in sessionStorage[currentTab]
   storeCurrentPathway()
-
-  currentTab = tabID; // Now update the current tab id
-
+  
+  // Now update the current tab id then pathway
+  currentTab = tabID; 
   currentPathway = JSON.parse(sessionStorage[currentTab]);
 }
 
 
 // Creates a new tablink in the navigation bar
 // The tabID parameter is a unique id for every tab, 
-//        using sessionStorage["tabsOpen"]. 
+//        using sessionStorage["tabsCreated"]. 
 //        It is a parameter so that this function can be explicitly correlated with createPathwayDiv()
 // Returns a reference to the new tablink, a button element
 function createTabLink(tabID, title) {
@@ -141,6 +172,12 @@ function createTabLink(tabID, title) {
 }
 
 function removeTab(tabID) {
+  /* 
+  Does not update sessionStorage["tabsCreated"] because that is used to generate new tab id's.
+  There is no reason to expect that the removed tab will be the one with the highest id number, so 
+  updating sessionStorage["tabsCreated"] would just make things more complicated than needed.
+  */
+
   // Remove the tablink:
   var tabBar = document.getElementById("tab");
   var tabLink = document.getElementById("link_" + tabID);
@@ -150,6 +187,7 @@ function removeTab(tabID) {
   var tabContent = document.getElementById(tabID);
   tabContent.parentNode.removeChild(tabContent);
 
+  /*@author Hyana */
   $( function() {
     $("#dialog-confirm").dialog({
       resizable: false,
@@ -158,12 +196,16 @@ function removeTab(tabID) {
       modal: true,
       buttons: {
         "Save the tab": function() {
-          if(tabID == currentTab) { // currentPathway might hold something new
+          /* @author Allison */
+          if(tabID == currentTab) { // currentPathway corresponds to currentTab
+            // currentPathway might hold something new
             // If currentPathway was already set, save it in sessionStorage[currentTab]
             storeCurrentPathway();
           }
-          save(tabID);   
-          sessionStorage.removeItem(tabID);     
+          save(tabID);
+          // Remove stored pathway from session storage
+          sessionStorage.removeItem(tabID); 
+          /* End of Allison's code in Hyana's contribution */
           $(this).dialog("close");
         },
           "Don't save the tab": function() {
@@ -173,18 +215,9 @@ function removeTab(tabID) {
       }
     });
   } );
-
-  // if(saveWanted) {
-  //   if(tabID == currentTab) { // currentPathway might hold something new
-  //     // If currentPathway was already set, save it in sessionStorage[currentTab]
-  //     storeCurrentPathway();
-  //   }
-  //   save(tabID);
-  // }
-
-  // Remove stored pathway from session storage
-  // sessionStorage.removeItem(tabID);
+  /* End of Hyana's contribution in Allison's code */
 }
+
 
 // Stores currentPathway in sessionStorage
 // uses the global variable currentTab 
@@ -199,10 +232,10 @@ function storeCurrentPathway() {
 
 // Creates a new tabcontent div containing the interactive pathway orgainzer
 // The tabID parameter is a unique id for every tab,
-//        using sessionStorage["tabsOpen"]. 
+//        using sessionStorage["tabsCreated"]. 
 //        It is a parameter so that this function can be explicitly correlated with createTabLink()
 // Returns a reference to the new tabcontent, a div element
-function createPathwayDiv(tabID) {
+function createPathwayDiv(tabID, title) {
   var pathwayOrganizer = document.createElement("div");
   pathwayOrganizer.id = tabID; // unique ID for every tab
   pathwayOrganizer.className = "tabcontent";
@@ -214,6 +247,13 @@ function createPathwayDiv(tabID) {
     if (this.readyState == 4 && this.status == 200) {
       // put the pathway organizer HTML into the new tabcontent
       pathwayOrganizer.innerHTML = xhttp.responseText;
+
+      /* If the parameter title was given, this tab has a name,
+      and the tab content should be adjusted to reflect that */
+      if(typeof title === 'string') { // Checking that the type is a string is mostly about checking that it is not undefined.
+        var titleElement = pathwayOrganizer.getElementsByClassName("pathwayTitle")[0]; // There will only be titleElement in a tab, so the first one is it.
+        titleElement.innerText = titleElement.innerText.replace("Untitled Pathway", title);
+      }
     }
   };
   xhttp.open("GET", tabpath, true);

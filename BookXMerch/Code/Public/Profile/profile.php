@@ -94,6 +94,7 @@
             </div>   
         </div>
     <!-- Div for the reading list -->
+    <div id="savedList">Your reading list was saved!</div>
     <div id="rList" class="card" style="display:none">
     
         <div id="readingListWrapper" class="tabcontent">
@@ -113,7 +114,7 @@
                 <hr>
                 <div class='footer'>
                     <div class='task-count'>
-                        <p id='taskLeftCount' class='fs-med bold'>3</p>&nbsp
+                        <p id='taskLeftCount' class='fs-med bold'>0</p>&nbsp
                         <p class='fs-med'>book(s) on the Reading List</p>
                     </div>
                 </div>

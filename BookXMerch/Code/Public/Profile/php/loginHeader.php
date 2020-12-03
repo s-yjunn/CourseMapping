@@ -35,10 +35,6 @@
             <a href="../../Private/Books/collection.php" class="w3-bar-item w3-button"><b>Bookstore</b>x<b>Merch</b></a>
             <!-- Float links to the right. Hide them on small screens -->
 
-
-            <div class="w3-hide-small">
-                <a href="../../Public/Profile/profile.php" class="w3-bar-item">Welcome, <?php echo $loggedUser?></a>  
-            </div>
             <div class="w3-hide-medium w3-hide-small">
                 <button id="logoutButton3" class="w3-bar-item w3-right buttonNavBar" style="cursor:pointer">Log Out</button>
             </div>

@@ -62,7 +62,7 @@ function getList() {
                 for(p of progress_buttons){
                     p.addEventListener('click', changeProgress);
                 }
-                var cards = document.getElementsByClassName('task-card');
+                var cards = document.getElementsByClassName('task-card-RL');
                 // console.log(cards);
                 for(let i=0;i<cards.length;i++){
                     // console.log(cards[i]);
@@ -79,7 +79,7 @@ function getList() {
             }
     
             function reassignIDs(){
-                var cards = document.getElementsByClassName('task-card');
+                var cards = document.getElementsByClassName('task-card-RL');
                 var count=1;
                 for(card of cards){
                     card.setAttribute("id", "t"+(count++));
@@ -161,7 +161,7 @@ function getList() {
                 if(showState !='show-all'){
                     resetColor();
                     this.style.color="white";
-                    var allCards = document.getElementsByClassName('task-card');
+                    var allCards = document.getElementsByClassName('task-card-RL');
                     for(card of allCards){
                         card.style.display = "flex";
                     }
@@ -176,7 +176,7 @@ function getList() {
                 if(showState !='showComplete'){
                     resetColor();
                     this.style.color="white";
-                    var allCards = document.getElementsByClassName('task-card');
+                    var allCards = document.getElementsByClassName('task-card-RL');
                     // allCards[0].style.display = "none";
                     for(card of allCards){
                         if(card.classList[1]!='Completed')
@@ -193,7 +193,7 @@ function getList() {
                 if(showState !='showInprogress'){
                     resetColor();
                     this.style.color="white";
-                    var allCards = document.getElementsByClassName('task-card');
+                    var allCards = document.getElementsByClassName('task-card-RL');
                     // allCards[0].style.display = "none";
                     for(card of allCards){
                         if(card.classList[1]!='In-progress')
@@ -209,7 +209,7 @@ function getList() {
                 if(showState !='showNotStarted'){
                     resetColor();
                     this.style.color="white";
-                    var allCards = document.getElementsByClassName('task-card');
+                    var allCards = document.getElementsByClassName('task-card-RL');
                     // allCards[0].style.display = "none";
                     for(card of allCards){
                         if(card.classList[1]!='Not-Started')
@@ -277,7 +277,7 @@ function addReviews(reviewsByUser) {
         var review_card = document.createElement('div');
         var styleContentDiv = "<div class=\"status-icon\"></div><p class=\"task-text color-blue\">"+reviewsByUser[i].title+"</p><br><p class=\"task-text\">"+reviewsByUser[i].comment+"</p><br><a class=\"task-status color-blue\" href=\"../../../../../../common/BookXMerch/Code/Private/Books/php/bookVisualize.php?content="+reviewsByUser[i].id+"\">Book Details</a>";
         review_card.innerHTML = styleContentDiv; 
-        review_card.setAttribute("class", "task-card In-progress"); 
+        review_card.setAttribute("class", "task-card-RL In-progress"); 
         review_card.setAttribute("id", "r"+i);
         
         
@@ -296,9 +296,14 @@ function addReviews(reviewsByUser) {
 //BxM: passing card details (title and status) to php
         
 function passVal(){
-    var allCards = document.getElementsByClassName('task-card');
-    var allElements=[];
+    //Saved reading list snackbar (pop-up)
+    var x = document.getElementById("savedList");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 
+    //Send updated list (using post Method)
+    var allCards = document.getElementsByClassName('task-card-RL');
+    var allElements=[];
     for(card of allCards){
         allElements.push([card.childNodes[9].innerHTML,card.childNodes[3].innerHTML,card.classList[1]])
     }
@@ -308,5 +313,5 @@ function passVal(){
             str: "this_is_a_dummy_test_string2"
     };
 
-        $.post("php/updateList.php", data);
+    $.post("php/updateList.php", data);
 }

@@ -36,7 +36,7 @@
                 $color="color-blue";
             }
                 
-            echo "<div class='task-card ".$element[2]."' id='t".$i."'>
+            echo "<div class='task-card-RL ".$element[2]."' id='t".$i."'>
                 <div class='status-icon'></div>
                     <p class='task-text'>".$element[1]."</p>
                     <p class='task-status ".$color."'>".$element[2]."</p>

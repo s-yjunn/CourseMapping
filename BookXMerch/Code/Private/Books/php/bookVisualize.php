@@ -1,4 +1,11 @@
 <?php 
+session_start();
+if(isset($_SESSION["name"])) {
+    $loggedIn = true;
+    $loggedUser = $_SESSION["name"]; 
+    $type = $_SESSION["type"]; 
+  }
+
 $content = $_REQUEST['content'];
 $logFile = "../allBooks.JSON";
 
@@ -60,10 +67,13 @@ $loggedUser = $_SESSION["name"];
             <a href="../../../Private/Books/collection.php" class="w3-bar-item w3-button"><b>Bookstore</b>x<b>Merch</b></a>
             <!-- Float links to the right. Hide them on small screens -->
 
-            <!-- Doesn't register the user's name as session name for visualize -->
-            <div class="w3-hide-small">
-                <a href="#" class="w3-bar-item" style="display:block;">Welcome, <?php echo $loggedUser;?></a>
-            </div>
+
+            <?php if($type=="admin") {
+
+            echo "<div class='w3-hide-medium w3-hide-small'>
+                        <a href='../../Admin/admin.php' class='w3-bar-item buttonNavBar'>Admin page</a>
+                </div>";
+            }?>
 
             <div class="w3-hide-medium w3-hide-small">
                 <button id="logoutButton" class="w3-bar-item w3-right buttonNavBar" style="cursor:pointer">Log Out</button>

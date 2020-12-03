@@ -20,7 +20,13 @@
             "username": "iberrada",
             "type": "admin",
             "password": "adminuser",
-            "readingList": []
+            "readingList": [
+                [
+                    "1111",
+                    "Superman Archives, Vol. 2",
+                    "Not-Started"
+                ]
+            ]
         },
         {
             "name": "Mariem Snoussi",

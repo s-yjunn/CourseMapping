@@ -76,11 +76,14 @@ $loggedUser = $_SESSION["name"];
             }?>
 
             <div class="w3-hide-medium w3-hide-small">
-                <button id="logoutButton" class="w3-bar-item w3-right buttonNavBar" style="cursor:pointer">Log Out</button>
+                <a href="../collection.php" class="w3-bar-item buttonNavBar">Collections</a>
             </div>
             <div class="w3-hide-medium w3-hide-small">
-                <a href="../../../Public/index.php" class="w3-bar-item buttonNavBar">Home</a>
+                <button id="logoutButton" class="w3-bar-item w3-right buttonNavBar" style="cursor:pointer">Log Out</button>
             </div>
+            <!-- <div class="w3-hide-medium w3-hide-small">
+                <a href="../../../Public/index.php" class="w3-bar-item buttonNavBar">Home</a>
+            </div> -->
             <div class="w3-hide-medium w3-hide-small">
                 <a href="../../../Public/Profile/profile.php" class="w3-bar-item buttonNavBar">Profile</a>
             </div>

@@ -9,6 +9,25 @@
 	display: none;
 }
 
+#userHome {
+	text-align: center;
+}
+
+#userHome .btn1 {
+	padding: 2rem;
+	width: 300px;
+	margin: 1rem;
+}
+
+#userHome .btnTitle {
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+#userHome .btnText {
+	font-size: 0.8rem;
+}
+
 /*USER PROFILES*/
 .profile .pfp {
 	object-fit: cover;
@@ -29,13 +48,58 @@
   color: rgb(239, 35, 60, 0.6);
 }
 
+#userPatternsContent {
+	text-align: center;
+}
+
+.tag {
+	background-color: rgb(239, 35, 60);
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 1px;
+	padding: 0.5rem 1rem;
+	font-size: 0.8rem;
+	border-radius: 0.4rem;
+}
+
 /* Pattern previews on user page */
 .uPa {
 	margin: 15px;
 	max-width: 20%;
 }
 
+#userPatternsContent .uPa {
+	max-width: 100%;
+	border: 2px solid #ccc;
+	transition: border 0.4s;
+}
+#userPatternsContent .uPa:hover {
+	cursor: pointer;
+	border: 2px solid rgb(239, 35, 60);
+}
+#userPatternsContent .btn1 {
+	margin: 1rem 0;
+	width: 100%;
+}
+#userPatternsContent #close {
+	float: left;
+	margin: -15px -20px;
+	border: none;
+	background-color: white;
+	color: rgb(239, 35, 60);
+	transition: 0.4s;
+}
+#userPatternsContent #close:hover {
+	color: rgb(239, 35, 60, 0.6);
+}
+
+#userPatternsContent h5 {
+	margin: 0 0 1.5rem 0;
+}
+
 /* 'manage pattern' divs on user page */
 .uPaM {
 	max-width: 100%;
+	margin: 1rem 0;
 }

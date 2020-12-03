@@ -1,7 +1,10 @@
+<div id="adminPage">
+
 <h3 class="underline">Manage Site</h3>
 
-<div class="column side">
+<div class="section">
   
+<h4>Approve</h4>
 <?php 
 
 $comp = file_get_contents("data/contest.json");
@@ -21,11 +24,11 @@ else{
 echo '<form action="php/moveConts.php" method="post">';
 
 for($i = 0; $i < $numSubs; $i++){
-    echo '<input type="checkbox" name="currentSubs[]" value="'.$currentSubs[$i]["author"]."/".$currentSubs[$i]["title"].'" /><a href="imgs/contest/'.$currentSubs[$i]["image"].'" target="_blank">'.$currentSubs[$i]["author"]."/".$currentSubs[$i]["title"].'</a><br />';
+    echo '<input type="checkbox" name="currentSubs[]" value="'.$currentSubs[$i]["author"]."/".$currentSubs[$i]["title"].'" /> <a href="imgs/contest/'.$currentSubs[$i]["image"].'" target="_blank">'.$currentSubs[$i]["author"]."/".$currentSubs[$i]["title"].'</a><br />';
 }
 
-echo '<br><br>',
-'<input type="submit" value="Approve">',
+echo '<br>',
+'<input class="btn1" type="submit" value="Approve">',
 '</form>';
 
 }
@@ -34,7 +37,9 @@ echo '<br><br>',
 
 </div>
 
-<div class="column middle">
+<div class="section">
+
+<h4>Delete</h4>
 
 <?php 
 
@@ -45,11 +50,11 @@ if($numSubs > 0){
     echo '<form action="php/deleteConts.php" method="post">';
     
     for($i = 0; $i < $numSubs; $i++){
-        echo '<input type="checkbox" name="deleteSubs[]" value="'.$currentSubs[$i]["author"]."/".$currentSubs[$i]["title"].'" /><a href="imgs/contest/'.$currentSubs[$i]["image"].'" target="_blank">'.$currentSubs[$i]["author"]."/".$currentSubs[$i]["title"].'</a><br />';
+        echo '<input type="checkbox" name="deleteSubs[]" value="'.$currentSubs[$i]["author"]."/".$currentSubs[$i]["title"].'" /> <a href="imgs/contest/'.$currentSubs[$i]["image"].'" target="_blank">'.$currentSubs[$i]["author"]."/".$currentSubs[$i]["title"].'</a><br />';
     }
     
-    echo '<br><br>',
-    '<input type="submit" value="Delete">',
+    echo '<br>',
+    '<input class="btn1" type="submit" value="Delete">',
     '</form>';
     
     }
@@ -61,7 +66,9 @@ $numCont = count($currentConts);
 
 </div>
 
-<div class="column side">
+<div class="section">
+
+<h4>Preview Winners</h4>
 
 <?php 
 
@@ -83,7 +90,7 @@ else{
      echo '<form action="php/moveWin.php" method="post">',
      '<input type="number" id="numWinners" name="numWinners" min="1" max="'.$numCont.'">',
      '<br><br>',
-    '<input type="submit" value="Preview Winners">',
+    '<input class="btn1" type="submit" value="Preview Winners">',
      '</form>';
      
 }
@@ -91,5 +98,4 @@ else{
 
 </div>
 
-<br><br><br><br><br><br><br><br><br><br>
-
+</div>

@@ -7,11 +7,9 @@
 <h3 class="underline">My Account</h3>
 
 <div id = "userHome">
-    <h4><?= $username; ?></h4>
-    <p>This is the normal user page. Anticipated functions:</p>
-    <ul>
-        <li><a onclick="hide('userHome'); show('userProfile')">View and customize my public profile</a></li>
-        <li><a onclick="hide('userHome'); show('userPatterns')">View and download my saved patterns</a></li>
+    <h4><i class="fas fa-user"></i> <?= $username; ?></h4>
+    <a onclick="hide('userHome'); show('userProfile')"><button class="btn1"><span class="btnTitle">My Profile</span><br><span class="btnText">View and customize my public profile.</span></button></a>
+    <a onclick="hide('userHome'); show('userPatterns')"><button class="btn1"><span class="btnTitle">My Patterns</span><br><span class="btnText">View and download my saved patterns.</span></button></a>
     </ul>
 </div>
 

@@ -1,14 +1,30 @@
-.column {
+/*.column {
     float: left;
     padding: 10px;
   }
   
-  /* Left and right column */
   .column.side {
     width: 33%;
   }
   
-  /* Middle column */
   .column.middle {
     width: 34%;
-  }
+  }*/
+
+#adminPage .section {
+	border: 1px solid #ccc;
+	padding: 1.7rem 2rem;
+	margin: 2rem 0;
+	border-radius: 0.4rem;	
+}
+
+#adminPage a {
+	color: rgb(239, 35, 60);
+	text-decoration: none;
+	transition: 0.4s;
+}
+
+#adminPage a:hover {
+	color: rgb(239, 35, 60, 0.6);
+	
+}

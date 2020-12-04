@@ -5,8 +5,6 @@
 
   // getting the patterns' data
   $patterns = $userData["patterns"];
-  // path to image files
-  $userFolder = "../Private/" . $username . "/"
 ?>
 <button class="btn1" onclick="hide('userPatterns'); show('userHome')"><i class="fas fa-arrow-left"></i> Back</button><br><br>
 <div id="userPatternsContent">

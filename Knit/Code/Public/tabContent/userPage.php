@@ -6,6 +6,8 @@
     // Get user's info
     $usersData = json_decode(file_get_contents("../Private/users.json"), true);
     $userData = $usersData[$username];
+    // path to image files
+    $userFolder = "../Private/" . $username . "/"
 ?>
 
 <h3 class="underline">My Account</h3>

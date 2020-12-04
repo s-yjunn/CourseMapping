@@ -17,8 +17,9 @@
   //Get the proper user's info
   $username = $_GET['uname'];
   $userData = $usersData[$username];
+  $userFolder = "../Private/" . $username . "/";
   if($userData["pfp"]) {
-    $pfp = "imgs/defaultPfp.png"; // should later be replaced with path to uploaded pfp
+    $pfp = $userFolder . $userData["pfp"];
   } else {
     $pfp = "imgs/defaultPfp.png";
   }
@@ -28,7 +29,7 @@
   $pubPatterns = "";
   foreach($patterns as $pattern) {
     if ($pattern["public"]) { // if it's public,
-      $imgPath = "../Private/" . $username . "/" . $pattern["image"]; // get the path to it
+      $imgPath = $userFolder . $pattern["image"]; // get the path to it
       $pubPatterns .= "<img class='uPa' src='$imgPath'>"; // add an element for it
     }
   }

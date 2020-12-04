@@ -7,12 +7,20 @@
 
   //Get the proper user info
   if($userData["pfp"]) {
-      $pfp = "imgs/defaultPfp.png"; // should later be replaced with path to uploaded pfp
+    $pfp = $userFolder . $userData["pfp"];
   } else {
-      $pfp = "imgs/defaultPfp.png";
+    $pfp = "imgs/defaultPfp.png";
   }
   $about = $userData["about"];
   $patterns = $userData["patterns"];
+  // figuring out which patterns to display
+  $pubPatterns = "";
+  foreach($patterns as $pattern) {
+    if ($pattern["public"]) { // if it's public,
+      $imgPath = $userFolder . $pattern["image"]; // get the path to it
+      $pubPatterns .= "<img class='uPa' src='$imgPath'>"; // add an element for it
+    }
+  }
 ?>
 
 <button class="btn1" onclick="hide('userProfile'); show('userHome')"><i class="fas fa-arrow-left"></i> Back</button><br><br>
@@ -32,14 +40,12 @@
   <h5>About me <button class = "btn1" onclick = "show('editAbout')"><i class="fas fa-pencil-alt"></i></button></h5>
   <p class = "about" id = "abtStatic"><?= nl2br($about); ?></p>
   <h5>My patterns <button class = "btn1" onclick = "show('editPatterns')"><i class="fas fa-pencil-alt"></i></button></h5>
-  <p>(Created in the "Pattern Maker" tab!)</p>
-  <?php foreach($patterns as $pattern): ?>
-    <?php if ($pattern["public"]):
-      $imgPath = "../Private/" . $username . "/" . $pattern["image"];
-    ?>
-      <img class='uPa' src='<?= $imgPath; ?>'>
-    <?php endif; ?>
-  <?php endforeach; ?>
+  <p>(created in the "Pattern Maker" tab)</p>
+  <?php if ($pubPatterns != ""): // if there are actually public patterns to display?>
+    <?= $pubPatterns; ?>
+  <?php else: ?>
+    <p>This user doesn't have any public patterns.</p>
+  <?php endif;?>
 </div>
 
 

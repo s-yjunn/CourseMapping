@@ -24,12 +24,16 @@ function editProfile(username, field) {
             type: "POST",
             url: "php/user/editProfile.php",
             data:{uname: username, about: abt},
-            success: function() {
-                $('#uPrDiv').html("Your changes have been saved.");
-                if (abt != "") {
-                    $('#abtStatic').html(abt.replace(/(?:\r\n|\r|\n)/g, '<br>'));
+            success: function(response) {
+                if (response != 0) {
+                    if (abt != "") {
+                        $('#abtStatic').html(abt.replace(/(?:\r\n|\r|\n)/g, '<br>'));
+                    } else {
+                        $('#abtStatic').html("This user hasn't added a bio.");
+                    }
+                    $('#uPrDiv').html("Your bio has been updated.");
                 } else {
-                    $('#abtStatic').html("This user hasn't added a bio.");
+                    $('#uPrDiv').html("Unable to update bio.");
                 }
                 hide('editAbout');
             }
@@ -41,7 +45,6 @@ function editProfile(username, field) {
             $("#pfpFeedback").html("<p class='alert alert-danger' role='alert'>Please select a file.</p>");
         // check file is an image
         } else if (files[0]['type'].split('/')[0] != 'image') {
-            console.log(files[0]['type'].split('/')[0]);
             $("#pfpFeedback").html("<p class='alert alert-danger' role='alert'>Please select an image.</p>");
         // if all is well,
         } else {
@@ -57,12 +60,20 @@ function editProfile(username, field) {
                 data: fd,
                 contentType: false,
                 processData: false,
-                success: function(response){
+                success: function(response) {
+                    // if update is successful,
                     if (response != 0){
-                        $("#img").attr("src",response);
-                    } else{
-                        $("#pfpFeedback").html("<p class='alert alert-danger' role='alert'>Unable to upload file.</p>");
+                        // update display picture
+                        $("#viewPfpImg").attr("src", response);
+                        // output a success message
+                        $("#uPrDiv").html("Your profile picture has been updated.");
+                    } else {
+                        // output a failure message
+                        $("#uPrDiv").html("Unable to update profile picture.");
                     }
+                    // clear upload input
+                    $('#pfpFile').val("");
+                    hide('editPfp');
                 },
            });
         }

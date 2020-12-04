@@ -1,5 +1,6 @@
 <?php
-  //This file formats a forum post given its index in the json file
+  // This file formats a forum post given its index in the json file
+  // @author Isabel
 
   //Get all posts (since this is called from outside forum proper)
   $posts = json_decode(file_get_contents("../../data/forum.json"), true);
@@ -45,12 +46,12 @@
   <h5>Responses</h5>
   <!-- selector for how to sort responses -->
 	<form>
-	    <label for='responsesView'>Sort by: </label>
-	    <select id='responsesView' onchange='sortPostResponses(<?=$postIndex; ?>, this.value)'>>
-	      <option value='score'>Highest ranked first</option>
-	      <option value='posted'>Oldest first</option>
-	    </select>
-	  </form>
+    <label for='responsesView'>Sort by: </label>
+    <select id='responsesView' onchange='sortPostResponses(<?=$postIndex; ?>, this.value)'>>
+      <option value='score'>Highest ranked</option>
+      <option value='posted'>Oldest</option>
+    </select>
+	</form>
   
   <!--Existing responses-->
   <div id="responseList">

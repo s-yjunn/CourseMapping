@@ -1,5 +1,7 @@
 <?php
-  //This file generates the "index" of posts on the main forum page. Optionally takes a sorting parameter, otherwise sorts chronologically (newest first)
+  // This file generates the "menu" of posts on the main forum page.
+  // Optionally takes a sorting parameter, otherwise sorts chronologically (newest first)
+  // @author Isabel
 
   //If this is being called from forum.js
   if (isset($_GET["sortBy"])) {
@@ -38,7 +40,6 @@
 
 <table class="table">
   <tr>
-    <!--We can get rid of these titles later, just for clarity now-->
     <th>Post score </th>
     <th>Responses</th>
     <th>Title</th>
@@ -57,4 +58,5 @@
       <td><?= $value["author"]; ?></td>
       <td><?= $postActive ?></td>
     </tr>
-  <?php endforeach; ?></table>
+  <?php endforeach; ?>
+</table>

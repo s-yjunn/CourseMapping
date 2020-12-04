@@ -1,5 +1,7 @@
 <?php
-//This script adds a new forum post to the forum.json file
+// This script adds a new forum post to the forum.json file
+// @author Isabel
+
 $path = "../../data/forum.json";
 
 //get details for new post

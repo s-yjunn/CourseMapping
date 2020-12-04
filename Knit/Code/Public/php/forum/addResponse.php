@@ -1,5 +1,7 @@
 <?php
 //This script adds a new response to the post at the given index
+// @author Isabel
+
 $path = "../../data/forum.json";
 
 //get details for new response

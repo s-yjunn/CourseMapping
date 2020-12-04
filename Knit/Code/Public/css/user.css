@@ -5,7 +5,7 @@
 #userHome, #userProfile, #userPattern {
 	animation: fadeEffect;
 }
-#userProfile, #editProfile, #userPatterns {
+#userProfile, #userPatterns {
 	display: none;
 }
 
@@ -103,3 +103,13 @@
 	max-width: 100%;
 	margin: 1rem 0;
 }
+
+/* Make edit button appear when php is hovered over..in progress
+#editPfpBtn {
+	display: none;
+}
+
+#editPfpImg:hover + #editPfpBtn, #editPfpBtn:hover {
+	display: inline-block;
+}
+*/

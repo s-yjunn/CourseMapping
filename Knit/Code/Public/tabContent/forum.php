@@ -1,4 +1,7 @@
 <?php
+  // This is the contents of the forum tab (minus included code)
+  // @author Isabel
+
   //Establish which div to show when visitor clicks the "write a post" button
   if ($loggedIn){
     $showCompose = "\"show('composePost')\"";
@@ -35,9 +38,9 @@
         <form>
           <label for="indexView">Sort by:</label>
           <select id="indexView" onchange="sortForumIndex(this.value)">>
-            <option value="active">Activity</option>
-            <option value="score">Score</option>
-            <option value="responses">Responses</option>
+            <option value="active">Active</option>
+            <option value="score">Highest ranked</option>
+            <option value="responses">Unanswered</option>
           </select>
         </form>
 

@@ -1,3 +1,8 @@
+/* This file contains all js functions related directly to the forum (user profile generation in user.js)
+* @author Isabel
+* 
+*/
+
 //This function opens the specified post
 function openPost(postIndex) {
     //Loads the content into the post div, then

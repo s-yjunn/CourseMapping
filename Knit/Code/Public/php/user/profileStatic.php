@@ -1,10 +1,11 @@
 <?php
-  //This file formats a user's profile given their username (for loading into forum, contest tabs when a username is clicked on)
+  // This file formats a user's profile given their username
+  // (for loading into forum, contest tabs when a username is clicked on)
   // @author Isabel
-  // Last modified 11/2/2020
+  // Last modified 11/3/2020
 
   //Get all user data
-  $usersData = json_decode(file_get_contents("../../../Private/data/users.json"), true);
+  $usersData = json_decode(file_get_contents("../../../Private/users.json"), true);
   
   //Where is this being loaded?
   $to = $_GET["to"];
@@ -40,7 +41,7 @@
   <p>(Created in the "Pattern Maker" tab!)</p>
   <?php foreach($patterns as $pattern): ?>
     <?php if ($pattern["public"]):
-      $imgPath = "../Private/imgs/" . $username . "/" . $pattern["image"];
+      $imgPath = "../Private/" . $username . "/" . $pattern["image"];
     ?>
       <img class='uPa' src='<?= $imgPath; ?>'>
   <?php endif; endforeach;?>

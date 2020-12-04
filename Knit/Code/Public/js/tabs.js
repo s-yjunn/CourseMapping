@@ -1,4 +1,6 @@
-// Making the home page's nav tabs dynamic
+// This file is responsible for the show/hide functionality of the main page's tabs
+// Adapted slightly by Isabel from the w3schools tabs tutorial
+
 var currentTab = "Welcome";
 //This function displays the tab with the id tabName and hides all others in the "tabcontent" class.
 function openTab(tabLink, tabName) {

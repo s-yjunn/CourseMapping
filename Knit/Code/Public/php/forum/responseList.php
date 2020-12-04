@@ -1,7 +1,11 @@
 <?php
-  //This file generates the list of responses to a given page. Requires a post index. Optionally takes a sorting parameter, otherwise sorts chronologically (newest first)
-  //Default sort order is by score
-  $sortMethod = "score";
+  /* This file generates the list of responses to a given page.
+  * Requires a post index. Optionally takes a sorting parameter,
+  * otherwise sorts by score (highest ranked first)
+  * @author Isabel
+  */
+
+  $sortMethod = "score"; // default
 
   //If this is being called from a forum.js function
   if (isset($_GET["sortBy"])) {
@@ -36,7 +40,7 @@
 ?>
 
 <?php if (count($responses) == 0) : ?>
-      <p class='alert alert-info' role='alert'>Nobody's responded to this post yet. Be the first!</p>
+  <p class='alert alert-info' role='alert'>Nobody's responded to this post yet. Be the first!</p>
 <?php else: ?>
   <table>
   <?php foreach($responses as $key => $value):

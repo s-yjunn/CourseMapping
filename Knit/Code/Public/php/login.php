@@ -1,5 +1,5 @@
 <?php
-$path = '../../Private/data/users.json';
+$path = '../../Private/users.json';
 
 // read json file
 $jsonArray = file_get_contents($path);

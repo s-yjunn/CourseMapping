@@ -54,8 +54,7 @@
 <div class = "dark" id = "editPfp">
   <div class = "float">
     <form id = "pfpForm" enctype="multipart/form-data">
-      <input type = "file" id = "pfpFile">
-      <input type = "hidden" id = "pfpUname" value = "<?= $username; ?>"><br><br>
+      <input type = "file" id = "pfpFile"><br><br>
       <button type = "button" class="btn1" onclick="editProfile('<?= $username; ?>', 'pfp');">Save</button>
       <button type = "button" class="btn1" onclick="cancelUPEdit('editPfp')">Cancel</button>
     </form>

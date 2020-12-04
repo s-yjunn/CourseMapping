@@ -35,31 +35,36 @@ function editProfile(username, field) {
             }
         });
     } else if (field == "pfp") {
-        var fd = new FormData();
         var files = $('#pfpFile')[0].files;
-        
         // Check file selected or not
-        if (files.length > 0 ){
-           fd.append('pfp', files[0]);
-           fd.append('uname', $('#pfpUname').val());
-
-           $.ajax({
-              type: 'POST',
-              url: "php/user/editProfile.php",
-              data: fd,
-              contentType: false,
-              processData: false,
-              success: function(response){
-                 if (response != 0){
-                    $("#img").attr("src",response);
-                 } else{
-                    $("#pfpFeedback").html("<p class='alert alert-danger' role='alert'>Unable to upload file.</p>");
-                 }
-              },
-           });
-
-        } else{
+        if (files.length == 0 ){
             $("#pfpFeedback").html("<p class='alert alert-danger' role='alert'>Please select a file.</p>");
+        // check file is an image
+        } else if (files[0]['type'].split('/')[0] != 'image') {
+            console.log(files[0]['type'].split('/')[0]);
+            $("#pfpFeedback").html("<p class='alert alert-danger' role='alert'>Please select an image.</p>");
+        // if all is well,
+        } else {
+            // create a new FormData element and add the stuff we want to it
+            var fd = new FormData();
+            fd.append('pfp', files[0]);
+            fd.append('uname', username);
+
+            // send the info to our php processing page
+            $.ajax({
+                type: 'POST',
+                url: "php/user/editProfile.php",
+                data: fd,
+                contentType: false,
+                processData: false,
+                success: function(response){
+                    if (response != 0){
+                        $("#img").attr("src",response);
+                    } else{
+                        $("#pfpFeedback").html("<p class='alert alert-danger' role='alert'>Unable to upload file.</p>");
+                    }
+                },
+           });
         }
     }
 }

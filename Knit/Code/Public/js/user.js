@@ -16,7 +16,7 @@ function openProfile(username, to, from, fromLink) {
 }
 
 // This function sends a post request to change the user's profile in the json and updates the page accordingly
-// pfp processing code adapted from first answer at https://stackoverflow.com/questions/166221/how-can-i-upload-files-asynchronously
+// pfp processing code adapted from https://makitweb.com/how-to-upload-image-file-using-ajax-and-jquery/
 function editProfile(username, field) {
     if (field == "about") {
         var abt = $("#abtEdit").val().trim();

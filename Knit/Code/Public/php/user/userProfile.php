@@ -19,16 +19,19 @@
 
 <div class = "profile">
   <p id = 'uPrDiv'>This is what other users see when they click on your username in the forum and/or contest pages.</p>
-
-  <img class="pfp" id = "pfpEditImg" src= '<?= $pfp; ?>' alt='<?= $username; ?>-s profile picture'>
-  <button class = "btn1" id = "editPfpBtn" onclick = "show('editPfp')"><i class="fas fa-pencil-alt"></i></button>
+  <div id = "viewPfp">
+    <img id = "viewPfpImg" src= '<?= $pfp; ?>' alt='<?= $username; ?>-s profile picture'>
+    <div id = "editPfpBtn">
+      <button class = "btn1" onclick = "show('editPfp')"><i class="fas fa-pencil-alt"></i></button>
+    </div>
+  </div>
   <h4><?=$username; ?></h4>
   <?php if ($userData["admin"]): ?>
     <p><i class="far fa-star"></i></i> ADMIN <i class="far fa-star"></i></p>
   <?php endif; ?>
   <h5>About me <button class = "btn1" onclick = "show('editAbout')"><i class="fas fa-pencil-alt"></i></button></h5>
   <p class = "about" id = "abtStatic"><?= nl2br($about); ?></p>
-  <h5>My patterns</h5>
+  <h5>My patterns <button class = "btn1" onclick = "show('editPatterns')"><i class="fas fa-pencil-alt"></i></button></h5>
   <p>(Created in the "Pattern Maker" tab!)</p>
   <?php foreach($patterns as $pattern): ?>
     <?php if ($pattern["public"]):
@@ -41,15 +44,28 @@
 
 
 <div class = "dark" id = "editAbout">
-  <div class = "float">
+  <form class = "float">
     <textarea id = "abtEdit"><?= $about; ?></textarea><br><br>
-    <button class="btn1" onclick="editProfile('<?= $username; ?>', 'about');">Save</button> <button class="btn1" onclick="cancelUPEdit('editAbout')">Cancel</button>
-  </div>
+    <button type = "button" class="btn1" onclick="editProfile('<?= $username; ?>', 'about');">Save</button>
+    <button type = "button" class="btn1" onclick="cancelUPEdit('editAbout')">Cancel</button>
+  </form>
 </div>
 
 <div class = "dark" id = "editPfp">
   <div class = "float">
-    <p>Here's where you edit your pfp (under construction)</p>
-    <button class="btn1" onclick="editProfile('<?= $username; ?>', 'pfp');">Save</button> <button class="btn1" onclick="cancelUPEdit('editPfp')">Cancel</button>
+    <form id = "pfpForm" enctype="multipart/form-data">
+      <input type = "file" id = "pfpFile">
+      <input type = "hidden" id = "pfpUname" value = "<?= $username; ?>"><br><br>
+      <button type = "button" class="btn1" onclick="editProfile('<?= $username; ?>', 'pfp');">Save</button>
+      <button type = "button" class="btn1" onclick="cancelUPEdit('editPfp')">Cancel</button>
+    </form>
+    <span id = "pfpFeedback"></span>
   </div>
-</div
+</div>
+
+<div class = "dark" id = "editPatterns">
+  <div class ="float">
+    <p>Return to the account menu and go to "My Patterns" to manage your saved patterns, including their visibilty.</p>
+    <button class = "btn1" onclick = "hide('editPatterns')">Got it</button>
+  </div>
+</div>

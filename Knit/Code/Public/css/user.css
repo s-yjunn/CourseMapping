@@ -34,8 +34,8 @@
 	object-position: center; /* Center the image within the element */
 	float: left;
 	margin: 0px 30px 30px 0px;
-    width: 200px;
-    max-height: 200px;
+	width: 200px;
+  max-height: 200px;
 }
 
 /*USER PAGE*/
@@ -104,12 +104,38 @@
 	margin: 1rem 0;
 }
 
-/* Make edit button appear when php is hovered over..in progress
-#editPfpBtn {
-	display: none;
+/* Make edit button appear when php is hovered over..in progress */
+#viewPfp {
+	width: 200px;
+	height: 200px;
+	position: relative;
+	float: left;
+	margin: 0px 30px 30px 0px; /* copied from .pfp */
 }
 
-#editPfpImg:hover + #editPfpBtn, #editPfpBtn:hover {
-	display: inline-block;
+#viewPfpImg, #editPfpBtn {
+  width: 100%;
+	max-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
-*/
+
+#viewPfpImg {
+	object-fit: cover;
+	object-position: center; /* Center the image within the element */
+	max-height: 100%;
+}
+
+#editPfpBtn {
+	height: 100%;
+	display: none;
+	background-color:hsla(0, 0%, 23%, 0.5);
+	z-index: 1;
+}
+
+#viewPfpImg:hover + #editPfpBtn, #editPfpBtn:hover {
+	display: flex;
+  justify-content: center;
+  align-items: center;
+}

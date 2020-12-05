@@ -63,6 +63,10 @@
 	border-radius: 0.4rem;
 }
 
+.tag:hover {
+	cursor: pointer;
+}
+
 /* Pattern previews on user page */
 .uPa {
 	margin: 15px;
@@ -78,7 +82,7 @@
 	cursor: pointer;
 	border: 2px solid rgb(239, 35, 60);
 }
-#userPatternsContent .btn1 {
+#userPatternsContent .btn1.download {
 	margin: 1rem 0;
 	width: 100%;
 }
@@ -98,14 +102,20 @@
 	margin: 0 0 1.5rem 0;
 }
 
-/* 'manage pattern' divs on user page */
+/* patterns in 'manage pattern' divs on user page */
 .uPaM {
+	max-height: 30%;
 	max-width: 100%;
+	height: auto;
+	width:auto;
 	margin: 1rem 0;
 }
 
-/* Stuff related to profile picture editing */
+.patternEdit {
+	display: none;
+}
 
+/* Stuff related to profile picture editing */
 /* div that holds pfp and (hidden) edit button -- dimensions copied from pfp class */
 #viewPfp {
 	width: 200px;

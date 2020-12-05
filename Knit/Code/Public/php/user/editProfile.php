@@ -23,7 +23,7 @@
       echo 0; // indicate failure
     }
 
-  // if instead the profile is being changed (it's never both)
+  // if instead the profile picture is being changed (it's never both)
   } else if (isset($_FILES["pfp"])) {
     $userFolder = "../../../Private/" .$username . "/";
     // get file name

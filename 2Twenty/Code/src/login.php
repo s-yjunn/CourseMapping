@@ -1,29 +1,83 @@
 <?php
-
-function handle_login($uname,$upass)
+function handle_login($uname, $pass)
 {
     include ("db_connect.php");
 
-    //i attempted to mirror the register code
-
-    $sql = "SELECT COUNT(1) FROM `user` WHERE user = ? AND pass = ? ;";
+    // verify username:
+    $sql = "SELECT * FROM `user` WHERE user = ?;";
     $query = $conn->prepare($sql);
-    $query->bind_param('ss', $u, $p);
+    $query->bind_param('s', $u);
+
     $u = $uname;
-    $p = md5($upass);
+    $query->execute();
+    $result = $query->get_result();
 
-    $query->execute(); 
+    if ($result->num_rows > 0)
+    {
 
-    $r = $query->get_result();
-    
-    while ($row = $r->fetch_all()){
-        if ($row[0][0] == 1) {
-            return 1;
+        // verify password:
+        $sql = "SELECT * FROM `user` WHERE pass = ?;";
+        $query = $conn->prepare($sql);
+        $query->bind_param('s', $p);
+
+        $p = md5($pass); // salted password
+        $query->execute();
+        $result = $query->get_result();
+
+        if ($result->num_rows > 0)
+        {
+            return 1; // success
+            
         }
+        else
+        {
+            return 0; // wrong password
+            
+        }
+
+    }
+    else
+    {
+        return 0; // wrong username;
+        
     }
 
+}
 
-    
+function handle_registration($uname, $pass)
+{
+    include ("db_connect.php");
+
+    // verify username not taken:
+    $sql = "SELECT * FROM `user` WHERE user = ?;";
+    $query = $conn->prepare($sql);
+    $query->bind_param('s', $u);
+
+    $u = $uname;
+    $query->execute();
+    $result = $query->get_result();
+
+    if ($result->num_rows > 0)
+    {
+        return 0; // username taken;
+        
+    }
+    else
+    {
+        // register user:
+        $sql = "REPLACE INTO store.user(user, pass, mod_priv, admin_priv)";
+        $sql .= "   VALUES(?, md5(?), 0, 0);";
+        $query = $conn->prepare($sql);
+        $query->bind_param('ss', $u, $p);
+
+        $u = $uname;
+        $p = md5($pass); // salted password
+        $query->execute();
+
+        return 1; // registration success;
+        
+    }
+
 }
 
 ?>

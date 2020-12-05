@@ -1,5 +1,10 @@
 /**
- * @author Yujun Shen
+ * @author Yujun Shen, Allison made some additions
+ * 
+ * Allison's additions to Yujun's code center on interactions with session storage and currentPathway
+ * to store user's edits to the pathway.
+ * 
+ * Allison's additions are commented as such, everything else is Yujun's.
  */
 
 // Major chosen by the user
@@ -88,6 +93,10 @@ function getCourses() {
       storeEdits(-1, courseName, courseInfo); // Eventually change this so that the courses appear in correct order.
     }
 
+    /**
+     * @author Yujun and Allison
+     * Both Allison and Yujun made this function.
+     */
     $(function () {
       // xInitial and yInitial corresponds to the center of the course block
       var xInitial;
@@ -104,6 +113,8 @@ function getCourses() {
           lineChange(dragged);
         },
         stop: function () {
+          serverSaveNeeded = true;
+          sessionStorage[currentTab]["serverSaveNeeded"] = serverSaveNeeded;
           var containerWidth = $(pathwayContent).width();
           // The initial semester the course is in
           var initSemNum = getSemNum(xInitial, yInitial, containerWidth);
@@ -137,6 +148,10 @@ function getCourses() {
 
   getPaths();
 }
+
+/**
+ * @author Allison
+ */
 
 // /**
 //  *
@@ -178,6 +193,10 @@ function getSemNum(xPos, yPos, containerWidth) {
   var semNum = Math.ceil(xPos / semWidth);
   return semNum;
 }
+
+/**
+ * End of Allison's contribution to Yujun's code.
+ */
 
 /* Create path among existing courses based on their prereq relations */
 function getPaths() {

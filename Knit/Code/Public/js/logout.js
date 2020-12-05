@@ -4,7 +4,7 @@ function logOut() {
         url: "php/logout.php",
         success: function(){
             // once done, reload the page
-            window.location.reload(true);
+            window.location.reload();
         }
     })
 }

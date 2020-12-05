@@ -8,11 +8,11 @@ $(document).ready(function(){
 			type: "GET",
 			url: "php/register.php",
 			data: dataString,
-	        success: function(result) {
+	    success: function(result) {
 				// if register.php returns a success message,
 				if (result === "Success") {
 					// reload the page!
-					window.location.reload(true);
+					window.location.reload();
 				} else {
 					// if unsuccessful, output the failure message
 					$("#regDiv").html(result);

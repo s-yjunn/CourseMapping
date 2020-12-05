@@ -34,8 +34,8 @@
 	object-position: center; /* Center the image within the element */
 	float: left;
 	margin: 0px 30px 30px 0px;
-    width: 200px;
-    max-height: 200px;
+	width: 200px;
+  height: 200px;
 }
 
 /*USER PAGE*/
@@ -63,6 +63,10 @@
 	border-radius: 0.4rem;
 }
 
+.tag:hover {
+	cursor: pointer;
+}
+
 /* Pattern previews on user page */
 .uPa {
 	margin: 15px;
@@ -78,7 +82,7 @@
 	cursor: pointer;
 	border: 2px solid rgb(239, 35, 60);
 }
-#userPatternsContent .btn1 {
+#userPatternsContent .btn1.download {
 	margin: 1rem 0;
 	width: 100%;
 }
@@ -98,18 +102,53 @@
 	margin: 0 0 1.5rem 0;
 }
 
-/* 'manage pattern' divs on user page */
+/* patterns in 'manage pattern' divs on user page */
 .uPaM {
+	max-height: 30%;
 	max-width: 100%;
+	height: auto;
+	width:auto;
 	margin: 1rem 0;
 }
 
-/* Make edit button appear when php is hovered over..in progress
-#editPfpBtn {
+.patternEdit {
 	display: none;
 }
 
-#editPfpImg:hover + #editPfpBtn, #editPfpBtn:hover {
-	display: inline-block;
+/* Stuff related to profile picture editing */
+/* div that holds pfp and (hidden) edit button -- dimensions copied from pfp class */
+#viewPfp {
+	width: 200px;
+	height: 200px;
+	position: relative;
+	float: left;
+	margin: 0px 30px 30px 0px;
 }
-*/
+
+/* pfp itself and div containing edit button */
+#viewPfpImg, #editPfpBtn {
+  width: 100%;
+	height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* pfp iself ... making sure it isn't distorted (copied from pfp class) */
+#viewPfpImg {
+	object-fit: cover;
+	object-position: center;
+}
+
+/* div containing edit button ... making it float on top of pfp only when hovered over */
+#editPfpBtn {
+	display: none;
+	background-color:hsla(0, 0%, 23%, 0.5);
+	z-index: 1;
+}
+
+#viewPfpImg:hover + #editPfpBtn, #editPfpBtn:hover {
+	display: flex;
+  justify-content: center;
+  align-items: center;
+}

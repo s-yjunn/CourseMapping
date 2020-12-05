@@ -17,8 +17,5 @@ foreach ($courses as $course){
 
 file_put_contents($file_course, json_encode($temp_json_course));
 
-echo '<script type = "text/javascript">
-    window.location.href="../../admin.html.php";
-</script>';
-
+header("Location: ../../admin.html.php");
 ?>

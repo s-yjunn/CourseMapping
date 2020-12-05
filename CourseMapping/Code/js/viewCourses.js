@@ -20,7 +20,7 @@ $('#major').change(function () {
 
     /* it will collects the course information of selected major from courses.json 
     and adds it to the table in viewCourses.html with a checkbox*/
-    var major = $('#major option:selected').val();
+    var major = $('#major option:checked').val();
     $.getJSON("json/courses.json", function (data) { 
         var course = '';
         $.each(data[major], function (key, value) { 

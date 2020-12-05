@@ -25,6 +25,9 @@ $('#majorCourse').change(function () {
         $.each(data[major]["major"]["singular"], function (key, value) { 
             course += '<tr>'; 
             course += '<td>' + value + '</td>'; 
+            course += '<td> <input type=\"checkbox\" name = \"major[]\"'; 
+            course += 'id= \"major\" value =\"' + value +'+'+ major + '\"></td>'; 
+            course += '</tr>'; 
         }); 
         $('#majorTable').append(course); 
     }); 

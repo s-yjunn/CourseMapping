@@ -14,8 +14,8 @@ $(document).ready(function () {
                         user += '<td>' + value.pw + '</td>'; 
                         user += '<td>' + value.id + '</td>'; 
                         user += '<td>' + data + '</td>'; 
-                        user += '<td> <input type=\"checkbox\" name = \"user[]\"'; 
-                        user += 'id= \"user\" value =\"u_' + value.id + '\"></td>'; 
+                        user += '<td> <input type=\"checkbox\" name = \"dir[]\"'; 
+                        user += 'id= \"dir\" value =\"u_' + value.id + '\"></td>'; 
                         user += '</tr>'; 
                         $('#userTable').append(user); 
                     },

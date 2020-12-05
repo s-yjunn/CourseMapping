@@ -22,11 +22,11 @@ function titleChange(titleElement) {
         // If it is not formDiv or one of formDiv's children / grandchildren (it doesn't go further),
         // And it is not the titleElement that was used to open formDiv,
         // Then close formDiv 
-        if (event.target != formDiv && 
+        if (titleInputOpen && 
+         event.target != formDiv && 
          event.target.parentNode != formDiv && 
          event.target.parentNode.parentNode != formDiv &&
-         event.target != titleElement &&
-         titleInputOpen) {
+         event.target != titleElement) {
             changeTitleHelper(titleElement, formDiv.children[0]); // The only child in formDiv is the form
         }
     }

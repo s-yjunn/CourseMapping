@@ -17,11 +17,11 @@
     <?php
     session_start();
     //if the admin is logged-in, it'll be redirected to admin.html.php automatically
-    if ($_SESSION['username'] == '220'){ 
+    if ($_SESSION['username'] == '220') {
         echo '<script type = "text/javascript">
          window.location.href="admin.html.php";
          </script>';
-         }
+    }
     ?>
 
     <!--
@@ -38,7 +38,7 @@
         <button class="tablinks" onclick="openTab(event, 'Instruction')" <?php include 'php/login/logintabs.php'; ?>>INSTRUCTION</button>
         <button class="tablinks" onclick="openTab(event, 'Saved')" <?php include 'php/login/logintabs.php'; ?>>SAVED</button>
         <button class="tablinks" onclick="newTab()" <?php include 'php/login/logintabs.php'; ?>>+</button>
-        <button class = "tablinks" <?php include 'php/login/logouttabs.php';?>onclick="document.getElementById('register').style.display='block'">REGISTER</button>
+        <button class="tablinks" <?php include 'php/login/logouttabs.php'; ?>onclick="document.getElementById('register').style.display='block'">REGISTER</button>
         <button class="tablinks" <?php include 'php/login/logouttabs.php'; ?>onclick="document.getElementById('login').style.display='block'">LOGIN</button>
     </div>
 
@@ -57,9 +57,10 @@
     </article>
 
 
-    <script type = "text/javascript" src = "js/script.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/jsonParser.js"></script>
     <script src="js/pathway.js"></script>
     <script src="js/pathwayMeta.js"></script>
     <script src="js/save.js"></script>

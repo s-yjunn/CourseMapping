@@ -1,5 +1,5 @@
 /* Style the message */
-#info {
+.info {
   background-color: rgb(241, 233, 158);
   font-size: 1vw;
   color: #91712b;
@@ -11,7 +11,7 @@
 }
 
 /* Style the pathway table */
-#pathTable {
+.pathTable {
   position: absolute;
   top: 310px;
   left: 50px;
@@ -21,7 +21,7 @@
   text-align: center;
 }
 
-#pathTable td,
+.pathTable td,
 th {
   border: 1px solid #dddddd;
   text-align: left;
@@ -29,21 +29,26 @@ th {
   width: 25%;
 }
 
-#pathTable tr:nth-child(odd) {
+.pathTable tr:first-child {
+  height: 100px;
+  background-color: #207cb138;
+}
+
+.pathTable tr:nth-child(2) {
   background-color: #3148ad;
   color: #ebebeb;
 }
 
-#pathTable tr:nth-child(even) {
+.pathTable tr:nth-child(3) {
   height: 500px;
 }
 
 /* Position the div where courseBlock will be in */
-#pathwayContent {
+.pathwayContent {
   top: 315px;
   left: 50px;
   width: 90%;
-  height: 500px;
+  height: 600px;
 }
 
 /* Style movable course element */
@@ -85,7 +90,8 @@ select {
   background-color: #f1f1f1;
 }
 
-.courseBtn, .active{
+.courseBtn,
+.active {
   background-color: rgb(11, 104, 158);
   transition-duration: 0.4s;
   margin: 4px 8px;
@@ -94,7 +100,8 @@ select {
   color: white;
 }
 
-.courseBtn:hover, .active:hover{
+.courseBtn:hover,
+.active:hover {
   background-color: darkcyan;
-  color:white;
+  color: white;
 }

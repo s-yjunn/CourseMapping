@@ -24,8 +24,13 @@
 			</div>
 		</div>
 		<div class="row justify-content-center">		
-			<input id="btnClear" class="btn1" type="button" value="Clear Canvas">
-			<a id="btnSave" href=""><button class="btn1">Save Pattern</button></a>
+			<button id="btnClear" class="btn1">Clear canvas</button>
+			<a id="btnDownload" href=""><button class="btn1">Download</button></a>
+			<?php if ($loggedIn): ?>
+				<button class="btn1" onclick = "btnSave('<?= $username; ?>')">Save to my account</button>
+				<!-- feedback about saving goes here -->
+				<p id = "paDiv"></p>
+			<?php endif; ?>
 		</div>
 	</div>
 </div>

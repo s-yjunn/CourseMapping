@@ -62,6 +62,7 @@
 			<button class="tablinks" onclick="openTab(this, 'Winners')">Featured</button>
 			<button class="tablinks" onclick="openTab(this, 'Vote')">Contest</button>
 			<button class="tablinks" onclick="openTab(this, 'Pattern')">Pattern Maker</button>
+			<button class="tablinks" onclick="openTab(this, 'Quizzes')">Quizzes</button>
 			<button class="tablinks" onclick="openTab(this, 'Forum')">Forum</button>
 	    </div>
 		<div class="navbar-nav ml-auto">
@@ -110,6 +111,7 @@
 <?php include "tabContent/forum.php"; ?>
 <?php include "tabContent/login.php"; ?>
 <?php include "tabContent/register.php"; ?>
+<?php include "tabContent/quiz.php"; ?>
 
 <!-- ACCOUNT TAB CONTENT: "Manage site" => Admin and "My account" => (normal) User-->
 <div id = "User" class = "tabcontent">

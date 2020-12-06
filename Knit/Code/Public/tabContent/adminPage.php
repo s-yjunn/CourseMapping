@@ -84,18 +84,47 @@ else{
      for($i = 0; $i < $numCont; $i++){
         echo '<li><a href="imgs/contest/'.$currentConts[$i]["image"].'" target="_blank">'.$currentConts[$i]["author"]."/".$currentConts[$i]["title"].'</a><br /></li>';
      }
-     echo '</ul>',
-     '<p>How many winners do you want there to be?</p>';
+     echo '</ul>';     
+     ?>
 
-     echo '<form action="php/moveWin.php" method="post">',
-     '<input type="number" id="numWinners" name="numWinners" min="1" max="'.$numCont.'">',
-     '<br><br>',
-    '<input class="btn1" type="submit" value="Preview Winners">',
-     '</form>';
-     
+<p>How many winners do you want there to be?</p>
+<form  name="numWin">
+<input type="number" id="numWinners" name="numWinners" min="1" max="<?= $numCont ?>">
+</form>
+<br><br>
+<button class="btn1" id="showWin">Preview Winners</button>
+
+</div>
+    <?php }?>
+<div id="preview" style="display: none;">
+<?php include "php/preview.php"; ?>
+<button class="btn1" id="confirm">Confirm Winners</button>
+</div>
+
+</div>
+
+<script>
+
+$("#showWin").click(function(){
+  var numWinners = document.forms["numWin"]["numWinners"].value;
+$.ajax({
+type: "POST",
+url: "php/moveWin.php",
+data: {numWinners:numWinners},
+success: function(result) {
+    console.log(result);
+                
 }
-?>
+})
+$.get("php/preview.php", function(){
+    $("#preview").show();
+  });
+});
 
-</div>
+$("#confirm").click(function(){
+    $.get("php/reset.php", function(){
+    $("#preview").hide();
+  });
+});
 
-</div>
+</script>

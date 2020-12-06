@@ -1,5 +1,10 @@
 /**
- * @author Yujun Shen
+ * @author Yujun Shen, Allison made some additions
+ *
+ * Allison's additions to Yujun's code center on interactions with session storage and currentPathway
+ * to store user's edits to the pathway.
+ *
+ * Allison's additions are commented as such, everything else is Yujun's.
  */
 
 // Major chosen by the user
@@ -96,6 +101,9 @@ function getCourses() {
 /**
  * Make all courseBlock draggable.
  * Find and store its position whenever a courseBlock is dragged.
+ *
+ * @author Yujun and Allison
+ * Both Allison and Yujun made this function.
  */
 function makeDraggable() {
   // Define draggable properties
@@ -144,6 +152,8 @@ function makeDraggable() {
   });
 }
 
+/**@author Allison */
+
 /**
  * Saves edits to both currentPathway and sessionStorage
  * -1 means the bar that courses appear in initially
@@ -176,6 +186,8 @@ function getSemNum(xPos, yPos, containerWidth) {
   var semNum = Math.ceil(xPos / semWidth);
   return semNum;
 }
+
+/** End of Allison's contribution to Yujun's code. */
 
 /**
  * Get the prereq relations for course divs based on CourseCatalog

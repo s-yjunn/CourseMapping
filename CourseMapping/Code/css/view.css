@@ -57,7 +57,7 @@ select > option {
     color:white;
 }
 
-#removeBtn{
+.removeBtn{
     background-color: rgb(231, 40, 40);
     transition-duration: 0.4s;
     padding: 10px 20px;
@@ -67,7 +67,7 @@ select > option {
     display: inline-block;
 }
   
-#removeBtn:hover{
+.removeBtn:hover{
     background-color: darkcyan;
     color:white;
 }

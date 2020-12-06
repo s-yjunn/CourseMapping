@@ -12,14 +12,14 @@
  *
  * Some global variables that help to coordinate them are:
  *    currentTab: a string holding the currently selected tab's numerical id
+ *    currentPathway: a javascript object holding the current tab's pathway data in a way the is easy to manipulate
+ *    serverSaveNeeded: a boolean indicating whether the current tab's pathway data has changes which should be saved on the server
  *
  *    Session Storage keys:
  *      tabsCreated: a string containing a number that is incremented everytime a tab is created, and it used to generate new tab id's.
  *         This is only reset on logout.
  *      #: Every tab that is shown has a corresponding key in sessionStorage that contains it's associated pathway data.
  *
- *    Located in pathway.js, but still important here:
- *      currentPathway: a javascript object holding the current tab's pathway data in a way the is easy to manipulate
  *
  *  The major methods use and share many helper methods.
  *
@@ -36,6 +36,9 @@ var currentTab;
 used to facilitate storage of user changes from dragging
 */
 var currentPathway;
+
+// flag indicating when there are changes stored on the client for the current tab that could be saved on the server
+var serverSaveNeeded = false;
 
 // sessionStorage stores enough information on each pathway to bring it back after a refresh.
 // Each pathway is referenced by a numerical id that matches that of the tab that stores it.
@@ -96,6 +99,8 @@ function newTab() {
     pathway["sem_" + i] = { locked: false, nodes: {} };
   }
   pathway["sem_-1"] = { locked: false, nodes: {} };
+  // The pathway save status should be initialized to true because a new pathway doesn't exist on the server.
+  pathway["serverSaveNeeded"] = true;
   sessionStorage[tabID] = JSON.stringify(pathway);
 
   // Activates the tablink and displays the tab content
@@ -155,6 +160,9 @@ function selectTab(tabLink, tabcontent, tabID) {
   // Now update the current tab id then pathway
   currentTab = tabID;
   currentPathway = JSON.parse(sessionStorage[currentTab]);
+
+  // Update the global serverSaveNeeded flag to reflect the status of the new currentPathway
+  serverSaveNeeded = currentPathway["serverSaveNeeded"];
 
   restorePathway();
 }
@@ -221,6 +229,7 @@ function removeTab(tabID) {
           save(tabID);
           // Remove stored pathway from session storage
           sessionStorage.removeItem(tabID);
+          console.log("Removed " + tabID);
           /* End of Allison's code in Hyana's contribution */
           $(this).dialog("close");
         },

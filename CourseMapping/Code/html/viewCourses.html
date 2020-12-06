@@ -3,12 +3,16 @@
 <select id = "majorCourse">
 <option value="None">Select Majors</option>
 </select>
+<form action="php/admin/rmMajor.php" method = "POST">
 <table id='majorTable'> 
 <tr> 
     <th>Courses</th> 
+    <th><input type="submit" class = "removeBtn" value="REMOVE"></th> 
 </tr> 
+</form>
 </table>
 </div>
+
 
 <div class = "right">
 <h1>Courses</h1> 
@@ -28,7 +32,7 @@
     <th>Required For</th> 
     <th>Suggested For</th> 
     <th>Overlap</th> 
-    <th><input type="submit" id = "removeBtn" value="REMOVE"></th> 
+    <th><input type="submit" class = "removeBtn" value="REMOVE"></th> 
 </tr> 
 </form>
 </table>

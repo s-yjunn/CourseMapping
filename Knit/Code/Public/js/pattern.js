@@ -12,7 +12,7 @@ var canvas = document.getElementById('canvas'),
     mousedown = false,
 	colorPick = document.getElementById('colorPicker'),
 	btnClear = document.getElementById('btnClear'),
-	btnSave = document.getElementById('btnSave');
+	btnDownload = document.getElementById('btnDownload');
 // set canvas size
 canvas.width = width;
 canvas.height = height;
@@ -103,12 +103,39 @@ canvas.addEventListener('mouseup', function(event) {
 
 ////// BUTTONS //////
 // clear canvas
-btnClear.addEventListener('click', function(event){
+btnClear.addEventListener('click', function(){
 	context.clearRect(0, 0, canvas.width, canvas.height);
 	drawGrid(); // need to redraw grid
 }, false);
-// save pattern
-btnSave.addEventListener('click', function(event) {
-    btnSave.href = canvas.toDataURL(); // set href to our canvas for download
-    btnSave.download = "MyPattern.png"; // set download filename
+
+// download pattern
+btnDownload.addEventListener('click', function() {
+	btnDownload.href = canvas.toDataURL(); // set href to our canvas for download
+	btnDownload.download = "MyPattern.png"; // set download filename
 }, false);
+
+// save pattern
+// adapted by Isabel from https://stackoverflow.com/questions/13198131/how-to-save-an-html5-canvas-as-an-image-on-a-server
+// couldn't figure out how to pass username to event listener so did normal function
+function btnSave(username) {
+	var canvasData = canvas.toDataURL(); // prepare canvas data for processing
+	// send data to php processing file
+	$.ajax ({
+		type: "POST",
+		url: "php/savePattern.php",
+		data: {uname: username, canvas: canvasData},
+		success: function(response) {
+			// if php script outputs a success message
+			if (response == 1) {
+				// let the user know
+				$("#paDiv").html("Your pattern was saved.");
+				// update user patterns page
+				$("#userPatterns").load(location.href+" #userPatterns>*","");
+			// otherwise
+			} else {
+				// let the user know
+				$("#paDiv").html("Unable to save pattern.");
+			}
+		}
+	});
+}

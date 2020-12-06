@@ -5,6 +5,7 @@
     $userpath = "../json/users.json";
     
     $users = json_decode(file_get_contents($userpath), TRUE);
+    $successful = false;
 
     // If the user does not have a folder of stored pathways, make one.
     $userFile = "../users/u_" . $users[$_SESSION['username']]["id"];
@@ -35,5 +36,12 @@
         }
         fclose($file); 
         echo "Pathway Saved";
+        $successful = true;
+    }
+    // single character flag at the end to make it easy to determine if the save was successful from the code
+    if($successful) {
+        echo "1";
+    } else {
+        echo "0";
     }
  ?>

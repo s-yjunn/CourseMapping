@@ -50,7 +50,9 @@
             <div class="w3-hide-medium w3-hide-small">
                 <a href="../../Public/Profile/profile.php" class="w3-bar-item buttonNavBar">Profile</a>
             </div>
-
+            <div class='w3-hide-medium w3-hide-small'>
+                <a href="../../Public/General/instructions.php" class="w3-bar-item buttonNavBar">Instructions</a>
+            </div>
             <div class="w3-hide-medium w3-hide-small">
                 <a href="../../Private/CommunityPosts/posts.php" class="w3-bar-item buttonNavBar">Community</a>
             </div>

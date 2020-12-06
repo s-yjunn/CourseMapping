@@ -24,7 +24,7 @@
 
 ?>
 
-<a class="btn1" href= "#<?= $fromLink; ?>" onclick="hide('<?= $to; ?>'); show('<?= $from; ?>')"><i class="fas fa-arrow-left"></i> Back</a><br><br>
+<a href= "#<?= $fromLink; ?>" onclick="hide('<?= $to; ?>'); show('<?= $from; ?>')"><button class="btn1"><i class="fas fa-arrow-left"></i> Back</button></a><br><br>
 
 <div id="mainPattern">
   <img class="fullImg" src='imgs/contest/<?= $pattern["image"]; ?>' alt='Knit submission by <?= $pattern["author"]; ?>'>

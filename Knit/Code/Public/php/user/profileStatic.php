@@ -30,26 +30,34 @@
   foreach($patterns as $pattern) {
     if ($pattern["public"]) { // if it's public,
       $imgPath = $userFolder . $pattern["image"]; // get the path to it
-      $pubPatterns .= "<img class='uPa' src='$imgPath'>"; // add an element for it
+      $pubPatterns .= "<div class='col-xs-12 col-sm-6 col-md-4 col-lg-3'><img class='uPa' src='$imgPath'></div>"; // add an element for it
     }
   }
 ?>
 
-<a class="btn1" href ="#<?= $fromLink; ?>" onclick="hide('<?= $to; ?>'); show('<?= $from; ?>')"><i class="fas fa-arrow-left"></i> Back</a><br><br>
+<a href ="#<?= $fromLink; ?>" onclick="hide('<?= $to; ?>'); show('<?= $from; ?>')"><button class="btn1"><i class="fas fa-arrow-left"></i> Back</button></a><br><br>
 
 <div class="profile">
-  <img class="pfp" src= '<?= $pfp; ?>' alt='<?= $username; ?>-s profile picture'>
-  <h4><?=$username; ?></h4>
-  <?php if ($userData["admin"]): ?>
-    <p><i class="far fa-star"></i></i> ADMIN <i class="far fa-star"></i></p>
-  <?php endif; ?>
-  <h5>About me</h5>
-  <p class="about"><?= nl2br($about); ?></p>
-  <h5>My patterns</h5>
-  <p>(created in the "Pattern Maker" tab)</p>
-  <?php if ($pubPatterns != ""): // if there are actually public patterns to display?>
-    <?= $pubPatterns; ?>
-  <?php else: ?>
-    <p>This user doesn't have any public patterns.</p>
-  <?php endif;?>
+    <div class="introSection">
+		<div id="containerPfp">
+			<img class="pfp" src= '<?= $pfp; ?>' alt='<?= $username; ?>-s profile picture'>
+		</div>
+		<h4><?=$username; ?></h4>
+		<?php if ($userData["admin"]): ?>
+			<p class="tagAdmin"><i class="far fa-star fa-sm"></i> Admin <i class="far fa-star fa-sm"></i></p>
+		<?php endif; ?>
+	</div>
+	<div class="section">
+		<h4>About Me</h4>
+		<p class="about"><?= nl2br($about); ?></p>
+	</div>
+	<div class="section">
+		<h4>My Patterns</h4>
+		<!--<p>(created in the "Pattern Maker" tab)</p>-->
+		<?php if ($pubPatterns != ""): // if there are actually public patterns to display?>
+		<div class="row"><?= $pubPatterns; ?></div>
+		<?php else: ?>
+		<p>This user doesn't have any public patterns.</p>
+		<?php endif;?>
+	</div>
 </div>

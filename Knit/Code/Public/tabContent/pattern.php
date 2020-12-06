@@ -24,13 +24,15 @@
 			</div>
 		</div>
 		<div class="row justify-content-center">		
-			<button id="btnClear" class="btn1">Clear canvas</button>
-			<a id="btnDownload" href=""><button class="btn1">Download</button></a>
+			<button id="btnClear" class="btn1">Clear Canvas</button>
+			<a id="btnDownload" href=""><button class="btn1">Download Image</button></a>
 			<?php if ($loggedIn): ?>
 				<button class="btn1" onclick = "btnSave('<?= $username; ?>')">Save to my account</button>
 				<!-- feedback about saving goes here -->
-				<p id = "paDiv"></p>
 			<?php endif; ?>
+		</div>
+		<div class="row justify-content-center">		
+			<div id = "paDiv"></div>
 		</div>
 	</div>
 </div>

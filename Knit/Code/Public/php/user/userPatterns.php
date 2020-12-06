@@ -12,7 +12,7 @@
 	<?php if (count($patterns) == 0): ?>
 	  <p>You don't have any saved patterns yet. Go to the "Pattern Maker" tab to add some!</p>
 	<?php else: ?>
-	  <p id = 'uPaDiv'>Here are your saved patterns. Click on a pattern to view more options (download, edit privacy level).</p>
+	  <p id = 'uPaDiv' class='alert alert-info' role='alert'>Here are your saved patterns. Click on a pattern to view more options (download, edit privacy level).</p>
 	<div class="row justify-content-center">
 	  <?php foreach($patterns as $index => $pattern): 
 	    $imgFile = $pattern["image"];
@@ -22,7 +22,7 @@
 	      $pubPr = "Private";
 	    }
 	  ?>
-	    <div class="col-xs-12 col-md-4">
+	    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 		<a onclick = "show('managePattern<?= $index; ?>')"><img class='uPa' src="<?= $userFolder . $imgFile; ?>" alt = "Pattern by you"></a></div>
 	    <div class = 'dark' id = 'managePattern<?= $index; ?>'>
 	      <div class = "float">

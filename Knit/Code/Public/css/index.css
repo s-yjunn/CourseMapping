@@ -16,6 +16,11 @@
 	display: none;
 }
 
+/*#Winners a:hover, #Vote a:hover, #Forum a:hover {
+	text-decoration: none;
+	color: white;
+}*/
+
 /* BUTTONS */
 .btn1 {	
 	border: none;
@@ -70,7 +75,7 @@ input[type=button] {
 }
 /* modals to float over some 'dark' div */
 .float {
-	width: 30%;
+	max-width: 500px;
 	margin: auto;
 	padding: 2rem;
 	background-color: white;

@@ -128,13 +128,13 @@ function btnSave(username) {
 			// if php script outputs a success message
 			if (response == 1) {
 				// let the user know
-				$("#paDiv").html("Your pattern was saved.");
+				$("#paDiv").html("<p class='alert alert-info' role='alert'>Your pattern was saved.</p>");
 				// update user patterns page
 				$("#userPatterns").load(location.href+" #userPatterns>*","");
 			// otherwise
 			} else {
 				// let the user know
-				$("#paDiv").html("Unable to save pattern.");
+				$("#paDiv").html("<p class='alert alert-info' role='alert'>Unable to save pattern.</p>");
 			}
 		}
 	});

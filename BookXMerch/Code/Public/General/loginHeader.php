@@ -22,6 +22,7 @@
         href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Assistant:wght@300&family=Indie+Flower&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="styles/welcomeStyles.css" id="styles"> -->
 </head>
 
@@ -45,11 +46,11 @@
             <?php if($type=="admin") {
 
                 echo "<div class='w3-hide-medium w3-hide-small'>
-                            <a href='../../Private/Admin/admin.php' class='w3-bar-item buttonNavBar'>Admin page</a>
+                            <a href='../../Private/Admin/admin.php' class='w3-bar-item buttonNavBar'>Admin</a>
                     </div>";
             }?>
             <div class="w3-hide-medium w3-hide-small">
-                <a href="../../Public/index.php" class="w3-bar-item buttonNavBar">Home</a>
+                <a href="../../Public/index.php" class="w3-bar-item buttonNavBar"><i class='fas fa-home'></i>Home</a>
             </div>
 
             <div class="w3-hide-medium w3-hide-small">

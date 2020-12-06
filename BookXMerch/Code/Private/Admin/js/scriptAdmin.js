@@ -6,6 +6,8 @@ function getBooks() {
     document.getElementById("userGrid").style.display="none";
     document.getElementById("headerReviews").style.display = "none";
     document.getElementById("reviewsGrid").style.display="none";
+    document.getElementById("headerRequests").style.display="none";
+    document.getElementById("requestsGrid").style.display = "none";
 }
 
 function getUsers() {
@@ -16,6 +18,8 @@ function getUsers() {
     document.getElementById("bookGrid").style.display="none";
     document.getElementById("headerReviews").style.display = "none";
     document.getElementById("reviewsGrid").style.display="none";
+    document.getElementById("headerRequests").style.display="none";
+    document.getElementById("requestsGrid").style.display = "none";
 }
 
 function displayContent(i) {
@@ -30,9 +34,24 @@ function getReviews() {
     document.getElementById("bookGrid").style.display="none";
     document.getElementById("headerUsers").style.display = "none";
     document.getElementById("userGrid").style.display="none";
-    
+    document.getElementById("headerRequests").style.display="none";
+    document.getElementById("requestsGrid").style.display = "none";
 }
 
 function displayReview(review) {
+    
+}
+
+function getRequests() {
+    
+    document.getElementById("headerRequests").style.display="block";
+    document.getElementById("requestsGrid").style.display = "block";
+
+    document.getElementById("headerBooks").style.display="none";
+    document.getElementById("bookGrid").style.display="none";
+    document.getElementById("headerUsers").style.display = "none";
+    document.getElementById("userGrid").style.display="none";
+    document.getElementById("headerReviews").style.display="none";
+    document.getElementById("reviewsGrid").style.display = "none";
     
 }

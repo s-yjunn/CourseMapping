@@ -31,7 +31,7 @@ function getList() {
             //Modified by BxM
             //From Akash Pal's blog https://blog.usejournal.com/create-a-to-do-list-application-with-html-css-and-pure-js-533e1b07c20e
     
-            var del_buttons = document.getElementsByClassName('delete'); 
+            var del_buttons = document.getElementsByClassName('delete-RL'); 
             var task_container = document.querySelector('.tasks-container');
             var task_input = document.getElementById('new-task')
             var completeAll = document.getElementById('check-all-button');
@@ -44,7 +44,7 @@ function getList() {
             showAll.style.color="white";
     
                 
-            var task_card_string = "<div class=\"status-icon\"></div><p class=\"task-text\"><p class=\"task-status color-red\">Not-Started</p><ion-icon class=\"delete fs-large mg-10\" name=\"close-circle-outline\"></ion-icon>"
+            var task_card_string = "<div class=\"status-icon\"></div><p class=\"task-text-RL\"><p class=\"task-status-RL color-red\">Not-Started</p><ion-icon class=\"delete-RL fs-large mg-10\" name=\"close-circle-outline\"></ion-icon>"
     
             updateTaskCount();
             eventSetter();
@@ -54,7 +54,7 @@ function getList() {
             }
     
             function eventSetter(){
-                var del_buttons = document.getElementsByClassName('delete'); 
+                var del_buttons = document.getElementsByClassName('delete-RL'); 
                 for(del of del_buttons){
                     del.addEventListener('click',removeCard);
                 }
@@ -88,7 +88,7 @@ function getList() {
             }
     
             function resetColor(){
-                var allButtons = document.getElementsByClassName('filter-button');
+                var allButtons = document.getElementsByClassName('filter-button-RL');
                 for(button of allButtons)
                     button.style.color = "gray";
             }
@@ -275,7 +275,7 @@ function addReviews(reviewsByUser) {
         // console.log("times run: ", i);
 
         var review_card = document.createElement('div');
-        var styleContentDiv = "<div class=\"status-icon\"></div><p class=\"task-text color-blue\">"+reviewsByUser[i].title+"</p><br><p class=\"task-text\">"+reviewsByUser[i].comment+"</p><br><a class=\"task-status color-blue\" href=\"../../../../../../common/BookXMerch/Code/Private/Books/php/bookVisualize.php?content="+reviewsByUser[i].id+"\">Book Details</a>";
+        var styleContentDiv = "<div class=\"status-icon\"></div><p class=\"task-text-RL color-blue\">"+reviewsByUser[i].title+"</p><br><p class=\"task-text-RL\">"+reviewsByUser[i].comment+"</p><br><a class=\"task-status-RL color-blue\" href=\"../../../../../../common/BookXMerch/Code/Private/Books/php/bookVisualize.php?content="+reviewsByUser[i].id+"\">Book Details</a>";
         review_card.innerHTML = styleContentDiv; 
         review_card.setAttribute("class", "task-card-RL In-progress"); 
         review_card.setAttribute("id", "r"+i);

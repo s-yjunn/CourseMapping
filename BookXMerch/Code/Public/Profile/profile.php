@@ -119,15 +119,13 @@
                     </div>
                 </div>
                 <div class='filter'>
-                    <p id='show-all' class='filter-button'>All</p>
-                    <p id='showComplete' class='filter-button'>Completed</p>
-                    <p id='showInprogress' class='filter-button'>In-progress</p>
-                    <p id='showNotStarted' class='filter-button'>Not-Started</p>
+                    <p id='show-all' class='filter-button-RL'>All</p>
+                    <p id='showComplete' class='filter-button-RL'>Completed</p>
+                    <p id='showInprogress' class='filter-button-RL'>In-progress</p>
+                    <p id='showNotStarted' class='filter-button-RL'>Not-Started</p>
                 </div>
             </div>
         </div>
-
-
     </div>
     <!-- Div for the reviews -->
     <div id="reviewsList" class="card" style="display:none">
@@ -136,10 +134,10 @@
             <div id="main" class="container">
                 <h3 style="text-align:center"> <?php echo $_SESSION["name"]?>'s Reviews </h3>
                 <hr>
-                <div id="show-all" class="reviews-container">
+                <div class="reviews-container">
                     <!-- show all the reviews as a list here -->
-                    <div class="task-card In-progress" id="t5">
-                        <div class="status-icon"></div>
+                    <div class="task-card">
+                        <div class="status-icon-review"></div>
                         <p class="task-text">Sample Book Review</p>
                         <p class="task-status color-blue">This was an amazing book! I still can't get over that one jump scare part. A truly otherworldly experience!</p>
                     </div>

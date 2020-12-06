@@ -411,6 +411,21 @@ select {
     box-shadow: 0px 0px 4px 4px rgba(119,89,112,0.4);
 }
 
+#main2{
+    background-color: rgba(0,0,0,0.7);
+    width:60vw;
+    color: white;
+    /* margin:30px auto; */
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+    font-family: 'Poppins';
+    border-radius:2em;
+    border: 10em white;
+    box-shadow: 0px 0px 4px 4px rgba(119,89,112,0.4);
+}
+
 .add-bar{
     display:flex;
     justify-content: space-around;

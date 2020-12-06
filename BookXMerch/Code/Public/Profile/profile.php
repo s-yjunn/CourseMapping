@@ -100,7 +100,7 @@
         <div id="readingListWrapper" class="tabcontent">
 
         
-            <div id="main" class="container">
+            <div id="main2" class="container">
                 <h3 style="text-align:center"> <?php echo $_SESSION["name"]?>'s Reading List </h3>
                 <button id="saveReadingList" class="saveReadingList" onclick="passVal()"> Save list</button>
 

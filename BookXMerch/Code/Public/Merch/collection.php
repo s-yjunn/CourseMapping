@@ -50,7 +50,7 @@
               </div>
 
               <div class="w3-hide-medium w3-hide-small">
-                  <a href="#" class="w3-bar-item buttonNavBar">Community</a>
+                  <a href="../../Private/CommunityPosts/posts.php" class="w3-bar-item buttonNavBar">Community</a>
               </div>
           </div>
     </nav>
@@ -80,10 +80,22 @@
   <div id="original"> 
     <div class="wrapper">
 
-      <div id="Colthing"> <button class="imgButton" onclick="getMerchByCategory('Clothing')"><img class="imageClass"  src="Images/shirt.png" alt="bm"></button></div>
-      <div id="Collectibles"> <button class="imgButton" onclick="getMerchByCategory('Collectibles')"> <img class="imageClass" src="Images/mug.png" alt="bm"></button></div>
-      <div id="Other"> <button class="imgButton" onclick="getMerchByCategory('Other')"><img class="imageClass" src="Images/notebook.png" alt="bm"></button></div>
-    </div>
+	  <?php 
+	  $logFile = "../../../Private/Merch/allMerch.JSON";
+
+	  $arrayOfMerch = file_get_contents(__DIR__ . "../../../Private/Merch/allMerch.JSON");
+	  $merchArray = (json_decode($arrayOfMerch, true));
+	  //echo var_dump($merchArray);
+	  echo "<div>";
+	  foreach ($merchArray as $key => $jsons) { 
+	      $newArray = array($jsons["category"],$jsons["item"],$jsons["inventory"],$jsons["points"],$jsons["url"]);
+  	    echo "<ul>";
+  	    echo "<b> <button class='fixedButton' id='".$newArray[4]."'><a href = '.$newArray[4].'></button></b> ";
+  	    echo "</ul>";
+	  }
+	   echo "</div>";
+	  
+	  ?>
   </div>
 
 </body>

@@ -275,7 +275,7 @@ function addReviews(reviewsByUser) {
         // console.log("times run: ", i);
 
         var review_card = document.createElement('div');
-        var styleContentDiv = "<div class=\"status-icon-RL\"></div><p class=\"task-text-RL color-blue\">"+reviewsByUser[i].title+"</p><br><p class=\"task-text-RL\">"+reviewsByUser[i].comment+"</p><br><a class=\"task-status-RL color-blue\" href=\"../../../../../../common/BookXMerch/Code/Private/Books/php/bookVisualize.php?content="+reviewsByUser[i].id+"\">Book Details</a>";
+        var styleContentDiv = "<div class=\"status-icon-RL\"></div><p class=\"task-text-RL color-blue\">"+reviewsByUser[i].title+"</p><br><p class=\"task-text-RL\">"+reviewsByUser[i].comment+"</p><br><a class=\"task-status-RL color-blue\" href=\"../../Private/Books/php/bookVisualize.php?content="+reviewsByUser[i].id+"\">Book Details</a>";
         review_card.innerHTML = styleContentDiv; 
         review_card.setAttribute("class", "task-card-RL In-progress"); 
         review_card.setAttribute("id", "r"+i);

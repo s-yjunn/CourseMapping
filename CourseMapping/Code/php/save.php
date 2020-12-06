@@ -33,10 +33,11 @@
     } else {
         if(!fwrite($file, json_encode($pathway))){
             echo "Could Not Save Pathway";
+        } else {
+            echo "Pathway Saved";
+            $successful = true;
         }
         fclose($file); 
-        echo "Pathway Saved";
-        $successful = true;
     }
     // single character flag at the end to make it easy to determine if the save was successful from the code
     if($successful) {

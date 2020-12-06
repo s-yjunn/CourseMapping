@@ -72,6 +72,8 @@ function openTab(evt, tabID) {
   unselectTabs(); // Reverts the appearence of the current tab, and hides it's content.
   // Show the current tab, and add an "active" class to the button that opened the tab
   selectTab(evt.currentTarget, document.getElementById(tabID), tabID);
+
+  getCurrentElements();
 }
 
 function newTab() {
@@ -153,6 +155,8 @@ function selectTab(tabLink, tabcontent, tabID) {
   // Now update the current tab id then pathway
   currentTab = tabID;
   currentPathway = JSON.parse(sessionStorage[currentTab]);
+
+  restorePathway();
 }
 
 // Creates a new tablink in the navigation bar

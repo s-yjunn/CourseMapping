@@ -1,3 +1,7 @@
+/**
+ * @author Yujun Shen
+ */
+
 // Major Catalog read from json file
 var majorCatalog;
 // Course Catalog read from json file

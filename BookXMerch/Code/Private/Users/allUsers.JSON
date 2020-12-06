@@ -20,13 +20,7 @@
             "username": "iberrada",
             "type": "admin",
             "password": "adminuser",
-            "readingList": [
-                [
-                    "1112",
-                    "Star Trek: Waypoint #2",
-                    "Completed"
-                ]
-            ]
+            "readingList": []
         },
         {
             "name": "Mariem Snoussi",

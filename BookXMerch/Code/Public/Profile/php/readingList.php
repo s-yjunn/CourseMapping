@@ -37,7 +37,7 @@
             }
                 
             echo "<div class='task-card-RL ".$element[2]."' id='t".$i."'>
-                <div class='status-icon'></div>
+                <div class='status-icon-RL'></div>
                     <p class='task-text-RL'>".$element[1]."</p>
                     <p class='task-status-RL ".$color."'>".$element[2]."</p>
                     <ion-icon class='delete-RL fs-large mg-10' name='close-circle-outline'></ion-icon>

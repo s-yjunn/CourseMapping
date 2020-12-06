@@ -482,7 +482,7 @@ input:focus, textarea:focus, select:focus{
     cursor: pointer;
 }
 
-.status-icon{
+.status-icon-RL{
     border:1px solid white;
     width:15px;
     height:15px;

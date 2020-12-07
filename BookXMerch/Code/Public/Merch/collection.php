@@ -51,7 +51,7 @@
               </div>
 
               <div class="w3-hide-medium w3-hide-small">
-                  <a href="../../Private/CommunityPosts/posts.php" class="w3-bar-item buttonNavBar">Community</a>
+                  <a href="#" class="w3-bar-item buttonNavBar">Community</a>
               </div>
           </div>
     </nav>
@@ -60,13 +60,6 @@
   <div class="page-content-collections">
     <div class="sidebar viewBar white viewCard" style="width: 200px">
         <img class="imageClass" src="Images/b&m.png" alt="bm">
-
-        <div class="newFont">
-          <a class="barCol buttonClass" href="../index.php" style="width: 200px; font-family"><b>Bookstore</b>x<b>Merch</b></a>
-          <button class="barCol buttonClass" onclick="getMerchByCategory('Clothing')">Clothing</button>
-          <button class="barCol buttonClass" onclick="getMerchByCategory('Collectibles')">Collectibles</button>
-          <button class="barCol buttonClass" onclick="getMerchByCategory('Other')">Other</button>
-        </div>
       </div>
   </div>
 
@@ -80,7 +73,7 @@
 
   <div id="original"> 
     <div class="wrapper">
-
+		<!--
 	  <?php 
 	  $logFile = "../../../Private/Merch/allMerch.JSON";
 
@@ -91,12 +84,24 @@
 	  foreach ($merchArray as $key => $jsons) { 
 	      $newArray = array($jsons["category"],$jsons["item"],$jsons["inventory"],$jsons["points"],$jsons["url"]);
   	    echo "<ul>";
-  	    echo "<b> <button class='fixedButton' id='".$newArray[4]."'><a href = '.$newArray[4].'></button></b> ";
+  	    echo "<b> <button class='fixedButton' id='".$newArray[1]."'><a href = '.$newArray[4].'download ></button></b> ";
   	    echo "</ul>";
 	  }
 	   echo "</div>";
 	  
 	  ?>
+			--->
+	<div>
+		<ul>
+			<li><b><button class = 'fixedButton' id='calendar'><a href = 'Images/calendar.pdf' download><img src="Images/calendar.png" alt="calendar" width="200" height="142"></a></button></b><br><p> Click to Download our 2021 Calendar</p></li>
+		</ul>
+		<ul>
+			<li><b><button class = 'fixedButton' id='notebook'><a href = 'Images/notebook.pdf' download><img src="Images/notebook.png" alt="notebook" width="200" height="142"></a></button></b><br><p> Click to Download our notebook</p></li>
+		</ul>
+		<ul>
+			<li><b><button class = 'fixedButton' id='birthdayCard'><a href = 'Images/birthdayCard.pdf' download><img src="Images/birthdayCard.png" alt="birthdayCard" width="200" height="142"></a></button></b><br><p> Click to Download our Birthday Card</p></li>
+		</ul>
+	</div>
   </div>
 
 </body>

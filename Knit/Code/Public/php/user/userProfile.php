@@ -1,5 +1,5 @@
 <?php
-  // This file generates the "My Profile" page within the account tab
+  // This file generates the "My Profile" page (included within the account tab)
   // @author Isabel
   // Last modified 11/2/2020
 

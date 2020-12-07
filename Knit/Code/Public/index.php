@@ -4,8 +4,8 @@
 	// save loggedIn boolean and username to globals (accessible to all tabs)
 	if (isset($_SESSION["username"])) {
 		$loggedIn = true;
-        $username = $_SESSION["username"];
-        $isAdmin = $_SESSION["admin"];
+    $username = $_SESSION["username"];
+    $isAdmin = $_SESSION["admin"];
 	} else {
 		$loggedIn = false;
 	}

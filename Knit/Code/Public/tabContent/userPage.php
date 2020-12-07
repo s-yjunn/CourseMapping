@@ -3,7 +3,8 @@
     * @author Isabel
     */ 
 
-    // Get user's info
+    // Get user's info (used in admin stats page as well)
+    $uDataTime = time(); // timestamp for admin page
     $usersData = json_decode(file_get_contents("../Private/users.json"), true);
     $userData = $usersData[$username];
     // path to image files

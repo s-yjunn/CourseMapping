@@ -29,7 +29,7 @@
 	
 }
 
-#adminContest {
+#adminContest, #adminStats {
   display: none;
 }
 
@@ -51,4 +51,18 @@
 
 #adminHome .btnText {
 	font-size: 0.8rem;
+}
+
+/* copied from forum.css */
+#adminStats .timestamp {
+	font-size: 0.8rem;
+	color: #777;
+}
+
+#adminStats td {
+	padding: 10px;
+}
+
+#adminStats th {
+	padding: 0px 10px;
 }

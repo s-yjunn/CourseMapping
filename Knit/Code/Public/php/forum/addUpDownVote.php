@@ -1,5 +1,5 @@
 <?php
-// This script adds a new vote to the post or response at the given index
+// This script adds a new vote to a post or response at the posted index
 // @author Isabel
 
 $path = "../../data/forum.json";

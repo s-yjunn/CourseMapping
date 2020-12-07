@@ -1,5 +1,5 @@
 <?php
-  // This script converts base64 encoded canvas data into an image and saves it to a user's account
+  // This script converts base64 encoded canvas data into an image in a user's account
   // @author Isabel, processing code adapted from http://j-query.blogspot.com/2011/02/save-base64-encoded-canvas-image-to-png.html
   // Last modified 12/5/2020
 

@@ -1,5 +1,5 @@
 <?php
-  /* This file updates the "public" field in a user's data entry
+  /* This script updates the "public" field in a user's data entry
   * called on by the savePattern function in user.js
   * @author Isabel
   * Last modified 12/4/2020

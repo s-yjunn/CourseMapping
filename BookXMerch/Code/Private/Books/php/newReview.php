@@ -94,32 +94,31 @@ $loggedUser = $_SESSION["name"];
     </div>
 </div>
 
+    <div class="sidebar viewBar white viewCard" style="width: 200px">
+        <img class="imageClass" src="../Images/B&M.png" alt="bm">
 
-<div class="sidebar viewBar white viewCard" style="width: 200px">
-    <img class="imageClass" src="../Images/B&M.png" alt="bm">
-
-    <div class="newFont">
-        <button class="barCol buttonClass" onclick="window.location.href='../collection.php'" style="width: 200px; font-family"><b>Full B</b>x<b>M Collection</b></button>
-        <ol> 
-            <div class="info"> Book Info </div>
-            <li>  <div class="barCol"> <b> TITLE: </b> <?php echo $title ?></div> </li>
-            <li> <div class="barCol"> <b> AUTHORS(s): </b> <?php for($j=0; $j<sizeof($author); $j++) { 
-                echo "<div>" . $author[$j] . " </div> ";} ?> </div> </li>
-            <?php
-            if(sizeof($illustrator)>0) {
-                echo "<li> <div class='barCol'> <b> ILLUSTRATOR(s): </b>";
-                for($j=0; $j<sizeof($illustrator); $j++) {
-                    echo "<div>". $illustrator[$j]. "</div>";
-                }
-                echo "</div> </li>";
-                } ?>
-            <li>  <div class="barCol"> <b> CURRENT RATING: <br> </b> <?php echo $rating?> ★  </div> </li>
-            <li>  <div class="barCol"> <b> Read me </b>  <?php echo "<a href=". $url."> here </a>"?> </div> </li>
-        
-        </ol> 
-        
+        <div class="newFont">
+            <button class="barCol buttonClass" onclick="window.location.href='../collection.php'" style="width: 200px; font-family"><b>Full B</b>x<b>M Collection</b></button>
+            <ol> 
+                <div class="info"> Book Info </div>
+                <li>  <div class="barCol"> <b> TITLE: </b> <?php echo $title ?></div> </li>
+                <li> <div class="barCol"> <b> AUTHORS(s): </b> <?php for($j=0; $j<sizeof($author); $j++) { 
+                    echo "<div>" . $author[$j] . " </div> ";} ?> </div> </li>
+                <?php
+                if(sizeof($illustrator)>0) {
+                    echo "<li> <div class='barCol'> <b> ILLUSTRATOR(s): </b>";
+                    for($j=0; $j<sizeof($illustrator); $j++) {
+                        echo "<div>". $illustrator[$j]. "</div>";
+                    }
+                    echo "</div> </li>";
+                    } ?>
+                <li>  <div class="barCol"> <b> CURRENT RATING: <br> </b> <?php echo $rating?> ★  </div> </li>
+                <li>  <div class="barCol"> <b> Read me </b>  <?php echo "<a href=". $url."> here </a>"?> </div> </li>
+            
+            </ol> 
+            
+        </div>
     </div>
-  </div>
 
   <br>
   <div class="tabcontent">
@@ -169,7 +168,7 @@ $loggedUser = $_SESSION["name"];
         <hr>
         <div class="barCol"> <a href="#"> <b> Rate this book</b></a>   (CURRENT RATING: <?php echo $rating?> ★ ) </div>
         <hr>
-        <div class="barCol"> <a href="newReview.php?content=<?php echo $bookid;?>" > <b> Review this book</b></a></div>
+        <div class="barCol"> <a href="#" > <b> Review this book</b></a></div>
         <hr>
         
         <?php 
@@ -201,10 +200,3 @@ $loggedUser = $_SESSION["name"];
   </body>
 
 </html>
-
-
-
-
-
-
-

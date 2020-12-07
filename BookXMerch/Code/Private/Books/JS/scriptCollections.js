@@ -18,6 +18,30 @@ function getBookByGenre(genre, sessionName) {
     xmlhttp.send();
 }
 
+// $(document).ready(function(){
+//     function hideMain() {
+//         console.log("working?");
+//         document.getElementById("bookDetails").style.display="none";
+//         //document.getElementById("reviewForm").style.display="block";
+        
+//     }
+//     $("#reviewBox").click(hideMain);
+// });
+
+// function showModal(){
+//     document.getElementsById("bookDetails").style.display="none";
+//     document.getElementById("reviewForm").style.display="block";
+// }
+
+// function hideModal() {
+//     document.getElementById("reviewForm").style.display="none";
+//     document.getElementById("bookBorder").style.display="block";
+// }
+
+// function hideMain2() {
+//     document.getElementById("bookDetails").style.display="none";
+// }
+
 
 function showCollection(){
     document.getElementById("wrapper").innerHTML = "";

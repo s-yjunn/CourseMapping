@@ -1,4 +1,5 @@
 function getUpload() {
+    document.getElementById("uploadForm").style.display="none";
     document.getElementById("rList").style.display="none";
     document.getElementById("userDetails").style.display="none";
     document.getElementById("reviewsList").style.display = "none";
@@ -14,6 +15,10 @@ function closeUploadModal(){
     document.getElementById("uploadForm").style.display="none";
 }
 
+function uploadRequest() {
+    // Have an XML request here to operate the 
+}
+
 function getList() {
     // document.getElementById("userDetails").style.display="none";
     // document.getElementById("rList").style.display="block";
@@ -21,6 +26,8 @@ function getList() {
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) { 
             document.getElementById("rList").style.display="block";
+            document.getElementById("uploadButton").style.display="none";
+            document.getElementById("uploadForm").style.display="none";
             document.getElementById("userDetails").style.display="none";
             document.getElementById("reviewsList").style.display = "none";
             document.getElementById("uploadButton").style.display = "none";
@@ -221,7 +228,7 @@ function getList() {
                 }
             });
             }
-        }
+        }//endIf
         xmlhttp.open("GET", "php/readingList.php", true);
         xmlhttp.send();
     }
@@ -240,6 +247,7 @@ function getReviews() {
             document.getElementById("userDetails").style.display = "none";
             document.getElementById("rList").style.display="none";
             document.getElementById("uploadButton").style.display = "none";
+            document.getElementById("uploadForm").style.display="none";
             document.getElementById("reviewsList").style.display = "block";
             reviewsByUser = this.responseText;
             console.log("this: ", JSON.parse(reviewsByUser)); 
@@ -259,11 +267,6 @@ console.log("reviews container: ", reviews_container);
 
 
 function addReviews(reviewsByUser) {
-    // add style --> come back later.
-
-    
-
-
     // clear out all reviews every time and then fill them. 
     reviews_container.innerHTML = "";
 
@@ -275,13 +278,11 @@ function addReviews(reviewsByUser) {
         // console.log("times run: ", i);
 
         var review_card = document.createElement('div');
-        var styleContentDiv = "<div class=\"status-icon\"></div><p class=\"task-text color-blue\">"+reviewsByUser[i].title+"</p><br><p class=\"task-text\">"+reviewsByUser[i].comment+"</p><br><a class=\"task-status color-blue\" href=\"../../../../../../common/BookXMerch/Code/Private/Books/php/bookVisualize.php?content="+reviewsByUser[i].id+"\">Book Details</a>";
+        var styleContentDiv = "<div class=\"status-icon\"></div><p class=\"task-text color-blue\">"+reviewsByUser[i].title+"</p><br><p class=\"task-text\">"+reviewsByUser[i].comment+"</p><br><a class=\"task-status color-blue\" href=\"../../Private/Books/php/bookVisualize.php?content="+reviewsByUser[i].bookId+"\">Book Details</a>";
         review_card.innerHTML = styleContentDiv; 
         review_card.setAttribute("class", "task-card-RL In-progress"); 
         review_card.setAttribute("id", "r"+i);
         
-        
-
         
         review_main.appendChild(review_card);
         

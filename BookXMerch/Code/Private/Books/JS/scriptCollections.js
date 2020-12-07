@@ -56,6 +56,7 @@ function booksOfMonth() {
     document.getElementById("booksOfMonth").style.display="block";
 }
 
+
 function displayContent(i) {
     // document.getElementById(i).style.display="block";
     window.location.href="php/bookVisualize.php?content=" + i;

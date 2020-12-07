@@ -79,12 +79,12 @@
         </div>
 
 
-        <div id="booksOfMonth" style="display:none">
+        <div id="booksOfMonth" style="display:none" >
             <br>
             <br>
             <dl class="bookshelf wrapper">
 
-                <dt class="bookOfMonth1"><span> The Space Between Worlds</span></dt>
+                <dt class="bookOfMonth1" onclick='displayContent(1120)'><span> The Space Between Worlds</span></dt>
                 <dd class="bookOfMonth1"><a class="amazonLink" href="https://www.goodreads.com/book/show/48848254-the-space-between-worlds"><img src="Images/book-front.jpg"
                             alt="alt"></a><br>
                     <strong>The Space Between Worlds</strong> by Micaiah Johnson.<br>
@@ -100,7 +100,6 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="JS/logOut-fromCollections.js"> </script>
-    <script type="text/javascript" src="JS/bookshelf.js"></script>
     
 
 

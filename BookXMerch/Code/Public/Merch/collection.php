@@ -41,9 +41,6 @@
                   <a href="../../Public/Profile/profile.php" class="w3-bar-item">Welcome, <?php echo $loggedUser?></a>  
               </div>
               <div class="w3-hide-medium w3-hide-small">
-                  <button id="logoutButton3" class="w3-bar-item w3-right buttonNavBar" style="cursor:pointer">Log Out</button>
-              </div>
-              <div class="w3-hide-medium w3-hide-small">
                   <a href="../../Public/index.php" class="w3-bar-item buttonNavBar"><i class='fas fa-home'></i>Home</a>
               </div>
               <div class="w3-hide-medium w3-hide-small">
@@ -92,14 +89,29 @@
 	  ?>
 			--->
 	<div>
-		<ul>
-			<li><b><button class = 'fixedButton' id='calendar'><a href = 'Images/calendar.pdf' download><img src="Images/calendar.png" alt="calendar" width="200" height="142"></a></button></b><br><p> Click to Download our 2021 Calendar</p></li>
-		</ul>
-		<ul>
-			<li><b><button class = 'fixedButton' id='notebook'><a href = 'Images/notebook.pdf' download><img src="Images/notebook.png" alt="notebook" width="200" height="142"></a></button></b><br><p> Click to Download our notebook</p></li>
-		</ul>
-		<ul>
-			<li><b><button class = 'fixedButton' id='birthdayCard'><a href = 'Images/birthdayCard.pdf' download><img src="Images/birthdayCard.png" alt="birthdayCard" width="200" height="142"></a></button></b><br><p> Click to Download our Birthday Card</p></li>
+		<ul class="ulClass">
+      <li>
+      <p style='color:white'> Download our 2021 Calendar</p>
+        <b><button class = 'merchButton' id='calendar'>
+          <a href = 'Images/calendar.pdf' download>
+          <img src="Images/calendar.png" alt="calendar"width="200" height="200">
+        </a></button></b>
+        <br>
+      </li>
+			<li>
+      <p style='color:white'> Download our Notebook</p>
+        <b><button class = 'merchButton' id='notebook'>
+          <a href = 'Images/notebook.pdf' download>
+          <img src="Images/notebook.png" alt="notebook" width="200" height="200">
+        </a></button></b>
+        <br>
+      </li>
+			<li>
+      <p style='color:white'> Download our Birthday Card</p>
+        <b><button class = 'merchButton' id='birthdayCard'>
+          <a href = 'Images/birthdayCard.pdf' download>
+          <img src="Images/birthdayCard.png" alt="birthdayCard" width="200" height="200">
+        </a></button></b><br></li>
 		</ul>
 	</div>
   </div>

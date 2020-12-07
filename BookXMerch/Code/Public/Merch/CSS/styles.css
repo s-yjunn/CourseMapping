@@ -82,6 +82,15 @@ body {
     background-color: rgb(119,89,112);
 }
 
+.merchButton {
+    animation-name: animateLogo;
+    animation-duration: 3s;
+    background-color: white;
+}
+
+.ulClass{
+    color: white;
+}
 .info {
     color: rgb(119,89,112);
     font-weight: bolder;

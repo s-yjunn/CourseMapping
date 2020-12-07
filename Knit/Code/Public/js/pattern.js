@@ -5,11 +5,11 @@ var canvas = document.getElementById('canvas'),
     context = canvas.getContext('2d'),
     mouseX = 0,
     mouseY = 0,
-	gridWidth = 500, // dimensions of canvas GRID (excluding numbers)
-	gridHeight = 500,
+	gridWidth = 600, // dimensions of canvas GRID (excluding numbers)
+	gridHeight = 600,
 	width = gridWidth+20, // dimensions of canvas ELEMENT (adds 20px to fit number axes)
 	height = gridHeight+20,
-	gridDiv = 20, // gridWidth divided by gridDiv determines number of square
+	gridDiv = 20, // gridWidth (or gridHeight) divided by gridDiv determines number of square
 	fillColor = '#000', // default fill color is black
 	bgColor = [255, 255, 255, 255], // default bg color of squares is white
     mousedown = false,
@@ -43,7 +43,8 @@ function drawGrid() {
     }
 	
 	// DRAW THE NUMBERS
-	var numX = 1, numY = 1; // numbers that get printed; get incremented
+	var numX = (gridWidth/gridDiv); // nnumber that gets printed along x axis; start with number of squares needed and decrement
+	var numY = (gridHeight/gridDiv); // number that gets printed along y axis; start with number of squares needed and decrement
 	var numXaxis = gridWidth+5; // x coordinate of canvas that y-axis numbers print along, +5px for spacing
 	var numYaxis = gridHeight+15; // y coordinate of canvas that x-axis numbers print along, +15px for spacing
 	// fill styles for the numbers
@@ -54,7 +55,7 @@ function drawGrid() {
 	for (x = 0; x < gridWidth; x++) { // 
 		if (x%gridDiv < 1) { // print number every gridDiv # of pixels (same condition to determine where to make grid lines)
 			context.fillText(numX, x, numYaxis); // print text of the number at point (x, numYaxis)
-			numX++; // increment the number to print next
+			numX--; // increment the number to print next
 		} else {
 			continue; // don't print a number at this x coord 
 		}
@@ -63,7 +64,7 @@ function drawGrid() {
 	for (y = 10; y < (gridHeight+1); y++) { // need +1 to gridHeight because last number won't print otherwise
 		if (y%gridDiv < 1) { // print number every gridDiv # of pixels (same condition to determine where to make grid lines)
 			context.fillText(numY, numXaxis, y); // print text of the number numY at point (numXaxis, y)
-			numY++; // increment the number to print next
+			numY--; // increment the number to print next
 		} else {
 			continue; // don't print a number at this y coord 
 		}

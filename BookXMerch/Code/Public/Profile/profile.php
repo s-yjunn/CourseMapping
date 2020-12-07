@@ -35,7 +35,7 @@
             <a class="barCol buttonClass" href="../../Public/Profile/profile.php" style="width: 200px; font-family">My Details</a>
             <button class="barCol buttonClass" id="reading-list-button" onclick="getList()">My Reading List</button>
             <button class="barCol buttonClass" onclick="getUpload()">Upload a Book</button>
-            <button class="barCol buttonClass" onclick="#">My Books</button>
+            <button class="barCol buttonClass" onclick="getBooks()">My Books</button>
             <button class="barCol buttonClass" onclick="#">My Posts</button>
             <button class="barCol buttonClass" onclick="getReviews()">My Reviews</button>
             <button class="barCol buttonClass" onclick="getRatings()">My Ratings</button>
@@ -209,6 +209,45 @@
 
     </div>
         
+    <!-- My books -->
+    <div id="booksList" class="card" style="display:none">
+        <div id="reviewsListWrapper" class="tabcontent">
+            <div id="main" class="container">
+                <h3 style="text-align:center"> <?php echo $_SESSION["name"]?>'s Books </h3>
+                <hr>
+                <?php 
+                
+                $arrayOfUsers = file_get_contents("../../Private/Users/allUsers.JSON");
+                $usersArray = json_decode($arrayOfUsers, true);
+                $newArray = array();
+                
+                $i=0;
+                foreach ($usersArray["users"] as $key => $jsons) { 
+                    if($jsons["username"]==$_SESSION["username"]){
+                        for($i=0;$i<sizeof($jsons["myBooks"]);$i++) {
+                            array_push($newArray,array(
+                            $jsons["myBooks"][$i]["title"],
+                            $jsons["myBooks"][$i]["author"],
+                            $jsons["myBooks"][$i]["illustrator"],
+                            $jsons["myBooks"][$i]["description"],
+                            $jsons["myBooks"][$i]["url"],
+                            $jsons["myBooks"][$i]["rating"],
+                            $jsons["myBooks"][$i]["bookid"]
+                            ));
+                        }
+                        
+                    break;
+                    }
+                  
+                }
+                foreach ($newArray as $arr) {
+                    echo "<button onclick='displayBookContent(".$arr[6].")' class='myBooksButton w3-center' id='".$arr[6]."'> " . $arr[0] . "</button>";
+                    echo "<br>";
+                } 
+                ?>
+            </div>
+        </div>
+    </div>
     <!-- Page Content End (below) -->
     </div>
 

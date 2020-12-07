@@ -77,9 +77,9 @@ $requestsArray = json_decode($arrayOfRequests, true);
           </div>
         </div>
 
-        <h3 id="headerUsers" class="w3-center allUsers">All BxM Users </h3>
+        <h3 id="headerUsers" class="w3-center allUsers" style="display:none">All BxM Users </h3>
         
-        <div id="userGrid" class="gridContainer">
+        <div id="userGrid" class="gridContainer" style="display:none">
         <!-- Get all the user info from the allUsers to display. -->
         <?php 
             $usersJSON = file_get_contents("../Users/allUsers.JSON");
@@ -180,8 +180,8 @@ $requestsArray = json_decode($arrayOfRequests, true);
         </div>
 
 
-        <h3 id="headerRequests" class="w3-center allUsers" style="display:none"> Pending Requests </h3>
-        <div id="requestsGrid" class="gridContainer" style="display:none">
+        <h3 id="headerRequests" class="w3-center allUsers" style="display:block"> Pending Requests </h3>
+        <div id="requestsGrid" class="gridContainer" style="display:block">
             <div id="pending" class="card2">
     
                 <div id="pendingReq">

@@ -41,7 +41,7 @@ function getReviews() {
 function displayReview(review) {
     
 }
-
+getRequests();
 function getRequests() {
     
     var xmlhttp = new XMLHttpRequest();

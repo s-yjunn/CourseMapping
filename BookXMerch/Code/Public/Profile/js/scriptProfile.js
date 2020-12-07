@@ -3,6 +3,7 @@ function getUpload() {
     document.getElementById("userDetails").style.display="none";
     document.getElementById("reviewsList").style.display = "none";
     document.getElementById("uploadButton").style.display = "block";
+    document.getElementById("booksList").style.display = "none";
 }
 function showUploadModal(){
     document.getElementById("uploadButton").style.display="none";
@@ -23,6 +24,7 @@ function getList() {
             document.getElementById("userDetails").style.display="none";
             document.getElementById("reviewsList").style.display = "none";
             document.getElementById("uploadButton").style.display = "none";
+            document.getElementById("booksList").style.display = "none";
             document.getElementById("showAll").innerHTML = this.responseText;
             var task_count = document.getElementById("readingSize").innerHTML;
     
@@ -239,7 +241,9 @@ function getReviews() {
             document.getElementById("userDetails").style.display = "none";
             document.getElementById("rList").style.display="none";
             document.getElementById("uploadButton").style.display = "none";
+            document.getElementById("booksList").style.display = "none";
             document.getElementById("reviewsList").style.display = "block";
+            
             reviewsByUser = this.responseText;
             console.log("this: ", JSON.parse(reviewsByUser)); 
             addReviews(JSON.parse(reviewsByUser)); 
@@ -312,4 +316,18 @@ function passVal(){
     };
 
     $.post("php/updateList.php", data);
+}
+
+function getBooks() {
+    document.getElementById("userDetails").style.display = "none";
+    document.getElementById("rList").style.display="none";
+    document.getElementById("uploadButton").style.display = "none";
+    document.getElementById("reviewsList").style.display = "none";
+
+    document.getElementById("booksList").style.display = "block";
+    
+}
+
+function displayBookContent(i) {
+    window.location.href="../../Private/Books/php/bookVisualize.php?content=" + i;
 }

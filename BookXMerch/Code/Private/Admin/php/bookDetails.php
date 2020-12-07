@@ -76,7 +76,7 @@ $loggedUser = $_SESSION["name"];
                     echo "</div> </li>";
                     } ?>
                 <hr>
-                <div > <b> Description: <br> </b> <?php echo $description?>  </div> 
+                <li><div > <b> Description: <br> </b> <?php echo $description?>  </div> </li>
                 <hr>
                 <li>  <div > <b> Read me </b>  <?php echo "<a href=". $url."> here </a>"?> </div> </li>
             

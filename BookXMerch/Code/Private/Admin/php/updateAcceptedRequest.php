@@ -45,8 +45,7 @@
     $usersArray = json_decode($users, true);
 
     //books JSON file
-    // $arrayOfBooks = file_get_contents("../../Books/allBooks.JSON");
-    $arrayOfBooks = file_get_contents("../test.JSON");
+    $arrayOfBooks = file_get_contents("../../Books/allBooks.JSON");
     $booksArray = json_decode($arrayOfBooks, true);
 
     $j=0;
@@ -72,8 +71,7 @@
     );
     array_push($booksArray,$arr_row);
     $bookJSON = json_encode($booksArray, JSON_PRETTY_PRINT);
-    file_put_contents("../test.JSON", $bookJSON);
-    //REPLACE BY allBooks.JSON!!!!!
+    file_put_contents("../../Books/allBooks.JSON", $bookJSON);
 
     //Get the user's uploaded books
     foreach ($usersArray["users"] as $key2 => $jsons2) { 

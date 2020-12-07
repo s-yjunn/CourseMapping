@@ -591,6 +591,30 @@ color: white;
 .color-blue{
     color:#2196f3
 }
+
+/*My Books CSS*/
+
+.myBooksButton{
+    /* width: 10em; */
+    height: 5em;
+    background-color: rgb(119,80,112);
+    color: white;
+    text-align: center;
+    border-radius: 5em;
+    border-style: dotted;
+    
+}
+
+.myBooksButton:hover{
+
+    text-align: center;
+    border-width: 0.3em;
+    animation-name: animateButton;
+    animation-duration: 1s;
+    color: white;
+    background-color: rgb(119,80,112);
+    cursor: pointer;
+}
 /* W3 CSS - modified*/
 /* W3.CSS 4.13 June 2019 by Jan Egil and Borge Refsnes */
 html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}

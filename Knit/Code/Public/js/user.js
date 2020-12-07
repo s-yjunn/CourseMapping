@@ -132,3 +132,8 @@ function savePattern(username, index) {
     // and the manage div in question
     hide("managePattern" + index);
 }
+
+// this function updates the user's inbox
+function refreshUserInbox() {
+    $("#userInbox").load(location.href+" #userInbox>*","");
+}

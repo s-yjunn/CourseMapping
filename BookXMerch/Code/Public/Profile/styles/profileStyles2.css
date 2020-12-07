@@ -113,7 +113,7 @@ body {
     font-size: 20px;
 
     display: inline-block;
-    width: 140px;
+    width: 195px;
     text-align: right;
 }
 .label2{
@@ -121,6 +121,13 @@ body {
     letter-spacing: 3px;
     font-family: "Poppins";
     font-size: 20px;
+}
+.asterisk{
+    color: #7E4D72;
+    text-align: left;
+    font-family: "Poppins";
+    font-size: 10px;
+    font-weight: bold;
 }
 /* Full-width input fields */
 input[type=text], input[type=author],input[type=title],input[type=url]{

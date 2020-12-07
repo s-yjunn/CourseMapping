@@ -25,7 +25,31 @@
                     "1120",
                     "The Space Between Worlds",
                     "Completed"
+                ],
+                [
+                    "1121",
+                    "Pride and Prejudice",
+                    "Not-Started"
                 ]
+            ],
+            "myBooks": [
+                {
+                    "bookid": "1121",
+                    "genre": "romance",
+                    "title": "Pride and Prejudice",
+                    "author": [
+                        " Jane Austen",
+                        " Anna Quindlen"
+                    ],
+                    "illustrator": [
+                        ""
+                    ],
+                    "description": " Since its immediate success in 1813, Pride and Prejudice has remained one of the most popular novels in the English language. Jane Austen called this brilliant work \"her own darling child\" and its vivacious heroine, Elizabeth Bennet, \"as delightful a creature as ever appeared in print.\" The romantic clash between the opinionated Elizabeth and her proud beau, Mr. Darcy, is a splendid performance of civilized sparring. And Jane Austen's radiant wit sparkles as her characters dance a delicate quadrille of flirtation and intrigue, making this book the most superb comedy of manners of Regency England.",
+                    "url": "https:\/\/www.goodreads.com\/book\/show\/1885.Pride_and_Prejudice",
+                    "image_url": "",
+                    "rating": "5",
+                    "reviews": []
+                }
             ]
         },
         {
@@ -42,41 +66,7 @@
             "username": "user1",
             "type": "user",
             "password": "user1",
-            "readingList": [],
-            "myBooks": [
-                {
-                    "bookid": "1121",
-                    "genre": "comics",
-                    "title": "dummy3",
-                    "author": [
-                        "Jerry"
-                    ],
-                    "illustrator": [
-                        "Joe"
-                    ],
-                    "description": "desc",
-                    "url": "https:\/\/www.goodreads.com\/book\/show\/707611.Superman_Archives_Vol_2",
-                    "image_url": "",
-                    "rating": "5",
-                    "reviews": []
-                },
-                {
-                    "bookid": "1122",
-                    "genre": "comics",
-                    "title": "dummy4",
-                    "author": [
-                        "Jerry"
-                    ],
-                    "illustrator": [
-                        "Joe"
-                    ],
-                    "description": "desc",
-                    "url": "https:\/\/www.goodreads.com\/book\/show\/707611.Superman_Archives_Vol_2",
-                    "image_url": "",
-                    "rating": "5",
-                    "reviews": []
-                }
-            ]
+            "readingList": []
         },
         {
             "name": "user2",

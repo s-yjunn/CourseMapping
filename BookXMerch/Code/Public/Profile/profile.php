@@ -171,7 +171,7 @@
         <div class="container-upload">
             
             <form action="php/bookUpload.php" method="post">
-                <label class="label" for="genre"><b>Genre</b></label>
+                <label class="label" for="genre"><b>Genre*</b></label>
    
                 <select id="genre" name="genre">
                     <option value="comics">Comic Books</option>
@@ -189,10 +189,10 @@
                 <label class="label" for="text"><b>Title</b></label>
                 <input type="title" name="title" placeholder="Title" required>
                 <br>
-                <label class="label" for="text"><b>Author</b></label>
+                <label class="label" for="text"><b>Author(s)**</b></label>
                 <input type="author" name="author" placeholder="Author" required>
                 <br>
-                <label class="label" for="text"><b>Illustrator</b></label>
+                <label class="label" for="text"><b>Illustrator(s)**</b></label>
                 <input type="text" name="illustrator" placeholder="Illustrator">
                 <br>
                 <label class="label" for="summary"><b>Short Summary</b></label>
@@ -203,6 +203,8 @@
                 <br>
                 <br>
                 <button type="submit" name="submit" id="uploadSubmit" class="upload">Upload</button>
+                <p class="asterisk"> *drop-down menu available</p>
+                <p class="asterisk"> **comma-separated if multiple</p>
             </form>
         </div>
         

@@ -131,7 +131,7 @@
     <div class="tabcontent">
         <div class="card border">
             <h2 class="colortheme">Our Merch</h2>
-            <div class="wrapper">
+            <div class="wrapper2">
 
                 <div id="Colthing"> <a class="imageClass" href="Merch/collection.php"><img class="imageClass"  src="Merch/Images/birthdayCard.png" alt="bm"></button></a></div>
                 <div id="Other"> <a class="imageClass" href="Merch/collection.php"><img class="imageClass" src="Merch/Images/calendar.png" alt="bm"></a></div>
@@ -143,6 +143,43 @@
     <div class="tabcontent">
         <div class="card2 border" >
             <h2 id="aboutUs" class="colortheme" style="color:white">About Us</h2>
+            
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                    <img src="General/styles/Imane.png" alt="Avatar" style="width:300px;height:300px;">
+                    </div>
+                    <div class="flip-card-back">
+                    <h1>Imane Berrada</h1> 
+                    <p>Smith College '21</p> 
+                    <p>Economics and CS</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                    <img src="General/styles/Nukhbah.png" alt="Avatar" style="width:300px;height:300px;">
+                    </div>
+                    <div class="flip-card-back">
+                    <h1>Nukhbah Majid</h1> 
+                    <p>Smith College '21</p> 
+                    <p>Computer Science</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                    <img src="General/styles/Mariem.png" alt="Avatar" style="width:300px;height:300px;">
+                    </div>
+                    <div class="flip-card-back">
+                    <h1>Mariem Snoussi</h1> 
+                    <p>Smith College '23</p> 
+                    <p>Computer Science</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

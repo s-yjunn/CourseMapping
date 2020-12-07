@@ -1,0 +1,36 @@
+[
+    {
+        "reqUsername": "iberrada",
+        "bookid": "112123",
+        "genre": "comics",
+        "title": "dummy1",
+        "author": [
+            "Jerry"
+        ],
+        "illustrator": [
+            "Joe"
+        ],
+        "description": "desc",
+        "url": "https:\/\/www.goodreads.com\/book\/show\/707611.Superman_Archives_Vol_2",
+        "image_url": "",
+        "rating": "5",
+        "reviews": []
+    },
+    {
+        "reqUsername": "nmajid",
+        "bookid": "11223",
+        "genre": "sci-fi",
+        "title": "dummy2",
+        "author": [
+            "Jerry"
+        ],
+        "illustrator": [
+            "Joe"
+        ],
+        "description": "desc",
+        "url": "https:\/\/www.goodreads.com\/book\/show\/707611.Superman_Archives_Vol_2",
+        "image_url": "",
+        "rating": "5",
+        "reviews": []
+    }
+]

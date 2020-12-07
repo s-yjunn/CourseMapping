@@ -1,5 +1,5 @@
 <?php
-  // This file (imported into the user page) allows a user to see and manage their saved patterns.
+  // This file generates the "My Patterns" page (included in the account tab)
   // @author Isabel
   // Last modified 12/4/2020
 

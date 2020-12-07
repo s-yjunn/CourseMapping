@@ -35,7 +35,7 @@
             <a class="barCol buttonClass" href="../../Public/Profile/profile.php" style="width: 200px; font-family">My Details</a>
             <button class="barCol buttonClass" id="reading-list-button" onclick="getList()">My Reading List</button>
             <button class="barCol buttonClass" onclick="getUpload()">Upload a Book</button>
-            <button class="barCol buttonClass" onclick="#">My Books</button>
+            <button class="barCol buttonClass" onclick="getBooks()">My Books</button>
             <button class="barCol buttonClass" onclick="#">My Posts</button>
             <button class="barCol buttonClass" onclick="getReviews()">My Reviews</button>
             <button class="barCol buttonClass" onclick="getRatings()">My Ratings</button>
@@ -100,7 +100,7 @@
         <div id="readingListWrapper" class="tabcontent">
 
         
-            <div id="main" class="container">
+            <div id="main2" class="container">
                 <h3 style="text-align:center"> <?php echo $_SESSION["name"]?>'s Reading List </h3>
                 <button id="saveReadingList" class="saveReadingList" onclick="passVal()"> Save list</button>
 
@@ -119,15 +119,13 @@
                     </div>
                 </div>
                 <div class='filter'>
-                    <p id='show-all' class='filter-button'>All</p>
-                    <p id='showComplete' class='filter-button'>Completed</p>
-                    <p id='showInprogress' class='filter-button'>In-progress</p>
-                    <p id='showNotStarted' class='filter-button'>Not-Started</p>
+                    <p id='show-all' class='filter-button-RL'>All</p>
+                    <p id='showComplete' class='filter-button-RL'>Completed</p>
+                    <p id='showInprogress' class='filter-button-RL'>In-progress</p>
+                    <p id='showNotStarted' class='filter-button-RL'>Not-Started</p>
                 </div>
             </div>
         </div>
-
-
     </div>
     <!-- Div for the reviews -->
     <div id="reviewsList" class="card" style="display:none">
@@ -136,10 +134,10 @@
             <div id="main" class="container">
                 <h3 style="text-align:center"> <?php echo $_SESSION["name"]?>'s Reviews </h3>
                 <hr>
-                <div id="show-all" class="reviews-container">
+                <div class="reviews-container">
                     <!-- show all the reviews as a list here -->
-                    <div class="task-card In-progress" id="t5">
-                        <div class="status-icon"></div>
+                    <div class="task-card">
+                        <div class="status-icon-review"></div>
                         <p class="task-text">Sample Book Review</p>
                         <p class="task-status color-blue">This was an amazing book! I still can't get over that one jump scare part. A truly otherworldly experience!</p>
                     </div>
@@ -211,6 +209,45 @@
 
     </div>
         
+    <!-- My books -->
+    <div id="booksList" class="card" style="display:none">
+        <div id="reviewsListWrapper" class="tabcontent">
+            <div id="main" class="container">
+                <h3 style="text-align:center"> <?php echo $_SESSION["name"]?>'s Books </h3>
+                <hr>
+                <?php 
+                
+                $arrayOfUsers = file_get_contents("../../Private/Users/allUsers.JSON");
+                $usersArray = json_decode($arrayOfUsers, true);
+                $newArray = array();
+                
+                $i=0;
+                foreach ($usersArray["users"] as $key => $jsons) { 
+                    if($jsons["username"]==$_SESSION["username"]){
+                        for($i=0;$i<sizeof($jsons["myBooks"]);$i++) {
+                            array_push($newArray,array(
+                            $jsons["myBooks"][$i]["title"],
+                            $jsons["myBooks"][$i]["author"],
+                            $jsons["myBooks"][$i]["illustrator"],
+                            $jsons["myBooks"][$i]["description"],
+                            $jsons["myBooks"][$i]["url"],
+                            $jsons["myBooks"][$i]["rating"],
+                            $jsons["myBooks"][$i]["bookid"]
+                            ));
+                        }
+                        
+                    break;
+                    }
+                  
+                }
+                foreach ($newArray as $arr) {
+                    echo "<button onclick='displayBookContent(".$arr[6].")' class='myBooksButton w3-center' id='".$arr[6]."'> " . $arr[0] . "</button>";
+                    echo "<br>";
+                } 
+                ?>
+            </div>
+        </div>
+    </div>
     <!-- Page Content End (below) -->
     </div>
 

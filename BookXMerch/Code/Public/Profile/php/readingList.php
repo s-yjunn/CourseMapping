@@ -37,10 +37,10 @@
             }
                 
             echo "<div class='task-card-RL ".$element[2]."' id='t".$i."'>
-                <div class='status-icon'></div>
-                    <p class='task-text'>".$element[1]."</p>
-                    <p class='task-status ".$color."'>".$element[2]."</p>
-                    <ion-icon class='delete fs-large mg-10' name='close-circle-outline'></ion-icon>
+                <div class='status-icon-RL'></div>
+                    <p class='task-text-RL'>".$element[1]."</p>
+                    <p class='task-status-RL ".$color."'>".$element[2]."</p>
+                    <ion-icon class='delete-RL fs-large mg-10' name='close-circle-outline'></ion-icon>
                     <p class='task-id' style='display:none'>".$element[0]."</p>
                 </div>";
  

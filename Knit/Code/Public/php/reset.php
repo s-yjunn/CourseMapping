@@ -6,7 +6,6 @@ $numCont = count($compData["contestants"]);
 $compData["winners"] = $compData["pending"];
 $compData["pending"] = [];
 $delDir = '../imgs/contest/';
-
 for($i = 0; $i < $numCont; $i++){
     unlink($delDir.$compData["contestants"][$i]["image"]);
 }
@@ -15,6 +14,5 @@ $compData["contestants"] = [];
 
 $jsondata = json_encode($compData, true);
 file_put_contents("../data/contest.json", $jsondata);
-header("Location: ../index.php");
 
 ?>

@@ -3,7 +3,8 @@
     * @author Isabel
     */ 
 
-    // Get user's info
+    // Get user's info (used in admin stats page as well)
+    $uDataTime = time(); // timestamp for admin page
     $usersData = json_decode(file_get_contents("../Private/users.json"), true);
     $userData = $usersData[$username];
     // path to image files
@@ -16,7 +17,6 @@
     <h4><i class="fas fa-user"></i> <?= $username; ?></h4>
     <button class="btn1" onclick="hide('userHome'); show('userProfile')"><span class="btnTitle">My Profile</span><br><span class="btnText">View and customize my public profile.</span></button>
     <button class="btn1" onclick="hide('userHome'); show('userPatterns')"><span class="btnTitle">My Patterns</span><br><span class="btnText">View and manage my saved patterns.</span></button>
-    </ul>
 </div>
 
 <!-- this div contains the profile functions -->

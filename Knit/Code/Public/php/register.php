@@ -22,16 +22,20 @@ if (trim($newUser) == "") { // check for empty user
 	echo "<p class='alert alert-danger' role='alert'>Passwords don't match.</p>";
 // if passed all tests
 } else {
-	// add user credentials to php array
-	$phpArray[$newUser]["psw"] = $newPsw;
-	$phpArray[$newUser]["admin"] = false; // can't be admin to begin with
-	$phpArray[$newUser]["pfp"] = null; // no profile pic to begin with
-	$phpArray[$newUser]["about"] = "This user hasn't added a bio."; // no bio to begin with
-	$phpArray[$newUser]["patterns"] = []; // no patterns to begin with
-	// overwrite json file with new array
+	// compile new user profile
+	$userInfo = [
+		"psw" => $newPsw,
+		"registered" => time(), // current unix timestamp
+		"admin" => false, // regular user to begin with
+		"pfp" => null, // no profile pic to begin with
+		"about" => "This user hasn't added a bio.", // no bio to begin with
+		"patterns" => [], // no patterns to begin with
+	];
+	// add it to the php array under the new username
+	$phpArray[$newUser] = $userInfo;
 	$updatedArray = json_encode($phpArray);
 	file_put_contents($path, $updatedArray);
-	// make a new private folder for their patterns
+	// make a new private folder for their patterns/profile picture
 	mkdir("../../Private/" . $newUser);
 
 	// start session

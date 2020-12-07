@@ -1,10 +1,4 @@
 <?php
-
-// function getVotes($contestantData){
-// 	// STUB
-// 	$votes = array(2,3);
-// 	return $votes;
-// }
 	$comp = file_get_contents("data/contest.json");
 	// echo "$comp";
 	$compData = json_decode($comp, true);
@@ -45,7 +39,6 @@
 			<div class="container">
 				<div class="row">
 				<?php for($i = 0; $i < $numCont; $i++):
-					// echo "i=".$i."<br>";
 					$title = $contestantData[$i]["title"];
 					$user = $contestantData[$i]["author"];
 					$image = "imgs/contest/" . $contestantData[$i]["image"];
@@ -63,7 +56,7 @@
 								</div>
 								<button class="btn2" type="button" onclick="openPattern(<?= $i; ?>, 'contestPattern', 'contestHome', 'contestant<?= $i; ?>')">View</button>
 								<form>
-									<input id="hide" class="btn1" type="button" value="Vote" onclick='updateVote(<?= $i ?>)'>
+									<input id="vote" class="btn1" type="button" value="Vote" onclick="updateVote(<?= $i ?>)">
 								</form>
 							<p id="demo"></p>
 							</div>

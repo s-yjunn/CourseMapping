@@ -1,5 +1,5 @@
 <?php
-  // This file formats a forum post given its index in the json file
+  // This file formats a forum post given its index in the forum.json file
   // @author Isabel
 
   //Get all posts (since this is called from outside forum proper)

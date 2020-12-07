@@ -1,29 +1,14 @@
 <?php 
-  
-  $comp = file_get_contents("../data/contest.json");
-$compData = json_decode($comp, true);
-$currentData = $compData["contestants"];
+      //get json
+      $comp = file_get_contents("../data/contest.json");
+      $compData = json_decode($comp, true);
+      //get user index
+      $i = $_POST["index"];
+      //inc vote
+      $compData["contestants"][$i]["votes"] += 1;
+      //save update
+      $jsondata = json_encode($compData, true);
+      file_put_contents("../data/contest.json", $jsondata);
 
-        for($i = 0; $i < count($currentData); $i++){
-          $user = $currentData[$i]["author"];      
-          if($GLOBALS['user'] == $user){
-            $numVotes = $currentData[$i]["votes"];
-            
-            $numVotes += 1;
-
-            $currentData[$i]["votes"] = $numVotes;
-
-            $jsondata = json_encode($compData, true);
-
-            file_put_contents("../data/contest.json", $jsondata);
-
-          break;
-
-          }
-          else{
-            continue;
-          }
-  }
-
-  
   ?>
+  

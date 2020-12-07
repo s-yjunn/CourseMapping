@@ -22,13 +22,8 @@
             "password": "adminuser",
             "readingList": [
                 [
-                    "1111",
-                    "Superman Archives, Vol. 2",
-                    "Completed"
-                ],
-                [
-                    "1113",
-                    "Daredevil (1964-1998) #1",
+                    "1120",
+                    "The Space Between Worlds",
                     "Completed"
                 ]
             ]
@@ -47,7 +42,41 @@
             "username": "user1",
             "type": "user",
             "password": "user1",
-            "readingList": []
+            "readingList": [],
+            "myBooks": [
+                {
+                    "bookid": "1121",
+                    "genre": "comics",
+                    "title": "dummy3",
+                    "author": [
+                        "Jerry"
+                    ],
+                    "illustrator": [
+                        "Joe"
+                    ],
+                    "description": "desc",
+                    "url": "https:\/\/www.goodreads.com\/book\/show\/707611.Superman_Archives_Vol_2",
+                    "image_url": "",
+                    "rating": "5",
+                    "reviews": []
+                },
+                {
+                    "bookid": "1122",
+                    "genre": "comics",
+                    "title": "dummy4",
+                    "author": [
+                        "Jerry"
+                    ],
+                    "illustrator": [
+                        "Joe"
+                    ],
+                    "description": "desc",
+                    "url": "https:\/\/www.goodreads.com\/book\/show\/707611.Superman_Archives_Vol_2",
+                    "image_url": "",
+                    "rating": "5",
+                    "reviews": []
+                }
+            ]
         },
         {
             "name": "user2",
@@ -73,12 +102,12 @@
                 [
                     "1112",
                     "Star Trek: Waypoint #2",
-                    "In-progress"
+                    "Completed"
                 ],
                 [
                     "1116",
                     "Anne Frank",
-                    "Not-Started"
+                    "In-progress"
                 ],
                 [
                     "1119",

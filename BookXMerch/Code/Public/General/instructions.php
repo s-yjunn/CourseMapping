@@ -21,20 +21,20 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="styles/welcomeStyles.css" id="styles">
-    <link rel="stylesheet" href="../../Private/Books/CSS/bookshelfStyles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 
 <body>
     <!-- Navigation bar-->
     <nav class="w3-top" id="head-navbar">
         <div class="w3-bar w3-white w3-wide w3-padding 3w-card">
-            <a href="../Public/index.php" class="w3-bar-item w3-button"><b>Bookstore</b>x<b>Merch</b></a>
+            <a href="../index.php" class="w3-bar-item w3-button"><b>Bookstore</b>x<b>Merch</b></a>
             <!-- Float links to the right. Hide them on small screens -->
 
             <?php if($type=="admin") {
 
             echo "<div class='w3-hide-medium w3-hide-small'>
-                        <a href='../Private/Admin/admin.php' class='w3-bar-item buttonNavBar'>Admin page</a>
+                        <a href='../../Private/Admin/admin.php' class='w3-bar-item buttonNavBar'>Admin</a>
                 </div>";
             }?>
             <?php if( $loggedIn == false) {
@@ -46,9 +46,14 @@
                         <a href='../Login/login.php' class='w3-bar-item buttonNavBar'>Login</a>
                     </div>";
             } else {
-                echo "<div class='w3-hide-medium w3-hide-small'>
-                        <a href='../Profile/profile.php' class='w3-bar-item buttonNavBar'>Profile</a>
-                    </div>";
+                echo "
+                <div class='w3-hide-medium w3-hide-small'>
+                    <a href='../index.php' class='w3-bar-item buttonNavBar'><i class='fas fa-home'></i>Home</a>
+                </div>
+                    
+                <div class='w3-hide-medium w3-hide-small'>
+                    <a href='../Profile/profile.php' class='w3-bar-item buttonNavBar'>Profile</a>
+                </div>";
 
                 if($type=="admin") {
                     echo "<div class='w3-right w3-hide-medium w3-hide-small'>
@@ -63,9 +68,6 @@
             }
             
             ?>
-            <div class='w3-hide-medium w3-hide-small'>
-                <a href='../index.php' class='w3-bar-item buttonNavBar'>About us</a>
-            </div>
             <div class='w3-hide-medium w3-hide-small'>
                 <a href='#instructions' class='w3-bar-item buttonNavBar'>Instructions</a>
             </div>
@@ -83,7 +85,7 @@
             height="700">
     </div>
     <br> <br>
-    <
+    
     <div id="overlayLogin" onclick="off()" style="display: none">
                
         <?php 
@@ -97,25 +99,25 @@
     <div class="tabcontent">
         <div class="card border">
             <h2 id="instructions" class="colortheme">Instructions</h2>
-			Welcome, Dear User. Please follow these steps to make the most of your experience at BookstoreXMerch
+			Welcome, <b>BookxMercher</b>! Please follow the follwing steps to make the most of your experience at BookstoreXMerch:
 			<ol>
 				<li>
-					Use Sign In to use your account, or Sign Up to make a new one
+                    <b>Log In </b>to BookxMerch using your credentials, or <b>Sign Up</b> to create a new account.
 				</li>
 				<li>
-					View your profile to check your reading list, upload books, and view your stats. Uploaded books will be pending approval by admins.
+					View your <b> Profile </b> to check your <b>reading list</b>, <b>upload books</b>, and <b>view your stats</b>. Uploaded books will be <b>pending</b> approval by admins.
 				</li>
 				<li>
-					Check our Merch store with cool themed items for your everyday use
+					Check our free<b> Merch store</b> with cool themed items for your everyday use.
 				</li>
 				<li>
-					Go to book collection from the About Us page to browse through our collection. You can browse by category. By clicking on a book you like you will be able to see details about it and add it to you Reading List. You will also be able to write a review for it once you read it.
+					Browse through our <b>Book Collection</b> from the <b>Home</b> page or <b>Collections</b> page. You can <b>browse by genre</b>. By clicking on a book you like you will be able to read through its details and <b>add it to you Reading List</b>. You will also be able to <b>write a Review</b> and <b>rate</b> the book.
 				</li>
 				<li>
 					Go to Community Posts, our very cool forum, in order to share your passion about Books with like-minded users. You can ask for recommendations, reviews and resources to help you through your reading journey.
 				</li>
 				<li>
-					Once you're done with BookstoreXMerch for the day, you can use the log out button to say goodbye ! We hope to see you soon :) 
+					Once you're done with BookstoreXMerch for the day, you can use the <b>Log out</b> button to say goodbye! We hope to see you soon :) 
 				</li>
 			</ol>
         </div>

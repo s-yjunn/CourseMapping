@@ -23,6 +23,9 @@ var map;
  */
 function getCurrentElements() {
   currentPage = document.getElementById(currentTab);
+  if (currentPage == null) {
+    return;
+  }
   menu = currentPage.getElementsByClassName("menu")[0];
   info = currentPage.getElementsByClassName("info")[0];
   pathTable = currentPage.getElementsByClassName("pathTable")[0];

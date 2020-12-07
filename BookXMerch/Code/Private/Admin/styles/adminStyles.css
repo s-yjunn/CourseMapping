@@ -192,7 +192,53 @@ body {
 .card p {
     line-height: 1.5;
 }
+.card2 {
+    margin-left: 100px;
+    border-color: white;
+    border-radius: 1em;
+}
+.acceptAll{
+    border-radius: 1em;
+    text-align: center;
+}
+.acceptAll:hover{
+    font-weight: bold;
+    cursor: pointer;
+}
+.bookDetails{
+    border-radius: 1em;
+    background-color:  rgb(119,80,112);
+    color: white;
+    text-align: center;
+}
+.bookDetails:hover{
+    font-weight: bold;
+    cursor: pointer;
+}
+.accept:hover{
+    font-weight: bold;
+    cursor: pointer;
+}
+.reject:hover{
+    font-weight: bold;
+    cursor: pointer;
+}
 
+/* Book visualization*/
+#mainBook{
+    background-color: rgba(0,0,0,0.7);
+    width:60vw;
+    color: white;
+    margin-left:100px;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+    font-family: 'Poppins';
+    border-radius:2em;
+    border: 10em white;
+    box-shadow: 0px 0px 4px 4px rgba(119,89,112,0.4);
+}
 /* fade animation */ 
 .tabcontent {
     animation: fade 1s;
@@ -293,8 +339,15 @@ input:focus, textarea:focus, select:focus{
     transition: transform 0.5s ease-out;
 }
 
+.request-card{
+    display:flex;
+    justify-content: space-between;
+    margin:10px 0px;
+    align-items: center;
+    transition: transform 0.5s ease-out;
+}
 
-.delete{
+.delete-RL{
     align-self:end;
     visibility: hidden;
     cursor: pointer;
@@ -327,10 +380,35 @@ input:focus, textarea:focus, select:focus{
 
     width: 50%;
 }
+/* Modal */
+  /* The Close Button (x) */
+  .closeModal {
+    position: absolute;
+    color: white;
+    font-size: 35px;
+
+  }
+  
+  .closeModal:hover,
+  .closeModal:focus {
+    color: white;
+    cursor: pointer;
+  }
+
+.request-text{
+
+    width: 50%;
+}
 .task-status{
     margin:auto;
     font-size:0.8rem;
-
+    
+    font-family: monospace;
+}
+.request-status{
+    margin:auto;
+    font-size:0.8rem;
+    
     font-family: monospace;
 }
 .footer{

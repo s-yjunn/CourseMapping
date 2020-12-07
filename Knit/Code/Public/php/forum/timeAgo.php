@@ -1,6 +1,6 @@
 <?php
 // This function generates the relative timestamps on the forum menu
-// Adapted by Isabel from https://gist.github.com/Dipak080/5586bbefde7434b74e29d7bc45b9b8ef
+// Adapted by Isabel from ? https://gist.github.com/Dipak080/5586bbefde7434b74e29d7bc45b9b8ef ?
 // (I'm not sure this was the original source)
 
 function timeAgo($time) { 

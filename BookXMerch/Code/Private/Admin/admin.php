@@ -11,6 +11,9 @@ session_start();
     exit;
   }
 
+$logFile = "pendingReq.JSON";
+$arrayOfRequests = file_get_contents("pendingReq.JSON");
+$requestsArray = json_decode($arrayOfRequests, true);
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +28,7 @@ session_start();
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/adminStyles.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="styles/bookshelf.css">  -->
    
     <title>ADMIN</title>
@@ -45,14 +48,13 @@ session_start();
             </div>
 
             <div class="w3-hide-medium w3-hide-small">
-                <a href="../../Public/index.php" class="w3-bar-item buttonNavBar">Home</a>
+                <a href="../../Public/index.php" class="w3-bar-item buttonNavBar"><i class="fas fa-home">Home</i></a>
+            </div>
+            <div class="w3-hide-medium w3-hide-small">
+                <a href="../../Private/Books/collection.php" class="w3-bar-item buttonNavBar"><i class="fas fa-book">Collections</i></a>
             </div>
             <div class="w3-hide-medium w3-hide-small">
                 <a href="../../Public/Profile/profile.php" class="w3-bar-item buttonNavBar">Profile</a>
-            </div>
-
-            <div class="w3-hide-medium w3-hide-small">
-                <a href="../../Private/Books/collection.php" class="w3-bar-item buttonNavBar">Collections</a>
             </div>
         </div>
     </nav>
@@ -67,7 +69,7 @@ session_start();
 
           <div class="newFont">
             <b class="barCol"><?php echo "Hello, " . $_SESSION["name"] ."!";?></b>
-            <button class="barCol buttonClass">Pending Requests</button>
+            <button class="barCol buttonClass" onclick="getRequests()">Pending Requests</button>
             <button class="barCol buttonClass" onclick="getUsers()">All Users</button>
             <button class="barCol buttonClass" onclick="getBooks()">All Books</button>
             <button class="barCol buttonClass" onclick="getReviews()">All Reviews</button>
@@ -75,9 +77,9 @@ session_start();
           </div>
         </div>
 
-        <h3 id="headerUsers" class="w3-center allUsers">All BxM Users </h3>
+        <h3 id="headerUsers" class="w3-center allUsers" style="display:none">All BxM Users </h3>
         
-        <div id="userGrid" class="gridContainer">
+        <div id="userGrid" class="gridContainer" style="display:none">
         <!-- Get all the user info from the allUsers to display. -->
         <?php 
             $usersJSON = file_get_contents("../Users/allUsers.JSON");
@@ -176,6 +178,37 @@ session_start();
             }          
         ?>
         </div>
+
+
+        <h3 id="headerRequests" class="w3-center allUsers" style="display:block"> Pending Requests </h3>
+        <div id="requestsGrid" class="gridContainer" style="display:block">
+            <div id="pending" class="card2">
+    
+                <div id="pendingReq">
+                    <div id="main">
+                        <h3 style="text-align:center"> Pending Requests </h3>
+
+                        <div class="menu-bar">
+                            <button id="acceptAll" class="acceptAll w3-center" >Accept all requests</button>
+                        </div>
+                        <hr>
+                        <div id="showAll" class="tasks-container">
+                        </div>
+                        
+                        <hr>
+                        <div class='footer'>
+                            <div class='task-count'>
+                                <p id='pendingRequests' class='fs-med bold'>0</p>&nbsp
+                                <p class='fs-med'>pending request(s)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <p id="bookDetails"> </p>
+        </div>
+
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/logOut-admin.js"> </script>

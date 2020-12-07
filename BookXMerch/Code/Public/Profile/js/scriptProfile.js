@@ -4,6 +4,7 @@ function getUpload() {
     document.getElementById("userDetails").style.display="none";
     document.getElementById("reviewsList").style.display = "none";
     document.getElementById("uploadButton").style.display = "block";
+    document.getElementById("booksList").style.display = "none";
 }
 function showUploadModal(){
     document.getElementById("uploadButton").style.display="none";
@@ -20,8 +21,7 @@ function uploadRequest() {
 }
 
 function getList() {
-    // document.getElementById("userDetails").style.display="none";
-    // document.getElementById("rList").style.display="block";
+
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) { 
@@ -31,6 +31,7 @@ function getList() {
             document.getElementById("userDetails").style.display="none";
             document.getElementById("reviewsList").style.display = "none";
             document.getElementById("uploadButton").style.display = "none";
+            document.getElementById("booksList").style.display = "none";
             document.getElementById("showAll").innerHTML = this.responseText;
             var task_count = document.getElementById("readingSize").innerHTML;
     
@@ -38,7 +39,7 @@ function getList() {
             //Modified by BxM
             //From Akash Pal's blog https://blog.usejournal.com/create-a-to-do-list-application-with-html-css-and-pure-js-533e1b07c20e
     
-            var del_buttons = document.getElementsByClassName('delete'); 
+            var del_buttons = document.getElementsByClassName('delete-RL'); 
             var task_container = document.querySelector('.tasks-container');
             var task_input = document.getElementById('new-task')
             var completeAll = document.getElementById('check-all-button');
@@ -51,7 +52,7 @@ function getList() {
             showAll.style.color="white";
     
                 
-            var task_card_string = "<div class=\"status-icon\"></div><p class=\"task-text\"><p class=\"task-status color-red\">Not-Started</p><ion-icon class=\"delete fs-large mg-10\" name=\"close-circle-outline\"></ion-icon>"
+            var task_card_string = "<div class=\"status-icon-RL\"></div><p class=\"task-text-RL\"><p class=\"task-status-RL color-red\">Not-Started</p><ion-icon class=\"delete-RL fs-large mg-10\" name=\"close-circle-outline\"></ion-icon>"
     
             updateTaskCount();
             eventSetter();
@@ -61,11 +62,11 @@ function getList() {
             }
     
             function eventSetter(){
-                var del_buttons = document.getElementsByClassName('delete'); 
+                var del_buttons = document.getElementsByClassName('delete-RL'); 
                 for(del of del_buttons){
                     del.addEventListener('click',removeCard);
                 }
-                var progress_buttons = document.getElementsByClassName('status-icon');
+                var progress_buttons = document.getElementsByClassName('status-icon-RL');
                 for(p of progress_buttons){
                     p.addEventListener('click', changeProgress);
                 }
@@ -95,7 +96,7 @@ function getList() {
             }
     
             function resetColor(){
-                var allButtons = document.getElementsByClassName('filter-button');
+                var allButtons = document.getElementsByClassName('filter-button-RL');
                 for(button of allButtons)
                     button.style.color = "gray";
             }
@@ -248,7 +249,9 @@ function getReviews() {
             document.getElementById("rList").style.display="none";
             document.getElementById("uploadButton").style.display = "none";
             document.getElementById("uploadForm").style.display="none";
+            document.getElementById("booksList").style.display = "none";
             document.getElementById("reviewsList").style.display = "block";
+            
             reviewsByUser = this.responseText;
             console.log("this: ", JSON.parse(reviewsByUser)); 
             addReviews(JSON.parse(reviewsByUser)); 
@@ -278,7 +281,7 @@ function addReviews(reviewsByUser) {
         // console.log("times run: ", i);
 
         var review_card = document.createElement('div');
-        var styleContentDiv = "<div class=\"status-icon\"></div><p class=\"task-text color-blue\">"+reviewsByUser[i].title+"</p><br><p class=\"task-text\">"+reviewsByUser[i].comment+"</p><br><a class=\"task-status color-blue\" href=\"../../Private/Books/php/bookVisualize.php?content="+reviewsByUser[i].bookId+"\">Book Details</a>";
+        var styleContentDiv = "<div class=\"status-icon-RL\"></div><p class=\"task-text-RL color-blue\">"+reviewsByUser[i].title+"</p><br><p class=\"task-text-RL\">"+reviewsByUser[i].comment+"</p><br><a class=\"task-status-RL color-blue\" href=\"../../Private/Books/php/bookVisualize.php?content="+reviewsByUser[i].id+"\">Book Details</a>";
         review_card.innerHTML = styleContentDiv; 
         review_card.setAttribute("class", "task-card-RL In-progress"); 
         review_card.setAttribute("id", "r"+i);
@@ -286,8 +289,7 @@ function addReviews(reviewsByUser) {
         
         review_main.appendChild(review_card);
         
-        //let card_text = document.querySelector('#r' + i + " p");
-        //card_text.innerHTML = "Book ID: "+ reviewsByUser[i].id + ", Rating: " + reviewsByUser[i].rating + ", Comment: " + reviewsByUser[i].comment;
+       
     }
     console.log("review main", review_main);
     reviews_container.appendChild(review_main);
@@ -315,4 +317,18 @@ function passVal(){
     };
 
     $.post("php/updateList.php", data);
+}
+
+function getBooks() {
+    document.getElementById("userDetails").style.display = "none";
+    document.getElementById("rList").style.display="none";
+    document.getElementById("uploadButton").style.display = "none";
+    document.getElementById("reviewsList").style.display = "none";
+
+    document.getElementById("booksList").style.display = "block";
+    
+}
+
+function displayBookContent(i) {
+    window.location.href="../../Private/Books/php/bookVisualize.php?content=" + i;
 }

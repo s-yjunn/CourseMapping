@@ -29,7 +29,7 @@
   $pubPatterns = "";
   foreach($patterns as $pattern) {
     if ($pattern["public"]) { // if it's public,
-      $imgPath = $userFolder . $pattern["image"]; // get the path to it
+      $imgPath = $userFolder . "/patterns/" . $pattern["image"]; // get the path to it
       $pubPatterns .= "<div class='col-xs-12 col-sm-6 col-md-4 col-lg-3'><img class='uPa' src='$imgPath'></div>"; // add an element for it
     }
   }

@@ -64,7 +64,7 @@
         'title' => $bookToUpload["title"], 
         'author' => $bookToUpload["author"],
         'illustrator' => $bookToUpload["illustrator"],
-        'description' => $bookToUpload["description"],
+        'description' => $bookToUpload["desc"],
         "url" => $bookToUpload["url"],
         "image_url"  => "",
         "rating" => "5",

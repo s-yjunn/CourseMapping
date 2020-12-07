@@ -29,7 +29,7 @@
 	
 }
 
-#adminContest, #adminStats {
+#adminContest, #adminUsers {
   display: none;
 }
 
@@ -54,15 +54,15 @@
 }
 
 /* copied from forum.css */
-#adminStats .timestamp {
+#adminUsers .timestamp {
 	font-size: 0.8rem;
 	color: #777;
 }
 
-#adminStats td {
+#adminUsers td {
 	padding: 10px;
 }
 
-#adminStats th {
+#adminUsers th {
 	padding: 0px 10px;
 }

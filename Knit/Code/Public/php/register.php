@@ -23,9 +23,10 @@ if (trim($newUser) == "") { // check for empty user
 // if passed all tests
 } else {
 	// compile new user profile
+	$regTime = time();
 	$userInfo = [
 		"psw" => $newPsw,
-		"registered" => time(), // current unix timestamp
+		"registered" => $regTime, // current unix timestamp
 		"admin" => false, // regular user to begin with
 		"pfp" => null, // no profile pic to begin with
 		"about" => "This user hasn't added a bio.", // no bio to begin with
@@ -35,8 +36,17 @@ if (trim($newUser) == "") { // check for empty user
 	$phpArray[$newUser] = $userInfo;
 	$updatedArray = json_encode($phpArray);
 	file_put_contents($path, $updatedArray);
-	// make a new private folder for their patterns/profile picture
-	mkdir("../../Private/" . $newUser);
+	// make new private folders for their patterns/profile picture
+	$userFolder = "../../Private/" . $newUser;
+	mkdir($userFolder);
+	mkdir($userFolder . "/patterns");
+	// create a new array for their messages with a welcome message in it
+	$messages = [
+		"unread" => [["text" => "Congratulations on your new account!", "from" => "THE MANAGEMENT", "sent" => $regTime]],
+		"read" => []
+	];
+	// save that as a new json in their folder
+	file_put_contents($userFolder . "/messages.json", json_encode($messages));
 
 	// start session
 	session_start();

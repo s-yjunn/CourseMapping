@@ -1,6 +1,7 @@
 <?php
   // This is the contents of the forum tab (minus included code)
   // @author Isabel
+  // Last modified 12/7/2020
 
   //Establish which div to show when visitor clicks the "write a post" button
   if ($loggedIn){

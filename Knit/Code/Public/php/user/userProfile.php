@@ -1,7 +1,7 @@
 <?php
-  // This file generates the "My Profile" page (included within the account tab)
+  // This file generates the "Profile" page (included within the user account tab)
   // @author Isabel
-  // Last modified 11/2/2020
+  // Last modified 12/7/2020
 
   $userData = $usersData[$username];
 
@@ -17,7 +17,7 @@
   $pubPatterns = "";
   foreach($patterns as $pattern) {
     if ($pattern["public"]) { // if it's public,
-      $imgPath = $userFolder . $pattern["image"]; // get the path to it
+      $imgPath = $userFolder . "patterns/" . $pattern["image"]; // get the path to it
       $pubPatterns .= "<div class='col-xs-12 col-sm-6 col-md-4 col-lg-3'><img class='uPa' src='$imgPath'></div>"; // add an element for it
     }
   }
@@ -27,7 +27,7 @@
 
 <div class = "profile">
     <div class="introSection">
-      <h4>My Profile</h4>
+      <h4>Profile</h4>
       <p id = 'uPrDiv' class='alert alert-info' role='alert'>This is what other users see when they click on your username in the forum and/or contest pages.</p>
 		  <div id="containerPfp">
 		    <div id = "viewPfp">

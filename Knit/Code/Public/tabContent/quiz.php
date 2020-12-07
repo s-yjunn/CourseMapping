@@ -1,9 +1,9 @@
 
 <style>
-body {
+/*body {
   margin: 0;
   padding: 20px;
-}
+}*/
 .quiz {
   padding: 0 30px 20px 30px;
   max-width: 960px;

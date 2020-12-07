@@ -29,7 +29,7 @@ if (trim($newUser) == "") { // check for empty user
 		"admin" => false, // regular user to begin with
 		"pfp" => null, // no profile pic to begin with
 		"about" => "This user hasn't added a bio.", // no bio to begin with
-		"patterns" => [], // no patterns to begin with
+		"patterns" => [] // no patterns to begin with
 	];
 	// add it to the php array under the new username
 	$phpArray[$newUser] = $userInfo;

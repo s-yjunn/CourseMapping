@@ -19,18 +19,22 @@
     <button class="btn1" type="button" onclick="refreshForumIndex()"><i class="fas fa-redo-alt"></i> Refresh</button>
     <!--Button to write a post. Opens a composition div if the user is logged in, otherwise one that tells them to login.-->
     <button class="btn1" type="button" onclick=<?=$showCompose; ?>><i class="fas fa-user-edit"></i> Write a post</button>
-    
+    <!-- Any status updates go here -->
+    <span id = "forumDiv"></span>
+
     <!--This is the form to compose a post-->
-    <div class="dark hide" id="composePost">
-      <div class="float">
-        <h4>Compose post</h4>
-        <input type="text" id="postTitle" placeholder="Your post's title"><br>
-        <textarea id = "postContent" placeholder="Your post's content"></textarea><br>
-        <button class="btn1" type="button" onclick="postPost()">Post</button>           
-        <button class="btn1" id="cancel" onclick="hide('composePost')">Cancel</button>
-        <span id = "postStatus"></span> <!-- for validation of a post-->
+    <?php if ($loggedIn): ?>
+      <div class="dark hide" id="composePost">
+        <div class="float">
+          <h4>Compose post</h4>
+          <input type="text" id="postTitle" placeholder="Your post's title"><br>
+          <textarea id = "postContent" placeholder="Your post's content"></textarea><br>
+          <button class="btn1" type="button" onclick="postPost('<?= $username; ?>')">Post</button>           
+          <button class="btn1" id="cancel" onclick="hide('composePost')">Cancel</button>
+          <span id = "postStatus"></span> <!-- for validation of a post-->
+        </div>
       </div>
-    </div>
+    <?php endif; ?>
 
     <!--This is the forum "index": a table of links to existing forum posts-->
     <div id="forumIndex">

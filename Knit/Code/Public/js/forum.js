@@ -15,7 +15,7 @@ function openPost(postIndex) {
 
 
 //This function (horrible name, I'm sorry) handles the client-side of adding a new post to the forum
-function postPost() {
+function postPost(username) {
     //Get post elements
     var postTitle = document.getElementById("postTitle").value.trim();
     var postContent = document.getElementById("postContent").value.trim();
@@ -28,7 +28,7 @@ function postPost() {
         //Get the post ready for html outputting (replace newlines with <br>)
         postContent = postContent.replace(/(?:\r\n|\r|\n)/g, '<br>');
         //Process it and output the response, then
-        var posting = $.post("php/forum/addPost.php", {postTitle: postTitle, postContent: postContent});
+        var posting = $.post("php/forum/addPost.php", {postTitle: postTitle, postContent: postContent, uname: username});
         // When done, 
         posting.done(
             function() {
@@ -43,6 +43,29 @@ function postPost() {
             }
         )
     }
+}
+
+// This function handles the client-side of deleting a post
+// postIndex: the index of the post in question
+function deletePost(postIndex) {
+    // send the request to the php script
+    $.ajax({
+        type: "POST",
+        url: "php/forum/deletePost.php",
+        data:{index: postIndex},
+        // when returned (no error catching yet)
+        success: function() {
+            // reload the forum menu
+            refreshForumIndex();
+            // send a success message
+            $("#forumDiv").html("<p class='alert alert-info' role='alert'>Your post was deleted.</p>");
+            // hide the interaction div
+            hide('deletePost');
+            // return to the forum menu
+            hide('forumPost');
+            show('forumHome');
+        }
+    });
 }
 
 //This function handles the client-side of adding a new response to a forum post
@@ -75,6 +98,31 @@ function postResponse(loggedIn, postIndex) {
     } else {
         show("loginPlease");
     }
+}
+
+// This function sets up the 'deleteResponse' div to delete the proper response
+function showDeleteResponse(postIndex, responseIndex) {
+    $("#deleteRspBtn"). attr("onclick","deleteResponse(" + postIndex + ", " + responseIndex + ")");
+    show("deleteResponse");
+}
+
+// This function handles the client side of deleting a response to a post
+function deleteResponse(postIndex, responseIndex) {
+    // Send the request to the php script
+    $.ajax({
+        type: "POST",
+        url: "php/forum/deleteResponse.php",
+        data:{postIndex: postIndex, responseIndex: responseIndex},
+        // when returned (no error catching yet)
+        success: function() {
+            // update the list of responses
+            refreshResponses(postIndex);
+            // update forum index (since this tracks # of responses)
+            refreshForumIndex();
+            // hide the interaction div
+            hide('deleteResponse');
+        }
+    });
 }
 
 //This function handles the client-side of voting on posts
@@ -118,6 +166,8 @@ function responseVote(loggedIn, upOrDown, postIndex, responseIndex) {
 //This function retrieves the forum menu, resorted as per the parameter selected, and loads it.
 function sortForumIndex(param) { 
     $("#postList").load("php/forum/postList.php?sortBy=" + param);
+    // clear any alerts
+    $("#forumDiv").html("");
 }
 
 //Similar to the above, but has to search for a parameter

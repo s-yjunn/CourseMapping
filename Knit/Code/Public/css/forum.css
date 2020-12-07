@@ -93,3 +93,7 @@ label[for="indexView"], label[for="responsesView"], #indexView, #responsesView {
 #composePost textarea {
 	margin: 0 0 2rem 0;
 }
+
+.deletePostResponse {
+	vertical-align: top;
+}

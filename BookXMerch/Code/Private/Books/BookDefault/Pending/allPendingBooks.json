@@ -10,7 +10,7 @@
             "illustrator": [
                 "--"
             ],
-            "description": "Here's the description",
+            "desc": "Here's the description",
             "url": "https:\/\/www.webtoons.com\/en\/drama\/i-love-yoo\/list?title_no=986&page=1",
             "image_url": "",
             "rating": "5",
@@ -30,6 +30,22 @@
             ],
             "desc": "Something",
             "url": "https:\/\/www.webtoons.com\/en\/",
+            "rating": "5",
+            "reviews": []
+        },
+        {
+            "reqUsername": "iberrada",
+            "genre": "fiction",
+            "title": "To Kill a Mockingbird",
+            "author": [
+                "Harper Lee"
+            ],
+            "illustrator": [
+                ""
+            ],
+            "desc": " The unforgettable novel of a childhood in a sleepy Southern town and the crisis of conscience that rocked it. \"To Kill A Mockingbird\" became both an instant bestseller and a critical success when it was first published in 1960. It went on to win the Pulitzer Prize in 1961 and was later made into an Academy Award-winning film, also a classic.\r\n\r\nCompassionate, dramatic, and deeply moving, \"To Kill A Mockingbird\" takes readers to the roots of human behavior - to innocence and experience, kindness and cruelty, love and hatred, humor and pathos. Now with over 18 million copies in print and translated into forty languages, this regional story by a young Alabama woman claims universal appeal. Harper Lee always considered her book to be a simple love story. Today it is regarded as a masterpiece of American literature.",
+            "url": "https:\/\/www.goodreads.com\/book\/show\/2657.To_Kill_a_Mockingbird",
+            "image_url": "",
             "rating": "5",
             "reviews": []
         }

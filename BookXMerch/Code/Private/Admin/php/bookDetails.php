@@ -7,8 +7,9 @@ if(isset($_SESSION["name"])) {
   }
 
 $content = $_REQUEST['content'];
-$arrayOfBooks = file_get_contents("../pendingReq.JSON");
-$booksArray = json_decode($arrayOfBooks, true);
+$arrayOfBooks = file_get_contents("../../Books/BookDefault/Pending/allPendingBooks.JSON");
+$books = json_decode($arrayOfBooks, true);
+$booksArray = $books["requests"];
 $newArray = array();
 
 $i=0;
@@ -16,12 +17,11 @@ foreach ($booksArray as $key => $jsons) {
     $i++;
     if($i==$content) {
         $newArray = array($jsons["title"],$jsons["author"],$jsons["illustrator"],
-        $jsons["description"],$jsons["url"],$jsons["rating"],$jsons["reviews"],
-        $jsons["bookid"],$jsons["genre"]);
+        $jsons["desc"],$jsons["url"],$jsons["rating"],$jsons["reviews"],
+        $jsons["genre"]);
     break;
     }
 }
-$bookid = $newArray[7];
 $title = $newArray[0];
 $author = $newArray[1];
 $illustrator = $newArray[2];
@@ -29,7 +29,7 @@ $description = $newArray[3];
 $url = $newArray[4];
 $rating = $newArray[5];
 $reviews = $newArray[6];
-$genre = $newArray[8];
+$genre = $newArray[7];
 
 
 // SESSION NAME PLEASE WORK!!!

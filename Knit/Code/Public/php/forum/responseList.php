@@ -51,7 +51,7 @@
     // format posted time
     $posted = date('M j, Y \a\t h:iA', $response["posted"]);
     // can this user delete this response?
-    $canDelete = $loggedIn & ($isAdmin || $username === $post["author"]);
+    $canDelete = $loggedIn & ($isAdmin || $username === $response["author"]);
   ?>
     <tr id='response<?= $responseIndex; ?>'>
       <td class='vote'><button class="btn1" type='button' onclick = "responseVote('<?= $loggedStr; ?>', 'up', <?= $postIndex; ?>, <?= $responseIndex; ?>)"><i class='fas fa-plus fa-xs'></i></button><br>

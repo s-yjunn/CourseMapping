@@ -9,42 +9,23 @@
 
     $reqsJSON = file_get_contents("../pendingReq.JSON");
     $rows= json_decode($reqsJSON, true);
-
-
     echo "<br>";
-    foreach ($rows["users"] as $key => $jsons) { 
-            if($jsons["username"]==$loggedUser) {
-                $readingList= $rows["users"][$key]["readingList"];
-            break;
-        }
+    if(sizeof($rows)==0) {
+        echo "<p class='w3-center'> You have no pending requests.</p>";
     }
-
-    if(sizeof($readingList)==0) {
-        echo "Your reading list is currently empty.";
-    } else{
-        $i=0;
-        foreach ($readingList as $element) { 
-            $i++;
-
-            if($element[2]=="Not-Started"){
-                $color="color-red";
-            } else if ($element[2]=="Completed"){
-                $color="color-green";
-            } else{
-                $color="color-blue";
-            }
-                
-            echo "<div class='task-card ".$element[2]."' id='t".$i."'>
-                <div class='status-icon'></div>
-                    <p class='task-text'>".$element[1]."</p>
-                    <p class='task-status ".$color."'>".$element[2]."</p>
-                    <ion-icon class='delete fs-large mg-10' name='close-circle-outline'></ion-icon>
-                    <p class='task-id' style='display:none'>".$element[0]."</p>
+    $i=0;
+    foreach ($rows as $jsons) { 
+        $i++;
+        $t = "t"+$i;
+        echo "<div class='request-card' id='t".$i."'>
+                <p class='request-text color-blue'>".$jsons["reqUsername"]."</p>
+                <button class='bookDetails' onclick='display(".$t.")'> Book details </button>
+                <button onclick='accept(t".$i.")' id='a".$i."' class='w3-green accept'>Accept</button>
+                <button onclick='reject(t".$i.")' class='w3-red reject'>Reject</button>
                 </div>";
- 
-        }
-        echo "<div id='readingSize' style='display:none'>".sizeof($readingList)."</div>";
-        
     }
+      
 
 ?>
+
+

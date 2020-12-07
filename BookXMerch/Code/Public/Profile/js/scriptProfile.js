@@ -15,8 +15,7 @@ function closeUploadModal(){
 }
 
 function getList() {
-    // document.getElementById("userDetails").style.display="none";
-    // document.getElementById("rList").style.display="block";
+
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) { 
@@ -285,8 +284,7 @@ function addReviews(reviewsByUser) {
         
         review_main.appendChild(review_card);
         
-        //let card_text = document.querySelector('#r' + i + " p");
-        //card_text.innerHTML = "Book ID: "+ reviewsByUser[i].id + ", Rating: " + reviewsByUser[i].rating + ", Comment: " + reviewsByUser[i].comment;
+       
     }
     console.log("review main", review_main);
     reviews_container.appendChild(review_main);

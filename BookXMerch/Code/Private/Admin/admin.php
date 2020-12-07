@@ -182,16 +182,14 @@ $requestsArray = json_decode($arrayOfRequests, true);
 
         <h3 id="headerRequests" class="w3-center allUsers" style="display:none"> Pending Requests </h3>
         <div id="requestsGrid" class="gridContainer" style="display:none">
-
             <div id="pending" class="card2">
     
                 <div id="pendingReq">
                     <div id="main">
                         <h3 style="text-align:center"> Pending Requests </h3>
-                        <button id="saveRequests" class="saveReadingList" onclick="passVal()"> Save decision</button>
 
                         <div class="menu-bar">
-                            <p id="clearComplete" class="fs-med2">Accept all requests</p>
+                            <button id="acceptAll" class="acceptAll w3-center" >Accept all requests</button>
                         </div>
                         <hr>
                         <div id="showAll" class="tasks-container">
@@ -200,14 +198,17 @@ $requestsArray = json_decode($arrayOfRequests, true);
                         <hr>
                         <div class='footer'>
                             <div class='task-count'>
-                                <p id='taskLeftCount' class='fs-med bold'>0</p>&nbsp
-                                <p class='fs-med'>pending requests</p>
+                                <p id='pendingRequests' class='fs-med bold'>0</p>&nbsp
+                                <p class='fs-med'>pending request(s)</p>
                             </div>
                         </div>
                     </div>
                 </div>
+                
             </div>
+            <p id="bookDetails"> </p>
         </div>
+
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/logOut-admin.js"> </script>

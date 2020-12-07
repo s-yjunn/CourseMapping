@@ -20,7 +20,13 @@
             "username": "iberrada",
             "type": "admin",
             "password": "adminuser",
-            "readingList": []
+            "readingList": [
+                [
+                    "1120",
+                    "The Space Between Worlds",
+                    "Completed"
+                ]
+            ]
         },
         {
             "name": "Mariem Snoussi",

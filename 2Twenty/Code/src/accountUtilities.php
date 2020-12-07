@@ -1,4 +1,30 @@
 <?php
+
+function uploadItems($title, $image_url, $tags, $description, $price) 
+{
+    include ("db_connect.php");
+
+    $sql = "REPLACE INTO store.items_for_sale(title, image_url, tags, description, seller, price)";
+    $sql .= "   VALUES(?, ?, ?, ?, ?, ?);";
+
+
+
+    $query = $conn->prepare($sql);
+    $query->bind_param('sssssd', $it, $url, $t, $desc, $s, $p);
+
+    $it = $title;
+    $url = $image_url;
+    $t = $tags;
+    $desc = $description;
+    $s = $_SESSION["username"];
+    $p = $price;
+
+    $query->execute();
+
+    return 1;
+
+}
+
 function changePassword($id,$pass1,$pass2)
 {
     include ("db_connect.php");

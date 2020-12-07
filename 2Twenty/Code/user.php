@@ -3,10 +3,11 @@
 <?php
 include ("vars/header.php");
 include ("vars/navbar.php");
+include ("src/accountUtilities.php");
 
 
 // if registering:
-    if (isset($_GET["pass1"]) && isset($_GET["pass2"]))
+    if (isset($_POST["pass1"]) && isset($_POST["pass2"]))
     {
         echo ("YEEE");
         if (handle_registration($_POST["uname_r"], $_POST["upass_r"]))
@@ -45,6 +46,30 @@ else
     $_GET['id'] = 0;
     $items_sale = (getUserSelling(getUserName($_GET["id"])));
 }
+
+// if uploading items 
+// code written by Jessica
+if (isset($_POST["title"]) && isset($_POST["image_url"]) && isset($_POST["tags"]) && isset($_POST["description"]) && isset($_POST["price"]))
+{
+
+    if (uploadItems($_POST["title"], $_POST["image_url"], $_POST["tags"], $_POST["description"], $_POST["price"])) {
+        //success
+        echo ('<div class="notification is-success floating" id="good-login">
+        <button class="delete"></button>
+        Successful item upload. Thank you!
+    </div>');
+
+    }
+    else{
+        //failure
+        echo ('<div class="notification is-success floating" id="good-login">
+        <button class="delete"></button>
+        Bad item upload. Please try again.
+    </div>');
+    }
+}
+
+
 ?>
 
 	<body>
@@ -81,6 +106,33 @@ else
 		</section>
 
         <section class="section" id="body">
+        <div class="container">
+
+            <div class="card">
+                    <div class="card-content">
+                        <div class="media">
+
+                        <div class="media-content">
+                            <p class="title is-4">Add New Item To Your Shop</p>
+                            <p class="subtitle is-6">
+
+                            <form method="POST">
+                                <br>
+                                <input class="input is-rounded mb-4 mt-4" type="text" name="title" placeholder="Title">
+                                <input class="input is-rounded mb-4 mt-4" type="text" name="image_url" placeholder="Image URL">
+                                <input class="input is-rounded mb-4 mt-4" type="text" name="tags" placeholder="Tags">
+                                <input class="input is-rounded mb-4 mt-4" type="text" name="price" placeholder="Price">
+                                <input class="input is-rounded mb-4 mt-4" type="text" name="description" placeholder="Description">
+                                <input class="button is-primary mt-4" type="submit" value="Upload" id="upload-submit"> 
+                            </form>
+
+                            </p>
+                        </div>
+                        </div>
+
+                    </div>
+                </div>
+
             <div class="container">
 
             <div class="card">
@@ -93,8 +145,8 @@ else
 
                             <form action="src/changePassword.php" method="get">
                                 <br>
-                                <input class="input" type="text" name="pass1" placeholder="New Password"><br>
-                                <input class="input" type="text" name="pass2" placeholder="Retype Password"><br>
+                                <input class="input is-rounded mb-4 mt-4" type="text" name="pass1" placeholder="New Password"><br>
+                                <input class="input is-rounded mb-4 mt-4" type="text" name="pass2" placeholder="Retype Password"><br>
                                 <input type="submit" class = "button is-primary mt-4">
                             </form>
 

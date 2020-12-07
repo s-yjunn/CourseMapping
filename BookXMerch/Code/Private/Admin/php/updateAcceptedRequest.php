@@ -7,8 +7,9 @@
     $toAdd  = $_POST['toAdd'];
 
     //get pending requests
-    $testJSON = file_get_contents("../pendingReq.JSON");
-    $rows= json_decode($testJSON, true);
+    $testJSON = file_get_contents("../../Books/BookDefault/Pending/allPendingBooks.JSON");
+    $rowsAll= json_decode($testJSON, true);
+    $rows = $rowsAll['requests'];
     $new = [];
     $idToAdd = $toAdd[0]; 
     $user = $toAdd[1]; 
@@ -92,6 +93,7 @@
 
     //update pending requests
     $rows=$new;
-    $resJSON = json_encode($rows, JSON_PRETTY_PRINT);
-    file_put_contents("../pendingReq.JSON", $resJSON);
+    $rowsAll["requests"]=$new;
+    $resJSON = json_encode($rowsAll, JSON_PRETTY_PRINT);
+    file_put_contents("../../Books/BookDefault/Pending/allPendingBooks.JSON", $resJSON);
 ?>

@@ -20,11 +20,7 @@
             },
             {
                 "user": "iberrada",
-                "comment": "Superman always fought the good fight and brought justice to the wicked." 
-            }, 
-            {
-                "user": "Lily", 
-                "comment": "A friend recommended it to me!! It was amazing!"
+                "comment": "Superman always fought the good fight and brought justice to the wicked."
             }
         ]
     },
@@ -184,22 +180,6 @@
         "bookid": "1121",
         "genre": "comics",
         "title": "dummy3",
-        "author": [
-            "Jerry"
-        ],
-        "illustrator": [
-            "Joe"
-        ],
-        "description": "desc",
-        "url": "https:\/\/www.goodreads.com\/book\/show\/707611.Superman_Archives_Vol_2",
-        "image_url": "",
-        "rating": "5",
-        "reviews": []
-    },
-    {
-        "bookid": "1122",
-        "genre": "comics",
-        "title": "dummy4",
         "author": [
             "Jerry"
         ],

@@ -7,9 +7,9 @@
         $loggedUser = $_SESSION["username"];
     } 
 
-    $reqsJSON = file_get_contents("../pendingReq.JSON");
-    $rows= json_decode($reqsJSON, true);
-    echo "<br>";
+    $reqsJSON = file_get_contents("../../Books/BookDefault/Pending/allPendingBooks.JSON");
+    $rowsAll= json_decode($reqsJSON, true);
+    $rows = $rowsAll['requests'];
     if(sizeof($rows)==0) {
         echo "<p class='w3-center'> You have no pending requests.</p>";
     }

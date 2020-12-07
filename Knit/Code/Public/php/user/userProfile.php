@@ -27,8 +27,9 @@
 
 <div class = "profile">
     <div class="introSection">
-		<p id = 'uPrDiv' class='alert alert-info' role='alert'>This is what other users see when they click on your username in the forum and/or contest pages.</p>
-		<div id="containerPfp">
+      <h4>My Profile</h4>
+      <p id = 'uPrDiv' class='alert alert-info' role='alert'>This is what other users see when they click on your username in the forum and/or contest pages.</p>
+		  <div id="containerPfp">
 		    <div id = "viewPfp">
 				<img id = "viewPfpImg" src= '<?= $pfp; ?>' alt='<?= $username; ?>-s profile picture'>
 				<div id = "editPfpBtn" onclick = "show('editPfp')">

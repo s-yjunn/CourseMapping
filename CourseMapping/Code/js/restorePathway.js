@@ -7,6 +7,9 @@
  * Recreate courseBlock and lines correspondingly.
  */
 function restorePathway() {
+  if (document.getElementById(currentTab) == null) {
+    return;
+  }
   getCurrentElements();
 
   // If there are already courseBlocks in tab, do not restore nor recreate.

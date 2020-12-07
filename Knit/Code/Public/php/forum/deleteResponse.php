@@ -1,6 +1,7 @@
 <?php
 // This script deletes the posted forum post from the forum.json file
 // @author Isabel
+// Last modified 12/7/2020
 
 $path = "../../data/forum.json";
 

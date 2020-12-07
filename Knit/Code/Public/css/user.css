@@ -5,7 +5,7 @@
 #userHome, #userProfile, #userPattern {
 	animation: fadeEffect;
 }
-#userProfile, #userPatterns {
+#userProfile, #userPatterns, #userInbox {
 	display: none;
 }
 
@@ -212,4 +212,23 @@ height: 100%;
 
 .patternEdit {
 	display: none;
+}
+
+/* copied from admin */
+#userInbox .section {
+	border: 1px solid #ccc;
+	padding: 1.7rem 2rem;
+	margin: 2rem 0;
+	border-radius: 0.4rem;	
+}
+
+/* INBOX */
+/* copied from forum */
+#userInbox .timestamp {
+	font-size: 0.8rem;
+	color: #777;
+}
+#userInbox .author {
+	font-weight: bold;
+	font-size: 1.2rem;
 }

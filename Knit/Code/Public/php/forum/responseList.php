@@ -3,6 +3,7 @@
   * Requires a post index. Optionally takes a sorting parameter,
   * otherwise sorts by score (highest ranked first)
   * @author Isabel
+  * Last modified 12/7/2020
   */
 
   $sortMethod = "score"; // default

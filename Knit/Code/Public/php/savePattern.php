@@ -8,7 +8,7 @@
   $canvasData = $_POST["canvas"];
 
   $time = time(); // so the file name is unique
-  $destination = "../../Private/" .$username . "/" . $time . ".png"; // where we want to save this
+  $destination = "../../Private/" .$username . "/patterns/" . $time . ".png"; // where we want to save this
 
   // processing the canvas data
 	$canvasData = str_replace('data:image/png;base64,', '', $canvasData);

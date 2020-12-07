@@ -1,6 +1,7 @@
 <?php
   // This file formats a forum post given its index in the forum.json file
   // @author Isabel
+  // Last modified 12/7/2020
 
   // get all posts (since this is called from outside forum proper)
   $posts = json_decode(file_get_contents("../../data/forum.json"), true);

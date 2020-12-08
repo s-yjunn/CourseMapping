@@ -58,7 +58,7 @@
         <p class="postContent"><?=$post["content"]; ?></p>
       </td>
       <?php if ($canDelete): ?>
-        <td class = "deletePostResponse"><button class = "btn1" onclick = "show('deletePost')"><i class="far fa-trash-alt"></i> Delete post</button></td>
+        <td class = "deletePostResponse float-right"><button class = "btn1" onclick = "show('deletePost')"><i class="far fa-trash-alt"></i></button></td>
       <?php endif; ?>
     </tr>
   </table>

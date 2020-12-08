@@ -54,16 +54,6 @@
                 <div class='w3-hide-medium w3-hide-small'>
                     <a href='../Profile/profile.php' class='w3-bar-item buttonNavBar'>Profile</a>
                 </div>";
-
-                if($type=="admin") {
-                    echo "<div class='w3-right w3-hide-medium w3-hide-small'>
-                            <a id='logoutButton2' class='w3-bar-item buttonNavBar' style='cursor:pointer'> Log Out</a>
-                        </div>";
-                } else {
-                    echo "<div class='w3-right w3-hide-medium w3-hide-small'>
-                        <a id='logoutButton2' class='w3-bar-item buttonNavBar' style='cursor:pointer'> ". $_SESSION["name"].": Log Out</a>
-                    </div>";
-                }
                 
             }
             

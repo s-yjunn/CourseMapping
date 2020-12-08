@@ -1,6 +1,8 @@
 /* WELCOME */ 
 #Welcome {
 	color: white;
+    text-shadow: 2px 2px 4px #222;
+	
 }
 #Welcome h1 {
 	margin: 0;
@@ -16,6 +18,15 @@
 	margin: 5rem 0;
 	text-align: center;
 }
-.col h3, .col p {
-	padding: 0.5rem 10rem 0rem 10rem;
+.col p {
+	padding: 0 0.3rem;
+}
+
+@media only screen and (max-width:992px) {
+	/*.col {
+		margin:0rem;
+	}*/
+	#Welcome h1 {
+		font-size:4rem;
+	}
 }

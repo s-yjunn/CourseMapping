@@ -2,8 +2,8 @@
 	from {opacity: 0;}
 	to {opacity: 1;}
 }
-#userHome, #userProfile, #userPattern {
-	animation: fadeEffect;
+#userHome, #userProfile, #userPatterns, #userInbox {
+	animation: fadeEffect 1s;
 }
 #userProfile, #userPatterns, #userInbox {
 	display: none;
@@ -28,7 +28,7 @@
 	font-size: 0.8rem;
 }
 
-.btnEdit {
+.btnIcon {
 	padding: 0.5rem 1.2rem;
 	margin: 0 0.5rem;
 }
@@ -215,6 +215,7 @@ height: 100%;
 }
 
 /* copied from admin */
+
 #userInbox .section {
 	border: 1px solid #ccc;
 	padding: 1.7rem 2rem;
@@ -223,6 +224,13 @@ height: 100%;
 }
 
 /* INBOX */
+#userInbox .message {
+	background-color: #f7f7f7;
+	border-radius: 0.4rem;
+	margin-top: 1.5rem;
+	padding: 1.7rem;
+}
+
 /* copied from forum */
 #userInbox .timestamp {
 	font-size: 0.8rem;

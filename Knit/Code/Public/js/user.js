@@ -95,13 +95,16 @@ function togglePubPr(toggleElm, index) {
     } else if (toggleElm.innerHTML == "Private") {
         toggleElm.innerHTML = "Public";
     }
+    // clear any past messages
+    $("#uPaDiv" + index).html("");
+    // show save options
     show("patternEdit" + index);
 }
 
 // This function restores a pattern view div after the user cancels their edits
-function cancelPatEdit(index, pubPr) {
-    $("#tag" + index).html(pubPr); //restore privacy indicator to original value
-    // restore page alert to original value
+function cancelPatEdit(index) {
+    $("#tag" + index).html($("#prevTag" + index).html());; //restore privacy indicator to previous value
+    // restore page alert to its previous value
     $("#uPaDiv").html("Here are your saved patterns. Click on a pattern to view more options (download, edit privacy level).");
     // hide the save options
     hide("patternEdit" + index);
@@ -110,25 +113,83 @@ function cancelPatEdit(index, pubPr) {
 }
 
 // This function saves a modification to a pattern's privacy level
-function savePattern(username, index) {
+function savePatEdit(username, index) {
+    // get the new visibility level
     var newPubPr = $("#tag" + index).html();
+    // and the previous one
+    var oldPubPr = $("#prevTag" + index).html();
+    // see if a substantive change is being made
+    if (newPubPr == oldPubPr) {
+        // if not, we can call it a day
+        hide("patternEdit" + index);
+        $("#uPaDiv" + index).html("<p class='alert alert-info' role='alert'>Your change was saved.</p>");
+    } else {
+        // if so, send it to the php script
+        $.ajax ({
+            type: "POST",
+            url: "php/user/editPattern.php",
+            data: {uname: username, index: index, new: newPubPr},
+            success: function(response) {
+                // when done, hide the save options
+                hide("patternEdit" + index);
+                // if successful,
+                if (response == 1) {
+                    // let the user know
+                    $("#uPaDiv" + index).html("<p class='alert alert-info' role='alert'>Your change was saved.</p>");
+                    // update prevTag
+                    $("#prevTag" + index).html(newPubPr);
+                    // update profile edit page
+                    $("#userProfile").load(location.href+" #userProfile>*","");
+                // otherwise
+                } else {
+                    // restore the visibility tag to its previous value;
+                    $("#tag" + index).html($("#prevTag" + index).html());
+                    // let the user know
+                    $("#uPaDiv" + index).html("<p class='alert alert-danger' role='alert'>Unable to save change.</p>");
+                }
+            }
+        });
+    }
+}
+
+// this function prepares to delete a pattern
+function showPatDelete(username, index) {
+    $("#deletePatBtn").attr("onclick","deletePattern('" + username + "', " + index + ")");
+    hide("managePattern" + index);
+    show("deletePattern");
+}
+
+// this function handles the client-side of deleting a user's pattern
+function deletePattern(username, index) {
+    // send it to the php script
     $.ajax ({
         type: "POST",
-        url: "php/user/editPattern.php",
-        data: {uname: username, index: index, new: newPubPr},
+        url: "php/user/deletePattern.php",
+        data: {uname: username, index: index},
         success: function(response) {
-            if (response == 1) {
-                $("#uPaDiv").html("Your change was saved.");
-                // update profile edit page
-                $("#userProfile").load(location.href+" #userProfile>*","");
+            // if something went wrong,
+            if (response = 0) {
+                // let the user know
+                $("#uPaDiv").html("<p class='alert alert-danger' role='alert'>Unable to delete pattern.</p>");
+            // otherwise,
             } else {
-                $("#tag" + index).html(response);
-                $("#uPaDiv").html("Unable to save change.");
+                // refresh this list of patterns
+                $("#userPatternList").load(location.href+" #userPatternList>*","");
+                // if the pattern was public,
+                if (response == "Public") {
+                    // also refresh the user profile page
+                    $("#userProfile").load(location.href+" #userProfile>*","");
+                }
+                // let the user know
+                $("#uPaDiv").html("<p class='alert alert-info' role='alert'>Your pattern was deleted.</p>");
             }
+            // hide the deletion div regardless
+            hide("deletePattern");
         }
     });
-    // hide the save options
-    hide("patternEdit" + index);
-    // and the manage div in question
-    hide("managePattern" + index);
+}
+
+// this function updates the user's inbox
+function refreshUserInbox() {
+    $("#userInbox").load(location.href+" #userInbox>*","");
 }

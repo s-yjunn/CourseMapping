@@ -102,7 +102,7 @@ function postResponse(loggedIn, postIndex) {
 
 // This function sets up the 'deleteResponse' div to delete the proper response
 function showDeleteResponse(postIndex, responseIndex) {
-    $("#deleteRspBtn"). attr("onclick","deleteResponse(" + postIndex + ", " + responseIndex + ")");
+    $("#deleteRspBtn").attr("onclick","deleteResponse(" + postIndex + ", " + responseIndex + ")");
     show("deleteResponse");
 }
 

@@ -41,7 +41,8 @@ $majorFileName = "../json/majors.json";
             ?>
         </select>
         <button class="courseBtn" onclick="selectMajor()">Get Courses</button>
-        <button class="active" onclick="save()">Save</button>
+        <button class="active" <?php include './saveButtons/blank.php'; ?> onclick="save()">Save</button>
+        <button class="unsavedBtn" <?php include './saveButtons/unsaved.php'; ?> onclick="save()">Save Unsaved Work</button>
 
         <div class="info">
         </div>

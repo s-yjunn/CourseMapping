@@ -38,7 +38,7 @@
     <?php endif; ?>
 
     <!--This is the forum "index": a table of links to existing forum posts-->
-    <div id="forumIndex">
+    <div id="forumIndex" class="refresh tableDiv">
       <h4>All Posts</h4>
       <!--Selector for how to sort posts-->
       <form>

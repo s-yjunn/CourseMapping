@@ -53,11 +53,12 @@ $resJSON = json_encode($rows, JSON_PRETTY_PRINT);
 
 if(file_put_contents("../BookDefault/Reviews/allReviews.json", $resJSON)) {
     echo "Success!"; 
-    //header("location: ../profile.php");
+    header("location: ../collection.php");
     //echo "<br>Success! The pending request has been added to the log"; 
     
 } else {
     echo "failed to enter review";
+    header("location: ../collection.php");
     //echo "error in processing pending requests"; 
     //header("location: ../../../profile.php");   
 }

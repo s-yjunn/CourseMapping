@@ -143,7 +143,6 @@ $loggedUser = $_SESSION["name"];
             <button type="submit" name="submit" id="reviewSubmit" class="upload">Submit Review</button>
 
         </form>
-    <div id="successUpload">Your book upload was successful!</div>
 </div>
 
     <br>

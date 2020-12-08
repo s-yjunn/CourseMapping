@@ -4,7 +4,7 @@
 // @author Isabel
 
 // Get message basics -- contents, recipient, sender
-$text = $_POST["message"];
+$text = $_POST["text"];
 $to = $_POST["to"];
 $from = $_POST["from"];
 

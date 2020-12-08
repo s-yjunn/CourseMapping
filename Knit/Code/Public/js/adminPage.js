@@ -38,12 +38,21 @@ function sendMessage(to, from) {
   if (message == "") {
     $("#adminMsgFeedback").html("<p class='alert alert-danger' role='alert'>Please enter a message.</p>");
   } else {
+    // send the request to the processing file
     $.ajax({
       type: "POST",
       url: "php/admin/sendMessage.php",
       data: {text: message, to: to, from: from},
       success: function(response) {
-        console.log(response);
+        // if we get a failure message
+        if (response == 0) {
+          // let the user know
+          $("#adminUsersDiv").html("<p class='alert alert-danger' role='alert'>Unable to send message.</p>");
+          // if successful,
+        } else {
+          // let the user know
+          $("#adminUsersDiv").html("<p class='alert alert-info' role='alert'>Your message to " + to + " was sent.</p>");
+        }
         // clear everything out, and close the composition div
         cancelAdminCompose();
       }

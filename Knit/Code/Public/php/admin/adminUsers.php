@@ -15,6 +15,8 @@
   <h4>Users</h4>
   <!-- reload button -->
   <p class="timestamp">Up-to-date as of <?=$updated; ?>. <button class="btn1" type="button" onclick="refreshAdminUsers()"><i class="fas fa-redo-alt"></i> Refresh</button></p>
+  <!-- any updates go here -->
+  <span id = "adminUsersDiv"></span>
   <p>Knitty Gritty has <?= $nrUsers; ?> registered user<?php if ($nrUsers == 0):?>s.<?php elseif ($nrUsers == 1):?>:<?php else: ?>s:<?php endif; ?>
   </p>
 

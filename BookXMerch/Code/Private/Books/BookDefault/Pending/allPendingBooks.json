@@ -15,23 +15,6 @@
             "image_url": "",
             "rating": "5",
             "reviews": []
-        },
-        {
-            "reqUsername": "nmajid",
-            "genre": "comics",
-            "title": "New Comic",
-            "author": [
-                "Author 1",
-                " Author 2"
-            ],
-            "illustrator": [
-                "Illustrator 1",
-                " Illustrator 2"
-            ],
-            "desc": "Something",
-            "url": "https:\/\/www.webtoons.com\/en\/",
-            "rating": "5",
-            "reviews": []
         }
     ]
 }

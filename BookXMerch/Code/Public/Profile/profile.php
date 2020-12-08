@@ -170,7 +170,7 @@
 
         <div class="container-upload">
             
-            <form action="php/bookUpload.php" method="post">
+            <form id="uploadForm-data" method="post" action="php/bookUpload.php">
                 <label class="label" for="genre"><b>Genre*</b></label>
    
                 <select id="genre" name="genre">
@@ -210,6 +210,7 @@
         
 
     </div>
+    <div id="successUpload">Your book upload was successful!</div>
         
     <!-- My books -->
     <div id="booksList" class="card" style="display:none">

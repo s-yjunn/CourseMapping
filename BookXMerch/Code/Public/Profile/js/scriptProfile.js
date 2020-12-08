@@ -16,15 +16,34 @@ function closeUploadModal(){
     document.getElementById("uploadForm").style.display="none";
 }
 
+document.getElementById("uploadForm-data").addEventListener("submit", uploadRequest);
+
 function uploadRequest() {
     // Have an XML request here to operate the 
+    console.log("am i even in the function?");
     var xmlhttp = new XMLHttpRequest();
+    var data = new FormData(document.querySelector('uploadForm-data'));
+    console.log("am i even in the function?");
     xmlhttp.onreadystatechange = function() {
-        if(this.readyState == 4 && thhis.status == 200) {
-            
-        }
+        if(this.readyState == 4 && this.status == 200) {
+            // show the snackbar for book upload success.
+            console.log(this.responseText);
+            var x = document.getElementById("successUpload");
+            x.className = "show";
+            console.log("what opened");
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000); 
+            console.log("closed"); 
+        }//endif
     }
+    xmlhttp.open("POST", "php/bookUpload.php", true);
+    xmlhttp.send(data);    
 }
+
+var uploadForm = document.getElementById('uploadSubmit'); 
+uploadForm.addEventListener('click',function(){
+    window.alert("Upload Successful!"); 
+     
+});
 
 function getList() {
 

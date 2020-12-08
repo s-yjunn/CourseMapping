@@ -3,8 +3,7 @@
 session_start();
 
 $username = $_SESSION['username'];
-echo "debug comment<br>";
- 
+
 
 
 $genre = $_POST['genre'];
@@ -18,7 +17,6 @@ $bookURL = $_POST['url'];
 $pendingJSON = file_get_contents("../../../Private/Books/BookDefault/Pending/allPendingBooks.json");
 $rows= json_decode($pendingJSON, true);
 
-echo "<br>debug comment 2<br>"; 
 
 // Check if there are more than one author and more than one illustrator. 
 
@@ -41,17 +39,16 @@ $arrReq = array(
     'reviews' => [] 
 );
 
-echo "debug comment: " . $arrReq; 
 
 
 array_push($rows['requests'], $arrReq);
 $resJSON = json_encode($rows, JSON_PRETTY_PRINT);
 if(file_put_contents("../../../Private/Books/BookDefault/Pending/allPendingBooks.json", $resJSON)) {
-    header("location: ../../../profile.php");
-    echo "Success! The pending request has been added to the log"; 
+    header("location: ../profile.php");
+    //echo "<br>Success! The pending request has been added to the log"; 
     
 } else {
-    header("location: ../../../profile.php");
-    echo "error in processing pending requests"; 
+    //echo "error in processing pending requests"; 
+    //header("location: ../../../profile.php");   
 }
 ?>

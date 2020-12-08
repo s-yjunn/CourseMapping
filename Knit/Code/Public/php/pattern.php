@@ -32,5 +32,7 @@
   <img class="fullImg" src='imgs/contest/<?= $pattern["image"]; ?>' alt='Knit submission by <?= $pattern["author"]; ?>'>
   <h4><?=$pattern["title"]; ?></h4>
   <h5 class="author"><?=$pattern["author"]; ?></h5>
-  <p class="instructions"><?=$pattern["text"]; ?></p>
+  <div class="instructions">
+	  <p><?=$pattern["text"]; ?></p>
+	 </div>
 </div>

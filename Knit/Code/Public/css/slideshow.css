@@ -31,7 +31,6 @@
 
   /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
-    background-color: burlywood;
     color: black;
   }
 
@@ -61,14 +60,14 @@
     height: 15px;
     width: 15px;
     margin: 0 2px;
-    background-color: #bbb;
+    background-color: rgb(239, 35, 60, 0.6);
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
   }
   
   .active, .dot:hover {
-    background-color: #717171;
+    background-color: rgb(239, 35, 60);
   }
 
   .center {

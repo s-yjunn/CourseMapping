@@ -25,22 +25,23 @@ function uploadItems($title, $image_url, $tags, $description, $price)
 
 }
 
+
 function changePassword($id,$pass1,$pass2)
 {
     include ("db_connect.php");
+
 
     if ($pass1 != $pass2){
         return 0; // passwords don't match
     }
 
-    // search by tags, title, description, seller
-    // sorted by relevance to title of item
+    // set new password
     $sql = "UPDATE user SET pass = ? WHERE id = ?;";
 
     $query = $conn->prepare($sql);
     $query->bind_param('si', $p, $i);
 
-    $p = $pass1;
+    $p = md5($pass1);
     $i = $id;
 
     $query->execute();
@@ -49,41 +50,40 @@ function changePassword($id,$pass1,$pass2)
 }
 
 
-function changePicture($id,$imageURL)
+function changePicture($imageURL)
 {
     include ("db_connect.php");
 
-    // search by tags, title, description, seller
-    // sorted by relevance to title of item
-    $sql = "UPDATE user SET imageURL = ? WHERE id = ?;";
+
+    // set new imageURL
+    $sql = "UPDATE user SET imageURL = ? WHERE user = ?;";
 
     $query = $conn->prepare($sql);
-    $query->bind_param('si', $u, $i);
+    $query->bind_param('ss', $p, $u);
 
-    $u = $imageURL;
-    $i = $id;
+    $p = $imageURL;
+    $u = $_SESSION["username"];
 
     $query->execute();
 
     return 1;
 
-    
 }
 
 
-function changeInfo($id,$info)
+function changeInfo($newInfo)
 {
     include ("db_connect.php");
 
     // search by tags, title, description, seller
     // sorted by relevance to title of item
-    $sql = "UPDATE user SET info = ? WHERE id = ?;";
+    $sql = "UPDATE user SET info = ? WHERE user = ?;";
 
     $query = $conn->prepare($sql);
-    $query->bind_param('si', $n, $i);
+    $query->bind_param('ss', $i, $u);
 
-    $n = $info;
-    $i = $id;
+    $i = $newInfo;
+    $u = $_SESSION["username"];
 
     $query->execute();
 

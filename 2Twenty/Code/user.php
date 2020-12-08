@@ -5,48 +5,6 @@ include ("vars/header.php");
 include ("vars/navbar.php");
 include ("src/accountUtilities.php");
 
-
-// if registering:
-    if (isset($_POST["pass1"]) && isset($_POST["pass2"]))
-    {
-        echo ("YEEE");
-        if (handle_registration($_POST["uname_r"], $_POST["upass_r"]))
-        {
-    
-            // success
-            echo ('
-                <div class="notification is-success floating" id="good-login">
-                    <button class="delete"></button>
-                    Successful registration. Thank you!
-                </div>
-            ');
-    
-        }
-        else
-        {
-    
-            // failure
-            echo ('
-                    <div class="notification is-danger floating" id="bad-login">
-                        <button class="delete"></button>
-                        Bad registration. Please try again.
-                    </div>
-                ');
-    
-        }
-    }
-
-
-if (isset($_GET['id']))
-{
-    $items_sale = (getUserSelling(getUserName($_GET["id"])));
-}
-else
-{
-    $_GET['id'] = 0;
-    $items_sale = (getUserSelling(getUserName($_GET["id"])));
-}
-
 // if uploading items 
 // code written by Jessica
 if (isset($_POST["title"]) && isset($_POST["image_url"]) && isset($_POST["tags"]) && isset($_POST["description"]) && isset($_POST["price"]))
@@ -70,6 +28,105 @@ if (isset($_POST["title"]) && isset($_POST["image_url"]) && isset($_POST["tags"]
 }
 
 
+// if changing password:
+    if (isset($_POST["pass1"]) && isset($_POST["pass2"]))
+    {
+        if (changePassword(getUserId($_SESSION["username"]),$_POST["pass1"], $_POST["pass2"]))
+        {
+    
+            // success
+            echo ('
+                <div class="notification is-success floating" id="good-login">
+                    <button class="delete"></button>
+                    Password Changed!
+                </div>
+            ');
+    
+        }
+        else
+        {
+    
+            // failure
+            echo ('
+                    <div class="notification is-danger floating" id="bad-login">
+                        <button class="delete"></button>
+                        Passwords don\'t match.
+                    </div>
+                ');
+    
+        }
+    }
+
+
+// if changing picture:
+    if (isset($_POST["imageURL"]))
+    {
+        if (changePicture($_POST["imageURL"]))
+        {
+    
+            // success
+            echo ('
+                <div class="notification is-success floating" id="good-login">
+                    <button class="delete"></button>
+                    Image Changed!
+                </div>
+            ');
+    
+        }
+        else
+        {
+    
+            // failure
+            echo ('
+                    <div class="notification is-danger floating" id="bad-login">
+                        <button class="delete"></button>
+                        Image wasn\'t uploaded
+                    </div>
+                ');
+    
+        }
+    }
+
+// if changing info:
+    if (isset($_POST["newInfo"]))
+    {
+        if (changeInfo($_POST["newInfo"]))
+        {
+    
+            // success
+            echo ('
+                <div class="notification is-success floating" id="good-login">
+                    <button class="delete"></button>
+                    Info Updated!
+                </div>
+            ');
+    
+        }
+        else
+        {
+    
+            // failure
+            echo ('
+                    <div class="notification is-danger floating" id="bad-login">
+                        <button class="delete"></button>
+                        Info wasn\'t updated.
+                    </div>
+                ');
+    
+        }
+    }
+
+
+
+if (isset($_GET['id']))
+{
+    $items_sale = (getUserSelling(getUserName($_GET["id"])));
+}
+else
+{
+    $_GET['id'] = 0;
+    $items_sale = (getUserSelling(getUserName($_GET["id"])));
+}
 ?>
 
 	<body>
@@ -106,14 +163,15 @@ if (isset($_POST["title"]) && isset($_POST["image_url"]) && isset($_POST["tags"]
 		</section>
 
         <section class="section" id="body">
-        <div class="container">
+            <div class="container">
 
             <div class="card">
                     <div class="card-content">
                         <div class="media">
 
                         <div class="media-content">
-                            <p class="title is-4">Add New Item To Your Shop</p>
+
+                        <p class="title is-4">Add New Item To Your Shop</p>
                             <p class="subtitle is-6">
 
                             <form method="POST">
@@ -127,30 +185,46 @@ if (isset($_POST["title"]) && isset($_POST["image_url"]) && isset($_POST["tags"]
                             </form>
 
                             </p>
-                        </div>
-                        </div>
 
-                    </div>
-                </div>
+                            <br>
 
-            <div class="container">
-
-            <div class="card">
-                    <div class="card-content">
-                        <div class="media">
-
-                        <div class="media-content">
                             <p class="title is-4">Change Password</p>
                             <p class="subtitle is-6">
 
-                            <form action="src/changePassword.php" method="get">
+                            <form method="post">
                                 <br>
-                                <input class="input is-rounded mb-4 mt-4" type="text" name="pass1" placeholder="New Password"><br>
-                                <input class="input is-rounded mb-4 mt-4" type="text" name="pass2" placeholder="Retype Password"><br>
+                                <input class="input" type="text" name="pass1" placeholder="New Password"><br>
+                                <input class="input" type="text" name="pass2" placeholder="Retype Password"><br>
                                 <input type="submit" class = "button is-primary mt-4">
                             </form>
 
                             </p>
+                            <br>
+
+                            <p class="title is-4">Change Image</p>
+                            <p class="subtitle is-6">
+
+                            <form method="post">
+                                <br>
+                                <input class="input" type="text" name="imageURL" placeholder="Image URL"><br>
+                                <input type="submit" class = "button is-primary mt-4">
+                            </form>
+
+                            </p>
+                            <br>
+
+                            <p class="title is-4">Change Info</p>
+                            <p class="subtitle is-6">
+
+                            <form method="post">
+                                <br>
+                                <input class="input" type="text" name="newInfo" placeholder="New Info"><br>
+                                <input type="submit" class = "button is-primary mt-4">
+                            </form>
+
+                            </p>
+
+
                         </div>
                         </div>
 

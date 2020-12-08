@@ -20,9 +20,10 @@
 <button class="btn1" onclick="hide('userInbox'); show('userHome')"><i class="fas fa-arrow-left"></i> Back</button><br><br>
 
 <div id = "userInboxContent">
-  <h4>Inbox</h4>
+  <h4>Inbox <button class="btn1 btnIcon float-right" type="button" onclick="refreshUserInbox()"><i class="fas fa-redo-alt fa-xs"></i></button></h4>
+  
+  <div class="refresh">
   <!--reload button.-->
-  <button class="btn1" type="button" onclick="refreshUserInbox()"><i class="fas fa-redo-alt"></i> Refresh</button>
   <div id = "userUnreadMsg" class = "section">
     <h5>Unread messages</h5>
     <?php if (count($unread) == 0):?>
@@ -31,9 +32,11 @@
       <?php foreach ($unread as $message):
         $sent = date('M j, Y \a\t h:iA \U\T\C', $message["sent"]);
       ?>
+	  <div class="message">
         <p class="author"><?= $message["from"]; ?><br>
         <span class="timestamp"><?= $sent; ?></span></p>
         <p class="messageContent"><?= $message["text"]; ?></p>
+	  </div>
       <?php endforeach; ?>
     <?php endif; ?>
   </div>
@@ -46,10 +49,14 @@
       <?php foreach ($read as $message):
         $sent = date('M j, Y \a\t h:iA', $message["sent"]);
       ?>
+	  <div class="message">
         <p class="author"><?= $message["from"]; ?><br>
         <span class="timestamp"><?= $sent; ?></span></p>
         <p class="messageContent"><?= $message["text"]; ?></p>
+	  </div>
       <?php endforeach; ?>
     <?php endif; ?>
   </div>
+  </div>
+  
 </div>

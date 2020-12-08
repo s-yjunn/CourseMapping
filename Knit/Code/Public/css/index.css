@@ -59,6 +59,12 @@ input[type=button] {
 	display: inline-block;
 }
 
+.refresh {
+	animation: fadeEffect 1s;
+}
+.tableDiv {
+	overflow: scroll;
+}
 /* MODAL */
 /* background to make modal divs "float" */
 .dark {

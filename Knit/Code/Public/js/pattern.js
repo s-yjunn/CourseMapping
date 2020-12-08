@@ -1,24 +1,21 @@
 ////// SETTING UP //////
 
-// set variables
+// establish variables (and set static ones)
 var canvas = document.getElementById('canvas'),
-    context = canvas.getContext('2d'),
-    mouseX = 0,
-    mouseY = 0,
-	gridWidth = 600, // dimensions of canvas GRID (excluding numbers)
-	gridHeight = 600,
-	width = gridWidth+20, // dimensions of canvas ELEMENT (adds 20px to fit number axes)
-	height = gridHeight+20,
-	gridDiv = 20, // gridWidth (or gridHeight) divided by gridDiv determines number of square
+  context = canvas.getContext('2d'),
+  mouseX = 0,
+	mouseY = 0,
+	appxGridWidth = 500, // *approximate* dimensions of canvas GRID (excluding numbers)
+	appxGridHeight = 500,
+	gridWidth, // actual dimensions of canvas GRID (excluding numbers)
+	gridHeight,
+	gridDiv, // gridWidth (or gridHeight) divided by gridDiv = number of squares
 	fillColor = '#000', // default fill color is black
 	bgColor = [255, 255, 255, 255], // default bg color of squares is white
-    mousedown = false,
+  mousedown = false,
 	colorPick = document.getElementById('colorPicker'),
 	btnClear = document.getElementById('btnClear'),
 	btnDownload = document.getElementById('btnDownload');
-// set canvas size
-canvas.width = width;
-canvas.height = height;
 
 ////// GRID DRAW //////
 
@@ -43,7 +40,7 @@ function drawGrid() {
     }
 	
 	// DRAW THE NUMBERS
-	var numX = (gridWidth/gridDiv); // nnumber that gets printed along x axis; start with number of squares needed and decrement
+	var numX = (gridWidth/gridDiv); // number that gets printed along x axis; start with number of squares needed and decrement
 	var numY = (gridHeight/gridDiv); // number that gets printed along y axis; start with number of squares needed and decrement
 	var numXaxis = gridWidth+5; // x coordinate of canvas that y-axis numbers print along, +5px for spacing
 	var numYaxis = gridHeight+15; // y coordinate of canvas that x-axis numbers print along, +15px for spacing
@@ -171,5 +168,38 @@ function btnSave(username) {
 	});
 }
 
-////// FUNCTION CALLS //////
-drawGrid();
+////// INITIALIZING GRID to user specifications //////
+// @author Isabel
+function startPatternMkr() {
+	// get user input about cols x rows (for now they're the same)
+	var nrCols = nrRows = $("#dimension").val();
+	// make sure they didn't enter something too big (max hard-coded for now)
+	if (nrCols > 30 || nrRows > 30) {
+		$("#intakeFeedback").html("<p class='alert alert-danger' role='alert'>Please enter a number <= 30.</p>");
+	// or too small (min hard-coded for now) 
+	} else if (nrCols < 6 || nrRows < 6) {
+		$("#intakeFeedback").html("<p class='alert alert-danger' role='alert'>Please enter a number > 5.</p>");
+	// if all is well, take them to the grid
+	} else {
+	// what multiplier gets us the closest (without going over) to the approx grid height with this many squares?
+	// (height because that's where non-scrolling space is limited)
+	gridDiv = Math.floor(appxGridHeight/nrRows);
+	// then get that 'closest number' for the actual dimensions
+	gridWidth = nrCols * gridDiv; // actual dimensions of canvas GRID (excluding numbers)
+	gridHeight = nrRows * gridDiv;
+	canvas.width = gridWidth+20; // dimensions of canvas ELEMENT (adds 20px to fit number axes)
+	canvas.height = gridHeight+20;
+	drawGrid();
+	hide('patternMkrIntake');
+	show('patternMkrGrid');
+	}
+}
+
+// short "starting over" function (-Isabel)
+function restartPatternMkr() {
+	// clear feedback area
+	$("#intakeFeedback").html("");
+	// return to the intake form
+	hide('patternMkrGrid');
+	show('patternMkrIntake');
+}

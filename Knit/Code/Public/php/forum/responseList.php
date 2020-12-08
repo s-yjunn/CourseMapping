@@ -62,7 +62,7 @@
       <span class='timestamp'><?= $posted; ?></span></p>
       <p class='postContent'><?= $response["content"]; ?></p></td>
     <?php if ($canDelete): ?>
-        <td class = "deletePostResponse"><button class = "btn1" onclick = "showDeleteResponse(<?= $postIndex; ?>, <?= $responseIndex; ?>)"><i class="far fa-trash-alt"></i> Delete response</button></td>
+        <td class = "deletePostResponse"><button class = "btn1 float-right" onclick = "showDeleteResponse(<?= $postIndex; ?>, <?= $responseIndex; ?>)"><i class="far fa-trash-alt"></i></button></td>
       <?php endif; ?>
     </tr>
   <?php endforeach; ?>

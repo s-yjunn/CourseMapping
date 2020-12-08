@@ -7,10 +7,11 @@
 
 <div id="Winners" class="tabcontent">
     <h3 class="underline">Featured</h3>
-    <div class="slideshow-container" id = "featuredHome">
-        <?php if ($numWin == 0): ?>
-            <p>There are currently no winners! Please come back later for updates.</p>
-        <?php else:
+    <?php if ($numWin == 0): ?>
+        <p>There are currently no winners! Please come back later for updates.</p>
+	<?php else: ?>
+		<div class="slideshow-container" id = "featuredHome">
+		<?php
             for($i = 0; $i < $numWin; $i++): 
                 $image = "imgs/contest/" . $winnerData[$i]["image"];
             ?>

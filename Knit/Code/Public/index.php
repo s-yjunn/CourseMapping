@@ -24,6 +24,7 @@
 	<link rel="stylesheet" href="css/winners.css">
 	<link rel="stylesheet" href="css/vote.css">
 	<link rel="stylesheet" href="css/pattern.css">
+	<link rel="stylesheet" href="css/quiz.css">
 	<link rel="stylesheet" href="css/forum.css">
 	<link rel="stylesheet" href="css/loginRegister.css">
 	<link rel="stylesheet" href="css/user.css">

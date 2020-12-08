@@ -179,8 +179,9 @@ function startPatternMkr() {
 	// or too small (min hard-coded for now) 
 	} else if (nrCols < 6 || nrRows < 6) {
 		$("#intakeFeedback").html("<p class='alert alert-danger' role='alert'>Please enter a number > 5.</p>");
-	// if all is well, take them to the grid
+	// if all is well, clear any prior error messages and take them to the grid
 	} else {
+		$("#intakeFeedback").html("");
 	// what multiplier gets us the closest (without going over) to the approx grid height with this many squares?
 	// (height because that's where non-scrolling space is limited)
 	gridDiv = Math.floor(appxGridHeight/nrRows);
@@ -198,7 +199,7 @@ function startPatternMkr() {
 // short "starting over" function (-Isabel)
 function restartPatternMkr() {
 	// clear feedback area
-	$("#intakeFeedback").html("");
+	$("#paDiv").html("");
 	// return to the intake form
 	hide('patternMkrGrid');
 	show('patternMkrIntake');

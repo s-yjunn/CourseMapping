@@ -8,19 +8,11 @@
   // store the user in question
   $username = $_POST["uname"];
   // and the pattern index in question
-  $index = intval($_POST["index"]);
+  $index = $_POST["index"];
   $newPubPr = $_POST['new']; // this is a string
 
   // get the users data from the server
   $usersData = json_decode(file_get_contents("../../../Private/users.json"), true);
-
-  //save old "public" attribute (in case of error)
-  $oldVal = $usersData[$username]["patterns"][$index]["public"];
-  if ($oldVal) {
-    $oldPubPr = "Public";
-  } else {
-    $oldPubPr = "Private";
-  }
 
   // figure out what the associated boolean for the new attribute "public" is
   if ($newPubPr == "Public") {
@@ -39,6 +31,6 @@
   if (file_put_contents("../../../Private/users.json", json_encode($usersData))) {
     echo 1; // success to jQuery script
   } else {
-    echo $oldpubPr;
+    echo 0;
   }
 ?>

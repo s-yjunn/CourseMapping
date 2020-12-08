@@ -31,6 +31,7 @@
             $filePath = $user_file_path . "/" . $fileName;
             $pathwayJSON = file_get_contents($filePath);
             $pathway = json_decode($pathwayJSON, TRUE);
+            error_log($pathwayJSON);
             $pathway['serverSaveNeeded'] = false; // When it was saved, this could have been true or false. It needs to be false when sent to the client.
             $tabOpener = $dom->createElement('button', $pathway['title']);
             // I know the global event is deprecated, but otherwise I can't add this in PHP where I know the pathway info

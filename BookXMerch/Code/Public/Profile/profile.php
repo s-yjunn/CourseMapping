@@ -208,8 +208,11 @@
             </form>
         </div>
     </div>
-    <div id="successUpload">Your book upload was successful!</div>
-        
+    
+    <?php $success = $_REQUEST['success'];
+    if ($success==1 ) {
+        echo "<div id='successUpload2'>Your book upload was successful! <span class='closeSuccess' onclick='closeSuccess()'>&times;</span></div>";
+    }?>
     <!-- My books -->
     <div id="booksList" class="card" style="display:none">
         <div id="reviewsListWrapper" class="tabcontent">

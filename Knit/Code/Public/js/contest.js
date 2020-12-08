@@ -23,5 +23,7 @@ function openPattern(patternIndex, to, from, fromLink) {
         hide(from);
         // show the pattern
         show(to);
+        // go to the top of the pattern
+        window.location.href = "#contestPattern";
     });
 }

@@ -65,6 +65,8 @@ $loggedUser = $_SESSION["name"];
                     <br><br><br>
                 <li>  <div > <b> TITLE: </b> <?php echo $title ?></div> </li>
                 <hr>
+                <li>  <div > <b> GENRE: </b> <?php echo $genre ?></div> </li>
+                <hr>
                 <li> <div > <b> AUTHORS(s): </b> <?php for($j=0; $j<sizeof($author); $j++) { 
                     echo "<div>" . $author[$j] . " </div> ";} ?> </div> </li>
                 <?php

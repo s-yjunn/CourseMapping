@@ -27,12 +27,16 @@ written by Professor Streinu, and Yujun, Hyana's midterm projects-->
 
 <div class = 'tab' id="tab">
     <button id = "logo">Course Mapping</button>
-    <button class = "tablinks active" onclick= "openTab(event, 'Courses')">COURSES</button>
+    <button class = "tablinks active" onclick= "openTab(event, 'Inst')">INSTRUCTION</button>
+    <button class = "tablinks" onclick= "openTab(event, 'Courses')">COURSES</button>
     <button class = "tablinks" onclick= "openTab(event, 'Users')">USERS</button>
 </div>
 
 <article id = 'content'>
-    <div id = 'Courses' class = 'tabcontent' style = 'display: block;'>
+    <div id = 'Inst' class = 'tabcontent' style = 'display: block;'>
+        <?php include "html/adminInst.html"?>
+    </div>
+    <div id = 'Courses' class = 'tabcontent' style = 'display: none;'>
         <?php include "html/viewCourses.html"?>
         <?php include "html/add.html"?>
     </div>

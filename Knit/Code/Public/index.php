@@ -52,7 +52,7 @@
 </div>
 
 <div class="tab">
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-xl">
 	<a class="navbar-brand" href="">Knitty Gritty <img src="imgs/logo.png"></a>
 	<button class="custom-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>

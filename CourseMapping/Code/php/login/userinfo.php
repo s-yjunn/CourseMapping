@@ -1,4 +1,8 @@
 <?php
+/* 
+@author Hyana Kang
+*/
+
 //displays the user info on the top of the screen
 
 // for registered users: 

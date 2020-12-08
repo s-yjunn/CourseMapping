@@ -1,4 +1,7 @@
 <?php
+/* 
+@author Hyana Kang
+*/
 $dir = $_POST['directory'];
 $dir = "../../" . $dir. "/";
 $files = glob($dir . "*" ); 

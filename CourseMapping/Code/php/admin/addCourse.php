@@ -1,4 +1,7 @@
 <?php
+/* 
+@author Hyana Kang
+*/
     //gets the input data from add.html and adds it to courses.json
     $major = $_POST['major'];
     $num = $_POST['num'];

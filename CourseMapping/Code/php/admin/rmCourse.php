@@ -1,4 +1,9 @@
 <?php
+/* 
+@author Hyana Kang
+The code is modified from login.php that we've learned in class
+*/
+
 //gets the input data from viewCourses.html and removes the corresponding data from courses.json
 $courses = $_POST['course'];
 

@@ -1,3 +1,6 @@
+/**
+ * @author Hyana Kang
+ */
 $(document).ready(function () { 
     /* it will collects the course information of selected major from courses.json 
     and adds it to the table in viewCourses.html*/

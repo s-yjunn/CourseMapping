@@ -1,4 +1,7 @@
 <?php 
+/* 
+@author Hyana Kang
+*/
 //displays the tabs when the user is logged-out
 if (!isset($_SESSION['username'])){ 
         echo "style = 'display:block;'";} else {

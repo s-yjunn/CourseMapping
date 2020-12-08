@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang>
 <head>
+<meta name="author" content="Hyana Kang">
+<!--The structure of this webpage is based on PieTown(midterm) 
+written by Professor Streinu, and Yujun, Hyana's midterm projects-->
 <title>Course Mapping</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel ="stylesheet" type ="text/css" href="css/homepageCSS.css"> 
@@ -24,16 +27,16 @@
 
 <div class = 'tab' id="tab">
     <button id = "logo">Course Mapping</button>
-    <button class = "tablinks" onclick= "openTab(event, 'Courses')">COURSES</button>
-    <button class = "tablinks active" onclick= "openTab(event, 'Users')">USERS</button>
+    <button class = "tablinks active" onclick= "openTab(event, 'Courses')">COURSES</button>
+    <button class = "tablinks" onclick= "openTab(event, 'Users')">USERS</button>
 </div>
 
 <article id = 'content'>
-    <div id = 'Courses' class = 'tabcontent' style = 'display: none;'>
+    <div id = 'Courses' class = 'tabcontent' style = 'display: block;'>
         <?php include "html/viewCourses.html"?>
         <?php include "html/add.html"?>
     </div>
-    <div id = 'Users' class = 'tabcontent' style = 'display: block;'>
+    <div id = 'Users' class = 'tabcontent' style = 'display: none;'>
         <?php include "html/users.html"?>
     </div>
 </article>

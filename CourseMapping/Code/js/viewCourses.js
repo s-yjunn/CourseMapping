@@ -1,3 +1,6 @@
+/**
+ * @author Hyana Kang
+ */
 // collects the departments from courses.json using jquery and adds them to the #major dropdown in viewCourses.html
 $(document).ready(function () { 
     $.getJSON("json/courses.json", function (data) { 

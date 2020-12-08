@@ -1,4 +1,8 @@
 <?php
+/* 
+@author Hyana Kang
+The code is modified from login.php that we've learned in class
+*/
    ob_start();
    session_start();
 ?>
@@ -27,20 +31,17 @@ if($temp_json[$id]){
 }
 
 if($login == 1){
-    echo '<script type = "text/javascript">
-    alert("Successfully Login!");
-    window.location.href="../../index.html.php";
-    </script>';
+    //go backs to the main page with id
+    header('location: ../../index.html.php');
     $_SESSION['username'] = $id;
     session_write_close();
 } else if($admin_login == 1){
-    echo '<script type = "text/javascript">
-    alert("Successfully Login as Admin!");
-    window.location.href="../../admin.html.php";
-    </script>';
+    //go to the admin page with admin id
+    header('location: ../../admin.html.php');
     $_SESSION['username'] = $id;
     session_write_close();
 } else {
+    //if I use header() here, echo is ignored, so I used js window.location.href
     echo '<script type = "text/javascript">
     alert("Wrong admin ID or password! Please try again!");
     window.location.href="../../index.html.php";

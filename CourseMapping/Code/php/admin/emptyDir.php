@@ -1,4 +1,7 @@
 <?php
+/* 
+@author Hyana Kang
+*/
 $folders = $_POST['dir'];
 foreach ($folders as $folder){ 
     $dir = '../../users/' . $folder; 

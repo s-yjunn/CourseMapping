@@ -1,9 +1,13 @@
+/*
+    Author: Hyana,  https://www.geeksforgeeks.org/how-to-insert-new-row-at-a-certain-index-in-a-table-in-jquery/
+    Some of the code was copy pasted from geeksforgeeks and modified
+*/
+
 /* css for viewCourse.html*/
 table { 
     margin: 0 auto; 
     font-size: large; 
 } 
-
 
 th { 
     font-weight: bold; 

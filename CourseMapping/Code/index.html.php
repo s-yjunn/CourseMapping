@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang>
-
 <head>
+<meta name="author" content="Hyana Kang">
+<!--The structure of this webpage is based on PieTown(midterm) 
+written by Professor Streinu, and Yujun, Hyana's midterm projects-->
     <title>Course Mapping</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/homepageCSS.css">

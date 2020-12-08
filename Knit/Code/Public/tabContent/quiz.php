@@ -3,7 +3,7 @@
 /*body {
   margin: 0;
   padding: 20px;
-}*/
+}
 .quiz {
   padding: 0 30px 20px 30px;
   max-width: 960px;
@@ -72,7 +72,7 @@
 }
 .quiz-result.bad {
   background: red;
-}
+}*/
 
 </style>
 
@@ -117,24 +117,28 @@ $(document).ready(function(){
 </script>
 
 <div id="Quizzes" class="tabcontent">
+	
+<div id="QuizHome">
+<h3 class="underline">Quizzes</h3>
 
-<div id="all" style="display: block;">
+<div id="all">
 
-  <p style="background-color: #EF233C;" style="width: 25%;" id="one">What type of yarn are you?</p>
-  <p style="background-color: #EF233C;" style="color: white;" style="width: 25%;" id="two">What stitch are you?</p>
-  <p style="background-color: #EF233C;" style="color: white;" style="width: 25%;" id="three">What on-screen kntting scene are you?</p>
-  <p style="background-color: #EF233C;" style="color: white;" style="width: 25%;" id="four">Take this quiz to test your knitting trivia!</p>
+  <p id="one" class="quizThumbnail">What type of yarn are you?</p>
+  <p id="two" class="quizThumbnail">What stitch are you?</p>
+  <p id="three" class="quizThumbnail">What on-screen kntting scene are you?</p>
+  <p id="four" class="quizThumbnail">Take this quiz to test your knitting trivia!</p>
 
+</div>
 </div>
 
 <div class="quiz" id="first" style="display: none;">
 
-<img src="imgs/quizzes/backbutton.jpg" alt="back button" width="25%" style="text-align:left" id="back1">
+<img src="imgs/quizzes/backbutton.jpg" alt="back button" id="back1" class="backBtnImg">
 
-
-  <h1 style="text-align: center;">Which type of yarn are you?</h1>
+<div class="quizContent">
+  <h4>Which type of yarn are you?</h4>
   
-  <h2 class="quiz-question">i'll add real questions when i find the bug</h2>
+  <h5 class="quiz-question">i'll add real questions when i find the bug</h5>
   <ul data-quiz-question="1">
     <li class="quiz-answer" data-quiz-answer="a">moses</li>
     <li class="quiz-answer" data-quiz-answer="b">supposes</li>
@@ -142,7 +146,7 @@ $(document).ready(function(){
     <li class="quiz-answer" data-quiz-answer="d">toeses</li>
   </ul>
   
-  <h2 class="quiz-question">Are you knitty?</h2>
+  <h5 class="quiz-question">Are you knitty?</h5>
   <ul data-quiz-question="2">
     <li class="quiz-answer" data-quiz-answer="a">are</li>
     <li class="quiz-answer" data-quiz-answer="b">roses</li>
@@ -150,7 +154,7 @@ $(document).ready(function(){
     <li class="quiz-answer" data-quiz-answer="d">moses</li>
   </ul>
   
-  <h2 class="quiz-question">Are you gritty?</h2>
+  <h5 class="quiz-question">Are you gritty?</h5>
   <ul data-quiz-question="3">
     <li class="quiz-answer" data-quiz-answer="a">supposes</li>
     <li class="quiz-answer" data-quiz-answer="b">erroneously</li>
@@ -158,7 +162,7 @@ $(document).ready(function(){
     <li class="quiz-answer" data-quiz-answer="d">moses</li>
   </ul>
   
-  <h2 class="quiz-question">What is your opinion of the word "intarsia"?</h2>
+  <h5 class="quiz-question">What is your opinion of the word "intarsia"?</h5>
   <ul data-quiz-question="4">
     <li class="quiz-answer" data-quiz-answer="a">he</li>
     <li class="quiz-answer" data-quiz-answer="b">knowses</li>
@@ -166,7 +170,7 @@ $(document).ready(function(){
     <li class="quiz-answer" data-quiz-answer="d">toeses</li>
   </ul>
   
-  <h2 class="quiz-question">What is the name of the fly on the wall?</h2>
+  <h5 class="quiz-question">What is the name of the fly on the wall?</h5>
   <ul data-quiz-question="5">
     <li class="quiz-answer" data-quiz-answer="a">aren't</li>
     <li class="quiz-answer" data-quiz-answer="b">roses</li>
@@ -174,7 +178,7 @@ $(document).ready(function(){
     <li class="quiz-answer" data-quiz-answer="d">moses</li>
   </ul>
   
-  <h2 class="quiz-question">Sew it seems you gotten to the end of the quiz....yes?</h2>
+  <h5 class="quiz-question">Sew it seems you gotten to the end of the quiz....yes?</h5>
   <ul data-quiz-question="6">
     <li class="quiz-answer" data-quiz-answer="a">supposes</li>
     <li class="quiz-answer" data-quiz-answer="b">his</li>
@@ -185,15 +189,17 @@ $(document).ready(function(){
   <div class="quiz-result"></div>
 
 </div>
+</div>
 
 <div class="quiz" id="second" style="display: none;">
 
-<img src="imgs/quizzes/backbutton.jpg" alt="back button" width="25%" style="text-align:left" id="back2">
+<img src="imgs/quizzes/backbutton.jpg" alt="back button" id="back2" class="backBtnImg">
 
+<div class="quizContent">
 
-  <h1 style="text-align: center;">What stitch are you?</h1>
+  <h4>What stitch are you?</h4>
   
-  <h2 class="quiz-question">i'll add real questions when i find the bug</h2>
+  <h5 class="quiz-question">i'll add real questions when i find the bug</h5>
   <ul data-quiz-question="1">
     <li class="quiz-answer" data-quiz-answer="a">moses</li>
     <li class="quiz-answer" data-quiz-answer="b">supposes</li>
@@ -201,7 +207,7 @@ $(document).ready(function(){
     <li class="quiz-answer" data-quiz-answer="d">toeses</li>
   </ul>
   
-  <h2 class="quiz-question">Are you knitty?</h2>
+  <h5 class="quiz-question">Are you knitty?</h5>
   <ul data-quiz-question="2">
     <li class="quiz-answer" data-quiz-answer="a">are</li>
     <li class="quiz-answer" data-quiz-answer="b">roses</li>
@@ -209,7 +215,7 @@ $(document).ready(function(){
     <li class="quiz-answer" data-quiz-answer="d">moses</li>
   </ul>
   
-  <h2 class="quiz-question">Are you gritty?</h2>
+  <h5 class="quiz-question">Are you gritty?</h5>
   <ul data-quiz-question="3">
     <li class="quiz-answer" data-quiz-answer="a">supposes</li>
     <li class="quiz-answer" data-quiz-answer="b">erroneously</li>
@@ -217,7 +223,7 @@ $(document).ready(function(){
     <li class="quiz-answer" data-quiz-answer="d">moses</li>
   </ul>
   
-  <h2 class="quiz-question">What is your opinion of the word "intarsia"?</h2>
+  <h5 class="quiz-question">What is your opinion of the word "intarsia"?</h5>
   <ul data-quiz-question="4">
     <li class="quiz-answer" data-quiz-answer="a">he</li>
     <li class="quiz-answer" data-quiz-answer="b">knowses</li>
@@ -225,7 +231,7 @@ $(document).ready(function(){
     <li class="quiz-answer" data-quiz-answer="d">toeses</li>
   </ul>
   
-  <h2 class="quiz-question">What is the name of the fly on the wall?</h2>
+  <h5 class="quiz-question">What is the name of the fly on the wall?</h5>
   <ul data-quiz-question="5">
     <li class="quiz-answer" data-quiz-answer="a">aren't</li>
     <li class="quiz-answer" data-quiz-answer="b">roses</li>
@@ -233,7 +239,7 @@ $(document).ready(function(){
     <li class="quiz-answer" data-quiz-answer="d">moses</li>
   </ul>
   
-  <h2 class="quiz-question">Sew it seems you gotten to the end of the quiz....yes?</h2>
+  <h5 class="quiz-question">Sew it seems you gotten to the end of the quiz....yes?</h5>
   <ul data-quiz-question="6">
     <li class="quiz-answer" data-quiz-answer="a">supposes</li>
     <li class="quiz-answer" data-quiz-answer="b">his</li>
@@ -242,17 +248,19 @@ $(document).ready(function(){
   </ul>
 
   <div class="quiz-result"></div>
+</div>
 
 </div>
 
 <div class="quiz" id="third" style="display: none;">
 
-<img src="imgs/quizzes/backbutton.jpg" alt="back button" width="25%" style="text-align:left" id="back3">
+<img src="imgs/quizzes/backbutton.jpg" alt="back button" id="back3" class="backBtnImg">
 
+<div class="quizContent">
 
-  <h1 style="text-align: center;">What on-screen kntting scene are you?</h1>
+  <h4>What on-screen kntting scene are you?</h4>
   
-  <h2 class="quiz-question">i'll add real questions when i find the bug</h2>
+  <h5 class="quiz-question">i'll add real questions when i find the bug</h5>
   <ul data-quiz-question="1">
     <li class="quiz-answer" data-quiz-answer="a">moses</li>
     <li class="quiz-answer" data-quiz-answer="b">supposes</li>
@@ -260,7 +268,7 @@ $(document).ready(function(){
     <li class="quiz-answer" data-quiz-answer="d">toeses</li>
   </ul>
   
-  <h2 class="quiz-question">Are you knitty?</h2>
+  <h5 class="quiz-question">Are you knitty?</h5>
   <ul data-quiz-question="2">
     <li class="quiz-answer" data-quiz-answer="a">are</li>
     <li class="quiz-answer" data-quiz-answer="b">roses</li>
@@ -268,7 +276,7 @@ $(document).ready(function(){
     <li class="quiz-answer" data-quiz-answer="d">moses</li>
   </ul>
   
-  <h2 class="quiz-question">Are you gritty?</h2>
+  <h5 class="quiz-question">Are you gritty?</h5>
   <ul data-quiz-question="3">
     <li class="quiz-answer" data-quiz-answer="a">supposes</li>
     <li class="quiz-answer" data-quiz-answer="b">erroneously</li>
@@ -276,7 +284,7 @@ $(document).ready(function(){
     <li class="quiz-answer" data-quiz-answer="d">moses</li>
   </ul>
   
-  <h2 class="quiz-question">What is your opinion of the word "intarsia"?</h2>
+  <h5 class="quiz-question">What is your opinion of the word "intarsia"?</h5>
   <ul data-quiz-question="4">
     <li class="quiz-answer" data-quiz-answer="a">he</li>
     <li class="quiz-answer" data-quiz-answer="b">knowses</li>
@@ -284,7 +292,7 @@ $(document).ready(function(){
     <li class="quiz-answer" data-quiz-answer="d">toeses</li>
   </ul>
   
-  <h2 class="quiz-question">What is the name of the fly on the wall?</h2>
+  <h5 class="quiz-question">What is the name of the fly on the wall?</h5>
   <ul data-quiz-question="5">
     <li class="quiz-answer" data-quiz-answer="a">aren't</li>
     <li class="quiz-answer" data-quiz-answer="b">roses</li>
@@ -292,7 +300,7 @@ $(document).ready(function(){
     <li class="quiz-answer" data-quiz-answer="d">moses</li>
   </ul>
   
-  <h2 class="quiz-question">Sew it seems you gotten to the end of the quiz....yes?</h2>
+  <h5 class="quiz-question">Sew it seems you gotten to the end of the quiz....yes?</h5>
   <ul data-quiz-question="6">
     <li class="quiz-answer" data-quiz-answer="a">supposes</li>
     <li class="quiz-answer" data-quiz-answer="b">his</li>
@@ -301,17 +309,19 @@ $(document).ready(function(){
   </ul>
 
   <div class="quiz-result"></div>
-
+  
+</div>
 </div>
 
 <div class="quiz" id="fourth" style="display: none;">
 
-<img src="imgs/quizzes/backbutton.jpg" alt="back button" width="25%" style="text-align:left" id="back4">
+<img src="imgs/quizzes/backbutton.jpg" alt="back button" id="back4" class="backBtnImg">
 
+<div class="quizContent">
 
-  <h1 style="text-align: center;">Take this quiz to test your knitting trivia!</h1>
+  <h4>Take this quiz to test your knitting trivia!</h4>
   
-  <h2 class="quiz-question">i'll add real questions when i find the bug</h2>
+  <h5 class="quiz-question">i'll add real questions when i find the bug</h5>
   <ul data-quiz-question="1">
     <li class="quiz-answer" data-quiz-answer="a">moses</li>
     <li class="quiz-answer" data-quiz-answer="b">supposes</li>
@@ -319,7 +329,7 @@ $(document).ready(function(){
     <li class="quiz-answer" data-quiz-answer="d">toeses</li>
   </ul>
   
-  <h2 class="quiz-question">Are you knitty?</h2>
+  <h5 class="quiz-question">Are you knitty?</h5>
   <ul data-quiz-question="2">
     <li class="quiz-answer" data-quiz-answer="a">are</li>
     <li class="quiz-answer" data-quiz-answer="b">roses</li>
@@ -327,7 +337,7 @@ $(document).ready(function(){
     <li class="quiz-answer" data-quiz-answer="d">moses</li>
   </ul>
   
-  <h2 class="quiz-question">Are you gritty?</h2>
+  <h5 class="quiz-question">Are you gritty?</h5>
   <ul data-quiz-question="3">
     <li class="quiz-answer" data-quiz-answer="a">supposes</li>
     <li class="quiz-answer" data-quiz-answer="b">erroneously</li>
@@ -335,7 +345,7 @@ $(document).ready(function(){
     <li class="quiz-answer" data-quiz-answer="d">moses</li>
   </ul>
   
-  <h2 class="quiz-question">What is your opinion of the word "intarsia"?</h2>
+  <h5 class="quiz-question">What is your opinion of the word "intarsia"?</h5>
   <ul data-quiz-question="4">
     <li class="quiz-answer" data-quiz-answer="a">he</li>
     <li class="quiz-answer" data-quiz-answer="b">knowses</li>
@@ -343,7 +353,7 @@ $(document).ready(function(){
     <li class="quiz-answer" data-quiz-answer="d">toeses</li>
   </ul>
   
-  <h2 class="quiz-question">What is the name of the fly on the wall?</h2>
+  <h5 class="quiz-question">What is the name of the fly on the wall?</h5>
   <ul data-quiz-question="5">
     <li class="quiz-answer" data-quiz-answer="a">aren't</li>
     <li class="quiz-answer" data-quiz-answer="b">roses</li>
@@ -351,7 +361,7 @@ $(document).ready(function(){
     <li class="quiz-answer" data-quiz-answer="d">moses</li>
   </ul>
   
-  <h2 class="quiz-question">Sew it seems you gotten to the end of the quiz....yes?</h2>
+  <h5 class="quiz-question">Sew it seems you gotten to the end of the quiz....yes?</h5>
   <ul data-quiz-question="6">
     <li class="quiz-answer" data-quiz-answer="a">supposes</li>
     <li class="quiz-answer" data-quiz-answer="b">his</li>
@@ -360,7 +370,7 @@ $(document).ready(function(){
   </ul>
 
   <div class="quiz-result"></div>
-
+</div>
 </div>
 
 </div>

@@ -45,11 +45,11 @@
 		</div>
 	</div>
 	<div class="section">
-	  <h4>About Me <button class = "btn1 btnEdit float-right" onclick = "show('editAbout')"><i class="fas fa-pencil-alt fa-xs"></i></button></h4> 
+	  <h4>About Me <button class = "btn1 btnIcon float-right" onclick = "show('editAbout')"><i class="fas fa-pencil-alt fa-xs"></i></button></h4> 
 	  <p class = "about" id = "abtStatic"><?= nl2br($about); ?></p>
 	</div>
 	<div class="section">
-	  <h4>My Patterns <button class = "btn1 btnEdit float-right" onclick = "show('editPatterns')"><i class="fas fa-pencil-alt fa-xs"></i></button></h4>
+	  <h4>My Patterns <button class = "btn1 btnIcon float-right" onclick = "show('editPatterns')"><i class="fas fa-pencil-alt fa-xs"></i></button></h4>
 	  <!--<p>(created in the "Pattern Maker" tab)</p>-->
 	  <?php if ($pubPatterns != ""): // if there are actually public patterns to display?>
 	    <div class="row"><?= $pubPatterns; ?></div>

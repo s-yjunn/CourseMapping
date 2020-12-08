@@ -15,9 +15,9 @@
 
 <div id = "userHome">
     <h4><i class="fas fa-user"></i> <?= $username; ?></h4>
-    <button class="btn1" onclick="hide('userHome'); show('userInbox')"><span class="btnTitle">Inbox</span><br><span class="btnText">View any messages from site admin.</span></button>
-    <button class="btn1" onclick="hide('userHome'); show('userProfile')"><span class="btnTitle">Profile</span><br><span class="btnText">View and customize your public profile.</span></button>
-    <button class="btn1" onclick="hide('userHome'); show('userPatterns')"><span class="btnTitle">Patterns</span><br><span class="btnText">View and manage your saved patterns.</span></button>
+    <button class="btn1" onclick="hide('userHome'); show('userInbox')"><span class="btnTitle">Inbox</span><br><span class="btnText">View messages from site admin.</span></button>
+    <button class="btn1" onclick="hide('userHome'); show('userProfile')"><span class="btnTitle">Profile</span><br><span class="btnText">View and customize public profile.</span></button>
+    <button class="btn1" onclick="hide('userHome'); show('userPatterns')"><span class="btnTitle">Patterns</span><br><span class="btnText">View and manage saved patterns.</span></button>
 </div>
 
 <!-- this div contains the profile functions -->

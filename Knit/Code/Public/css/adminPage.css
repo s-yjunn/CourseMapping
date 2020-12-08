@@ -1,15 +1,7 @@
-/*.column {
-    float: left;
-    padding: 10px;
-  }
-  
-  .column.side {
-    width: 33%;
-  }
-  
-  .column.middle {
-    width: 34%;
-  }*/
+@keyframes fadeEffect {
+	from {opacity: 0;}
+	to {opacity: 1;}
+} 
 
 #adminPage .section {
 	border: 1px solid #ccc;
@@ -38,6 +30,11 @@
 	text-align: center;
 }
 
+#adminHome, #adminUsers, #adminContest {
+	animation: fadeEffect 1s;
+	
+}
+
 #adminHome .btn1 {
 	padding: 2rem;
 	width: 300px;
@@ -59,10 +56,28 @@
 	color: #777;
 }
 
-#adminUsers td {
-	padding: 10px;
+#adminUsers table {
+	width: 100%;
+	border: none;
+}
+#adminUsers td, #adminUsers th {
+    text-align: left;
+    padding: 1.2rem;
+	border: none;
+}
+#adminUsers tr {
+	border-bottom: 1px solid #eee;
+}
+#adminUsers tr:last-child {
+	border-bottom: none;
+}
+#adminPage .btnIcon {
+	padding: 0.5rem 1.2rem;
+	margin: 0 0.5rem;
 }
 
-#adminUsers th {
-	padding: 0px 10px;
+#adminUsers textarea {
+	width: 100%;
+	padding: 1.2rem;
+	
 }

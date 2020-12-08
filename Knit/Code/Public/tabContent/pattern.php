@@ -15,11 +15,10 @@
 				<div class="palette" id="gray" onclick="selectColor('gray')"></div>				
 				<div class="palette" id="black" onclick="selectColor('black')"></div>
 				<div class="palette" id="white" onclick="selectColor('white')"></div>
-				
-				
+			
 				<input id="colorPicker" type="color" value="#FF00FF">
 			</div>
-			<div class="col-xs-11">
+			<div class="col-xs-11 canvasDiv">
 				<canvas id="canvas"></canvas> 
 			</div>
 		</div>

@@ -11,17 +11,18 @@
 ?>
 
 <button class="btn1" onclick="hide('adminUsers'); show('adminHome')"><i class="fas fa-arrow-left"></i> Back</button>
-<div class = "section" id = "adminUserList">
-  <h4>Users</h4>
+<div class = "section refresh" id = "adminUserList">
+  <h4>Users <button class="btn1 btnIcon float-right" type="button" onclick="refreshAdminUsers()"><i class="fas fa-redo-alt fa-xs"></i></button></h4>
   <!-- reload button -->
-  <p class="timestamp">Up-to-date as of <?=$updated; ?>. <button class="btn1" type="button" onclick="refreshAdminUsers()"><i class="fas fa-redo-alt"></i> Refresh</button></p>
+  <p class="timestamp">Up-to-date as of <?=$updated; ?>.</p>
   <!-- any updates go here -->
   <span id = "adminUsersDiv"></span>
   <p>Knitty Gritty has <?= $nrUsers; ?> registered user<?php if ($nrUsers == 0):?>s.<?php elseif ($nrUsers == 1):?>:<?php else: ?>s:<?php endif; ?>
   </p>
 
   <?php if ($nrUsers > 0): ?>
-    <table>
+	  <div class="tableDiv">
+    <table class="table">
       <tr>
         <th>Username</td>
         <th>User since</th>
@@ -46,11 +47,12 @@
           <td><button class = "btn1" onclick="openProfile('<?= $uname; ?>', 'adminProfile', 'adminUsers', '')">View profile</button></td>
           <td><button class = "btn1" onclick="showAdminCompose('<?= $uname; ?>', '<?= $username; ?>')">Send message</button></td>
         <?php else: ?>
-          <td>This is you!</td>
+          <td><p class='alert alert-info' role='alert'>This is you!</p></td>
         <?php endif; ?>
       </tr>
       <?php endforeach; ?>
     </table>
+</div>
   <?php endif;?>
 </div>
 

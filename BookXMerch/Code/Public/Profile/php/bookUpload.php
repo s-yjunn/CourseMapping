@@ -47,6 +47,7 @@ echo "debug comment: " . $arrReq;
 array_push($rows['requests'], $arrReq);
 $resJSON = json_encode($rows, JSON_PRETTY_PRINT);
 if(file_put_contents("../../../Private/Books/BookDefault/Pending/allPendingBooks.json", $resJSON)) {
+    header("location: ../../../profile.php");
     echo "Success! The pending request has been added to the log"; 
     
 } else {

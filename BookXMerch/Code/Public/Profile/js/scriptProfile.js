@@ -18,6 +18,12 @@ function closeUploadModal(){
 
 function uploadRequest() {
     // Have an XML request here to operate the 
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if(this.readyState == 4 && thhis.status == 200) {
+            
+        }
+    }
 }
 
 function getList() {

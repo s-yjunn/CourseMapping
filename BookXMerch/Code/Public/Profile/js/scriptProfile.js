@@ -39,11 +39,9 @@ function uploadRequest() {
     xmlhttp.send(data);    
 }
 
-var uploadForm = document.getElementById('uploadSubmit'); 
-uploadForm.addEventListener('click',function(){
-    window.alert("Upload Successful!"); 
-     
-});
+function closeSuccess(){
+    document.getElementById('successUpload2').style.display='none';
+}
 
 function getList() {
 

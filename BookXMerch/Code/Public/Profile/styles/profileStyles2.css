@@ -203,8 +203,8 @@ textarea{
   }
 
 /* Book Upload SnackBar*/
-#successUpload {
-    visibility: hidden;
+#successUpload2 {
+    /* visibility: hidden; */
     min-width: 250px;
     margin-left: -125px;
     background-color: rgba(0,0,0,0.7);
@@ -217,14 +217,19 @@ textarea{
     left: 50%;
     bottom: 30px;
     font-size: 17px;
+    -webkit-animation: fadein 0.5s;
+    animation: fadein 0.5s;
+    animation-iteration-count: 1;
+  }
+  .closeSuccess{
+      padding-left: 15px;
+      font-size: 25px;
   }
   
-    #successUpload.show {
-        visibility: visible;
-        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-        animation: fadein 0.5s, fadeout 0.5s 2.5s;
-    }
-  
+  .closeSuccess:hover{
+    cursor: pointer;
+    color:#7E4D72;
+}
   @-webkit-keyframes fadein {
     from {bottom: 0; opacity: 0;} 
     to {bottom: 30px; opacity: 1;}

@@ -82,6 +82,22 @@
             "image_url": "",
             "rating": "5",
             "reviews": []
+        },
+        {
+            "reqUsername": "iberrada",
+            "genre": "comics",
+            "title": "huj",
+            "author": [
+                "efwewf"
+            ],
+            "illustrator": [
+                "ewfewf"
+            ],
+            "desc": "ewfwfe ",
+            "url": "https:\/\/www.goodreads.com\/book\/show\/13624688-the-time-keeper",
+            "image_url": "",
+            "rating": "5",
+            "reviews": []
         }
     ]
 }

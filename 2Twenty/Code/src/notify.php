@@ -12,10 +12,10 @@ function notifyGood($text)
 function notifyBad($text)
 {
     echo ('
-        <div class="notification is-danger floating" id="bad-login">
-            <button class="delete"></button>
-            ' . $text . '
-        </div>
+    <div class="notification is-danger floating" id="bad-login">
+        <button class="delete"></button>
+        ' . $text . '
+    </div>
     ');
 }
 

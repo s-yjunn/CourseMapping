@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
 <?php
-include ("vars/header.php");
-include ("vars/navbar.php");
+include("vars/header.php");
+include("vars/navbar.php");
 
 $_GET['id'] = (isset($_GET['id']) ? $_GET['id'] : 0);
-$item = ((getItemById($_GET["id"])));
+$item       = ((getItemById($_GET["id"])));
 ?>
 
-	<body>
-		<section class="section" id="body">
-			<div class="container">
+    <body>
+        <section class="section" id="body">
+            <div class="container">
                 <div class="columns">
                 <?php
-$id = $item[0];
-$title = $item[1];
+$id        = $item[0];
+$title     = $item[1];
 $image_url = $item[2];
-$tags = explode(", ", $item[3]);
-$desc = $item[4];
-$seller = $item[5];
-$price = $item[6];
+$tags      = explode(", ", $item[3]);
+$desc      = $item[4];
+$seller    = $item[5];
+$price     = $item[6];
 
 echo ('
                             <div class="column is-4">
@@ -39,9 +39,8 @@ echo ('
                                                 <p class="subtitle is-6">Sold by <a href="user.php?id=' . getUserId($seller) . '">' . $seller . '</a></p>
                                                 <strong>Associated Tags</strong>:');
 
-foreach ($tags as & $tag)
-{
-    echo (' <a href="search.php?desc=' . $tag . '"><span class="tag is-danger">' . $tag . '</span></a> ');
+foreach ($tags as &$tag) {
+    echo (' <a href="search.php?desc=' . $tag . '"><span class="tag is-danger"><span class="icon"><i class="fas fa-tag"></i></span>&nbsp;' . $tag . '</span></a> ');
 }
 echo ('
                                             <br/><br/>
@@ -50,7 +49,7 @@ echo ('
                                             <button class="button is-info" id="button-cart-' . $id . '" onClick=\'addToCart("' . $id . '", this);\'>
                                                 <span class="icon is-small"><i class="fas fa-cart-plus" aria-hidden="true"></i></span>
                                                 <span>Add to cart</span>
-                                            </button>     
+                                            </button>    
                                             </div>
                                         </div>
                                     </div>
@@ -59,12 +58,12 @@ echo ('
                             ');
 
 ?>
-                </div>
-			</div>
-		</section>
-		<?php
-include ("vars/footer.php");
+               </div>
+            </div>
+        </section>
+        <?php
+include("vars/footer.php");
 ?>
-	</body>
+   </body>
 
 </html>

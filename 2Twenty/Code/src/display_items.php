@@ -1,18 +1,16 @@
 <?php
 function display_items($results)
 {
-    if ($results)
-    {
-        foreach ($results as & $item)
-        {
-            $id = $item[0];
-            $title = $item[1];
+    if ($results) {
+        foreach ($results as &$item) {
+            $id        = $item[0];
+            $title     = $item[1];
             $image_url = $item[2];
-            $tags = explode(", ", $item[3]);
-            $desc = $item[4];
-            $seller = $item[5];
-            $price = $item[6];
-
+            $tags      = explode(", ", $item[3]);
+            $desc      = $item[4];
+            $seller    = $item[5];
+            $price     = $item[6];
+            
             echo ('
                                         <div class="column is-full-mobile is-half">
                                             <div class="box">
@@ -30,12 +28,11 @@ function display_items($results)
                                                                 <div class="notification is-light">' . $desc . '<br/>
                                                                 
                                         ');
-
-            foreach ($tags as & $tag)
-            {
-                echo (' <a href="search.php?desc=' . $tag . '"><span class="tag is-danger">' . $tag . '</span></a> ');
+            
+            foreach ($tags as &$tag) {
+                echo (' <a href="search.php?desc=' . $tag . '"><span class="tag is-danger"><span class="icon"><i class="fas fa-tag"></i></span>&nbsp;' . $tag . '</span></a> ');
             }
-
+            
             echo ('
                                                                     <br/>
                                                                     <button class="button is-info mt-4" id="button-cart-' . $id . '" onClick=\'addToCart("' . $id . '", this);\'>
@@ -51,35 +48,30 @@ function display_items($results)
                                         </div>
                                         ');
         }
-    }
-    else
-    {
+    } else {
         echo ('<p class="subtitle m-4">No items to display.</p>');
     }
 }
 
 function getItemById($id)
 {
-
-    include ("db_connect.php");
-
-    $sql = "SELECT * FROM `items_for_sale` WHERE id = ?;";
+    
+    include("db_connect.php");
+    
+    $sql   = "SELECT * FROM `items_for_sale` WHERE id = ?;";
     $query = $conn->prepare($sql);
     $query->bind_param('i', $i);
-
+    
     $i = $id;
     $query->execute();
     $result = $query->get_result();
-
-    if ($result->num_rows > 0)
-    {
+    
+    if ($result->num_rows > 0) {
         return $result->fetch_array();
-    }
-    else
-    {
+    } else {
         return "Unknown Item";
     }
-
+    
 }
 
 ?>

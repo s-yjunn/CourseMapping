@@ -28,6 +28,8 @@
         <th>User since</th>
         <th>Role</th>
         <th>No. patterns</th>
+        <th></th> <!-- all the empty guys are just here to fill out the borders -->
+        <th></th>
       <?php foreach ($usersData as $uname => $info): 
         $registered =  date('M j, Y', $info["registered"]);
         if ($info["admin"]) {
@@ -48,6 +50,7 @@
           <td><button class = "btn1" onclick="showAdminCompose('<?= $uname; ?>', '<?= $username; ?>')">Send message</button></td>
         <?php else: ?>
           <td><p class='alert alert-info' role='alert'>This is you!</p></td>
+          <td></td>
         <?php endif; ?>
       </tr>
       <?php endforeach; ?>

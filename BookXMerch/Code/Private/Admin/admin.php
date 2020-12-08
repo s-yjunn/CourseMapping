@@ -84,7 +84,7 @@ $requestsArray = json_decode($arrayOfRequests, true);
         <?php 
             $usersJSON = file_get_contents("../Users/allUsers.JSON");
             $rows= json_decode($usersJSON, true);
-    
+
             $reviewsJSON = file_get_contents("../Books/BookDefault/Reviews/allReviews.json");
             $rowsReviews= json_decode($reviewsJSON, true);
     
@@ -101,6 +101,7 @@ $requestsArray = json_decode($arrayOfRequests, true);
                     $name = $value['name'];
                     $email = $value['email']; 
                     $type = $value['type'];
+                    $booksUploaded = $value['myBooks'];
                     $reviews = $rowsReviews[$username];
                     
                     echo "<div class='userCard'>";
@@ -113,7 +114,7 @@ $requestsArray = json_decode($arrayOfRequests, true);
                         echo "<p class='userTitle'>".strtoupper($type)."</p>";
                         echo "<dl>";
                         echo "<dt> Number of reviews: <b>".sizeof($reviews)."</b></dt>";
-                        echo "<dt> Number of books uploaded: <b>0</b></dt>";
+                        echo "<dt> Number of books uploaded: <b>".sizeof($booksUploaded)."</b></dt>";
                         echo "</dl>";
                     echo "</div>";
                 }

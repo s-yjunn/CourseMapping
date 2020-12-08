@@ -20,7 +20,7 @@ foreach ($courses as $course){
         unset($temp_json_major[$course_info[1]]["major"]["singular"][$key]);
     }
 }
-
+// removes the keys from the output
 $temp_json_major[$course_info[1]]["major"]["singular"] = array_values($temp_json_major[$course_info[1]]["major"]["singular"]);
 
 file_put_contents($file_major, json_encode($temp_json_major));

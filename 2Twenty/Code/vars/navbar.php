@@ -44,7 +44,7 @@ include("vars/cart.php");
            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"> <span aria-hidden="true"></span> <span aria-hidden="true"></span> <span aria-hidden="true"></span> </a>
         </div>
         <div class="navbar-menu">
-            <div class="navbar-end"> <a class="navbar-item" href="index.php">Home</a> <a class="navbar-item">About</a>
+            <div class="navbar-end"> <a class="navbar-item" href="index.php">Home</a> <a class="navbar-item" href="about.php">About</a>
                 <?php
 if (isset($_SESSION["loggedIn"]))
     echo ('<a class="navbar-item" href="user.php?id=' . getUserId($_SESSION["username"]) . '">My Page</a>');

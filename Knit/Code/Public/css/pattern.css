@@ -6,7 +6,6 @@ canvas {
 
 .canvasDiv {
   overflow: scroll;
-	
 }
 
 #Pattern .btn1 {
@@ -88,4 +87,9 @@ input[type="color"]:hover {
 	.palette {
 		display: inline-block;
 	}
+}
+
+/* initial state */
+#patternMkrGrid {
+	display: none;
 }

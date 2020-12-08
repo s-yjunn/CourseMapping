@@ -1,6 +1,16 @@
 <div id="Pattern" class="tabcontent">
 	<h3 class="underline">Pattern Maker</h3>
-	<div class="container">
+	<div id = "patternMkrIntake">
+		<form>
+			<p>How large is your project (rows x stitches per row)? Min: 6, max: 30 as above that things get crowded.</p>
+			<input type="number" id="dimension" name="dimension" min="2" max="30">
+			<button type = "button" class = "btn1" onclick = "startPatternMkr()">Launch pattern maker</button>
+		</form>
+		<span id = "intakeFeedback"></span>
+	</div>
+
+	<div id = "patternMkrGrid" class="container">
+	<button class="btn1" onclick="restartPatternMkr()"><i class="fas fa-arrow-left"></i> Start over</button>
 		<div class="row justify-content-center">
 			<div id="colorPalette" class="col-xs-1">
 				<div class="palette" id="red" onclick="selectColor('red')"></div>

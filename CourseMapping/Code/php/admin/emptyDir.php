@@ -2,6 +2,7 @@
 /* 
 @author Hyana Kang
 */
+// removes all the file from the chosen directories
 $folders = $_POST['dir'];
 foreach ($folders as $folder){ 
     $dir = '../../users/' . $folder; 

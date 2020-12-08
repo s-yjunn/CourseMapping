@@ -12,7 +12,7 @@ $file_course = "../../json/courses.json";
 $temp_json_course = json_decode(file_get_contents($file_course), true);
 
 foreach ($courses as $course){ 
-    //extracts the department from course number
+    //extracts the department
     $dep = explode(" ", $course)[0];
     if($temp_json_course[$dep][$course]){
         //remove!

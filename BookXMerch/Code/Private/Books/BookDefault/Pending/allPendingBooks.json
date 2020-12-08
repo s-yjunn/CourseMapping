@@ -1,39 +1,6 @@
 {
     "requests": [
         {
-            "reqUsername": "nmajid",
-            "genre": "comics",
-            "title": "Some Random Comic",
-            "author": [
-                "Quimchee"
-            ],
-            "illustrator": [
-                "--"
-            ],
-            "desc": "Here's the description",
-            "url": "https:\/\/www.webtoons.com\/en\/drama\/i-love-yoo\/list?title_no=986&page=1",
-            "image_url": "",
-            "rating": "5",
-            "reviews": []
-        },
-        {
-            "reqUsername": "nmajid",
-            "genre": "comics",
-            "title": "New Comic",
-            "author": [
-                "Author 1",
-                " Author 2"
-            ],
-            "illustrator": [
-                "Illustrator 1",
-                " Illustrator 2"
-            ],
-            "desc": "Something",
-            "url": "https:\/\/www.webtoons.com\/en\/",
-            "rating": "5",
-            "reviews": []
-        },
-        {
             "reqUsername": "user1",
             "genre": "fiction",
             "title": "The Time Keeper",

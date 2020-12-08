@@ -14,7 +14,7 @@ $info = (getUserInfo($_GET["id"]));
 
 if (isset($_POST["title"], $_POST["image_url"], $_POST["tags"], $_POST["description"], $_POST["price"]))
 {
-    if ((!empty($_POST["title"]) && !empty($_POST["image"]) && !empty($_POST["tags"]) && !empty($_POST["description"]) && !empty($_POST["price"])) && (trim($_POST["title"] !== '') && trim($_POST["image"] !== '') && trim($_POST["tags"] !== '') && trim($_POST["description"] !== '') && trim($_POST["price"] !== '')))
+    if ((!empty($_POST["title"]) && !empty($_POST["image_url"]) && !empty($_POST["tags"]) && !empty($_POST["description"]) && !empty($_POST["price"])) && (trim($_POST["title"] !== '') && trim($_POST["image_url"] !== '') && trim($_POST["tags"] !== '') && trim($_POST["description"] !== '') && trim($_POST["price"] !== '')))
     {
         if (uploadItems($_POST["title"], $_POST["image_url"], $_POST["tags"], $_POST["description"], $_POST["price"])) notifyGood("Successful item upload!");
         else notifyBad("Bad upload attempt. Please try again.");

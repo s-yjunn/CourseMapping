@@ -63,7 +63,7 @@ input[type=button] {
 	animation: fadeEffect 1s;
 }
 .tableDiv {
-	overflow: scroll;
+	overflow: auto;
 }
 /* MODAL */
 /* background to make modal divs "float" */
@@ -81,9 +81,16 @@ input[type=button] {
 }
 /* modals to float over some 'dark' div */
 .float {
-	max-width: 500px;
-	margin: auto;
+    max-width: 95%;
+	max-height: 95%;
+    width: 500px;
+    height: auto;
 	padding: 2rem;
+	margin: auto;
 	background-color: white;
-border-radius: 0.4rem;
+	border-radius: 0.4rem;
+	overflow: auto;
+}
+
+.floatDiv {
 }

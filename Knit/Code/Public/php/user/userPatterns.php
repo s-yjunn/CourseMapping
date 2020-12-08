@@ -26,6 +26,7 @@
 				<a onclick = "show('managePattern<?= $index; ?>')"><img class='uPa' src="<?= $userFolder . "patterns/" . $imgFile; ?>" alt = "Pattern by you"></a>
 			</div>
 	    <div class = 'dark' id = 'managePattern<?= $index; ?>'>
+			<div class="floatDiv">
 	      <div class = "float">
 	        <button id = 'close' onclick = 'hide("managePattern<?= $index; ?>")'><i class="fa fa-times"></i></button><br>
 					<p><span class = "tag" id = "tag<?= $index; ?>" onclick = "togglePubPr(this, <?= $index; ?>)"><?= $pubPr; ?></span></p>
@@ -41,6 +42,7 @@
 					<!-- updates pertaining to this specific pattern -->
 					<span id = "uPaDiv<?= $index; ?>"></span>
 	      </div>
+	  </div>
 	    </div>
 	  <?php endforeach; ?>
   </div>

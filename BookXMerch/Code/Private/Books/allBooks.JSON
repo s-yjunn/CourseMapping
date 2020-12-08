@@ -224,5 +224,23 @@
         "image_url": "",
         "rating": "5",
         "reviews": []
+    },
+    {
+        "bookid": "1124",
+        "genre": "other",
+        "title": "The Ladies' Paradise",
+        "author": [
+            " \u00c9mile Zola",
+            " Robin Buss (Translator)",
+            " Brian Nelson (Translator)"
+        ],
+        "illustrator": [
+            ""
+        ],
+        "description": " The Ladies Paradise (Au Bonheur des Dames) recounts the rise of the modern department store in late nineteenth-century Paris. The store is a symbol of capitalism, of the modern city, and of the bourgeois family: it is emblematic of changes in consumer culture, and the changes in sexual attitudes and class relations taking place at the end of the century. This new translation of the eleventh novel in Zola's Rougon-Macquart cycle captures the spirit of one of his greatest works.",
+        "url": "https:\/\/www.goodreads.com\/book\/show\/28413.The_Ladies_Paradise",
+        "image_url": "",
+        "rating": "5",
+        "reviews": []
     }
 ]

@@ -69,11 +69,12 @@ body {
 }
 .wrapper2 {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 350px);
+  grid-template-columns: repeat(auto-fill, 290px);
+
 }
   
 .wrapper2 > div {
-  padding: 4em;
+  padding-right: 5em;
 }
 
 .newFont {
@@ -200,7 +201,7 @@ body {
     text-decoration: underline;
   }
 
-  /* Flip cards */
+  /* Flip cards w3*/
   .flip-card {
 
     background-color: transparent;

@@ -47,7 +47,10 @@
 
 /* PATTERN.PHP */
 #mainPattern {
-	text-align:center;
+	text-align: center;
+}
+#mainPattern .instructions {
+	text-align: left;
 }
 #mainPattern .fullImg {
 	object-fit: cover;

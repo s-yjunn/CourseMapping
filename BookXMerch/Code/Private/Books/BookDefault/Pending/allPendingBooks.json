@@ -66,35 +66,18 @@
             "reviews": []
         },
         {
-            "reqUsername": "user1",
-            "genre": "other",
-            "title": "The Ladies' Paradise",
+            "reqUsername": "User 2",
+            "genre": "fiction",
+            "title": "The Girl Who Saved the King of Sweden",
             "author": [
-                " \u00c9mile Zola",
-                " Robin Buss (Translator)",
-                " Brian Nelson (Translator)"
+                "Jonas Jonasson",
+                " Rachel Willson-Broyles (Translator)"
             ],
             "illustrator": [
                 ""
             ],
-            "desc": " The Ladies Paradise (Au Bonheur des Dames) recounts the rise of the modern department store in late nineteenth-century Paris. The store is a symbol of capitalism, of the modern city, and of the bourgeois family: it is emblematic of changes in consumer culture, and the changes in sexual attitudes and class relations taking place at the end of the century. This new translation of the eleventh novel in Zola's Rougon-Macquart cycle captures the spirit of one of his greatest works.",
-            "url": "https:\/\/www.goodreads.com\/book\/show\/28413.The_Ladies_Paradise",
-            "image_url": "",
-            "rating": "5",
-            "reviews": []
-        },
-        {
-            "reqUsername": "iberrada",
-            "genre": "comics",
-            "title": "huj",
-            "author": [
-                "efwewf"
-            ],
-            "illustrator": [
-                "ewfewf"
-            ],
-            "desc": "ewfwfe ",
-            "url": "https:\/\/www.goodreads.com\/book\/show\/13624688-the-time-keeper",
+            "desc": "Nombeko Mayeki was never meant to be a hero. Born in a Soweto shack, she seemed destined for a short, hard life. But now she is on the run from the world \u2018s most ruthless secret service, with three Chinese sisters, twins who are officially one person and an elderly potato farmer. Oh, and the fate of the King of Sweden - and the world - rests on her shoulders.\r\n\r\nAs uproariously funny as Jonas Jonasson\u2019s bestselling debut, this is an entrancing tale of luck, love and international relations. ",
+            "url": "https:\/\/www.goodreads.com\/book\/show\/21094993-the-girl-who-saved-the-king-of-sweden",
             "image_url": "",
             "rating": "5",
             "reviews": []

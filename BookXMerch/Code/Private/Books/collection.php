@@ -74,6 +74,8 @@
                             src="Images/horror.png" alt="bm"></button></div>
                 <div id="romance"> <button class="imgButton" onclick="getBookByGenre('romance')"><img class="imageClass"
                             src="Images/romance.png" alt="bm"></button></div>
+                <div id="other"> <button class="imgButton" onclick="getBookByGenre('other')"><img class="imageClass"
+                            src="Images/other.png" alt="bm"></button></div>
 
             </div>
         </div>

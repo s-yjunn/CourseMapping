@@ -47,6 +47,30 @@ function getUserName($id)
 
 }
 
+function getUserJoined($id)
+{
+
+    include ("db_connect.php");
+
+    $sql = "SELECT joined FROM `user` WHERE id = ?;";
+    $query = $conn->prepare($sql);
+    $query->bind_param('i', $i);
+
+    $i = $id;
+    $query->execute();
+    $result = $query->get_result();
+
+    if ($result->num_rows > 0)
+    {
+        return $result->fetch_array() [0];
+    }
+    else
+    {
+        return "Forever";
+    }
+
+}
+
 function getUserSelling($uname)
 {
 
@@ -68,6 +92,31 @@ function getUserSelling($uname)
 
 }
 
+function getUserPrivs($id, $priv)
+{
+
+    include ("db_connect.php");
+
+    if ($priv == "mod") $sql = "SELECT mod_priv FROM `user` WHERE id = ?;";
+    if ($priv == "adm") $sql = "SELECT admin_priv FROM `user` WHERE id = ?;";
+    $query = $conn->prepare($sql);
+    $query->bind_param('i', $i);
+
+    $i = $id;
+    $query->execute();
+    $result = $query->get_result();
+
+    if ($result->num_rows > 0)
+    {
+        $priv = $result->fetch_array() [0];
+        return $priv;
+    }
+    else
+    {
+        return 0;
+    }
+
+}
 
 function getUserImage($id)
 {
@@ -88,7 +137,7 @@ function getUserImage($id)
     }
     else
     {
-        return "Unknown User";
+        return "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png";
     }
 
 }
@@ -112,32 +161,7 @@ function getUserInfo($id)
     }
     else
     {
-        return "Unknown User";
-    }
-
-}
-
-
-function getUserPrivs($id,$priv) {
-
-    include ("db_connect.php");
-
-    if($priv == "mod") $sql = "SELECT mod_priv FROM `user` WHERE id = ?;";
-    if($priv == "adm") $sql = "SELECT admin_priv FROM `user` WHERE id = ?;";
-    $query = $conn->prepare($sql);
-    $query->bind_param('i', $i);
-
-    $i = $id;
-    $query->execute();
-    $result = $query->get_result();
-    
-    if ($result->num_rows > 0)
-    {
-        $priv = $result->fetch_array()[0];
-        return $priv;
-    }
-    else {
-        return 0;
+        return "Hello World!";
     }
 
 }

@@ -22,10 +22,11 @@ else
     $cart = explode(" ", ($_COOKIE["cart"]));
     foreach ($cart as & $item)
     {
+        $id = getItemById($item) [0];
         $name = getItemById($item) [1];
         $price = getItemById($item) [6];
 
-        echo ("<a class='dropdown-item'><strong>$name</strong> &mdash; <span class='tag is-success'>$$price</span></a>");
+        echo ("<a class='dropdown-item' href='item.php?id=" . $id . "'><strong>$name</strong> &mdash; <span class='tag is-success'>$$price</span></a>");
     }
 
     echo ("

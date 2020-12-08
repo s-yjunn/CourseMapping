@@ -39,6 +39,7 @@ $featured = (show_featured());
 					<?php
 foreach ($featured as & $item)
 {
+    $id = $item[0];
     $title = $item[1];
     $image_url = $item[2];
     $seller = $item[5];
@@ -47,13 +48,13 @@ foreach ($featured as & $item)
                             <div class="column is-4">
                                 <div class="card">
                                     <div class="card-image">
-                                        <figure class="image is-256x256"><img src="' . $image_url . '" title="'. $image_url .'"></figure>
+                                        <figure class="image is-256x256"><img src="' . $image_url . '" title="' . $image_url . '"></figure>
                                     </div>
                                     <div class="card-content">
                                         <div class="media">
                                             <div class="media-content">
-                                                <p class="title is-4">' . $title . '</p>
-                                                <p class="subtitle is-6">by @' . $seller . '</p>
+                                                <p class="title is-4"><a href="item.php?id=' . $id . '">' . $title . '</a></p>
+                                                <p class="subtitle is-6">by <a href="user.php?id=' . getUserId($seller) . '">' . $seller . '</a></p>
                                             </div>
                                         </div>
                                     </div>

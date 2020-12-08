@@ -1,5 +1,6 @@
 <?php
-function display_items($results) {
+function display_items($results)
+{
     if ($results)
     {
         foreach ($results as & $item)
@@ -24,7 +25,7 @@ function display_items($results) {
                                                     <div class="media-content">
                                                         <div class="content">
                                                             <p>
-                                                                <strong><a href="user.php?id='.getUserId($seller).'">@' . $seller . '</a></strong> is selling <strong>' . $title . '</strong> for <span class="tag is-success">$' . $price . '</span>
+                                                                <strong><a href="user.php?id=' . getUserId($seller) . '">' . $seller . '</a></strong> is selling <strong><a href="item.php?id=' . $id . '">' . $title . '</a></strong> for <span class="tag is-success">$' . $price . '</span>
                                                                 <br/>
                                                                 <div class="notification is-light">' . $desc . '<br/>
                                                                 
@@ -37,7 +38,7 @@ function display_items($results) {
 
             echo ('
                                                                     <br/>
-                                                                    <button class="button is-info mt-4" id="button-cart-'.$id.'" onClick=\'addToCart("'.$id.'", this);\'>
+                                                                    <button class="button is-info mt-4" id="button-cart-' . $id . '" onClick=\'addToCart("' . $id . '", this);\'>
                                                                         <span class="icon is-small"><i class="fas fa-cart-plus" aria-hidden="true"></i></span>
                                                                         <span>Add to cart</span>
                                                                     </button> 
@@ -53,11 +54,12 @@ function display_items($results) {
     }
     else
     {
-        echo ('<p class=subtitle>No items to display.</p>');
+        echo ('<p class="subtitle m-4">No items to display.</p>');
     }
 }
 
-function getItemById($id) {
+function getItemById($id)
+{
 
     include ("db_connect.php");
 
@@ -75,7 +77,7 @@ function getItemById($id) {
     }
     else
     {
-        return "Unknown User";
+        return "Unknown Item";
     }
 
 }

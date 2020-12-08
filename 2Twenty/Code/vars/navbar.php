@@ -2,78 +2,40 @@
 include ("src/login.php");
 include ("src/user_lookup.php");
 include ("src/display_items.php");
-//include ("src/verify_install.php");
+include ("src/verify_install.php");
+include ("src/notify.php");
 session_start();
 
 // if logging in:
-if (isset($_POST["uname"]) && isset($_POST["upass"]))
+if (isset($_POST["uname"], $_POST["upass"]))
 {
     if (handle_login($_POST["uname"], $_POST["upass"]))
     {
-
         // success
         $_SESSION["username"] = $_POST["uname"];
         $_SESSION["loggedIn"] = 1;
-
-        echo ('
-            <div class="notification is-success floating" id="good-login">
-                <button class="delete"></button>
-                Successful login. Welcome back!
-            </div>
-        ');
-
+        notifyGood("Successful login. Welcome back, " . $_SESSION["username"] . "!");
     }
-    else
-    {
-
-        // failure
-        echo ('
-                <div class="notification is-danger floating" id="bad-login">
-                    <button class="delete"></button>
-                    Bad login. Please try again.
-                </div>
-            ');
-
-    }
+    else notifyBad("Bad login attempt. Please try again.");
 }
 
 // if registering:
-if (isset($_POST["uname_r"]) && isset($_POST["upass_r"]))
+if (isset($_POST["uname_r"], $_POST["upass_r"]))
 {
-    if (handle_registration($_POST["uname_r"], $_POST["upass_r"]))
+    if ((!empty($_POST["uname_r"]) && !empty($_POST["upass_r"])) && (trim($_POST["uname_r"]) !== '' && trim($_POST["upass_r"]) !== ''))
     {
-
-        // success
-        echo ('
-            <div class="notification is-success floating" id="good-login">
-                <button class="delete"></button>
-                Successful registration. Thank you!
-            </div>
-        ');
-
+        if (handle_registration($_POST["uname_r"], $_POST["upass_r"])) notifyGood("Successful registration. Thank you, " . $_POST["uname_r"] . "!");
+        else notifyBad("Bad registration attempt. Please try again.");
     }
-    else
-    {
-
-        // failure
-        echo ('
-                <div class="notification is-danger floating" id="bad-login">
-                    <button class="delete"></button>
-                    Bad registration. Please try again.
-                </div>
-            ');
-
-    }
+    else notifyBad("Bad registration attempt. Please try again.");
 }
 
 // if logging out:
 if (isset($_POST["logout"]))
 {
-
     // get rid of all SESSION variables
     $_SESSION = array();
     session_destroy();
-
 }
 
 ?>

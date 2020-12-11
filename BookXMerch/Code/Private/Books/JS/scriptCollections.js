@@ -9,6 +9,7 @@ function getBookByGenre(genre, sessionName) {
             document.getElementById("wrapper").innerHTML = "";
             document.getElementById("booksOfMonth").style.display="none";
             document.getElementById("original").style.display="none";
+            document.getElementById("wrapper2").style.display="none";
             document.getElementById("wrapper").innerHTML = "<br>"+ this.responseText;
             document.getElementById("wrapper").style= "margin-left: 240px; max-width: 30em";
             
@@ -47,6 +48,14 @@ function showCollection(){
     document.getElementById("wrapper").innerHTML = "";
     document.getElementById("original").style.display="block";
     document.getElementById("booksOfMonth").style.display="none";
+    document.getElementById("wrapper2").style.display = "none";
+}
+
+function showAllBooks(){
+    document.getElementById("wrapper").innerHTML = "";
+    document.getElementById("original").style.display="none";
+    document.getElementById("booksOfMonth").style.display="none";
+    document.getElementById("wrapper2").style.display = "block";
     
 }
 
@@ -54,6 +63,7 @@ function booksOfMonth() {
     document.getElementById("wrapper").innerHTML = "";
     document.getElementById("original").style.display="none";
     document.getElementById("booksOfMonth").style.display="block";
+    document.getElementById("wrapper2").style.display = "none";
 }
 
 

@@ -36,6 +36,7 @@
             <div class="newFont">
                 <button class="barCol buttonClass" onclick="showCollection()" style="width: 200px; font-family"><b>Full
                         B</b>x<b>M Collection</b></button>
+                <button class="barCol buttonClass" onclick="showAllBooks()" style="width: 200px; font-family">All books</button>
                 <button class="barCol buttonClass" onclick="booksOfMonth()" style="width: 200px; font-family">Book of
                     the Month</button>
                 <button class="barCol buttonClass" onclick="getBookByGenre('comics')">Comic Books</button>
@@ -52,6 +53,31 @@
 
         <div id="books" class="margin-left: 240px">
             <div id="wrapper">
+            </div>
+        </div>
+
+        <div id="allBooks" class="margin-left: 240px">
+            <div id="wrapper2" style="display:none; margin-left: 240px">
+                <div>
+                <?php 
+                    $arrayOfBooks = file_get_contents("allBooks.JSON");
+                    $booksArray = json_decode($arrayOfBooks, true);
+                    $byGenre = array();
+                        
+                    foreach ($booksArray as $key => $jsons) { 
+            
+                        $newArray = array($jsons["title"],$jsons["author"],$jsons["illustrator"],$jsons["description"],$jsons["url"],$jsons["rating"],$jsons["reviews"],$jsons["bookid"]);
+                        array_push($byGenre, $newArray);
+                          
+                    }
+                    echo "<br>";
+                    foreach ($byGenre as $newArray) {
+                        echo "<ul>";
+                        echo "<b> <button onclick='displayContent(".$newArray[7].")' class='fixedButton' id='".$newArray[7]."'> " . $newArray[0] . "</button></b> ";
+                        echo "</ul>";
+                    } 
+                ?>
+                </div>
             </div>
         </div>
 

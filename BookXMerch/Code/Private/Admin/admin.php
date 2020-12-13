@@ -72,7 +72,7 @@ $requestsArray = json_decode($arrayOfRequests, true);
             <button class="barCol buttonClass" onclick="getRequests()">Pending Requests</button>
             <button class="barCol buttonClass" onclick="getUsers()">All Users</button>
             <button class="barCol buttonClass" onclick="getBooks()">All Books</button>
-            <button class="barCol buttonClass" onclick="getReviews()">All Reviews</button>
+            <!-- <button class="barCol buttonClass" onclick="getReviews()">All Reviews</button> -->
     
           </div>
         </div>

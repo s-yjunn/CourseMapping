@@ -54,7 +54,7 @@
 									<h5><?= $title; ?></h5>
 									<h6><?= $user ?></h6>
 								</div>
-								<button class="btn2" type="button" onclick="openPattern(<?= $i; ?>, 'contestPattern', 'contestHome', 'contestant<?= $i; ?>')">View</button>
+								<button class="btn2" type="button" onclick="openPattern(<?= $i; ?>, 'contestPattern', 'contestHome', 'contestant<?= $i; ?>')">View pattern</button>
 								<form>
 									<input id="vote" class="btn1" type="button" value="Vote" onclick="updateVote(<?= $i ?>)">
 								</form>

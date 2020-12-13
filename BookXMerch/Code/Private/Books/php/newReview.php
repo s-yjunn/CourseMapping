@@ -50,8 +50,7 @@ $loggedUser = $_SESSION["name"];
     href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Assistant:wght@300&family=Indie+Flower&display=swap"
     rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-
-
+  <link rel="stylesheet" href="../../../Public/Profile/styles/profileStyles2.css">
   <link rel="stylesheet" href="../CSS/styles.css">
 
   
@@ -123,72 +122,27 @@ $loggedUser = $_SESSION["name"];
   <br>
   <div class="tabcontent">
     <div class="card bookBorder" id="bookDetails">
-        <div class="addToList" onclick="addToList(<?php echo $bookid?>)">
-            <div class="borderCaption">Add to Reading List</div> 
-            <a> <img class="borderImage" src="../Images/addToList.png" alt="Add to list"> </a>
-        </div>
-        <div id="overlay" onclick="off()" style="display: none">
-            <div id="alert"> </div>
-        </div>
-        
-        <h3><?php echo $title ?> </h3>
+        <h3>Review for: <?php echo $title ?> </h3>
         <hr class="horLine"> 
-        <div id="titleOfBook"> 
-            <b> TITLE: </b> <?php echo $title ?>
-        </div> 
-        <hr> 
-        <div class="barCol"> <b> AUTHORS(s): </b> 
-        <?php for($j=0; $j<sizeof($author); $j++) {
-                if($j != (sizeof($author) - 1)) {
-                    echo $author[$j] . " | ";
-                } else {
-                    echo $author[$j];
-                }
-            } ?> 
-        </div> 
-        <hr> 
-        <?php if(sizeof($illustrator)>0) {
-        echo "<div class='barCol'>". "<b> ILLUSTRATOR(s): </b> ";
-        for($j=0; $j<sizeof($illustrator); $j++) {
-            if($j != (sizeof($illustrator) - 1)) {
-            echo $illustrator[$j] . " | ";
-            } else {
-            echo $illustrator[$j];
-            }
-        }
-        echo "</div> <hr>"; } ?>
-        
-        <div class="barCol"> <b> SUMMARY: </b> 
-        <br>
-        <br>
-            <div class="bookBorder"> 
-                <?php echo $description?>
-            </div>
-        </div>
-        <hr>
-        <div class="barCol"> <a href="#"> <b> Rate this book</b></a>   (CURRENT RATING: <?php echo $rating?> ★ ) </div>
-        <hr>
-        <div class="barCol"> <a href="#" > <b> Review this book</b></a></div>
-        <hr>
-        
-        <?php 
-        if(sizeof($reviews)>0) {
-            echo "<div class='barCol'> <b> Current reviews </b>";
-            echo "<ul>";
-            for($j=0; $j<sizeof($reviews); $j++) {
-                echo "<li style='color:rgb(119,89,112)'>" . $reviews[$j]["user"] . ": ";
-                echo "<div style='color:black'>" . $reviews[$j]["comment"] . "</div> </li>";
-                if ($j != sizeof($reviews) - 1 ) {
-                    echo "<hr>";
-                };
-            }
-            echo "</ul>";
-            echo "<hr>";
-        }
-        ?>
- 
-    <div class="barCol"> <b> Get a copy of the book </b>  <?php echo "<a href=". $url."> here </a>"?> </div> 
-    </div>
+
+        <?php echo "<form action=reviewAdd.php?bookId=".$bookid."&title=".$title." method='post'>"?>
+        <label class="label" for="text"><br>Rating <br>(out of 5)</br></label>
+            <select id="rating" name="rating">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <br>
+            <label class="label" for="text"><b>Comment</b></label>
+            <input type="text" name="comment" placeholder="Comment" required>
+            
+            <br>
+            <button type="submit" name="submit" id="reviewSubmit" class="upload">Submit Review</button>
+
+        </form>
 </div>
 
     <br>

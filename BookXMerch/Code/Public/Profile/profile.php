@@ -207,8 +207,6 @@
                 <p class="asterisk"> **comma-separated if multiple</p>
             </form>
         </div>
-        
-
     </div>
     
     <?php $success = $_REQUEST['success'];

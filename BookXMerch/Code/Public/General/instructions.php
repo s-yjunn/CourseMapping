@@ -101,11 +101,11 @@
 					Check our free<b> Merch store</b> with cool themed items for your everyday use.
 				</li>
 				<li>
-					Browse through our <b>Book Collection</b> from the <b>Home</b> page or <b>Collections</b> page. You can <b>browse by genre</b>. By clicking on a book you like you will be able to read through its details and <b>add it to you Reading List</b>. You will also be able to <b>write a Review</b> and <b>rate</b> the book.
+					Browse through our <b>Book Collection</b> from the <b>Home</b> page or <b>Collections</b> page. You can <b>browse by genre</b>, or view <b>all books</b> (to search for a book, CMD+F its title). By clicking on a book you like you will be able to read through its details and <b>add it to you Reading List</b>. You will also be able to <b>write a Review</b> and <b>rate</b> the book.
 				</li>
-				<li>
+				<!-- <li>
 					Go to Community Posts, our very cool forum, in order to share your passion about Books with like-minded users. You can ask for recommendations, reviews and resources to help you through your reading journey.
-				</li>
+				</li> -->
 				<li>
 					Once you're done with BookstoreXMerch for the day, you can use the <b>Log out</b> button to say goodbye! We hope to see you soon :) 
 				</li>

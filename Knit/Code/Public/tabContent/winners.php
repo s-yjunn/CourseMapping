@@ -17,7 +17,7 @@
             ?>
                 <div class="mySlides">
                     <div class="numbertext"> <?= $i + 1; ?> / <?= $numWin; ?> </div>
-                    <a onclick="openPattern(<?= $i; ?>, 'featuredPattern', 'featuredHome', '')"><img src="<?= $image; ?>" style="width:500" class="center" alt='Knit submission by <?= $winnerData[$i]["author"]; ?>'></a>
+                    <a onclick="openPattern(<?= $i; ?>, 'featuredPattern', 'featuredHome', 'Featured')"><img src="<?= $image; ?>" style="width:500" class="center" alt='Knit submission by <?= $winnerData[$i]["author"]; ?>'></a>
                 </div>
             <?php endfor; ?>
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang>
+
 <head>
-<meta name="author" content="Hyana Kang">
-<!--The structure of this webpage is based on PieTown(midterm) 
+    <meta name="author" content="Hyana Kang">
+    <!--The structure of this webpage is based on PieTown(midterm) 
 written by Professor Streinu, and Yujun, Hyana's midterm projects-->
     <title>Course Mapping</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -64,6 +65,7 @@ written by Professor Streinu, and Yujun, Hyana's midterm projects-->
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/jsonParser.js"></script>
     <script src="js/restorePathway.js"></script>
+    <script src="js/pathwayFront.js"></script>
     <script src="js/pathway.js"></script>
     <script src="js/pathwayMeta.js"></script>
     <script src="js/save.js"></script>

@@ -179,7 +179,10 @@ function createTabLink(tabID, title) {
   tabLink.onclick = function () {
     openTab(event, tabID);
   };
-  tabLink.innerHTML = title;
+  var tabTitle = document.createElement("span");
+  tabTitle.innerHTML = title;
+  tabTitle.id = "title_" + tabID;
+  tabLink.appendChild(tabTitle);
 
   var tabX = document.createElement("span");
   tabX.innerHTML = "&times";
@@ -229,7 +232,6 @@ function removeTab(tabID) {
           save(tabID);
           // Remove stored pathway from session storage
           sessionStorage.removeItem(tabID);
-          console.log("Removed " + tabID);
           /* End of Allison's code in Hyana's contribution */
           $(this).dialog("close");
         },

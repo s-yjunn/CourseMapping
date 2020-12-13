@@ -118,11 +118,14 @@
     },
 
     "PHY 210": {
-      "prereqs": [["MTH 212", "PHY 117"], "PHY 119"],
+      "prereqs": [["MTH 212", "PHY 117"], ["PHY 119"]],
       "coreqs": [],
       "requiredFor": [],
       "suggestedFor": [],
-      "info": { "credits": 4, "title": "Mathematical Methods of Physical Sciences and Engineering" },
+      "info": {
+        "credits": 4,
+        "title": "Mathematical Methods of Physical Sciences and Engineering"
+      },
       "overlap": []
     }
   },

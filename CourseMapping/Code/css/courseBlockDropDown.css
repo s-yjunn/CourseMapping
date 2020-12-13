@@ -1,0 +1,24 @@
+/* 
+ * This css is from W3school with modification by Yujun Shen
+ */
+
+/* Style the drop down menu of prerequisite requirements for certain courses. */
+.prereqsOptions {
+  display: none;
+  position: absolute;
+  background-color: #fafafa;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.prereqsOptions p {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.prereqsOptions p:hover {
+  background-color: #f2fafd;
+}

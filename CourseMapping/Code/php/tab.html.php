@@ -1,3 +1,5 @@
+<!-- @author Yujun Shen -->
+
 <!DOCTYPE html>
 <html>
 <?php
@@ -10,6 +12,7 @@ $majorFileName = "../json/majors.json";
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="css/pathwayPage.css">
+    <link rel="stylesheet" type="text/css" href="css/courseBlockDropDown.css">
 </head>
 
 <body>

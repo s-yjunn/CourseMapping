@@ -4,11 +4,11 @@
 */
 
 //This function opens the specified post
-function openPost(postIndex) {
+function openPost(postIndex, from) {
     //Loads the content into the post div, then
-    $("#forumPost").load("php/forum/post.php?index=" + postIndex, function(){
+    $("#forumPost").load("php/forum/post.php?index=" + postIndex + "&from=" + from, function(){
         //Show the post
-        hide('forumHome');
+        hide(from);
         show('forumPost');
     });
 }
@@ -185,4 +185,43 @@ function sortPostResponses(postIndex, param) {
 function refreshResponses(postIndex){
     sortResponsesBy = document.getElementById('responsesView').value;
     sortPostResponses(postIndex, sortResponsesBy);
+}
+
+// This function handles the client-side of searching the forum
+function searchForum() {
+    var query = $("#forumSearchQ").val().trim();
+
+    var sortBy = $('#searchView').val();
+    if (query == "") { // make sure they've actually entered something
+        $("#forumDiv").html("<p class='alert alert-danger' role='alert'>Please enter a search query.</p>");
+    } else {
+        $("#forumDiv").empty();
+        $("#fSearchTitle").html("Results for \"" + query + "\"");
+        $.ajax({
+            type: "POST",
+            url: "php/forum/searchList.php",
+            data: {param: query, sortBy: sortBy},
+            // when returned (no error catching yet)
+            success: function(response) {
+                $("#searchList").html(response);
+                hide("forumHome");
+                show("forumSearch");
+            }
+        });
+    }
+}
+
+// this function handles the client side of re-sorting search responses 
+// (+ refreshing search results)
+function sortForumSearch(sortBy) {
+    var query = $("#forumSearchQ").val().trim();
+    $.ajax({
+        type: "POST",
+        url: "php/forum/searchList.php",
+        data: {param: query, sortBy: sortBy},
+        // when returned (no error catching yet)
+        success: function(response) {
+            $("#searchList").html(response);
+        }
+    });
 }

@@ -4,7 +4,7 @@
 
 <div class="section"  id="section1">
   
-<h4>Approve</h4>
+<h5>Approve</h5>
 <?php 
 
 $comp = file_get_contents("data/contest.json");
@@ -39,7 +39,7 @@ if($numSubs > 0):?>
 
 <div class="section" id="section2">
 
-<h4>Delete</h4>
+<h5>Delete</h5>
 
 <ul style="list-style-type:square;">
      <?php for($i = 0; $i < $numSubs; $i++):?>
@@ -66,7 +66,7 @@ if($numSubs > 0):?>
 
 </div>
 <div class="section" id="section3">
-<h4>Preview Winners</h4>
+<h5>Preview Winners</h5>
 
 <?php 
 $comp = file_get_contents("data/contest.json");

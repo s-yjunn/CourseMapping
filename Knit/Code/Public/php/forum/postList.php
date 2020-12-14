@@ -2,6 +2,7 @@
   // This file generates the "menu" of posts on the main forum page.
   // Optionally takes a sorting parameter, otherwise sorts chronologically (newest first)
   // @author Isabel
+  // Last modified 12/14/2020
 
   //If this is being called from forum.js
   if (isset($_GET["sortBy"])) {
@@ -13,7 +14,7 @@
     $sortMethod = "active"; // default
   }
 
-  //Sotring by active time (most recently active on top)
+  //Sorting by active time (most recently active on top)
   if ($sortMethod == "active") {
     $postsUse = $posts;
     uasort($postsUse, function($a, $b) {
@@ -27,7 +28,7 @@
       if ($diff) return $diff;
       return $b["active"] - $a["active"];
     });
-    //Sorting by # of responses -- if posts have same most recently active goes on bottom
+    //Sorting by # of responses (lowest first) -- if posts have same most recently active goes on bottom
   } else if ($sortMethod == "responses") {
     $postsUse = $posts;
     uasort($postsUse, function($a, $b) {
@@ -48,14 +49,14 @@
   </tr>
   <?php
   //Output the overview info for each post
-  foreach ($postsUse as $key => $value):
-    $postActive = timeAgo($value["active"]);
+  foreach ($postsUse as $index => $post):
+    $postActive = timeAgo($post["active"]);
   ?>
     <tr>
-      <td><?= $value["score"]; ?></td>
-      <td><?= count($value["responses"]); ?></td>
-      <td><a onclick="openPost(<?= $key; ?>)"> <?= $value["title"]; ?> </a></td>
-      <td><?= $value["author"]; ?></td>
+      <td><?= $post["score"]; ?></td>
+      <td><?= count($post["responses"]); ?></td>
+      <td><a onclick="openPost(<?= $index; ?>, 'forumHome')"> <?= $post["title"]; ?> </a></td>
+      <td><?= $post["author"]; ?></td>
       <td><?= $postActive ?></td>
     </tr>
   <?php endforeach; ?>

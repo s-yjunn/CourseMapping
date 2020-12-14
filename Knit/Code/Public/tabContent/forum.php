@@ -1,7 +1,7 @@
 <?php
   // This is the contents of the forum tab (minus included code)
-  // @author Isabel
-  // Last modified 12/7/2020
+  // @author Isabel + styling by Alexis
+  // Last modified 12/14/2020
 
   //Establish which div to show when visitor clicks the "write a post" button
   if ($loggedIn){
@@ -20,22 +20,13 @@
     <button class="btn1" type="button" onclick="refreshForumIndex()"><i class="fas fa-redo-alt"></i> Refresh</button>
     <!--Button to write a post. Opens a composition div if the user is logged in, otherwise one that tells them to login.-->
     <button class="btn1" type="button" onclick=<?=$showCompose; ?>><i class="fas fa-user-edit"></i> Write a post</button>
+
+    <!-- forum search bar -->
+    <input type = "text" id = "forumSearchQ" placeholder = "Your search query">
+    <button type ="button" class = "btn1" onclick = "searchForum()"><i class="fas fa-search"></i> Search the forum</button>
+
     <!-- Any status updates go here -->
     <span id = "forumDiv"></span>
-
-    <!--This is the form to compose a post-->
-    <?php if ($loggedIn): ?>
-      <div class="dark hide" id="composePost">
-        <div class="float">
-          <h4>Compose post</h4>
-          <input type="text" id="postTitle" placeholder="Your post's title"><br>
-          <textarea id = "postContent" placeholder="Your post's content"></textarea><br>
-          <button class="btn1" type="button" onclick="postPost('<?= $username; ?>')">Post</button>           
-          <button class="btn1" id="cancel" onclick="hide('composePost')">Cancel</button>
-          <span id = "postStatus"></span> <!-- for validation of a post-->
-        </div>
-      </div>
-    <?php endif; ?>
 
     <!--This is the forum "index": a table of links to existing forum posts-->
     <div id="forumIndex" class="refresh tableDiv">
@@ -43,7 +34,7 @@
       <!--Selector for how to sort posts-->
       <form>
         <label for="indexView">Sort by:</label>
-        <select id="indexView" onchange="sortForumIndex(this.value)">>
+        <select id="indexView" onchange="sortForumIndex(this.value)">
           <option value="active">Active</option>
           <option value="score">Highest ranked</option>
           <option value="responses">Unanswered</option>
@@ -55,10 +46,43 @@
         <?php include "php/forum/postList.php";?>
       </div>
     </div>
-  </div>      
+  </div>
+
+  <!-- div for search results -->
+  <div id = "forumSearch">
+    <button class="btn1" type="button" onclick="hide('forumSearch'); show('forumHome'); $('#forumSearchQ').val('');"><i class="fas fa-arrow-left"></i> Back</button>
+
+    <!-- title filled when called upon-->
+    <h4 id = "fSearchTitle"></h4>
+    <form>
+      <label for="searchView">Sort by:</label>
+      <select id="searchView" onchange="sortForumSearch(this.value)">
+        <option value="score">Highest ranked</option>
+        <option value="responses">Most answers</option>
+        <option value="active">Active</option>
+      </select>
+    </form>
+
+    <!-- actual result: : filled by php/forum/searchList.php-->
+    <div id = "searchList"></div>
+  </div>
 
   <!--This div is filled by "php/forum/post.php" whenever a post is called on-->
   <div id = "forumPost"></div>
+
+  <!--This is the form to compose a post-->
+  <?php if ($loggedIn): ?>
+    <div class="dark hide" id="composePost">
+      <div class="float">
+        <h4>Compose post</h4>
+        <input type="text" id="postTitle" placeholder="Your post's title"><br>
+        <textarea id = "postContent" placeholder="Your post's content"></textarea><br>
+        <button class="btn1" type="button" onclick="postPost('<?= $username; ?>')">Post</button>           
+        <button class="btn1" id="cancel" onclick="hide('composePost')">Cancel</button>
+        <span id = "postStatus"></span> <!-- for validation of a post-->
+      </div>
+    </div>
+  <?php endif; ?>
 
   <!--this div shows up when visitors try to post, respond, or vote without being logged in-->
   <div class="dark hide" id="loginPlease">

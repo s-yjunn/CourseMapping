@@ -12,14 +12,17 @@ function updateVote(i){
     );   
   }
 
-// This function "opens" a pattern in the "to" div and hides the "from" div. "fromLink" is the subDiv we want to return to when the pattern closes
+// This function "opens" a pattern by index in the *to* div and hides the *from* div
+// *fromLink* is the id of the div whose level we want to return to when the pattern closes
+// @author Isabel
 function openPattern(patternIndex, to, from, fromLink) {
-    //console.log("Pattern " + patternIndex + " opened from " + from);
-    //Loads the content into the pattern div, then
+    // Load the content into the pattern div, then
     $("#"+to).load("php/pattern.php?index=" + patternIndex + "&to=" + to + "&from=" + from + "&fromLink=" + fromLink, function(){
         // hide the menu
         hide(from);
-        //Show the pattern
+        // show the pattern
         show(to);
+        // go to the top of the pattern
+        window.location.href = "#contestPattern";
     });
 }

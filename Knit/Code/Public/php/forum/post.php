@@ -6,6 +6,9 @@
   // get all posts (since this is called from outside forum proper)
   $posts = json_decode(file_get_contents("../../data/forum.json"), true);
   
+  // Where is this post being requested from?
+  $from = $_GET["from"];
+
   // Try to get the proper post
   $postIndex = $_GET['index'];
   // make sure the post hasn't been deleted since last refresh
@@ -15,7 +18,7 @@
   } else {
     // give the visitor a back button and a message of deletion
     echo '<button class="btn1" type="button" onclick="hide(\'forumPost\'); show(\'forumHome\')"><i class="fas fa-arrow-left"></i> Back</button><br><br>';
-    echo "This post has been deleted.";
+    echo "Unable to load post -- it may have been deleted.";
     // end script
     exit;
   }
@@ -39,7 +42,7 @@
   $canDelete = $loggedIn & ($isAdmin || $username === $post["author"]);
 ?>
 
-<button class="btn1" type="button" onclick="hide('forumPost'); show('forumHome')"><i class="fas fa-arrow-left"></i> Back</button>
+<button class="btn1" type="button" onclick="hide('forumPost'); show('<?= $from; ?>')"><i class="fas fa-arrow-left"></i> Back</button>
 
 
 <!--The post itself-->

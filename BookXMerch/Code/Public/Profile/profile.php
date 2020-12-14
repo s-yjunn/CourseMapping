@@ -138,7 +138,7 @@
                     <!-- show all the reviews as a list here -->
                     <div class="task-card">
                         <div class="status-icon-review"></div>
-                        <p class="task-text">Sample Book Review</p>
+                        <p class="task-text">Sample Book</p>
                         <p class="task-status color-blue">This was an amazing book! I still can't get over that one jump scare part. A truly otherworldly experience!</p>
                     </div>
                 </div>

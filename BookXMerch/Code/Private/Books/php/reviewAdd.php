@@ -8,7 +8,7 @@ $username = $_SESSION['username'];
 
 $comment = $_REQUEST['comment'];
 $rating = intval($_REQUEST['rating']);
-$bookId = $_REQUEST['bookId']; 
+$bookId = $_REQUEST['bookid']; 
 $title = $_REQUEST['title']; 
 
 echo $bookId . "<br>"; 

@@ -125,7 +125,9 @@ $loggedUser = $_SESSION["name"];
         <h3>Review for: <?php echo $title ?> </h3>
         <hr class="horLine"> 
 
-        <?php echo "<form action=reviewAdd.php?bookId=".$bookid."&title=".$title." method='post'>"?>
+        <!-- Problem there probs -->
+        <form action="reviewAdd.php?bookid=<?php echo $bookid;?>&title=<?php echo $title;?>" method="post">
+        
         <label class="label" for="text"><br>Rating <br>(out of 5)</br></label>
             <select id="rating" name="rating">
                 <option value="0">0</option>

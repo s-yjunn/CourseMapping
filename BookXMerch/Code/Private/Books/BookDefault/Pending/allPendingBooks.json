@@ -48,6 +48,22 @@
             "image_url": "",
             "rating": "5",
             "reviews": []
+        },
+        {
+            "reqUsername": "nmajid",
+            "genre": "comics",
+            "title": "I Love Yoo",
+            "author": [
+                "Quimchee"
+            ],
+            "illustrator": [
+                "Quimchee"
+            ],
+            "desc": "A webtoon comic!  ",
+            "url": "https:\/\/www.webtoons.com\/en\/",
+            "image_url": "",
+            "rating": "5",
+            "reviews": []
         }
     ]
 }

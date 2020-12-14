@@ -75,7 +75,7 @@ function openTab(evt, tabID) {
   unselectTabs(); // Reverts the appearence of the current tab, and hides it's content.
   // Show the current tab, and add an "active" class to the button that opened the tab
   selectTab(evt.currentTarget, document.getElementById(tabID), tabID);
-
+  // Set up variables for use in pathway.js
   getCurrentElements();
 }
 
@@ -179,7 +179,10 @@ function createTabLink(tabID, title) {
   tabLink.onclick = function () {
     openTab(event, tabID);
   };
-  tabLink.innerHTML = title;
+  var tabTitle = document.createElement("span");
+  tabTitle.innerHTML = title;
+  tabTitle.id = "title_" + tabID;
+  tabLink.appendChild(tabTitle);
 
   var tabX = document.createElement("span");
   tabX.innerHTML = "&times";
@@ -227,14 +230,12 @@ function removeTab(tabID) {
             storeCurrentPathway();
           }
           save(tabID);
-          // Remove stored pathway from session storage
-          sessionStorage.removeItem(tabID);
-          console.log("Removed " + tabID);
+          removeClientData(tabID); // Remove the tab from data on the client.
           /* End of Allison's code in Hyana's contribution */
           $(this).dialog("close");
         },
         "Don't save the tab": function () {
-          sessionStorage.removeItem(tabID);
+          removeClientData(tabID); // Remove the tab from data on the client.
           $(this).dialog("close");
         },
       },
@@ -253,6 +254,17 @@ function storeCurrentPathway() {
     return true;
   }
   return false;
+}
+
+/**
+ * Removes the tab from the storage on the client
+ * @param {string} tabID
+ */
+function removeClientData(tabID) {
+  // Remove stored pathway from session storage
+  sessionStorage.removeItem(tabID);
+  // Clear current pathway
+  currentPathway = undefined;
 }
 
 // Creates a new tabcontent div containing the interactive pathway orgainzer

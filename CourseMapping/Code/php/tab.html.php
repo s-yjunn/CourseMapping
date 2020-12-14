@@ -1,3 +1,5 @@
+<!-- @author Yujun Shen -->
+
 <!DOCTYPE html>
 <html>
 <?php
@@ -10,6 +12,7 @@ $majorFileName = "../json/majors.json";
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="css/pathwayPage.css">
+    <link rel="stylesheet" type="text/css" href="css/courseBlockDropDown.css">
 </head>
 
 <body>
@@ -41,8 +44,8 @@ $majorFileName = "../json/majors.json";
             ?>
         </select>
         <button class="courseBtn" onclick="selectMajor()">Get Courses</button>
-        <button class="active" <?php include './saveButtons/blank.php'; ?> onclick="save()">Save</button>
-        <button class="unsavedBtn" <?php include './saveButtons/unsaved.php'; ?> onclick="save()">Save Unsaved Work</button>
+        <button class="active" id="blankBtn" onclick="save()">Save</button>
+        <!-- <button class="unsavedBtn" id="unsavedBtn" onclick="save()">Save Unsaved Work</button> -->
 
         <div class="info">
         </div>

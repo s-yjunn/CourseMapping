@@ -28,7 +28,6 @@ function restorePathway() {
       var nodes = restoredInfo[sem]["nodes"];
 
       if (isNotEmpty(nodes)) {
-        console.log(nodes);
         var xPos = (containerWidth / 8) * semNum - containerWidth / 16 + 5;
 
         for (var courseName in nodes) {
@@ -69,11 +68,9 @@ function isNotEmpty(nodes) {
 function clearCurrentPathway() {
   for (var sem in currentPathway) {
     if (currentPathway.hasOwnProperty(sem)) {
-      console.log("enter if");
       var nodes = currentPathway[sem]["nodes"];
       for (var course in nodes) {
         if (nodes.hasOwnProperty(course)) {
-          console.log("delete");
           delete nodes[course];
         }
       }

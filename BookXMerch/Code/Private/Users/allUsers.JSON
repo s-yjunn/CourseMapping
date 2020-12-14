@@ -29,7 +29,7 @@
                 [
                     "1121",
                     "Pride and Prejudice",
-                    "In-progress"
+                    "Completed"
                 ],
                 [
                     "1124",
@@ -107,7 +107,7 @@
                 [
                     "1112",
                     "Star Trek: Waypoint #2",
-                    "In-progress"
+                    "Completed"
                 ]
             ],
             "myBooks": [
@@ -128,6 +128,22 @@
                     "image_url": "",
                     "rating": "5",
                     "reviews": []
+                },
+                {
+                    "bookid": "1125",
+                    "genre": "fiction",
+                    "title": "The Time Keeper",
+                    "author": [
+                        "Mitch Albom"
+                    ],
+                    "illustrator": [
+                        ""
+                    ],
+                    "description": "The inventor of the world's first clock is punished for trying to measure God's greatest gift. He is banished to a cave for centuries and forced to listen to the voices of all who come after him seeking more days, more years. Eventually, with his soul nearly broken, Father Time is granted his freedom, along with a magical hourglass and a mission: a chance to redeem himself by teaching two earthly people the true meaning of time.\r\n\r\nHe returns to our world - now dominated by the hour-counting he so innocently began - and commences a journey with two unlikely partners: one a teenage girl who is about to give up on life, the other a wealthy old businessman who wants to live forever. To save himself, he must save them both. And stop the world to do so. ",
+                    "url": "https:\/\/www.goodreads.com\/book\/show\/13624688-the-time-keeper",
+                    "image_url": "",
+                    "rating": "5",
+                    "reviews": []
                 }
             ]
         },
@@ -143,6 +159,24 @@
                     "The Space Between Worlds",
                     "In-progress"
                 ]
+            ],
+            "myBooks": [
+                {
+                    "bookid": "1126",
+                    "genre": "fiction",
+                    "title": "The Kite Runner",
+                    "author": [
+                        "Khaled Hosseini"
+                    ],
+                    "illustrator": [
+                        ""
+                    ],
+                    "description": "The unforgettable, heartbreaking story of the unlikely friendship between a wealthy boy and the son of his father\u2019s servant, The Kite Runner is a beautifully crafted novel set in a country that is in the process of being destroyed. It is about the power of reading, the price of betrayal, and the possibility of redemption; and an exploration of the power of fathers over sons\u2014their love, their sacrifices, their lies.\r\n\r\nA sweeping story of family, love, and friendship told against the devastating backdrop of the history of Afghanistan over the last thirty years, The Kite Runner is an unusual and powerful novel that has become a beloved, one-of-a-kind classic. ",
+                    "url": "https:\/\/www.goodreads.com\/book\/show\/77203.The_Kite_Runner",
+                    "image_url": "",
+                    "rating": "5",
+                    "reviews": []
+                }
             ]
         },
         {

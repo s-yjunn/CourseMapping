@@ -1,3 +1,5 @@
+/* @author Yujun Shen  */
+
 /* Style the message */
 .info {
   background-color: rgb(241, 233, 158);
@@ -55,7 +57,7 @@ th {
 .courseBlock {
   position: absolute;
   cursor: move;
-  z-index: 99999;
+  z-index: 1;
   background-color: #cbcffa;
   text-align: center;
   border: 1px solid #868686;
@@ -106,7 +108,7 @@ select {
   margin: 4px 8px;
   padding: 15px 20px;
   border: none;
-  color: #0D1D42;
+  color: #0d1d42;
 }
 
 .courseBtn:hover,
@@ -117,5 +119,5 @@ select {
 
 .unsavedBtn:hover {
   background-color: rgb(255, 158, 30);
-  color: #0D1D42;
+  color: #0d1d42;
 }

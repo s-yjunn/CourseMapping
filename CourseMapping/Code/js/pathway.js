@@ -39,7 +39,7 @@ function getCurrentElements() {
  */
 function selectMajor() {
   getCurrentElements();
-  // Clear all existing lines, courseBlocks, and info message
+  // Clear all existing lines, courseBlocks, prereq option lists, and info message
   var items = $(currentPage).find(".courseBlock");
   for (let i = 0; i < items.length; i++) {
     items[i].remove();
@@ -47,6 +47,10 @@ function selectMajor() {
   var lines = $(currentPage).find(".arrowLine");
   for (let i = 0; i < lines.length; i++) {
     lines[i].remove();
+  }
+  var lists = $(currentPage).find(".prereqsOptions");
+  for (let i = 0; i < lists.length; i++) {
+    lists[i].remove();
   }
   clearCurrentPathway();
   info.textContent = "";
@@ -83,22 +87,32 @@ function getCourses() {
 
   // Create the courseBlocks, and store them
   for (var i = 0; i < requirements.length; i++) {
-    var course = document.createElement("div");
-    var courseName = requirements[i];
-    course.innerHTML = courseName;
-    course.className =
-      "courseBlock ui-widget-content " + courseName.split(" ").join("");
-    course.style.top = "15px";
-    course.style.left = "" + (i + 1) * 50 + "px";
-    $(pathwayContent).append(course);
-    course.style.display = "block";
-
-    var courseInfo = { location: null, type: "singular" };
-    storeEdits(-1, courseName, courseInfo); // Eventually change this so that the courses appear in correct order.
+    var position = "" + (i + 1) * 50 + "px";
+    createCourseBlock(requirements[i], position);
   }
 
   makeDraggable();
   getPaths();
+}
+
+/**
+ * Create the courseBlock and initialize it into currentPathway.
+ *
+ * @param {string} courseName
+ * @param {string} position of the courseBlock
+ */
+function createCourseBlock(courseName, position) {
+  var course = document.createElement("div");
+  course.innerHTML = courseName;
+  course.className =
+    "courseBlock ui-widget-content " + courseName.split(" ").join("");
+  course.style.top = "15px";
+  course.style.left = position;
+  $(pathwayContent).append(course);
+  course.style.display = "block";
+
+  var courseInfo = { location: null, type: "singular" };
+  storeEdits(-1, courseName, courseInfo); // Eventually change this so that the courses appear in correct order.
 }
 
 /**
@@ -121,6 +135,14 @@ function makeDraggable() {
       start: function () {
         xInitial = $(this).position().left + $(this).width() / 2;
         yInitial = $(this).position().top + $(this).height() / 2;
+
+        // Close the prequisite options menu (if the course has one) when dragging
+        var prereqList = currentPage.getElementsByClassName(
+          "list" + $(this).text().split(" ").join("")
+        )[0];
+        if (prereqList != null) {
+          prereqList.style.display = "none";
+        }
       },
       drag: function () {
         var dragged = $(this).attr("class");
@@ -205,6 +227,7 @@ function getPaths() {
 
     try {
       var prereqs = courseCatalog[department][userCourses[i].innerHTML].prereqs;
+      console.log(prereqs);
       // If there is no information of prereq for this course, print a message
     } catch (error) {
       var warning = document.createElement("p");
@@ -220,45 +243,63 @@ function getPaths() {
     // If there is at least one prereq, draw connection
     if (prereqs.length != 0) {
       var course2 = userCourses[i];
-      var course2Name = course2.className.replace(
-        "courseBlock ui-widget-content ",
-        ""
-      );
-      for (var j = 0; j < prereqs.length; j++) {
-        var course1Name = prereqs[j].split(" ").join("");
-        var course1 = currentPage.getElementsByClassName(course1Name)[0];
+      var course2Name = course2.className
+        .replace("courseBlock ui-widget-content ", "")
+        .replace(" ui-draggable ui-draggable-handle", "");
 
-        // If prereq is not in existing course blocks, print a notice
-        if (course1 == null) {
-          var warning = document.createElement("p");
-          var node = document.createTextNode(
-            "Prereq " +
-              prereqs[j] +
-              " for " +
-              course2.innerHTML +
-              " is not included in the path."
-          );
-          warning.appendChild(node);
+      console.log(Array.isArray(prereqs[0]));
+      // If there is more than 1 option to satisfy the prerequisite requirement for course2
+      if (Array.isArray(prereqs[0])) {
+        initPrereqOpts(course2, course2Name, prereqs, userCourses);
+      }
 
-          displayInfo(warning);
-          continue;
+      // If there is only 1 way to statisfy the prerequisite requirement for course2
+      else {
+        for (var j = 0; j < prereqs.length; j++) {
+          var course1Name = prereqs[j].split(" ").join("");
+          var course1 = currentPage.getElementsByClassName(course1Name)[0];
+
+          // If prereq is not in existing course blocks, print a notice
+          if (course1 == null) {
+            var warning = document.createElement("p");
+            var node = document.createTextNode(
+              "Prereq " +
+                prereqs[j] +
+                " for " +
+                course2.innerHTML +
+                " is not included in the path."
+            );
+            warning.appendChild(node);
+
+            displayInfo(warning);
+            continue;
+          }
+
+          // If prereq is an existing course block, create new line connection on svg
+          createLine(course1, course1Name, course2, course2Name);
         }
-
-        // If prereq is an existing course block, create new line connection on svg
-        var newPath = document.createElementNS(
-          "http://www.w3.org/2000/svg",
-          "line"
-        );
-
-        newPath.setAttribute("class", "arrowLine " + course1Name + course2Name);
-        newPath.setAttribute("x1", course1.style.left.slice(0, -2));
-        newPath.setAttribute("y1", course1.style.top.slice(0, -2));
-        newPath.setAttribute("x2", course2.style.left.slice(0, -2));
-        newPath.setAttribute("y2", course2.style.top.slice(0, -2));
-        map.appendChild(newPath);
       }
     }
   }
+}
+
+/**
+ * Draw the line on svg between course1 and course2.
+ *
+ * @param {HTMLElement} course1
+ * @param {string} course1Name
+ * @param {HTMLElement} course2
+ * @param {string} course2Name
+ */
+function createLine(course1, course1Name, course2, course2Name) {
+  var newPath = document.createElementNS("http://www.w3.org/2000/svg", "line");
+
+  newPath.setAttribute("class", "arrowLine " + course1Name + course2Name);
+  newPath.setAttribute("x1", course1.style.left.slice(0, -2));
+  newPath.setAttribute("y1", course1.style.top.slice(0, -2));
+  newPath.setAttribute("x2", course2.style.left.slice(0, -2));
+  newPath.setAttribute("y2", course2.style.top.slice(0, -2));
+  map.appendChild(newPath);
 }
 
 /**

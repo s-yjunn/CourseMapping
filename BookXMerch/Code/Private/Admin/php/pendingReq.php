@@ -7,7 +7,7 @@
         $loggedUser = $_SESSION["username"];
     } 
 
-    $reqsJSON = file_get_contents("../../Books/BookDefault/Pending/allPendingBooks.JSON");
+    $reqsJSON = file_get_contents("../../Books/BookDefault/Pending/allPendingBooks.json");
     $rowsAll= json_decode($reqsJSON, true);
     $rows = $rowsAll['requests'];
     if(sizeof($rows)==0) {

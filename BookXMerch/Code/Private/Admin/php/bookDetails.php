@@ -7,7 +7,7 @@ if(isset($_SESSION["name"])) {
   }
 
 $content = $_REQUEST['content'];
-$arrayOfBooks = file_get_contents("../../Books/BookDefault/Pending/allPendingBooks.JSON");
+$arrayOfBooks = file_get_contents("../../Books/BookDefault/Pending/allPendingBooks.json");
 $books = json_decode($arrayOfBooks, true);
 $booksArray = $books["requests"];
 $newArray = array();

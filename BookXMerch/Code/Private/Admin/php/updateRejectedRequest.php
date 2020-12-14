@@ -5,7 +5,7 @@
     $fn  = $_POST['fn'];
     $toRemove  = $_POST['toRemove'];
 
-    $testJSON = file_get_contents("../../Books/BookDefault/Pending/allPendingBooks.JSON");
+    $testJSON = file_get_contents("../../Books/BookDefault/Pending/allPendingBooks.json");
     $rowsAll= json_decode($testJSON, true);
     $rows = $rowsAll['requests'];
     $new = [];
@@ -27,5 +27,5 @@
     $rows=$new;
     $rowsAll["requests"]=$new;
     $resJSON = json_encode($rowsAll, JSON_PRETTY_PRINT);
-    file_put_contents("../../Books/BookDefault/Pending/allPendingBooks.JSON", $resJSON);
+    file_put_contents("../../Books/BookDefault/Pending/allPendingBooks.json", $resJSON);
 ?>

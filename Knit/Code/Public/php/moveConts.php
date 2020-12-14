@@ -4,21 +4,21 @@ $comp = file_get_contents("../data/contest.json");
 $compData = json_decode($comp, true);
 $currentSubs = $compData["submissions"];
 $numCur = count($currentSubs);
-
+//get selected subs
 $potentialSubs = $_POST['currentSubs'];
-
+//num selected subs
 $numPtn = count($potentialSubs);
 
 $move = [];
-
+//move index
 $j = 0;
-
+//loop subs
 for($i = 0; $i < $numPtn; $i++){
-
+    //if sub is in $potentialSubs
     if(in_array($currentSubs[$i]["author"]."/".$currentSubs[$i]["title"], $potentialSubs)){
-
+        //more to move srray
         $move[$j] = $currentSubs[$i];
-
+        //inc
         $j++;
 
     }    
@@ -26,15 +26,15 @@ for($i = 0; $i < $numPtn; $i++){
 }
 
 $submissions = [];
-
+//submissions index
 $h = 0;
 
 for($i = 0; $i < $numCur; $i++){
-
+    //if sub was not selected
     if(!(in_array($currentSubs[$i], $move))){
-
+        //keep in submissions
         $submissions[$h] = $currentSubs[$i];
-
+        //inc index
         $h++;
 
     }
@@ -58,7 +58,5 @@ for($i = 0; $i < count($move); $i++){
 $jsondata = json_encode($compData, true);
 
 file_put_contents("../data/contest.json", $jsondata);
-
-header("Location: ../index.php");
 
 ?>

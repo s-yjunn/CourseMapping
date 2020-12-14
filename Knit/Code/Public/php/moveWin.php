@@ -47,6 +47,7 @@ for($i = 0; $i < $numWinners; $i++){
 
 if($numWinners < count($ordered)){
     for($m = $numWinners; $m < count($ordered); $m++){
+        //echo $ordered[$m]["votes"]."\n";
         //if there is a tie
         if($ordered[$m]["votes"] == $winners[$numWinners - 1]["votes"]){
             //add to array

@@ -12,13 +12,13 @@ $numPtn = count($deleteSubs);
 $move = [];
 
 $j = 0;
-
+//loop through num subs to be deleted
 for($i = 0; $i < $numPtn; $i++){
-
+    //if sub was selected
     if(in_array($currentSubs[$i]["author"]."/".$currentSubs[$i]["title"], $deleteSubs)){
-
+        //move
         $move[$j] = $currentSubs[$i];
-
+        //inc
         $j++;
 
     }    
@@ -47,8 +47,9 @@ for($i = 0; $i < $numCur; $i++){
     }
     else{
 
-        $delete[$k] = $currentSubs[$i]["image"];
-
+        if(!in_array($currentSubs[$i]["image"], $delete)){
+            $delete[$k] = $currentSubs[$i]["image"];
+        }
     }
 
 }
@@ -66,7 +67,5 @@ $compData["submissions"] = $submissions;
 $jsondata = json_encode($compData, true);
 
 file_put_contents("../data/contest.json", $jsondata);
-
-header("Location: ../index.php");
 
 ?>

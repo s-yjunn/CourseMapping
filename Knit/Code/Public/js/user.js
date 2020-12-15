@@ -168,7 +168,7 @@ function deletePattern(username, index) {
         data: {uname: username, index: index},
         success: function(response) {
             // if something went wrong,
-            if (response = 0) {
+            if (response == 0) {
                 // let the user know
                 $("#uPaDiv").html("<p class='alert alert-danger' role='alert'>Unable to delete pattern.</p>");
             // otherwise,
@@ -189,7 +189,15 @@ function deletePattern(username, index) {
     });
 }
 
+// this function loads the user's inbox (first open)
+function openUserInbox(uname) {
+    $("#userInbox").load("php/user/userInbox.php?uname=" + uname, function(){
+        hide("userHome");
+        show("userInbox");
+    });
+}
+
 // this function updates the user's inbox
-function refreshUserInbox() {
-    $("#userInbox").load(location.href+" #userInbox>*","");
+function refreshUserInbox(uname) {
+    $("#userInbox").load("php/user/userInbox.php?uname=" + uname);
 }

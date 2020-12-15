@@ -15,15 +15,13 @@
 
 <div id = "userHome">
     <h4><i class="fas fa-user"></i> <?= $username; ?></h4>
-    <button class="btn1" onclick="hide('userHome'); show('userInbox')"><span class="btnTitle">Inbox</span><br><span class="btnText">View messages from site admin.</span></button>
+    <button class="btn1" onclick="openUserInbox('<?= $username; ?>')"><span class="btnTitle">Inbox</span><br><span class="btnText">View messages from site admin.</span></button>
     <button class="btn1" onclick="hide('userHome'); show('userProfile')"><span class="btnTitle">Profile</span><br><span class="btnText">View and customize public profile.</span></button>
     <button class="btn1" onclick="hide('userHome'); show('userPatterns')"><span class="btnTitle">Patterns</span><br><span class="btnText">View and manage saved patterns.</span></button>
 </div>
 
-<!-- this div contains the profile functions -->
-<div id = "userInbox">
-    <?php include "php/user/userInbox.php"; ?>
-</div>
+<!-- this div is filled by php/user/userInbox.php -->
+<div id = "userInbox"></div>
 
 <!-- this div contains the profile functions -->
 <div id = "userProfile">

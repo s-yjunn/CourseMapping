@@ -1,9 +1,13 @@
 <?php
-  // This file generates the "Inbox" page (included within the user account tab)
+  // This file generates the "Inbox" page (loaded into the user account tab)
   // @author Isabel
-  // Last modified 12/7/2020
+  // Last modified 12/14/2020
 
-  $messages = json_decode(file_get_contents($userFolder . "messages.json"), true);
+  $username = $_GET["uname"];
+
+  $path = "../../../Private/$username/messages.json";
+
+  $messages = json_decode(file_get_contents($path), true);
 
   // get the current list of messages
   $unread = $messages["unread"];
@@ -14,13 +18,13 @@
   $messages["read"] = array_merge($unread, $read);
 
   // update the json file
-  file_put_contents($userFolder . "messages.json", json_encode($messages));
+  file_put_contents($path, json_encode($messages));
 ?>
 
 <button class="btn1" onclick="hide('userInbox'); show('userHome')"><i class="fas fa-arrow-left"></i> Back</button><br><br>
 
 <div id = "userInboxContent">
-  <h4>Inbox <button class="btn1 btnIcon float-right" type="button" onclick="refreshUserInbox()"><i class="fas fa-redo-alt fa-xs"></i></button></h4>
+  <h4>Inbox <button class="btn1 btnIcon float-right" type="button" onclick="refreshUserInbox('<?= $username; ?>')"><i class="fas fa-redo-alt fa-xs"></i></button></h4>
   
   <div class="refresh">
   <!--reload button.-->

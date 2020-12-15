@@ -87,8 +87,7 @@ function getCourses() {
 
   // Create the courseBlocks, and store them
   for (var i = 0; i < requirements.length; i++) {
-    var position = "" + (i + 1) * 50 + "px";
-    createCourseBlock(requirements[i], position);
+    createCourseBlock(requirements[i], i);
   }
 
   makeDraggable();
@@ -99,13 +98,18 @@ function getCourses() {
  * Create the courseBlock and initialize it into currentPathway.
  *
  * @param {string} courseName
- * @param {string} position of the courseBlock
+ * @param {number} count how many courses are already added to the bar
+ * Used to determine the position for this one.
+ * @returns the created course block
  */
-function createCourseBlock(courseName, position) {
+function createCourseBlock(courseName, count) {
+  var position = "" + (count + 1) * 50 + "px";
   var course = document.createElement("div");
   course.innerHTML = courseName;
+  var nameNoWhitespace = courseName.split(" ").join("");
+  course.id = nameNoWhitespace;
   course.className =
-    "courseBlock ui-widget-content " + courseName.split(" ").join("");
+    "courseBlock ui-widget-content " + nameNoWhitespace;
   course.style.top = "15px";
   course.style.left = position;
   $(pathwayContent).append(course);
@@ -113,6 +117,7 @@ function createCourseBlock(courseName, position) {
 
   var courseInfo = { location: null, type: "singular" };
   storeEdits(-1, courseName, courseInfo); // Eventually change this so that the courses appear in correct order.
+  return course;
 }
 
 /**
@@ -162,7 +167,6 @@ function makeDraggable() {
         var courseName = $(this).text();
         var courseInfo =
           currentPathway["sem_" + initSemNum]["nodes"][courseName];
-        console.log(currentPathway);
         // Update y-pos of location:
         courseInfo["location"] = yPos;
 

@@ -84,6 +84,34 @@ svg {
   position: absolute;
 }
 
+/* Short animation to highlight lines to courses that the user just added */
+.arrowLine.show {
+  /* Add animation: Takes 0.7 second to show up then disapear. */
+  -webkit-animation: comeIn 0.7s, fadeOut 0.7s;
+  animation: comeIn 0.7s, fadeOut 0.7s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes comeIn {
+  from {top: -2em; opacity: 0;}
+  to {top: 2em; opacity: 1;}
+} 
+
+@keyframes comeIn {
+  from {top: -2em; opacity: 0;}
+  to {top: 2em; opacity: 1;}
+}
+
+@-webkit-keyframes fadeOut {
+  from {top: 2em; opacity: 1;}
+  to {top: -2em; opacity: 0;}
+}
+
+@keyframes fadeOut {
+  from {top: 2em; opacity: 1;}
+  to {top: -2em; opacity: 0;}
+}
+
 select {
   width: 30%;
   padding: 16px 20px;

@@ -15,7 +15,6 @@
     top: 0px; /* Comes from the top of the page*/
   }
   
-  /* Show the snackbar when clicking on a button (class added with JavaScript) */
   #messagebar.show {
     visibility: visible; /* Show the snackbar */
     /* Add animation: Take 0.5 seconds to fade in and out the snackbar.

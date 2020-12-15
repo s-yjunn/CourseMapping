@@ -29,18 +29,11 @@ $target_file = $target_dir . basename($filename);
 $fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
 if($fileType == 'txt') {
-  $file = "../temp/" . basename($filename);
-  if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"][$i], $file)) {
-
-    $desc = file_get_contents($file);
-
-    unlink($file);
-
-    $txtPresent = true;
-
+  $desc = file_get_contents($_FILES["fileToUpload"]["tmp_name"][$i]);
+  $txtPresent = true;
   continue;
 
-}} else if($fileType == 'jpg' || $fileType == 'png' || $fileType == 'gif'){
+} else if($fileType == 'jpg' || $fileType == 'png' || $fileType == 'gif'){
   
 
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"][$i], $target_file)) {

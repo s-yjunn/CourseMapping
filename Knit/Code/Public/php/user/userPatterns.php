@@ -6,7 +6,8 @@
   // getting the patterns' data
   $patterns = $userData["patterns"];
 ?>
-<button class="btn1" onclick="hide('userPatterns'); show('userHome')"><i class="fas fa-arrow-left"></i> Back</button><br><br>
+<img src="imgs/quizzes/backbutton.jpg" alt="back button" class="backBtnImg" onclick="hide('userPatterns'); show('userHome')"><br><br>
+
 <div id="userPatternsContent">
 	<h4>Patterns</h4>
 	<?php if (count($patterns) == 0): ?>

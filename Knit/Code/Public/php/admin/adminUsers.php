@@ -10,7 +10,7 @@
   $nrUsers = count($usersData);
 ?>
 
-<button class="btn1" onclick="hide('adminUsers'); show('adminHome')"><i class="fas fa-arrow-left"></i> Back</button>
+<img src="imgs/quizzes/backbutton.jpg" alt="back button" class="backBtnImg" onclick="hide('adminUsers'); show('adminHome')">
 <div class = "section refresh" id = "adminUserList">
   <h4>Users <button class="btn1 btnIcon float-right" type="button" onclick="refreshAdminUsers()"><i class="fas fa-redo-alt fa-xs"></i></button></h4>
   <!-- reload button -->

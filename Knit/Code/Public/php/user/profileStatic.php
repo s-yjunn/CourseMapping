@@ -35,7 +35,7 @@
   }
 ?>
 
-<a href ="#<?= $fromLink; ?>" onclick="hide('<?= $to; ?>'); show('<?= $from; ?>')"><button class="btn1"><i class="fas fa-arrow-left"></i> Back</button></a><br><br>
+<a href ="#<?= $fromLink; ?>" onclick="hide('<?= $to; ?>'); show('<?= $from; ?>')"><img src="imgs/quizzes/backbutton.jpg" alt="back button" class="backBtnImg"></a><br><br>
 
 <div class="profile">
     <div class="introSection">

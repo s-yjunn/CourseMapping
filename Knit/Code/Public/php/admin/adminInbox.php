@@ -20,7 +20,7 @@
   file_put_contents($path, json_encode($messages));
 ?>
 
-<button class="btn1" onclick="hide('adminInbox'); show('adminHome')"><i class="fas fa-arrow-left"></i> Back</button><br><br>
+<img src="imgs/quizzes/backbutton.jpg" alt="back button" class="backBtnImg" onclick="hide('adminInbox'); show('adminHome')"><br><br>
 
 <div id = "userInboxContent">
   <h4>Inbox <button class="btn1 btnIcon float-right" type="button" onclick="refreshAdminInbox()"><i class="fas fa-redo-alt fa-xs"></i></button></h4>

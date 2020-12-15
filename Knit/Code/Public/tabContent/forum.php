@@ -22,8 +22,8 @@
     <button class="btn1" type="button" onclick=<?=$showCompose; ?>><i class="fas fa-user-edit"></i> Write a post</button>
 
     <!-- forum search bar -->
-    <input type = "text" id = "forumSearchQ" placeholder = "Your search query">
-    <button type ="button" class = "btn1" onclick = "searchForum()"><i class="fas fa-search"></i> Search the forum</button>
+    <input type = "text" id = "forumSearchQ" placeholder = "Search the forum...">
+    <button type ="button" class = "btn1" onclick = "searchForum()"><i class="fas fa-search"></i> Search</button>
 
     <!-- Any status updates go here -->
     <span id = "forumDiv"></span>
@@ -50,8 +50,11 @@
 
   <!-- div for search results -->
   <div id = "forumSearch">
-    <button class="btn1" type="button" onclick="hide('forumSearch'); show('forumHome'); $('#forumSearchQ').val('');"><i class="fas fa-arrow-left"></i> Back</button>
-
+	<img src="imgs/quizzes/backbutton.jpg" alt="back button" class="backBtnImg" onclick="hide('forumSearch'); show('forumHome'); $('#forumSearchQ').val('');">
+	
+ 
+	<div id = "forumSearchContent">
+ 
     <!-- title filled when called upon-->
     <h4 id = "fSearchTitle"></h4>
     <form>
@@ -66,6 +69,7 @@
     <!-- actual result: : filled by php/forum/searchList.php-->
     <div id = "searchList"></div>
   </div>
+</div>
 
   <!--This div is filled by "php/forum/post.php" whenever a post is called on-->
   <div id = "forumPost"></div>

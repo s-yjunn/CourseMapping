@@ -3,7 +3,7 @@
   <div id="QuizHome">
   <h3 class="underline">Quizzes</h3>
   
-  <div id="all">
+  <div id="all" class="refresh">
   <p id="four" class="quizThumbnail">Take this quiz to test your knitting trivia!</p>
   <br><br>
     

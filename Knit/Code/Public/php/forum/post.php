@@ -42,8 +42,7 @@
   $canDelete = $loggedIn & ($isAdmin || $username === $post["author"]);
 ?>
 
-<button class="btn1" type="button" onclick="hide('forumPost'); show('<?= $from; ?>')"><i class="fas fa-arrow-left"></i> Back</button>
-
+<img src="imgs/quizzes/backbutton.jpg" alt="back button" class="backBtnImg" onclick="hide('forumPost'); show('<?= $from; ?>')">
 
 <!--The post itself-->
 <div id="mainPost">

@@ -1,5 +1,5 @@
 /* TAB BAR */
-.tab, .tablinks {
+.navbar, .tab, .tablinks {
 	background-color: rgb(239, 35, 60);
 }
 .navbar-brand {

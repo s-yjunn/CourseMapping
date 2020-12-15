@@ -1,6 +1,6 @@
 <div id="Pattern" class="tabcontent">
 	<h3 class="underline">Pattern Maker</h3>
-	<div id = "patternMkrIntake">
+	<div id = "patternMkrIntake" class="refresh">
 		<h4>Create a Grid</h4>
 		<form>
 			<p>How large is your project (rows x stitches per row)?</p>
@@ -10,7 +10,7 @@
 		<span id = "intakeFeedback"></span>
 	</div>
 
-	<div id = "patternMkrGrid">
+	<div id = "patternMkrGrid" class="refresh">
 	<button class="btn1" onclick="restartPatternMkr()"><i class="fas fa-arrow-left"></i> Start over</button>
 		<div class="row justify-content-center">
 			<div id="colorPalette" class="col-xs-1">

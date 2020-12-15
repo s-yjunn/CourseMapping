@@ -16,17 +16,6 @@
 	transition: color 0.4s ease, border 0.4s ease;
 }
 
-.backBtnImg {
-	width: 200px;
-	left: 0;
-	margin-bottom: 2rem;
-	transition: opacity 0.4s;
-}
-.backBtnImg:hover {
-	cursor: pointer;
-	opacity: 0.7;
-}
-
 .quiz h4 {
 	font-size: 3rem;
 	text-align: center;
@@ -84,17 +73,17 @@
 	background-color: white;
 	transition: 0.2s;
 }
+.quiz-answer.correct, .quiz-answer.incorrect {
+	color: white;
+	font-weight: bold;
+}
 .quiz-answer.correct {
-  background-color: green;
-  border-color: green;
+  background-color: rgb(179,204,87);
+  border: none;
 }
 .quiz-answer.incorrect {
-  background-color: red;
-  border-color: red;
-}
-.quiz-answer.active.correct {
-  outline: 2px solid green;
-  outline-offset: 2px;
+  background-color: rgb(255,78,80);
+  border: none;
 }
 /*.quiz-answer:before {
   content: "";
@@ -124,18 +113,19 @@
 }*/
 .quiz-result {
   max-width: 960px;
-  margin: 0 auto;
+  margin: 2rem auto;
   font-weight: bold;
   text-align: center;
+  border-radius: 0.4rem;
   color: #fff;
   padding: 20px;
 }
 .quiz-result.good {
-  background: green;
+  background: rgb(179,204,87);
 }
 .quiz-result.mid {
-  background: orange;
+  background: rgb(255,190,64);
 }
 .quiz-result.bad {
-  background: red;
+  background: rgb(255,78,80);
 }

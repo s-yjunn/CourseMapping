@@ -23,7 +23,7 @@
   }
 ?>
 
-<button class="btn1" onclick="hide('userProfile'); show('userHome')"><i class="fas fa-arrow-left"></i> Back</button>
+<img src="imgs/quizzes/backbutton.jpg" alt="back button" class="backBtnImg" onclick="hide('userProfile'); show('userHome')"><br><br>
 
 <div class = "profile">
     <div class="introSection">

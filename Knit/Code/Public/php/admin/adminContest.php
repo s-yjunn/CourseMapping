@@ -1,10 +1,11 @@
-<button class="btn1" onclick="hide('adminContest'); show('adminHome')"><i class="fas fa-arrow-left"></i> Back</button><br><br>
+<img src="imgs/quizzes/backbutton.jpg" alt="back button" class="backBtnImg" onclick="hide('adminContest'); show('adminHome')"><br><br>
+
 
 <h4>Contest</h4>
 
 <div class="section"  id="section1">
   
-<h4>Approve</h4>
+<h5>Approve</h5>
 <?php 
 
 $comp = file_get_contents("data/contest.json");
@@ -35,15 +36,16 @@ if($numSubs > 0):?>
         <p>There are currently no new submissions.</p>
 <?php endif;?>
 
-</div>
-
 <?php if($numSubs > 0):?>
     <button class="btn1" id="approve">Approve</button>
 <?php endif; ?>
 
+
+</div>
+
 <div class="section" id="section2">
 
-<h4>Delete</h4>
+<h5>Delete</h5>
 
 <ul style="list-style-type:square;">
      <?php for($i = 0; $i < $numSubs; $i++):?>
@@ -66,14 +68,15 @@ if($numSubs > 0):?>
     <?php else:?>
         <p>No submissions available. Check again later.</p>
 <?php endif; ?>
-</div>
+
 <?php if($numSubs > 0):?>
 <button class="btn1" id="delete">Delete</button>
 <?php endif; ?>
 
+</div>
 
 <div class="section" id="section3">
-<h4>Preview Winners</h4>
+<h5>Preview Winners</h5>
 
 <?php 
 $comp = file_get_contents("data/contest.json");
@@ -93,16 +96,18 @@ if($numCont == 0):?>
      <?php endfor; ?>
      </ul>    
      <?php endif;?>
-     </div>
-<?php //if($numCont > 0):?>
-<p>How many winners do you want there to be?</p>
-<form  name="numWin">
-<input type="number" id="numWinners" name="numWinners" min="1" max="<?= $numCont ?>">
-</form>
-<br><br>
-<button class="btn1" id="showWin">Preview Winners</button>
-<button class="btn1" id="confirm" style="display: none;">Confirm Winners</button>
-<?php //endif; ?>
+	 
+	 <?php //if($numCont > 0):?>
+	 <p>How many winners do you want there to be?</p>
+	 <form  name="numWin">
+	 <input type="number" id="numWinners" name="numWinners" min="1" max="<?= $numCont ?>">
+	 </form>
+	 <br>
+	 <button class="btn1" id="showWin">Preview Winners</button>
+	 <button class="btn1" id="confirm" style="display: none;">Confirm Winners</button>
+	 <?php //endif; ?>
+	
+ </div>
 
 
     

@@ -21,7 +21,7 @@
   file_put_contents($path, json_encode($messages));
 ?>
 
-<button class="btn1" onclick="hide('userInbox'); show('userHome')"><i class="fas fa-arrow-left"></i> Back</button><br><br>
+<img src="imgs/quizzes/backbutton.jpg" alt="back button" class="backBtnImg" onclick="hide('userInbox'); show('userHome')"><br><br>
 
 <div id = "userInboxContent">
   <h4>Inbox <button class="btn1 btnIcon float-right" type="button" onclick="refreshUserInbox('<?= $username; ?>')"><i class="fas fa-redo-alt fa-xs"></i></button></h4>

@@ -201,3 +201,35 @@ function openUserInbox(uname) {
 function refreshUserInbox(uname) {
     $("#userInbox").load("php/user/userInbox.php?uname=" + uname);
 }
+
+// This function handles the client side of sending a message to site admin
+// textElm -- id of the textarea that contains the message
+// feedbackElm -- id of the div we can give feedback to the user in 
+// (variable because messages can be sent from "help" or user inbox)
+// from -- the message's sender (default value indicates non-logged in visitor)
+function messageToAdmin(textElm, feedbackElm, from = "") {
+    var message = $("#" + textElm).val().trim();
+    if (message == "") {
+      $("#" + feedbackElm).html("<p class='alert alert-danger' role='alert'>Please enter a message.</p>");
+    } else {
+      // send the request to the processing file
+      $.ajax({
+        type: "POST",
+        url: "php/user/messageToAdmin.php",
+        data: {text: message, from: from},
+        success: function(response) {
+          // if we get a failure message
+          if (response == 0) {
+            // let the user know
+            $("#" + feedbackElm).html("<p class='alert alert-danger' role='alert'>Unable to send message.</p>");
+            // if successful,
+          } else {
+            // let the user know
+            $("#" + feedbackElm).html("<p class='alert alert-info' role='alert'>Your message was sent.</p>");
+            // Clear the composition area
+            $("#" + textElm).val("");
+          }
+        }
+      });
+    }
+  }

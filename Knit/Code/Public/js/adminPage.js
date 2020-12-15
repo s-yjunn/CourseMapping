@@ -13,9 +13,9 @@ function refreshAdminUsers() {
 // from -- the message's sender (currently logged in admin)
 function showAdminCompose(to, from) {
   // Give the admin some customized guidance
-  $("#adminMsg").attr("placeholder","Write your message to " + to);
+  $("#msgToUser").attr("placeholder","Write your message to " + to);
   // Set the onclick to send the message to the right user
-  $("#sendMsgBtn").attr("onclick","sendMessage('" + to + "', '" + from + "')");
+  $("#msgToUserBtn").attr("onclick","messageToUser('" + to + "', '" + from + "')");
   // Open the composition div
   show("adminCompose");
 }
@@ -25,23 +25,23 @@ function cancelAdminCompose() {
   // Close the composition div
   hide("adminCompose");
   // Clear the composition area
-  $("#adminMsg").val("");
+  $("#msgToUser").val("");
   // clear any previous feedback
-  $("#adminMsgFeedback").html("");
+  $("#msgToUserFeedback").html("");
 }
 
 // this function handles the client side of sending a message to a user
 // to -- the message's intended recipient
 // from -- the message's sender (currently logged in admin)
-function sendMessage(to, from) {
-  var message = $("#adminMsg").val().trim();
+function messageToUser(to, from) {
+  var message = $("#msgToUser").val().trim();
   if (message == "") {
-    $("#adminMsgFeedback").html("<p class='alert alert-danger' role='alert'>Please enter a message.</p>");
+    $("#msgToUserFeedback").html("<p class='alert alert-danger' role='alert'>Please enter a message.</p>");
   } else {
     // send the request to the processing file
     $.ajax({
       type: "POST",
-      url: "php/admin/sendMessage.php",
+      url: "php/admin/messageToUser.php",
       data: {text: message, to: to, from: from},
       success: function(response) {
         // if we get a failure message
@@ -58,4 +58,17 @@ function sendMessage(to, from) {
       }
     });
   }
+}
+
+// this function loads the admin inbox (first open)
+function openAdminInbox() {
+  $("#adminInbox").load("php/admin/adminInbox.php", function(){
+    hide("adminHome");
+    show("adminInbox");
+  });
+}
+
+// update the admin inbox {
+function refreshAdminInbox() {
+  $("#adminInbox").load("php/admin/adminInbox.php");
 }

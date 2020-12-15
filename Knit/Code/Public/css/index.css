@@ -92,5 +92,18 @@ input[type=button] {
 	overflow: auto;
 }
 
-.floatDiv {
+/* footer - copied old footer css*/
+.footer {
+	text-align: center;
+	font-size: 12px;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: white;
+}
+
+/*HELP!*/
+#helpManual, #helpAdmin {
+	display: none;
 }

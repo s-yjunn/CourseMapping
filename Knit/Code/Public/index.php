@@ -133,9 +133,16 @@
 	?>
 </div>
 
-<!--<div class="footer">
-	<p>© 2020, Intarsia Inc.</p>
-</div>-->
+<!-- user manual popup-->
+<div id = "Help" class = "dark">
+	<div class = "float">
+		<?php include "php/help.php"; ?>
+	</div>
+</div>
+
+<div class="footer">
+	<p>© 2020, Intarsia Inc. <a onclick = "show('Help')">HELP (I'm a link!)</a></p>
+</div>
 
 <script src="js/tabs.js"></script>
 <script src="js/showHide.js"></script>

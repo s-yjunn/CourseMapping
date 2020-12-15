@@ -61,9 +61,9 @@
 
 <div id = "adminCompose" class = "dark">
   <div class = "float">
-    <textarea class = "messageCompose" id = "adminMsg"></textarea><br><br>
-    <button class = "btn1" id = "sendMsgBtn">Send</button>
+    <textarea class = "messageCompose" id = "msgToUser"></textarea><br><br>
+    <button class = "btn1" id = "msgToUserBtn">Send</button>
     <button class = "btn1" onclick = "cancelAdminCompose()">Cancel</button><br><br>
-    <span id = "adminMsgFeedback"></span>
+    <span id = "msgToUserFeedback"></span>
   </div>
 </div>

@@ -4,7 +4,7 @@
 
 <div class="section"  id="section1">
   
-<h5>Approve</h5>
+<h4>Approve</h4>
 <?php 
 
 $comp = file_get_contents("data/contest.json");
@@ -30,16 +30,20 @@ if($numSubs > 0):?>
     <?php  endfor;?>
     <br>
     </select></form>
-    <button class="btn1" id="approve">Approve</button>
+    
     <?php else:?>
         <p>There are currently no new submissions.</p>
 <?php endif;?>
 
 </div>
 
+<?php if($numSubs > 0):?>
+    <button class="btn1" id="approve">Approve</button>
+<?php endif; ?>
+
 <div class="section" id="section2">
 
-<h5>Delete</h5>
+<h4>Delete</h4>
 
 <ul style="list-style-type:square;">
      <?php for($i = 0; $i < $numSubs; $i++):?>
@@ -59,14 +63,17 @@ if($numSubs > 0):?>
     <?php  endfor;?>
     <br>
     </select></form>
-    <button class="btn1" id="delete">Delete</button>
     <?php else:?>
         <p>No submissions available. Check again later.</p>
-<?php endif;?>
-
+<?php endif; ?>
 </div>
+<?php if($numSubs > 0):?>
+<button class="btn1" id="delete">Delete</button>
+<?php endif; ?>
+
+
 <div class="section" id="section3">
-<h5>Preview Winners</h5>
+<h4>Preview Winners</h4>
 
 <?php 
 $comp = file_get_contents("data/contest.json");
@@ -78,7 +85,6 @@ if($numCont == 0):?>
 
     <p>There are currently no approved contestants.</p>
 
-
 <?php else:?>
     <p>Current contestants:</p>
      <ul style="list-style-type:square;">
@@ -86,8 +92,9 @@ if($numCont == 0):?>
         <li><a href="imgs/contest/<?=$currentConts[$i]["image"]?>" target="_blank"><?=$currentConts[$i]["author"]."/".$currentConts[$i]["title"]?></a><br /></li>
      <?php endfor; ?>
      </ul>    
-     <?php endif;
- if($numCont > 0):?>
+     <?php endif;?>
+     </div>
+<?php //if($numCont > 0):?>
 <p>How many winners do you want there to be?</p>
 <form  name="numWin">
 <input type="number" id="numWinners" name="numWinners" min="1" max="<?= $numCont ?>">
@@ -95,8 +102,8 @@ if($numCont == 0):?>
 <br><br>
 <button class="btn1" id="showWin">Preview Winners</button>
 <button class="btn1" id="confirm" style="display: none;">Confirm Winners</button>
-<?php endif; ?>
-</div>
+<?php //endif; ?>
+
 
     
 <div id="preview"></div></div>

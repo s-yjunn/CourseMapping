@@ -2,12 +2,13 @@
 <div class="slideshow-container">
 
 <?php
-    $comp = file_get_contents("data/contest.json");
+    $comp = file_get_contents("../data/contest.json");
     $compData = json_decode($comp, true);
     $pendingData = $compData["pending"];
-    $numPen = count($pendingData);
+    $numPen = count($compData["pending"]);
 
-    if ($numPen == 0): ?>
+    if (count($compData["pending"]) == 0): 
+    echo  $numPen ?>
         <p>No valid winners available. Please try again.</p>
     <?php else:
         for($i = 0; $i < $numPen; $i++): 

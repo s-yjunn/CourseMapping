@@ -168,8 +168,8 @@ $loggedUser = $_SESSION["name"];
             </div>
         </div>
         <hr>
-        <div class="barCol"> <a href="#"> <b> Rate this book</b></a>   (CURRENT RATING: <?php echo $rating?> ★ ) </div>
-        <hr>
+        <!-- <div class="barCol"> <a href="#"> <b> Rate this book</b></a>   (CURRENT RATING:  ★ ) </div>
+        <hr> -->
         <div class="barCol"> <a href="newReview.php?content=<?php echo $bookid;?>" > <b> Review this book</b></a></div>
         <hr>
         

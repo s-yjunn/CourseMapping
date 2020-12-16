@@ -22,18 +22,13 @@
             "password": "adminuser",
             "readingList": [
                 [
-                    "1120",
-                    "The Space Between Worlds",
-                    "Completed"
-                ],
-                [
-                    "1121",
-                    "Pride and Prejudice",
-                    "Completed"
-                ],
-                [
                     "1124",
                     "The Ladies' Paradise",
+                    "In-progress"
+                ],
+                [
+                    "1113",
+                    "Daredevil (1964-1998) #1",
                     "Not-Started"
                 ]
             ],

@@ -1,6 +1,5 @@
 <?php
-// This script "sends" a message to a user's inbox
-// For now only admins have access to this functionality
+// This script "sends" a message to the admin inbox
 // @author Isabel
 
 // Get message basics -- contents, recipient, sender
@@ -18,7 +17,6 @@ $message = [
   "text" => $text,
   "from" => $from,
   "sent" => $sent,
-  "answered" => false // default to unanswered
 ];
 
 // get admin's current inbox

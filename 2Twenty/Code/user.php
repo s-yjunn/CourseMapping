@@ -12,6 +12,8 @@ $portrait   = (getUserImage($_GET["id"]));
 $joined     = (getUserJoined($_GET["id"]));
 $info       = (getUserInfo($_GET["id"]));
 
+// Written by Sasha, restructured by Max
+
 if (isset($_POST["title"], $_POST["image_url"], $_POST["tags"], $_POST["description"], $_POST["price"])) {
     if ((!empty($_POST["title"]) && !empty($_POST["image_url"]) && !empty($_POST["tags"]) && !empty($_POST["description"]) && !empty($_POST["price"])) && (trim($_POST["title"] !== '') && trim($_POST["image_url"] !== '') && trim($_POST["tags"] !== '') && trim($_POST["description"] !== '') && trim($_POST["price"] !== ''))) {
         if (uploadItems($_POST["title"], $_POST["image_url"], $_POST["tags"], $_POST["description"], $_POST["price"]))

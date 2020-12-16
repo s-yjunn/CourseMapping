@@ -21,6 +21,7 @@ function handle_login($uname, $pass)
     
 }
 
+//written by sasha
 function handle_registration($uname, $pass)
 {
     include("db_connect.php");

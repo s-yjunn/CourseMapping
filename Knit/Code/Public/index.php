@@ -97,12 +97,12 @@
 </div>
 </div>
 <!-- HOME TAB CONTENT -->
-<div id="Welcome" class="tabcontent container-fluid h-100" style="background-image: url('imgs/bg.jpg'); background-size: cover">
+<div id="Welcome" class="tabcontent container-fluid h-100">
 	<div class="row justify-content-center">
 		<div class="welcomeContainer col-xs-12 col-md-8">
 			<h1>Knitty Gritty</h1>
 			<p class="slogan">Sew it seams you've gotten to the knitty gritty.</p>
-			<p>Knitty Gritty is an interactive site for knitters. Visitors can view patterns and forum posts and vote in a “best of the week” competition featuring user submitted knit patterns. Registered users, in addition to these features, can submit patterns to the “best of the week” competition, create and save grid visualizations of patterns, customize a public profile, and contribute posts and responses to the forum.</p>
+			<p>This is an interactive site for knitters. Visitors can view patterns and forum posts, create and download grid visualizations of patterns, and vote in a contest featuring user-submitted patterns. Registered users can additionally enter the pattern competition, save grid patterns to their account, customize a public profile, and contribute posts and responses to the forum. Click the "help" link at the bottom of the page at any time to get instructions on how to navigate the site or send a message to our administrators.</p>
 		</div>
 	</div>
 </div>

@@ -1,6 +1,6 @@
 <?php
   // This file generates the "Profile" page (included within the user account tab)
-  // @author Isabel
+  // @author Isabel + styling by Alexis
   // Last modified 12/7/2020
 
   $userData = $usersData[$username];

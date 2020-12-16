@@ -1,7 +1,7 @@
 <?php
   // This file formats a pattern submission given its index in the json file
   // (loaded into the contest voting/ winners pages)
-  // @author Isabel
+  // @author Isabel + styling by Alexis
 
   //Get all posts (since this is called from outside contest proper)
   $compData = json_decode(file_get_contents("../data/contest.json"), true);

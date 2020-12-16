@@ -1,9 +1,14 @@
+/* This file handles functionality of the pattern maker
+@author Alexis (with additions by Isabel as indicated)
+many parts and general structure of this code adapted from https://jsfiddle.net/codepo8/V6ufG/2/
+Last modified 12/16/2020 */
+
 ////// SETTING UP //////
 
 // establish variables (and set static ones)
 var canvas = document.getElementById('canvas'),
-  context = canvas.getContext('2d'),
-  mouseX = 0,
+	context = canvas.getContext('2d'),
+	mouseX = 0,
 	mouseY = 0,
 	appxGridWidth = 500, // *approximate* dimensions of canvas GRID (excluding numbers)
 	appxGridHeight = 500,
@@ -12,7 +17,7 @@ var canvas = document.getElementById('canvas'),
 	gridDiv, // gridWidth (or gridHeight) divided by gridDiv = number of squares
 	fillColor = '#000', // default fill color is black
 	bgColor = [255, 255, 255, 255], // default bg color of squares is white
-  mousedown = false,
+	mousedown = false,
 	colorPick = document.getElementById('colorPicker'),
 	btnClear = document.getElementById('btnClear'),
 	btnDownload = document.getElementById('btnDownload');
@@ -20,7 +25,7 @@ var canvas = document.getElementById('canvas'),
 ////// GRID DRAW //////
 
 // subroutine to determine what color to draw pixel
-function pixColor(x,y) {
+function pixColor(x,y) { // adapted from CSC240
     if ((x%gridDiv < 1)||(y%gridDiv < 1)) { // every gridDivth pixel in either x/y direction is gray
       return "#ccc";
     } else { // otherwise, pixel is white
@@ -28,7 +33,7 @@ function pixColor(x,y) {
     }
 }
 // draw the grid + numbers
-function drawGrid() {
+function drawGrid() { // adapted from CSC240
 	// DRAW THE GRID
     var x, y;	
     for (x = 0; x < gridWidth+1; x++) { // loop over x's of canvas; gridWidth+1 to draw that bottom-most border
@@ -38,8 +43,8 @@ function drawGrid() {
 			context.fillRect(x,y,1,1); // color pixel accordingly
 		}
     }
-	
 	// DRAW THE NUMBERS
+	// not adapted from CSC 240; my original code
 	var numX = (gridWidth/gridDiv); // number that gets printed along x axis; start with number of squares needed and decrement
 	var numY = (gridHeight/gridDiv); // number that gets printed along y axis; start with number of squares needed and decrement
 	var numXaxis = gridWidth+5; // x coordinate of canvas that y-axis numbers print along, +5px for spacing
@@ -69,7 +74,6 @@ function drawGrid() {
 }
 
 ////// COLOR SELECT //////
-
 // user selects from default colors
 function selectColor(color) {
 	fillColor = color;
@@ -80,7 +84,7 @@ colorPick.addEventListener('input', function(event) {
 }, false);
 
 ////// FLOOD FILL //////
-
+// adapted from CSC240
 // subroutine to compare two colors
 function colorEqual(color1, color2) {
     for (i = 0; i < color1.length; i++) {
@@ -107,7 +111,6 @@ function floodFill(x, y, bgColor) {
 }
 
 ////// GET COORDINATES //////
-
 // track position of user's mouse
 canvas.addEventListener('mousemove', function(event) {
     mouseX = event.offsetX; // x position relative to canvas
@@ -129,19 +132,16 @@ canvas.addEventListener('mouseup', function(event) {
 }, false );
 
 ////// BUTTONS //////
-
 // clear canvas
 btnClear.addEventListener('click', function(){
 	context.clearRect(0, 0, canvas.width, canvas.height);
 	drawGrid(); // need to redraw grid
 }, false);
-
 // download pattern
 btnDownload.addEventListener('click', function() {
 	btnDownload.href = canvas.toDataURL(); // set href to our canvas for download
 	btnDownload.download = "MyPattern.png"; // set download filename
 }, false);
-
 // save pattern
 // adapted by Isabel from https://stackoverflow.com/questions/13198131/how-to-save-an-html5-canvas-as-an-image-on-a-server
 // couldn't figure out how to pass username to event listener so did normal function

@@ -1,3 +1,7 @@
+/* This code feeds registration input to the backend and returns feedback to user
+@author Alexis
+Last modified 12/16/2020 */
+
 $(document).ready(function(){
 	$("#regSubmit").click(function(){
 		var regUname = $("#regUname").val();

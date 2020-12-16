@@ -1,7 +1,7 @@
 <?php
   /* This page shows an administrator overview information about the site's users
-  * @author Isabel
-  * Last modified 12/7/2020
+  * @author Isabel + styling by Alexis
+  * Last modified 12/16/2020
   */ 
 
   // format time of users data fetched by userPage.php code
@@ -45,7 +45,7 @@
         <td><?= count($info["patterns"]); ?></td>
         <?php if (!$self): ?>
           <td><button class = "btn1" onclick="openProfile('<?= $uname; ?>', 'adminProfile', 'adminUsers', '')">View profile</button></td>
-          <td><button class = "btn1" onclick="showAdminCompose('<?= $uname; ?>', '<?= $username; ?>')">Send message</button></td>
+          <td><button class = "btn1" onclick="showAdminCompose('<?= $uname; ?>', '<?= $username; ?>')"><i class="fas fa-envelope"></i> Message</button></td>
         <?php else: ?>
           <td><p class='alert alert-info' role='alert'>This is you!</p></td>
           <td></td>

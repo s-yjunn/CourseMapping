@@ -1,3 +1,7 @@
+/* Styling for login and register pages
+@author Alexis
+Last modified 12/16/2020 */
+
 /* LOG IN REGISTER */
 input[type=text], input[type=password] {
 	padding: 0.5rem 1rem;

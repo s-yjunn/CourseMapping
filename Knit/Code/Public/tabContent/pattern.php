@@ -1,3 +1,9 @@
+<?php 
+/* This is the contents of the pattern maker tab
+@author Alexis + additions by Isabel
+Last modified 12/16/2020 */
+?>
+
 <div id="Pattern" class="tabcontent">
 	<h3 class="underline">Pattern Maker</h3>
 	<div id = "patternMkrIntake" class="refresh">

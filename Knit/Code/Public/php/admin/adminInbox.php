@@ -1,7 +1,7 @@
 <?php
   // This file generates the "Inbox" page (loaded into the admin tab)
   // all admins access the same admin inbox
-  // @author Isabel
+  // @author Isabel + styling by Alexis
   // Last modified 12/14/2020
 
   $path = "../../../Private/adminMessages.json";

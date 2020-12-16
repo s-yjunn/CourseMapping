@@ -1,6 +1,6 @@
 <?php
     /* This file creates the contents of the "my account" tab (minus included content)
-    * @author Isabel
+    * @author Isabel + styling by Alexis
     */ 
 
     // Get user's info (used in admin stats page as well)

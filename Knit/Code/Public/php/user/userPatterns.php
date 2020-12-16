@@ -1,6 +1,6 @@
 <?php
   // This file generates the "Patterns" page (included in the user account tab)
-  // @author Isabel
+  // @author Isabel + styling by Alexis
   // Last modified 12/7/2020
 
   // getting the patterns' data

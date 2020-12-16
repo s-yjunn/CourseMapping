@@ -1,3 +1,9 @@
+<?php
+/* 
+@author Bethany + styling by Alexis
+Last modified 12/16/2020 */	
+?>
+
 <img src="imgs/quizzes/backbutton.jpg" alt="back button" class="backBtnImg" onclick="hide('adminContest'); show('adminHome')"><br><br>
 
 

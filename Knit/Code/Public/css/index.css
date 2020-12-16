@@ -1,3 +1,7 @@
+/* Styling for index page and sitewide
+@author Alexis
+Last modified 12/16/2020 */
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 @keyframes fadeEffect {
@@ -16,11 +20,6 @@
 .hide {
 	display: none;
 }
-
-/*#Winners a:hover, #Vote a:hover, #Forum a:hover {
-	text-decoration: none;
-	color: white;
-}*/
 
 /* BUTTONS */
 .btn1 {	

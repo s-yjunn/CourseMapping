@@ -1,3 +1,4 @@
+<!-- Author: Imane | Date: Dec 7th, 2020--> 
 <?php 
 
     echo "<script type='text/javascript' src='../js/scriptAdmin.js'> </script>";

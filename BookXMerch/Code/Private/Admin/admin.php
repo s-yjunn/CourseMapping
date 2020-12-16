@@ -1,3 +1,4 @@
+<!-- Author: Imane Berrada | Date: December 1st-->
 <?php 
 
 session_start();

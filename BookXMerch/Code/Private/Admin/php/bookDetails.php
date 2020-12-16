@@ -1,3 +1,4 @@
+<!-- Author: Imane | Date: Dec 7th, 2020--> 
 <?php 
 session_start();
 if(isset($_SESSION["name"])) {

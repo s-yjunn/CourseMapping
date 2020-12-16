@@ -1,4 +1,5 @@
 
+// <!-- Authors: Imane Berrada and Nukhbah Majid| --> 
 var nameSession = "";
 
 function getBookByGenre(genre, sessionName) {

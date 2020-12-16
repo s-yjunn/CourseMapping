@@ -1,3 +1,4 @@
+<!-- Author: Nukhbah Majid--> 
 <?php
   session_start();
   if(isset($_SESSION["name"])) {

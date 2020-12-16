@@ -5,9 +5,9 @@
 /**
  * Restore pathway for the current tab from sessionStorage.
  * Recreate courseBlock and lines correspondingly.
- * 
- * Yujun wrote this function, Allison added a part to restore courseBlocks that are in the 
- * bar for unplaced courses. 
+ *
+ * Yujun wrote this function, Allison added a part to restore courseBlocks that are in the
+ * bar for unplaced courses.
  */
 function restorePathway() {
   if (document.getElementById(currentTab) == null) {
@@ -22,6 +22,7 @@ function restorePathway() {
 
   var restoredInfo = JSON.parse(sessionStorage[currentTab]);
   var containerWidth = $(pathwayContent).width();
+  console.log(restoredInfo);
 
   // Run through every semester stored in restoredInfo.
   // If there are courses in nodes for that semester, run through nodes and create courseBlock accordingly.
@@ -31,8 +32,9 @@ function restorePathway() {
       var nodes = restoredInfo[sem]["nodes"];
 
       if (isNotEmpty(nodes)) {
-        if(semNum === -1) { // -1 is the bar for unplaced courses.
-          for(let count = 0; count < nodes.length; count++) {
+        if (semNum === -1) {
+          // -1 is the bar for unplaced courses.
+          for (let count = 0; count < nodes.length; count++) {
             var courseName = nodes[count];
             addCourseToBar(courseName, count);
           }
@@ -48,7 +50,7 @@ function restorePathway() {
   }
 
   makeDraggable();
-  getPaths(); 
+  getPaths();
 }
 
 /**

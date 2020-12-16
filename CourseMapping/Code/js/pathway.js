@@ -102,22 +102,21 @@ function getCourses() {
  */
 function createCourseBlock(courseName, count) {
   // Create it and add to the bar of unplaced courses in the pathway
-  var position = "" + (count + 1) * 50 + "px";
-  var course =  createCourseBlockHelper(courseName, "15px", position, false);
+  var position = "" + (count + 1) * 50;
+  var course = createCourseBlockHelper(courseName, 15, position, false);
   // Store the new data
   var courseInfo = { location: null, type: "singular" };
   storeEdits(-1, courseName, courseInfo); // Eventually change this so that the courses appear in correct order.
   return course;
 }
 
-
 /**
  * @author Yujun wrote the code, Allison separated it into a helper method and added adjustToCenter
  * Creates the courseBlock with the position specified by top and left.
  * Does not add the data into currentPathway and sessionStorage.
  * @param {string} courseName with space
- * @param {string} top the string that course.style.top will be set to 
- * @param {string} left the string that course.style.left will be set to 
+ * @param {int} top the string that course.style.top will be set to
+ * @param {int} left the string that course.style.left will be set to
  * @param {boolean} adjustToCenter - if this is true, top and left will be interpreted as
  * the positions of the center of the course block. To adjust so that they represent the actual
  * top and left, half the height of a course block will be subtracted from top, and half the width
@@ -128,15 +127,15 @@ function createCourseBlockHelper(courseName, top, left, adjustToCenter) {
   course.innerHTML = courseName;
   var nameNoWhitespace = courseName.split(" ").join("");
   course.id = nameNoWhitespace;
-  course.className =
-    "courseBlock ui-widget-content " + nameNoWhitespace;
-  if(adjustToCenter) {
-    top -= parseInt(course.style.height) / 2;
-    left -= parseInt(course.style.width) / 2;
-  }
-  course.style.top = top;
-  course.style.left = left;
+  course.className = "courseBlock ui-widget-content " + nameNoWhitespace;
   $(pathwayContent).append(course);
+  if (adjustToCenter) {
+    top -= parseInt($(course).height()) / 2;
+    left -= parseInt($(course).width()) / 2;
+  }
+  course.style.top = top + "px";
+  course.style.left = left + "px";
+
   course.style.display = "block";
   return course;
 }
@@ -156,15 +155,20 @@ function makeDraggable() {
     var yInitial;
     var courseBlocks = currentPage.getElementsByClassName("courseBlock");
     /** Start of Hyana's contribution to Yujun's code. */
-    $(courseBlocks).dblclick(function() {
+    $(courseBlocks).dblclick(function () {
       var course = String($(this).text());
       var department = course.split(" ")[0];
       var title = courseCatalog[department][course]["info"]["title"];
       var credits = courseCatalog[department][course]["info"]["credits"];
       var id = document.getElementById("infoPopUp");
-      id.innerHTML = '<b>Title: </b>' + title + '<br>' 
-      + '<b>Credits: </b>' + credits + '</div>';
-      document.getElementById('courseinfo').style.display='block';
+      id.innerHTML =
+        "<b>Title: </b>" +
+        title +
+        "<br>" +
+        "<b>Credits: </b>" +
+        credits +
+        "</div>";
+      document.getElementById("courseinfo").style.display = "block";
     });
     /** End of Hyana's contribution to Yujun's code. */
     $(courseBlocks).draggable({
@@ -253,23 +257,25 @@ function getSemNum(xPos, yPos, containerWidth) {
 
 /**
  * @author Allison Brand
- * 
+ *
  * Given a courseBlock's id, removes its HTML element,
  * and deletes it from currentPathway and sessionStorage.
- * 
+ *
  * Does not delete any arrowlines that might connect to the course.
  * TO ADD? A boolean parameter to determine if it should look for arrowlines?
- * 
- * @param {string} id - of the courseBlock 
+ *
+ * @param {string} id - of the courseBlock
  */
 function removeCourseBlock(id) {
   var courseBlock = document.getElementById(id);
 
-  // Remove it from currentPathway and sessionStorage. 
-  var yPos = parseInt(courseBlock.style.top) + parseInt(courseBlock.style.height) / 2;
-  var xPos = parseInt(courseBlock.style.left) + parseInt(courseBlock.style.width) / 2;
+  // Remove it from currentPathway and sessionStorage.
+  var yPos =
+    parseInt(courseBlock.style.top) + parseInt(courseBlock.style.height) / 2;
+  var xPos =
+    parseInt(courseBlock.style.left) + parseInt(courseBlock.style.width) / 2;
   var containerWidth = parseInt(pathwayContent.style.width);
-  var semNum = getSemNum(xPos, yPos, containerWidth)
+  var semNum = getSemNum(xPos, yPos, containerWidth);
   delete currentPathway["sem_" + semNum]["nodes"][spaceAdded(id)];
   serverSaveNeeded = true;
   currentPathway["serverSaveNeeded"] = true;

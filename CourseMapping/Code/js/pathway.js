@@ -142,11 +142,11 @@ function createCourseBlockHelper(courseName, top, left, adjustToCenter) {
 }
 
 /**
- * Make all courseBlock draggable.
+ * Make all courseBlock draggable and doubleclickable
  * Find and store its position whenever a courseBlock is dragged.
  *
- * @author Yujun and Allison
- * Both Allison and Yujun made this function.
+ * @author Yujun and Allison and Hyana
+ * Both Allison and Yujun made this function. Hyana added an additional feature
  */
 function makeDraggable() {
   // Define draggable properties
@@ -155,6 +155,18 @@ function makeDraggable() {
     var xInitial;
     var yInitial;
     var courseBlocks = currentPage.getElementsByClassName("courseBlock");
+    /** Start of Hyana's contribution to Yujun's code. */
+    $(courseBlocks).dblclick(function() {
+      var course = String($(this).text());
+      var department = course.split(" ")[0];
+      var title = courseCatalog[department][course]["info"]["title"];
+      var credits = courseCatalog[department][course]["info"]["credits"];
+      var id = document.getElementById("infoPopUp");
+      id.innerHTML = '<b>Title: </b>' + title + '<br>' 
+      + '<b>Credits: </b>' + credits + '</div>';
+      document.getElementById('courseinfo').style.display='block';
+    });
+    /** End of Hyana's contribution to Yujun's code. */
     $(courseBlocks).draggable({
       containment: pathwayContent,
       scroll: false,

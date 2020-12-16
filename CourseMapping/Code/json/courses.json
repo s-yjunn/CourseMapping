@@ -104,6 +104,14 @@
       "suggestedFor": [],
       "info": { "credits": 4, "title": "Seminar: Acoustics" },
       "overlap": []
+    },
+    "EGR 410D": {
+      "prereqs": [],
+      "coreqs": [],
+      "requiredFor": [],
+      "suggestedFor": [],
+      "info": { "credits": 4, "title": "Engineering Design and Professional Practice" },
+      "overlap": []
     }
   },
 
@@ -158,6 +166,15 @@
       "overlap": ["MTH 210"]
     },
 
+    "MTH 212": {
+      "prereqs": ["MTH 112", "MTH 212"],
+      "coreqs": ["MTH 212"],
+      "requiredFor": ["MTH 255", "MTH 264"],
+      "suggestedFor": ["MTH 255"],
+      "info": { "credits": 4, "title": "Calculus III" },
+      "overlap": ["MTH 210"]
+    },
+
     "MTH 264": {
       "prereqs": [["MTH 112"], ["MTH 212", "MTH 211"], ["PHY 210"]],
       "coreqs": [],
@@ -182,5 +199,31 @@
     }
   },
 
-  "CSC": {}
+  "CSC": {
+    "CSC 111": {
+      "prereqs": [],
+      "coreqs": [],
+      "requiredFor": ["CSC 151", "CSC 212", "CSC 230", "CSC 235", "CSC 240", "CSC 249", "CSC 252", "CSC 256"],
+      "suggestedFor": ["CSC 205"],
+      "info": {
+        "credits": 5,
+        "title": "Introduction to Computer Science Through Programming"
+      },
+      "overlap": []
+    }
+  }, 
+
+  "CHM": {
+    "CHM 111": {
+      "prereqs": [],
+      "coreqs": [],
+      "requiredFor": ["CHM 224", "CHM 312", "CHM 401", "EGR 290", "EGR 312", "EGR 314"],
+      "suggestedFor": [],
+      "info": {
+        "credits": 4,
+        "title": "Chemistry I: General Chemistry"
+      },
+      "overlap": ["CHM 118"]
+    }
+  }
 }

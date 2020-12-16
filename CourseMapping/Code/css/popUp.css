@@ -5,6 +5,12 @@
     I added #popUp before the class selectors to avoid conflicts with loginStyle.css
 */
 
+#infoPopUp {
+  float: center;
+  line-height: 2;
+  font-size: large;
+}
+
 #popUp .container {
   padding: 16px;
 }

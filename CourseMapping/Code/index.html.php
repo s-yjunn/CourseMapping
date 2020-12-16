@@ -58,6 +58,7 @@ written by Professor Streinu, and Yujun, Hyana's midterm projects-->
         <?php include "html/register.html" ?>
         <?php include "html/login.html" ?>
         <?php include "html/removePopUp.html" ?>
+        <?php include "html/infoPopUp.html" ?>
     </article>
 
 

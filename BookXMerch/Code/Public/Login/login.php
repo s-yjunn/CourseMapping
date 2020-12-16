@@ -1,3 +1,4 @@
+<!-- Authors: Nukhbah Majid (back-end) and Imane Berrada (front-end) | Date: Nov 19, 2020--> 
 <!DOCTYPE html>
 <html lang="en">
 <head>

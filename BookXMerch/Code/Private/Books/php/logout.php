@@ -9,8 +9,5 @@ if($_GET["argument"]=='logOut'){
     $loggedIn = false;
 }
 
-    // session_start();
-    // unset($_SESSION["name"]); 
-    // unset($_SESSION["psw"]); 
-    // session_destroy();
+
 ?>

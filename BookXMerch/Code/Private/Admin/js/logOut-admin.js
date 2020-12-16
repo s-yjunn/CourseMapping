@@ -1,3 +1,5 @@
+//Author: Imane 
+//Date: Dec 1st, 2020
 $(document).ready(function () {
     $("#logoutButton4").click(function() {
         $.ajax({

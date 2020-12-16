@@ -1,3 +1,4 @@
+<!-- Author: Imane Berrada | Date: Nov 30th, 2020--> 
 <?php 
     session_start();
     $loggedUser = $_SESSION["username"]; 

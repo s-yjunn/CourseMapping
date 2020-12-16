@@ -1,3 +1,7 @@
+/* Styling for user page
+@author Alexis + additions by Isabel
+Last modified 12/16/2020 */
+
 @keyframes fadeEffect {
 	from {opacity: 0;}
 	to {opacity: 1;}
@@ -37,8 +41,6 @@
 .profile .pfp {
 	object-fit: cover;
 	object-position: center; /* Center the image within the element */
-	/*float: left;*/
-	/*margin: 0px 30px 30px 0px;*/
 	width: 200px;
   height: 200px;
 border-radius: 0.4rem;
@@ -242,4 +244,9 @@ height: 100%;
 #userInbox .author {
 	font-weight: bold;
 	font-size: 1.2rem;
+}
+
+#userInbox textarea {
+	width: 100%;
+	padding: 1.2rem;
 }

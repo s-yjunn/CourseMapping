@@ -46,15 +46,15 @@ function messageToUser(to, from) {
       success: function(response) {
         // if we get a failure message
         if (response == 0) {
-          // let the user know
-          $("#adminUsersDiv").html("<p class='alert alert-danger' role='alert'>Unable to send message.</p>");
+          // let the admin know
+          $("#msgToUserFeedback").html("<p class='alert alert-danger' role='alert'>Unable to send message.</p>");
           // if successful,
         } else {
-          // let the user know
-          $("#adminUsersDiv").html("<p class='alert alert-info' role='alert'>Your message to " + to + " was sent.</p>");
+          // let the admin know
+          $("#msgToUserFeedback").html("<p class='alert alert-info' role='alert'>Your message to " + to + " was sent.</p>");
         }
-        // clear everything out, and close the composition div
-        cancelAdminCompose();
+        // Clear the composition area
+        $("#msgToUser").val("");
       }
     });
   }

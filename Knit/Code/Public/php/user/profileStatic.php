@@ -1,7 +1,7 @@
 <?php
   // This file formats a user's profile given their username
   // (for loading into forum, contest tabs when a username is clicked on)
-  // @author Isabel
+  // @author Isabel + styling by Alexis
   // Last modified 11/3/2020
 
   //Get all user data

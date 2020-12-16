@@ -1,7 +1,7 @@
 <?php
   /* This page shows an administrator overview information about the site's users
-  * @author Isabel
-  * Last modified 12/7/2020
+  * @author Isabel + styling by Alexis
+  * Last modified 12/16/2020
   */ 
 
   // format time of users data fetched by userPage.php code
@@ -15,8 +15,6 @@
   <h4>Users <button class="btn1 btnIcon float-right" type="button" onclick="refreshAdminUsers()"><i class="fas fa-redo-alt fa-xs"></i></button></h4>
   <!-- reload button -->
   <p class="timestamp">Up-to-date as of <?=$updated; ?>.</p>
-  <!-- any updates go here -->
-  <span id = "adminUsersDiv"></span>
   <p>Knitty Gritty has <?= $nrUsers; ?> registered user<?php if ($nrUsers == 0):?>s.<?php elseif ($nrUsers == 1):?>:<?php else: ?>s:<?php endif; ?>
   </p>
 
@@ -47,7 +45,7 @@
         <td><?= count($info["patterns"]); ?></td>
         <?php if (!$self): ?>
           <td><button class = "btn1" onclick="openProfile('<?= $uname; ?>', 'adminProfile', 'adminUsers', '')">View profile</button></td>
-          <td><button class = "btn1" onclick="showAdminCompose('<?= $uname; ?>', '<?= $username; ?>')">Send message</button></td>
+          <td><button class = "btn1" onclick="showAdminCompose('<?= $uname; ?>', '<?= $username; ?>')"><i class="fas fa-envelope"></i> Message</button></td>
         <?php else: ?>
           <td><p class='alert alert-info' role='alert'>This is you!</p></td>
           <td></td>
@@ -61,9 +59,9 @@
 
 <div id = "adminCompose" class = "dark">
   <div class = "float">
+    <button class = 'close' onclick = "cancelAdminCompose()"><i class="fa fa-times"></i></button><br><br>
     <textarea class = "messageCompose" id = "msgToUser"></textarea><br><br>
-    <button class = "btn1" id = "msgToUserBtn">Send</button>
-    <button class = "btn1" onclick = "cancelAdminCompose()">Cancel</button><br><br>
+    <button class = "btn1" id = "msgToUserBtn">Send</button><br><br>
     <span id = "msgToUserFeedback"></span>
   </div>
 </div>

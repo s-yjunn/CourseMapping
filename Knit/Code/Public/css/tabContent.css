@@ -1,8 +1,7 @@
-/* TAB CONTENT */
-.tabcontent {
-	padding: 2rem;
-	border: ;
-}
+/* Styling for tab content
+@author Alexis
+Last modified 12/16/2020 */
+
 .tabcontent h3 {
 	font-size: 4rem;
 	font-weight: bold;

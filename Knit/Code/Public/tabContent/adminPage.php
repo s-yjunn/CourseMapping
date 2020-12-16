@@ -32,6 +32,9 @@
     <!-- This div is filled by "php/user/profileStatic.php" -->
     <div id = "adminProfile"></div>
 
+    <!-- this div is filled by "php/pattern.php" -->
+    <div id="adminPattern"></div>
+
 </div>
 
 <script src = "js/adminPage.js"></script>

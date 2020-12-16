@@ -2,14 +2,16 @@ Allison:
     Data: 
     1. courses.json
     2. majors.json
-    3. Structure of pathway JSON
+    3. Structure of pathway JSON: pathway.json is an example pathway with the semester properties shown
 
     Saving:
     1. Structure of file system for users (user and pathway id's)
     2. save.js
-    4. openSaved.js, 
-    5. script.js, all except the part that asks the user whether they want to save
-    6. logout.js, which saves the user’s open tabs if they click yes. Again, querying the user was Hyana’s
+    3. saved.html.php
+    4. save.php
+    5. openSaved.js, 
+    6. script.js, all except the part that asks the user whether they want to save
+    7. logout.js, which saves the user’s open tabs if they click yes. Again, querying the user was Hyana’s
 
     General Functionality:
     1. Additions to pathway.js,
@@ -29,8 +31,8 @@ Allison:
     Site
     1. Created the buttons that allow the user to open saved pathways
     2. Added the ability to change the pathway title: 
-         Added the pathwayTitle and titleChanger to tab.html
-         pathwayMeta.php
+        a. Added the pathwayTitle and titleChanger to tab.html.php
+        b. pathwayMeta.php
 
 Hyana:
     Data: 

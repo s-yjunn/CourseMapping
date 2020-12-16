@@ -1,5 +1,7 @@
 <?php
-
+    /**
+     * @author Allison Brand
+     */
     // file paths:
     $userpath = "json/users.json"; // To general data on users 
     $toUsers = "users"; // The path to get to the users folder, with user data

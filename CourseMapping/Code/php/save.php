@@ -1,4 +1,7 @@
 <?php 
+   /**
+     * @author Allison Brand
+     */
     session_start();
     
     // file paths:

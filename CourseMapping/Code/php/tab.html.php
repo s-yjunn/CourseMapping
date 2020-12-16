@@ -16,6 +16,7 @@ $majorFileName = "../json/majors.json";
 </head>
 
 <body>
+    <!-- Allison added the title change part. -->
     <div>
         <!-- I use a class instead of an id for the pathway title because multiple pathway tabs will be made, and that would be more than one element with the same id. -->
         <h1 class="pathwayTitle" onclick="titleChange(this)">Untitled Pathway &#9998</h1>

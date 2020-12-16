@@ -24,7 +24,7 @@ Last modified 12/16/2020 */
 			<h4>Enter the Contest</h4>
 			<p>Submit your unique knitting patterns to our weekly contest! Winners are determined by user voting and have a chance to be included in our "featured" slideshow.</p>
 			<?php if ($loggedIn): ?>
-				<p>Please submit <b>one text file</b> of pattern-making instructions, <b>one image</b> of a knit creation made via your instructions, and a <b>title</b> for your creation. You will be alerted if your pattern is accepted for inclusion in the contest.</p>
+				<p>Please submit <b>one text file</b> of pattern-making instructions (use html syntax for any formatting), <b>one image</b> of a knit creation made via your instructions, and a <b>title</b> for your creation.</p>
 				<form action="php/upload.php" method="post" enctype="multipart/form-data" id="submit">
 					<input type="text" name="title" id="title" placeholder="Your submission's title"><br>
 					<input type="file" name="fileToUpload[]" id="fileToUpload" multiple="multiple">

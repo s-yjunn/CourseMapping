@@ -1,7 +1,6 @@
 /* This file contains functions related to user accounts
-* @author Isabel
-*
-*/
+@author Isabel
+Last modified 12/15/2020 */
 
 // This function "opens" a user profile in the "to" div and hides the "from" div
 function openProfile(username, to, from, fromLink) {

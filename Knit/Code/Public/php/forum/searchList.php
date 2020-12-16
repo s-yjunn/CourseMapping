@@ -1,7 +1,8 @@
 <?php
-  // This file processes and outputs the result of a forum search.
-  // Sorted by score by default, but optionally takes a sorting parameter
-  // @author Isabel
+  /* This file processes and outputs the result of a forum search.
+  Sorted by score by default, but optionally takes a sorting parameter
+  @author Isabel
+  Last modified 12/14/2020 */
 
   // get time formatting library
   include "timeAgo.php";
@@ -60,7 +61,7 @@
       <th>Last activity</th>
     </tr>
     <?php
-    //Output the overview info for each post
+    //Output the overview info for each result
     foreach ($result as $index => $post):
       $postActive = timeAgo($post["active"]);
     ?>

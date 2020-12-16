@@ -1,5 +1,5 @@
 <!-- the built-in "user manual"
-@author mostly Isabel + Alexis on style -->
+@author text of manual written by all, this file mostly by Isabel + Alexis on style -->
 
 <button class = 'close' onclick = 'hide("Help")'><i class="fa fa-times"></i></button>
 

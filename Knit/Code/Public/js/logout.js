@@ -1,6 +1,5 @@
 /* This script handles the client-side of logging out
-* @author Isabel
-*/
+@author Isabel */
 
 function logOut() {
     // call on logout.php

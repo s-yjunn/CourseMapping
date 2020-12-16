@@ -3,7 +3,7 @@
   // @author Isabel + styling by Alexis
   // Last modified 12/14/2020
 
-  //Establish which div to show when visitor clicks the "write a post" button
+  // Establish which div to show when visitor clicks the "write a post" button
   if ($loggedIn){
     $showCompose = "\"show('composePost')\"";
   } else {
@@ -50,29 +50,30 @@
 
   <!-- div for search results -->
   <div id = "forumSearch">
-	<img src="imgs/quizzes/backbutton.jpg" alt="back button" class="backBtnImg" onclick="hide('forumSearch'); show('forumHome'); $('#forumSearchQ').val('');">
-	
- 
-	<div id = "forumSearchContent">
- 
-    <!-- title filled when called upon-->
-    <h4 id = "fSearchTitle"></h4>
-    <form>
-      <label for="searchView">Sort by:</label>
-      <select id="searchView" onchange="sortForumSearch(this.value)">
-        <option value="score">Highest ranked</option>
-        <option value="responses">Most answers</option>
-        <option value="active">Active</option>
-      </select>
-    </form>
+    <img src="imgs/quizzes/backbutton.jpg" alt="back button" class="backBtnImg" onclick="hide('forumSearch'); show('forumHome'); $('#forumSearchQ').val('');">
+    
+    <div id = "forumSearchContent">
+      <!-- title filled when called upon-->
+      <h4 id = "fSearchTitle"></h4>
+      <form>
+        <label for="searchView">Sort by:</label>
+        <select id="searchView" onchange="sortForumSearch(this.value)">
+          <option value="score">Highest ranked</option>
+          <option value="responses">Most answers</option>
+          <option value="active">Active</option>
+        </select>
+      </form>
 
-    <!-- actual result: : filled by php/forum/searchList.php-->
-    <div id = "searchList"></div>
+      <!-- actual result: : filled by php/forum/searchList.php-->
+      <div id = "searchList"></div>
+    </div>
   </div>
-</div>
 
   <!--This div is filled by "php/forum/post.php" whenever a post is called on-->
   <div id = "forumPost"></div>
+
+  <!-- This div is filled by "php/user/profileStatic.php" whenever someone clicks on a username -->
+  <div id = "forumProfile"></div>
 
   <!--This is the form to compose a post-->
   <?php if ($loggedIn): ?>
@@ -97,9 +98,6 @@
         </div>
     </div>
   </div>
-
-  <!-- This div is filled by "php/user/profileStatic.php" whenever someone clicks on a username -->
-  <div id = "forumProfile"></div>
 </div>
 
 <script src="js/forum.js"></script>

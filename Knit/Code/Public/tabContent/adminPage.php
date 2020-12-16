@@ -1,8 +1,7 @@
 <?php 
 /* This is the index of admin functionality
-* @author Isabel (included adminContest page by Bethany)
-* Last modified 12/6/2020
-*/
+@author Isabel (included adminContest page by Bethany)
+Last modified 12/6/2020 */
 ?>
 
 <div id="adminPage">

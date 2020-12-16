@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="css/slideshow.css">
 <div class="slideshow-container">
 
 <?php

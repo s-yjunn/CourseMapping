@@ -1,7 +1,7 @@
 <?php
-// This script "sends" a message to a user's inbox
-// For now only admins have access to this functionality
-// @author Isabel
+/* This script "sends" a message to a user's regular inbox
+For now only admins have access to this functionality
+@author Isabel */
 
 // Get message basics -- contents, recipient, sender
 $text = $_POST["text"];

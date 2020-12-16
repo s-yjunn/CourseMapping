@@ -1,7 +1,5 @@
 /* This file contains all js functions related directly to the forum (user profile generation in user.js)
-* @author Isabel
-* 
-*/
+@author Isabel */
 
 //This function opens the specified post
 function openPost(postIndex, from) {

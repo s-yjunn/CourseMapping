@@ -2,7 +2,7 @@
 
 <img src="imgs/quizzes/backbutton.jpg" alt="back button" id="back4" class="backBtnImg"><br><br>
 
-<div class="quizContent">
+<div class="quizContainer">
 
   <h4>Take this quiz to test your knitting trivia!</h4>
   

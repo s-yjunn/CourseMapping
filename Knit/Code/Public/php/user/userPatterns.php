@@ -31,17 +31,17 @@
 	      <div class = "float">
 	        <button id = 'close' onclick = 'hide("managePattern<?= $index; ?>")'><i class="fa fa-times"></i></button><br>
 					<p><span class = "tag" id = "tag<?= $index; ?>" onclick = "togglePubPr(this, <?= $index; ?>)"><?= $pubPr; ?></span></p>
+					<span class = "patternEdit " id = "patternEdit<?= $index; ?>">
+							<button class="btn1" onclick = "savePatEdit('<?= $username; ?>', <?= $index; ?>);">Save</button>
+							<button class="btn1" onclick = "cancelPatEdit(<?= $index; ?>)">Cancel</button>
+					</span>
+					<!-- updates pertaining to this specific pattern -->
+					<span id = "uPaDiv<?= $index; ?>"></span>
 					<!-- this tag is hidden and is just for canceling purposes -->
 					<span id = "prevTag<?= $index; ?>" class = "hide"><?= $pubPr; ?></span>
 	        <img class = "uPaM" src = '<?= $userFolder . "patterns/" . $imgFile; ?>'><br>
 					<a href = '<?= $userFolder . "patterns/" . $imgFile; ?>' download><button class="btn1 download">Download</button></a>
 					<button class="btn1 download" onclick = "showPatDelete('<?= $username; ?>', <?= $index; ?>)">Delete</button>
-					<span class = "patternEdit" id = "patternEdit<?= $index; ?>">
-						<button class="btn1" onclick = "savePatEdit('<?= $username; ?>', <?= $index; ?>);">Save</button>
-						<button class="btn1" onclick = "cancelPatEdit(<?= $index; ?>)">Cancel</button>
-					</span>
-					<!-- updates pertaining to this specific pattern -->
-					<span id = "uPaDiv<?= $index; ?>"></span>
 	      </div>
 	  </div>
 	    </div>

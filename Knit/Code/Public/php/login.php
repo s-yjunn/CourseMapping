@@ -2,9 +2,7 @@
 /* This code enables user login functionality
 @author Alexis (basic implementation), Isabel (improvements + additions)
 Last modified 12/16/2020 */
-?>
 
-<?php
 $path = '../../Private/users.json';
 
 // read json file

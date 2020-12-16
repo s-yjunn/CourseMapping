@@ -2,12 +2,9 @@
 @author Alexis
 Last modified 12/16/2020 */
 
-canvas {
-	margin: 1rem;
-}
-
-.canvasDiv {
-  overflow: auto;
+/* initial state */
+#patternMkrGrid {
+	display: none;
 }
 
 #Pattern .btn1 {
@@ -15,9 +12,19 @@ canvas {
 	width: auto;
 }
 
+/* don't resize canvas but scroll when screen is small */
+.canvasDiv {
+	overflow: auto;
+}
+canvas {
+	margin: 1rem;
+}
+
+/* all color options */
 #colorPalette {
 	margin: 1rem;
 }
+/* default colors */
 .palette {
 	width: 35px;
 	height: 25px;
@@ -27,6 +34,7 @@ canvas {
 .palette:hover {
 	cursor: pointer;
 }
+/* color option divs */
 #red {
 	background-color: red;
 }
@@ -65,7 +73,7 @@ canvas {
 	background-color: gray;
 }
 
-
+/* color picker */
 input[type="color"] {
 	border: none;
 	width: 35px;
@@ -78,6 +86,7 @@ input[type="color"]:hover {
 	cursor: pointer;
 }
 
+/* save message div */
 #paDiv {
 	margin-top: 1rem;
 }
@@ -86,9 +95,4 @@ input[type="color"]:hover {
 	.palette {
 		display: inline-block;
 	}
-}
-
-/* initial state */
-#patternMkrGrid {
-	display: none;
 }

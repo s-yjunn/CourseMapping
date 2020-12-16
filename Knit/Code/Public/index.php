@@ -19,6 +19,7 @@
 	<link rel="stylesheet" href="css/index.css">
 	<link rel="stylesheet" href="css/loginBar.css">
 	<link rel="stylesheet" href="css/tabBar.css">
+	<link rel="stylesheet" href="css/footer.css">
 	<link rel="stylesheet" href="css/tabContent.css">
 	<link rel="stylesheet" href="css/welcome.css">
 	<link rel="stylesheet" href="css/winners.css">
@@ -54,7 +55,7 @@
 
 <div class="tab">
 <nav class="navbar navbar-expand-xl">
-	<a class="navbar-brand" href="">Knitty Gritty <img src="imgs/logo.png"></a>
+	<a class="navbar-brand" href="">Knitty Gritty <img src="imgs/logo.png" class="tabBarIcon"></a>
 	<button class="custom-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
@@ -98,7 +99,7 @@
 <!-- HOME TAB CONTENT -->
 <div id="Welcome" class="tabcontent container-fluid h-100" style="background-image: url('imgs/bg.jpg'); background-size: cover">
 	<div class="row justify-content-center">
-		<div class="col col-xs-12 col-md-8">
+		<div class="welcomeContainer col-xs-12 col-md-8">
 			<h1>Knitty Gritty</h1>
 			<p class="slogan">Sew it seams you've gotten to the knitty gritty.</p>
 			<p>Knitty Gritty is an interactive site for knitters. Visitors can view patterns and forum posts and vote in a “best of the week” competition featuring user submitted knit patterns. Registered users, in addition to these features, can submit patterns to the “best of the week” competition, create and save grid visualizations of patterns, customize a public profile, and contribute posts and responses to the forum.</p>

@@ -1,4 +1,4 @@
-/* Styling for index page and sitewide
+/* Styling for parts occurring across site
 @author Alexis
 Last modified 12/16/2020 */
 
@@ -9,20 +9,9 @@ Last modified 12/16/2020 */
 	to {opacity: 1;}
 } 
 
-.tabcontent:not(#Welcome) {
-	display: none;
-	margin-bottom: 2rem;	
-}
-.tabcontent {
-	animation: fadeEffect 1s;
-}
-/* divs marked for hiding */
-.hide {
-	display: none;
-}
-
 /* BUTTONS */
-.btn1 {	
+/* standard button used across site */
+.btn1 {
 	border: none;
 	border-collapse: separate; 
 	text-decoration: none;
@@ -37,9 +26,7 @@ Last modified 12/16/2020 */
 	background-color: rgb(239, 35, 60);
 	color: white;
 }
-input[type=button] {
-	width: 100%;
-}
+/* button with inverted colors */
 .btn2 {
 	width: 100%;
 	margin: 0.5rem 0;
@@ -53,7 +40,7 @@ input[type=button] {
 .btn2:hover {
 	background-color: rgb(239, 35, 60, 1);
 }
-
+/* image used as back button */
 .backBtnImg {
 	width: 200px;
 	left: 0;
@@ -64,19 +51,15 @@ input[type=button] {
 	cursor: pointer;
 	opacity: 0.7;
 }
-
+input[type=button] {
+	width: 100%;
+}
 
 /* ALERT */
 .alert {
 	display: inline-block;
 }
 
-.refresh {
-	animation: fadeEffect 1s;
-}
-.tableDiv {
-	overflow: auto;
-}
 /* MODAL */
 /* background to make modal divs "float" */
 .dark {
@@ -95,8 +78,8 @@ input[type=button] {
 .float {
 	max-width: 95%;
 	max-height: 85%;
-  width: 500px;
-  height: auto;
+	width: 500px;
+	height: auto;
 	padding: 2rem;
 	margin: auto;
 	background-color: white;
@@ -104,47 +87,16 @@ input[type=button] {
 	overflow: auto;
 }
 
-/* footer - copied old footer css*/
-.myfooter {
-	/*font-size: 12px;*/
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	/*background-color: white;*/
-	background-color: rgb(239, 35, 60);
-	color: white;
-	text-align: center;
-	margin: 0.5rem 0 0 0;
-	padding: 0.5rem 0 0 0;
-	font-size: 0.9rem;
+/* OTHER CLASSES */
+/* this class gives the nice transition effect */
+.refresh {
+	animation: fadeEffect 1s;
 }
-.myfooter a {
-	opacity: 0.7;
-	transition: opacity 0.7s;
+/* tables should scroll on smaller screens */
+.tableDiv {
+	overflow: auto;
 }
-.myfooter a:hover {
-	opacity: 1;
-	cursor: pointer;
-}
-
-
-/*HELP!*/
-#helpManual, #helpAdmin {
+/* hidden divs */
+.hide {
 	display: none;
-}
-
-#helpManual .btn1 {
-	margin:1rem 0;
-}
-#helpHome .btn1 {
-	width: 100%;
-}
-#helpHome .btn1, #helpAdmin .btn1 {
-	margin:1rem 0 0 0;
-}
-#helpAdmin textarea {
-	padding: 1.2rem;
-	width: 100%;
-	margin: 0 0 1rem 0;
 }

@@ -6,9 +6,11 @@ Last modified 12/16/2020 */
 	from {opacity:0;}
 	to {opacity:1;}
 }
+#QuizHome, .quiz {
+    animation: fadeEffect 1s ease;
+}
 
 /* quiz home page */
-
 .quizThumbnail {
 	display: block;
 	border: 1px solid rgb(239, 35, 60);
@@ -19,35 +21,30 @@ Last modified 12/16/2020 */
 	padding: 2rem;
 	transition: color 0.4s ease, border 0.4s ease;
 }
-
-.quiz h4 {
-	font-size: 3rem;
-	text-align: center;
-}
-
-.quiz h5 {
-	font-size: 2rem;
-}
-
 .quizThumbnail:hover {
 	cursor: pointer;
 	color: rgb(239, 35, 60);
 }
 
-#QuizHome, .quiz {
-    animation: fadeEffect 1s ease;
+/* inside the quiz pages */
+.quizContainer { /* excludes back button */
+    padding: 0 30px 20px 30px;
+    margin: 0 auto;
+    max-width: 960px;
 }
-
+.quiz h4 {
+	font-size: 3rem;
+	text-align: center;
+}
+.quiz h5 {
+	font-size: 2rem;
+}
 .quiz ul {
 	list-style: none;
 	padding: 0;
 	margin: 0;
 }
-.quizContainer {
-    padding: 0 30px 20px 30px;
-    margin: 0 auto;
-    max-width: 960px;
-}
+/* quiz questions and answers */
 .quiz-question {
   font-weight: bold;
   display: block;
@@ -67,40 +64,41 @@ Last modified 12/16/2020 */
 .quiz-answer:hover {
   border: 1px solid rgb(239, 35, 60);
 }
-.quiz-answer.active {
+.quiz-answer.active { /* answer that is selected */
 	color: rgb(239, 35, 60);
 	border: 1px solid rgb(239, 35, 60);
 	font-weight: bold;
 	background-color: white;
 	transition: 0.2s;
 }
+/* these show once the quiz is finished */
 .quiz-answer.correct, .quiz-answer.incorrect {
 	color: white;
 	font-weight: bold;
 }
 .quiz-answer.correct {
-  background-color: rgb(179,204,87);
-  border: none;
+	background-color: rgb(179,204,87);
+	border: none;
 }
 .quiz-answer.incorrect {
-  background-color: rgb(255,78,80);
-  border: none;
+	background-color: rgb(255,78,80);
+	border: none;
 }
 .quiz-result {
-  max-width: 960px;
-  margin: 2rem auto;
-  font-weight: bold;
-  text-align: center;
-  border-radius: 0.4rem;
-  color: #fff;
-  padding: 20px;
+	max-width: 960px;
+	margin: 2rem auto;
+	font-weight: bold;
+	text-align: center;
+	border-radius: 0.4rem;
+	color: #fff;
+	padding: 20px;
 }
 .quiz-result.good {
-  background: rgb(179,204,87);
+	background: rgb(179,204,87);
 }
 .quiz-result.mid {
-  background: rgb(255,190,64);
+	background: rgb(255,190,64);
 }
 .quiz-result.bad {
-  background: rgb(255,78,80);
+	background: rgb(255,78,80);
 }

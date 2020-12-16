@@ -7,58 +7,55 @@ Last modified 12/16/2020 */
 	to {opacity: 1;}
 } 
 
+#adminContest, #adminUsers {
+	display: none;
+}
+#adminHome, #adminUsers, #adminContest {
+	animation: fadeEffect 1s;
+}
+
+/* ADMIN TAB */
 #adminPage .section {
 	border: 1px solid #ccc;
 	padding: 1.7rem 2rem;
 	margin: 2rem 0;
 	border-radius: 0.4rem;	
 }
-
 #adminPage a {
 	color: rgb(239, 35, 60);
 	text-decoration: none;
 	transition: 0.4s;
 }
-
 #adminPage a:hover {
 	color: rgb(239, 35, 60, 0.6);
-	
+}
+#adminPage .btnIcon {
+	padding: 0.5rem 1.2rem;
+	margin: 0 0.5rem;
 }
 
-#adminContest, #adminUsers {
-  display: none;
-}
-
-/*copied from user.css */
+/* ADMIN HOME PAGE */
 #adminHome {
 	text-align: center;
 }
-
-#adminHome, #adminUsers, #adminContest {
-	animation: fadeEffect 1s;
-}
-
 #adminHome .btn1 {
 	padding: 2rem;
 	width: 300px;
 	margin: 1rem;
 }
-
 #adminHome .btnTitle {
 	font-size: 2rem;
 	font-weight: bold;
 }
-
 #adminHome .btnText {
 	font-size: 0.8rem;
 }
 
-/* copied from forum.css */
+/* ADMIN USERS PAGE */
 #adminUsers .timestamp {
 	font-size: 0.8rem;
 	color: #777;
 }
-
 #adminUsers table {
 	width: 100%;
 	border: none;
@@ -74,40 +71,29 @@ Last modified 12/16/2020 */
 #adminUsers tr:last-child {
 	border-bottom: none;
 }
-#adminPage .btnIcon {
-	padding: 0.5rem 1.2rem;
-	margin: 0 0.5rem;
-}
-
 #adminUsers textarea {
 	width: 100%;
 	padding: 1.2rem;
 	
 }
 
-
-/* INBOX - copied from user page */
+/* ADMIN INBOX */
 #adminInbox .section {
 	border: 1px solid #ccc;
 	padding: 1.7rem 2rem;
 	margin: 2rem 0;
 	border-radius: 0.4rem;	
 }
-
-/* INBOX */
 #adminInbox .message {
 	background-color: #f7f7f7;
 	border-radius: 0.4rem;
 	margin-top: 1.5rem;
 	padding: 1.7rem;
 }
-
-/* copied from forum */
 #adminInbox .timestamp {
 	font-size: 0.8rem;
 	color: #777;
 }
-
 #adminInbox .author {
 	font-weight: bold;
 	font-size: 1.2rem;

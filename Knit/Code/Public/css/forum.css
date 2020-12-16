@@ -7,7 +7,7 @@ Last modified 12/16/2020 */
 	to {opacity: 1;}
 } 
 #forumPost, #forumSearch {
-  display: none;
+	display: none;
 }
 #forumHome, #forumPost, #responseList, #forumSearch {
 	animation: fadeEffect 1s;
@@ -44,7 +44,7 @@ Last modified 12/16/2020 */
 }
 
 /* FORUM POSTS */
-/*styling for forum up/downvoting buttons -- obviously feel free to change or scrap, they just looked hilariously bad with the normal button styling*/
+/*styling for forum up/downvoting buttons */
 #forumPost .vote button {
 	display: inline-block;
 	height: 2.5em;
@@ -81,38 +81,27 @@ label[for="indexView"], label[for="responsesView"], #indexView, #responsesView {
 	margin: 0 0.5rem;
 }
 
-/* USER RESPONSE */
+/* CREATING POSTS + RESPONSES */
 #composeResponse textarea {
 	padding: 1.2rem;
 	width: 100%;
 	margin: 1rem 0;
 }
-
 #composePost input[type=text], #composePost textarea {
 	width: 100%;
 	border: 1px solid #ccc;
 	padding: 0.5rem 1rem;
 }
-
 #composePost textarea {
 	margin: 0 0 2rem 0;
 }
 
-/*.deletePostResponse {
-	vertical-align: top;
-	
-}*/
-
+/* SEARCH STUFF */
 #forumSearchQ, #forumDiv {
 	margin: 0 0.2rem 0 2.5rem;
 }
 
-@media only screen and (max-width:600px) {
-	/*.deletePostResponse {
-		display: none;
-	}*/
-}
-
+/* responsive design */
 @media only screen and (max-width:768px) {
 	#forumSearchQ {
 		margin: 3 0rem;
@@ -125,7 +114,6 @@ label[for="indexView"], label[for="responsesView"], #indexView, #responsesView {
 		margin: 0.5rem 0;	
 	}
 }
-
 @media only screen and (max-width:992px) {
 	#forumDiv {
 		margin: 3 0rem;

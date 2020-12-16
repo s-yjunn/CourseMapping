@@ -20,8 +20,14 @@
     $pattern = $compData["winners"][$patternIndex];
   } else if ($from === "contestHome") {
     $pattern = $compData["contestants"][$patternIndex];
+  } else if ($from === "adminContest") {
+    $pattern = $compData["submissions"][$patternIndex];
+  } else if ($from === "adminContest2") {
+    $from = "adminContest"; // this is a last-minute fix, not ideal
+    $pattern = $compData["contestants"][$patternIndex];
   } else {
-    echo "Something's wrong!";
+    echo "Something's wrong.";
+    exit;
   }
 
 ?>

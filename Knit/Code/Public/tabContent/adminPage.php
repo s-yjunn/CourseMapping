@@ -1,8 +1,7 @@
 <?php 
 /* This is the index of admin functionality
-* @author Isabel (included adminContest page by Bethany)
-* Last modified 12/6/2020
-*/
+@author Isabel (included adminContest page by Bethany)
+Last modified 12/6/2020 */
 ?>
 
 <div id="adminPage">
@@ -31,6 +30,9 @@
 
     <!-- This div is filled by "php/user/profileStatic.php" -->
     <div id = "adminProfile"></div>
+
+    <!-- this div is filled by "php/pattern.php" -->
+    <div id="adminPattern"></div>
 
 </div>
 

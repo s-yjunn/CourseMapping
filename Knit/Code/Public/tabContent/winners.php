@@ -6,6 +6,7 @@
 ?>
 <div id="Winners" class="tabcontent">
     <h3 class="underline">Featured</h3>
+    <p>Here are the winners from our last pattern contest. Click on an item you like to view the user-submitted pattern for making it!</p>
     <?php if ($numWin == 0): ?>
         <p>There are currently no winners! Please come back later for updates.</p>
 	<?php else: ?>

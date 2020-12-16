@@ -2,8 +2,10 @@
 @author Alexis
 Last modified 12/16/2020 */
 
+/* jquery function for passing on user registration input to php */
 $(document).ready(function(){
-	$("#regSubmit").click(function(){
+	$("#regSubmit").click(function(){ /* when submit button clicked */
+		/* get the input values and save to dataString variable */
 		var regUname = $("#regUname").val();
 		var regPsw = $("#regPsw").val();
 		var confPsw = $("#confPsw").val();
@@ -11,8 +13,8 @@ $(document).ready(function(){
 		$.ajax({
 			type: "GET",
 			url: "php/register.php",
-			data: dataString,
-	    success: function(result) {
+			data: dataString, // pass dataString to php
+		    success: function(result) {
 				// if register.php returns a success message,
 				if (result === "Success") {
 					// reload the page!

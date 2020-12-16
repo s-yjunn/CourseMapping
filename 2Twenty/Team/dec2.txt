@@ -1,0 +1,10 @@
+Meeting December 2
+
+Add to cart will be created using locally stored (session storage) cookies 
+- Fetches a key that’s stored on users device (expiration dates 30 mins) 
+
+TO DO:
+- upload to aurora (Sasha)
+- 'How to' manual (Jess)
+- Admin (Max)
+- Add item to table

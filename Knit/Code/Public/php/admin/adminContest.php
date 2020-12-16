@@ -1,6 +1,6 @@
 <?php
 /* 
-@author Bethany + styling by Alexis
+@author Bethany + styling by Alexis, pattern links by Isabel
 Last modified 12/16/2020 */	
 ?>
 
@@ -25,7 +25,7 @@ if($numSubs > 0):?>
         <p>Current unapproved submissions:</p>
         <ul style="list-style-type:square;">
      <?php for($i = 0; $i < $numSubs; $i++):?>
-        <li><a href="imgs/contest/<?=$currentSubs[$i]["image"]?>" target="_blank"><?=$currentSubs[$i]["author"]."/".$currentSubs[$i]["title"]?></a><br /></li>
+        <li><a onclick="openPattern(<?= $i; ?>, 'adminPattern', 'adminContest', 'section1')"><?=$currentSubs[$i]["title"]?></a> by <?= $currentSubs[$i]["author"]; ?></a></li>
      <?php endfor; ?>
      </ul>
      <p>Please select the submissions you that you would like to appove.</p>
@@ -33,7 +33,7 @@ if($numSubs > 0):?>
     <form>
     <select id="currentSubs" multiple="multiple" size="<?= $numSubs; ?>">
     <?php for($i = 0; $i < $numSubs; $i++):?>
-        <option value="<?=$currentSubs[$i]["author"]."/".$currentSubs[$i]["title"]?>"> <a href="imgs/contest/<?=$currentSubs[$i]["image"]?>" target="_blank"><?=$currentSubs[$i]["author"]."/".$currentSubs[$i]["title"]?></a><br />
+        <option value="<?=$currentSubs[$i]["author"]."/".$currentSubs[$i]["title"]?>"> <?=$currentSubs[$i]["title"]?> by <?= $currentSubs[$i]["author"]; ?><br />
     <?php  endfor;?>
     <br>
     </select></form>
@@ -55,7 +55,7 @@ if($numSubs > 0):?>
 
 <ul style="list-style-type:square;">
      <?php for($i = 0; $i < $numSubs; $i++):?>
-        <li><a href="imgs/contest/<?=$currentSubs[$i]["image"]?>" target="_blank"><?=$currentSubs[$i]["author"]."/".$currentSubs[$i]["title"]?></a><br /></li>
+        <li><a onclick="openPattern(<?= $i; ?>, 'adminPattern', 'adminContest', 'section2')"><?=$currentSubs[$i]["title"]?></a> by <?= $currentSubs[$i]["author"]; ?></a></li>
      <?php endfor; ?>
      </ul>
 
@@ -67,7 +67,7 @@ if($numSubs > 0):?>
     <form>
     <select id="deleteSubs" multiple="multiple" size="<?= $numSubs; ?>">
     <?php for($i = 0; $i < $numSubs; $i++):?>
-        <option value="<?=$currentSubs[$i]["author"]."/".$currentSubs[$i]["title"]?>"> <a href="imgs/contest/<?=$currentSubs[$i]["image"]?>" target="_blank"><?=$currentSubs[$i]["author"]."/".$currentSubs[$i]["title"]?></a><br />
+        <option value="<?=$currentSubs[$i]["author"]."/".$currentSubs[$i]["title"]?>"><?=$currentSubs[$i]["title"]?> by <?= $currentSubs[$i]["author"]; ?><br />
     <?php  endfor;?>
     <br>
     </select></form>
@@ -98,7 +98,7 @@ if($numCont == 0):?>
     <p>Current contestants:</p>
      <ul style="list-style-type:square;">
      <?php for($i = 0; $i < $numCont; $i++):?>
-        <li><a href="imgs/contest/<?=$currentConts[$i]["image"]?>" target="_blank"><?=$currentConts[$i]["author"]."/".$currentConts[$i]["title"]?></a><br /></li>
+        <li><a onclick="openPattern(<?= $i; ?>, 'adminPattern', 'adminContest2', 'section3')"><?=$currentConts[$i]["title"]?></a> by <?= $currentConts[$i]["author"]; ?></a></li>
      <?php endfor; ?>
      </ul>    
      <?php endif;?>
@@ -114,8 +114,6 @@ if($numCont == 0):?>
 	 <?php //endif; ?>
 	
  </div>
-
-
     
 <div id="preview"></div></div>
 

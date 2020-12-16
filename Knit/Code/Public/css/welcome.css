@@ -5,28 +5,30 @@ Last modified 12/16/2020 */
 #Welcome {
 	color: white;
     text-shadow: 2px 2px 4px #222;
-	
+	background-image: url('../imgs/bg.jpg'); 
+	background-size: cover; 
+	background-repeat: no-repeat; 
+	background-position: center;
 }
 #Welcome h1 {
 	margin: 0;
 	font-size: 6rem;
 	font-weight: bold;
 }
-.slogan {
+#Welcome .slogan {
 	font-weight: bold;
 	font-style: italic;
 	font-size: 1.5rem;
 }
-.col {
-	margin: 5rem 0;
+#Welcome .welcomeContainer {
+	margin: 3rem 0;
 	text-align: center;
 }
-.col p {
+#Welcome .welcomeContainer p {
 	padding: 0 0.3rem;
 }
-
 @media only screen and (max-width:992px) {
 	#Welcome h1 {
-		font-size:4rem;
+		font-size: 4rem;
 	}
 }

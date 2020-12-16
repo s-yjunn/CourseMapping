@@ -1,0 +1,16 @@
+Meeting Nov 20 2020
+
+Next Steps: 
+- Sign up and login 
+- Personal user page 
+- Something independent to test logging in and registering 
+
+- After this, add to cart function
+- Admin site- delete users/items, adding other admins
+
+Tasks:
+- technical user manual
+- individual portfolios
+- authors on each code 
+- image citation 
+

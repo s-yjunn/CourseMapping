@@ -48,7 +48,6 @@ Last modified 12/16/2020 */
 #Vote .entriesSubmit p {
 	margin: 1rem 0;
 }
-
 #Vote a {
 	color: rgb(239, 35, 60);
 	transition: color 0.4s;
@@ -57,7 +56,6 @@ Last modified 12/16/2020 */
   cursor: pointer;
   color: rgb(239, 35, 60, 0.6);
 }
-
 
 /* PATTERN.PHP */
 #mainPattern {

@@ -1,0 +1,38 @@
+Date: November 15 
+
+In terminal instructions:
+
+to connect: usql my://user:password@108.53.75.168:3316/store
+
+to show tables: SHOW TABLES;
+
+to view: SELECT * FROM items_for_sale;
+
+to delete: DELETE FROM items_for_sale WHERE id=’62946’;
+
+to insert: INSERT INTO items_for_sale VALUES(id, ‘item name’, ‘url’, ‘tag1, tag2’, ‘description’, ‘seller’, 10.99)
+INSERT INTO items_for_sale VALUES(62946,'Painted AF1s','https://i.pinimg.com/originals/21/56/ec/2156ec32de86297966559d863b4761e8.jpg', 'shoes, paint', 'Hand-painted cactus Air Force 1s','shoePainter',279.99);
+
+to update: UPDATE items_for_sale SET price=59.99 WHERE id=’62946’
+
+
+Our project will have 3 tables: featured, user, items_for_sale
+
+featured table:
+Only ‘id’ column that displays the IDs of the featured items on the front page
+
+user table: 
+user: name of user
+pass: md5 hashed password
+mod_priv: boolean variable indicating whether the user has moderator privileges (delete other users)
+admin_priv: boolean variable indicating whether the user has administrator privileges (control over all data on website)
+
+items_for_sale table:
+Id: id number of the item, increases by 1 each time an item is uploaded by users
+title: title of item as inputet by user when posting item 
+image_url: URL of image used by user, if uploading an image this will be the location of the uploaded photo in the database 
+tags: space and comma separated words or phrases inputet by the user
+description: short description inputet by user of the item 
+seller: username of the user that is selling the product
+price: numerical price inputet by the user
+

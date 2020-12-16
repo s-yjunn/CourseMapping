@@ -5,8 +5,9 @@ function updateVote(i){
         url: "php/updateVote.php",
         data: {index:i},
         success: function(result) {
-            console.log(result);
-            			
+            $('.contestVote').each(function() {
+                $(this).hide();
+            });			
         }
     })
     );   
@@ -18,11 +19,15 @@ function updateVote(i){
 function openPattern(patternIndex, to, from, fromLink) {
     // Load the content into the pattern div, then
     $("#"+to).load("php/pattern.php?index=" + patternIndex + "&to=" + to + "&from=" + from + "&fromLink=" + fromLink, function(){
-        // hide the menu
-        hide(from);
+        if (from === "adminContest2") {
+            // hide the menu
+            hide("adminContest"); // last minute fix for showing contestants
+        } else {
+            hide(from);
+        }
         // show the pattern
         show(to);
         // go to the top of the pattern
-        window.location.href = "#contestPattern";
+        window.location.href = "#"+to;
     });
 }

@@ -39,8 +39,8 @@ Hyana:
     1. Users.json
 
     Design:
-    1. Website design (tab, admin page) in general based on our mid-term 
-    2. ask if user will save the tab or not before logout/remove the tab using jquery-ui
+    1. index.html.php/admin.html.php: Website design (tab, admin page) in general based on our mid-term 
+    2. script.js: ask if user will save the tab or not before logout/remove the tab using jquery-ui
     3. View.css, add.css, tab.css(not related to tab.html)
 
     Admin/server side:
@@ -48,13 +48,23 @@ Hyana:
     2. rmCourse.php: Can remove course(s) from courses.json
     3. userinfo.php: indicates which user is logged in(guest, admin, user)
     4. viewCourses.js/viewMajors.js: admin can look at the data from courses.json and majors.json easily.
+    5. emptyDir.php: empty each user's directory
+    6. countFiles.php: count the number of files in each user's directory
+    7. viewUsers.js: admin can look cat the data from users.json and the number of files in each user's directory
 
     Register/login:
     1. Register.php/login.php: Implemented register & login feature
     2. logouttabs.php/logintabs.php: Different tabs will be shown depends on the login status(admin, user, guest)
     3. loginStyle.css: Implemented pop-up modal to register and login features
+    4. userinfo.php: displays the current user on the top of the webpage
 
+    Pop-up:
+    1. infoPopUp.html/pathway.js: user can access to course information by double clicking the course blocks
 
+    Instructions:
+    1. adminInstlist.html: instruction for admin
+    2. instruction.html: instruction for users
+    
 Yujun:
     Pathway
     1. Tab.html.php

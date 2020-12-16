@@ -1,8 +1,7 @@
 <?php
-  // This file generates the "Inbox" page (loaded into the admin tab)
-  // all admins access the same admin inbox
-  // @author Isabel + styling by Alexis
-  // Last modified 12/14/2020
+  /* This file generates the "Inbox" page (loaded into the admin tab)
+  @author Isabel + styling by Alexis
+  Last modified 12/14/2020 */
 
   $path = "../../../Private/adminMessages.json";
 
@@ -26,46 +25,46 @@
   <h4>Inbox <button class="btn1 btnIcon float-right" type="button" onclick="refreshAdminInbox()"><i class="fas fa-redo-alt fa-xs"></i></button></h4>
   
   <div class="refresh">
-  <!--reload button.-->
-  <div id = "userUnreadMsg" class = "section">
-    <h5>Unread messages</h5>
-    <?php if (count($unread) == 0):?>
-      <p class='alert alert-info' role='alert'>No new messages.</p>
-    <?php else: ?>
-      <?php foreach ($unread as $message):
-        $sent = date('M j, Y \a\t h:iA \U\T\C', $message["sent"]);
-        if (!$from = $message["from"]) {
-          $from = "ANONYMOUS";
-        }
-      ?>
-        <div class="message">
+    <!--reload button.-->
+    <div id = "userUnreadMsg" class = "section">
+      <h5>Unread messages</h5>
+      <?php if (count($unread) == 0):?>
+        <p class='alert alert-info' role='alert'>No new messages.</p>
+      <?php else: ?>
+        <?php foreach ($unread as $message):
+          $sent = date('M j, Y \a\t h:iA \U\T\C', $message["sent"]);
+          if (!$from = $message["from"]) {
+            $from = "ANONYMOUS";
+          }
+        ?>
+          <div class="message">
+            <p class="author"><?= $from; ?><br>
+            <span class="timestamp"><?= $sent; ?></span></p>
+            <p class="messageContent"><?= $message["text"]; ?></p>
+          </div>
+        <?php endforeach; ?>
+      <?php endif; ?>
+    </div>
+
+    <div id = "userReadMsg" class = "section">
+      <h5>Read messages</h5>
+      <?php if (count($read) == 0):?>
+        <p class='alert alert-info' role='alert'>No old messages.</p>
+      <?php else: ?>
+        <?php foreach ($read as $message):
+          $sent = date('M j, Y \a\t h:iA', $message["sent"]);
+          if (!$from = $message["from"]) {
+            $from = "ANONYMOUS";
+          }
+        ?>
+      <div class="message">
           <p class="author"><?= $from; ?><br>
           <span class="timestamp"><?= $sent; ?></span></p>
           <p class="messageContent"><?= $message["text"]; ?></p>
-        </div>
-      <?php endforeach; ?>
-    <?php endif; ?>
-  </div>
-
-  <div id = "userReadMsg" class = "section">
-    <h5>Read messages</h5>
-    <?php if (count($read) == 0):?>
-      <p class='alert alert-info' role='alert'>No old messages.</p>
-    <?php else: ?>
-      <?php foreach ($read as $message):
-        $sent = date('M j, Y \a\t h:iA', $message["sent"]);
-        if (!$from = $message["from"]) {
-          $from = "ANONYMOUS";
-        }
-      ?>
-	  <div class="message">
-        <p class="author"><?= $from; ?><br>
-        <span class="timestamp"><?= $sent; ?></span></p>
-        <p class="messageContent"><?= $message["text"]; ?></p>
-	  </div>
-      <?php endforeach; ?>
-    <?php endif; ?>
-  </div>
+      </div>
+        <?php endforeach; ?>
+      <?php endif; ?>
+    </div>
   </div>
   
 </div>

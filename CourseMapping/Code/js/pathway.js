@@ -23,11 +23,11 @@ function getCurrentElements() {
   if (currentPage == null) {
     return;
   }
-  menu = currentPage.getElementsByClassName("menu")[0];
-  info = currentPage.getElementsByClassName("info")[0];
-  pathTable = currentPage.getElementsByClassName("pathTable")[0];
-  pathwayContent = currentPage.getElementsByClassName("pathwayContent")[0];
-  map = currentPage.getElementsByClassName("map")[0];
+  menu = getByClassFromTab("menu");
+  info = getByClassFromTab("info");
+  pathTable = getByClassFromTab("pathTable");
+  pathwayContent = getByClassFromTab("pathwayContent");
+  map = getByClassFromTab("map");
 }
 
 /**
@@ -102,7 +102,7 @@ function getCourses() {
  */
 function createCourseBlock(courseName, count) {
   // Create it and add to the bar of unplaced courses in the pathway
-  var position = "" + (count + 1) * 50;
+  var position = (count + 1) * 50;
   var course = createCourseBlockHelper(courseName, 15, position, false);
   // Store the new data
   var courseInfo = { location: null, type: "singular" };
@@ -126,7 +126,6 @@ function createCourseBlockHelper(courseName, top, left, adjustToCenter) {
   var course = document.createElement("div");
   course.innerHTML = courseName;
   var nameNoWhitespace = courseName.split(" ").join("");
-  course.id = nameNoWhitespace;
   course.className = "courseBlock ui-widget-content " + nameNoWhitespace;
   $(pathwayContent).append(course);
   if (adjustToCenter) {
@@ -154,7 +153,7 @@ function makeDraggable() {
     var xInitial;
     var yInitial;
     var courseBlocks = currentPage.getElementsByClassName("courseBlock");
-    /** Start of Hyana's contribution to Yujun's code. */
+    /** Start of Hyana's contribution to Yujun and Allison's code. */
     $(courseBlocks).dblclick(function () {
       var course = String($(this).text());
       var department = course.split(" ")[0];
@@ -170,7 +169,7 @@ function makeDraggable() {
         "</div>";
       document.getElementById("courseinfo").style.display = "block";
     });
-    /** End of Hyana's contribution to Yujun's code. */
+    /** End of Hyana's contribution to Yujun and Allison's code. */
     $(courseBlocks).draggable({
       containment: pathwayContent,
       scroll: false,
@@ -179,9 +178,9 @@ function makeDraggable() {
         yInitial = $(this).position().top + $(this).height() / 2;
 
         // Close the prequisite options menu (if the course has one) when dragging
-        var prereqList = currentPage.getElementsByClassName(
+        var prereqList = getByClassFromTab(
           "list" + $(this).text().split(" ").join("")
-        )[0];
+        );
         if (prereqList != null) {
           prereqList.style.display = "none";
         }
@@ -264,10 +263,10 @@ function getSemNum(xPos, yPos, containerWidth) {
  * Does not delete any arrowlines that might connect to the course.
  * TO ADD? A boolean parameter to determine if it should look for arrowlines?
  *
- * @param {string} id - of the courseBlock
+ * @param {string} courseID - courseName with no space
  */
-function removeCourseBlock(id) {
-  var courseBlock = document.getElementById(id);
+function removeCourseBlock(courseID) {
+  var courseBlock = getByClassFromTab(courseID);
 
   // Remove it from currentPathway and sessionStorage.
   var yPos =
@@ -328,7 +327,7 @@ function getPaths() {
       else {
         for (var j = 0; j < prereqs.length; j++) {
           var course1Name = prereqs[j].split(" ").join("");
-          var course1 = currentPage.getElementsByClassName(course1Name)[0];
+          var course1 = getByClassFromTab(course1Name);
 
           // If prereq is not in existing course blocks, print a notice
           if (course1 == null) {
@@ -379,7 +378,7 @@ function createLine(course1, course1Name, course2, course2Name) {
  * @param {string} name of the course being dragged
  */
 function lineChange(dragged) {
-  var changedCourse = currentPage.getElementsByClassName(dragged)[0];
+  var changedCourse = getByClassFromTab(dragged);
   var lines = currentPage.getElementsByClassName("arrowLine");
   for (var i = 0; i < lines.length; i++) {
     // Find lines that are affected by dragging
@@ -392,9 +391,7 @@ function lineChange(dragged) {
     if (lineName.includes(changedCourseName)) {
       changingLine = $(lines[i]);
       var linkedCourseName = lineName.replace(changedCourseName, "");
-      var linkedCourse = currentPage.getElementsByClassName(
-        linkedCourseName
-      )[0];
+      var linkedCourse = getByClassFromTab(linkedCourseName);
 
       // If the course dragged is the prereq for another course, change x1 and y1 of line
       if (lineName.indexOf(changedCourseName) == 0) {

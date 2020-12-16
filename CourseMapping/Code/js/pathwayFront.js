@@ -38,7 +38,7 @@ function initPrereqOpts(course2, course2Name, prereqs, userCourses) {
 
   // Display the menu when the course is clicked
   course2.onclick = function () {
-    var list = currentPage.getElementsByClassName("list" + course2Name)[0];
+    var list = getByClassFromTab("list" + course2Name);
     console.log($(course2).position().top + $(course2).height());
     list.style.top = $(course2).position().top + $(course2).height() + "px";
     list.style.left = $(course2).position().left + "px";
@@ -90,7 +90,7 @@ function addPrereqs(chosenPrereqs, courseBlock, courseName) {
   // Second, add all the prereqs that aren't already there, and draw the new lines
   for(let i = 0; i < chosenPrereqs.length; i++) {
       var prereqName = chosenPrereqs[i];
-      var prereqBlock = document.getElementById(prereqName.split(" ").join(""));
+      var prereqBlock = getByClassFromTab(prereqName.split(" ").join(""));
       // If it doesn't already exist, make it.
       if(prereqBlock === null) {
         // count is used to position the created course block
@@ -140,7 +140,7 @@ function courseRemovalPopUp(prereqsDetached, lines, courseName) {
           break;
         }
       }
-      console.log(courseID + " is still connected: " + stillConnected);
+      // console.log(courseID + " is still connected: " + stillConnected);
       if(stillConnected) {
         connectedPrereqs.push(courseID);
       } else {
@@ -229,4 +229,16 @@ function fixListGrammer(coursesList, num) {
     improvedList = improvedList.slice(0, -8) + "and " + improvedList.slice(-8);
   } 
   return improvedList;
+}
+
+/**
+ * @author Allison Brand
+ * Since we have multiple tabs in the same page, we can't use id's for the elements in a tab, or there would be conflicts.
+ * We use class names instead, and then get elements by class name from the tab div
+ * Each of these class names is unique within a tab, so the first (and only) element 
+ * in the array returned by getElementsByClassName is it.
+ * @param {string} className 
+ */
+function getByClassFromTab(className) {
+  return currentPage.getElementsByClassName(className)[0];
 }

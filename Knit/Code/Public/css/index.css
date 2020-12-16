@@ -83,21 +83,21 @@ input[type=button] {
 .dark {
 	display: none; /* Hidden by default */
 	position: fixed;
-	z-index: 2; /* Sit on top */
+	z-index: 10000; /* Sit on top */
 	left: 0;
 	top: 0;
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
 	background-color: hsla(0, 0%, 23%, 0.8);
-	padding-top: 10rem;	
+	padding-top: 4rem;
 }
 /* modals to float over some 'dark' div */
 .float {
-    max-width: 95%;
+	max-width: 95%;
 	max-height: 85%;
-    width: 500px;
-    height: auto;
+  width: 500px;
+  height: auto;
 	padding: 2rem;
 	margin: auto;
 	background-color: white;

@@ -15,8 +15,6 @@
   <h4>Users <button class="btn1 btnIcon float-right" type="button" onclick="refreshAdminUsers()"><i class="fas fa-redo-alt fa-xs"></i></button></h4>
   <!-- reload button -->
   <p class="timestamp">Up-to-date as of <?=$updated; ?>.</p>
-  <!-- any updates go here -->
-  <span id = "adminUsersDiv"></span>
   <p>Knitty Gritty has <?= $nrUsers; ?> registered user<?php if ($nrUsers == 0):?>s.<?php elseif ($nrUsers == 1):?>:<?php else: ?>s:<?php endif; ?>
   </p>
 
@@ -61,9 +59,9 @@
 
 <div id = "adminCompose" class = "dark">
   <div class = "float">
+    <button class = 'close' onclick = "cancelAdminCompose()"><i class="fa fa-times"></i></button><br><br>
     <textarea class = "messageCompose" id = "msgToUser"></textarea><br><br>
-    <button class = "btn1" id = "msgToUserBtn">Send</button>
-    <button class = "btn1" onclick = "cancelAdminCompose()">Cancel</button><br><br>
+    <button class = "btn1" id = "msgToUserBtn">Send</button><br><br>
     <span id = "msgToUserFeedback"></span>
   </div>
 </div>

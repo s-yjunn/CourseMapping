@@ -24,7 +24,8 @@
 <img src="imgs/quizzes/backbutton.jpg" alt="back button" class="backBtnImg" onclick="hide('userInbox'); show('userHome')"><br><br>
 
 <div id = "userInboxContent">
-  <h4>Inbox <button class="btn1 btnIcon float-right" type="button" onclick="refreshUserInbox('<?= $username; ?>')"><i class="fas fa-redo-alt fa-xs"></i></button></h4>
+  <h4>Inbox<button class="btn1 btnIcon float-right" type="button" onclick="refreshUserInbox('<?= $username; ?>')"><i class="fas fa-redo-alt fa-xs"></i></button></h4>
+  <button class="btn1" type="button" onclick="show('userCompose')">Message admin</button>
   
   <div class="refresh">
   <!--reload button.-->
@@ -62,5 +63,13 @@
     <?php endif; ?>
   </div>
   </div>
-  
+</div>
+
+<div id = "userCompose" class = "dark">
+  <div class = "float">
+    <button class = 'close' onclick = "hide('userCompose')"><i class="fa fa-times"></i></button><br><br>
+    <textarea id = "msgAdminInbox" placeholder = "Write your message to site admin"></textarea><br><br>
+    <button class = "btn1" onclick = "messageToAdmin('msgAdminInbox', 'msgAdminInboxFB', '<?= $username; ?>')">Send</button> <button class = "btn1" onclick = "cancelUserCompose()">Cancel</button><br><br>
+    <span id = "msgAdminInboxFB"></span>
+  </div>
 </div>

@@ -15,7 +15,7 @@
   
   <form>
     <textarea id = "msgAdminHelp" placeholder = "Write your message to site admin"></textarea><br>
-    <button type = "button" class = "btn1" onclick = "messageToAdmin('msgAdminHelp', 'msgAdminHelpFB' <?php if ($loggedIn) { echo ", '$username'"; } ?>)">Send</button>
+    <button type = "button" class = "btn1" onclick = "messageToAdmin('msgAdminHelp', 'msgAdminHelpFB' <?php if ($loggedIn) { echo ", '$username'"; } ?>)">Send</button><br><br>
     <span id = "msgAdminHelpFB"></span>
   </form>
 </div>

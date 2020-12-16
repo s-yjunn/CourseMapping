@@ -29,7 +29,7 @@
     <!-- this div is filled by "php/admin/adminInbox.php" -->
     <div id = "adminInbox"></div>
 
-    <!-- This div is filled by "php/user/profileStatic.php" whenever the admin clicks on a user's display name -->
+    <!-- This div is filled by "php/user/profileStatic.php" -->
     <div id = "adminProfile"></div>
 
 </div>

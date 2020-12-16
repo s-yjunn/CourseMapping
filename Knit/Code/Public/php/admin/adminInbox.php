@@ -40,11 +40,7 @@
       ?>
         <div class="message">
           <p class="author"><?= $from; ?><br>
-          <span class="timestamp"><?= $sent; ?></span>
-            <?php if ($message["answered"]): ?>
-              | ANSWERED
-            <?php endif; ?>
-          </span></p>
+          <span class="timestamp"><?= $sent; ?></span></p>
           <p class="messageContent"><?= $message["text"]; ?></p>
         </div>
       <?php endforeach; ?>
@@ -64,11 +60,7 @@
       ?>
 	  <div class="message">
         <p class="author"><?= $from; ?><br>
-        <span class="timestamp"><?= $sent; ?>
-          <?php if ($message["answered"]): ?>
-            | ANSWERED
-          <?php endif; ?>
-        </span></p>
+        <span class="timestamp"><?= $sent; ?></span></p>
         <p class="messageContent"><?= $message["text"]; ?></p>
 	  </div>
       <?php endforeach; ?>

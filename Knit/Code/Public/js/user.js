@@ -103,13 +103,11 @@ function togglePubPr(toggleElm, index) {
 
 // This function restores a pattern view div after the user cancels their edits
 function cancelPatEdit(index) {
-    $("#tag" + index).html($("#prevTag" + index).html());; //restore privacy indicator to previous value
+    $("#tag" + index).html($("#prevTag" + index).html()); //restore privacy indicator to previous value
     // restore page alert to its previous value
     $("#uPaDiv").html("Here are your saved patterns. Click on a pattern to view more options (download, edit privacy level).");
     // hide the save options
     hide("patternEdit" + index);
-    // and the manage div in question
-    hide("managePattern" + index);
 }
 
 // This function saves a modification to a pattern's privacy level
@@ -232,4 +230,14 @@ function messageToAdmin(textElm, feedbackElm, from = "") {
         }
       });
     }
-  }
+}
+
+// this function aborts sending a message to admin in the user inbox
+function cancelUserCompose() {
+    // Close the composition div
+  hide("userCompose");
+  // Clear the composition area
+  $("#msgAdminInbox").val("");
+  // clear any previous feedback
+  $("#msgAdminInboxFB").html("");
+}

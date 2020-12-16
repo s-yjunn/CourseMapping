@@ -1,6 +1,6 @@
 <?php
-/* 
-@author Hyana Kang
+/**
+ *@author Hyana Kang
 */
 
 // counts the number of files in each user's designated directory

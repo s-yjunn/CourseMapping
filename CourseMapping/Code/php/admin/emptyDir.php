@@ -1,6 +1,6 @@
 <?php
-/* 
-@author Hyana Kang
+/**
+*@author Hyana Kang
 */
 // removes all the file from the chosen directories
 $folders = $_POST['dir'];

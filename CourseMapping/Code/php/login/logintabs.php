@@ -1,6 +1,6 @@
 <?php 
-/* 
-@author Hyana Kang
+/**
+*@author Hyana Kang
 */
 //displays the tabs when the user is logged-in
 if ((isset($_SESSION['username'])) && ($_SESSION['username']!= '220')){ 

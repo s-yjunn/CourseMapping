@@ -1,7 +1,7 @@
 <?php
-/* 
-@author Hyana Kang
-The code is modified from login.php that we've learned in class
+/** 
+    *@author Hyana Kang
+    *The code is modified from login.php that we've learned in class
 */
 
 //gets the input data from register.html and adds it to users.json

@@ -2,6 +2,10 @@
 @author Alexis
 Last modified 12/16/2020 */
 
+.tabcontent {
+	padding: 2rem;
+}
+
 .tabcontent h3 {
 	font-size: 4rem;
 	font-weight: bold;

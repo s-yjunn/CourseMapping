@@ -1,5 +1,5 @@
 ******  BUGS *******
-When refreshing, many courses in the pathway vanish. This happens to all of the courses in the br for unplaced courses.
+When refreshing, all of the courses in the bar for unplaced courses vanish.
 
 The remove button that allows the user to delete the original prereqs after the user has changed which prereqs they are using
 to satisfy the requirements for a course doesn't actually work.

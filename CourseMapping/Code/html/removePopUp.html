@@ -1,0 +1,31 @@
+<head>
+    <meta name="author" content="Allison Brand">
+    <!--
+    https://www.w3schools.com/howto/howto_css_login_form.asp
+    This code was copy pasted from w3schools and modified.
+
+    -->
+    <link rel="stylesheet" type="text/css" href="css/popUp.css">
+</head>
+
+<div id="popUp" class="modal">
+    <div class = "modal-content animate">
+        <div class = "imgcontainer">
+            <span onclick="document.getElementById('popUp').style.display='none'"
+            class="close" title="Close Modal">&times;</span>
+            <h2 style = "float:center">Remove Courses?</h2>
+        </div>
+        <div class="container">
+            <p id="messageRemove">Would you like to remove the following courses? These used to be the prereqs for </p>
+            <div id="listToRemove"></div>
+        </div>
+        <div class="container" style="background-color:#f1f1f1">
+            <!-- The onclick handler for the remove button will be added by the js code so that it can access the 
+            courses that need to be removed. -->
+            <button type="button" id="removeCourses" >Remove</button>
+            <!-- Simply close the pop-up -->
+            <button type="button" id="keepCourses" onclick="document.getElementById('popUp').style.display='none';" >Keep</button>
+        </div>
+    </div>  
+</div>
+

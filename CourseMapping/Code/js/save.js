@@ -37,11 +37,8 @@ function save(tabID) {
           }
           var success = successResponse.slice(0,-1);
           // Add message to message bar, and show it for ~3 seconds:
-          var messageBar = document.getElementById("messagebar");
-          messageBar.innerHTML = success;
-          messageBar.className = "show";
-          // After 3 seconds, remove the show class from messageBar
-          setTimeout(function(){messageBar.className = messageBar.className.replace("show", ""); }, 3000);
+          showMessage(success);
+          // TO ADD: Change color of message bar based on message.
         }
     };
     xhttp.open("POST", savepath, true);

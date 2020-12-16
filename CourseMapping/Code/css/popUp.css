@@ -1,0 +1,88 @@
+/*
+    Author: Allison  https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_login_form_modal
+    This code was copy pasted from loginStyle.css and modified.
+
+    I added #popUp before the class selectors to avoid conflicts with loginStyle.css
+*/
+
+#popUp .container {
+  padding: 16px;
+}
+
+#popUp button {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #207CB1;
+}
+
+#removeCourses:hover {
+  opacity: 0.8;
+  background-color: #f44336;
+}
+
+#keepCourses:hover {
+  background-color: rgb(13, 130,102);
+}
+
+#popUp .modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 3; /* Sit on top of everything*/
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 150px;
+}
+
+/* Modal Content/Box */
+#popUp .modal-content {
+  background-color: #fefefe;
+  margin: 5px auto; /* 15% from the top and centered */
+  border: 1px solid #888;
+  width: 40%; /* Could be more or less, depending on screen size */
+}
+
+/* Center the image and position the close button */
+#popUp .imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+/* The Close Button */
+#popUp .close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+/* Close button on hover */
+#popUp .close:hover,
+#popUp .close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+#popUp .animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+

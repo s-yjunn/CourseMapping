@@ -57,6 +57,7 @@ written by Professor Streinu, and Yujun, Hyana's midterm projects-->
         </div>
         <?php include "html/register.html" ?>
         <?php include "html/login.html" ?>
+        <?php include "html/removePopUp.html" ?>
     </article>
 
 
@@ -68,6 +69,7 @@ written by Professor Streinu, and Yujun, Hyana's midterm projects-->
     <script src="js/pathwayFront.js"></script>
     <script src="js/pathway.js"></script>
     <script src="js/pathwayMeta.js"></script>
+    <script src="js/messageBar.js"></script>
     <script src="js/save.js"></script>
     <script src="js/logout.js"></script>
     <script src="js/openSaved.js"></script>

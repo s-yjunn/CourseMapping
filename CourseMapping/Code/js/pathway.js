@@ -1,8 +1,5 @@
 /**
- * @author Yujun Shen, Allison made some additions
- *
- * Allison's additions to Yujun's code center on interactions with session storage and currentPathway
- * to store user's edits to the pathway.
+ * @author Yujun Shen, Allison made additions
  *
  * Allison's additions are commented as such, everything else is Yujun's.
  */
@@ -95,28 +92,52 @@ function getCourses() {
 }
 
 /**
+ * @author Yujun wrote the original method, Allison separated out the helper method: createCourseBlockHelper
  * Create the courseBlock and initialize it into currentPathway.
  *
- * @param {string} courseName
+ * @param {string} courseName with space
  * @param {number} count how many courses are already added to the bar
  * Used to determine the position for this one.
  * @returns the created course block
  */
 function createCourseBlock(courseName, count) {
+  // Create it and add to the bar of unplaced courses in the pathway
   var position = "" + (count + 1) * 50 + "px";
+  var course =  createCourseBlockHelper(courseName, "15px", position, false);
+  // Store the new data
+  var courseInfo = { location: null, type: "singular" };
+  storeEdits(-1, courseName, courseInfo); // Eventually change this so that the courses appear in correct order.
+  return course;
+}
+
+
+/**
+ * @author Yujun wrote the code, Allison separated it into a helper method and added adjustToCenter
+ * Creates the courseBlock with the position specified by top and left.
+ * Does not add the data into currentPathway and sessionStorage.
+ * @param {string} courseName with space
+ * @param {string} top the string that course.style.top will be set to 
+ * @param {string} left the string that course.style.left will be set to 
+ * @param {boolean} adjustToCenter - if this is true, top and left will be interpreted as
+ * the positions of the center of the course block. To adjust so that they represent the actual
+ * top and left, half the height of a course block will be subtracted from top, and half the width
+ * from left.
+ */
+function createCourseBlockHelper(courseName, top, left, adjustToCenter) {
   var course = document.createElement("div");
   course.innerHTML = courseName;
   var nameNoWhitespace = courseName.split(" ").join("");
   course.id = nameNoWhitespace;
   course.className =
     "courseBlock ui-widget-content " + nameNoWhitespace;
-  course.style.top = "15px";
-  course.style.left = position;
+  if(adjustToCenter) {
+    top -= parseInt(course.style.height) / 2;
+    left -= parseInt(course.style.width) / 2;
+  }
+  course.style.top = top;
+  course.style.left = left;
   $(pathwayContent).append(course);
   course.style.display = "block";
-
-  var courseInfo = { location: null, type: "singular" };
-  storeEdits(-1, courseName, courseInfo); // Eventually change this so that the courses appear in correct order.
   return course;
 }
 
@@ -184,6 +205,7 @@ function makeDraggable() {
 /**@author Allison */
 
 /**
+ * @author Allison Brand
  * Saves edits to both currentPathway and sessionStorage
  * -1 means the bar that courses appear in initially
  *
@@ -199,6 +221,7 @@ function storeEdits(sem, courseName, courseInfo) {
 }
 
 /**
+ * @author Allison Brand
  * Coverts the given xPos into the semester number,
  * starting at 1 for first semester freshman year, and ending at 8
  *
@@ -216,6 +239,34 @@ function getSemNum(xPos, yPos, containerWidth) {
   return semNum;
 }
 
+/**
+ * @author Allison Brand
+ * 
+ * Given a courseBlock's id, removes its HTML element,
+ * and deletes it from currentPathway and sessionStorage.
+ * 
+ * Does not delete any arrowlines that might connect to the course.
+ * TO ADD? A boolean parameter to determine if it should look for arrowlines?
+ * 
+ * @param {string} id - of the courseBlock 
+ */
+function removeCourseBlock(id) {
+  var courseBlock = document.getElementById(id);
+
+  // Remove it from currentPathway and sessionStorage. 
+  var yPos = parseInt(courseBlock.style.top) + parseInt(courseBlock.style.height) / 2;
+  var xPos = parseInt(courseBlock.style.left) + parseInt(courseBlock.style.width) / 2;
+  var containerWidth = parseInt(pathwayContent.style.width);
+  var semNum = getSemNum(xPos, yPos, containerWidth)
+  delete currentPathway["sem_" + semNum]["nodes"][spaceAdded(id)];
+  serverSaveNeeded = true;
+  currentPathway["serverSaveNeeded"] = true;
+  sessionStorage[currentTab] = JSON.stringify(currentPathway);
+
+  // Delete the courseBlock HTML element
+  courseBlock.parentNode.removeChild(courseBlock);
+}
+
 /** End of Allison's contribution to Yujun's code. */
 
 /**
@@ -231,7 +282,6 @@ function getPaths() {
 
     try {
       var prereqs = courseCatalog[department][userCourses[i].innerHTML].prereqs;
-      console.log(prereqs);
       // If there is no information of prereq for this course, print a message
     } catch (error) {
       var warning = document.createElement("p");
@@ -251,7 +301,6 @@ function getPaths() {
         .replace("courseBlock ui-widget-content ", "")
         .replace(" ui-draggable ui-draggable-handle", "");
 
-      console.log(Array.isArray(prereqs[0]));
       // If there is more than 1 option to satisfy the prerequisite requirement for course2
       if (Array.isArray(prereqs[0])) {
         initPrereqOpts(course2, course2Name, prereqs, userCourses);

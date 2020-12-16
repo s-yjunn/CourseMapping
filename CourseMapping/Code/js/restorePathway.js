@@ -5,6 +5,9 @@
 /**
  * Restore pathway for the current tab from sessionStorage.
  * Recreate courseBlock and lines correspondingly.
+ * 
+ * Yujun wrote this function, Allison added a part to restore courseBlocks that are in the 
+ * bar for unplaced courses. 
  */
 function restorePathway() {
   if (document.getElementById(currentTab) == null) {
@@ -28,25 +31,24 @@ function restorePathway() {
       var nodes = restoredInfo[sem]["nodes"];
 
       if (isNotEmpty(nodes)) {
-        var xPos = (containerWidth / 8) * semNum - containerWidth / 16 + 5;
-
-        for (var courseName in nodes) {
-          var yPos = nodes[courseName]["location"];
-          var courseBlock = document.createElement("div");
-          courseBlock.innerHTML = courseName;
-          courseBlock.className =
-            "courseBlock ui-widget-content " + courseName.split(" ").join("");
-          $(pathwayContent).append(courseBlock);
-          $(courseBlock).css({ top: yPos - $(courseBlock).height() / 2 });
-          $(courseBlock).css({ left: xPos - $(courseBlock).width() / 2 });
-          courseBlock.style.display = "block";
+        if(semNum === -1) { // -1 is the bar for unplaced courses.
+          for(let count = 0; count < nodes.length; count++) {
+            var courseName = nodes[count];
+            addCourseToBar(courseName, count);
+          }
+        } else {
+          var xPos = (containerWidth / 8) * semNum - containerWidth / 16 + 5;
+          for (var courseName in nodes) {
+            var yPos = nodes[courseName]["location"];
+            createCourseBlockHelper(courseName, yPos, xPos, true); // Allison converted some code to this method to acheive consistency with other code
+          }
         }
       }
     }
   }
 
   makeDraggable();
-  getPaths();
+  getPaths(); 
 }
 
 /**

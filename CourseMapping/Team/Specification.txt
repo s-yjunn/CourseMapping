@@ -1,10 +1,18 @@
-VIEW: ---------------------------------------------
+******  BUGS *******
+When refreshing, many courses in the pathway vanish. This happens to all of the courses in the br for unplaced courses.
+
+The remove button that allows the user to delete the original prereqs after the user has changed which prereqs they are using
+to satisfy the requirements for a course doesn't actually work.
+
+Get the tabs to squish again! Now they just disappear when there are too many. Maybe there is a way to get them to scroll?
+
+Get the tab renaming form to not become 0 pixels tall the second time you open it.
+
+The pop-up that asks the user if they want to save the pathway of a tab that they are deleting sometimes shows up 
+unexpectedly, and in the wrong position on the page. 
 
 
-CONTROLLER: ---------------------------------------------
-
-
-MODEL: ---------------------------------------------
+******** JSON Model: ***********
 
 ----- The general information on courses and major requirements are stored in two JSON files. They are organized as described below:
 

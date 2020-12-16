@@ -10,10 +10,21 @@ Allison:
     4. openSaved.js, 
     5. script.js, all except the part that asks the user whether they want to save
     6. logout.js, which saves the user’s open tabs if they click yes. Again, querying the user was Hyana’s
+
+    General Functionality:
+    1. Additions to pathway.js,
+        These additions include interactions with session storage and currentPathway to store user's edits to the pathway.
+        I also added a method to remove a courseBlock from the HTML and storage.
+    2. pathwayFront.js with Yujun  
+        I added the part that deals with adding prereqs
     
-    Pop-up:
+    Pop-ups:
     1. Added message bar to index.html.php
     2. messageBar.css
+    3. messageBar.js, a function to display message with messageBar
+    4. removePopUp.html, a pop-up that asks the user if they want to remove course blocks that used to be the prereqs for 
+        a course that they changed the prereqs for.
+    5. popUp.css, styling for the pop-up described above.
    
     Site
     1. Created the buttons that allow the user to open saved pathways

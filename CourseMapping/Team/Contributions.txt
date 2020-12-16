@@ -56,6 +56,7 @@ Yujun:
     1. restorePathway.js: When the user refresh the page, read from sessionStorage and restore and recreate pathways for existing tabs.
                           If the user change major for the tab by selecting and getting courses for a different major, clear existing pathway on page as well as in sessionStorage.
 
+    Help Debugging in general
     
 Olivia:
     1. Worked on register and login ability

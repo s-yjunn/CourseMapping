@@ -7,6 +7,7 @@
 
 .tabcontent:not(#Welcome) {
 	display: none;
+	margin-bottom: 2rem;	
 }
 .tabcontent {
 	animation: fadeEffect 1s;

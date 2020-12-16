@@ -58,12 +58,13 @@
       <td class='vote'><button class="btn1" type='button' onclick = "responseVote('<?= $loggedStr; ?>', 'up', <?= $postIndex; ?>, <?= $responseIndex; ?>)"><i class='fas fa-plus fa-xs'></i></button><br>
         <?= $response["score"]; ?><br>
         <button class="btn1" type='button' onclick="responseVote('<?= $loggedStr; ?>', 'down', <?= $postIndex; ?>, <?= $responseIndex; ?>)"><i class='fas fa-minus fa-xs'></i></button></td>
-      <td><p><span class="author"><a onclick="openProfile('<?= $response["author"]; ?>', 'forumProfile', 'forumPost', 'response<?= $responseIndex; ?>')"><?=$response["author"]; ?></a></span><br>
+      <td><p><span class="author"><a onclick="openProfile('<?= $response["author"]; ?>', 'forumProfile', 'forumPost', 'response<?= $responseIndex; ?>')"><?=$response["author"]; ?></a></span>
+	      <?php if ($canDelete): ?>
+	          <button class = "btn1 deletePostResponse float-right" onclick = "showDeleteResponse(<?= $postIndex; ?>, <?= $responseIndex; ?>)"><i class="far fa-trash-alt"></i></button>
+	        <?php endif; ?>
+		  <br>
       <span class='timestamp'><?= $posted; ?></span></p>
       <p class='postContent'><?= $response["content"]; ?></p></td>
-    <?php if ($canDelete): ?>
-        <td class = "deletePostResponse"><button class = "btn1 float-right" onclick = "showDeleteResponse(<?= $postIndex; ?>, <?= $responseIndex; ?>)"><i class="far fa-trash-alt"></i></button></td>
-      <?php endif; ?>
     </tr>
   <?php endforeach; ?>
   </table>

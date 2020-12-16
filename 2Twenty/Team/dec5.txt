@@ -1,0 +1,22 @@
+Meeting December 5 
+
+Make sure to upload code to bitbucket!
+
+TO DO:
+- Post items for sale (Jessica)
+- Account utilities - profile picture, change password (Sasha) 
+- About and how to page (Jessica)
+- Image links that come up when mouse hovers over picture (Max)
+- Checkout (Max)
+    - Paypal? 
+    - Dummy credit card info 
+    - When something is bought update items for sale 
+- Item page (Max)
+- Search functionality sorting 
+- Admin functionality 
+- Product reviews (Max)
+    - Separate table (id number, user that left it, comment, rating)
+- User profile (Sasha)
+- Picture of seller (Sasha)
+- Info about seller (Sasha)
+- Date that the user joined (Sasha)

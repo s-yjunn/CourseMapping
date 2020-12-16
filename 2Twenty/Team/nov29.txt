@@ -1,0 +1,16 @@
+Meeting November 29
+
+TO DO LIST:
+- Add to cart (Sasha) 
+   - User table, another column called ‘cart’ with IDs of items in their cart 
+- Post items for sale (Jess)
+   - Form where user fills out fields (description, price, link to image(s))
+   - Separate PHP ‘postItem’ file 
+- Checkout 
+- Image citation (Sasha)
+- Admin interface 
+   - Delete users and products (approve reviews?)
+
+To incorporate later:
+- When searching for items, sort by price, be able to click on them to give a full product description and add to cart
+- sort/filter by price, most relevant, etc. (if time allows)

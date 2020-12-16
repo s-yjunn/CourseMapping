@@ -1,0 +1,15 @@
+Meeting December 7
+
+Things to get done:
+- Incorporate account utilities (front end)
+    - Picture
+    - Info
+    - Date joined
+- About and how to page 
+- Product reviews
+- Checkout 
+- Admin 
+
+Group dynamics
+
+

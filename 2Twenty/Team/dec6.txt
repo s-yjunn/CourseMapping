@@ -1,0 +1,20 @@
+Meeting December 6
+
+- Account utilities - profile picture, change password (Sasha Monday) 
+- About and how to page (Jessica will do this)
+- Checkout (Max Monday) 
+    - Dummy credit card info 
+    - When something is bought update items for sale 
+- Item page (Max)
+- Search functionality sorting 
+- Product reviews (Max)
+- Separate table (id number, user that left it, comment, rating)
+
+Admin functionality 
+
+
+Presentation
+Sasha: register, change password, account, cart
+Jess: login, upload items 
+Max: search, item page, reviews 
+

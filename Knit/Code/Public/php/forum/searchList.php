@@ -18,11 +18,11 @@
 
   $result = [];
   //search posts -- loop through them
-  foreach ($posts as $post) {
+  foreach ($posts as $index => $post) {
     // and if query is in post title or post content, add them to the search result
     // (stripos is case-insensitive)
     if (stripos($post["title"], $param) !== false || stripos($post["content"], $param) !== false) {
-      $result[] = $post;
+      $result[$index] = $post;
     }
   }
 

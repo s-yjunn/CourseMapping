@@ -72,8 +72,10 @@ Yujun:
     Help Debugging in general
     
 Olivia:
-    1. Worked on register and login ability
-    2. Edited register and login tabs to be separate
-    3. Updated CSS of index page, pathway page, fixed resizing bug
-    4. Worked on pop-up modal for login and register tabs
+    1. Worked on register and login ability, edited them to be separate, helped with pop-up modal for these tabs
+        login.html 
+        register.html
+    2. Updated CSS of index page and pathway page, fixed resizing bug
+        loginStyle.css
+        pathwayPage.css
 

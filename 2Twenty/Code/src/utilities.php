@@ -22,6 +22,7 @@ function uploadItems($title, $image_url, $tags, $description, $price)
     
 }
 
+// written by Sasha
 function changePassword($id, $pass1, $pass2)
 {
     include("db_connect.php");
@@ -44,6 +45,7 @@ function changePassword($id, $pass1, $pass2)
     return 1;
 }
 
+//written by sasha
 function changePicture($id, $imageURL)
 {
     include("db_connect.php");
@@ -62,6 +64,7 @@ function changePicture($id, $imageURL)
     
 }
 
+//written by sasha
 function changeInfo($id, $info)
 {
     include("db_connect.php");

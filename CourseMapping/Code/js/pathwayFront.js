@@ -92,19 +92,19 @@ function addPrereqs(chosenPrereqs, courseBlock, courseName) {
       var prereqName = chosenPrereqs[i];
       var prereqBlock = getByClassFromTab(prereqName.split(" ").join(""));
       // If it doesn't already exist, make it.
-      if(prereqBlock === null) {
+      if(typeof prereqBlock === 'undefined') {
         // count is used to position the created course block
         var count = pathwayContent.childElementCount;
         prereqBlock = createCourseBlock(prereqName, count);
       }
+
       createLine(prereqBlock, prereqName.replace(" ", ""), courseBlock, nameNoSpaces);
   }
   // Make the newly added courses draggable
   makeDraggable();
 
   // // ---- CSS adjustments: ----
-  // // After 3 seconds, remove the show class from messageBar
-  // setTimeout(function(){messageBar.className = messageBar.className.replace("show", ""); }, 3000); 
+ // TO ADD: temporarily highlight the added lines
 }
 
 /**

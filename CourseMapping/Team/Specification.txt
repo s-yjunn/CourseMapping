@@ -1,5 +1,5 @@
 ******  BUGS *******
-When refreshing, many courses in the pathway vanish. This happens to all of the courses in the br for unplaced courses.
+When refreshing, all of the courses in the bar for unplaced courses vanish.
 
 The remove button that allows the user to delete the original prereqs after the user has changed which prereqs they are using
 to satisfy the requirements for a course doesn't actually work.
@@ -10,6 +10,8 @@ Get the tab renaming form to not become 0 pixels tall the second time you open i
 
 The pop-up that asks the user if they want to save the pathway of a tab that they are deleting sometimes shows up 
 unexpectedly, and in the wrong position on the page. 
+
+
 
 
 ******** JSON Model: ***********

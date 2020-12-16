@@ -1,3 +1,9 @@
+<?php 
+/* This is the contents of the register tab
+@author Alexis
+Last modified 12/16/2020 */
+?>
+
 <div id="Register" class="tabcontent">
 		<h3 class="underline">Create an Account</h3>
 		<form>

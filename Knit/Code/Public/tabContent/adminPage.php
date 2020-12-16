@@ -11,8 +11,8 @@
 
     <div id = "adminHome">
 	    <h4><i class="fas fa-user-cog"></i> Admin</h4>
-		
-        <button class="btn1" onclick="hide('adminHome'); show('adminUsers')"><span class="btnTitle">Users</span><br><span class="btnText">Get info about your site's denizens.</span></button>
+		<button class="btn1" onclick="openAdminInbox()"><span class="btnTitle">Inbox</span><br><span class="btnText">View messages from site visitors.</span></button>
+        <button class="btn1" onclick="hide('adminHome'); show('adminUsers')"><span class="btnTitle">Users</span><br><span class="btnText">Get info about registered users.</span></button>
         <button class="btn1" onclick="hide('adminHome'); show('adminContest')"><span class="btnTitle">Contest</span><br><span class="btnText">Manage the pattern contest.</span></button>
     </div>
 
@@ -26,7 +26,10 @@
         <?php include "php/admin/adminContest.php"; ?>
     </div>
 
-    <!-- This div is filled by "php/user/profileStatic.php" whenever the admin clicks on a user's display name -->
+    <!-- this div is filled by "php/admin/adminInbox.php" -->
+    <div id = "adminInbox"></div>
+
+    <!-- This div is filled by "php/user/profileStatic.php" -->
     <div id = "adminProfile"></div>
 
 </div>

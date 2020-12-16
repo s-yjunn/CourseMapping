@@ -1,3 +1,7 @@
+/* Styling for forum page
+@author Alexis
+Last modified 12/16/2020 */
+
 @keyframes fadeEffect {
 	from {opacity: 0;}
 	to {opacity: 1;}
@@ -5,7 +9,7 @@
 #forumPost, #forumSearch {
   display: none;
 }
-#forumHome, #forumPost, #responseList {
+#forumHome, #forumPost, #responseList, #forumSearch {
 	animation: fadeEffect 1s;
 }
 
@@ -32,7 +36,7 @@
 }
 
 /* "CARD" DIVS */
-#forumIndex, #mainPost, #postResponses, #composeResponse {
+#forumIndex, #mainPost, #postResponses, #composeResponse, #forumSearchContent {
 	border: 1px solid #ccc;
 	padding: 1.7rem 2rem;
 	margin: 2rem 0;
@@ -94,6 +98,36 @@ label[for="indexView"], label[for="responsesView"], #indexView, #responsesView {
 	margin: 0 0 2rem 0;
 }
 
-.deletePostResponse {
+/*.deletePostResponse {
 	vertical-align: top;
+	
+}*/
+
+#forumSearchQ, #forumDiv {
+	margin: 0 0.2rem 0 2.5rem;
+}
+
+@media only screen and (max-width:600px) {
+	/*.deletePostResponse {
+		display: none;
+	}*/
+}
+
+@media only screen and (max-width:768px) {
+	#forumSearchQ {
+		margin: 3 0rem;
+		display: inline-block;
+	}
+	#forumPost .vote {
+		padding: 0.8rem 0;
+	}
+	#forumPost .vote button {
+		margin: 0.5rem 0;	
+	}
+}
+
+@media only screen and (max-width:992px) {
+	#forumDiv {
+		margin: 3 0rem;
+	}
 }

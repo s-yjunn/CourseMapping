@@ -40,6 +40,7 @@
 <body>
 
 <!-- LOGIN BAR -->
+<div class="sticky-top">
 <div id="LoginBar" class="container-fluid">
 	<!-- This element contains alerts about login status -- if logged in, lets a visitor know what they're logged in as and lets them log out. Displays a confirmation message when they log out.-->
 	<span id="loggedIn">
@@ -93,7 +94,7 @@
   </div>
 </nav>
 </div>
-
+</div>
 <!-- HOME TAB CONTENT -->
 <div id="Welcome" class="tabcontent container-fluid h-100" style="background-image: url('imgs/bg.jpg'); background-size: cover">
 	<div class="row justify-content-center">
@@ -133,9 +134,16 @@
 	?>
 </div>
 
-<!--<div class="footer">
-	<p>© 2020, Intarsia Inc.</p>
-</div>-->
+<!-- user manual popup-->
+<div id = "Help" class = "dark">
+	<div class = "float">
+		<?php include "php/help.php"; ?>
+	</div>
+</div>
+
+<div class="myfooter">
+	<p>© 2020, Intarsia Inc. <a onclick = "show('Help')">Help</a></p>
+</div>
 
 <script src="js/tabs.js"></script>
 <script src="js/showHide.js"></script>

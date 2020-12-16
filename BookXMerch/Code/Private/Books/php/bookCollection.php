@@ -1,3 +1,4 @@
+<!-- Author: Imane Berrada | Date: Nov 19th, 2020--> 
 <?php 
 $logFile = "../allBooks.JSON";
 

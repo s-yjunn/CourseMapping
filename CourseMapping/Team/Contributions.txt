@@ -54,17 +54,21 @@ Hyana:
 
 
 Yujun:
-    1. Create elements based on user selected data
-    2. Dragging elements 
-    3. Linking courses according to data
-    4. Css of tab page
+    Pathway
+    1. Tab.html.php
+    2. Pathway.js: Create elements based on user selected data. Make draggable elements. Link courses according to data. 
+                   Help implement auto-saving the current pathway to sessionStorage every time the user change something by dragging courses.
+    3. pathwayFront.js: Create dropdown menu for courses that have multiple ways to satisfy prerequisites.
+    4. jsonParser.js: Read data from json files.
+    5. pathwayPage.css: Css of tab page
+    6. courseBlockDropDown.css: Css of dropdown menu
 
-    files:
-    1. tab.html
-    2. pathway.js
-    3. pathwayPage.css
+    Restore from saving
+    1. restorePathway.js: When the user refresh the page, read from sessionStorage and restore and recreate pathways for existing tabs.
+                          If the user change major for the tab by selecting and getting courses for a different major, clear existing pathway on page as well as in sessionStorage.
+
+    Help Debugging in general
     
-
 Olivia:
     1. Worked on register and login ability
     2. Edited register and login tabs to be separate

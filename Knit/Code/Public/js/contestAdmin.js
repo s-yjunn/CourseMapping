@@ -1,6 +1,3 @@
-
-$(document).ready(function(){
-});
 $("#showWin").click(function(){
   var numWinners = document.forms["numWin"]["numWinners"].value;
 $.ajax({
@@ -8,8 +5,16 @@ type: "POST",
 url: "php/moveWin.php",
 data: {numWinners:numWinners},
 success: function() {
-    $("#preview").load("php/preview.php");   
-    $("#confirm").show();     
+    $("#preview").load("php/preview.php");
+    $.get("php/check.php", function(){
+        $.get("temp/numConts.txt", function(data){
+            if(parseInt(data) > 0){
+              $("#confirm").show();     
+            }
+            $.get("php/delNum.php");    
+          });
+      });
+      
 }
 });      
 

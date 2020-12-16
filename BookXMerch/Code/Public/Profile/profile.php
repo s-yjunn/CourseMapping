@@ -1,3 +1,4 @@
+<!-- Authors: Imane Berrada and Nukhbah Majid| Date: Dec 2020--> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +39,7 @@
             <button class="barCol buttonClass" onclick="getBooks()">My Books</button>
             <button class="barCol buttonClass" onclick="#">My Posts</button>
             <button class="barCol buttonClass" onclick="getReviews()">My Reviews</button>
-            <button class="barCol buttonClass" onclick="getRatings()">My Ratings</button>
+            <!-- <button class="barCol buttonClass" onclick="getRatings()">My Ratings</button> -->
 
           </div>
         </div>

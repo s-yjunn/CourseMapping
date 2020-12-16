@@ -103,13 +103,11 @@ function togglePubPr(toggleElm, index) {
 
 // This function restores a pattern view div after the user cancels their edits
 function cancelPatEdit(index) {
-    $("#tag" + index).html($("#prevTag" + index).html());; //restore privacy indicator to previous value
+    $("#tag" + index).html($("#prevTag" + index).html()); //restore privacy indicator to previous value
     // restore page alert to its previous value
     $("#uPaDiv").html("Here are your saved patterns. Click on a pattern to view more options (download, edit privacy level).");
     // hide the save options
     hide("patternEdit" + index);
-    // and the manage div in question
-    hide("managePattern" + index);
 }
 
 // This function saves a modification to a pattern's privacy level
@@ -200,4 +198,46 @@ function openUserInbox(uname) {
 // this function updates the user's inbox
 function refreshUserInbox(uname) {
     $("#userInbox").load("php/user/userInbox.php?uname=" + uname);
+}
+
+// This function handles the client side of sending a message to site admin
+// textElm -- id of the textarea that contains the message
+// feedbackElm -- id of the div we can give feedback to the user in 
+// (variable because messages can be sent from "help" or user inbox)
+// from -- the message's sender (default value indicates non-logged in visitor)
+function messageToAdmin(textElm, feedbackElm, from = "") {
+    var message = $("#" + textElm).val().trim();
+    if (message == "") {
+      $("#" + feedbackElm).html("<p class='alert alert-danger' role='alert'>Please enter a message.</p>");
+    } else {
+      // send the request to the processing file
+      $.ajax({
+        type: "POST",
+        url: "php/user/messageToAdmin.php",
+        data: {text: message, from: from},
+        success: function(response) {
+          // if we get a failure message
+          if (response == 0) {
+            // let the user know
+            $("#" + feedbackElm).html("<p class='alert alert-danger' role='alert'>Unable to send message.</p>");
+            // if successful,
+          } else {
+            // let the user know
+            $("#" + feedbackElm).html("<p class='alert alert-info' role='alert'>Your message was sent.</p>");
+            // Clear the composition area
+            $("#" + textElm).val("");
+          }
+        }
+      });
+    }
+}
+
+// this function aborts sending a message to admin in the user inbox
+function cancelUserCompose() {
+    // Close the composition div
+  hide("userCompose");
+  // Clear the composition area
+  $("#msgAdminInbox").val("");
+  // clear any previous feedback
+  $("#msgAdminInboxFB").html("");
 }

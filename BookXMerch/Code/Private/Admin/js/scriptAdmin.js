@@ -1,3 +1,5 @@
+//Author: Imane 
+//Date: Dec 7th, 2020
 function getBooks() {
     document.getElementById("headerBooks").style.display="block";
     document.getElementById("bookGrid").style.display="grid";

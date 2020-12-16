@@ -1,7 +1,7 @@
 <?php
   // This file formats a pattern submission given its index in the json file
   // (loaded into the contest voting/ winners pages)
-  // @author Isabel
+  // @author Isabel + styling by Alexis
 
   //Get all posts (since this is called from outside contest proper)
   $compData = json_decode(file_get_contents("../data/contest.json"), true);
@@ -26,7 +26,7 @@
 
 ?>
 
-<a href= "#<?= $fromLink; ?>" onclick="hide('<?= $to; ?>'); show('<?= $from; ?>')"><button class="btn1"><i class="fas fa-arrow-left"></i> Back</button></a><br><br>
+<a href= "#<?= $fromLink; ?>" onclick="hide('<?= $to; ?>'); show('<?= $from; ?>')"><img src="imgs/quizzes/backbutton.jpg" alt="back button" class="backBtnImg"></a><br><br>
 
 <div id="mainPattern">
   <img class="fullImg" src='imgs/contest/<?= $pattern["image"]; ?>' alt='Knit submission by <?= $pattern["author"]; ?>'>

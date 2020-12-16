@@ -1,4 +1,6 @@
-/*.mySlides {display: none}*/
+/* Styling for featured page
+@author Alexis
+Last modified 12/16/2020 */
 
 @keyFrames fadeEffect {
 	from {opacity:0;}
@@ -13,7 +15,6 @@
   cursor: pointer;
   color: rgb(239, 35, 60, 0.6);
 }
-
 
 /* Slideshow container */
 .slideshow-container {
@@ -59,17 +60,6 @@
 .prev:hover, .next:hover {
     opacity: 0.6;
   }
-
-  /* Caption text */
-/*.text {
-    color: rgb(9, 35, 58);
-    font-size: 25px;
-    padding: 8x 12px;
-    position: absolute;
-    top: 8px;
-    width: 100%;
-    text-align: right;
-  }*/
   
   /* Number text (1/3 etc) */
   .numbertext {

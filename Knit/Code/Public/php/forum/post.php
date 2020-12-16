@@ -1,6 +1,6 @@
 <?php
   // This file formats a forum post given its index in the forum.json file
-  // @author Isabel
+  // @author Isabel + styling by Alexis
   // Last modified 12/7/2020
 
   // get all posts (since this is called from outside forum proper)
@@ -42,8 +42,7 @@
   $canDelete = $loggedIn & ($isAdmin || $username === $post["author"]);
 ?>
 
-<button class="btn1" type="button" onclick="hide('forumPost'); show('<?= $from; ?>')"><i class="fas fa-arrow-left"></i> Back</button>
-
+<img src="imgs/quizzes/backbutton.jpg" alt="back button" class="backBtnImg" onclick="hide('forumPost'); show('<?= $from; ?>')">
 
 <!--The post itself-->
 <div id="mainPost">
@@ -56,13 +55,15 @@
         <button class="btn1" type='button' onclick="postVote('<?=$loggedStr; ?>', 'down', <?=$postIndex; ?>)"><i class="fas fa-minus fa-xs"></i></button>
       </td>
       <td>
-        <p><span class="author"><a onclick="openProfile('<?= $post["author"]; ?>', 'forumProfile', 'forumPost', '')"><?=$post["author"]; ?></a></span><br>
-        <span class="timestamp"><?=$posted; ?></span></p>
+        <p><span class="author"><a onclick="openProfile('<?= $post["author"]; ?>', 'forumProfile', 'forumPost', '')"><?=$post["author"]; ?></a></span> 
+		    <?php if ($canDelete): ?>
+		      <button class = "btn1 deletePostResponse float-right" onclick = "show('deletePost')"><i class="far fa-trash-alt"></i></button>
+		    <?php endif; ?>
+			<br>
+        <span class="timestamp"><?=$posted; ?></span>
+		</p>
         <p class="postContent"><?=$post["content"]; ?></p>
       </td>
-      <?php if ($canDelete): ?>
-        <td class = "deletePostResponse float-right"><button class = "btn1" onclick = "show('deletePost')"><i class="far fa-trash-alt"></i></button></td>
-      <?php endif; ?>
     </tr>
   </table>
 </div>

@@ -1,4 +1,11 @@
-<button class="btn1" onclick="hide('adminContest'); show('adminHome')"><i class="fas fa-arrow-left"></i> Back</button><br><br>
+<?php
+/* 
+@author Bethany + styling by Alexis
+Last modified 12/16/2020 */	
+?>
+
+<img src="imgs/quizzes/backbutton.jpg" alt="back button" class="backBtnImg" onclick="hide('adminContest'); show('adminHome')"><br><br>
+
 
 <h4>Contest</h4>
 
@@ -30,10 +37,15 @@ if($numSubs > 0):?>
     <?php  endfor;?>
     <br>
     </select></form>
-    <button class="btn1" id="approve">Approve</button>
+    
     <?php else:?>
         <p>There are currently no new submissions.</p>
 <?php endif;?>
+
+<?php if($numSubs > 0):?>
+    <button class="btn1" id="approve">Approve</button>
+<?php endif; ?>
+
 
 </div>
 
@@ -59,12 +71,16 @@ if($numSubs > 0):?>
     <?php  endfor;?>
     <br>
     </select></form>
-    <button class="btn1" id="delete">Delete</button>
     <?php else:?>
         <p>No submissions available. Check again later.</p>
-<?php endif;?>
+<?php endif; ?>
+
+<?php if($numSubs > 0):?>
+<button class="btn1" id="delete">Delete</button>
+<?php endif; ?>
 
 </div>
+
 <div class="section" id="section3">
 <h5>Preview Winners</h5>
 
@@ -78,7 +94,6 @@ if($numCont == 0):?>
 
     <p>There are currently no approved contestants.</p>
 
-
 <?php else:?>
     <p>Current contestants:</p>
      <ul style="list-style-type:square;">
@@ -86,17 +101,20 @@ if($numCont == 0):?>
         <li><a href="imgs/contest/<?=$currentConts[$i]["image"]?>" target="_blank"><?=$currentConts[$i]["author"]."/".$currentConts[$i]["title"]?></a><br /></li>
      <?php endfor; ?>
      </ul>    
-     <?php endif;
- if($numCont > 0):?>
-<p>How many winners do you want there to be?</p>
-<form  name="numWin">
-<input type="number" id="numWinners" name="numWinners" min="1" max="<?= $numCont ?>">
-</form>
-<br><br>
-<button class="btn1" id="showWin">Preview Winners</button>
-<button class="btn1" id="confirm" style="display: none;">Confirm Winners</button>
-<?php endif; ?>
-</div>
+     <?php endif;?>
+	 
+	 <?php //if($numCont > 0):?>
+	 <p>How many winners do you want there to be?</p>
+	 <form  name="numWin">
+	 <input type="number" id="numWinners" name="numWinners" min="1" max="<?= $numCont ?>">
+	 </form>
+	 <br>
+	 <button class="btn1" id="showWin">Preview Winners</button>
+	 <button class="btn1" id="confirm" style="display: none;">Confirm Winners</button>
+	 <?php //endif; ?>
+	
+ </div>
+
 
     
 <div id="preview"></div></div>

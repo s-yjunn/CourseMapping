@@ -1,0 +1,1 @@
+<?php unlink("../temp/numConts.txt"); ?>

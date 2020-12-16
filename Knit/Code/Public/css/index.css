@@ -1,3 +1,7 @@
+/* Styling for index page and sitewide
+@author Alexis
+Last modified 12/16/2020 */
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 @keyframes fadeEffect {
@@ -7,6 +11,7 @@
 
 .tabcontent:not(#Welcome) {
 	display: none;
+	margin-bottom: 2rem;	
 }
 .tabcontent {
 	animation: fadeEffect 1s;
@@ -15,11 +20,6 @@
 .hide {
 	display: none;
 }
-
-/*#Winners a:hover, #Vote a:hover, #Forum a:hover {
-	text-decoration: none;
-	color: white;
-}*/
 
 /* BUTTONS */
 .btn1 {	
@@ -54,6 +54,18 @@ input[type=button] {
 	background-color: rgb(239, 35, 60, 1);
 }
 
+.backBtnImg {
+	width: 200px;
+	left: 0;
+	margin-bottom: 0rem;
+	transition: opacity 0.4s;
+}
+.backBtnImg:hover {
+	cursor: pointer;
+	opacity: 0.7;
+}
+
+
 /* ALERT */
 .alert {
 	display: inline-block;
@@ -70,21 +82,21 @@ input[type=button] {
 .dark {
 	display: none; /* Hidden by default */
 	position: fixed;
-	z-index: 2; /* Sit on top */
+	z-index: 10000; /* Sit on top */
 	left: 0;
 	top: 0;
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
 	background-color: hsla(0, 0%, 23%, 0.8);
-	padding-top: 30px;
+	padding-top: 4rem;
 }
 /* modals to float over some 'dark' div */
 .float {
-    max-width: 95%;
-	max-height: 95%;
-    width: 500px;
-    height: auto;
+	max-width: 95%;
+	max-height: 85%;
+  width: 500px;
+  height: auto;
 	padding: 2rem;
 	margin: auto;
 	background-color: white;
@@ -92,5 +104,47 @@ input[type=button] {
 	overflow: auto;
 }
 
-.floatDiv {
+/* footer - copied old footer css*/
+.myfooter {
+	/*font-size: 12px;*/
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	/*background-color: white;*/
+	background-color: rgb(239, 35, 60);
+	color: white;
+	text-align: center;
+	margin: 0.5rem 0 0 0;
+	padding: 0.5rem 0 0 0;
+	font-size: 0.9rem;
+}
+.myfooter a {
+	opacity: 0.7;
+	transition: opacity 0.7s;
+}
+.myfooter a:hover {
+	opacity: 1;
+	cursor: pointer;
+}
+
+
+/*HELP!*/
+#helpManual, #helpAdmin {
+	display: none;
+}
+
+#helpManual .btn1 {
+	margin:1rem 0;
+}
+#helpHome .btn1 {
+	width: 100%;
+}
+#helpHome .btn1, #helpAdmin .btn1 {
+	margin:1rem 0 0 0;
+}
+#helpAdmin textarea {
+	padding: 1.2rem;
+	width: 100%;
+	margin: 0 0 1rem 0;
 }

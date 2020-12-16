@@ -1,4 +1,4 @@
-
+// <!-- Author: Imane Berrada | Date: Nov 24th, 2020--> 
 $(document).ready(function () {
     
     $(".imgButton").click(function () {

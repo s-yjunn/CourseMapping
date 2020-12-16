@@ -1,3 +1,6 @@
+// <!-- Authors: Imane Berrada (reading list and book upload) and Nukhbah Majid (book upload and reviews)| 
+// Date: Nov 25th, 2020--> 
+// Inspired by Akash Pal's blog https://blog.usejournal.com/create-a-to-do-list-application-with-html-css-and-pure-js-533e1b07c20e
 function getUpload() {
     document.getElementById("uploadForm").style.display="none";
     document.getElementById("rList").style.display="none";

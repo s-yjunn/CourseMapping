@@ -1,3 +1,4 @@
+<!-- Author: Imane (with modifications from Nukhbah and Mariem)| Date: November-December 2020--> 
 <?php
   session_start();
   if(isset($_SESSION["name"])) {
@@ -5,8 +6,7 @@
     $loggedUser = $_SESSION["name"]; 
     $type = $_SESSION["type"]; 
   }
-//   unset($_SESSION["name"]); 
-//   unset($_SESSION["psw"]); 
+
 
 ?>
 
@@ -184,14 +184,6 @@
         </div>
     </div>
 
-
-    <!-- <div id="booksOfMonth">
-            <br>
-            <br>
-            <dl class="bookshelf wrapper" style="background-image: none">
-                <dt class="bookOfMonth1" ><span> The Space Between Worlds</span></dt>
-            </dl>
-    </div> -->
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

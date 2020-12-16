@@ -1,7 +1,7 @@
 <?php
   // This file generates the "menu" of posts on the main forum page.
   // Optionally takes a sorting parameter, otherwise sorts chronologically (newest first)
-  // @author Isabel
+  // @author Isabel + styling by Alexis
   // Last modified 12/14/2020
 
   //If this is being called from forum.js

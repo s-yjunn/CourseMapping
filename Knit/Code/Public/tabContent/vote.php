@@ -1,3 +1,9 @@
+<?php 
+/* This is the contents of the contest tab
+@author Bethany + styling by Alexis
+Last modified 12/16/2020 */
+?>
+
 <?php
 	$comp = file_get_contents("data/contest.json");
 	// echo "$comp";

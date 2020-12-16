@@ -1,3 +1,4 @@
+<!-- Authors: Imane Berrada and Nukhbah Majid| Date: Nov-Dec 2020--> 
 <?php 
 session_start();
 if(isset($_SESSION["name"])) {

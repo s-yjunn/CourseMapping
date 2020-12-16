@@ -1,4 +1,11 @@
 <?php
+/* This code enables user registration functionality
+@author Alexis (basic implementation), Isabel (improvements + complex additions of user data)
+Last modified 12/16/2020 */
+?>
+
+
+<?php
 $path = '../../Private/users.json';
 
 // read in json file as json string

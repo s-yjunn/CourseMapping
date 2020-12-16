@@ -50,9 +50,9 @@
   <table>
     <tr class="response">
       <td class="vote">
-        <button class="btn1" type='button' onclick="postVote('<?=$loggedStr; ?>', 'up', <?=$postIndex; ?>)"><i class="fas fa-plus fa-xs"></i></button><br>
+        <button class="btn1" type='button' onclick="postVote('<?=$loggedStr; ?>', 'up', <?=$postIndex; ?>, '<?= $from; ?>')"><i class="fas fa-plus fa-xs"></i></button><br>
         <?=$post["score"]; ?><br>
-        <button class="btn1" type='button' onclick="postVote('<?=$loggedStr; ?>', 'down', <?=$postIndex; ?>)"><i class="fas fa-minus fa-xs"></i></button>
+        <button class="btn1" type='button' onclick="postVote('<?=$loggedStr; ?>', 'down', <?=$postIndex; ?>, '<?= $from; ?>')"><i class="fas fa-minus fa-xs"></i></button>
       </td>
       <td>
         <p><span class="author"><a onclick="openProfile('<?= $post["author"]; ?>', 'forumProfile', 'forumPost', '')"><?=$post["author"]; ?></a></span> 

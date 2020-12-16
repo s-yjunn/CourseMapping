@@ -124,7 +124,7 @@ function deleteResponse(postIndex, responseIndex) {
 }
 
 //This function handles the client-side of voting on posts
-function postVote(loggedIn, upOrDown, postIndex) {
+function postVote(loggedIn, upOrDown, postIndex, from) {
     if (loggedIn == "true") {
         //Post the vote to the php processing page
         var posting = $.post( "php/forum/addUpDownVote.php", { vote: upOrDown, type: "post", index: postIndex } );
@@ -133,7 +133,7 @@ function postVote(loggedIn, upOrDown, postIndex) {
         posting.done(
             function(){
                 // Update the container post & the menu
-                $("#forumPost").load("php/forum/post.php?index=" + postIndex);
+                $("#forumPost").load("php/forum/post.php?index=" + postIndex + "&from=" + from);
                 refreshForumIndex();
             }
         )

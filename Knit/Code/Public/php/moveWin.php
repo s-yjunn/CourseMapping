@@ -1,4 +1,8 @@
 <?php
+/* This is to move the winning contestants for admin to preview
+@author Bethany
+Last modified 12/16/2020 */
+
 //get json info
 $comp = file_get_contents("../data/contest.json");
 $compData = json_decode($comp, true);

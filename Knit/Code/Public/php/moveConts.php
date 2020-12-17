@@ -1,5 +1,9 @@
 <?php
+/* This is to move the submissions that admin did approve
+@author Bethany
+Last modified 12/16/2020 */
 
+//get submissions data
 $comp = file_get_contents("../data/contest.json");
 $compData = json_decode($comp, true);
 $currentSubs = $compData["submissions"];
@@ -8,7 +12,7 @@ $numCur = count($currentSubs);
 $potentialSubs = $_POST['currentSubs'];
 //num selected subs
 $numPtn = count($potentialSubs);
-
+//will hold selected submissions
 $move = [];
 //move index
 $j = 0;
@@ -24,7 +28,7 @@ for($i = 0; $i < $numPtn; $i++){
     }    
 
 }
-
+//will hold untouched submissions
 $submissions = [];
 //submissions index
 $h = 0;
@@ -56,7 +60,6 @@ for($i = 0; $i < count($move); $i++){
 }
 //update json file
 $jsondata = json_encode($compData, true);
-
 file_put_contents("../data/contest.json", $jsondata);
 
 ?>

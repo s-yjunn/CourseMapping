@@ -1,4 +1,8 @@
 <?php 
+/* This is to update the number of votes of the contestant that user selected
+@author Bethany
+Last modified 12/16/2020 */
+
       //get json
       $comp = file_get_contents("../data/contest.json");
       $compData = json_decode($comp, true);

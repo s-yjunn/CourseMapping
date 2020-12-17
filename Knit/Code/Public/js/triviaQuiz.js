@@ -1,4 +1,9 @@
-//code inspired by https://codepen.io/tgallimore/pen/xwGOXB
+/**
+ * This file handles all of the buttons for the quiz tab
+ * author @Bethany
+ * 
+ * code adapted from https://codepen.io/tgallimore/pen/xwGOXB
+ */
 
 
 var Quiz = function () {

@@ -1,35 +1,31 @@
+/**
+ * This file handles all of the buttons for the quiz tab
+ * author @Bethany
+ */
+
 $(document).ready(function(){
+  //show list of quizzes
   $("#all").show();
-  $("#back1").click(function(){
+  //hide back button
+  $("#back").hide();
+  //when back button is selected
+  $("#back").click(function(){
+    //refresh all quizzes
+    $("#first").load(location.href+" #first>*","");
+    //show list of quizzes
+    $("#all").show();
+    //hide back button
+    $("#back").hide();
+    //hide all quizzes
     $("#first").hide();
-    $("#all").show();
   });
-  $("#back2").click(function(){
-    $("#second").hide();
-    $("#all").show();
-  });
-  $("#back3").click(function(){
-    $("#third").hide();
-    $("#all").show();
-  });
-  $("#back4").click(function(){
-    $("#fourth").hide();
-    $("#all").show();
-  });
+  //if the first quiz is selected from list
   $("#one").click(function(){
+    //hide list
     $("#all").hide();
+    //show back button
+    $("#back").show();
+    //show first quiz
     $("#first").show();
-  });
-  $("#two").click(function(){
-    $("#all").hide();
-    $("#second").show();
-  });
-  $("#three").click(function(){
-    $("#all").hide();
-    $("#third").show();
-  });
-  $("#four").click(function(){
-    $("#all").hide();
-    $("#fourth").show();
   });
 });

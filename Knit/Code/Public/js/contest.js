@@ -1,11 +1,18 @@
+/**
+ * This function connects the vote button to the php file that increments the contestant's number of votes
+ * author @Bethany
+ */
 function updateVote(i){
     $(document).ready(
+        //send user index to php file
         $.ajax({
         type: "POST",
         url: "php/updateVote.php",
         data: {index:i},
-        success: function(result) {
+        success: function() {
+            //if successful....
             $('.contestVote').each(function() {
+                //....hide all vote buttons
                 $(this).hide();
             });			
         }

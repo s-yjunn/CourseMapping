@@ -1,0 +1,14 @@
+Title: Knitty Gritty
+Team: Alexis, Bethany, Isabel
+Date: 12/9/20
+
+DONE this time
+    - Team: met to discuss plan for final presentation
+    - Alexis: styled user profile and inboxes, pattern customization, pattern editing, numbered rows/columns in pattern maker, fixed navbar toggler and modal resizing, reorganized CSS files
+    - Isabel: added pattern grid customization, ability to save patterns and edit/delete saved patterns, realistic contest items, admin “Users” page, admin -> user messaging; improved user profile editing (+ added profile picture editing)
+    - Bethany: debugged contest pages, worked on quizzes page
+
+TO DO for next time
+    - Debug contest pages
+    - Test new features (forum search, inboxes)
+    - Clean up code and submit on aurora

@@ -1,0 +1,12 @@
+Title: Knitty Gritty
+Team: Alexis, Bethany, Isabel
+Date: 11/25/20
+
+DONE this time
+    - Alexis: more styling particularly of contest tab, continued implementing pattern maker functionality including color selection, fixed canvas clearing (no reload on clear)
+    - Isabel: added pattern viewing in contest and featured tabs, implemented basic user profiles, edited user data and registration accordingly, tweaked forum display and added profile links
+    - Bethany: Debugged contest pages
+
+TO DO for next time
+    - Add basic profile editing
+    - Debug pattern maker (gridline filling)

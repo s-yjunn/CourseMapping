@@ -1,0 +1,12 @@
+Title: Knitty Gritty
+Team: Alexis, Bethany, Isabel
+Date: 12/2/20
+
+DONE this time
+    - Alexis: continued improvements of pattern maker including grid line layout, flood fill, preventing fill of grid lines
+    - Isabel: added ability to edit “About me” on profile and basic user pattern management (viewing and downloading), restructured pattern storage
+    - Bethany: Debugged contest pages
+
+TO DO for next time
+    - Flesh out pattern management (editing visibility, deleting) and add ability to save patterns
+    - Debug contest pages

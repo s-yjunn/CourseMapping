@@ -18,7 +18,9 @@ Last modified 12/16/2020 */
   <img src="imgs/quizzes/backbutton.jpg" alt="back button" id="back" class="backBtnImg"><br><br>
   <!-- holds all quizzes -->
   <div class="quizContent" id="quiz">
-    <?php include "php/quizzes/trivia.php" ?>
+  <div class="quiz" id="first">
+    <?php //include "php/quizzes/trivia.php" ?>
+    </div>
   </div>
   
 </div>

@@ -1,5 +1,5 @@
 /**
- * This file handles all of the buttons for the quiz tab
+ * This file handles all of the questions buttons for the trivia quiz
  * author @Bethany
  * 
  * code adapted from https://codepen.io/tgallimore/pen/xwGOXB

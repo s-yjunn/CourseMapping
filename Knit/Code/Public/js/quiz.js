@@ -10,8 +10,6 @@ $(document).ready(function(){
   $("#back").hide();
   //when back button is selected
   $("#back").click(function(){
-    //refresh all quizzes
-    $("#first").load(location.href+" #first>*","");
     //show list of quizzes
     $("#all").show();
     //hide back button
@@ -26,6 +24,8 @@ $(document).ready(function(){
     //show back button
     $("#back").show();
     //show first quiz
+    $("#first").load("php/quizzes/trivia.php")
     $("#first").show();
+
   });
 });

@@ -5,8 +5,6 @@ Last modified 12/16/2020 */
 ?>
 
 <!-- below a list of ten questions/answers -->
-<div class="quiz" id="first" style="display: none;">
-
 <div class="quizContainer">
   <!-- quiz title -->
   <h4>Take this quiz to test your knitting trivia!</h4>
@@ -94,6 +92,6 @@ Last modified 12/16/2020 */
   <div class="quiz-result"></div>
 
 </div>
-</div>
+
 
 <script src="js/triviaQuiz.js"></script>

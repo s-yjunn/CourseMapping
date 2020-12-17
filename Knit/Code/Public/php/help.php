@@ -32,7 +32,15 @@
   <hr>
 
   <h4>Contest</h4>
-  <p>Click "View pattern" under a thumbnail that appeals to you to see the full pattern, containing instructions for how to create that item.</p>
+  <p>Here you can participate in picking the patterns for our next "featured" slideshow.</p>
+
+  <h5>Enter the contest (logged-in users only)</h5>
+  <p>Once you have logged into your account, under the "Contest" tab. There is a section that says "Enter the Contest" at the top of the page. Under the description, there is a text box to input the title of your submission. Under the text box, there is a "Choose Files" button. When you press it, you will be prompted to select your files. <b>Please only submit one text file of pattern-making instructions and one image.</b>. Be sure to use html syntax for any formatting in your text file. Once you have entered a title and chosen your files, press the "Submit" button. The admin will review your submission for admission as soon as possible. If your submission was not reviewed in this competition cycle, it will be added to the next one.</p>
+
+  <h5>View contestants and vote</h5>
+  <p>Below the "Enter contest" section you will see a display of the current slideshow candidates. Click "View pattern" under a thumbnail that appeals to you to see the full pattern, containing instructions for how to create that item.</p>
+
+  <p>Take your time looking through the patterns. Once you've found your favorite, click "Vote" button underneath its thumbnail to add your vote to it.</p>
 
   <hr>
 
@@ -51,6 +59,7 @@
   <hr>
 
   <h4>Quizzes</h4>
+  <p>Under the "Quizzes tab", there is a list available quizzes for you to take. Press the title that appeals to you, answer all of the questions, and see what you get!</p>
 
   <hr>
 
@@ -115,8 +124,14 @@
   <p>Click the <i class="fas fa-redo-alt fa-xs"></i> button to refresh the table of users. Click the "View profile" button of an entry to see their public profile. Click the "Message" button to send them a message. It’s polite to do this if you’ve deleted their post in the forum or something.</p>
 
   <h5>Contest</h5>
-  <p>Click on a pattern’s title to view it in full.</p>
+  <p>This page is where you can manage the pattern contest. Throughout the page, click on a pattern’s title to view it in full. Your options are:</p>
+  <ul>
+    <li><u>Approve submissions:</u> to approve a submission, <b>under the bulleted submissions</b>, there is a list of the submissions. Click on the desired submission. <b>Press Ctr + Click  or Click + Drag to select multiple submissions</b>. Once you have selected all of the desired submissions, press "Approve." You will see the updated list of approved submissions under "Preview Winners".</li>
 
+    <li><u>Delete submissions:</u> to delete a submission, <b>under the bulleted submissions</b>, there is another copy of the submission list. Click on the desired submission. <b>Press Ctr + Click  or Click + Drag to select multiple submissions</b>. Once you have selected all of the desired submissions, press "Delete."</li>
+
+    <li><u>Select winners and end this round of competition:</u> under "Preview Winners", there is a list of all approved submissions. Under the list, there is a text box. Type the number of winners you want there to be, the press the "Preview Winners" button. A slideshow will appear of what the "Featured" page will look like if you confirm. <b>Note:</b> if there is a tie, or if there are not enough <b>valid submissions</b>, you may get more or fewer winners than what you requested. A submission without votes does <b>not</b> count as a valid submission.<br><br>If you are satisfied with the preview, press the "Confirm Winners" button. This will reset the competition and erase all submissions that did not win. The <b>unapproved</b> submissions will <b>not</b> be affected.</li>
+  </ul>
   <?php endif; ?>
 
 </div>

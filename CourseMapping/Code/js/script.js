@@ -220,6 +220,7 @@ function removeTab(tabID) {
       height: "auto",
       width: 400,
       modal: true,
+      autoOpen: false,
       buttons: {
         "Save the tab": function () {
           /* @author Allison */
@@ -240,6 +241,7 @@ function removeTab(tabID) {
         },
       },
     });
+    $("#dialog-confirm").dialog('open');
   });
   /* End of Hyana's contribution in Allison's code */
 }

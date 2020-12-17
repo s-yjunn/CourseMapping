@@ -11,9 +11,8 @@
  * @param {HTMLElement} course2
  * @param {string} course2Name
  * @param {Array} prereqs (an array of arrays)
- * @param {Array} userCourses (an array of all courseBlocks in current tab)
  */
-function initPrereqOpts(course2, course2Name, prereqs, userCourses) {
+function initPrereqOpts(course2, course2Name, prereqs) {
   // Mark the course with red
   course2.style.backgroundColor = "#f1a181";
 
@@ -86,7 +85,7 @@ function addPrereqs(chosenPrereqs, courseBlock, courseName) {
    This could be a method that is used whenever a user wants to remove any courses.
    For now, it just asks the user if they want to remove the courses with a pop-up box.
   */
- courseRemovalPopUp(prereqsDetached, courseName); // Must come before new arrowLines are added.
+  courseRemovalPopUp(prereqsDetached, courseName); // Must come before new arrowLines are added.
   // Second, add all the prereqs that aren't already there, and draw the new lines
   for(let i = 0; i < chosenPrereqs.length; i++) {
       var prereqName = chosenPrereqs[i];
@@ -118,7 +117,7 @@ function addPrereqs(chosenPrereqs, courseBlock, courseName) {
  * prereqs are still connected to other courses in the pathway 
  * @param {string} courseName - course name, with a space between the department and number
  */
-function courseRemovalPopUp(prereqsDetached, lines, courseName) {
+function courseRemovalPopUp(prereqsDetached, courseName) {
   console.log("prereqsDetache in fn: " + prereqsDetached + " typeof: " + typeof prereqsDetached);
   // Regenerate the lines variable, so that it does not include deleted lines
   var lines = currentPage.querySelectorAll(".arrowLine");
@@ -220,6 +219,7 @@ function spaceAdded(courseID) {
  * @param {number} num - the number of courses in the list.
  */
 function fixListGrammer(coursesList, num) {
+  console.log("fixListGrammer: " + coursesList);
   // Remove trailing comma and whitespace (this is two characters).
   // Add a period.
   var improvedList = coursesList.slice(0, -2) + ".";

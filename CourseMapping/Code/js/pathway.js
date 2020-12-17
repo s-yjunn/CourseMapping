@@ -15,6 +15,9 @@ var pathTable;
 var pathwayContent;
 var map;
 
+var courseWidth;
+var courseHeight;
+
 /**
  * Update the variables to the elements in current tab
  */
@@ -261,7 +264,7 @@ function getSemNum(xPos, yPos, containerWidth) {
  * and deletes it from currentPathway and sessionStorage.
  *
  * Does not delete any arrowlines that might connect to the course.
- * TO ADD? A boolean parameter to determine if it should look for arrowlines?
+ * TO ADD? A boolean parameter to determine if it should look for any arrowlines?
  *
  * @param {string} courseID - courseName with no space
  */
@@ -270,12 +273,12 @@ function removeCourseBlock(courseID) {
 
   // Remove it from currentPathway and sessionStorage.
   var yPos =
-    parseInt(courseBlock.style.top) + parseInt(courseBlock.style.height) / 2;
+    parseInt(courseBlock.style.top) + $(courseBlock).height() / 2;
   var xPos =
-    parseInt(courseBlock.style.left) + parseInt(courseBlock.style.width) / 2;
-  var containerWidth = parseInt(pathwayContent.style.width);
+    parseInt(courseBlock.style.left) + $(courseBlock).width() / 2;
+  var containerWidth = $(pathwayContent).width();
   var semNum = getSemNum(xPos, yPos, containerWidth);
-  delete currentPathway["sem_" + semNum]["nodes"][spaceAdded(id)];
+  delete currentPathway["sem_" + semNum]["nodes"][spaceAdded(courseID)];
   serverSaveNeeded = true;
   currentPathway["serverSaveNeeded"] = true;
   sessionStorage[currentTab] = JSON.stringify(currentPathway);

@@ -35,6 +35,12 @@ written by Professor Streinu, and Yujun, Hyana's midterm projects-->
 
     <?php include 'php/login/userinfo.php'; ?>
 
+    
+    <div id="dialog-confirm" title="Save the tab(s)?" style="display:none">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>
+    The tab and its items will be permanently deleted and cannot be recovered if you don't save.</p>
+    </div>
+
     <div class='tab' id="tab">
         <button id="logo">Course Mapping</button>
         <button class="tablinks active" onclick="openTab(event, 'Main')" <?php include 'php/login/logouttabs.php'; ?>>MAIN PAGE</button>

@@ -14,13 +14,9 @@
 ?>
 
 <h2>Saved</h2>
-
-
-<div id="dialog-confirm" title="Save the tab(s)?">
-  <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>
-  The tab and its items will be permanently deleted and cannot be recovered if you don't save.</p>
-</div>
- 
+<!-- Potential thing TO ADD: Maybe instead of solid buttons with the pathway titles, the icons to click on could be 
+screenshot pictures of the saved pathway. -->
+<p>These are your saved pathways. Click on them to open.</p>
 
 <div>
 <?php
